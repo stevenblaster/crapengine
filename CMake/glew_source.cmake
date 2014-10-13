@@ -1,0 +1,5 @@
+INCLUDE_DIRECTORIES(${CRAPLIB_PATH}/glew/include/)
+
+SET(GLEW_SOURCES
+    ${CRAPLIB_PATH}/glew/src/glew.c
+)

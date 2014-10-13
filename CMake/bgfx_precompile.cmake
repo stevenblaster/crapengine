@@ -1,0 +1,40 @@
+INCLUDE(ExternalProject)
+
+IF(NOT WIN32)
+SET(BGFX_TARGET linux-release64)
+SET(BGFX_TEMP_PATH linux64_gcc)
+SET(BGFX_LIBRARY libbgfxRelease.a)
+ELSE()
+SET(BGFX_TARGET windows-release32)
+SET(BGFX_TEMP_PATH win32_vs2012)
+SET(BGFX_LIBRARY bgfxDebug.lib)
+ENDIF(NOT WIN32)
+
+#EXEC_PROGRAM(make ${CRAP_LIBRARIES_PATH}/bgfx
+#	${BGFX_TARGET}
+#)
+
+#EXEC_PROGRAM(cp ${CRAP_LIBRARIES_PATH}/bgfx/.build/${BGFX_TEMP_PATH}/bin/
+#	${BGFX_LIBRARY} ${CMAKE_BINARY_DIR}/bgfx/
+#)
+
+#add_executable(make)
+
+#add_custom_target(bgfx
+#    COMMAND make ${BGFX_TARGET}
+#    DEPENDS ${BGFX_TARGET}
+#)
+
+#add_custom_target(bgfxcopy
+#    COMMAND cp ${CRAP_LIBRARIES_PATH}/.build/${BGFX_TARGET}/${BGFX_LIBRARY} ${CMAKE_BINARY_DIR}/bgfx/
+#    DEPENDS ${BGFX_LIBRARY}
+#)
+
+ADD_CUSTOM_TARGET(BGFX_PREBUILD ALL)
+ADD_CUSTOM_COMMAND(
+	TARGET ${BGFX_PREBUILD}
+	COMMAND make 
+	ARGS ${BGFX_TARGET}
+	WORKING_DIRECTORY ${CRAP_LIBRARIES_PATH}/bgfx
+	OUTPUT ${CRAP_LIBRARIES_PATH}/bgfx/.build/${BGFX_TEMP_PATH}/bin/${BGFX_LIBRARY}
+)
