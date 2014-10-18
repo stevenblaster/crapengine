@@ -221,10 +221,17 @@ template<typename T>
 CRAP_INLINE void insert_into_array( const T* object, uint32_t position, T* array, uint32_t array_size )
 {
     copy_construct_object( array + array_size, array + array_size + 1 );
-    for( uint32_t pos = array_size; position < pos; --pos )
+    for( uint32_t pos = array_size; pos > position; --pos )
         replace_object( array + (pos-1), array + pos );
 
     copy_construct_object( object, array + position );
+}
+
+template<typename T>
+CRAP_INLINE void remove_from_array( T* array, uint32_t position, uint32_t array_size )
+{
+    for( uint32_t i=position; i<array_size-1; ++i )
+        replace_object( array + i+1, array + i );
 }
 
 template<typename T>

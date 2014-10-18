@@ -20,8 +20,8 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/converter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/hashmap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/intrusivelist.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/container.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/delegates.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/directory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sorted_array.cpp
 PARENT_SCOPE
 )

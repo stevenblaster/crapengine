@@ -12,7 +12,7 @@ namespace
 
 crap::array<float32_t>* arr_ptr;
 void* mem;
-crap::array<float32_t>::handle handles[ARRAY_SPACE];
+uint32_t handles[ARRAY_SPACE];
 
 TEST( AnnounceTestArray )
 {
@@ -42,7 +42,7 @@ TEST(CrapArrayPushBack)
 
 TEST(CrapArrayPushBackOverflow)
 {
-    crap::array<float32_t>::handle handle = arr_ptr->push_back( rand() * 1.f );
+    uint32_t handle = arr_ptr->push_back( rand() * 1.f );
 
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->size() );
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->max_size() );
@@ -54,7 +54,7 @@ TEST(CrapArrayErase)
     uint32_t a_size = arr_ptr->size();
     for( int32_t i=ARRAY_SPACE-1; i>= 0; --i )
     {
-        arr_ptr->erase( handles[i] );
+        arr_ptr->erase_at( handles[i] );
         CHECK( arr_ptr->size() == --a_size );
     }
 }

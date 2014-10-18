@@ -50,7 +50,7 @@ void PluginManager::unload( uint32_t id )
 {
     dlhandle_t plugin =  _handles[id];
 
-    _handles.erase(id);
+    _handles.erase(plugin);
     closeLibrary(plugin);
 }
 
