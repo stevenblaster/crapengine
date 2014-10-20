@@ -12,9 +12,9 @@ namespace crap
 typedef uint32_t AudioSource;
 static const uint32_t InvalidAudioSource = UINT32_MAX;
 
-void createAudioSources( CRAP_RESTRICT AudioSource* sources, uint32_t number );
+void createAudioSources( AudioSource* CRAP_RESTRICT sources, uint32_t number );
 
-void destroyAudioSources( CRAP_RESTRICT AudioSource* source, uint32_t number );
+void destroyAudioSources( AudioSource* CRAP_RESTRICT source, uint32_t number );
 
 }
 

@@ -17,11 +17,11 @@ typedef pointer_t<void> AudioData;
 
 struct AudioFile;
 
-void createAudioBuffers( CRAP_RESTRICT AudioBuffer* buffers, uint32_t number );
-void destroyAudioBuffers( CRAP_RESTRICT AudioBuffer* buffers, uint32_t number );
+void createAudioBuffers( AudioBuffer* CRAP_RESTRICT buffers, uint32_t number );
+void destroyAudioBuffers( AudioBuffer* CRAP_RESTRICT buffers, uint32_t number );
 
-void setAudioBufferSource( CRAP_RESTRICT AudioBuffer* buffer, int32_t format, int32_t frequency, AudioData data, uint32_t datasize );
-void setAudioBufferSource( CRAP_RESTRICT AudioBuffer* buffer, const AudioFile* file );
+void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, int32_t format, int32_t frequency, AudioData data, uint32_t datasize );
+void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, const AudioFile* file );
 }
 
 #endif //CRAP_AUDIO_AUDIOBUFFER

@@ -19,6 +19,7 @@ struct ziehung
 };
 */
 
+#ifndef CRAP_COMPILER_MSVC
 TEST(FunitIsLotto)
 {
     uint32_t all_numbers[45];
@@ -43,7 +44,7 @@ TEST(FunitIsLotto)
     while( fgets(buffer,100,fp) )
     {
         sscanf( buffer, "%i,%i,%i,%i,%i,%i,%i", &all[c][0],&all[c][1],&all[c][2],&all[c][3],&all[c][4],&all[c][5],&all[c][6]);
-        //printf("%s", buffer);
+        printf("%s", buffer);
         c++;
     }
     //for( unsigned int i=0; i<c; ++i)
@@ -199,5 +200,5 @@ TEST(FunitIsLotto)
     }
 
 }
-
+#endif
 }

@@ -14,19 +14,19 @@
 namespace crap
 {
 
-void setAudioSourceBuffer( CRAP_RESTRICT AudioBuffer* buffer, CRAP_RESTRICT AudioSource* source );
+void setAudioSourceBuffer( AudioBuffer* CRAP_RESTRICT buffer, AudioSource* CRAP_RESTRICT source );
 
-void setAudioSource3DInfo( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, CRAP_RESTRICT AudioSource* source );
+void setAudioSource3DInfo( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, AudioSource* CRAP_RESTRICT source );
 
-void setAudioListener3DInfo( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* orientation, CRAP_RESTRICT float32_t* direction, CRAP_RESTRICT AudioListener* source );
+void setAudioListener3DInfo( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT orientation, float32_t* CRAP_RESTRICT direction, AudioListener* CRAP_RESTRICT source );
 
-void setAudioSourceInfo( CRAP_RESTRICT AudioSource* source, float32_t pitch, float32_t gain, bool loop );
+void setAudioSourceInfo( AudioSource* CRAP_RESTRICT source, float32_t pitch, float32_t gain, bool loop );
 
-void playAudioSource( CRAP_RESTRICT AudioSource* source );
+void playAudioSource( AudioSource* CRAP_RESTRICT source );
 
-void pauseAudioSource( CRAP_RESTRICT AudioSource* source );
+void pauseAudioSource( AudioSource* CRAP_RESTRICT source );
 
-void stopAudioSource( CRAP_RESTRICT AudioSource* source );
+void stopAudioSource( AudioSource* CRAP_RESTRICT source );
 
 void setAudioDopplerEffects(float32_t factor, float32_t velocity );
 }

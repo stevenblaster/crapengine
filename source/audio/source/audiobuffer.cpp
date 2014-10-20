@@ -9,24 +9,24 @@
 namespace crap
 {
 
-void createAudioBuffers( CRAP_RESTRICT AudioBuffer* buffers, uint32_t number )
+void createAudioBuffers( AudioBuffer* CRAP_RESTRICT buffers, uint32_t number )
 {
     alGenBuffers( number, buffers );
     //CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not create %i Audio Buffers", number );
 }
 
-void destroyAudioBuffers( CRAP_RESTRICT AudioBuffer* buffers, uint32_t number )
+void destroyAudioBuffers( AudioBuffer* CRAP_RESTRICT buffers, uint32_t number )
 {
     alDeleteBuffers( number, buffers );
 }
 
-void setAudioBufferSource( CRAP_RESTRICT AudioBuffer* buffer, int32_t format, int32_t frequency, AudioData data, uint32_t datasize )
+void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, int32_t format, int32_t frequency, AudioData data, uint32_t datasize )
 {
     alBufferData( *buffer, format, data.as_void, datasize, frequency );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not set Audio Buffer Source" );
 }
 
-void setAudioBufferSource( CRAP_RESTRICT AudioBuffer* buffer, const AudioFile* file )
+void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, const AudioFile* file )
 {
     const uint32_t format_value = file->bits_per_sample + file->channels;
     uint32_t format = 0;

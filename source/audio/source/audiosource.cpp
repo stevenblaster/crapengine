@@ -9,13 +9,13 @@
 namespace crap
 {
 
-void createAudioSources( CRAP_RESTRICT AudioSource* sources, uint32_t number )
+void createAudioSources( AudioSource* CRAP_RESTRICT sources, uint32_t number )
 {
     alGenSources( number, sources );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not create %i Audio Sources", number );
 }
 
-void destroyAudioSources( CRAP_RESTRICT AudioSource* sources, uint32_t number )
+void destroyAudioSources( AudioSource* CRAP_RESTRICT sources, uint32_t number )
 {
     alDeleteSources( number, sources );
 }

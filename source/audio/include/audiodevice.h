@@ -17,13 +17,13 @@ typedef AudioContext_ AudioContext;
 
 AudioDevice* openAudioDevice( void );
 
-void closeAudioDevice( CRAP_RESTRICT AudioDevice* device );
+void closeAudioDevice( AudioDevice* CRAP_RESTRICT device );
 
-AudioContext* createAudioContext( CRAP_RESTRICT AudioDevice* device );
+AudioContext* createAudioContext( AudioDevice* CRAP_RESTRICT device );
 
-void setAudioContextCurrent( CRAP_RESTRICT AudioContext* context );
+void setAudioContextCurrent( AudioContext* CRAP_RESTRICT context );
 
-void destroyAudioContext( CRAP_RESTRICT AudioContext* context );
+void destroyAudioContext( AudioContext* CRAP_RESTRICT context );
 
 } //namespace crap
 

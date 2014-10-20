@@ -3,15 +3,17 @@
 #ifndef CRAP_CORE_DIRECTORY
 #define CRAP_CORE_DIRECTORY
 
+#include "config/crap_compiler.h"
+
 #include <errno.h>
 #include <stdlib.h>
-#ifdef CRAP_COMPILER_MVC
+#ifdef CRAP_COMPILER_MSVC
 
     #define WIN32_LEAN_AND_MEAN
     #include <windows.h>
     #pragma warning (disable : 4996)
 
-    typedef void dir_handle;
+    typedef void* dir_handle;
     typedef WIN32_FIND_DATA dir_info;
     #define DIR_HANDLE_INIT INVALID_HANDLE_VALUE
     #define PATH_END "\\*"
@@ -68,7 +70,7 @@ CRAP_INLINE void closeDirectory( directory_t* dir )
 #else
 
     FindClose(dir->handle);
-    dir->info->nFileSizeHigh = 0;
+    dir->info.nFileSizeHigh = 0;
 
 #endif
 
@@ -128,7 +130,7 @@ CRAP_INLINE bool isDirectory( const char* path, directory_t* dir )
 
 #else
 
-    !!(dir->info.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
+    return !!(dir->info.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
 
 #endif
 }

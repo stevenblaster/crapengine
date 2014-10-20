@@ -62,7 +62,7 @@ TEST(CrapArrayErase)
 TEST(CrapArrayEraseOverflow)
 {
     CHECK( arr_ptr->size() == 0 );
-    arr_ptr->erase( crap::array<float32_t>::invalid );
+    arr_ptr->erase_at( crap::array<float32_t>::invalid );
     CHECK( arr_ptr->size() == 0 );
 }
 

@@ -16,24 +16,24 @@ AudioDevice* openAudioDevice( void )
     return device;
 }
 
-void closeAudioDevice( CRAP_RESTRICT AudioDevice* device )
+void closeAudioDevice( AudioDevice* CRAP_RESTRICT device )
 {
     alcCloseDevice( device );
 }
 
-AudioContext* createAudioContext( CRAP_RESTRICT AudioDevice* device )
+AudioContext* createAudioContext( AudioDevice* CRAP_RESTRICT device )
 {
     AudioContext* context = alcCreateContext( device, 0 );
     CRAP_ASSERT( ASSERT_BREAK, context != 0,  "Could not create Audio Context (%i)", context );
     return context;
 }
 
-void setAudioContextCurrent( CRAP_RESTRICT AudioContext* context )
+void setAudioContextCurrent( AudioContext* CRAP_RESTRICT context )
 {
     alcMakeContextCurrent( context );
 }
 
-void destroyAudioContext( CRAP_RESTRICT AudioContext* context )
+void destroyAudioContext( AudioContext* CRAP_RESTRICT context )
 {
     alcDestroyContext( context );
 }

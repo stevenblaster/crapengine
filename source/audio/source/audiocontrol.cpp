@@ -7,20 +7,20 @@
 namespace crap
 {
 
-void setAudioSourceBuffer( CRAP_RESTRICT AudioBuffer* buffer, CRAP_RESTRICT AudioSource* source )
+void setAudioSourceBuffer( AudioBuffer* CRAP_RESTRICT buffer, AudioSource* CRAP_RESTRICT source )
 {
     alSourcei( *source, AL_BUFFER, *buffer );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not assign Audio Buffer %i to Audio Source %i", *buffer, *source );
 }
 
-void setAudioSource3DInfo( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, CRAP_RESTRICT AudioSource* source )
+void setAudioSource3DInfo( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, AudioSource* CRAP_RESTRICT source )
 {
     alSourcefv( *source, AL_POSITION, position );
     alSourcefv( *source, AL_VELOCITY, velocity );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not setup 3D Info for Audio Source %i, error %i", *source, alGetError() );
 }
 
-void setAudioListener3DInfo( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, CRAP_RESTRICT float32_t* orientation, CRAP_RESTRICT AudioListener* listener )
+void setAudioListener3DInfo( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT orientation, AudioListener* CRAP_RESTRICT listener )
 {
     alListenerfv( AL_POSITION, position );
     alListenerfv( AL_VELOCITY, velocity );
@@ -28,7 +28,7 @@ void setAudioListener3DInfo( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT fl
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not setup 3D Infor for Audio Listener %i", listener );
 }
 
-void setAudioSourceInfo( CRAP_RESTRICT AudioSource* source, float32_t pitch, float32_t gain, bool loop )
+void setAudioSourceInfo( AudioSource* CRAP_RESTRICT source, float32_t pitch, float32_t gain, bool loop )
 {
     alSourcef( *source, AL_PITCH, pitch );
     alSourcef( *source, AL_GAIN, gain );
@@ -36,19 +36,19 @@ void setAudioSourceInfo( CRAP_RESTRICT AudioSource* source, float32_t pitch, flo
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not setup Info for Audio Source %i", *source );
 }
 
-void playAudioSource( CRAP_RESTRICT AudioSource* source )
+void playAudioSource( AudioSource* CRAP_RESTRICT source )
 {
     alSourcePlay( *source );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not play Audio Source %i", *source );
 }
 
-void pauseAudioSource( CRAP_RESTRICT AudioSource* source )
+void pauseAudioSource( AudioSource* CRAP_RESTRICT source )
 {
     alSourcePause( *source );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not pause Audio Source %i", *source );
 }
 
-void stopAudioSource( CRAP_RESTRICT AudioSource* source )
+void stopAudioSource( AudioSource* CRAP_RESTRICT source )
 {
     alSourceStop( *source );
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not stop Audio Source %i", *source );

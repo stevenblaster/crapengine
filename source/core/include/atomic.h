@@ -12,12 +12,12 @@
 namespace crap
 {
 
+
 template<typename T, uint32_t S = sizeof(T)>
-CRAP_ALIGNED_START(4)
-struct atomic_t
+struct atomic_t 
 {
-    T _value;
-    atomic_mutex _mutex;
+	T CRAP_DECLARE_ALIGNED( _value, 4);
+    atomic_mutex CRAP_DECLARE_ALIGNED( _mutex, 4);
 
     CRAP_FORCE_INLINE T atomic_load( void )
     {
@@ -64,14 +64,12 @@ struct atomic_t
 
         return _value | operand;
     }
-}
-CRAP_ALIGNED_END(4);
+};
 
 template<typename T>
-CRAP_ALIGNED_START(4)
 struct atomic_t<T,1>
 {
-    volatile T _value;
+    volatile T CRAP_DECLARE_ALIGNED( _value, 4);
 
     CRAP_FORCE_INLINE T atomic_load( void )
     {
@@ -128,14 +126,12 @@ struct atomic_t<T,1>
                      : "r"(operand));
         return original;
     }
-}
-CRAP_ALIGNED_END(4);
+};
 
 template<typename T>
-CRAP_ALIGNED_START(4)
 struct atomic_t<T,2>
 {
-    volatile T _value;
+    volatile T CRAP_DECLARE_ALIGNED( _value, 4);
 
     CRAP_FORCE_INLINE T atomic_load( void )
     {
@@ -192,14 +188,12 @@ struct atomic_t<T,2>
                      : "r"(operand));
         return original;
     }
-}
-CRAP_ALIGNED_END(4);
+};
 
 template<typename T>
-CRAP_ALIGNED_START(4)
 struct atomic_t<T,4>
 {
-    volatile T _value;
+    volatile T CRAP_DECLARE_ALIGNED( _value, 4);;
 
     CRAP_FORCE_INLINE T atomic_load( void ) const
     {
@@ -256,14 +250,12 @@ struct atomic_t<T,4>
                      : "r"(operand));
         return original;
     }
-}
-CRAP_ALIGNED_END(4);
+};
 
 template<typename T>
-CRAP_ALIGNED_START(8)
 struct atomic_t<T,8>
 {
-    volatile T _value;
+    volatile T CRAP_DECLARE_ALIGNED( _value, 8);
 
     CRAP_FORCE_INLINE T atomic_load( void )
     {
@@ -397,10 +389,7 @@ struct atomic_t<T,8>
 
     #endif
     }
-}
-CRAP_ALIGNED_END(8);
-
-
+};
 
 }
 

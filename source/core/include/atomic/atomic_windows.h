@@ -26,7 +26,7 @@ namespace crap
 //types
 typedef CRAP_ALIGNED_START(4) struct { volatile uint32_t _value; } CRAP_ALIGNED_END(4) atomic32_t;
 typedef CRAP_ALIGNED_START(8) struct { volatile uint64_t _value; } CRAP_ALIGNED_END(8) atomic64_t;
-typedef CRAP_ALIGNED_START(CRAP_PTR_SIZE) struct { void* volatile _value; } CRAP_ALIGNED_START(CRAP_PTR_SIZE) atomic_ptr_t;
+typedef CRAP_ALIGNED_START(CRAP_PTR_SIZE) struct { void* volatile _value; } CRAP_ALIGNED_END(CRAP_PTR_SIZE) atomic_ptr_t;
 
 //32
 CRAP_FORCE_INLINE uint32_t load_32_relaxed( const atomic32_t* object )

@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+#include "config/crap_platform.h"
 #include "file.h"
 
 //lib namespace
@@ -17,7 +18,7 @@ file_t* openFile( const char* filename, const char* flags )
     return fp;
 }
 
-void closeFile( CRAP_RESTRICT file_t* handle )
+void closeFile( file_t* CRAP_RESTRICT handle )
 {
     fclose( handle );
 }
@@ -26,6 +27,7 @@ uint32_t fileSize( const char* filename )
 {
 #if defined(CRAP_PLATFORM_WINDOWS)
 
+	struct _stat64 fileStat;
     int32_t err = _stat64( filename, &fileStat );
     if (0 != err) return 0;
     return (uint32_t) fileStat.st_size;
@@ -39,7 +41,7 @@ uint32_t fileSize( const char* filename )
 #endif
 }
 
-uint32_t fileSize( CRAP_RESTRICT file_t* handle )
+uint32_t fileSize( file_t* CRAP_RESTRICT handle )
 {
     rewind( handle );
     int32_t pos = 1;
@@ -54,27 +56,35 @@ uint32_t fileSize( CRAP_RESTRICT file_t* handle )
     return value;
 }
 
-void setFileHandlePosition( CRAP_RESTRICT file_t* handle, int32_t byte_position )
+void setFileHandlePosition( file_t* CRAP_RESTRICT handle, int32_t byte_position )
 {
     rewind( handle );
     fread(0, byte_position, 1, handle);
 }
 
-void readFromFile( CRAP_RESTRICT file_t* handle, CRAP_RESTRICT pointer_void buffer, uint32_t buffersize )
+void readFromFile( file_t* CRAP_RESTRICT handle, pointer_void buffer, uint32_t buffersize )
 {
     int32_t result = fread( buffer.as_void , buffersize, 1, handle );
+#ifndef CRAP_PLATFORM_WINDOWS
     CRAP_ASSERT( ASSERT_BREAK, result == 1,  "Reading bytes was not successful (result: %i)", result );
+#else
+	CRAP_ASSERT( ASSERT_BREAK, result == 0,  "Reading bytes was not successful (result: %i)", result );
+#endif
 }
 
-char* readLineFromFile( CRAP_RESTRICT file_t* handle, CRAP_RESTRICT pointer_void buffer, uint32_t buffersize )
+char* readLineFromFile( file_t* CRAP_RESTRICT handle, pointer_void buffer, uint32_t buffersize )
 {
     return fgets(buffer.as_char, buffersize, handle );
 }
 
-void writeToFile( CRAP_RESTRICT file_t* handle , CRAP_RESTRICT pointer_void buffer, uint32_t buffersize )
+void writeToFile( file_t* CRAP_RESTRICT handle , pointer_void buffer, uint32_t buffersize )
 {
     int32_t result  = fwrite( buffer.as_void, buffersize, 1, handle );
+#ifndef CRAP_PLATFORM_WINDOWS
     CRAP_ASSERT( ASSERT_BREAK, result == 1,  "Writing bytes was not successful (result: %i)", result );
+#else
+    CRAP_ASSERT( ASSERT_BREAK, result == 0,  "Writing bytes was not successful (result: %i)", result );
+#endif
 }
 
 } //namespace crap

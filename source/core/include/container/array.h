@@ -225,7 +225,8 @@ void array<T>::pop_back( void )
 template< typename T>
 void array<T>::erase_at( uint32_t index )
 {
-    CRAP_ASSERT( ASSERT_BREAK, _size > 0,  "Array is empty");
+    if( _size == 0 )
+		return;
 
     T* pointer = at(index);
     crap::destruct_object( pointer );
@@ -427,21 +428,22 @@ const T* sorted_array<T>::at( uint32_t index ) const
 template< typename T>
 uint32_t sorted_array<T>::insert( const T& object )
 {
-    if( _size >= _max_size )
+    if( _size+1 > _max_size )
         return invalid;
 
-    for( uint32_t i=0; i<_size; ++i )
-    {
-        if( object < _memory.as_type[i])
-        {
-            crap::insert_into_array( &object, i, _memory.as_type, _size );
-            ++_size;
-            return i;
-        }
-    }
 
-    crap::copy_construct_object( &object, _memory.as_type + _size );
-    return _size++;
+	crap::copy_construct_object(  &object, _memory.as_type + _size++);
+
+	uint32_t i=_size;
+	for( ; i>0; --i )
+	{
+		if( _memory.as_type + i -1  > _memory.as_type + i )
+			crap::swap_object( _memory.as_type + i -1  , _memory.as_type + i );
+		else
+			break;
+	}
+		
+	return i;
 }
 
 

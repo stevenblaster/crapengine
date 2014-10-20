@@ -30,13 +30,13 @@ public:
     ~AudioManager( void );
 
 
-    void setListenerData( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, CRAP_RESTRICT float32_t* direction);
+    void setListenerData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT direction);
 
 
     uint32_t leaseSource( const string_hash& name );
     void setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop);
     void playSource( uint32_t leased_source );
-    void setSourceData( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, uint32_t source_lease );
+    void setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease );
     void releaseSource(uint32_t leased_source );
 
     uint32_t addBuffer( const string_hash& name, const AudioFile& data );

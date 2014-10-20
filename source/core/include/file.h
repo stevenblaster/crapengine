@@ -31,19 +31,19 @@ typedef pointer_t<void> pointer_void;
 
 file_t* openFile( const char* filename, const char* flags );
 
-void closeFile( CRAP_RESTRICT file_t* handle );
+void closeFile( file_t* CRAP_RESTRICT handle );
 
 uint32_t fileSize( const char* filename );
 
-uint32_t fileSize( CRAP_RESTRICT file_t* handle );
+uint32_t fileSize( file_t* CRAP_RESTRICT handle );
 
 void setFileHandlePosition( int32_t byte_position );
 
-void readFromFile( CRAP_RESTRICT file_t* handle, CRAP_RESTRICT pointer_void buffer, uint32_t buffersize );
+void readFromFile( file_t* CRAP_RESTRICT handle, pointer_void buffer, uint32_t buffersize );
 
-char* readLineFromFile( CRAP_RESTRICT file_t* handle, CRAP_RESTRICT pointer_void buffer, uint32_t buffersize );
+char* readLineFromFile( file_t* CRAP_RESTRICThandle, pointer_void buffer, uint32_t buffersize );
 
-void writeToFile( CRAP_RESTRICT file_t* handle , CRAP_RESTRICT pointer_void buffer, uint32_t buffersize );
+void writeToFile( file_t* CRAP_RESTRICT handle , pointer_void buffer, uint32_t buffersize );
 
 
 } //namespace crap

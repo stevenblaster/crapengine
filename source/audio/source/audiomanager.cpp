@@ -90,12 +90,12 @@ void AudioManager::setSourceVolumes( uint32_t leased_source, float32_t pitch, fl
     setAudioSourceInfo( &(_sources[leased_source].key), pitch, gain, loop );
 }
 
-void AudioManager::setListenerData( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, CRAP_RESTRICT float32_t* direction)
+void AudioManager::setListenerData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT direction)
 {
     setAudioListener3DInfo( position, velocity, direction, 0 );
 }
 
-void AudioManager::setSourceData( CRAP_RESTRICT float32_t* position, CRAP_RESTRICT float32_t* velocity, uint32_t source_lease )
+void AudioManager::setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease )
 {
     setAudioSource3DInfo( position, velocity, &(_sources[source_lease].key) );
 }
