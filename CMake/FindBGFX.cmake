@@ -20,7 +20,7 @@ FIND_PATH(BGFX_INCLUDE_DIR bgfx.h
 )
 
 FIND_LIBRARY(BGFX_LIBRARY 
-  NAMES libbgfx libbgfxDebug libbgfxRelease bgfx
+  NAMES libbgfx libbgfxDebug libbgfxRelease bgfxRelease
   PATHS
   $ENV{OPENALDIR}
   NO_DEFAULT_PATH
@@ -28,7 +28,7 @@ FIND_LIBRARY(BGFX_LIBRARY
 )
 
 FIND_LIBRARY(BGFX_LIBRARY 
-  NAMES libbgfx libbgfxDebug libbgfxRelease bgfx
+  NAMES libbgfx libbgfxDebug libbgfxRelease bgfxRelease
   PATHS
   ~/Library/Frameworks
   /Library/Frameworks

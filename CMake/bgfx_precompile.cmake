@@ -7,7 +7,7 @@ SET(BGFX_LIBRARY libbgfxRelease.a)
 ELSE()
 SET(BGFX_TARGET windows-release32)
 SET(BGFX_TEMP_PATH win32_vs2012)
-SET(BGFX_LIBRARY bgfxDebug.lib)
+SET(BGFX_LIBRARY bgfxRelease.lib)
 ENDIF(NOT WIN32)
 
 #EXEC_PROGRAM(make ${CRAP_LIBRARIES_PATH}/bgfx

@@ -73,23 +73,51 @@ public:
     CRAP_INLINE
     ~array( void );
 
+	/**
+	 * @brief Returning the size of the array
+	 * @return The current number of elements
+	 */
     CRAP_INLINE
     uint32_t size( void ) const;
 
+	/**
+	 * @brief Returning the maximum size of the array
+	 * @return The maximum number of elements
+	 */
     CRAP_INLINE
     uint32_t max_size( void ) const;
 
+	/**
+	 * @brief Index operator returning a member reference
+	 * @param Index of a member variable
+	 * @return Reference to member
+	 */
     CRAP_INLINE
     T& operator[]( uint32_t index );
 
+	/**
+	 * @brief Index operator returning a constant member reference
+	 * @param Index of a member variable
+	 * @return Constant reference to member
+	 */
     CRAP_INLINE
     const T& operator[]( uint32_t index ) const;
 
+	/**
+	 * @brief Returns the pointer to a certain member.
+	 * @param Index of a member variable
+	 * @return Pointer to member or null if invalid
+	 */
     CRAP_INLINE
-    T* at( uint32_t index );
+    T* get( uint32_t index );
 
+	/**
+	 * @brief Returns the constant pointer to a certain member.
+	 * @param Index of a member variable
+	 * @return Constant pointer to member or null if invalid
+	 */
     CRAP_INLINE
-    const T* at( uint32_t index ) const;
+    const T* get( uint32_t index ) const;
 
     CRAP_INLINE
     uint32_t push_back( const T& object );
@@ -434,10 +462,10 @@ uint32_t sorted_array<T>::insert( const T& object )
 
 	crap::copy_construct_object(  &object, _memory.as_type + _size++);
 
-	uint32_t i=_size;
+	uint32_t i=_size-1;
 	for( ; i>0; --i )
 	{
-		if( _memory.as_type + i -1  > _memory.as_type + i )
+		if( _memory.as_type[i-1]  > _memory.as_type[i] )
 			crap::swap_object( _memory.as_type + i -1  , _memory.as_type + i );
 		else
 			break;

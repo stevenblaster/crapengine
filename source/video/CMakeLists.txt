@@ -15,6 +15,8 @@ SET(CRAP_VIDEO_VERSION
 #   ADD_DEFINITION(-DEXAMPLE=0)   #
 ###################################
 IF(WIN32)
+		ADD_DEFINITIONS(-DGLFW_STATIC)
+		ADD_DEFINITIONS(-D_ITERATOR_DEBUG_LEVEL=0)
         ADD_DEFINITIONS(-DGLEW_STATIC)
         ADD_DEFINITIONS(-Dstrcasecmp=_stricmp)
         ADD_DEFINITIONS(-Dstrncasecmp=_strnicmp)

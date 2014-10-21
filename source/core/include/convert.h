@@ -844,7 +844,7 @@ CRAP_INLINE int64_t convert<uint32_t, int64_t>( const uint32_t& variable )
 template<>
 CRAP_INLINE int64_t convert<uint64_t, int64_t>( const uint64_t& variable )
 {
-    return ( variable > limits<int64_t>::MAX ) ? limits<int64_t>::MAX : (int64_t) variable;
+    return ( variable > (uint64_t)limits<int64_t>::MAX ) ? limits<int64_t>::MAX : (int64_t) variable;
 }
 
 template<>

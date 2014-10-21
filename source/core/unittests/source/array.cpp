@@ -2,7 +2,7 @@
 #include "container/array.h"
 
 #include "UnitTest++.h"
-
+#include "memory.h"
 #include "logger.h"
 
 #define ARRAY_SPACE 3
@@ -10,8 +10,9 @@
 namespace
 {
 
-crap::array<float32_t>* arr_ptr;
+crap::BoundGeneralMemory* gbm_a;
 void* mem;
+crap::array<float32_t>* arr_ptr;
 uint32_t handles[ARRAY_SPACE];
 
 TEST( AnnounceTestArray )
@@ -21,7 +22,9 @@ TEST( AnnounceTestArray )
 
 TEST(CrapCreateArray)
 {
-    mem = malloc(sizeof(float32_t)*ARRAY_SPACE);
+	gbm_a = new crap::BoundGeneralMemory(1024);
+
+	mem = gbm_a->allocate(sizeof(float32_t)*ARRAY_SPACE, crap::align_of<float32_t>::value );
     arr_ptr = new crap::array<float32_t>( mem, sizeof(float32_t)*ARRAY_SPACE );
 
     CHECK_EQUAL( 0, arr_ptr->size() );
@@ -86,7 +89,8 @@ TEST(CrapDeinitArray)
 {
     //delete handles;
     delete arr_ptr;
-    free( mem );
+	gbm_a->deallocate(mem);
+	delete gbm_a;
 }
 
 }

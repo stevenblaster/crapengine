@@ -878,6 +878,7 @@ namespace bgfx
 			&&  TextureFormat::UnknownDepth != ii)
 			{
 				uint8_t flags = g_caps.formats[ii];
+				flags;
 				BX_TRACE("\t[%c] %s"
 					, flags&1 ? 'x' : flags&2 ? '*' : ' '
 					, getName(TextureFormat::Enum(ii) )
