@@ -35,6 +35,10 @@ TEST(FunitIsLotto)
 
     char filename[] = "../../../data/zahlen-text.csv";
     FILE* fp = fopen(filename, "r");
+    if( fp == 0 )
+    	fp = fopen("../../data/zahlen-text.csv", "r");
+    if( fp == 0 )
+    	fp = fopen("../data/zahlen-text.csv", "r");
     CRAP_ASSERT(ASSERT_BREAK, fp!=0,  "Cannot open file %s", filename);
 
     unsigned int all[3000][7];

@@ -15,8 +15,16 @@ namespace crap
 typedef AudioDevice_ AudioDevice;
 typedef AudioContext_ AudioContext;
 
+/**
+ * @brief Opens default audio device
+ * @return Pointer to the opened audio device
+ */
 AudioDevice* openAudioDevice( void );
 
+/**
+ * @brief Closes opened audio device
+ * @param AudioDevice Pointer to audio device for closing
+ */
 void closeAudioDevice( AudioDevice* CRAP_RESTRICT device );
 
 AudioContext* createAudioContext( AudioDevice* CRAP_RESTRICT device );

@@ -43,18 +43,19 @@ typedef struct s_directory_t
 directory_t;
 
 
-CRAP_INLINE void openDirectory( directory_t* dir, const char* path )
+CRAP_INLINE bool openDirectory( directory_t* dir, const char* path )
 {
 #ifdef CRAP_COMPILER_GCC
 
     dir->handle = opendir( path );
-    dir->info = readdir( dir->handle );
+    if( dir->handle != DIR_HANDLE_INIT )
+    	dir->info = readdir( dir->handle );
 #else
     dir->info.nFileSizeHigh = 0;
     dir->handle = FindFirstFile( path, &(dir->info) );
 #endif
 
-    CRAP_ASSERT(ASSERT_BREAK, dir->handle != DIR_HANDLE_INIT, "Can not open directory" );
+    return dir->handle != DIR_HANDLE_INIT;
 }
 
 CRAP_INLINE void closeDirectory( directory_t* dir )

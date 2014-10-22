@@ -15,7 +15,9 @@ TEST(CreateDirectoryT)
 
 TEST(OpenDirectory)
 {
-    crap::openDirectory( my_dir, "../../../data" );
+    if( !crap::openDirectory( my_dir, "../../../data" ) )
+    	if( !crap::openDirectory( my_dir, "../../data" ) )
+    		if( !crap::openDirectory( my_dir, "../data" ) );
 }
 
 TEST(PrintDirectory)

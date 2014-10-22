@@ -5,7 +5,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define ARRAY_SPACE 3
+#define ARRAY_SPACE 10
 
 namespace
 {
@@ -71,7 +71,7 @@ TEST(CrapArrayEraseOverflow)
 
 TEST(CrapArrayAt)
 {
-    float32_t* ptr = arr_ptr->at(1);
+    float32_t* ptr = arr_ptr->get(1);
     CHECK( ptr == 0 );
 }
 
