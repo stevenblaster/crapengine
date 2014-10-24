@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['face',['face',['../struct_f_t_holder.html#a3adc4bf7ffdc896e716035c3af273f35',1,'FTHolder']]],
+  ['faceregion',['faceRegion',['../struct_atlas_1_1_packed_layer.html#ae0ba8fd261325ddfc2c99cd5afe1a26d',1,'Atlas::PackedLayer']]],
+  ['feather',['feather',['../struct_n_v_gpaint.html#abab7d2a8c04a8964f8e3bf25d2c523af',1,'NVGpaint']]],
+  ['file_5fname',['file_name',['../structcrap_1_1_resource_manager_1_1_resource_info.html#a7941ed473ffdb4d9be7b024c4213651c',1,'crap::ResourceManager::ResourceInfo']]],
+  ['filesize',['filesize',['../structcrap_1_1_wave_file_1_1_wave_header.html#a66ee60f117774b2a2c89b3b5b5d7881f',1,'crap::WaveFile::WaveHeader']]],
+  ['fill',['fill',['../struct_n_v_gstate.html#a1360acd78a82e03ea2184b295630572c',1,'NVGstate::fill()'],['../struct_n_v_gpath.html#ae218c0d5d0f90aee93558e51c3279afe',1,'NVGpath::fill()']]],
+  ['filltricount',['fillTriCount',['../struct_n_v_gcontext.html#a11846e12820c5acac46edb9f0b12d289',1,'NVGcontext']]],
+  ['first',['first',['../struct_n_v_gpath.html#a6f0776a67e3e60ab285a4e2686f5b45c',1,'NVGpath']]],
+  ['flags',['flags',['../struct_f_o_n_sparams.html#a1fedd9cf05c88dc089a76e4a94f4dec0',1,'FONSparams::flags()'],['../struct_n_v_gpoint.html#a0df9b61eba4d68d5ec44ccbfe78b7bf0',1,'NVGpoint::flags()']]],
+  ['fm',['fm',['../namespacecrap.html#a71c658e1e72d3374202195926265b0d9',1,'crap']]],
+  ['fmt',['fmt',['../structcrap_1_1_wave_file_1_1_wave_header.html#a41722bd15601783d2587b233acb2e33b',1,'crap::WaveFile::WaveHeader']]],
+  ['font',['font',['../struct_f_o_n_stext_iter.html#adca38e1f79a9b30af70f68f660b048a4',1,'FONStextIter']]],
+  ['fontblur',['fontBlur',['../struct_n_v_gstate.html#ad282c241982571cd28296bdc42a3e167',1,'NVGstate']]],
+  ['fontid',['fontId',['../struct_n_v_gstate.html#a714541c6c402eb466a54610696218215',1,'NVGstate']]],
+  ['fontimage',['fontImage',['../struct_n_v_gcontext.html#a06c1243e6199595ca2d826ccac3e3431',1,'NVGcontext']]],
+  ['fontinfo',['fontInfo',['../struct_font_manager_1_1_cached_font.html#a7dfa017c5bb591939d494ff186dbd35a',1,'FontManager::CachedFont']]],
+  ['fontsize',['fontSize',['../struct_n_v_gstate.html#a58d3ac1b707cbe651244a7bc00a84dc2',1,'NVGstate']]],
+  ['fonttype',['fontType',['../struct_font_info.html#a81891cdae4776065b7c4e3ff2160825e',1,'FontInfo']]],
+  ['frequency',['frequency',['../structcrap_1_1_audio_header.html#a4e84b055b61332538db96e156cc13fe6',1,'crap::AudioHeader::frequency()'],['../structcrap_1_1_audio_file.html#ae5c7beff491714d262eea53b7760f1a2',1,'crap::AudioFile::frequency()'],['../structcrap_1_1_wave_file_1_1_wave_header.html#ad069c28d60b7f89e6d2be429ad4b0347',1,'crap::WaveFile::WaveHeader::frequency()']]],
+  ['fringewidth',['fringeWidth',['../struct_n_v_gcontext.html#a3302fa98005c6cb433b79afc87ae6cab',1,'NVGcontext']]],
+  ['fs',['fs',['../struct_n_v_gcontext.html#ac871fe2ad80359e19231aafeebff0289',1,'NVGcontext']]]
+];

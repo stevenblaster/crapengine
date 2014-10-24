@@ -1,0 +1,71 @@
+\hypertarget{font__manager_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/font\+\_\+manager.cpp File Reference}
+\label{font__manager_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/font\+\_\+manager.\+cpp@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/font\+\_\+manager.\+cpp}}
+}
+{\ttfamily \#include $<$freetype/freetype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../common.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$sdf/sdf.\+h$>$}\\*
+{\ttfamily \#include $<$wchar.\+h$>$}\\*
+{\ttfamily \#include $<$tinystl/allocator.\+h$>$}\\*
+{\ttfamily \#include $<$tinystl/unordered\+\_\+map.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}font\+\_\+manager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../cube\+\_\+atlas.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_t_holder}{F\+T\+Holder}
+\item 
+class \hyperlink{class_true_type_font}{True\+Type\+Font}
+\item 
+struct \hyperlink{struct_font_manager_1_1_cached_font}{Font\+Manager\+::\+Cached\+Font}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{font__manager_8cpp_a6dc17657b3881707fc498d46497bcf3a}{U\+S\+E\+\_\+\+E\+D\+T\+A\+A3}~0
+\item 
+\#define \hyperlink{font__manager_8cpp_af8b141a259f220b92c29694af5825610}{S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}
+\item 
+\#define \hyperlink{font__manager_8cpp_ab24c482cd860ba3b05b0dfcf334f819c}{M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}~(512 $\ast$ 512 $\ast$ 4)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef stl\+::unordered\+\_\+map\\*
+$<$ \hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point}, \hyperlink{struct_glyph_info}{Glyph\+Info} $>$ \hyperlink{font__manager_8cpp_ac2b9a333a4f57fe7bd8872b8609ae0d8}{Glyph\+Hash\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{font__manager_8cpp_ab24c482cd860ba3b05b0dfcf334f819c}{\index{font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}!M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}}
+\subsubsection[{M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+F\+O\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E~(512 $\ast$ 512 $\ast$ 4)}}\label{font__manager_8cpp_ab24c482cd860ba3b05b0dfcf334f819c}
+
+
+Definition at line 444 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{font__manager_8cpp_af8b141a259f220b92c29694af5825610}{\index{font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}!S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N@{S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}}
+\index{S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N@{S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}!font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}}
+\subsubsection[{S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+D\+F\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}}\label{font__manager_8cpp_af8b141a259f220b92c29694af5825610}
+
+
+Definition at line 18 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{font__manager_8cpp_a6dc17657b3881707fc498d46497bcf3a}{\index{font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}!U\+S\+E\+\_\+\+E\+D\+T\+A\+A3@{U\+S\+E\+\_\+\+E\+D\+T\+A\+A3}}
+\index{U\+S\+E\+\_\+\+E\+D\+T\+A\+A3@{U\+S\+E\+\_\+\+E\+D\+T\+A\+A3}!font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}}
+\subsubsection[{U\+S\+E\+\_\+\+E\+D\+T\+A\+A3}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+\+E\+D\+T\+A\+A3~0}}\label{font__manager_8cpp_a6dc17657b3881707fc498d46497bcf3a}
+
+
+Definition at line 6 of file font\+\_\+manager.\+cpp.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{font__manager_8cpp_ac2b9a333a4f57fe7bd8872b8609ae0d8}{\index{font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}!Glyph\+Hash\+Map@{Glyph\+Hash\+Map}}
+\index{Glyph\+Hash\+Map@{Glyph\+Hash\+Map}!font\+\_\+manager.\+cpp@{font\+\_\+manager.\+cpp}}
+\subsubsection[{Glyph\+Hash\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef stl\+::unordered\+\_\+map$<${\bf Code\+Point}, {\bf Glyph\+Info}$>$ {\bf Glyph\+Hash\+Map}}}\label{font__manager_8cpp_ac2b9a333a4f57fe7bd8872b8609ae0d8}
+
+
+Definition at line 425 of file font\+\_\+manager.\+cpp.
+

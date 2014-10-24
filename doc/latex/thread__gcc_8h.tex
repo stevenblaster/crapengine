@@ -1,0 +1,40 @@
+\hypertarget{thread__gcc_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/thread/thread\+\_\+gcc.h File Reference}
+\label{thread__gcc_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/thread/thread\+\_\+gcc.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/thread/thread\+\_\+gcc.\+h}}
+}
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{thread__gcc_8h_a6de0ba3a766c2690f78328e2dc9782e9}{C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef pthread\+\_\+t \hyperlink{namespacecrap_acd6ada6ce68b7a664e02cc09a05cdeb3}{crap\+::thread\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} int32\+\_\+t \hyperlink{namespacecrap_a72adb742e4ac563c60aa7478787a116f}{crap\+::thread\+\_\+create} (thread\+\_\+t $\ast$thread, void $\ast$($\ast$start\+\_\+routine)(void $\ast$), void $\ast$arg, uint32\+\_\+t stacksize, uint32\+\_\+t flags)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} int32\+\_\+t \hyperlink{namespacecrap_a35536de7a2ba9f607f3d53517a95aac0}{crap\+::thread\+\_\+join} (thread\+\_\+t thread, void $\ast$$\ast$retval)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} int32\+\_\+t \hyperlink{namespacecrap_a9783744db6635df7197a9376488e9839}{crap\+::thread\+\_\+kill} (thread\+\_\+t thread)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{thread__gcc_8h_a6de0ba3a766c2690f78328e2dc9782e9}{\index{thread\+\_\+gcc.\+h@{thread\+\_\+gcc.\+h}!C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H@{C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H@{C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H}!thread\+\_\+gcc.\+h@{thread\+\_\+gcc.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+G\+C\+C\+\_\+\+H}}\label{thread__gcc_8h_a6de0ba3a766c2690f78328e2dc9782e9}
+
+
+Definition at line 4 of file thread\+\_\+gcc.\+h.
+

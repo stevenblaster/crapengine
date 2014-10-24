@@ -1,0 +1,161 @@
+\hypertarget{classcrap_1_1_wave_file_filter}{\section{crap\+:\+:Wave\+File\+Filter Class Reference}
+\label{classcrap_1_1_wave_file_filter}\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+}
+
+
+{\ttfamily \#include $<$audioimport.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Wave\+File\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_wave_file_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_wave_file_filter_a6999ba636a9c86cb0b4a971810121379}{Wave\+File\+Filter} (\hyperlink{classcrap_1_1_audio_manager}{Audio\+Manager} $\ast$manager)
+\item 
+virtual \hyperlink{classcrap_1_1_wave_file_filter_aa0e470afd71f8d2437fb6fff0f5496df}{$\sim$\+Wave\+File\+Filter} (void)
+\item 
+virtual void \hyperlink{classcrap_1_1_wave_file_filter_a610555d9d31cceddb55efa0a1c5723f9}{use} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ data)
+\item 
+virtual void \hyperlink{classcrap_1_1_wave_file_filter_a4270065dc8e272901b3744eb64d03020}{import} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ input\+\_\+data, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ output\+\_\+data, uint32\+\_\+t size)
+\item 
+virtual uint32\+\_\+t \hyperlink{classcrap_1_1_wave_file_filter_a5c4b819107aa837000c9671c2da0070f}{calculate\+Memory} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ input\+\_\+data, uint32\+\_\+t size)
+\item 
+virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \hyperlink{classcrap_1_1_wave_file_filter_af7f68e71c04b0fe1ca25a5155fefe4ba}{export\+Name} (\hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} import\+\_\+name)
+\item 
+virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \hyperlink{classcrap_1_1_wave_file_filter_a35bb2b0ffeaf82af4b222f47b8d2317c}{export\+Type\+Name} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_audio_manager}{Audio\+Manager} $\ast$ \hyperlink{classcrap_1_1_wave_file_filter_a72398d7b8cbbbec7040adfb732c37119}{\+\_\+manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file audioimport.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_wave_file_filter_a6999ba636a9c86cb0b4a971810121379}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!Wave\+File\+Filter@{Wave\+File\+Filter}}
+\index{Wave\+File\+Filter@{Wave\+File\+Filter}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{Wave\+File\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} crap\+::\+Wave\+File\+Filter\+::\+Wave\+File\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf Audio\+Manager} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1_wave_file_filter_a6999ba636a9c86cb0b4a971810121379}
+
+
+Definition at line 16 of file audioimport.\+h.
+
+\hypertarget{classcrap_1_1_wave_file_filter_aa0e470afd71f8d2437fb6fff0f5496df}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!````~Wave\+File\+Filter@{$\sim$\+Wave\+File\+Filter}}
+\index{````~Wave\+File\+Filter@{$\sim$\+Wave\+File\+Filter}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{$\sim$\+Wave\+File\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}virtual crap\+::\+Wave\+File\+Filter\+::$\sim$\+Wave\+File\+Filter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classcrap_1_1_wave_file_filter_aa0e470afd71f8d2437fb6fff0f5496df}
+
+
+Definition at line 17 of file audioimport.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_wave_file_filter_a5c4b819107aa837000c9671c2da0070f}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!calculate\+Memory@{calculate\+Memory}}
+\index{calculate\+Memory@{calculate\+Memory}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{calculate\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Wave\+File\+Filter\+::calculate\+Memory (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{input\+\_\+data, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_wave_file_filter_a5c4b819107aa837000c9671c2da0070f}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_ac02efd4c496384cda5a906a9168925c6}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 30 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_wave_file_filter_af7f68e71c04b0fe1ca25a5155fefe4ba}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!export\+Name@{export\+Name}}
+\index{export\+Name@{export\+Name}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{export\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string64} crap\+::\+Wave\+File\+Filter\+::export\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf string64}}]{import\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_wave_file_filter_af7f68e71c04b0fe1ca25a5155fefe4ba}
+
+
+Definition at line 36 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_wave_file_filter_a35bb2b0ffeaf82af4b222f47b8d2317c}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!export\+Type\+Name@{export\+Type\+Name}}
+\index{export\+Type\+Name@{export\+Type\+Name}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{export\+Type\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string64} crap\+::\+Wave\+File\+Filter\+::export\+Type\+Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_wave_file_filter_a35bb2b0ffeaf82af4b222f47b8d2317c}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_a453f47cae8bc4024fb4de89a2924a1aa}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 44 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_wave_file_filter_a4270065dc8e272901b3744eb64d03020}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!import@{import}}
+\index{import@{import}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{import}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Wave\+File\+Filter\+::import (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{input\+\_\+data, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{output\+\_\+data, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_wave_file_filter_a4270065dc8e272901b3744eb64d03020}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_ad17609fc71bb6d2825b99812d1d6eef4}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 15 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_wave_file_filter_a610555d9d31cceddb55efa0a1c5723f9}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!use@{use}}
+\index{use@{use}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Wave\+File\+Filter\+::use (
+\begin{DoxyParamCaption}
+\item[{const {\bf string\+\_\+hash} \&}]{name, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_wave_file_filter_a610555d9d31cceddb55efa0a1c5723f9}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_a1f5cc743b14021977727db2564082c72}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 8 of file audioimport.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1_wave_file_filter_a72398d7b8cbbbec7040adfb732c37119}{\index{crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}!\+\_\+manager@{\+\_\+manager}}
+\index{\+\_\+manager@{\+\_\+manager}!crap\+::\+Wave\+File\+Filter@{crap\+::\+Wave\+File\+Filter}}
+\subsubsection[{\+\_\+manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Audio\+Manager}$\ast$ crap\+::\+Wave\+File\+Filter\+::\+\_\+manager\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1_wave_file_filter_a72398d7b8cbbbec7040adfb732c37119}
+
+
+Definition at line 26 of file audioimport.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{audioimport_8h}{audioimport.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{audioimport_8cpp}{audioimport.\+cpp}\end{DoxyCompactItemize}

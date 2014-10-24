@@ -1,0 +1,44 @@
+\hypertarget{allocator_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/memory/allocator.h File Reference}
+\label{allocator_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/memory/allocator.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/memory/allocator.\+h}}
+}
+{\ttfamily \#include \char`\"{}tools.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcrap_1_1allocator}{crap\+::allocator}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{allocator_8h_a620b1fb897a60ed4a7aeec2c86868ea3}{C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\pointer\+\_\+t$<$ T $>$ \hyperlink{namespacecrap_a4d0aabb9bf7605594f9d8b0ac0ebc6ef}{crap\+::allocate\+\_\+object} (\hyperlink{classcrap_1_1allocator}{crap\+::allocator} \&a)
+\item 
+{\footnotesize template$<$typename T $>$ }\\pointer\+\_\+t$<$ T $>$ \hyperlink{namespacecrap_a3162468b886909833833c14fa1d87d14}{crap\+::allocate\+\_\+array} (\hyperlink{classcrap_1_1allocator}{crap\+::allocator} \&a, uint32\+\_\+t array\+\_\+size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespacecrap_a0bea3180ab9551219d8f108957d5fadc}{crap\+::deallocate\+\_\+object} (\hyperlink{classcrap_1_1allocator}{crap\+::allocator} \&a, pointer\+\_\+t$<$ T $>$ ptr)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespacecrap_a616c1702eb9c5a09bf18ef1f30e26da9}{crap\+::deallocate\+\_\+array} (\hyperlink{classcrap_1_1allocator}{crap\+::allocator} \&a, pointer\+\_\+t$<$ T $>$ ptr)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{namespacecrap_ac232f5afa08108381a029cabd97b9a41}{crap\+::create\+\_\+object} (\hyperlink{classcrap_1_1allocator}{crap\+::allocator} \&a)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{namespacecrap_a90d83dbf3253a97a7228aa6fcb86c9e8}{crap\+::create\+\_\+array} (\hyperlink{classcrap_1_1allocator}{crap\+::allocator} \&a, uint32\+\_\+t size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{allocator_8h_a620b1fb897a60ed4a7aeec2c86868ea3}{\index{allocator.\+h@{allocator.\+h}!C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R@{C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R}}
+\index{C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R@{C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R}!allocator.\+h@{allocator.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+A\+L\+L\+O\+C\+A\+T\+O\+R}}\label{allocator_8h_a620b1fb897a60ed4a7aeec2c86868ea3}
+
+
+Definition at line 4 of file allocator.\+h.
+

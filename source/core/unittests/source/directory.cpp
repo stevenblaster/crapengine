@@ -17,7 +17,10 @@ TEST(OpenDirectory)
 {
     if( !crap::openDirectory( my_dir, "../../../data" ) )
     	if( !crap::openDirectory( my_dir, "../../data" ) )
-    		if( !crap::openDirectory( my_dir, "../data" ) );
+    		if( !crap::openDirectory( my_dir, "../data" ) )
+    		{
+    			CRAP_ASSERT( ASSERT_BREAK, false, "Woot?!");
+    		}
 }
 
 TEST(PrintDirectory)

@@ -1,0 +1,416 @@
+\hypertarget{fontstash_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/fontstash.h File Reference}
+\label{fontstash_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/fontstash.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/fontstash.\+h}}
+}
+{\ttfamily \#include $<$malloc.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stb\+\_\+truetype/stb\+\_\+truetype.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_o_n_sparams}{F\+O\+N\+Sparams}
+\item 
+struct \hyperlink{struct_f_o_n_squad}{F\+O\+N\+Squad}
+\item 
+struct \hyperlink{struct_f_o_n_stext_iter}{F\+O\+N\+Stext\+Iter}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fontstash_8h_abd6b52c37100584633e7cd168ad037fd}{F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D}~-\/1
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17}{F\+O\+N\+Sflags} \{ \hyperlink{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17a38e9e0882190de3834f57193681d1f29}{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+T\+O\+P\+L\+E\+F\+T} = 1, 
+\hyperlink{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17a1b75062aac0f094cd947fca0b10cfd1b}{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+B\+O\+T\+T\+O\+M\+L\+E\+F\+T} = 2
+ \}
+\item 
+enum \hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8}{F\+O\+N\+Salign} \{ \\*
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a2e37b7f605621635de48df34c192f3ed}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T} = 1$<$$<$0, 
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a7475c5dc8c1abb914788a4bd0f62d912}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R} = 1$<$$<$1, 
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a6b384e4d7fd25cdc849e3621ceb0d7be}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T} = 1$<$$<$2, 
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a59573446932f97d27b3e463c72148f3f}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P} = 1$<$$<$3, 
+\\*
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a1c83907b0cb4472ade03e7345b7fbffd}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E} = 1$<$$<$4, 
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8af3807c52e04aa1bceb2013411ae5df3d}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M} = 1$<$$<$5, 
+\hyperlink{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8ac08c91f4db287d83640a6d827d41b58f}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E} = 1$<$$<$6
+ \}
+\item 
+enum \hyperlink{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40a}{F\+O\+N\+Serror\+Code} \{ \hyperlink{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa97bf3d2c7d6a75fbee0ec6f3907d8282}{F\+O\+N\+S\+\_\+\+A\+T\+L\+A\+S\+\_\+\+F\+U\+L\+L} = 1, 
+\hyperlink{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa4acbb9db777eba9d3d235328f819ee6d}{F\+O\+N\+S\+\_\+\+S\+C\+R\+A\+T\+C\+H\+\_\+\+F\+U\+L\+L} = 2, 
+\hyperlink{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa3b8c274f1d05d9679fca17029c431221}{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W} = 3, 
+\hyperlink{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa6202e8ec8f5d94e382410e9b7631db4a}{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct F\+O\+N\+Scontext $\ast$ \hyperlink{fontstash_8h_ad932d78b3000b703c39959a5455b771a}{fons\+Create\+Internal} (struct \hyperlink{struct_f_o_n_sparams}{F\+O\+N\+Sparams} $\ast$params)
+\item 
+void \hyperlink{fontstash_8h_aab5b108f64e2289d1a13df0feeb7446b}{fons\+Delete\+Internal} (struct F\+O\+N\+Scontext $\ast$s)
+\item 
+void \hyperlink{fontstash_8h_ae91cd84786bfcc04373ae7c5384b8f08}{fons\+Set\+Error\+Callback} (struct F\+O\+N\+Scontext $\ast$s, void($\ast$callback)(void $\ast$uptr, int error, int val), void $\ast$uptr)
+\item 
+void \hyperlink{fontstash_8h_aee12f5a6eeaa3d94c19c83b6786701df}{fons\+Get\+Atlas\+Size} (struct F\+O\+N\+Scontext $\ast$s, int $\ast$width, int $\ast$height)
+\item 
+int \hyperlink{fontstash_8h_a949be5815076f9c9683bd1810a30288e}{fons\+Expand\+Atlas} (struct F\+O\+N\+Scontext $\ast$s, int width, int height)
+\item 
+int \hyperlink{fontstash_8h_a0261198c8ac52f2d0ae03728db4f84bf}{fons\+Reset\+Atlas} (struct F\+O\+N\+Scontext $\ast$stash, int width, int height)
+\item 
+int \hyperlink{fontstash_8h_a313086472795ddf1587c2bfdd620c8f4}{fons\+Add\+Font} (struct F\+O\+N\+Scontext $\ast$s, const char $\ast$name, const char $\ast$path)
+\item 
+int \hyperlink{fontstash_8h_a17d9c3d2f81597568aea6afe027ae61a}{fons\+Add\+Font\+Mem} (struct F\+O\+N\+Scontext $\ast$s, const char $\ast$name, unsigned char $\ast$data, int ndata, int free\+Data)
+\item 
+int \hyperlink{fontstash_8h_ae4f379ebf3041836cbde5d8abc96c8c3}{fons\+Get\+Font\+By\+Name} (struct F\+O\+N\+Scontext $\ast$s, const char $\ast$name)
+\item 
+void \hyperlink{fontstash_8h_a0effdb64e7d93f3c51af94c339610da3}{fons\+Push\+State} (struct F\+O\+N\+Scontext $\ast$s)
+\item 
+void \hyperlink{fontstash_8h_a92d6040f6f47a42a28bce468f02ff215}{fons\+Pop\+State} (struct F\+O\+N\+Scontext $\ast$s)
+\item 
+void \hyperlink{fontstash_8h_a866415d04d4e8e524a6c0ab9e07b6cbb}{fons\+Clear\+State} (struct F\+O\+N\+Scontext $\ast$s)
+\item 
+void \hyperlink{fontstash_8h_a00717129db2a404640f1b48f619d3e5e}{fons\+Set\+Size} (struct F\+O\+N\+Scontext $\ast$s, float size)
+\item 
+void \hyperlink{fontstash_8h_ac335299fcf7519125881a82b9953e46e}{fons\+Set\+Color} (struct F\+O\+N\+Scontext $\ast$s, unsigned int color)
+\item 
+void \hyperlink{fontstash_8h_a8cab3499875e08cb55b60a89f16f89e4}{fons\+Set\+Spacing} (struct F\+O\+N\+Scontext $\ast$s, float spacing)
+\item 
+void \hyperlink{fontstash_8h_af024e633ad57a584c6a71342f273ec3b}{fons\+Set\+Blur} (struct F\+O\+N\+Scontext $\ast$s, float blur)
+\item 
+void \hyperlink{fontstash_8h_a3468d8de560781086bd694ff8c262969}{fons\+Set\+Align} (struct F\+O\+N\+Scontext $\ast$s, int align)
+\item 
+void \hyperlink{fontstash_8h_af8fff8fc99adfaf7ae5080848c36954f}{fons\+Set\+Font} (struct F\+O\+N\+Scontext $\ast$s, int font)
+\item 
+float \hyperlink{fontstash_8h_a847952ca4a25dcf0c75f6a540d194355}{fons\+Draw\+Text} (struct F\+O\+N\+Scontext $\ast$s, float x, float y, const char $\ast$string, const char $\ast$end)
+\item 
+float \hyperlink{fontstash_8h_af1f98051ea2f6b564a15ea975673033b}{fons\+Text\+Bounds} (struct F\+O\+N\+Scontext $\ast$s, float x, float y, const char $\ast$string, const char $\ast$end, float $\ast$bounds)
+\item 
+void \hyperlink{fontstash_8h_a17d53858150324213bbede6d2b71a43e}{fons\+Line\+Bounds} (struct F\+O\+N\+Scontext $\ast$s, float y, float $\ast$miny, float $\ast$maxy)
+\item 
+void \hyperlink{fontstash_8h_afc7714773935a480f499e45e41365453}{fons\+Vert\+Metrics} (struct F\+O\+N\+Scontext $\ast$s, float $\ast$ascender, float $\ast$descender, float $\ast$lineh)
+\item 
+int \hyperlink{fontstash_8h_abb0310c79e2b9627c514e5fe56f99850}{fons\+Text\+Iter\+Init} (struct F\+O\+N\+Scontext $\ast$stash, struct \hyperlink{struct_f_o_n_stext_iter}{F\+O\+N\+Stext\+Iter} $\ast$iter, float x, float y, const char $\ast$str, const char $\ast$end)
+\item 
+int \hyperlink{fontstash_8h_ab448b1a37e6a8ee67b61c62e668f8ba5}{fons\+Text\+Iter\+Next} (struct F\+O\+N\+Scontext $\ast$stash, struct \hyperlink{struct_f_o_n_stext_iter}{F\+O\+N\+Stext\+Iter} $\ast$iter, struct \hyperlink{struct_f_o_n_squad}{F\+O\+N\+Squad} $\ast$quad)
+\item 
+const unsigned char $\ast$ \hyperlink{fontstash_8h_aefa6b1cd45bcfb6950045d162b411d35}{fons\+Get\+Texture\+Data} (struct F\+O\+N\+Scontext $\ast$stash, int $\ast$width, int $\ast$height)
+\item 
+int \hyperlink{fontstash_8h_afd7b11bf7e2cc5806abc0034db5f2bc2}{fons\+Validate\+Texture} (struct F\+O\+N\+Scontext $\ast$s, int $\ast$dirty)
+\item 
+void \hyperlink{fontstash_8h_ae935010accfee72675f86eaa2633880d}{fons\+Draw\+Debug} (struct F\+O\+N\+Scontext $\ast$s, float x, float y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{fontstash_8h_abd6b52c37100584633e7cd168ad037fd}{\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D@{F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D}}
+\index{F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D@{F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+N\+S\+\_\+\+I\+N\+V\+A\+L\+I\+D~-\/1}}\label{fontstash_8h_abd6b52c37100584633e7cd168ad037fd}
+
+
+Definition at line 22 of file fontstash.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8}{\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+Salign@{F\+O\+N\+Salign}}
+\index{F\+O\+N\+Salign@{F\+O\+N\+Salign}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{F\+O\+N\+Salign}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf F\+O\+N\+Salign}}}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a2e37b7f605621635de48df34c192f3ed}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a2e37b7f605621635de48df34c192f3ed}
+}]\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a7475c5dc8c1abb914788a4bd0f62d912}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a7475c5dc8c1abb914788a4bd0f62d912}
+}]\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a6b384e4d7fd25cdc849e3621ceb0d7be}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a6b384e4d7fd25cdc849e3621ceb0d7be}
+}]\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a59573446932f97d27b3e463c72148f3f}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a59573446932f97d27b3e463c72148f3f}
+}]\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a1c83907b0cb4472ade03e7345b7fbffd}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8a1c83907b0cb4472ade03e7345b7fbffd}
+}]\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8af3807c52e04aa1bceb2013411ae5df3d}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8af3807c52e04aa1bceb2013411ae5df3d}
+}]\index{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E@{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8ac08c91f4db287d83640a6d827d41b58f}{F\+O\+N\+S\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E}\label{fontstash_8h_a8051f172064ca511594fad4c6b87d2e8ac08c91f4db287d83640a6d827d41b58f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 29 of file fontstash.\+h.
+
+\hypertarget{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40a}{\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+Serror\+Code@{F\+O\+N\+Serror\+Code}}
+\index{F\+O\+N\+Serror\+Code@{F\+O\+N\+Serror\+Code}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{F\+O\+N\+Serror\+Code}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf F\+O\+N\+Serror\+Code}}}\label{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+N\+S\+\_\+\+A\+T\+L\+A\+S\+\_\+\+F\+U\+L\+L@{F\+O\+N\+S\+\_\+\+A\+T\+L\+A\+S\+\_\+\+F\+U\+L\+L}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+A\+T\+L\+A\+S\+\_\+\+F\+U\+L\+L@{F\+O\+N\+S\+\_\+\+A\+T\+L\+A\+S\+\_\+\+F\+U\+L\+L}}\item[{\em 
+\hypertarget{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa97bf3d2c7d6a75fbee0ec6f3907d8282}{F\+O\+N\+S\+\_\+\+A\+T\+L\+A\+S\+\_\+\+F\+U\+L\+L}\label{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa97bf3d2c7d6a75fbee0ec6f3907d8282}
+}]\index{F\+O\+N\+S\+\_\+\+S\+C\+R\+A\+T\+C\+H\+\_\+\+F\+U\+L\+L@{F\+O\+N\+S\+\_\+\+S\+C\+R\+A\+T\+C\+H\+\_\+\+F\+U\+L\+L}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+S\+C\+R\+A\+T\+C\+H\+\_\+\+F\+U\+L\+L@{F\+O\+N\+S\+\_\+\+S\+C\+R\+A\+T\+C\+H\+\_\+\+F\+U\+L\+L}}\item[{\em 
+\hypertarget{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa4acbb9db777eba9d3d235328f819ee6d}{F\+O\+N\+S\+\_\+\+S\+C\+R\+A\+T\+C\+H\+\_\+\+F\+U\+L\+L}\label{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa4acbb9db777eba9d3d235328f819ee6d}
+}]\index{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}\item[{\em 
+\hypertarget{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa3b8c274f1d05d9679fca17029c431221}{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}\label{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa3b8c274f1d05d9679fca17029c431221}
+}]\index{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W@{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W@{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W}}\item[{\em 
+\hypertarget{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa6202e8ec8f5d94e382410e9b7631db4a}{F\+O\+N\+S\+\_\+\+S\+T\+A\+T\+E\+S\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W}\label{fontstash_8h_a00fbab9e35fee54d35eb637328a2b40aa6202e8ec8f5d94e382410e9b7631db4a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 41 of file fontstash.\+h.
+
+\hypertarget{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17}{\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+Sflags@{F\+O\+N\+Sflags}}
+\index{F\+O\+N\+Sflags@{F\+O\+N\+Sflags}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{F\+O\+N\+Sflags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf F\+O\+N\+Sflags}}}\label{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+T\+O\+P\+L\+E\+F\+T@{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+T\+O\+P\+L\+E\+F\+T}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+T\+O\+P\+L\+E\+F\+T@{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+T\+O\+P\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17a38e9e0882190de3834f57193681d1f29}{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+T\+O\+P\+L\+E\+F\+T}\label{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17a38e9e0882190de3834f57193681d1f29}
+}]\index{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+B\+O\+T\+T\+O\+M\+L\+E\+F\+T@{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+B\+O\+T\+T\+O\+M\+L\+E\+F\+T}!fontstash.\+h@{fontstash.\+h}}\index{fontstash.\+h@{fontstash.\+h}!F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+B\+O\+T\+T\+O\+M\+L\+E\+F\+T@{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+B\+O\+T\+T\+O\+M\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17a1b75062aac0f094cd947fca0b10cfd1b}{F\+O\+N\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+B\+O\+T\+T\+O\+M\+L\+E\+F\+T}\label{fontstash_8h_a1aaefaf41e2c2a299485878bcb264b17a1b75062aac0f094cd947fca0b10cfd1b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 24 of file fontstash.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{fontstash_8h_a313086472795ddf1587c2bfdd620c8f4}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Add\+Font@{fons\+Add\+Font}}
+\index{fons\+Add\+Font@{fons\+Add\+Font}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Add\+Font}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Add\+Font (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a313086472795ddf1587c2bfdd620c8f4}
+\hypertarget{fontstash_8h_a17d9c3d2f81597568aea6afe027ae61a}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Add\+Font\+Mem@{fons\+Add\+Font\+Mem}}
+\index{fons\+Add\+Font\+Mem@{fons\+Add\+Font\+Mem}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Add\+Font\+Mem}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Add\+Font\+Mem (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{const char $\ast$}]{name, }
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{ndata, }
+\item[{int}]{free\+Data}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a17d9c3d2f81597568aea6afe027ae61a}
+\hypertarget{fontstash_8h_a866415d04d4e8e524a6c0ab9e07b6cbb}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Clear\+State@{fons\+Clear\+State}}
+\index{fons\+Clear\+State@{fons\+Clear\+State}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Clear\+State}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Clear\+State (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a866415d04d4e8e524a6c0ab9e07b6cbb}
+\hypertarget{fontstash_8h_ad932d78b3000b703c39959a5455b771a}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Create\+Internal@{fons\+Create\+Internal}}
+\index{fons\+Create\+Internal@{fons\+Create\+Internal}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Create\+Internal}]{\setlength{\rightskip}{0pt plus 5cm}struct F\+O\+N\+Scontext$\ast$ fons\+Create\+Internal (
+\begin{DoxyParamCaption}
+\item[{struct {\bf F\+O\+N\+Sparams} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_ad932d78b3000b703c39959a5455b771a}
+\hypertarget{fontstash_8h_aab5b108f64e2289d1a13df0feeb7446b}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Delete\+Internal@{fons\+Delete\+Internal}}
+\index{fons\+Delete\+Internal@{fons\+Delete\+Internal}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Delete\+Internal}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Delete\+Internal (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_aab5b108f64e2289d1a13df0feeb7446b}
+\hypertarget{fontstash_8h_ae935010accfee72675f86eaa2633880d}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Draw\+Debug@{fons\+Draw\+Debug}}
+\index{fons\+Draw\+Debug@{fons\+Draw\+Debug}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Draw\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Draw\+Debug (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_ae935010accfee72675f86eaa2633880d}
+\hypertarget{fontstash_8h_a847952ca4a25dcf0c75f6a540d194355}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Draw\+Text@{fons\+Draw\+Text}}
+\index{fons\+Draw\+Text@{fons\+Draw\+Text}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Draw\+Text}]{\setlength{\rightskip}{0pt plus 5cm}float fons\+Draw\+Text (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a847952ca4a25dcf0c75f6a540d194355}
+\hypertarget{fontstash_8h_a949be5815076f9c9683bd1810a30288e}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Expand\+Atlas@{fons\+Expand\+Atlas}}
+\index{fons\+Expand\+Atlas@{fons\+Expand\+Atlas}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Expand\+Atlas}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Expand\+Atlas (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a949be5815076f9c9683bd1810a30288e}
+\hypertarget{fontstash_8h_aee12f5a6eeaa3d94c19c83b6786701df}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Get\+Atlas\+Size@{fons\+Get\+Atlas\+Size}}
+\index{fons\+Get\+Atlas\+Size@{fons\+Get\+Atlas\+Size}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Get\+Atlas\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Get\+Atlas\+Size (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_aee12f5a6eeaa3d94c19c83b6786701df}
+\hypertarget{fontstash_8h_ae4f379ebf3041836cbde5d8abc96c8c3}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Get\+Font\+By\+Name@{fons\+Get\+Font\+By\+Name}}
+\index{fons\+Get\+Font\+By\+Name@{fons\+Get\+Font\+By\+Name}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Get\+Font\+By\+Name}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Get\+Font\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_ae4f379ebf3041836cbde5d8abc96c8c3}
+\hypertarget{fontstash_8h_aefa6b1cd45bcfb6950045d162b411d35}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Get\+Texture\+Data@{fons\+Get\+Texture\+Data}}
+\index{fons\+Get\+Texture\+Data@{fons\+Get\+Texture\+Data}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Get\+Texture\+Data}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char$\ast$ fons\+Get\+Texture\+Data (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{stash, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_aefa6b1cd45bcfb6950045d162b411d35}
+\hypertarget{fontstash_8h_a17d53858150324213bbede6d2b71a43e}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Line\+Bounds@{fons\+Line\+Bounds}}
+\index{fons\+Line\+Bounds@{fons\+Line\+Bounds}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Line\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Line\+Bounds (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{y, }
+\item[{float $\ast$}]{miny, }
+\item[{float $\ast$}]{maxy}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a17d53858150324213bbede6d2b71a43e}
+\hypertarget{fontstash_8h_a92d6040f6f47a42a28bce468f02ff215}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Pop\+State@{fons\+Pop\+State}}
+\index{fons\+Pop\+State@{fons\+Pop\+State}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Pop\+State}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Pop\+State (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a92d6040f6f47a42a28bce468f02ff215}
+\hypertarget{fontstash_8h_a0effdb64e7d93f3c51af94c339610da3}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Push\+State@{fons\+Push\+State}}
+\index{fons\+Push\+State@{fons\+Push\+State}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Push\+State}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Push\+State (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a0effdb64e7d93f3c51af94c339610da3}
+\hypertarget{fontstash_8h_a0261198c8ac52f2d0ae03728db4f84bf}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Reset\+Atlas@{fons\+Reset\+Atlas}}
+\index{fons\+Reset\+Atlas@{fons\+Reset\+Atlas}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Reset\+Atlas}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Reset\+Atlas (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{stash, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a0261198c8ac52f2d0ae03728db4f84bf}
+\hypertarget{fontstash_8h_a3468d8de560781086bd694ff8c262969}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Align@{fons\+Set\+Align}}
+\index{fons\+Set\+Align@{fons\+Set\+Align}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Align}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Align (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{int}]{align}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a3468d8de560781086bd694ff8c262969}
+\hypertarget{fontstash_8h_af024e633ad57a584c6a71342f273ec3b}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Blur@{fons\+Set\+Blur}}
+\index{fons\+Set\+Blur@{fons\+Set\+Blur}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Blur}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Blur (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{blur}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_af024e633ad57a584c6a71342f273ec3b}
+\hypertarget{fontstash_8h_ac335299fcf7519125881a82b9953e46e}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Color@{fons\+Set\+Color}}
+\index{fons\+Set\+Color@{fons\+Set\+Color}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Color (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{unsigned int}]{color}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_ac335299fcf7519125881a82b9953e46e}
+\hypertarget{fontstash_8h_ae91cd84786bfcc04373ae7c5384b8f08}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Error\+Callback@{fons\+Set\+Error\+Callback}}
+\index{fons\+Set\+Error\+Callback@{fons\+Set\+Error\+Callback}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Error\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Error\+Callback (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{void($\ast$)(void $\ast$uptr, int error, int val)}]{callback, }
+\item[{void $\ast$}]{uptr}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_ae91cd84786bfcc04373ae7c5384b8f08}
+\hypertarget{fontstash_8h_af8fff8fc99adfaf7ae5080848c36954f}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Font@{fons\+Set\+Font}}
+\index{fons\+Set\+Font@{fons\+Set\+Font}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Font (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{int}]{font}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_af8fff8fc99adfaf7ae5080848c36954f}
+\hypertarget{fontstash_8h_a00717129db2a404640f1b48f619d3e5e}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Size@{fons\+Set\+Size}}
+\index{fons\+Set\+Size@{fons\+Set\+Size}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Size (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{size}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a00717129db2a404640f1b48f619d3e5e}
+\hypertarget{fontstash_8h_a8cab3499875e08cb55b60a89f16f89e4}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Set\+Spacing@{fons\+Set\+Spacing}}
+\index{fons\+Set\+Spacing@{fons\+Set\+Spacing}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Set\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Set\+Spacing (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{spacing}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_a8cab3499875e08cb55b60a89f16f89e4}
+\hypertarget{fontstash_8h_af1f98051ea2f6b564a15ea975673033b}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Text\+Bounds@{fons\+Text\+Bounds}}
+\index{fons\+Text\+Bounds@{fons\+Text\+Bounds}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Text\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}float fons\+Text\+Bounds (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end, }
+\item[{float $\ast$}]{bounds}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_af1f98051ea2f6b564a15ea975673033b}
+\hypertarget{fontstash_8h_abb0310c79e2b9627c514e5fe56f99850}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Text\+Iter\+Init@{fons\+Text\+Iter\+Init}}
+\index{fons\+Text\+Iter\+Init@{fons\+Text\+Iter\+Init}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Text\+Iter\+Init}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Text\+Iter\+Init (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{stash, }
+\item[{struct {\bf F\+O\+N\+Stext\+Iter} $\ast$}]{iter, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{const char $\ast$}]{str, }
+\item[{const char $\ast$}]{end}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_abb0310c79e2b9627c514e5fe56f99850}
+\hypertarget{fontstash_8h_ab448b1a37e6a8ee67b61c62e668f8ba5}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Text\+Iter\+Next@{fons\+Text\+Iter\+Next}}
+\index{fons\+Text\+Iter\+Next@{fons\+Text\+Iter\+Next}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Text\+Iter\+Next}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Text\+Iter\+Next (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{stash, }
+\item[{struct {\bf F\+O\+N\+Stext\+Iter} $\ast$}]{iter, }
+\item[{struct {\bf F\+O\+N\+Squad} $\ast$}]{quad}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_ab448b1a37e6a8ee67b61c62e668f8ba5}
+\hypertarget{fontstash_8h_afd7b11bf7e2cc5806abc0034db5f2bc2}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Validate\+Texture@{fons\+Validate\+Texture}}
+\index{fons\+Validate\+Texture@{fons\+Validate\+Texture}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Validate\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}int fons\+Validate\+Texture (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{int $\ast$}]{dirty}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_afd7b11bf7e2cc5806abc0034db5f2bc2}
+\hypertarget{fontstash_8h_afc7714773935a480f499e45e41365453}{\index{fontstash.\+h@{fontstash.\+h}!fons\+Vert\+Metrics@{fons\+Vert\+Metrics}}
+\index{fons\+Vert\+Metrics@{fons\+Vert\+Metrics}!fontstash.\+h@{fontstash.\+h}}
+\subsubsection[{fons\+Vert\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}void fons\+Vert\+Metrics (
+\begin{DoxyParamCaption}
+\item[{struct F\+O\+N\+Scontext $\ast$}]{s, }
+\item[{float $\ast$}]{ascender, }
+\item[{float $\ast$}]{descender, }
+\item[{float $\ast$}]{lineh}
+\end{DoxyParamCaption}
+)}}\label{fontstash_8h_afc7714773935a480f499e45e41365453}

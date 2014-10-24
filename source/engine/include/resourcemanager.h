@@ -4,7 +4,7 @@
 #define CRAP_CORE_RESOURCEMANAGER
 
 #include "container/intrusivelist.h"
-#include "container/map.h"
+#include "container/sortedmap.h"
 #include "memory.h"
 
 #ifdef CRAP_NO_DEBUG

@@ -1,0 +1,283 @@
+\hypertarget{classcrap_1_1sorted__map}{\section{crap\+:\+:sorted\+\_\+map$<$ K, V $>$ Class Template Reference}
+\label{classcrap_1_1sorted__map}\index{crap\+::sorted\+\_\+map$<$ K, V $>$@{crap\+::sorted\+\_\+map$<$ K, V $>$}}
+}
+
+
+{\ttfamily \#include $<$sortedmap.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1sorted__map_1_1__type}{\+\_\+type}
+\item 
+struct \hyperlink{structcrap_1_1sorted__map_1_1iterator}{iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \\*
+\hyperlink{structcrap_1_1sorted__map_1_1__type}{crap\+::sorted\+\_\+map\+::\+\_\+type} \hyperlink{classcrap_1_1sorted__map_a53d3509992e52b87de809a99bf246551}{type}
+\item 
+typedef uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_a741a562ba6e22dc1a20e103e75619189}{handle}
+\item 
+typedef K \hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1sorted__map_ac25eb5a40521f93bfcd220809eba2c61}{sorted\+\_\+map} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ pointer, uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_a6412f21fcbf09533705a9a8335f71706}{size})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1sorted__map_a4c21228be7cfa260d255beb08e8aab52}{$\sim$sorted\+\_\+map} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_ab1f24127b6d5c6b2992440bd33a24fcd}{insert} (const K \&\hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key}, const V \&value)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_a5b023aff9ef7823601f02a1d94933f00}{push\+\_\+back} (const \hyperlink{classcrap_1_1sorted__map_a53d3509992e52b87de809a99bf246551}{type} \&pair)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1sorted__map_a019ec7fee361312dc2eeb8827ce86f9b}{remove} (const K \&\hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1sorted__map_a01fd5f7e24eb1d6f22695a4d546a1514}{remove} (uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_ad0950e6fa511d56a0dff658acab8ef90}{find} (const K \&\hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1sorted__map_a53d3509992e52b87de809a99bf246551}{type} \hyperlink{classcrap_1_1sorted__map_a7db159f0493e262bb333f81ef789339b}{operator\mbox{[}$\,$\mbox{]}} (const uint32\+\_\+t \&\hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{classcrap_1_1sorted__map_abc9e9ffc3d4a79062e7eb69f81d2038b}{contains} (const K \&\hyperlink{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{key}) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_a6412f21fcbf09533705a9a8335f71706}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_abdcc6d8cfc992386751a523b4d89b62b}{size\+\_\+max} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1sorted__map_a210f120fd31bd7acf356a4dd928376d4}{memory} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1sorted__map_1_1iterator}{iterator} \hyperlink{classcrap_1_1sorted__map_a03eab2e5dab280e3d41765030e46595e}{begin} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1sorted__map_1_1iterator}{iterator} \hyperlink{classcrap_1_1sorted__map_a214960ce94c3c6fe52c24eed8b93ec47}{end} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__map_aa62e9cb11df0a3f75efc8023a506e6a2}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classcrap_1_1sorted__map_a741a562ba6e22dc1a20e103e75619189}{handle} \hyperlink{classcrap_1_1sorted__map_a7b811fbc23f5e2d5072a090728fb8b4f}{invalid} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class crap\+::sorted\+\_\+map$<$ K, V $>$}
+
+
+
+Definition at line 24 of file sortedmap.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1sorted__map_a741a562ba6e22dc1a20e103e75619189}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!handle@{handle}}
+\index{handle@{handle}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::{\bf handle}}}\label{classcrap_1_1sorted__map_a741a562ba6e22dc1a20e103e75619189}
+
+
+Definition at line 36 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!key@{key}}
+\index{key@{key}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef K {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::{\bf key}}}\label{classcrap_1_1sorted__map_a7b1a41d7af597537a793fb19e307716d}
+
+
+Definition at line 37 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a53d3509992e52b87de809a99bf246551}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!type@{type}}
+\index{type@{type}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef struct {\bf crap\+::sorted\+\_\+map\+::\+\_\+type}
+     {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::{\bf type}}}\label{classcrap_1_1sorted__map_a53d3509992e52b87de809a99bf246551}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1sorted__map_ac25eb5a40521f93bfcd220809eba2c61}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!sorted\+\_\+map@{sorted\+\_\+map}}
+\index{sorted\+\_\+map@{sorted\+\_\+map}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{sorted\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::{\bf sorted\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1sorted__map_ac25eb5a40521f93bfcd220809eba2c61}
+
+
+Definition at line 135 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a4c21228be7cfa260d255beb08e8aab52}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!````~sorted\+\_\+map@{$\sim$sorted\+\_\+map}}
+\index{````~sorted\+\_\+map@{$\sim$sorted\+\_\+map}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{$\sim$sorted\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::$\sim${\bf sorted\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1sorted__map_a4c21228be7cfa260d255beb08e8aab52}
+
+
+Definition at line 152 of file sortedmap.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1sorted__map_a03eab2e5dab280e3d41765030e46595e}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!begin@{begin}}
+\index{begin@{begin}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf iterator} {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1sorted__map_a03eab2e5dab280e3d41765030e46595e}
+
+
+Definition at line 110 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_abc9e9ffc3d4a79062e7eb69f81d2038b}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!contains@{contains}}
+\index{contains@{contains}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ bool {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::contains (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__map_abc9e9ffc3d4a79062e7eb69f81d2038b}
+
+
+Definition at line 316 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a214960ce94c3c6fe52c24eed8b93ec47}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!end@{end}}
+\index{end@{end}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf iterator} {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1sorted__map_a214960ce94c3c6fe52c24eed8b93ec47}
+
+
+Definition at line 115 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_ad0950e6fa511d56a0dff658acab8ef90}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!find@{find}}
+\index{find@{find}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1sorted__map_ad0950e6fa511d56a0dff658acab8ef90}
+
+
+Definition at line 251 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_ab1f24127b6d5c6b2992440bd33a24fcd}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!insert@{insert}}
+\index{insert@{insert}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key, }
+\item[{const V \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1sorted__map_ab1f24127b6d5c6b2992440bd33a24fcd}
+
+
+Definition at line 159 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a210f120fd31bd7acf356a4dd928376d4}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!memory@{memory}}
+\index{memory@{memory}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1sorted__map_a210f120fd31bd7acf356a4dd928376d4}
+
+
+Definition at line 105 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a7db159f0493e262bb333f81ef789339b}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf sorted\+\_\+map}$<$ K, V $>$\+::{\bf type} {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const uint32\+\_\+t \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1sorted__map_a7db159f0493e262bb333f81ef789339b}
+
+
+Definition at line 302 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a5b023aff9ef7823601f02a1d94933f00}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const {\bf type} \&}]{pair}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1sorted__map_a5b023aff9ef7823601f02a1d94933f00}
+
+
+Definition at line 72 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a019ec7fee361312dc2eeb8827ce86f9b}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!remove@{remove}}
+\index{remove@{remove}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ void {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1sorted__map_a019ec7fee361312dc2eeb8827ce86f9b}
+
+
+Definition at line 193 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a01fd5f7e24eb1d6f22695a4d546a1514}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!remove@{remove}}
+\index{remove@{remove}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ void {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1sorted__map_a01fd5f7e24eb1d6f22695a4d546a1514}
+
+
+Definition at line 235 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_a6412f21fcbf09533705a9a8335f71706}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!size@{size}}
+\index{size@{size}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__map_a6412f21fcbf09533705a9a8335f71706}
+
+
+Definition at line 322 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_abdcc6d8cfc992386751a523b4d89b62b}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!size\+\_\+max@{size\+\_\+max}}
+\index{size\+\_\+max@{size\+\_\+max}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{size\+\_\+max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::size\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__map_abdcc6d8cfc992386751a523b4d89b62b}
+
+
+Definition at line 328 of file sortedmap.\+h.
+
+\hypertarget{classcrap_1_1sorted__map_aa62e9cb11df0a3f75efc8023a506e6a2}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ static {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classcrap_1_1sorted__map_aa62e9cb11df0a3f75efc8023a506e6a2}
+
+
+Definition at line 120 of file sortedmap.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1sorted__map_a7b811fbc23f5e2d5072a090728fb8b4f}{\index{crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}!invalid@{invalid}}
+\index{invalid@{invalid}!crap\+::sorted\+\_\+map@{crap\+::sorted\+\_\+map}}
+\subsubsection[{invalid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ const {\bf handle} {\bf crap\+::sorted\+\_\+map}$<$ K, V $>$\+::invalid = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1sorted__map_a7b811fbc23f5e2d5072a090728fb8b4f}
+
+
+Definition at line 38 of file sortedmap.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{sortedmap_8h}{sortedmap.\+h}\end{DoxyCompactItemize}

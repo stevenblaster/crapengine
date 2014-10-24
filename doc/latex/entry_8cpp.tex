@@ -1,0 +1,65 @@
+\hypertarget{entry_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/entry.cpp File Reference}
+\label{entry_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/entry.\+cpp@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/entry.\+cpp}}
+}
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+{\ttfamily \#include $<$bx/string.\+h$>$}\\*
+{\ttfamily \#include $<$bx/readerwriter.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}entry\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cmd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceentry}{entry}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{entry_8cpp_adcfccdbc53750ac326fe29061161795b}{\+\_\+main\+\_\+} (int \+\_\+argc, char $\ast$$\ast$\+\_\+argv)
+\item 
+bool \hyperlink{namespaceentry_a64e500cbc02e0652e1c492d4eae7d2a2}{entry\+::set\+Or\+Toggle} (uint32\+\_\+t \&\+\_\+flags, const char $\ast$\+\_\+name, uint32\+\_\+t \+\_\+bit, int \+\_\+first, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\item 
+void \hyperlink{namespaceentry_af22e216eea3d98ca19a81c42687eee31}{entry\+::cmd} (const void $\ast$\+\_\+user\+Data)
+\item 
+int \hyperlink{namespaceentry_a0ebf6dc9ef91f487ad56d260d0a3c5fb}{entry\+::cmd\+Mouse\+Lock} (\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$, void $\ast$, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\item 
+int \hyperlink{namespaceentry_a0daa467a5fde69bd7306a4bf7a621634}{entry\+::cmd\+Graphics} (\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$, void $\ast$, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\item 
+int \hyperlink{namespaceentry_a046e1eec8b8c1652b1a8eeec9f7b1d85}{entry\+::cmd\+Exit} (\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$, void $\ast$, int, char const $\ast$const $\ast$)
+\item 
+int \hyperlink{namespaceentry_af1d986714ae748fb0b3b96b3af66ec63}{entry\+::main} (int \+\_\+argc, char $\ast$$\ast$\+\_\+argv)
+\item 
+bool \hyperlink{namespaceentry_ac7854966247943ae0e4d104628c85de8}{entry\+::process\+Events} (uint32\+\_\+t \&\+\_\+width, uint32\+\_\+t \&\+\_\+height, uint32\+\_\+t \&\+\_\+debug, uint32\+\_\+t \&\+\_\+reset, Mouse\+State $\ast$\+\_\+mouse)
+\item 
+bx\+::\+File\+Reader\+I $\ast$ \hyperlink{namespaceentry_ad38197a50461fbbb1f920bd1da6a806b}{entry\+::get\+File\+Reader} ()
+\item 
+bx\+::\+File\+Writer\+I $\ast$ \hyperlink{namespaceentry_a564287d7ab5a05538de9884d7d21a332}{entry\+::get\+File\+Writer} ()
+\item 
+bool \hyperlink{entry_8cpp_a35e7b81eb9d0d9978d3125a6aa9aa9ef}{entry\+\_\+process\+\_\+events} (uint32\+\_\+t $\ast$\+\_\+width, uint32\+\_\+t $\ast$\+\_\+height, uint32\+\_\+t $\ast$\+\_\+debug, uint32\+\_\+t $\ast$\+\_\+reset)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{entry_8cpp_adcfccdbc53750ac326fe29061161795b}{\index{entry.\+cpp@{entry.\+cpp}!\+\_\+main\+\_\+@{\+\_\+main\+\_\+}}
+\index{\+\_\+main\+\_\+@{\+\_\+main\+\_\+}!entry.\+cpp@{entry.\+cpp}}
+\subsubsection[{\+\_\+main\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+main\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+argc, }
+\item[{char $\ast$$\ast$}]{\+\_\+argv}
+\end{DoxyParamCaption}
+)}}\label{entry_8cpp_adcfccdbc53750ac326fe29061161795b}
+\hypertarget{entry_8cpp_a35e7b81eb9d0d9978d3125a6aa9aa9ef}{\index{entry.\+cpp@{entry.\+cpp}!entry\+\_\+process\+\_\+events@{entry\+\_\+process\+\_\+events}}
+\index{entry\+\_\+process\+\_\+events@{entry\+\_\+process\+\_\+events}!entry.\+cpp@{entry.\+cpp}}
+\subsubsection[{entry\+\_\+process\+\_\+events}]{\setlength{\rightskip}{0pt plus 5cm}bool entry\+\_\+process\+\_\+events (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{\+\_\+width, }
+\item[{uint32\+\_\+t $\ast$}]{\+\_\+height, }
+\item[{uint32\+\_\+t $\ast$}]{\+\_\+debug, }
+\item[{uint32\+\_\+t $\ast$}]{\+\_\+reset}
+\end{DoxyParamCaption}
+)}}\label{entry_8cpp_a35e7b81eb9d0d9978d3125a6aa9aa9ef}
+
+
+Definition at line 248 of file entry.\+cpp.
+

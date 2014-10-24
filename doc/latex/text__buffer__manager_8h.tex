@@ -1,0 +1,84 @@
+\hypertarget{text__buffer__manager_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/text\+\_\+buffer\+\_\+manager.h File Reference}
+\label{text__buffer__manager_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/text\+\_\+buffer\+\_\+manager.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/text\+\_\+buffer\+\_\+manager.\+h}}
+}
+{\ttfamily \#include \char`\"{}font\+\_\+manager.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_buffer_type}{Buffer\+Type}
+\begin{DoxyCompactList}\small\item\em type of vertex and index buffer to use with a \hyperlink{class_text_buffer}{Text\+Buffer} \end{DoxyCompactList}\item 
+struct \hyperlink{struct_text_rectangle}{Text\+Rectangle}
+\item 
+class \hyperlink{class_text_buffer_manager}{Text\+Buffer\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{text__buffer__manager_8h_ac2150058644744fb6ac9935fcd91ee3b}{M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T}~64
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35}{Text\+Style\+Flags} \{ \\*
+\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35ac828230a58c9428e9da9cf9e5f440813}{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L} = 0, 
+\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a63fe1372e494dc4745eeac97458fe3a2}{S\+T\+Y\+L\+E\+\_\+\+O\+V\+E\+R\+L\+I\+N\+E} = 1, 
+\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a34ad6956e5f25a4db33090194b35cffc}{S\+T\+Y\+L\+E\+\_\+\+U\+N\+D\+E\+R\+L\+I\+N\+E} = 1 $<$$<$ 1, 
+\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a93026677511c10c30dd7538e71911518}{S\+T\+Y\+L\+E\+\_\+\+S\+T\+R\+I\+K\+E\+\_\+\+T\+H\+R\+O\+U\+G\+H} = 1 $<$$<$ 2, 
+\\*
+\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a6132ae9aa3bcf1f9d3b9ea3909ce1f8c}{S\+T\+Y\+L\+E\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D} = 1 $<$$<$ 3
+ \}
+\begin{DoxyCompactList}\small\item\em special style effect (can be combined) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{text__buffer__manager_8h_a2aa3b9e8549def497eb5765e98564daf}{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E} (Text\+Buffer\+Handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{text__buffer__manager_8h_ac2150058644744fb6ac9935fcd91ee3b}{\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T@{M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T}}
+\index{M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T@{M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+T\+E\+X\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+O\+U\+N\+T~64}}\label{text__buffer__manager_8h_ac2150058644744fb6ac9935fcd91ee3b}
+
+
+Definition at line 13 of file text\+\_\+buffer\+\_\+manager.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35}{\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!Text\+Style\+Flags@{Text\+Style\+Flags}}
+\index{Text\+Style\+Flags@{Text\+Style\+Flags}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}
+\subsubsection[{Text\+Style\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Text\+Style\+Flags}}}\label{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35}
+
+
+special style effect (can be combined) 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L@{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L@{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L}}\item[{\em 
+\hypertarget{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35ac828230a58c9428e9da9cf9e5f440813}{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L}\label{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35ac828230a58c9428e9da9cf9e5f440813}
+}]\index{S\+T\+Y\+L\+E\+\_\+\+O\+V\+E\+R\+L\+I\+N\+E@{S\+T\+Y\+L\+E\+\_\+\+O\+V\+E\+R\+L\+I\+N\+E}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!S\+T\+Y\+L\+E\+\_\+\+O\+V\+E\+R\+L\+I\+N\+E@{S\+T\+Y\+L\+E\+\_\+\+O\+V\+E\+R\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a63fe1372e494dc4745eeac97458fe3a2}{S\+T\+Y\+L\+E\+\_\+\+O\+V\+E\+R\+L\+I\+N\+E}\label{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a63fe1372e494dc4745eeac97458fe3a2}
+}]\index{S\+T\+Y\+L\+E\+\_\+\+U\+N\+D\+E\+R\+L\+I\+N\+E@{S\+T\+Y\+L\+E\+\_\+\+U\+N\+D\+E\+R\+L\+I\+N\+E}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!S\+T\+Y\+L\+E\+\_\+\+U\+N\+D\+E\+R\+L\+I\+N\+E@{S\+T\+Y\+L\+E\+\_\+\+U\+N\+D\+E\+R\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a34ad6956e5f25a4db33090194b35cffc}{S\+T\+Y\+L\+E\+\_\+\+U\+N\+D\+E\+R\+L\+I\+N\+E}\label{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a34ad6956e5f25a4db33090194b35cffc}
+}]\index{S\+T\+Y\+L\+E\+\_\+\+S\+T\+R\+I\+K\+E\+\_\+\+T\+H\+R\+O\+U\+G\+H@{S\+T\+Y\+L\+E\+\_\+\+S\+T\+R\+I\+K\+E\+\_\+\+T\+H\+R\+O\+U\+G\+H}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!S\+T\+Y\+L\+E\+\_\+\+S\+T\+R\+I\+K\+E\+\_\+\+T\+H\+R\+O\+U\+G\+H@{S\+T\+Y\+L\+E\+\_\+\+S\+T\+R\+I\+K\+E\+\_\+\+T\+H\+R\+O\+U\+G\+H}}\item[{\em 
+\hypertarget{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a93026677511c10c30dd7538e71911518}{S\+T\+Y\+L\+E\+\_\+\+S\+T\+R\+I\+K\+E\+\_\+\+T\+H\+R\+O\+U\+G\+H}\label{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a93026677511c10c30dd7538e71911518}
+}]\index{S\+T\+Y\+L\+E\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D@{S\+T\+Y\+L\+E\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!S\+T\+Y\+L\+E\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D@{S\+T\+Y\+L\+E\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D}}\item[{\em 
+\hypertarget{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a6132ae9aa3bcf1f9d3b9ea3909ce1f8c}{S\+T\+Y\+L\+E\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D}\label{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35a6132ae9aa3bcf1f9d3b9ea3909ce1f8c}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 27 of file text\+\_\+buffer\+\_\+manager.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{text__buffer__manager_8h_a2aa3b9e8549def497eb5765e98564daf}{\index{text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}!B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E@{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}}
+\index{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E@{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}!text\+\_\+buffer\+\_\+manager.\+h@{text\+\_\+buffer\+\_\+manager.\+h}}
+\subsubsection[{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{}
+\end{DoxyParamCaption}
+)}}\label{text__buffer__manager_8h_a2aa3b9e8549def497eb5765e98564daf}

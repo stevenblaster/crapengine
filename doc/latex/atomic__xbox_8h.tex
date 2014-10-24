@@ -1,0 +1,191 @@
+\hypertarget{atomic__xbox_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/atomic/atomic\+\_\+xbox.h File Reference}
+\label{atomic__xbox_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/atomic/atomic\+\_\+xbox.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/atomic/atomic\+\_\+xbox.\+h}}
+}
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+cpu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+platform.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1atomic32__t}{crap\+::atomic32\+\_\+t}
+\item 
+struct \hyperlink{structcrap_1_1atomic64__t}{crap\+::atomic64\+\_\+t}
+\item 
+struct \hyperlink{structcrap_1_1atomic__ptr__t}{crap\+::atomic\+\_\+ptr\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{atomic__xbox_8h_a251230878072f863ba7d2991ca026891}{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H}
+\item 
+\#define \hyperlink{atomic__xbox_8h_a582a55cc1321bf86420e622c50f4688c}{signal\+\_\+fence\+\_\+consume}()~(0)
+\item 
+\#define \hyperlink{atomic__xbox_8h_a2881945020d7e7391a309a730df1447b}{signal\+\_\+fence\+\_\+acquire}()~\hyperlink{atomic__xbox_8h_a5ed9bf83dc5e87c8b9ee16cf97c62513}{\+\_\+\+Read\+Write\+Barrier}()
+\item 
+\#define \hyperlink{atomic__xbox_8h_ab5fa449133478bbddf7fb228f69f68b4}{signal\+\_\+fence\+\_\+release}()~\hyperlink{atomic__xbox_8h_a5ed9bf83dc5e87c8b9ee16cf97c62513}{\+\_\+\+Read\+Write\+Barrier}()
+\item 
+\#define \hyperlink{atomic__xbox_8h_ae03d05028810f64f48f64c93ac6ab076}{signal\+\_\+fence\+\_\+seq\+\_\+cst}()~\hyperlink{atomic__xbox_8h_a5ed9bf83dc5e87c8b9ee16cf97c62513}{\+\_\+\+Read\+Write\+Barrier}()
+\item 
+\#define \hyperlink{atomic__xbox_8h_aa871254e7cdd08175ffa7f06232d5ea7}{thread\+\_\+fence\+\_\+consume}()~(0)
+\item 
+\#define \hyperlink{atomic__xbox_8h_a053e10f232e167c506a5fc675c7b28ac}{thread\+\_\+fence\+\_\+acquire}()~\+\_\+\+\_\+lwsync()
+\item 
+\#define \hyperlink{atomic__xbox_8h_a3dbb0061899d9bd4d46d0b40ec1dc4f0}{thread\+\_\+fence\+\_\+release}()~\+\_\+\+\_\+lwsync()
+\item 
+\#define \hyperlink{atomic__xbox_8h_a81da151ac996b1a4ad5a5bddfec9e1eb}{thread\+\_\+fence\+\_\+seq\+\_\+cst}()~\+\_\+\+\_\+sync()
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{atomic__xbox_8h_a5ed9bf83dc5e87c8b9ee16cf97c62513}{\+\_\+\+Read\+Write\+Barrier} ()
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a52611b7c31e450c50c5afa9debc2c0e7}{crap\+::load\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void \hyperlink{namespacecrap_abdf1a4e0b894938d55bc854bc207d039}{crap\+::store\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a8010c6cfcff3229a2aa4511002d9c672}{crap\+::compare\+\_\+exchange\+\_\+strong\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t expected, uint32\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a2dd42a305bc39919d5915ac0d398c4bb}{crap\+::fetch\+\_\+add\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, int32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a63b98efafd219a067ccc4bfba4781f72}{crap\+::fetch\+\_\+and\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a0fd9d33eff0a47c045195ce30be2a59b}{crap\+::fetch\+\_\+or\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_a42e060337e4db7ca2a11b837ee41d7f1}{crap\+::load\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void \hyperlink{namespacecrap_a28376b5dab77719f595c33cd6488f93d}{crap\+::store\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_aab28fcb5edef34423173f222b0c1775f}{crap\+::compare\+\_\+exchange\+\_\+strong\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t expected, uint64\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_a74b1eeadd27dab843b99607fcd617a3b}{crap\+::fetch\+\_\+add\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, int64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_adfa4ba5cf8bf7e816ad7f8351dd39bff}{crap\+::fetch\+\_\+and\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_af1c3b7ce6841fc87f3cd1ca8df004e11}{crap\+::fetch\+\_\+or\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_a1bda807e593bb56b1be32a0c7e11537a}{crap\+::load\+\_\+ptr\+\_\+relaxed} (const atomic\+\_\+ptr\+\_\+t $\ast$object)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void \hyperlink{namespacecrap_a0fc644a4e7682083464c7ec99b8c94be}{crap\+::store\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, void $\ast$desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_a0d7a51fdb5f2784c18fd063a0c6f9791}{crap\+::compare\+\_\+exchange\+\_\+strong\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, void $\ast$expected, void $\ast$desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uintptr\+\_\+t \hyperlink{namespacecrap_a34d204743b05b81dde81837f7c505df8}{crap\+::fetch\+\_\+add\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, int32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uintptr\+\_\+t \hyperlink{namespacecrap_a0bb01b9c4981c61546b930bc6ff36d44}{crap\+::fetch\+\_\+and\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, uint32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uintptr\+\_\+t \hyperlink{namespacecrap_a31b8b6da5f84a64fa1e35186e7929682}{crap\+::fetch\+\_\+or\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, uint32\+\_\+t operand)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{atomic__xbox_8h_a251230878072f863ba7d2991ca026891}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H@{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H@{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+X\+B\+O\+X\+\_\+\+H}}\label{atomic__xbox_8h_a251230878072f863ba7d2991ca026891}
+
+
+Definition at line 4 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_a2881945020d7e7391a309a730df1447b}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!signal\+\_\+fence\+\_\+acquire@{signal\+\_\+fence\+\_\+acquire}}
+\index{signal\+\_\+fence\+\_\+acquire@{signal\+\_\+fence\+\_\+acquire}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+acquire}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+acquire(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+Read\+Write\+Barrier}()}}\label{atomic__xbox_8h_a2881945020d7e7391a309a730df1447b}
+
+
+Definition at line 17 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_a582a55cc1321bf86420e622c50f4688c}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!signal\+\_\+fence\+\_\+consume@{signal\+\_\+fence\+\_\+consume}}
+\index{signal\+\_\+fence\+\_\+consume@{signal\+\_\+fence\+\_\+consume}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+consume}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+consume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(0)}}\label{atomic__xbox_8h_a582a55cc1321bf86420e622c50f4688c}
+
+
+Definition at line 16 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_ab5fa449133478bbddf7fb228f69f68b4}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!signal\+\_\+fence\+\_\+release@{signal\+\_\+fence\+\_\+release}}
+\index{signal\+\_\+fence\+\_\+release@{signal\+\_\+fence\+\_\+release}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+release}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+release(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+Read\+Write\+Barrier}()}}\label{atomic__xbox_8h_ab5fa449133478bbddf7fb228f69f68b4}
+
+
+Definition at line 18 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_ae03d05028810f64f48f64c93ac6ab076}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!signal\+\_\+fence\+\_\+seq\+\_\+cst@{signal\+\_\+fence\+\_\+seq\+\_\+cst}}
+\index{signal\+\_\+fence\+\_\+seq\+\_\+cst@{signal\+\_\+fence\+\_\+seq\+\_\+cst}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+seq\+\_\+cst}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+seq\+\_\+cst(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+Read\+Write\+Barrier}()}}\label{atomic__xbox_8h_ae03d05028810f64f48f64c93ac6ab076}
+
+
+Definition at line 19 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_a053e10f232e167c506a5fc675c7b28ac}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!thread\+\_\+fence\+\_\+acquire@{thread\+\_\+fence\+\_\+acquire}}
+\index{thread\+\_\+fence\+\_\+acquire@{thread\+\_\+fence\+\_\+acquire}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+acquire}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+acquire(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+lwsync()}}\label{atomic__xbox_8h_a053e10f232e167c506a5fc675c7b28ac}
+
+
+Definition at line 22 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_aa871254e7cdd08175ffa7f06232d5ea7}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!thread\+\_\+fence\+\_\+consume@{thread\+\_\+fence\+\_\+consume}}
+\index{thread\+\_\+fence\+\_\+consume@{thread\+\_\+fence\+\_\+consume}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+consume}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+consume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(0)}}\label{atomic__xbox_8h_aa871254e7cdd08175ffa7f06232d5ea7}
+
+
+Definition at line 21 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_a3dbb0061899d9bd4d46d0b40ec1dc4f0}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!thread\+\_\+fence\+\_\+release@{thread\+\_\+fence\+\_\+release}}
+\index{thread\+\_\+fence\+\_\+release@{thread\+\_\+fence\+\_\+release}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+release}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+release(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+lwsync()}}\label{atomic__xbox_8h_a3dbb0061899d9bd4d46d0b40ec1dc4f0}
+
+
+Definition at line 23 of file atomic\+\_\+xbox.\+h.
+
+\hypertarget{atomic__xbox_8h_a81da151ac996b1a4ad5a5bddfec9e1eb}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!thread\+\_\+fence\+\_\+seq\+\_\+cst@{thread\+\_\+fence\+\_\+seq\+\_\+cst}}
+\index{thread\+\_\+fence\+\_\+seq\+\_\+cst@{thread\+\_\+fence\+\_\+seq\+\_\+cst}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+seq\+\_\+cst}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+seq\+\_\+cst(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+sync()}}\label{atomic__xbox_8h_a81da151ac996b1a4ad5a5bddfec9e1eb}
+
+
+Definition at line 24 of file atomic\+\_\+xbox.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{atomic__xbox_8h_a5ed9bf83dc5e87c8b9ee16cf97c62513}{\index{atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}!\+\_\+\+Read\+Write\+Barrier@{\+\_\+\+Read\+Write\+Barrier}}
+\index{\+\_\+\+Read\+Write\+Barrier@{\+\_\+\+Read\+Write\+Barrier}!atomic\+\_\+xbox.\+h@{atomic\+\_\+xbox.\+h}}
+\subsubsection[{\+\_\+\+Read\+Write\+Barrier}]{\setlength{\rightskip}{0pt plus 5cm}void \+\_\+\+Read\+Write\+Barrier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{atomic__xbox_8h_a5ed9bf83dc5e87c8b9ee16cf97c62513}

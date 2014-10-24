@@ -1,0 +1,108 @@
+\hypertarget{font__manager_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/font\+\_\+manager.h File Reference}
+\label{font__manager_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/font\+\_\+manager.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/font\+\_\+manager.\+h}}
+}
+{\ttfamily \#include $<$bx/handlealloc.\+h$>$}\\*
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_font_info}{Font\+Info}
+\item 
+struct \hyperlink{struct_glyph_info}{Glyph\+Info}
+\begin{DoxyCompactList}\small\item\em A structure that describe a glyph. \end{DoxyCompactList}\item 
+class \hyperlink{class_font_manager}{Font\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{font__manager_8h_a83cbc67b0c800d1612f9ce9812a9cead}{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S}~64
+\item 
+\#define \hyperlink{font__manager_8h_a218536401f6da2c8c49e214564d550cf}{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T}~64
+\item 
+\#define \hyperlink{font__manager_8h_a119102a78834acb4b005bbd03c92532a}{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A}~U\+I\+N\+T32\+\_\+\+C(0x00000100)
+\item 
+\#define \hyperlink{font__manager_8h_a48ff0a4c75ee3d61f63e14e6a13e7d7b}{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E}~U\+I\+N\+T32\+\_\+\+C(0x00000400)
+\item 
+\#define \hyperlink{font__manager_8h_aeaff929a223dc63a004ebc4f412acd9a}{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L}~U\+I\+N\+T32\+\_\+\+C(0x00000500)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t \hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point}
+\begin{DoxyCompactList}\small\item\em Unicode value of a character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{font__manager_8h_a41a8f00cca080806ef5a188161d250a7}{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E} (True\+Type\+Handle)
+\item 
+\hyperlink{font__manager_8h_a794a9105b3e93b87c65c7026cff6f3a7}{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E} (Font\+Handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{font__manager_8h_a119102a78834acb4b005bbd03c92532a}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A@{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A}}
+\index{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A@{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A~U\+I\+N\+T32\+\_\+\+C(0x00000100)}}\label{font__manager_8h_a119102a78834acb4b005bbd03c92532a}
+
+
+Definition at line 17 of file font\+\_\+manager.\+h.
+
+\hypertarget{font__manager_8h_a48ff0a4c75ee3d61f63e14e6a13e7d7b}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E@{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E}}
+\index{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E@{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E~U\+I\+N\+T32\+\_\+\+C(0x00000400)}}\label{font__manager_8h_a48ff0a4c75ee3d61f63e14e6a13e7d7b}
+
+
+Definition at line 20 of file font\+\_\+manager.\+h.
+
+\hypertarget{font__manager_8h_aeaff929a223dc63a004ebc4f412acd9a}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L@{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L}}
+\index{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L@{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+S\+U\+B\+P\+I\+X\+E\+L~U\+I\+N\+T32\+\_\+\+C(0x00000500)}}\label{font__manager_8h_aeaff929a223dc63a004ebc4f412acd9a}
+
+
+Definition at line 21 of file font\+\_\+manager.\+h.
+
+\hypertarget{font__manager_8h_a83cbc67b0c800d1612f9ce9812a9cead}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S@{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S}}
+\index{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S@{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+I\+L\+E\+S~64}}\label{font__manager_8h_a83cbc67b0c800d1612f9ce9812a9cead}
+
+
+Definition at line 14 of file font\+\_\+manager.\+h.
+
+\hypertarget{font__manager_8h_a218536401f6da2c8c49e214564d550cf}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T@{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T}}
+\index{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T@{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+F\+O\+N\+T~64}}\label{font__manager_8h_a218536401f6da2c8c49e214564d550cf}
+
+
+Definition at line 15 of file font\+\_\+manager.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!Code\+Point@{Code\+Point}}
+\index{Code\+Point@{Code\+Point}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{Code\+Point}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\+\_\+t {\bf Code\+Point}}}\label{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}
+
+
+Unicode value of a character. 
+
+
+
+Definition at line 79 of file font\+\_\+manager.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{font__manager_8h_a41a8f00cca080806ef5a188161d250a7}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E@{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}}
+\index{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E@{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E (
+\begin{DoxyParamCaption}
+\item[{True\+Type\+Handle}]{}
+\end{DoxyParamCaption}
+)}}\label{font__manager_8h_a41a8f00cca080806ef5a188161d250a7}
+\hypertarget{font__manager_8h_a794a9105b3e93b87c65c7026cff6f3a7}{\index{font\+\_\+manager.\+h@{font\+\_\+manager.\+h}!B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E@{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}}
+\index{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E@{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}!font\+\_\+manager.\+h@{font\+\_\+manager.\+h}}
+\subsubsection[{B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}B\+G\+F\+X\+\_\+\+H\+A\+N\+D\+L\+E (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{}
+\end{DoxyParamCaption}
+)}}\label{font__manager_8h_a794a9105b3e93b87c65c7026cff6f3a7}

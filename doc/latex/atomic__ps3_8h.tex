@@ -1,0 +1,180 @@
+\hypertarget{atomic__ps3_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/atomic/atomic\+\_\+ps3.h File Reference}
+\label{atomic__ps3_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/atomic/atomic\+\_\+ps3.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/atomic/atomic\+\_\+ps3.\+h}}
+}
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+cpu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+platform.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{atomic__ps3_8h_a66c84b18ba0458aedda51c299c6e1715}{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H}
+\item 
+\#define \hyperlink{atomic__ps3_8h_a582a55cc1321bf86420e622c50f4688c}{signal\+\_\+fence\+\_\+consume}()~(0)
+\item 
+\#define \hyperlink{atomic__ps3_8h_a2881945020d7e7391a309a730df1447b}{signal\+\_\+fence\+\_\+acquire}()~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \hyperlink{atomic__ps3_8h_ab5fa449133478bbddf7fb228f69f68b4}{signal\+\_\+fence\+\_\+release}()~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \hyperlink{atomic__ps3_8h_ae03d05028810f64f48f64c93ac6ab076}{signal\+\_\+fence\+\_\+seq\+\_\+cst}()~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \hyperlink{atomic__ps3_8h_aa871254e7cdd08175ffa7f06232d5ea7}{thread\+\_\+fence\+\_\+consume}()~(0)
+\item 
+\#define \hyperlink{atomic__ps3_8h_a053e10f232e167c506a5fc675c7b28ac}{thread\+\_\+fence\+\_\+acquire}()~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \hyperlink{atomic__ps3_8h_a3dbb0061899d9bd4d46d0b40ec1dc4f0}{thread\+\_\+fence\+\_\+release}()~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \hyperlink{atomic__ps3_8h_a81da151ac996b1a4ad5a5bddfec9e1eb}{thread\+\_\+fence\+\_\+seq\+\_\+cst}()~asm volatile(\char`\"{}lock; orl \$0, (\%\%esp)\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{namespacecrap_aa4db5c324bca7af9040282ebca5db226}{crap\+::\+C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T} (4) struct
+\item 
+\hyperlink{namespacecrap_a40f2b73ae646e41f3534198d19fbb188}{crap\+::\+C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+E\+N\+D} (4) atomic32\+\_\+t
+\item 
+typedef \hyperlink{namespacecrap_a35a4179ff2d8be49b4b8fd4d9c8cd214}{crap\+::\+C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T} (8) struct
+\item 
+\hyperlink{namespacecrap_a50430530738a8b5e14eb5cf710bab3d7}{crap\+::\+C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+E\+N\+D} (8) atomic64\+\_\+t
+\item 
+typedef \hyperlink{namespacecrap_a184e33bb76ffda80cf31d0d82d0ac126}{crap\+::\+C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T} (C\+R\+A\+P\+\_\+\+P\+T\+R\+\_\+\+S\+I\+Z\+E) struct
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a52611b7c31e450c50c5afa9debc2c0e7}{crap\+::load\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void \hyperlink{namespacecrap_abdf1a4e0b894938d55bc854bc207d039}{crap\+::store\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a8010c6cfcff3229a2aa4511002d9c672}{crap\+::compare\+\_\+exchange\+\_\+strong\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t expected, uint32\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a2dd42a305bc39919d5915ac0d398c4bb}{crap\+::fetch\+\_\+add\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, int32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a63b98efafd219a067ccc4bfba4781f72}{crap\+::fetch\+\_\+and\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint32\+\_\+t \hyperlink{namespacecrap_a0fd9d33eff0a47c045195ce30be2a59b}{crap\+::fetch\+\_\+or\+\_\+32\+\_\+relaxed} (atomic32\+\_\+t $\ast$object, uint32\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_a42e060337e4db7ca2a11b837ee41d7f1}{crap\+::load\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void \hyperlink{namespacecrap_a28376b5dab77719f595c33cd6488f93d}{crap\+::store\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_aab28fcb5edef34423173f222b0c1775f}{crap\+::compare\+\_\+exchange\+\_\+strong\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t expected, uint64\+\_\+t desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_a74b1eeadd27dab843b99607fcd617a3b}{crap\+::fetch\+\_\+add\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, int64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_adfa4ba5cf8bf7e816ad7f8351dd39bff}{crap\+::fetch\+\_\+and\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E uint64\+\_\+t \hyperlink{namespacecrap_af1c3b7ce6841fc87f3cd1ca8df004e11}{crap\+::fetch\+\_\+or\+\_\+64\+\_\+relaxed} (atomic64\+\_\+t $\ast$object, uint64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_a1bda807e593bb56b1be32a0c7e11537a}{crap\+::load\+\_\+ptr\+\_\+relaxed} (const atomic\+\_\+ptr\+\_\+t $\ast$object)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void \hyperlink{namespacecrap_a0fc644a4e7682083464c7ec99b8c94be}{crap\+::store\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, void $\ast$desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_a0d7a51fdb5f2784c18fd063a0c6f9791}{crap\+::compare\+\_\+exchange\+\_\+strong\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, void $\ast$expected, void $\ast$desired)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_a354f3fb9a13ba30612116ac432c895a1}{crap\+::fetch\+\_\+add\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, int64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_ad2d918250c73ce4536f7bbf3528e92fa}{crap\+::fetch\+\_\+and\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, uint64\+\_\+t operand)
+\item 
+C\+R\+A\+P\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+N\+E void $\ast$ \hyperlink{namespacecrap_a3ce08fa76a5dc6fd7baaa059bf1abef5}{crap\+::fetch\+\_\+or\+\_\+ptr\+\_\+relaxed} (atomic\+\_\+ptr\+\_\+t $\ast$object, uint64\+\_\+t operand)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{atomic__ps3_8h_a66c84b18ba0458aedda51c299c6e1715}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H@{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H@{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+P\+S3\+\_\+\+H}}\label{atomic__ps3_8h_a66c84b18ba0458aedda51c299c6e1715}
+
+
+Definition at line 4 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_a2881945020d7e7391a309a730df1447b}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!signal\+\_\+fence\+\_\+acquire@{signal\+\_\+fence\+\_\+acquire}}
+\index{signal\+\_\+fence\+\_\+acquire@{signal\+\_\+fence\+\_\+acquire}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+acquire}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+acquire(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})}}\label{atomic__ps3_8h_a2881945020d7e7391a309a730df1447b}
+
+
+Definition at line 12 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_a582a55cc1321bf86420e622c50f4688c}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!signal\+\_\+fence\+\_\+consume@{signal\+\_\+fence\+\_\+consume}}
+\index{signal\+\_\+fence\+\_\+consume@{signal\+\_\+fence\+\_\+consume}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+consume}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+consume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(0)}}\label{atomic__ps3_8h_a582a55cc1321bf86420e622c50f4688c}
+
+
+Definition at line 11 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_ab5fa449133478bbddf7fb228f69f68b4}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!signal\+\_\+fence\+\_\+release@{signal\+\_\+fence\+\_\+release}}
+\index{signal\+\_\+fence\+\_\+release@{signal\+\_\+fence\+\_\+release}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+release}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+release(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})}}\label{atomic__ps3_8h_ab5fa449133478bbddf7fb228f69f68b4}
+
+
+Definition at line 13 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_ae03d05028810f64f48f64c93ac6ab076}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!signal\+\_\+fence\+\_\+seq\+\_\+cst@{signal\+\_\+fence\+\_\+seq\+\_\+cst}}
+\index{signal\+\_\+fence\+\_\+seq\+\_\+cst@{signal\+\_\+fence\+\_\+seq\+\_\+cst}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{signal\+\_\+fence\+\_\+seq\+\_\+cst}]{\setlength{\rightskip}{0pt plus 5cm}\#define signal\+\_\+fence\+\_\+seq\+\_\+cst(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})}}\label{atomic__ps3_8h_ae03d05028810f64f48f64c93ac6ab076}
+
+
+Definition at line 14 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_a053e10f232e167c506a5fc675c7b28ac}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!thread\+\_\+fence\+\_\+acquire@{thread\+\_\+fence\+\_\+acquire}}
+\index{thread\+\_\+fence\+\_\+acquire@{thread\+\_\+fence\+\_\+acquire}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+acquire}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+acquire(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})}}\label{atomic__ps3_8h_a053e10f232e167c506a5fc675c7b28ac}
+
+
+Definition at line 17 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_aa871254e7cdd08175ffa7f06232d5ea7}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!thread\+\_\+fence\+\_\+consume@{thread\+\_\+fence\+\_\+consume}}
+\index{thread\+\_\+fence\+\_\+consume@{thread\+\_\+fence\+\_\+consume}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+consume}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+consume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(0)}}\label{atomic__ps3_8h_aa871254e7cdd08175ffa7f06232d5ea7}
+
+
+Definition at line 16 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_a3dbb0061899d9bd4d46d0b40ec1dc4f0}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!thread\+\_\+fence\+\_\+release@{thread\+\_\+fence\+\_\+release}}
+\index{thread\+\_\+fence\+\_\+release@{thread\+\_\+fence\+\_\+release}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+release}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+release(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm volatile(\char`\"{}\char`\"{} \+::: \char`\"{}memory\char`\"{})}}\label{atomic__ps3_8h_a3dbb0061899d9bd4d46d0b40ec1dc4f0}
+
+
+Definition at line 18 of file atomic\+\_\+ps3.\+h.
+
+\hypertarget{atomic__ps3_8h_a81da151ac996b1a4ad5a5bddfec9e1eb}{\index{atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}!thread\+\_\+fence\+\_\+seq\+\_\+cst@{thread\+\_\+fence\+\_\+seq\+\_\+cst}}
+\index{thread\+\_\+fence\+\_\+seq\+\_\+cst@{thread\+\_\+fence\+\_\+seq\+\_\+cst}!atomic\+\_\+ps3.\+h@{atomic\+\_\+ps3.\+h}}
+\subsubsection[{thread\+\_\+fence\+\_\+seq\+\_\+cst}]{\setlength{\rightskip}{0pt plus 5cm}\#define thread\+\_\+fence\+\_\+seq\+\_\+cst(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm volatile(\char`\"{}lock; orl \$0, (\%\%esp)\char`\"{} \+::: \char`\"{}memory\char`\"{})}}\label{atomic__ps3_8h_a81da151ac996b1a4ad5a5bddfec9e1eb}
+
+
+Definition at line 26 of file atomic\+\_\+ps3.\+h.
+

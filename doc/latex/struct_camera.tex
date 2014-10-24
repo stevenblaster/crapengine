@@ -1,0 +1,255 @@
+\hypertarget{struct_camera}{\section{Camera Struct Reference}
+\label{struct_camera}\index{Camera@{Camera}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_camera_1_1_mouse_coords}{Mouse\+Coords}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_camera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\item 
+\hyperlink{struct_camera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()
+\item 
+void \hyperlink{struct_camera_a02be8aa0dbef77e02dddc715a726fb67}{reset} ()
+\item 
+void \hyperlink{struct_camera_a9c4444ac9250031a234e033763a7d005}{set\+Key\+State} (uint8\+\_\+t \+\_\+key, bool \+\_\+down)
+\item 
+void \hyperlink{struct_camera_aa48e4d34e3d18b09170c87b5ce3968bc}{update} (float \+\_\+delta\+Time, uint32\+\_\+t \+\_\+mx, uint32\+\_\+t \+\_\+my, bool \+\_\+move)
+\item 
+void \hyperlink{struct_camera_a09b023160b32ba868d8afa4bebc2891f}{get\+View\+Mtx} (float $\ast$\+\_\+view\+Mtx)
+\item 
+void \hyperlink{struct_camera_ac7a1d4634eacb04672a7910e4e13e936}{set\+Position} (float $\ast$\+\_\+pos)
+\item 
+void \hyperlink{struct_camera_af6013c731be730a1524a8fcdd8f5f497}{set\+Vertical\+Angle} (float \+\_\+vertical\+Angle)
+\item 
+void \hyperlink{struct_camera_a589b2a9fa380a273d948bc48c3f68504}{set\+Horizontal\+Angle} (float \+\_\+horizontal\+Angle)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_camera_1_1_mouse_coords}{Mouse\+Coords} \hyperlink{struct_camera_ac77261134d252718b359076f40e3d8af}{m\+\_\+mouse\+Now}
+\item 
+\hyperlink{struct_camera_1_1_mouse_coords}{Mouse\+Coords} \hyperlink{struct_camera_a3b6e6d6ac02cb9bcd549562ae24c3a81}{m\+\_\+mouse\+Last}
+\item 
+float \hyperlink{struct_camera_ab82b32b1598184a46dcf73b3269c25a2}{m\+\_\+eye} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{struct_camera_aad655f2930e79ee70e132dd7c8baec27}{m\+\_\+at} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{struct_camera_ac2875af5cfbc44c0e307d640c1a5c151}{m\+\_\+up} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{struct_camera_a5fb30951943adae849d4ae5c87e92dec}{m\+\_\+horizontal\+Angle}
+\item 
+float \hyperlink{struct_camera_a416376dc2c43f46061c2c7de7cbedfae}{m\+\_\+vertical\+Angle}
+\item 
+float \hyperlink{struct_camera_a650b9964d4427e06d4d1ef75e24f987c}{m\+\_\+mouse\+Speed}
+\item 
+float \hyperlink{struct_camera_ae647c41f37e1d598e7165a50ae78d997}{m\+\_\+move\+Speed}
+\item 
+uint8\+\_\+t \hyperlink{struct_camera_ad60098c35ad058dd63f692d5b5223fbf}{m\+\_\+keys}
+\item 
+bool \hyperlink{struct_camera_a12c60bfc3b7ae9fadf93d3494d8b599f}{m\+\_\+mouse\+Down}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 56 of file camera.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{struct_camera_a01f94c3543f56ede7af49dc778f19331}{\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_a01f94c3543f56ede7af49dc778f19331}
+
+
+Definition at line 64 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ad1897942d0ccf91052386388a497349f}{\index{Camera@{Camera}!````~Camera@{$\sim$\+Camera}}
+\index{````~Camera@{$\sim$\+Camera}!Camera@{Camera}}
+\subsubsection[{$\sim$\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::$\sim$\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_ad1897942d0ccf91052386388a497349f}
+
+
+Definition at line 73 of file camera.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_camera_a09b023160b32ba868d8afa4bebc2891f}{\index{Camera@{Camera}!get\+View\+Mtx@{get\+View\+Mtx}}
+\index{get\+View\+Mtx@{get\+View\+Mtx}!Camera@{Camera}}
+\subsubsection[{get\+View\+Mtx}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::get\+View\+Mtx (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{\+\_\+view\+Mtx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_a09b023160b32ba868d8afa4bebc2891f}
+
+
+Definition at line 197 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a02be8aa0dbef77e02dddc715a726fb67}{\index{Camera@{Camera}!reset@{reset}}
+\index{reset@{reset}!Camera@{Camera}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_a02be8aa0dbef77e02dddc715a726fb67}
+
+
+Definition at line 78 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a589b2a9fa380a273d948bc48c3f68504}{\index{Camera@{Camera}!set\+Horizontal\+Angle@{set\+Horizontal\+Angle}}
+\index{set\+Horizontal\+Angle@{set\+Horizontal\+Angle}!Camera@{Camera}}
+\subsubsection[{set\+Horizontal\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Horizontal\+Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+horizontal\+Angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_a589b2a9fa380a273d948bc48c3f68504}
+
+
+Definition at line 212 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a9c4444ac9250031a234e033763a7d005}{\index{Camera@{Camera}!set\+Key\+State@{set\+Key\+State}}
+\index{set\+Key\+State@{set\+Key\+State}!Camera@{Camera}}
+\subsubsection[{set\+Key\+State}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Key\+State (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+key, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_a9c4444ac9250031a234e033763a7d005}
+
+
+Definition at line 101 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ac7a1d4634eacb04672a7910e4e13e936}{\index{Camera@{Camera}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Camera@{Camera}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{\+\_\+pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_ac7a1d4634eacb04672a7910e4e13e936}
+
+
+Definition at line 202 of file camera.\+cpp.
+
+\hypertarget{struct_camera_af6013c731be730a1524a8fcdd8f5f497}{\index{Camera@{Camera}!set\+Vertical\+Angle@{set\+Vertical\+Angle}}
+\index{set\+Vertical\+Angle@{set\+Vertical\+Angle}!Camera@{Camera}}
+\subsubsection[{set\+Vertical\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Vertical\+Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+vertical\+Angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_af6013c731be730a1524a8fcdd8f5f497}
+
+
+Definition at line 207 of file camera.\+cpp.
+
+\hypertarget{struct_camera_aa48e4d34e3d18b09170c87b5ce3968bc}{\index{Camera@{Camera}!update@{update}}
+\index{update@{update}!Camera@{Camera}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::update (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+delta\+Time, }
+\item[{uint32\+\_\+t}]{\+\_\+mx, }
+\item[{uint32\+\_\+t}]{\+\_\+my, }
+\item[{bool}]{\+\_\+move}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_camera_aa48e4d34e3d18b09170c87b5ce3968bc}
+
+
+Definition at line 107 of file camera.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_camera_aad655f2930e79ee70e132dd7c8baec27}{\index{Camera@{Camera}!m\+\_\+at@{m\+\_\+at}}
+\index{m\+\_\+at@{m\+\_\+at}!Camera@{Camera}}
+\subsubsection[{m\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+at\mbox{[}3\mbox{]}}}\label{struct_camera_aad655f2930e79ee70e132dd7c8baec27}
+
+
+Definition at line 219 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ab82b32b1598184a46dcf73b3269c25a2}{\index{Camera@{Camera}!m\+\_\+eye@{m\+\_\+eye}}
+\index{m\+\_\+eye@{m\+\_\+eye}!Camera@{Camera}}
+\subsubsection[{m\+\_\+eye}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+eye\mbox{[}3\mbox{]}}}\label{struct_camera_ab82b32b1598184a46dcf73b3269c25a2}
+
+
+Definition at line 218 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a5fb30951943adae849d4ae5c87e92dec}{\index{Camera@{Camera}!m\+\_\+horizontal\+Angle@{m\+\_\+horizontal\+Angle}}
+\index{m\+\_\+horizontal\+Angle@{m\+\_\+horizontal\+Angle}!Camera@{Camera}}
+\subsubsection[{m\+\_\+horizontal\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+horizontal\+Angle}}\label{struct_camera_a5fb30951943adae849d4ae5c87e92dec}
+
+
+Definition at line 221 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ad60098c35ad058dd63f692d5b5223fbf}{\index{Camera@{Camera}!m\+\_\+keys@{m\+\_\+keys}}
+\index{m\+\_\+keys@{m\+\_\+keys}!Camera@{Camera}}
+\subsubsection[{m\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Camera\+::m\+\_\+keys}}\label{struct_camera_ad60098c35ad058dd63f692d5b5223fbf}
+
+
+Definition at line 225 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a12c60bfc3b7ae9fadf93d3494d8b599f}{\index{Camera@{Camera}!m\+\_\+mouse\+Down@{m\+\_\+mouse\+Down}}
+\index{m\+\_\+mouse\+Down@{m\+\_\+mouse\+Down}!Camera@{Camera}}
+\subsubsection[{m\+\_\+mouse\+Down}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::m\+\_\+mouse\+Down}}\label{struct_camera_a12c60bfc3b7ae9fadf93d3494d8b599f}
+
+
+Definition at line 226 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a3b6e6d6ac02cb9bcd549562ae24c3a81}{\index{Camera@{Camera}!m\+\_\+mouse\+Last@{m\+\_\+mouse\+Last}}
+\index{m\+\_\+mouse\+Last@{m\+\_\+mouse\+Last}!Camera@{Camera}}
+\subsubsection[{m\+\_\+mouse\+Last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mouse\+Coords} Camera\+::m\+\_\+mouse\+Last}}\label{struct_camera_a3b6e6d6ac02cb9bcd549562ae24c3a81}
+
+
+Definition at line 217 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ac77261134d252718b359076f40e3d8af}{\index{Camera@{Camera}!m\+\_\+mouse\+Now@{m\+\_\+mouse\+Now}}
+\index{m\+\_\+mouse\+Now@{m\+\_\+mouse\+Now}!Camera@{Camera}}
+\subsubsection[{m\+\_\+mouse\+Now}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mouse\+Coords} Camera\+::m\+\_\+mouse\+Now}}\label{struct_camera_ac77261134d252718b359076f40e3d8af}
+
+
+Definition at line 217 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a650b9964d4427e06d4d1ef75e24f987c}{\index{Camera@{Camera}!m\+\_\+mouse\+Speed@{m\+\_\+mouse\+Speed}}
+\index{m\+\_\+mouse\+Speed@{m\+\_\+mouse\+Speed}!Camera@{Camera}}
+\subsubsection[{m\+\_\+mouse\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+mouse\+Speed}}\label{struct_camera_a650b9964d4427e06d4d1ef75e24f987c}
+
+
+Definition at line 223 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ae647c41f37e1d598e7165a50ae78d997}{\index{Camera@{Camera}!m\+\_\+move\+Speed@{m\+\_\+move\+Speed}}
+\index{m\+\_\+move\+Speed@{m\+\_\+move\+Speed}!Camera@{Camera}}
+\subsubsection[{m\+\_\+move\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+move\+Speed}}\label{struct_camera_ae647c41f37e1d598e7165a50ae78d997}
+
+
+Definition at line 224 of file camera.\+cpp.
+
+\hypertarget{struct_camera_ac2875af5cfbc44c0e307d640c1a5c151}{\index{Camera@{Camera}!m\+\_\+up@{m\+\_\+up}}
+\index{m\+\_\+up@{m\+\_\+up}!Camera@{Camera}}
+\subsubsection[{m\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+up\mbox{[}3\mbox{]}}}\label{struct_camera_ac2875af5cfbc44c0e307d640c1a5c151}
+
+
+Definition at line 220 of file camera.\+cpp.
+
+\hypertarget{struct_camera_a416376dc2c43f46061c2c7de7cbedfae}{\index{Camera@{Camera}!m\+\_\+vertical\+Angle@{m\+\_\+vertical\+Angle}}
+\index{m\+\_\+vertical\+Angle@{m\+\_\+vertical\+Angle}!Camera@{Camera}}
+\subsubsection[{m\+\_\+vertical\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+vertical\+Angle}}\label{struct_camera_a416376dc2c43f46061c2c7de7cbedfae}
+
+
+Definition at line 222 of file camera.\+cpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/\hyperlink{camera_8cpp}{camera.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,320 @@
+\hypertarget{class_atlas}{\section{Atlas Class Reference}
+\label{class_atlas}\index{Atlas@{Atlas}}
+}
+
+
+{\ttfamily \#include $<$cube\+\_\+atlas.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_atlas_1_1_packed_layer}{Packed\+Layer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_atlas_a226154ccd3bfd64dcc8c119377e15924}{Atlas} (uint16\+\_\+t \+\_\+texture\+Size, uint16\+\_\+t \+\_\+max\+Regions\+Count=4096)
+\item 
+\hyperlink{class_atlas_a108e8c56ea6d84501971cac219b522ca}{Atlas} (uint16\+\_\+t \+\_\+texture\+Size, const uint8\+\_\+t $\ast$\+\_\+texture\+Buffer, uint16\+\_\+t \+\_\+region\+Count, const uint8\+\_\+t $\ast$\+\_\+region\+Buffer, uint16\+\_\+t \+\_\+max\+Regions\+Count=4096)
+\item 
+\hyperlink{class_atlas_aa48ba7a82ee4f67e84184feadf1afeda}{$\sim$\+Atlas} ()
+\item 
+uint16\+\_\+t \hyperlink{class_atlas_a4b62a1b4eaf492865cdd72db69e4ee5a}{add\+Region} (uint16\+\_\+t \+\_\+width, uint16\+\_\+t \+\_\+height, const uint8\+\_\+t $\ast$\+\_\+bitmap\+Buffer, \hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2}{Atlas\+Region\+::\+Type} \+\_\+type=\hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2a3010705c5f10ae5b40dee6de2fb1bb63}{Atlas\+Region\+::\+T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8}, uint16\+\_\+t outline=0)
+\begin{DoxyCompactList}\small\item\em add a region to the atlas, and copy the content of mem to the underlying texture \end{DoxyCompactList}\item 
+void \hyperlink{class_atlas_ab6e1cc8a4f6c422c1bf2fa9f978a7235}{update\+Region} (const \hyperlink{struct_atlas_region}{Atlas\+Region} \&\+\_\+region, const uint8\+\_\+t $\ast$\+\_\+bitmap\+Buffer)
+\begin{DoxyCompactList}\small\item\em update a preallocated region \end{DoxyCompactList}\item 
+void \hyperlink{class_atlas_a893420827f5ef1ab1143a6fb238df9a6}{pack\+U\+V} (uint16\+\_\+t \+\_\+region\+Handle, uint8\+\_\+t $\ast$\+\_\+vertex\+Buffer, uint32\+\_\+t \+\_\+offset, uint32\+\_\+t \+\_\+stride) const 
+\item 
+void \hyperlink{class_atlas_ab17f538673ac6253dd4c95d5bc5d1965}{pack\+U\+V} (const \hyperlink{struct_atlas_region}{Atlas\+Region} \&\+\_\+region, uint8\+\_\+t $\ast$\+\_\+vertex\+Buffer, uint32\+\_\+t \+\_\+offset, uint32\+\_\+t \+\_\+stride) const 
+\item 
+void \hyperlink{class_atlas_a970b187840588b511f713fe8a8e0d919}{pack\+Face\+Layer\+U\+V} (uint32\+\_\+t \+\_\+idx, uint8\+\_\+t $\ast$\+\_\+vertex\+Buffer, uint32\+\_\+t \+\_\+offset, uint32\+\_\+t \+\_\+stride) const 
+\begin{DoxyCompactList}\small\item\em Same as pack\+U\+V but pack a whole face of the atlas cube, mostly used for debugging and visualizing atlas. \end{DoxyCompactList}\item 
+bgfx\+::\+Texture\+Handle \hyperlink{class_atlas_a29e5555b54bbc408fe3acaae5b6865fb}{get\+Texture\+Handle} () const 
+\begin{DoxyCompactList}\small\item\em return the Texture\+Handle (cube) of the atlas \end{DoxyCompactList}\item 
+const \hyperlink{struct_atlas_region}{Atlas\+Region} \& \hyperlink{class_atlas_a154969b95f417af83ff4a491844277f5}{get\+Region} (uint16\+\_\+t \+\_\+handle) const 
+\item 
+uint16\+\_\+t \hyperlink{class_atlas_ab73dcbe95fb235270079c7cf361ed6e4}{get\+Texture\+Size} () const 
+\begin{DoxyCompactList}\small\item\em retrieve the size of side of a texture in pixels \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{class_atlas_ad6e9f297bdd228f523680f424b80c4b9}{get\+Region\+Count} () const 
+\begin{DoxyCompactList}\small\item\em retrieve the usage ratio of the atlas \end{DoxyCompactList}\item 
+const \hyperlink{struct_atlas_region}{Atlas\+Region} $\ast$ \hyperlink{class_atlas_a53af5c63852e7ea43dac65143e8dea10}{get\+Region\+Buffer} () const 
+\begin{DoxyCompactList}\small\item\em retrieve a pointer to the region buffer (in order to serialize it) \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_atlas_aec85664ca2db35e1c3b95bb9b79555f9}{get\+Texture\+Buffer\+Size} () const 
+\begin{DoxyCompactList}\small\item\em retrieve the byte size of the texture \end{DoxyCompactList}\item 
+const uint8\+\_\+t $\ast$ \hyperlink{class_atlas_aa04789505132e47c89e9735c0d8d865c}{get\+Texture\+Buffer} () const 
+\begin{DoxyCompactList}\small\item\em retrieve the mirrored texture buffer (to serialize it) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 53 of file cube\+\_\+atlas.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_atlas_a226154ccd3bfd64dcc8c119377e15924}{\index{Atlas@{Atlas}!Atlas@{Atlas}}
+\index{Atlas@{Atlas}!Atlas@{Atlas}}
+\subsubsection[{Atlas}]{\setlength{\rightskip}{0pt plus 5cm}Atlas\+::\+Atlas (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+texture\+Size, }
+\item[{uint16\+\_\+t}]{\+\_\+max\+Regions\+Count = {\ttfamily 4096}}
+\end{DoxyParamCaption}
+)}}\label{class_atlas_a226154ccd3bfd64dcc8c119377e15924}
+create an empty dynamic atlas (region can be updated and added) 
+\begin{DoxyParams}{Parameters}
+{\em texture\+Size} & an atlas creates a texture cube of 6 faces with size equal to (texture\+Size$\ast$texture\+Size $\ast$ sizeof(\+R\+G\+B\+A)) \\
+\hline
+{\em max\+Region\+Count} & maximum number of region allowed in the atlas \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_atlas_a108e8c56ea6d84501971cac219b522ca}{\index{Atlas@{Atlas}!Atlas@{Atlas}}
+\index{Atlas@{Atlas}!Atlas@{Atlas}}
+\subsubsection[{Atlas}]{\setlength{\rightskip}{0pt plus 5cm}Atlas\+::\+Atlas (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+texture\+Size, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+texture\+Buffer, }
+\item[{uint16\+\_\+t}]{\+\_\+region\+Count, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+region\+Buffer, }
+\item[{uint16\+\_\+t}]{\+\_\+max\+Regions\+Count = {\ttfamily 4096}}
+\end{DoxyParamCaption}
+)}}\label{class_atlas_a108e8c56ea6d84501971cac219b522ca}
+initialize a static atlas with serialized data (region can be updated but not added) 
+\begin{DoxyParams}{Parameters}
+{\em texture\+Size} & an atlas creates a texture cube of 6 faces with size equal to (texture\+Size$\ast$texture\+Size $\ast$ sizeof(\+R\+G\+B\+A)) \\
+\hline
+{\em texture\+Buffer} & buffer of size 6$\ast$texture\+Size$\ast$texture\+Size$\ast$sizeof(uint32\+\_\+t) (will be copied) \\
+\hline
+{\em region\+Count} & number of region in the \hyperlink{class_atlas}{Atlas} \\
+\hline
+{\em region\+Buffer} & buffer containing the region (will be copied) \\
+\hline
+{\em max\+Region\+Count} & maximum number of region allowed in the atlas \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 283 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_atlas_aa48ba7a82ee4f67e84184feadf1afeda}{\index{Atlas@{Atlas}!````~Atlas@{$\sim$\+Atlas}}
+\index{````~Atlas@{$\sim$\+Atlas}!Atlas@{Atlas}}
+\subsubsection[{$\sim$\+Atlas}]{\setlength{\rightskip}{0pt plus 5cm}Atlas\+::$\sim$\+Atlas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_atlas_aa48ba7a82ee4f67e84184feadf1afeda}
+
+
+Definition at line 308 of file cube\+\_\+atlas.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_atlas_a4b62a1b4eaf492865cdd72db69e4ee5a}{\index{Atlas@{Atlas}!add\+Region@{add\+Region}}
+\index{add\+Region@{add\+Region}!Atlas@{Atlas}}
+\subsubsection[{add\+Region}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+::add\+Region (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+width, }
+\item[{uint16\+\_\+t}]{\+\_\+height, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+bitmap\+Buffer, }
+\item[{{\bf Atlas\+Region\+::\+Type}}]{\+\_\+type = {\ttfamily {\bf Atlas\+Region\+::\+T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8}}, }
+\item[{uint16\+\_\+t}]{outline = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_atlas_a4b62a1b4eaf492865cdd72db69e4ee5a}
+
+
+add a region to the atlas, and copy the content of mem to the underlying texture 
+
+
+
+Definition at line 340 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_atlas_a154969b95f417af83ff4a491844277f5}{\index{Atlas@{Atlas}!get\+Region@{get\+Region}}
+\index{get\+Region@{get\+Region}!Atlas@{Atlas}}
+\subsubsection[{get\+Region}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Atlas\+Region}\& Atlas\+::get\+Region (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+handle}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_a154969b95f417af83ff4a491844277f5}
+
+
+Definition at line 99 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_a53af5c63852e7ea43dac65143e8dea10}{\index{Atlas@{Atlas}!get\+Region\+Buffer@{get\+Region\+Buffer}}
+\index{get\+Region\+Buffer@{get\+Region\+Buffer}!Atlas@{Atlas}}
+\subsubsection[{get\+Region\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Atlas\+Region}$\ast$ Atlas\+::get\+Region\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_a53af5c63852e7ea43dac65143e8dea10}
+
+
+retrieve a pointer to the region buffer (in order to serialize it) 
+
+
+
+Definition at line 120 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_ad6e9f297bdd228f523680f424b80c4b9}{\index{Atlas@{Atlas}!get\+Region\+Count@{get\+Region\+Count}}
+\index{get\+Region\+Count@{get\+Region\+Count}!Atlas@{Atlas}}
+\subsubsection[{get\+Region\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+::get\+Region\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_ad6e9f297bdd228f523680f424b80c4b9}
+
+
+retrieve the usage ratio of the atlas 
+
+retrieve the numbers of region in the atlas 
+
+Definition at line 114 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_aa04789505132e47c89e9735c0d8d865c}{\index{Atlas@{Atlas}!get\+Texture\+Buffer@{get\+Texture\+Buffer}}
+\index{get\+Texture\+Buffer@{get\+Texture\+Buffer}!Atlas@{Atlas}}
+\subsubsection[{get\+Texture\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t$\ast$ Atlas\+::get\+Texture\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_aa04789505132e47c89e9735c0d8d865c}
+
+
+retrieve the mirrored texture buffer (to serialize it) 
+
+
+
+Definition at line 132 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_aec85664ca2db35e1c3b95bb9b79555f9}{\index{Atlas@{Atlas}!get\+Texture\+Buffer\+Size@{get\+Texture\+Buffer\+Size}}
+\index{get\+Texture\+Buffer\+Size@{get\+Texture\+Buffer\+Size}!Atlas@{Atlas}}
+\subsubsection[{get\+Texture\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Atlas\+::get\+Texture\+Buffer\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_aec85664ca2db35e1c3b95bb9b79555f9}
+
+
+retrieve the byte size of the texture 
+
+
+
+Definition at line 126 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_a29e5555b54bbc408fe3acaae5b6865fb}{\index{Atlas@{Atlas}!get\+Texture\+Handle@{get\+Texture\+Handle}}
+\index{get\+Texture\+Handle@{get\+Texture\+Handle}!Atlas@{Atlas}}
+\subsubsection[{get\+Texture\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Texture\+Handle Atlas\+::get\+Texture\+Handle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_a29e5555b54bbc408fe3acaae5b6865fb}
+
+
+return the Texture\+Handle (cube) of the atlas 
+
+
+
+Definition at line 93 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_ab73dcbe95fb235270079c7cf361ed6e4}{\index{Atlas@{Atlas}!get\+Texture\+Size@{get\+Texture\+Size}}
+\index{get\+Texture\+Size@{get\+Texture\+Size}!Atlas@{Atlas}}
+\subsubsection[{get\+Texture\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+::get\+Texture\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_atlas_ab73dcbe95fb235270079c7cf361ed6e4}
+
+
+retrieve the size of side of a texture in pixels 
+
+
+
+Definition at line 105 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{class_atlas_a970b187840588b511f713fe8a8e0d919}{\index{Atlas@{Atlas}!pack\+Face\+Layer\+U\+V@{pack\+Face\+Layer\+U\+V}}
+\index{pack\+Face\+Layer\+U\+V@{pack\+Face\+Layer\+U\+V}!Atlas@{Atlas}}
+\subsubsection[{pack\+Face\+Layer\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Atlas\+::pack\+Face\+Layer\+U\+V (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+idx, }
+\item[{uint8\+\_\+t $\ast$}]{\+\_\+vertex\+Buffer, }
+\item[{uint32\+\_\+t}]{\+\_\+offset, }
+\item[{uint32\+\_\+t}]{\+\_\+stride}
+\end{DoxyParamCaption}
+) const}}\label{class_atlas_a970b187840588b511f713fe8a8e0d919}
+
+
+Same as pack\+U\+V but pack a whole face of the atlas cube, mostly used for debugging and visualizing atlas. 
+
+
+
+Definition at line 445 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_atlas_a893420827f5ef1ab1143a6fb238df9a6}{\index{Atlas@{Atlas}!pack\+U\+V@{pack\+U\+V}}
+\index{pack\+U\+V@{pack\+U\+V}!Atlas@{Atlas}}
+\subsubsection[{pack\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Atlas\+::pack\+U\+V (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+region\+Handle, }
+\item[{uint8\+\_\+t $\ast$}]{\+\_\+vertex\+Buffer, }
+\item[{uint32\+\_\+t}]{\+\_\+offset, }
+\item[{uint32\+\_\+t}]{\+\_\+stride}
+\end{DoxyParamCaption}
+) const}}\label{class_atlas_a893420827f5ef1ab1143a6fb238df9a6}
+Pack the U\+V coordinates of the four corners of a region to a vertex buffer using the supplied vertex format. v0 -- v3 $\vert$ $\vert$ encoded in that order\+: v0,v1,v2,v3 v1 -- v2 \begin{DoxyRemark}{Remarks}
+the U\+V are four signed short normalized components. 
+
+the x,y,z components encode cube uv coordinates. The w component encode the color channel if any. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & handle to the region we are interested in \\
+\hline
+{\em vertex\+Buffer} & address of the first vertex we want to update. Must be valid up to vertex\+Buffer + offset + 3$\ast$stride + 4$\ast$sizeof(int16\+\_\+t), which means the buffer must contains at least 4 vertex includind the first. \\
+\hline
+{\em offset} & byte offset to the first uv coordinate of the vertex in the buffer \\
+\hline
+{\em stride} & stride between tho U\+V coordinates, usually size of a Vertex. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 450 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_atlas_ab17f538673ac6253dd4c95d5bc5d1965}{\index{Atlas@{Atlas}!pack\+U\+V@{pack\+U\+V}}
+\index{pack\+U\+V@{pack\+U\+V}!Atlas@{Atlas}}
+\subsubsection[{pack\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Atlas\+::pack\+U\+V (
+\begin{DoxyParamCaption}
+\item[{const {\bf Atlas\+Region} \&}]{\+\_\+region, }
+\item[{uint8\+\_\+t $\ast$}]{\+\_\+vertex\+Buffer, }
+\item[{uint32\+\_\+t}]{\+\_\+offset, }
+\item[{uint32\+\_\+t}]{\+\_\+stride}
+\end{DoxyParamCaption}
+) const}}\label{class_atlas_ab17f538673ac6253dd4c95d5bc5d1965}
+
+
+Definition at line 465 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_atlas_ab6e1cc8a4f6c422c1bf2fa9f978a7235}{\index{Atlas@{Atlas}!update\+Region@{update\+Region}}
+\index{update\+Region@{update\+Region}!Atlas@{Atlas}}
+\subsubsection[{update\+Region}]{\setlength{\rightskip}{0pt plus 5cm}void Atlas\+::update\+Region (
+\begin{DoxyParamCaption}
+\item[{const {\bf Atlas\+Region} \&}]{\+\_\+region, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+bitmap\+Buffer}
+\end{DoxyParamCaption}
+)}}\label{class_atlas_ab6e1cc8a4f6c422c1bf2fa9f978a7235}
+
+
+update a preallocated region 
+
+
+
+Definition at line 405 of file cube\+\_\+atlas.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/\hyperlink{cube__atlas_8h}{cube\+\_\+atlas.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/\hyperlink{cube__atlas_8cpp}{cube\+\_\+atlas.\+cpp}\end{DoxyCompactItemize}

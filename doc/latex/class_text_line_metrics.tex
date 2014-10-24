@@ -1,0 +1,182 @@
+\hypertarget{class_text_line_metrics}{\section{Text\+Line\+Metrics Class Reference}
+\label{class_text_line_metrics}\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+}
+
+
+Compute text crop area for text using a single font.  
+
+
+
+
+{\ttfamily \#include $<$text\+\_\+metrics.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_text_line_metrics_af14bb35a3a80f34f1740ed115ba59f1f}{Text\+Line\+Metrics} (const \hyperlink{struct_font_info}{Font\+Info} \&\+\_\+font\+Info)
+\item 
+float \hyperlink{class_text_line_metrics_a9d511622738445c25e74832d046d13f9}{get\+Line\+Height} () const 
+\begin{DoxyCompactList}\small\item\em Return the height of a line of text using the given font. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_line_metrics_a9dfe782d495b151f7af1da068e950221}{get\+Line\+Count} (const char $\ast$\+\_\+string) const 
+\begin{DoxyCompactList}\small\item\em Return the number of text line in the given text. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_line_metrics_ad637dd57c23020dc2602e63a5c917b62}{get\+Line\+Count} (const wchar\+\_\+t $\ast$\+\_\+string) const 
+\begin{DoxyCompactList}\small\item\em Return the number of text line in the given text. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_line_metrics_ab493b5277c00b2fe780c99e7d9a354bf}{get\+Sub\+Text} (const char $\ast$\+\_\+string, uint32\+\_\+t \+\_\+first\+Line, uint32\+\_\+t \+\_\+last\+Line, const char $\ast$\&\+\_\+begin, const char $\ast$\&\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Return the first and last character visible in the \mbox{[}\+\_\+first\+Line, \+\_\+last\+Line\mbox{]} range. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_line_metrics_af340d99c172cd1aa95b4afd74d544bcc}{get\+Sub\+Text} (const wchar\+\_\+t $\ast$\+\_\+string, uint32\+\_\+t \+\_\+first\+Line, uint32\+\_\+t \+\_\+last\+Line, const wchar\+\_\+t $\ast$\&\+\_\+begin, const wchar\+\_\+t $\ast$\&\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Return the first and last character visible in the \mbox{[}\+\_\+first\+Line, \+\_\+last\+Line\mbox{]} range. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_line_metrics_add00992de9cfa93bd4eccb67b9a3aeb4}{get\+Visible\+Text} (const char $\ast$\+\_\+string, float \+\_\+top, float \+\_\+bottom, const char $\ast$\&\+\_\+begin, const char $\ast$\&\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Return the first and last character visible in the \mbox{[}\+\_\+top, \+\_\+bottom\mbox{]} range,. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_line_metrics_a602adf913212e81d91dd08dc4fa9c382}{get\+Visible\+Text} (const wchar\+\_\+t $\ast$\+\_\+string, float \+\_\+top, float \+\_\+bottom, const wchar\+\_\+t $\ast$\&\+\_\+begin, const wchar\+\_\+t $\ast$\&\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Return the first and last character visible in the \mbox{[}\+\_\+top, \+\_\+bottom\mbox{]} range,. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Compute text crop area for text using a single font. 
+
+Definition at line 38 of file text\+\_\+metrics.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_text_line_metrics_af14bb35a3a80f34f1740ed115ba59f1f}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{Text\+Line\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Line\+Metrics\+::\+Text\+Line\+Metrics (
+\begin{DoxyParamCaption}
+\item[{const {\bf Font\+Info} \&}]{\+\_\+font\+Info}
+\end{DoxyParamCaption}
+)}}\label{class_text_line_metrics_af14bb35a3a80f34f1740ed115ba59f1f}
+
+
+Definition at line 116 of file text\+\_\+metrics.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_text_line_metrics_a9dfe782d495b151f7af1da068e950221}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Line\+Count@{get\+Line\+Count}}
+\index{get\+Line\+Count@{get\+Line\+Count}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Line\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Line\+Metrics\+::get\+Line\+Count (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+string}
+\end{DoxyParamCaption}
+) const}}\label{class_text_line_metrics_a9dfe782d495b151f7af1da068e950221}
+
+
+Return the number of text line in the given text. 
+
+
+
+Definition at line 121 of file text\+\_\+metrics.\+cpp.
+
+\hypertarget{class_text_line_metrics_ad637dd57c23020dc2602e63a5c917b62}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Line\+Count@{get\+Line\+Count}}
+\index{get\+Line\+Count@{get\+Line\+Count}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Line\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Line\+Metrics\+::get\+Line\+Count (
+\begin{DoxyParamCaption}
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+string}
+\end{DoxyParamCaption}
+) const}}\label{class_text_line_metrics_ad637dd57c23020dc2602e63a5c917b62}
+
+
+Return the number of text line in the given text. 
+
+
+
+Definition at line 141 of file text\+\_\+metrics.\+cpp.
+
+\hypertarget{class_text_line_metrics_a9d511622738445c25e74832d046d13f9}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Line\+Height@{get\+Line\+Height}}
+\index{get\+Line\+Height@{get\+Line\+Height}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Line\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Text\+Line\+Metrics\+::get\+Line\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_line_metrics_a9d511622738445c25e74832d046d13f9}
+
+
+Return the height of a line of text using the given font. 
+
+
+
+Definition at line 44 of file text\+\_\+metrics.\+h.
+
+\hypertarget{class_text_line_metrics_ab493b5277c00b2fe780c99e7d9a354bf}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Sub\+Text@{get\+Sub\+Text}}
+\index{get\+Sub\+Text@{get\+Sub\+Text}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Sub\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Line\+Metrics\+::get\+Sub\+Text (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+string, }
+\item[{uint32\+\_\+t}]{\+\_\+first\+Line, }
+\item[{uint32\+\_\+t}]{\+\_\+last\+Line, }
+\item[{const char $\ast$\&}]{\+\_\+begin, }
+\item[{const char $\ast$\&}]{\+\_\+end}
+\end{DoxyParamCaption}
+)}}\label{class_text_line_metrics_ab493b5277c00b2fe780c99e7d9a354bf}
+
+
+Return the first and last character visible in the \mbox{[}\+\_\+first\+Line, \+\_\+last\+Line\mbox{]} range. 
+
+
+
+Definition at line 155 of file text\+\_\+metrics.\+cpp.
+
+\hypertarget{class_text_line_metrics_af340d99c172cd1aa95b4afd74d544bcc}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Sub\+Text@{get\+Sub\+Text}}
+\index{get\+Sub\+Text@{get\+Sub\+Text}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Sub\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Line\+Metrics\+::get\+Sub\+Text (
+\begin{DoxyParamCaption}
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+string, }
+\item[{uint32\+\_\+t}]{\+\_\+first\+Line, }
+\item[{uint32\+\_\+t}]{\+\_\+last\+Line, }
+\item[{const wchar\+\_\+t $\ast$\&}]{\+\_\+begin, }
+\item[{const wchar\+\_\+t $\ast$\&}]{\+\_\+end}
+\end{DoxyParamCaption}
+)}}\label{class_text_line_metrics_af340d99c172cd1aa95b4afd74d544bcc}
+
+
+Return the first and last character visible in the \mbox{[}\+\_\+first\+Line, \+\_\+last\+Line\mbox{]} range. 
+
+
+
+Definition at line 200 of file text\+\_\+metrics.\+cpp.
+
+\hypertarget{class_text_line_metrics_add00992de9cfa93bd4eccb67b9a3aeb4}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Visible\+Text@{get\+Visible\+Text}}
+\index{get\+Visible\+Text@{get\+Visible\+Text}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Visible\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Line\+Metrics\+::get\+Visible\+Text (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+string, }
+\item[{float}]{\+\_\+top, }
+\item[{float}]{\+\_\+bottom, }
+\item[{const char $\ast$\&}]{\+\_\+begin, }
+\item[{const char $\ast$\&}]{\+\_\+end}
+\end{DoxyParamCaption}
+)}}\label{class_text_line_metrics_add00992de9cfa93bd4eccb67b9a3aeb4}
+
+
+Return the first and last character visible in the \mbox{[}\+\_\+top, \+\_\+bottom\mbox{]} range,. 
+
+
+
+Definition at line 232 of file text\+\_\+metrics.\+cpp.
+
+\hypertarget{class_text_line_metrics_a602adf913212e81d91dd08dc4fa9c382}{\index{Text\+Line\+Metrics@{Text\+Line\+Metrics}!get\+Visible\+Text@{get\+Visible\+Text}}
+\index{get\+Visible\+Text@{get\+Visible\+Text}!Text\+Line\+Metrics@{Text\+Line\+Metrics}}
+\subsubsection[{get\+Visible\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Line\+Metrics\+::get\+Visible\+Text (
+\begin{DoxyParamCaption}
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+string, }
+\item[{float}]{\+\_\+top, }
+\item[{float}]{\+\_\+bottom, }
+\item[{const wchar\+\_\+t $\ast$\&}]{\+\_\+begin, }
+\item[{const wchar\+\_\+t $\ast$\&}]{\+\_\+end}
+\end{DoxyParamCaption}
+)}}\label{class_text_line_metrics_a602adf913212e81d91dd08dc4fa9c382}
+
+
+Return the first and last character visible in the \mbox{[}\+\_\+top, \+\_\+bottom\mbox{]} range,. 
+
+
+
+Definition at line 279 of file text\+\_\+metrics.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{text__metrics_8h}{text\+\_\+metrics.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{text__metrics_8cpp}{text\+\_\+metrics.\+cpp}\end{DoxyCompactItemize}

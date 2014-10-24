@@ -1,0 +1,156 @@
+\hypertarget{struct_atlas_region}{\section{Atlas\+Region Struct Reference}
+\label{struct_atlas_region}\index{Atlas\+Region@{Atlas\+Region}}
+}
+
+
+{\ttfamily \#include $<$cube\+\_\+atlas.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2}{Type} \{ \hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2aec663ca56a7d66e0b922d88131dc9798}{T\+Y\+P\+E\+\_\+\+G\+R\+A\+Y} = 1, 
+\hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2a3010705c5f10ae5b40dee6de2fb1bb63}{T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2}{Type} \hyperlink{struct_atlas_region_ac0119bcd6c0708be53150750da1b14db}{get\+Type} () const 
+\item 
+uint32\+\_\+t \hyperlink{struct_atlas_region_a868214ea44b37129d280ffa29a5836f5}{get\+Face\+Index} () const 
+\item 
+uint32\+\_\+t \hyperlink{struct_atlas_region_aadbfc210bb2f858876d57e6ed81b4eee}{get\+Component\+Index} () const 
+\item 
+void \hyperlink{struct_atlas_region_a8e0e8a5910793d07903a5f04bb13a355}{set\+Mask} (\hyperlink{struct_atlas_region_a51d027756a617938bf45be832663e2c2}{Type} \+\_\+type, uint32\+\_\+t \+\_\+face\+Index, uint32\+\_\+t \+\_\+component\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{struct_atlas_region_aee785d751de233eac49a4bb9ea27bd70}{x}
+\item 
+uint16\+\_\+t \hyperlink{struct_atlas_region_a27b91687289b01babe0625c869d216b3}{y}
+\item 
+uint16\+\_\+t \hyperlink{struct_atlas_region_afa487dd2e5e49d4e873d505b8b3d413e}{width}
+\item 
+uint16\+\_\+t \hyperlink{struct_atlas_region_a383ffd5dad4c058768ad4d5c45b118dd}{height}
+\item 
+uint32\+\_\+t \hyperlink{struct_atlas_region_a4a74c2abe0122654d0c0905d1fd54d2d}{mask}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Inspired from texture-\/atlas from freetype-\/gl (\href{http://code.google.com/p/freetype-gl/}{\tt http\+://code.\+google.\+com/p/freetype-\/gl/}) by Nicolas Rougier (\href{mailto:Nicolas.Rougier@inria.fr}{\tt Nicolas.\+Rougier@inria.\+fr}) The actual implementation is based on the article by Jukka Jylänki \+: "A Thousand Ways to Pack the Bin -\/ A Practical Approach to Two-\/\+Dimensional Rectangle Bin Packing", February 27, 2010. More precisely, this is an implementation of the Skyline Bottom-\/\+Left algorithm based on C++ sources provided by Jukka Jylänki at\+: \href{http://clb.demon.fi/files/RectangleBinPack/}{\tt http\+://clb.\+demon.\+fi/files/\+Rectangle\+Bin\+Pack/} 
+
+Definition at line 20 of file cube\+\_\+atlas.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{struct_atlas_region_a51d027756a617938bf45be832663e2c2}{\index{Atlas\+Region@{Atlas\+Region}!Type@{Type}}
+\index{Type@{Type}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Atlas\+Region\+::\+Type}}}\label{struct_atlas_region_a51d027756a617938bf45be832663e2c2}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+Y\+P\+E\+\_\+\+G\+R\+A\+Y@{T\+Y\+P\+E\+\_\+\+G\+R\+A\+Y}!Atlas\+Region@{Atlas\+Region}}\index{Atlas\+Region@{Atlas\+Region}!T\+Y\+P\+E\+\_\+\+G\+R\+A\+Y@{T\+Y\+P\+E\+\_\+\+G\+R\+A\+Y}}\item[{\em 
+\hypertarget{struct_atlas_region_a51d027756a617938bf45be832663e2c2aec663ca56a7d66e0b922d88131dc9798}{T\+Y\+P\+E\+\_\+\+G\+R\+A\+Y}\label{struct_atlas_region_a51d027756a617938bf45be832663e2c2aec663ca56a7d66e0b922d88131dc9798}
+}]\index{T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8@{T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8}!Atlas\+Region@{Atlas\+Region}}\index{Atlas\+Region@{Atlas\+Region}!T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8@{T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8}}\item[{\em 
+\hypertarget{struct_atlas_region_a51d027756a617938bf45be832663e2c2a3010705c5f10ae5b40dee6de2fb1bb63}{T\+Y\+P\+E\+\_\+\+B\+G\+R\+A8}\label{struct_atlas_region_a51d027756a617938bf45be832663e2c2a3010705c5f10ae5b40dee6de2fb1bb63}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 22 of file cube\+\_\+atlas.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_atlas_region_aadbfc210bb2f858876d57e6ed81b4eee}{\index{Atlas\+Region@{Atlas\+Region}!get\+Component\+Index@{get\+Component\+Index}}
+\index{get\+Component\+Index@{get\+Component\+Index}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{get\+Component\+Index}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Atlas\+Region\+::get\+Component\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_atlas_region_aadbfc210bb2f858876d57e6ed81b4eee}
+
+
+Definition at line 42 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_a868214ea44b37129d280ffa29a5836f5}{\index{Atlas\+Region@{Atlas\+Region}!get\+Face\+Index@{get\+Face\+Index}}
+\index{get\+Face\+Index@{get\+Face\+Index}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{get\+Face\+Index}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Atlas\+Region\+::get\+Face\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_atlas_region_a868214ea44b37129d280ffa29a5836f5}
+
+
+Definition at line 37 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_ac0119bcd6c0708be53150750da1b14db}{\index{Atlas\+Region@{Atlas\+Region}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} Atlas\+Region\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_atlas_region_ac0119bcd6c0708be53150750da1b14db}
+
+
+Definition at line 32 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_a8e0e8a5910793d07903a5f04bb13a355}{\index{Atlas\+Region@{Atlas\+Region}!set\+Mask@{set\+Mask}}
+\index{set\+Mask@{set\+Mask}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{set\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}void Atlas\+Region\+::set\+Mask (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{\+\_\+type, }
+\item[{uint32\+\_\+t}]{\+\_\+face\+Index, }
+\item[{uint32\+\_\+t}]{\+\_\+component\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_atlas_region_a8e0e8a5910793d07903a5f04bb13a355}
+
+
+Definition at line 47 of file cube\+\_\+atlas.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_atlas_region_a383ffd5dad4c058768ad4d5c45b118dd}{\index{Atlas\+Region@{Atlas\+Region}!height@{height}}
+\index{height@{height}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+Region\+::height}}\label{struct_atlas_region_a383ffd5dad4c058768ad4d5c45b118dd}
+
+
+Definition at line 29 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_a4a74c2abe0122654d0c0905d1fd54d2d}{\index{Atlas\+Region@{Atlas\+Region}!mask@{mask}}
+\index{mask@{mask}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Atlas\+Region\+::mask}}\label{struct_atlas_region_a4a74c2abe0122654d0c0905d1fd54d2d}
+
+
+Definition at line 30 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_afa487dd2e5e49d4e873d505b8b3d413e}{\index{Atlas\+Region@{Atlas\+Region}!width@{width}}
+\index{width@{width}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+Region\+::width}}\label{struct_atlas_region_afa487dd2e5e49d4e873d505b8b3d413e}
+
+
+Definition at line 29 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_aee785d751de233eac49a4bb9ea27bd70}{\index{Atlas\+Region@{Atlas\+Region}!x@{x}}
+\index{x@{x}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+Region\+::x}}\label{struct_atlas_region_aee785d751de233eac49a4bb9ea27bd70}
+
+
+Definition at line 28 of file cube\+\_\+atlas.\+h.
+
+\hypertarget{struct_atlas_region_a27b91687289b01babe0625c869d216b3}{\index{Atlas\+Region@{Atlas\+Region}!y@{y}}
+\index{y@{y}!Atlas\+Region@{Atlas\+Region}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Atlas\+Region\+::y}}\label{struct_atlas_region_a27b91687289b01babe0625c869d216b3}
+
+
+Definition at line 28 of file cube\+\_\+atlas.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/\hyperlink{cube__atlas_8h}{cube\+\_\+atlas.\+h}\end{DoxyCompactItemize}

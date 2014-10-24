@@ -1,0 +1,32 @@
+\hypertarget{file_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/core/source/file.cpp File Reference}
+\label{file_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/core/source/file.\+cpp@{/mnt/windows/data/programming/crapengine2/source/core/source/file.\+cpp}}
+}
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+platform.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}file.\+h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+file\+\_\+t $\ast$ \hyperlink{namespacecrap_a95e7097ddb2306595f5b806a08268785}{crap\+::open\+File} (const char $\ast$filename, const char $\ast$flags)
+\item 
+void \hyperlink{namespacecrap_ae3f7572940d5aa57594264a780d59789}{crap\+::close\+File} (file\+\_\+t $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T handle)
+\item 
+uint32\+\_\+t \hyperlink{namespacecrap_a33ebe4053661b1006d88f1082cebbd1b}{crap\+::file\+Size} (const char $\ast$filename)
+\item 
+uint32\+\_\+t \hyperlink{namespacecrap_aadea1555cd17b168f91b3d03171b8179}{crap\+::file\+Size} (file\+\_\+t $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T handle)
+\item 
+void \hyperlink{namespacecrap_a8f1a200b8c609f13705e295fda9c28bf}{crap\+::set\+File\+Handle\+Position} (file\+\_\+t $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T handle, int32\+\_\+t byte\+\_\+position)
+\item 
+void \hyperlink{namespacecrap_a9aabeee93bb15d29856ac9fad19a012f}{crap\+::read\+From\+File} (file\+\_\+t $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T handle, pointer\+\_\+void buffer, uint32\+\_\+t buffersize)
+\item 
+char $\ast$ \hyperlink{namespacecrap_a6f81dd8b4fccd28c05665ce86bbc7835}{crap\+::read\+Line\+From\+File} (file\+\_\+t $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T handle, pointer\+\_\+void buffer, uint32\+\_\+t buffersize)
+\item 
+void \hyperlink{namespacecrap_a44ce23333dcd545198f1ca1687059a63}{crap\+::write\+To\+File} (file\+\_\+t $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T handle, pointer\+\_\+void buffer, uint32\+\_\+t buffersize)
+\end{DoxyCompactItemize}

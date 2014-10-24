@@ -1,0 +1,134 @@
+\hypertarget{memory_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/memory.h File Reference}
+\label{memory_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/memory.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/memory.\+h}}
+}
+{\ttfamily \#include \char`\"{}memory/generalallocator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/linearallocator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/poolallocator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/stackallocator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/containermemory.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/mallocallocator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/memoryarena.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/memorybounds.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/memorytagging.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/memorytracking.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory/memorysource.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}thread.\+h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{memory_8h_a7e3a4c7410e0f621637a6301743946ff}{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+linear\+\_\+allocator, no\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a15a43bda87dfd4f909e30e1df3b1cee7}{crap\+::\+Simple\+Linear\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+general\+\_\+allocator, no\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a0f685df0fdfec9a4cbf9aaeab41a73a5}{crap\+::\+Simple\+General\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+stack\+\_\+allocator, no\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a1265b2d1470f9e9196ec1ffcb2fd0701}{crap\+::\+Simple\+Stack\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+malloc\+\_\+allocator, no\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a8711640793bf2ed760185fe66c8e3d03}{crap\+::\+Simple\+Malloc\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+linear\+\_\+allocator, no\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_aa20da4e8cbab540052136fe0dc25815c}{crap\+::\+Bound\+Linear\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+general\+\_\+allocator, no\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_aaff1250c80e3631796871d2e94b4d187}{crap\+::\+Bound\+General\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+stack\+\_\+allocator, no\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_af1fa4a94e1cfd326b0c488a328e154a3}{crap\+::\+Bound\+Stack\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+malloc\+\_\+allocator, no\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a8d06ec26605b8fbab3675d68bc669a2b}{crap\+::\+Bound\+Malloc\+Memory}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+linear\+\_\+allocator, system\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a98a843d877d8c0558c40574d0a0019e3}{crap\+::\+Simple\+Linear\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+general\+\_\+allocator, \\*
+system\+\_\+mutex, no\+\_\+bounds, \\*
+no\+\_\+tracking, no\+\_\+tagging $>$ \hyperlink{namespacecrap_a8c3afedb9f5acb5aa0e4e2767ccf0118}{crap\+::\+Simple\+General\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+stack\+\_\+allocator, system\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_aa7a4e4bf8df096c0ab06b0fdbf4c3c0f}{crap\+::\+Simple\+Stack\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+malloc\+\_\+allocator, system\+\_\+mutex, \\*
+no\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a86d2d770530309cb5cb92249b5efadcb}{crap\+::\+Simple\+Malloc\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+linear\+\_\+allocator, system\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a55259fc8a1932b947a5b796be2f346dc}{crap\+::\+Bound\+Linear\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+general\+\_\+allocator, \\*
+system\+\_\+mutex, dead\+\_\+bounds, \\*
+no\+\_\+tracking, no\+\_\+tagging $>$ \hyperlink{namespacecrap_a319a79ca62a9c225a5e10d662c366828}{crap\+::\+Bound\+General\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+stack\+\_\+allocator, system\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a9e4f3d9be875850166fb480763ce7abb}{crap\+::\+Bound\+Stack\+Memory\+M\+T}
+\item 
+typedef Memory\+Arena\\*
+$<$ memory\+\_\+source\+\_\+malloc, \\*
+malloc\+\_\+allocator, system\+\_\+mutex, \\*
+dead\+\_\+bounds, no\+\_\+tracking, \\*
+no\+\_\+tagging $>$ \hyperlink{namespacecrap_a0e1ad1a243444e07c558d2553b3949da}{crap\+::\+Bound\+Malloc\+Memory\+M\+T}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{memory_8h_a7e3a4c7410e0f621637a6301743946ff}{\index{memory.\+h@{memory.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y}}
+\index{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y}!memory.\+h@{memory.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+O\+R\+Y}}\label{memory_8h_a7e3a4c7410e0f621637a6301743946ff}
+
+
+Definition at line 5 of file memory.\+h.
+

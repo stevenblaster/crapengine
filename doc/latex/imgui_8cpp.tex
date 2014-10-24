@@ -1,0 +1,567 @@
+\hypertarget{imgui_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/imgui/imgui.cpp File Reference}
+\label{imgui_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/imgui/imgui.\+cpp@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/imgui/imgui.\+cpp}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$bx/string.\+h$>$}\\*
+{\ttfamily \#include $<$bx/uint32\+\_\+t.\+h$>$}\\*
+{\ttfamily \#include $<$bx/fpumath.\+h$>$}\\*
+{\ttfamily \#include $<$bx/handlealloc.\+h$>$}\\*
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../entry/dbg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../nanovg/nanovg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vs\+\_\+imgui\+\_\+color.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fs\+\_\+imgui\+\_\+color.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vs\+\_\+imgui\+\_\+texture.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fs\+\_\+imgui\+\_\+texture.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vs\+\_\+imgui\+\_\+image.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fs\+\_\+imgui\+\_\+image.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dds\+\_\+imgui\+\_\+x\+\_\+texture.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stb\+\_\+truetype/stb\+\_\+truetype.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_imgui}{Imgui}
+\item 
+struct \hyperlink{struct_imgui_1_1_font}{Imgui\+::\+Font}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{imgui_8cpp_a24b412fe57bb9b3bc5f2bc0c562f4db9}{U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T}~0
+\item 
+\#define \hyperlink{imgui_8cpp_a3af1d21ef7ab72a041fbfec717423f71}{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}~20
+\item 
+\#define \hyperlink{imgui_8cpp_ac8b912735d9c4520ca6cb8fde885a56f}{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S}~100
+\item 
+\#define \hyperlink{imgui_8cpp_a3ab40b25c7d9283ac2c0cf0f591ee58f}{N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S}~(8 $\ast$ 4)
+\item 
+\#define \hyperlink{imgui_8cpp_a39e79fc7cf8376a6d450a32898cb1562}{S\+T\+B\+T\+T\+\_\+malloc}(\+\_\+x, \+\_\+y)~imgui\+Malloc(\+\_\+x, \+\_\+y)
+\item 
+\#define \hyperlink{imgui_8cpp_afaa7361141652f555e0a82851a3295a7}{S\+T\+B\+T\+T\+\_\+free}(\+\_\+x, \+\_\+y)~imgui\+Free(\+\_\+x, \+\_\+y)
+\item 
+\#define \hyperlink{imgui_8cpp_afaa2f2d0d9d6726cfae6da070e736347}{S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Imgui\+Font\+Handle \hyperlink{imgui_8cpp_a38f646a688666cc1eda1d08ff706b4fc}{imgui\+Create} (const void $\ast$\+\_\+data, float \+\_\+font\+Size)
+\item 
+void \hyperlink{imgui_8cpp_a732a6bc429bd2476e4cc9afac70a09ea}{imgui\+Set\+Font} (Imgui\+Font\+Handle \+\_\+handle)
+\item 
+Imgui\+Font\+Handle \hyperlink{imgui_8cpp_a75d8602799407eb73e234e38bbdb23c4}{imgui\+Create\+Font} (const void $\ast$\+\_\+data, float \+\_\+font\+Size)
+\item 
+void \hyperlink{imgui_8cpp_ae07feb5aa02c6a112f8de06243f77def}{imgui\+Destroy} ()
+\item 
+void \hyperlink{imgui_8cpp_a4e0b7c3de628ae82631804fb9c65439a}{imgui\+Begin\+Frame} (int32\+\_\+t \+\_\+mx, int32\+\_\+t \+\_\+my, uint8\+\_\+t \+\_\+button, int32\+\_\+t \+\_\+scroll, uint16\+\_\+t \+\_\+width, uint16\+\_\+t \+\_\+height, uint8\+\_\+t \+\_\+view)
+\item 
+void \hyperlink{imgui_8cpp_afd1f5eaee9f7475255c6fba75ff5123c}{imgui\+End\+Frame} ()
+\item 
+bool \hyperlink{imgui_8cpp_adc4ebb9237ed8dbf13154a3e23b85237}{imgui\+Begin\+Scroll\+Area} (const char $\ast$\+\_\+name, int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, int32\+\_\+t \+\_\+width, int32\+\_\+t \+\_\+height, int32\+\_\+t $\ast$\+\_\+scroll, bool \+\_\+enabled)
+\item 
+void \hyperlink{imgui_8cpp_ac2bccc89a7e0b94592623961cb21b257}{imgui\+End\+Scroll\+Area} ()
+\item 
+void \hyperlink{imgui_8cpp_ae3d00934ccb219ffa9316b252d8afba0}{imgui\+Indent} ()
+\item 
+void \hyperlink{imgui_8cpp_a509b76e72688bbb9b319c778b753c11d}{imgui\+Unindent} ()
+\item 
+void \hyperlink{imgui_8cpp_ad77cd8c7e79231bf99358e8766845ac1}{imgui\+Separator} ()
+\item 
+void \hyperlink{imgui_8cpp_ad1692a47ae3a3393f459c5dcf8b78651}{imgui\+Separator\+Line} ()
+\item 
+bool \hyperlink{imgui_8cpp_a04f382df2383b441de9b167c5d00ef6d}{imgui\+Button} (const char $\ast$\+\_\+text, bool \+\_\+enabled)
+\item 
+bool \hyperlink{imgui_8cpp_a99e006c4304b7a94a887e08da29261af}{imgui\+Item} (const char $\ast$\+\_\+text, bool \+\_\+enabled)
+\item 
+bool \hyperlink{imgui_8cpp_a364ec5795f8ae62adbb89517cfe78da4}{imgui\+Check} (const char $\ast$\+\_\+text, bool \+\_\+checked, bool \+\_\+enabled)
+\item 
+bool \hyperlink{imgui_8cpp_ab475eae41247e15c279d6db8447bff3b}{imgui\+Collapse} (const char $\ast$\+\_\+text, const char $\ast$\+\_\+subtext, bool \+\_\+checked, bool \+\_\+enabled)
+\item 
+void \hyperlink{imgui_8cpp_af5eb3f3926d4df8a03c860d12dfe5db2}{imgui\+Label} (const char $\ast$\+\_\+format,...)
+\item 
+void \hyperlink{imgui_8cpp_a2b9ed5381d8ba780ec98bca83b26d86d}{imgui\+Value} (const char $\ast$\+\_\+text)
+\item 
+bool \hyperlink{imgui_8cpp_ab590300cfe004939adb6002b6512448b}{imgui\+Slider} (const char $\ast$\+\_\+text, float \&\+\_\+val, float \+\_\+vmin, float \+\_\+vmax, float \+\_\+vinc, bool \+\_\+enabled)
+\item 
+bool \hyperlink{imgui_8cpp_a056110fc5da3b6a5151c9dfdbf319c05}{imgui\+Slider} (const char $\ast$\+\_\+text, int32\+\_\+t \&\+\_\+val, int32\+\_\+t \+\_\+vmin, int32\+\_\+t \+\_\+vmax, bool \+\_\+enabled)
+\item 
+uint32\+\_\+t \hyperlink{imgui_8cpp_aba27f95fcbc59cdb8f6e877a978b6637}{imgui\+Choose\+Use\+Macro\+Instead} (uint32\+\_\+t \+\_\+selected,...)
+\item 
+void \hyperlink{imgui_8cpp_af3f966017502738c154bb52cc72c3de9}{imgui\+Draw\+Text} (int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, \hyperlink{struct_imgui_text_align_a8e5bef09f173b67144ba413e0ed392b1}{Imgui\+Text\+Align\+::\+Enum} \+\_\+align, const char $\ast$\+\_\+text, uint32\+\_\+t \+\_\+argb)
+\item 
+void \hyperlink{imgui_8cpp_aef733e346d2caac53f15bc5d3dedbaa2}{imgui\+Draw\+Line} (float \+\_\+x0, float \+\_\+y0, float \+\_\+x1, float \+\_\+y1, float \+\_\+r, uint32\+\_\+t \+\_\+argb)
+\item 
+void \hyperlink{imgui_8cpp_aff28c81b8034f70647c2010f12159234}{imgui\+Draw\+Rounded\+Rect} (float \+\_\+x, float \+\_\+y, float \+\_\+width, float \+\_\+height, float \+\_\+r, uint32\+\_\+t \+\_\+argb)
+\item 
+void \hyperlink{imgui_8cpp_a7736852053ed880d1551528d8f304a66}{imgui\+Draw\+Rect} (float \+\_\+x, float \+\_\+y, float \+\_\+width, float \+\_\+height, uint32\+\_\+t \+\_\+argb)
+\item 
+void \hyperlink{imgui_8cpp_a0dc16b0b9ac73ccb799a0a5fe1a803d2}{imgui\+Bool} (const char $\ast$\+\_\+text, bool \&\+\_\+flag, bool \+\_\+enabled)
+\item 
+void \hyperlink{imgui_8cpp_a8eca6f7866e57cc24ad606adb4a96b96}{imgui\+Color\+Wheel} (float \+\_\+rgb\mbox{[}3\mbox{]}, bool \+\_\+respect\+Indentation, bool \+\_\+enabled)
+\item 
+void \hyperlink{imgui_8cpp_a000649bd308b72ad107481c21b066ff3}{imgui\+Color\+Wheel} (const char $\ast$\+\_\+text, float \+\_\+rgb\mbox{[}3\mbox{]}, bool \&\+\_\+activated, bool \+\_\+enabled)
+\item 
+void \hyperlink{imgui_8cpp_ae1619bae5447053c0b7f56097ca24aa1}{imgui\+Image} (bgfx\+::\+Texture\+Handle \+\_\+image, float \+\_\+lod, int32\+\_\+t \+\_\+width, int32\+\_\+t \+\_\+height, \hyperlink{struct_imgui_image_align_a5f02ce5e32468b0d112123cf21437313}{Imgui\+Image\+Align\+::\+Enum} \+\_\+align)
+\item 
+void \hyperlink{imgui_8cpp_a30e11640203e61f1a602b281f7311f22}{imgui\+Image} (bgfx\+::\+Texture\+Handle \+\_\+image, float \+\_\+lod, float \+\_\+width, float \+\_\+aspect, \hyperlink{struct_imgui_image_align_a5f02ce5e32468b0d112123cf21437313}{Imgui\+Image\+Align\+::\+Enum} \+\_\+align)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{imgui_8cpp_a3af1d21ef7ab72a041fbfec717423f71}{\index{imgui.\+cpp@{imgui.\+cpp}!I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S@{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}}
+\index{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S@{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S~20}}\label{imgui_8cpp_a3af1d21ef7ab72a041fbfec717423f71}
+
+
+Definition at line 47 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ac8b912735d9c4520ca6cb8fde885a56f}{\index{imgui.\+cpp@{imgui.\+cpp}!M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S@{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S}}
+\index{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S@{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S~100}}\label{imgui_8cpp_ac8b912735d9c4520ca6cb8fde885a56f}
+
+
+Definition at line 49 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a3ab40b25c7d9283ac2c0cf0f591ee58f}{\index{imgui.\+cpp@{imgui.\+cpp}!N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S@{N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S}}
+\index{N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S@{N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S~(8 $\ast$ 4)}}\label{imgui_8cpp_a3ab40b25c7d9283ac2c0cf0f591ee58f}
+
+
+Definition at line 50 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_afaa2f2d0d9d6726cfae6da070e736347}{\index{imgui.\+cpp@{imgui.\+cpp}!S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N@{S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}}
+\index{S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N@{S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+B\+\_\+\+T\+R\+U\+E\+T\+Y\+P\+E\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N}}\label{imgui_8cpp_afaa2f2d0d9d6726cfae6da070e736347}
+
+
+Definition at line 76 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_afaa7361141652f555e0a82851a3295a7}{\index{imgui.\+cpp@{imgui.\+cpp}!S\+T\+B\+T\+T\+\_\+free@{S\+T\+B\+T\+T\+\_\+free}}
+\index{S\+T\+B\+T\+T\+\_\+free@{S\+T\+B\+T\+T\+\_\+free}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{S\+T\+B\+T\+T\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+B\+T\+T\+\_\+free(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+x, }
+\item[{}]{\+\_\+y}
+\end{DoxyParamCaption}
+)~imgui\+Free(\+\_\+x, \+\_\+y)}}\label{imgui_8cpp_afaa7361141652f555e0a82851a3295a7}
+
+
+Definition at line 75 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a39e79fc7cf8376a6d450a32898cb1562}{\index{imgui.\+cpp@{imgui.\+cpp}!S\+T\+B\+T\+T\+\_\+malloc@{S\+T\+B\+T\+T\+\_\+malloc}}
+\index{S\+T\+B\+T\+T\+\_\+malloc@{S\+T\+B\+T\+T\+\_\+malloc}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{S\+T\+B\+T\+T\+\_\+malloc}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+B\+T\+T\+\_\+malloc(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+x, }
+\item[{}]{\+\_\+y}
+\end{DoxyParamCaption}
+)~imgui\+Malloc(\+\_\+x, \+\_\+y)}}\label{imgui_8cpp_a39e79fc7cf8376a6d450a32898cb1562}
+
+
+Definition at line 74 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a24b412fe57bb9b3bc5f2bc0c562f4db9}{\index{imgui.\+cpp@{imgui.\+cpp}!U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T@{U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T}}
+\index{U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T@{U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+\+N\+A\+N\+O\+V\+G\+\_\+\+F\+O\+N\+T~0}}\label{imgui_8cpp_a24b412fe57bb9b3bc5f2bc0c562f4db9}
+
+
+Definition at line 45 of file imgui.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{imgui_8cpp_a4e0b7c3de628ae82631804fb9c65439a}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Begin\+Frame@{imgui\+Begin\+Frame}}
+\index{imgui\+Begin\+Frame@{imgui\+Begin\+Frame}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Begin\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Begin\+Frame (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+mx, }
+\item[{int32\+\_\+t}]{\+\_\+my, }
+\item[{uint8\+\_\+t}]{\+\_\+button, }
+\item[{int32\+\_\+t}]{\+\_\+scroll, }
+\item[{uint16\+\_\+t}]{\+\_\+width, }
+\item[{uint16\+\_\+t}]{\+\_\+height, }
+\item[{uint8\+\_\+t}]{\+\_\+view}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a4e0b7c3de628ae82631804fb9c65439a}
+
+
+Definition at line 2028 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_adc4ebb9237ed8dbf13154a3e23b85237}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Begin\+Scroll\+Area@{imgui\+Begin\+Scroll\+Area}}
+\index{imgui\+Begin\+Scroll\+Area@{imgui\+Begin\+Scroll\+Area}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Begin\+Scroll\+Area}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Begin\+Scroll\+Area (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{int32\+\_\+t}]{\+\_\+height, }
+\item[{int32\+\_\+t $\ast$}]{\+\_\+scroll, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_adc4ebb9237ed8dbf13154a3e23b85237}
+
+
+Definition at line 2038 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a0dc16b0b9ac73ccb799a0a5fe1a803d2}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Bool@{imgui\+Bool}}
+\index{imgui\+Bool@{imgui\+Bool}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Bool}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Bool (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool \&}]{\+\_\+flag, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a0dc16b0b9ac73ccb799a0a5fe1a803d2}
+
+
+Definition at line 2153 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a04f382df2383b441de9b167c5d00ef6d}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Button@{imgui\+Button}}
+\index{imgui\+Button@{imgui\+Button}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Button}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Button (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a04f382df2383b441de9b167c5d00ef6d}
+
+
+Definition at line 2068 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a364ec5795f8ae62adbb89517cfe78da4}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Check@{imgui\+Check}}
+\index{imgui\+Check@{imgui\+Check}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Check}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Check (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool}]{\+\_\+checked, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a364ec5795f8ae62adbb89517cfe78da4}
+
+
+Definition at line 2078 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_aba27f95fcbc59cdb8f6e877a978b6637}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Choose\+Use\+Macro\+Instead@{imgui\+Choose\+Use\+Macro\+Instead}}
+\index{imgui\+Choose\+Use\+Macro\+Instead@{imgui\+Choose\+Use\+Macro\+Instead}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Choose\+Use\+Macro\+Instead}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t imgui\+Choose\+Use\+Macro\+Instead (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+selected, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_aba27f95fcbc59cdb8f6e877a978b6637}
+
+
+Definition at line 2114 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ab475eae41247e15c279d6db8447bff3b}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Collapse@{imgui\+Collapse}}
+\index{imgui\+Collapse@{imgui\+Collapse}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Collapse}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Collapse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{const char $\ast$}]{\+\_\+subtext, }
+\item[{bool}]{\+\_\+checked, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ab475eae41247e15c279d6db8447bff3b}
+
+
+Definition at line 2083 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a8eca6f7866e57cc24ad606adb4a96b96}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Color\+Wheel@{imgui\+Color\+Wheel}}
+\index{imgui\+Color\+Wheel@{imgui\+Color\+Wheel}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Color\+Wheel}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Color\+Wheel (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+rgb\mbox{[}3\mbox{]}, }
+\item[{bool}]{\+\_\+respect\+Indentation, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a8eca6f7866e57cc24ad606adb4a96b96}
+
+
+Definition at line 2161 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a000649bd308b72ad107481c21b066ff3}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Color\+Wheel@{imgui\+Color\+Wheel}}
+\index{imgui\+Color\+Wheel@{imgui\+Color\+Wheel}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Color\+Wheel}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Color\+Wheel (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{float}]{\+\_\+rgb\mbox{[}3\mbox{]}, }
+\item[{bool \&}]{\+\_\+activated, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a000649bd308b72ad107481c21b066ff3}
+
+
+Definition at line 2166 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a38f646a688666cc1eda1d08ff706b4fc}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Create@{imgui\+Create}}
+\index{imgui\+Create@{imgui\+Create}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Create}]{\setlength{\rightskip}{0pt plus 5cm}Imgui\+Font\+Handle imgui\+Create (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{\+\_\+data, }
+\item[{float}]{\+\_\+font\+Size}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a38f646a688666cc1eda1d08ff706b4fc}
+
+
+Definition at line 2008 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a75d8602799407eb73e234e38bbdb23c4}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Create\+Font@{imgui\+Create\+Font}}
+\index{imgui\+Create\+Font@{imgui\+Create\+Font}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Create\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Imgui\+Font\+Handle imgui\+Create\+Font (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{\+\_\+data, }
+\item[{float}]{\+\_\+font\+Size}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a75d8602799407eb73e234e38bbdb23c4}
+
+
+Definition at line 2018 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ae07feb5aa02c6a112f8de06243f77def}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Destroy@{imgui\+Destroy}}
+\index{imgui\+Destroy@{imgui\+Destroy}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Destroy}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ae07feb5aa02c6a112f8de06243f77def}
+
+
+Definition at line 2023 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_aef733e346d2caac53f15bc5d3dedbaa2}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Draw\+Line@{imgui\+Draw\+Line}}
+\index{imgui\+Draw\+Line@{imgui\+Draw\+Line}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Draw\+Line}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Draw\+Line (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x0, }
+\item[{float}]{\+\_\+y0, }
+\item[{float}]{\+\_\+x1, }
+\item[{float}]{\+\_\+y1, }
+\item[{float}]{\+\_\+r, }
+\item[{uint32\+\_\+t}]{\+\_\+argb}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_aef733e346d2caac53f15bc5d3dedbaa2}
+
+
+Definition at line 2138 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a7736852053ed880d1551528d8f304a66}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Draw\+Rect@{imgui\+Draw\+Rect}}
+\index{imgui\+Draw\+Rect@{imgui\+Draw\+Rect}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Draw\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Draw\+Rect (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y, }
+\item[{float}]{\+\_\+width, }
+\item[{float}]{\+\_\+height, }
+\item[{uint32\+\_\+t}]{\+\_\+argb}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a7736852053ed880d1551528d8f304a66}
+
+
+Definition at line 2148 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_aff28c81b8034f70647c2010f12159234}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Draw\+Rounded\+Rect@{imgui\+Draw\+Rounded\+Rect}}
+\index{imgui\+Draw\+Rounded\+Rect@{imgui\+Draw\+Rounded\+Rect}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Draw\+Rounded\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Draw\+Rounded\+Rect (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y, }
+\item[{float}]{\+\_\+width, }
+\item[{float}]{\+\_\+height, }
+\item[{float}]{\+\_\+r, }
+\item[{uint32\+\_\+t}]{\+\_\+argb}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_aff28c81b8034f70647c2010f12159234}
+
+
+Definition at line 2143 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_af3f966017502738c154bb52cc72c3de9}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Draw\+Text@{imgui\+Draw\+Text}}
+\index{imgui\+Draw\+Text@{imgui\+Draw\+Text}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Draw\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Draw\+Text (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{{\bf Imgui\+Text\+Align\+::\+Enum}}]{\+\_\+align, }
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{uint32\+\_\+t}]{\+\_\+argb}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_af3f966017502738c154bb52cc72c3de9}
+
+
+Definition at line 2133 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_afd1f5eaee9f7475255c6fba75ff5123c}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+End\+Frame@{imgui\+End\+Frame}}
+\index{imgui\+End\+Frame@{imgui\+End\+Frame}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+End\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+End\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_afd1f5eaee9f7475255c6fba75ff5123c}
+
+
+Definition at line 2033 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ac2bccc89a7e0b94592623961cb21b257}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+End\+Scroll\+Area@{imgui\+End\+Scroll\+Area}}
+\index{imgui\+End\+Scroll\+Area@{imgui\+End\+Scroll\+Area}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+End\+Scroll\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+End\+Scroll\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ac2bccc89a7e0b94592623961cb21b257}
+
+
+Definition at line 2043 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ae1619bae5447053c0b7f56097ca24aa1}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Image@{imgui\+Image}}
+\index{imgui\+Image@{imgui\+Image}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Image (
+\begin{DoxyParamCaption}
+\item[{bgfx\+::\+Texture\+Handle}]{\+\_\+image, }
+\item[{float}]{\+\_\+lod, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{int32\+\_\+t}]{\+\_\+height, }
+\item[{{\bf Imgui\+Image\+Align\+::\+Enum}}]{\+\_\+align}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ae1619bae5447053c0b7f56097ca24aa1}
+
+
+Definition at line 2187 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a30e11640203e61f1a602b281f7311f22}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Image@{imgui\+Image}}
+\index{imgui\+Image@{imgui\+Image}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Image (
+\begin{DoxyParamCaption}
+\item[{bgfx\+::\+Texture\+Handle}]{\+\_\+image, }
+\item[{float}]{\+\_\+lod, }
+\item[{float}]{\+\_\+width, }
+\item[{float}]{\+\_\+aspect, }
+\item[{{\bf Imgui\+Image\+Align\+::\+Enum}}]{\+\_\+align}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a30e11640203e61f1a602b281f7311f22}
+
+
+Definition at line 2192 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ae3d00934ccb219ffa9316b252d8afba0}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Indent@{imgui\+Indent}}
+\index{imgui\+Indent@{imgui\+Indent}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Indent}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Indent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ae3d00934ccb219ffa9316b252d8afba0}
+
+
+Definition at line 2048 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a99e006c4304b7a94a887e08da29261af}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Item@{imgui\+Item}}
+\index{imgui\+Item@{imgui\+Item}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Item}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Item (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a99e006c4304b7a94a887e08da29261af}
+
+
+Definition at line 2073 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_af5eb3f3926d4df8a03c860d12dfe5db2}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Label@{imgui\+Label}}
+\index{imgui\+Label@{imgui\+Label}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Label (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_af5eb3f3926d4df8a03c860d12dfe5db2}
+
+
+Definition at line 2088 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ad77cd8c7e79231bf99358e8766845ac1}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Separator@{imgui\+Separator}}
+\index{imgui\+Separator@{imgui\+Separator}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Separator}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Separator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ad77cd8c7e79231bf99358e8766845ac1}
+
+
+Definition at line 2058 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ad1692a47ae3a3393f459c5dcf8b78651}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Separator\+Line@{imgui\+Separator\+Line}}
+\index{imgui\+Separator\+Line@{imgui\+Separator\+Line}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Separator\+Line}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Separator\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ad1692a47ae3a3393f459c5dcf8b78651}
+
+
+Definition at line 2063 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a732a6bc429bd2476e4cc9afac70a09ea}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Set\+Font@{imgui\+Set\+Font}}
+\index{imgui\+Set\+Font@{imgui\+Set\+Font}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Set\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Set\+Font (
+\begin{DoxyParamCaption}
+\item[{Imgui\+Font\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a732a6bc429bd2476e4cc9afac70a09ea}
+
+
+Definition at line 2013 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_ab590300cfe004939adb6002b6512448b}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Slider@{imgui\+Slider}}
+\index{imgui\+Slider@{imgui\+Slider}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Slider}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Slider (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{float \&}]{\+\_\+val, }
+\item[{float}]{\+\_\+vmin, }
+\item[{float}]{\+\_\+vmax, }
+\item[{float}]{\+\_\+vinc, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_ab590300cfe004939adb6002b6512448b}
+
+
+Definition at line 2101 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a056110fc5da3b6a5151c9dfdbf319c05}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Slider@{imgui\+Slider}}
+\index{imgui\+Slider@{imgui\+Slider}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Slider}]{\setlength{\rightskip}{0pt plus 5cm}bool imgui\+Slider (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{int32\+\_\+t \&}]{\+\_\+val, }
+\item[{int32\+\_\+t}]{\+\_\+vmin, }
+\item[{int32\+\_\+t}]{\+\_\+vmax, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a056110fc5da3b6a5151c9dfdbf319c05}
+
+
+Definition at line 2106 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a509b76e72688bbb9b319c778b753c11d}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Unindent@{imgui\+Unindent}}
+\index{imgui\+Unindent@{imgui\+Unindent}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Unindent}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Unindent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a509b76e72688bbb9b319c778b753c11d}
+
+
+Definition at line 2053 of file imgui.\+cpp.
+
+\hypertarget{imgui_8cpp_a2b9ed5381d8ba780ec98bca83b26d86d}{\index{imgui.\+cpp@{imgui.\+cpp}!imgui\+Value@{imgui\+Value}}
+\index{imgui\+Value@{imgui\+Value}!imgui.\+cpp@{imgui.\+cpp}}
+\subsubsection[{imgui\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void imgui\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text}
+\end{DoxyParamCaption}
+)}}\label{imgui_8cpp_a2b9ed5381d8ba780ec98bca83b26d86d}
+
+
+Definition at line 2096 of file imgui.\+cpp.
+

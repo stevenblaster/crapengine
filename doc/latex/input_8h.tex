@@ -1,0 +1,182 @@
+\hypertarget{input_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/input.h File Reference}
+\label{input_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/input.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/input.\+h}}
+}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}entry.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_input_binding}{Input\+Binding}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{input_8h_a18fa1bd6114e8942411c831d1ea8b197}{I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D}~\{ \hyperlink{structentry_1_1_key_a2c04c2d92f79b961243e4244603ca633a6b5fb9c5924c31d05531320d18bd698f}{entry\+::\+Key\+::\+None}, \hyperlink{structentry_1_1_modifier_a29426318048a34564b5b01026ce15a7cac9b4a8c502a25ae401dcfa02a291887b}{entry\+::\+Modifier\+::\+None}, 0, N\+U\+L\+L, N\+U\+L\+L \}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{input_8h_a53c371a6cdc3ef9cb2852842a395f051}{Input\+Binding\+Fn} )(const void $\ast$\+\_\+user\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{input_8h_a8a1a4b2d282408ae93b8a8153cfce1fe}{input\+Add\+Bindings} (const char $\ast$\+\_\+name, const \hyperlink{struct_input_binding}{Input\+Binding} $\ast$\+\_\+bindings)
+\item 
+void \hyperlink{input_8h_a3581d676b1c7f7f3f1e007fd48ce69e3}{input\+Remove\+Bindings} (const char $\ast$\+\_\+name)
+\item 
+void \hyperlink{input_8h_a6657dd070d88318a2840a62c47132fa1}{input\+Process} ()
+\item 
+void \hyperlink{input_8h_a00a236d5d68c7f8f41d3f2e92b033e75}{input\+Set\+Key\+State} (\hyperlink{structentry_1_1_key_a2c04c2d92f79b961243e4244603ca633}{entry\+::\+Key\+::\+Enum} \+\_\+key, uint8\+\_\+t \+\_\+modifiers, bool \+\_\+down)
+\item 
+void \hyperlink{input_8h_aceabbaa3413188bd364a5337cf8a5b39}{input\+Set\+Mouse\+Resolution} (uint16\+\_\+t \+\_\+width, uint16\+\_\+t \+\_\+height)
+\item 
+void \hyperlink{input_8h_a8bde1da6c1737a349d51d031ba278403}{input\+Set\+Mouse\+Pos} (int32\+\_\+t \+\_\+mx, int32\+\_\+t \+\_\+my)
+\item 
+void \hyperlink{input_8h_a3e7ee2e779a1012c0a08b48a19c72b6c}{input\+Set\+Mouse\+Button\+State} (\hyperlink{structentry_1_1_mouse_button_a047d99f30fac4b4483eeb96d815fe54e}{entry\+::\+Mouse\+Button\+::\+Enum} \+\_\+button, uint8\+\_\+t \+\_\+state)
+\item 
+void \hyperlink{input_8h_aca7ed382acb4ffc32c9503b369534111}{input\+Set\+Mouse\+Lock} (bool \+\_\+lock)
+\item 
+void \hyperlink{input_8h_ad35e42e37934b5b43541126bbe3f540d}{input\+Get\+Mouse} (float \+\_\+mouse\mbox{[}2\mbox{]})
+\item 
+bool \hyperlink{input_8h_aec42ed40ce3b8738ce4f170a576bde6e}{input\+Is\+Mouse\+Locked} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{input_8h_a18fa1bd6114e8942411c831d1ea8b197}{\index{input.\+h@{input.\+h}!I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D@{I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D}}
+\index{I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D@{I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D}!input.\+h@{input.\+h}}
+\subsubsection[{I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+P\+U\+T\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+E\+N\+D~\{ {\bf entry\+::\+Key\+::\+None}, {\bf entry\+::\+Modifier\+::\+None}, 0, N\+U\+L\+L, N\+U\+L\+L \}}}\label{input_8h_a18fa1bd6114e8942411c831d1ea8b197}
+
+
+Definition at line 23 of file input.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{input_8h_a53c371a6cdc3ef9cb2852842a395f051}{\index{input.\+h@{input.\+h}!Input\+Binding\+Fn@{Input\+Binding\+Fn}}
+\index{Input\+Binding\+Fn@{Input\+Binding\+Fn}!input.\+h@{input.\+h}}
+\subsubsection[{Input\+Binding\+Fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Input\+Binding\+Fn)(const void $\ast$\+\_\+user\+Data)}}\label{input_8h_a53c371a6cdc3ef9cb2852842a395f051}
+
+
+Definition at line 12 of file input.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{input_8h_a8a1a4b2d282408ae93b8a8153cfce1fe}{\index{input.\+h@{input.\+h}!input\+Add\+Bindings@{input\+Add\+Bindings}}
+\index{input\+Add\+Bindings@{input\+Add\+Bindings}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Add\+Bindings}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Add\+Bindings (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{const {\bf Input\+Binding} $\ast$}]{\+\_\+bindings}
+\end{DoxyParamCaption}
+)}}\label{input_8h_a8a1a4b2d282408ae93b8a8153cfce1fe}
+
+
+Definition at line 175 of file input.\+cpp.
+
+\hypertarget{input_8h_ad35e42e37934b5b43541126bbe3f540d}{\index{input.\+h@{input.\+h}!input\+Get\+Mouse@{input\+Get\+Mouse}}
+\index{input\+Get\+Mouse@{input\+Get\+Mouse}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Get\+Mouse}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Get\+Mouse (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+mouse\mbox{[}2\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{input_8h_ad35e42e37934b5b43541126bbe3f540d}
+
+
+Definition at line 210 of file input.\+cpp.
+
+\hypertarget{input_8h_aec42ed40ce3b8738ce4f170a576bde6e}{\index{input.\+h@{input.\+h}!input\+Is\+Mouse\+Locked@{input\+Is\+Mouse\+Locked}}
+\index{input\+Is\+Mouse\+Locked@{input\+Is\+Mouse\+Locked}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Is\+Mouse\+Locked}]{\setlength{\rightskip}{0pt plus 5cm}bool input\+Is\+Mouse\+Locked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{input_8h_aec42ed40ce3b8738ce4f170a576bde6e}
+
+
+Definition at line 218 of file input.\+cpp.
+
+\hypertarget{input_8h_a6657dd070d88318a2840a62c47132fa1}{\index{input.\+h@{input.\+h}!input\+Process@{input\+Process}}
+\index{input\+Process@{input\+Process}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Process}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{input_8h_a6657dd070d88318a2840a62c47132fa1}
+
+
+Definition at line 185 of file input.\+cpp.
+
+\hypertarget{input_8h_a3581d676b1c7f7f3f1e007fd48ce69e3}{\index{input.\+h@{input.\+h}!input\+Remove\+Bindings@{input\+Remove\+Bindings}}
+\index{input\+Remove\+Bindings@{input\+Remove\+Bindings}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Remove\+Bindings}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Remove\+Bindings (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{input_8h_a3581d676b1c7f7f3f1e007fd48ce69e3}
+
+
+Definition at line 180 of file input.\+cpp.
+
+\hypertarget{input_8h_a00a236d5d68c7f8f41d3f2e92b033e75}{\index{input.\+h@{input.\+h}!input\+Set\+Key\+State@{input\+Set\+Key\+State}}
+\index{input\+Set\+Key\+State@{input\+Set\+Key\+State}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Set\+Key\+State}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Set\+Key\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf entry\+::\+Key\+::\+Enum}}]{\+\_\+key, }
+\item[{uint8\+\_\+t}]{\+\_\+modifiers, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)}}\label{input_8h_a00a236d5d68c7f8f41d3f2e92b033e75}
+
+
+Definition at line 195 of file input.\+cpp.
+
+\hypertarget{input_8h_a3e7ee2e779a1012c0a08b48a19c72b6c}{\index{input.\+h@{input.\+h}!input\+Set\+Mouse\+Button\+State@{input\+Set\+Mouse\+Button\+State}}
+\index{input\+Set\+Mouse\+Button\+State@{input\+Set\+Mouse\+Button\+State}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Set\+Mouse\+Button\+State}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Set\+Mouse\+Button\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf entry\+::\+Mouse\+Button\+::\+Enum}}]{\+\_\+button, }
+\item[{uint8\+\_\+t}]{\+\_\+state}
+\end{DoxyParamCaption}
+)}}\label{input_8h_a3e7ee2e779a1012c0a08b48a19c72b6c}
+
+
+Definition at line 205 of file input.\+cpp.
+
+\hypertarget{input_8h_aca7ed382acb4ffc32c9503b369534111}{\index{input.\+h@{input.\+h}!input\+Set\+Mouse\+Lock@{input\+Set\+Mouse\+Lock}}
+\index{input\+Set\+Mouse\+Lock@{input\+Set\+Mouse\+Lock}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Set\+Mouse\+Lock}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Set\+Mouse\+Lock (
+\begin{DoxyParamCaption}
+\item[{bool}]{\+\_\+lock}
+\end{DoxyParamCaption}
+)}}\label{input_8h_aca7ed382acb4ffc32c9503b369534111}
+
+
+Definition at line 223 of file input.\+cpp.
+
+\hypertarget{input_8h_a8bde1da6c1737a349d51d031ba278403}{\index{input.\+h@{input.\+h}!input\+Set\+Mouse\+Pos@{input\+Set\+Mouse\+Pos}}
+\index{input\+Set\+Mouse\+Pos@{input\+Set\+Mouse\+Pos}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Set\+Mouse\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Set\+Mouse\+Pos (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+mx, }
+\item[{int32\+\_\+t}]{\+\_\+my}
+\end{DoxyParamCaption}
+)}}\label{input_8h_a8bde1da6c1737a349d51d031ba278403}
+
+
+Definition at line 200 of file input.\+cpp.
+
+\hypertarget{input_8h_aceabbaa3413188bd364a5337cf8a5b39}{\index{input.\+h@{input.\+h}!input\+Set\+Mouse\+Resolution@{input\+Set\+Mouse\+Resolution}}
+\index{input\+Set\+Mouse\+Resolution@{input\+Set\+Mouse\+Resolution}!input.\+h@{input.\+h}}
+\subsubsection[{input\+Set\+Mouse\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}void input\+Set\+Mouse\+Resolution (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+width, }
+\item[{uint16\+\_\+t}]{\+\_\+height}
+\end{DoxyParamCaption}
+)}}\label{input_8h_aceabbaa3413188bd364a5337cf8a5b39}
+
+
+Definition at line 190 of file input.\+cpp.
+

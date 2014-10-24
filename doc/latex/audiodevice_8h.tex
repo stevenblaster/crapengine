@@ -1,0 +1,66 @@
+\hypertarget{audiodevice_8h}{\section{/mnt/windows/data/programming/crapengine2/source/audio/include/audiodevice.h File Reference}
+\label{audiodevice_8h}\index{/mnt/windows/data/programming/crapengine2/source/audio/include/audiodevice.\+h@{/mnt/windows/data/programming/crapengine2/source/audio/include/audiodevice.\+h}}
+}
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{audiodevice_8h_af750cb4ba0214f9b5848f3ae5946d734}{C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct A\+L\+Cdevice\+\_\+struct \hyperlink{audiodevice_8h_a13d8d739d6146ae8460383745ad22318}{Audio\+Device\+\_\+}
+\item 
+typedef struct A\+L\+Ccontext\+\_\+struct \hyperlink{audiodevice_8h_a1aaee345eede00e723229ae1e895e0a7}{Audio\+Context\+\_\+}
+\item 
+typedef \hyperlink{audiodevice_8h_a13d8d739d6146ae8460383745ad22318}{Audio\+Device\+\_\+} \hyperlink{namespacecrap_a0554191481198902f832204ecc2db4c0}{crap\+::\+Audio\+Device}
+\item 
+typedef \hyperlink{audiodevice_8h_a1aaee345eede00e723229ae1e895e0a7}{Audio\+Context\+\_\+} \hyperlink{namespacecrap_a4d9ca11977af369032d36460bc1c80e7}{crap\+::\+Audio\+Context}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Device $\ast$ \hyperlink{namespacecrap_a39c24b21c6d1272568c835ac1a2a76f8}{crap\+::open\+Audio\+Device} (void)
+\begin{DoxyCompactList}\small\item\em Opens default audio device. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecrap_ae9eb7aeb6dd0d2e93fb4be25d75f65a9}{crap\+::close\+Audio\+Device} (Audio\+Device $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T device)
+\begin{DoxyCompactList}\small\item\em Closes opened audio device. \end{DoxyCompactList}\item 
+Audio\+Context $\ast$ \hyperlink{namespacecrap_a1a6cf0539f6ee95ac516c2828f20f0ec}{crap\+::create\+Audio\+Context} (Audio\+Device $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T device)
+\item 
+void \hyperlink{namespacecrap_af82fa263b7c572b66b3f94e04064bc34}{crap\+::set\+Audio\+Context\+Current} (Audio\+Context $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T context)
+\item 
+void \hyperlink{namespacecrap_a66c9a3908f68d40686a473ea0f7faeae}{crap\+::destroy\+Audio\+Context} (Audio\+Context $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T context)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{audiodevice_8h_af750cb4ba0214f9b5848f3ae5946d734}{\index{audiodevice.\+h@{audiodevice.\+h}!C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E@{C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E}}
+\index{C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E@{C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E}!audiodevice.\+h@{audiodevice.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+U\+D\+I\+O\+D\+E\+V\+I\+C\+E}}\label{audiodevice_8h_af750cb4ba0214f9b5848f3ae5946d734}
+
+
+Definition at line 4 of file audiodevice.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{audiodevice_8h_a1aaee345eede00e723229ae1e895e0a7}{\index{audiodevice.\+h@{audiodevice.\+h}!Audio\+Context\+\_\+@{Audio\+Context\+\_\+}}
+\index{Audio\+Context\+\_\+@{Audio\+Context\+\_\+}!audiodevice.\+h@{audiodevice.\+h}}
+\subsubsection[{Audio\+Context\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct A\+L\+Ccontext\+\_\+struct {\bf Audio\+Context\+\_\+}}}\label{audiodevice_8h_a1aaee345eede00e723229ae1e895e0a7}
+
+
+Definition at line 10 of file audiodevice.\+h.
+
+\hypertarget{audiodevice_8h_a13d8d739d6146ae8460383745ad22318}{\index{audiodevice.\+h@{audiodevice.\+h}!Audio\+Device\+\_\+@{Audio\+Device\+\_\+}}
+\index{Audio\+Device\+\_\+@{Audio\+Device\+\_\+}!audiodevice.\+h@{audiodevice.\+h}}
+\subsubsection[{Audio\+Device\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct A\+L\+Cdevice\+\_\+struct {\bf Audio\+Device\+\_\+}}}\label{audiodevice_8h_a13d8d739d6146ae8460383745ad22318}
+
+
+Definition at line 9 of file audiodevice.\+h.
+

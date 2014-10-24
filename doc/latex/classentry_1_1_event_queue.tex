@@ -1,0 +1,123 @@
+\hypertarget{classentry_1_1_event_queue}{\section{entry\+:\+:Event\+Queue Class Reference}
+\label{classentry_1_1_event_queue}\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+}
+
+
+{\ttfamily \#include $<$entry\+\_\+p.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classentry_1_1_event_queue_a03606835f06d2aa8328987b43daf2451}{post\+Exit\+Event} ()
+\item 
+void \hyperlink{classentry_1_1_event_queue_add88e8cd2b1fa8a097f51152d2554086}{post\+Key\+Event} (\hyperlink{structentry_1_1_key_a2c04c2d92f79b961243e4244603ca633}{Key\+::\+Enum} \+\_\+key, uint8\+\_\+t \+\_\+modifiers, bool \+\_\+down)
+\item 
+void \hyperlink{classentry_1_1_event_queue_a80013b3ff0d4464da2dbfc40cbe0a8d5}{post\+Mouse\+Event} (int32\+\_\+t \+\_\+mx, int32\+\_\+t \+\_\+my)
+\item 
+void \hyperlink{classentry_1_1_event_queue_a2379a5c35989aec05af0658c154e4c17}{post\+Mouse\+Event} (int32\+\_\+t \+\_\+mx, int32\+\_\+t \+\_\+my, \hyperlink{structentry_1_1_mouse_button_a047d99f30fac4b4483eeb96d815fe54e}{Mouse\+Button\+::\+Enum} \+\_\+button, bool \+\_\+down)
+\item 
+void \hyperlink{classentry_1_1_event_queue_a91fab6410f808c17059ae91e2c189522}{post\+Size\+Event} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\item 
+const \hyperlink{structentry_1_1_event}{Event} $\ast$ \hyperlink{classentry_1_1_event_queue_afd37e7bee2df02b4ae16de6eff61de55}{poll} ()
+\item 
+void \hyperlink{classentry_1_1_event_queue_a6a9d996f9a35d9bb5a662799cac40157}{release} (const \hyperlink{structentry_1_1_event}{Event} $\ast$\+\_\+event) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 77 of file entry\+\_\+p.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classentry_1_1_event_queue_afd37e7bee2df02b4ae16de6eff61de55}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!poll@{poll}}
+\index{poll@{poll}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Event}$\ast$ entry\+::\+Event\+Queue\+::poll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_afd37e7bee2df02b4ae16de6eff61de55}
+
+
+Definition at line 130 of file entry\+\_\+p.\+h.
+
+\hypertarget{classentry_1_1_event_queue_a03606835f06d2aa8328987b43daf2451}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!post\+Exit\+Event@{post\+Exit\+Event}}
+\index{post\+Exit\+Event@{post\+Exit\+Event}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{post\+Exit\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::\+Event\+Queue\+::post\+Exit\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_a03606835f06d2aa8328987b43daf2451}
+
+
+Definition at line 80 of file entry\+\_\+p.\+h.
+
+\hypertarget{classentry_1_1_event_queue_add88e8cd2b1fa8a097f51152d2554086}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!post\+Key\+Event@{post\+Key\+Event}}
+\index{post\+Key\+Event@{post\+Key\+Event}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{post\+Key\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::\+Event\+Queue\+::post\+Key\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+::\+Enum}}]{\+\_\+key, }
+\item[{uint8\+\_\+t}]{\+\_\+modifiers, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_add88e8cd2b1fa8a097f51152d2554086}
+
+
+Definition at line 87 of file entry\+\_\+p.\+h.
+
+\hypertarget{classentry_1_1_event_queue_a80013b3ff0d4464da2dbfc40cbe0a8d5}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!post\+Mouse\+Event@{post\+Mouse\+Event}}
+\index{post\+Mouse\+Event@{post\+Mouse\+Event}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{post\+Mouse\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::\+Event\+Queue\+::post\+Mouse\+Event (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+mx, }
+\item[{int32\+\_\+t}]{\+\_\+my}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_a80013b3ff0d4464da2dbfc40cbe0a8d5}
+
+
+Definition at line 97 of file entry\+\_\+p.\+h.
+
+\hypertarget{classentry_1_1_event_queue_a2379a5c35989aec05af0658c154e4c17}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!post\+Mouse\+Event@{post\+Mouse\+Event}}
+\index{post\+Mouse\+Event@{post\+Mouse\+Event}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{post\+Mouse\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::\+Event\+Queue\+::post\+Mouse\+Event (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+mx, }
+\item[{int32\+\_\+t}]{\+\_\+my, }
+\item[{{\bf Mouse\+Button\+::\+Enum}}]{\+\_\+button, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_a2379a5c35989aec05af0658c154e4c17}
+
+
+Definition at line 109 of file entry\+\_\+p.\+h.
+
+\hypertarget{classentry_1_1_event_queue_a91fab6410f808c17059ae91e2c189522}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!post\+Size\+Event@{post\+Size\+Event}}
+\index{post\+Size\+Event@{post\+Size\+Event}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{post\+Size\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::\+Event\+Queue\+::post\+Size\+Event (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+width, }
+\item[{uint32\+\_\+t}]{\+\_\+height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_a91fab6410f808c17059ae91e2c189522}
+
+
+Definition at line 121 of file entry\+\_\+p.\+h.
+
+\hypertarget{classentry_1_1_event_queue_a6a9d996f9a35d9bb5a662799cac40157}{\index{entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}!release@{release}}
+\index{release@{release}!entry\+::\+Event\+Queue@{entry\+::\+Event\+Queue}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::\+Event\+Queue\+::release (
+\begin{DoxyParamCaption}
+\item[{const {\bf Event} $\ast$}]{\+\_\+event}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classentry_1_1_event_queue_a6a9d996f9a35d9bb5a662799cac40157}
+
+
+Definition at line 135 of file entry\+\_\+p.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/\hyperlink{entry__p_8h}{entry\+\_\+p.\+h}\end{DoxyCompactItemize}

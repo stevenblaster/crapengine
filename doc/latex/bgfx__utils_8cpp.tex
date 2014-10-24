@@ -1,0 +1,241 @@
+\hypertarget{bgfx__utils_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bgfx\+\_\+utils.cpp File Reference}
+\label{bgfx__utils_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bgfx\+\_\+utils.\+cpp@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bgfx\+\_\+utils.\+cpp}}
+}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+{\ttfamily \#include $<$bx/readerwriter.\+h$>$}\\*
+{\ttfamily \#include $<$bx/fpumath.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}entry/entry.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_aabb}{Aabb}
+\item 
+struct \hyperlink{struct_obb}{Obb}
+\item 
+struct \hyperlink{struct_sphere}{Sphere}
+\item 
+struct \hyperlink{struct_primitive}{Primitive}
+\item 
+struct \hyperlink{struct_group}{Group}
+\item 
+struct \hyperlink{struct_mesh}{Mesh}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bgfx__utils_8cpp_afbad938787143b3e384f7b21ab027985}{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B}~B\+X\+\_\+\+M\+A\+K\+E\+F\+O\+U\+R\+C\+C('V', 'B', ' ', 0x0)
+\item 
+\#define \hyperlink{bgfx__utils_8cpp_a990d5fa150fd52c28a742c6d43bb4ff2}{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B}~B\+X\+\_\+\+M\+A\+K\+E\+F\+O\+U\+R\+C\+C('I', 'B', ' ', 0x0)
+\item 
+\#define \hyperlink{bgfx__utils_8cpp_a021afc896aeab30f438794ca19cfb0c0}{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I}~B\+X\+\_\+\+M\+A\+K\+E\+F\+O\+U\+R\+C\+C('P', 'R', 'I', 0x0)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \hyperlink{struct_primitive}{Primitive} $>$ \hyperlink{bgfx__utils_8cpp_abac1e58aea522298a661dd5a89dfb1f8}{Primitive\+Array}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{bgfx__utils_8cpp_a10d4cb9d67b13170ca3c9c23cd63a10d}{load} (bx\+::\+File\+Reader\+I $\ast$\+\_\+reader, const char $\ast$\+\_\+file\+Path)
+\item 
+void $\ast$ \hyperlink{bgfx__utils_8cpp_a5710e3832da94c58139614452759dc79}{load} (const char $\ast$\+\_\+file\+Path)
+\item 
+bgfx\+::\+Shader\+Handle \hyperlink{bgfx__utils_8cpp_ae3d140e1025227619cc5b3f5e4f7c428}{load\+Shader} (const char $\ast$\+\_\+name)
+\item 
+bgfx\+::\+Program\+Handle \hyperlink{bgfx__utils_8cpp_a546ef87a0e3c0d420178eebb96d56493}{load\+Program} (bx\+::\+File\+Reader\+I $\ast$\+\_\+reader, const char $\ast$\+\_\+vs\+Name, const char $\ast$\+\_\+fs\+Name)
+\item 
+bgfx\+::\+Program\+Handle \hyperlink{bgfx__utils_8cpp_ad1a9ee6d4ed37ddb2432e80ac0764a37}{load\+Program} (const char $\ast$\+\_\+vs\+Name, const char $\ast$\+\_\+fs\+Name)
+\item 
+bgfx\+::\+Texture\+Handle \hyperlink{bgfx__utils_8cpp_a736097ef8bf98f96fce33d7d556bae52}{load\+Texture} (bx\+::\+File\+Reader\+I $\ast$\+\_\+reader, const char $\ast$\+\_\+name, uint32\+\_\+t \+\_\+flags, uint8\+\_\+t \+\_\+skip, bgfx\+::\+Texture\+Info $\ast$\+\_\+info)
+\item 
+bgfx\+::\+Texture\+Handle \hyperlink{bgfx__utils_8cpp_a71e8ca988b1af05033e11dca2c22ad07}{load\+Texture} (const char $\ast$\+\_\+name, uint32\+\_\+t \+\_\+flags, uint8\+\_\+t \+\_\+skip, bgfx\+::\+Texture\+Info $\ast$\+\_\+info)
+\item 
+void \hyperlink{bgfx__utils_8cpp_a85392bb13fcddd7d7b62120052423f2a}{calc\+Tangents} (void $\ast$\+\_\+vertices, uint16\+\_\+t \+\_\+num\+Vertices, bgfx\+::\+Vertex\+Decl \+\_\+decl, const uint16\+\_\+t $\ast$\+\_\+indices, uint32\+\_\+t \+\_\+num\+Indices)
+\item 
+\hyperlink{struct_mesh}{Mesh} $\ast$ \hyperlink{bgfx__utils_8cpp_a6484486bddb774dc28ea274b892a5e68}{mesh\+Load} (bx\+::\+Reader\+Seeker\+I $\ast$\+\_\+reader)
+\item 
+\hyperlink{struct_mesh}{Mesh} $\ast$ \hyperlink{bgfx__utils_8cpp_a27b634d946dfdd0b4283a51afa46e013}{mesh\+Load} (const char $\ast$\+\_\+file\+Path)
+\item 
+void \hyperlink{bgfx__utils_8cpp_a26dea13750570069f1df95bfeaf772fd}{mesh\+Unload} (\hyperlink{struct_mesh}{Mesh} $\ast$\+\_\+mesh)
+\item 
+void \hyperlink{bgfx__utils_8cpp_a7c3b4afe09a3a01f118db1779ef7ade3}{mesh\+Submit} (\hyperlink{struct_mesh}{Mesh} $\ast$\+\_\+mesh, uint8\+\_\+t \+\_\+id, bgfx\+::\+Program\+Handle \+\_\+program, float $\ast$\+\_\+mtx, uint64\+\_\+t \+\_\+state)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bgfx__utils_8cpp_a990d5fa150fd52c28a742c6d43bb4ff2}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B@{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B}}
+\index{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B@{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+I\+B~B\+X\+\_\+\+M\+A\+K\+E\+F\+O\+U\+R\+C\+C('I', 'B', ' ', 0x0)}}\label{bgfx__utils_8cpp_a990d5fa150fd52c28a742c6d43bb4ff2}
+\hypertarget{bgfx__utils_8cpp_a021afc896aeab30f438794ca19cfb0c0}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I@{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I}}
+\index{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I@{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+P\+R\+I~B\+X\+\_\+\+M\+A\+K\+E\+F\+O\+U\+R\+C\+C('P', 'R', 'I', 0x0)}}\label{bgfx__utils_8cpp_a021afc896aeab30f438794ca19cfb0c0}
+\hypertarget{bgfx__utils_8cpp_afbad938787143b3e384f7b21ab027985}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B@{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B}}
+\index{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B@{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+G\+F\+X\+\_\+\+C\+H\+U\+N\+K\+\_\+\+M\+A\+G\+I\+C\+\_\+\+V\+B~B\+X\+\_\+\+M\+A\+K\+E\+F\+O\+U\+R\+C\+C('V', 'B', ' ', 0x0)}}\label{bgfx__utils_8cpp_afbad938787143b3e384f7b21ab027985}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{bgfx__utils_8cpp_abac1e58aea522298a661dd5a89dfb1f8}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!Primitive\+Array@{Primitive\+Array}}
+\index{Primitive\+Array@{Primitive\+Array}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{Primitive\+Array}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Primitive}$>$ {\bf Primitive\+Array}}}\label{bgfx__utils_8cpp_abac1e58aea522298a661dd5a89dfb1f8}
+
+
+Definition at line 243 of file bgfx\+\_\+utils.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{bgfx__utils_8cpp_a85392bb13fcddd7d7b62120052423f2a}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!calc\+Tangents@{calc\+Tangents}}
+\index{calc\+Tangents@{calc\+Tangents}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{calc\+Tangents}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Tangents (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{\+\_\+vertices, }
+\item[{uint16\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{bgfx\+::\+Vertex\+Decl}]{\+\_\+decl, }
+\item[{const uint16\+\_\+t $\ast$}]{\+\_\+indices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Indices}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a85392bb13fcddd7d7b62120052423f2a}
+
+
+Definition at line 113 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a10d4cb9d67b13170ca3c9c23cd63a10d}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load@{load}}
+\index{load@{load}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ load (
+\begin{DoxyParamCaption}
+\item[{bx\+::\+File\+Reader\+I $\ast$}]{\+\_\+reader, }
+\item[{const char $\ast$}]{\+\_\+file\+Path}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a10d4cb9d67b13170ca3c9c23cd63a10d}
+
+
+Definition at line 14 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a5710e3832da94c58139614452759dc79}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load@{load}}
+\index{load@{load}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+file\+Path}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a5710e3832da94c58139614452759dc79}
+
+
+Definition at line 28 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a546ef87a0e3c0d420178eebb96d56493}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load\+Program@{load\+Program}}
+\index{load\+Program@{load\+Program}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Program\+Handle load\+Program (
+\begin{DoxyParamCaption}
+\item[{bx\+::\+File\+Reader\+I $\ast$}]{\+\_\+reader, }
+\item[{const char $\ast$}]{\+\_\+vs\+Name, }
+\item[{const char $\ast$}]{\+\_\+fs\+Name}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a546ef87a0e3c0d420178eebb96d56493}
+
+
+Definition at line 84 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_ad1a9ee6d4ed37ddb2432e80ac0764a37}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load\+Program@{load\+Program}}
+\index{load\+Program@{load\+Program}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Program\+Handle load\+Program (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+vs\+Name, }
+\item[{const char $\ast$}]{\+\_\+fs\+Name}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_ad1a9ee6d4ed37ddb2432e80ac0764a37}
+
+
+Definition at line 92 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_ae3d140e1025227619cc5b3f5e4f7c428}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load\+Shader@{load\+Shader}}
+\index{load\+Shader@{load\+Shader}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Shader\+Handle load\+Shader (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_ae3d140e1025227619cc5b3f5e4f7c428}
+
+
+Definition at line 79 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a736097ef8bf98f96fce33d7d556bae52}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load\+Texture@{load\+Texture}}
+\index{load\+Texture@{load\+Texture}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Texture\+Handle load\+Texture (
+\begin{DoxyParamCaption}
+\item[{bx\+::\+File\+Reader\+I $\ast$}]{\+\_\+reader, }
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{uint32\+\_\+t}]{\+\_\+flags, }
+\item[{uint8\+\_\+t}]{\+\_\+skip, }
+\item[{bgfx\+::\+Texture\+Info $\ast$}]{\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a736097ef8bf98f96fce33d7d556bae52}
+
+
+Definition at line 97 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a71e8ca988b1af05033e11dca2c22ad07}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!load\+Texture@{load\+Texture}}
+\index{load\+Texture@{load\+Texture}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{load\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Texture\+Handle load\+Texture (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{uint32\+\_\+t}]{\+\_\+flags, }
+\item[{uint8\+\_\+t}]{\+\_\+skip, }
+\item[{bgfx\+::\+Texture\+Info $\ast$}]{\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a71e8ca988b1af05033e11dca2c22ad07}
+
+
+Definition at line 108 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a6484486bddb774dc28ea274b892a5e68}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!mesh\+Load@{mesh\+Load}}
+\index{mesh\+Load@{mesh\+Load}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{mesh\+Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh}$\ast$ mesh\+Load (
+\begin{DoxyParamCaption}
+\item[{bx\+::\+Reader\+Seeker\+I $\ast$}]{\+\_\+reader}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a6484486bddb774dc28ea274b892a5e68}
+
+
+Definition at line 402 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a27b634d946dfdd0b4283a51afa46e013}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!mesh\+Load@{mesh\+Load}}
+\index{mesh\+Load@{mesh\+Load}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{mesh\+Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh}$\ast$ mesh\+Load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+file\+Path}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a27b634d946dfdd0b4283a51afa46e013}
+
+
+Definition at line 409 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a7c3b4afe09a3a01f118db1779ef7ade3}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!mesh\+Submit@{mesh\+Submit}}
+\index{mesh\+Submit@{mesh\+Submit}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{mesh\+Submit}]{\setlength{\rightskip}{0pt plus 5cm}void mesh\+Submit (
+\begin{DoxyParamCaption}
+\item[{{\bf Mesh} $\ast$}]{\+\_\+mesh, }
+\item[{uint8\+\_\+t}]{\+\_\+id, }
+\item[{bgfx\+::\+Program\+Handle}]{\+\_\+program, }
+\item[{float $\ast$}]{\+\_\+mtx, }
+\item[{uint64\+\_\+t}]{\+\_\+state}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a7c3b4afe09a3a01f118db1779ef7ade3}
+
+
+Definition at line 424 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8cpp_a26dea13750570069f1df95bfeaf772fd}{\index{bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}!mesh\+Unload@{mesh\+Unload}}
+\index{mesh\+Unload@{mesh\+Unload}!bgfx\+\_\+utils.\+cpp@{bgfx\+\_\+utils.\+cpp}}
+\subsubsection[{mesh\+Unload}]{\setlength{\rightskip}{0pt plus 5cm}void mesh\+Unload (
+\begin{DoxyParamCaption}
+\item[{{\bf Mesh} $\ast$}]{\+\_\+mesh}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8cpp_a26dea13750570069f1df95bfeaf772fd}
+
+
+Definition at line 418 of file bgfx\+\_\+utils.\+cpp.
+

@@ -1,0 +1,110 @@
+\hypertarget{dbg_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/dbg.h File Reference}
+\label{dbg_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/dbg.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/dbg.\+h}}
+}
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dbg_8h_abd461fd979720ede46284ae30f5446a6}{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E}(\+\_\+x)~\hyperlink{dbg_8h_a90ed19194c8607bbb92a814fd3f62253}{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+}(\+\_\+x)
+\item 
+\#define \hyperlink{dbg_8h_a90ed19194c8607bbb92a814fd3f62253}{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+}(\+\_\+x)~\#\+\_\+x
+\item 
+\#define \hyperlink{dbg_8h_aeed3c8797056344a016703ea0ab7adcd}{D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L}~\char`\"{}\char`\"{} \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}(\char`\"{} \hyperlink{dbg_8h_abd461fd979720ede46284ae30f5446a6}{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+) \char`\"{})\+: \char`\"{}
+\item 
+\#define \hyperlink{dbg_8h_a3386b770af9e20c1a1befa290f3b8138}{D\+B\+G}(\+\_\+format,...)~\hyperlink{dbg_8h_af248b216c49eadc469480c975fdd67bb}{dbg\+Printf}(\hyperlink{dbg_8h_aeed3c8797056344a016703ea0ab7adcd}{D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L} \char`\"{}\char`\"{} \+\_\+format \char`\"{}\textbackslash{}n\char`\"{}, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dbg_8h_a494989fbfabfe6ad9add941d5b53f472}{dbg\+Printf\+Vargs} (const char $\ast$\+\_\+format, va\+\_\+list \+\_\+arg\+List)
+\item 
+void \hyperlink{dbg_8h_af248b216c49eadc469480c975fdd67bb}{dbg\+Printf} (const char $\ast$\+\_\+format,...)
+\item 
+void \hyperlink{dbg_8h_ac2ae680adae2d62a06d16fa32ce5f65d}{dbg\+Printf\+Data} (const void $\ast$\+\_\+data, uint32\+\_\+t \+\_\+size, const char $\ast$\+\_\+format,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{dbg_8h_a3386b770af9e20c1a1befa290f3b8138}{\index{dbg.\+h@{dbg.\+h}!D\+B\+G@{D\+B\+G}}
+\index{D\+B\+G@{D\+B\+G}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{D\+B\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+G(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf dbg\+Printf}({\bf D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L} \char`\"{}\char`\"{} \+\_\+format \char`\"{}\textbackslash{}n\char`\"{}, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}}\label{dbg_8h_a3386b770af9e20c1a1befa290f3b8138}
+
+
+Definition at line 15 of file dbg.\+h.
+
+\hypertarget{dbg_8h_aeed3c8797056344a016703ea0ab7adcd}{\index{dbg.\+h@{dbg.\+h}!D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L@{D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L}}
+\index{D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L@{D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+G\+\_\+\+F\+I\+L\+E\+\_\+\+L\+I\+N\+E\+\_\+\+L\+I\+T\+E\+R\+A\+L~\char`\"{}\char`\"{} \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}(\char`\"{} {\bf D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+) \char`\"{})\+: \char`\"{}}}\label{dbg_8h_aeed3c8797056344a016703ea0ab7adcd}
+
+
+Definition at line 14 of file dbg.\+h.
+
+\hypertarget{dbg_8h_abd461fd979720ede46284ae30f5446a6}{\index{dbg.\+h@{dbg.\+h}!D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E@{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E}}
+\index{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E@{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+x}
+\end{DoxyParamCaption}
+)~{\bf D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+}(\+\_\+x)}}\label{dbg_8h_abd461fd979720ede46284ae30f5446a6}
+
+
+Definition at line 12 of file dbg.\+h.
+
+\hypertarget{dbg_8h_a90ed19194c8607bbb92a814fd3f62253}{\index{dbg.\+h@{dbg.\+h}!D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+@{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+}}
+\index{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+@{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+G\+\_\+\+S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+x}
+\end{DoxyParamCaption}
+)~\#\+\_\+x}}\label{dbg_8h_a90ed19194c8607bbb92a814fd3f62253}
+
+
+Definition at line 13 of file dbg.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{dbg_8h_af248b216c49eadc469480c975fdd67bb}{\index{dbg.\+h@{dbg.\+h}!dbg\+Printf@{dbg\+Printf}}
+\index{dbg\+Printf@{dbg\+Printf}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{dbg\+Printf}]{\setlength{\rightskip}{0pt plus 5cm}void dbg\+Printf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{dbg_8h_af248b216c49eadc469480c975fdd67bb}
+
+
+Definition at line 29 of file dbg.\+cpp.
+
+\hypertarget{dbg_8h_ac2ae680adae2d62a06d16fa32ce5f65d}{\index{dbg.\+h@{dbg.\+h}!dbg\+Printf\+Data@{dbg\+Printf\+Data}}
+\index{dbg\+Printf\+Data@{dbg\+Printf\+Data}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{dbg\+Printf\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void dbg\+Printf\+Data (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{\+\_\+data, }
+\item[{uint32\+\_\+t}]{\+\_\+size, }
+\item[{const char $\ast$}]{\+\_\+format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{dbg_8h_ac2ae680adae2d62a06d16fa32ce5f65d}
+
+
+Definition at line 39 of file dbg.\+cpp.
+
+\hypertarget{dbg_8h_a494989fbfabfe6ad9add941d5b53f472}{\index{dbg.\+h@{dbg.\+h}!dbg\+Printf\+Vargs@{dbg\+Printf\+Vargs}}
+\index{dbg\+Printf\+Vargs@{dbg\+Printf\+Vargs}!dbg.\+h@{dbg.\+h}}
+\subsubsection[{dbg\+Printf\+Vargs}]{\setlength{\rightskip}{0pt plus 5cm}void dbg\+Printf\+Vargs (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+format, }
+\item[{va\+\_\+list}]{\+\_\+arg\+List}
+\end{DoxyParamCaption}
+)}}\label{dbg_8h_a494989fbfabfe6ad9add941d5b53f472}
+
+
+Definition at line 15 of file dbg.\+cpp.
+

@@ -1,0 +1,291 @@
+\hypertarget{classcrap_1_1binary__tree}{\section{crap\+:\+:binary\+\_\+tree$<$ T $>$ Class Template Reference}
+\label{classcrap_1_1binary__tree}\index{crap\+::binary\+\_\+tree$<$ T $>$@{crap\+::binary\+\_\+tree$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$binarytree.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a750a57d699f2974e6a5415300a9696ff}{handle}
+\item 
+typedef T \hyperlink{classcrap_1_1binary__tree_a9d33f412f5a24d3201de18e8c531143d}{type}
+\item 
+typedef T \hyperlink{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}{key}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1binary__tree_a235df9c4c0ee03175d08b68b776498af}{binary\+\_\+tree} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1binary__tree_a4e2a6b711e97bc978ab707bd48b44635}{memory}, uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a9e738d5a81082e3b5f653fd8e0caf705}{size})
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1binary__tree_a6a8874aa9f6fdc7831e130d4b466d568}{$\sim$binary\+\_\+tree} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_af747bfe4e0022a01ae09761944de36b4}{find} (const T \&\hyperlink{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}{key}) const 
+\begin{DoxyCompactList}\small\item\em Finds key and returns iterator ( end() if failed ) \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a7456cc6905bc3866dece32e53f59468f}{insert} (const T \&\hyperlink{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}{key})
+\begin{DoxyCompactList}\small\item\em Inserting key if unique and returns iterator ( end() if failed ) \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a82e0c5b629a5c993fa61657150874cdb}{push\+\_\+back} (const T \&\hyperlink{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}{key})
+\begin{DoxyCompactList}\small\item\em Inserting key if unique and returns iterator ( end() if failed ) \end{DoxyCompactList}\item 
+bool \hyperlink{classcrap_1_1binary__tree_a266ff63e1c07266b2c7f31cc29b1f5c3}{remove} (const T \&\hyperlink{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}{key})
+\begin{DoxyCompactList}\small\item\em Find key and remove element. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_aa1064fb28f8e543049a87315548edb3d}{min\+\_\+node} (void) const 
+\begin{DoxyCompactList}\small\item\em Finds the smalles element and returns iterator. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a657c2c1f571ae0960b925c49a0141e7c}{max\+\_\+node} (void) const 
+\begin{DoxyCompactList}\small\item\em Finds the biggest element and returns iterator. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a9e738d5a81082e3b5f653fd8e0caf705}{size} (void) const 
+\begin{DoxyCompactList}\small\item\em Tree number of stored nodes. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_aaa5e75e63d1adb33b9e564446cd6d3bd}{max\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em Tree number of max stored nodes. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1binary__tree_a9d33f412f5a24d3201de18e8c531143d}{type} \& \hyperlink{classcrap_1_1binary__tree_a83cebad3e5b34654274156bbc50704be}{operator\mbox{[}$\,$\mbox{]}} (const \hyperlink{classcrap_1_1binary__tree_a750a57d699f2974e6a5415300a9696ff}{handle} \&\hyperlink{classcrap_1_1binary__tree_a750a57d699f2974e6a5415300a9696ff}{handle})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1binary__tree_a4e2a6b711e97bc978ab707bd48b44635}{memory} (void) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_abbd91c82bb942a5b77cadf0f9c086efc}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{classcrap_1_1binary__tree_a87521e484b4d0bce9b166eeb635ec085}{invalid} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class crap\+::binary\+\_\+tree$<$ T $>$}
+
+
+
+Definition at line 36 of file binarytree.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1binary__tree_a750a57d699f2974e6a5415300a9696ff}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!handle@{handle}}
+\index{handle@{handle}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::{\bf handle}}}\label{classcrap_1_1binary__tree_a750a57d699f2974e6a5415300a9696ff}
+
+
+Definition at line 94 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!key@{key}}
+\index{key@{key}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::{\bf key}}}\label{classcrap_1_1binary__tree_ac119732cd07f83ed5161ebc86d0e31c6}
+
+
+Definition at line 96 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a9d33f412f5a24d3201de18e8c531143d}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!type@{type}}
+\index{type@{type}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::{\bf type}}}\label{classcrap_1_1binary__tree_a9d33f412f5a24d3201de18e8c531143d}
+
+
+Definition at line 95 of file binarytree.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1binary__tree_a235df9c4c0ee03175d08b68b776498af}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!binary\+\_\+tree@{binary\+\_\+tree}}
+\index{binary\+\_\+tree@{binary\+\_\+tree}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{binary\+\_\+tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::{\bf binary\+\_\+tree} (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{memory, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1binary__tree_a235df9c4c0ee03175d08b68b776498af}
+
+
+Default constructor. 
+
+
+
+Definition at line 195 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a6a8874aa9f6fdc7831e130d4b466d568}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!````~binary\+\_\+tree@{$\sim$binary\+\_\+tree}}
+\index{````~binary\+\_\+tree@{$\sim$binary\+\_\+tree}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{$\sim$binary\+\_\+tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::$\sim${\bf binary\+\_\+tree} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1binary__tree_a6a8874aa9f6fdc7831e130d4b466d568}
+
+
+Destructor. 
+
+
+
+Definition at line 202 of file binarytree.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1binary__tree_af747bfe4e0022a01ae09761944de36b4}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!find@{find}}
+\index{find@{find}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1binary__tree_af747bfe4e0022a01ae09761944de36b4}
+
+
+Finds key and returns iterator ( end() if failed ) 
+
+
+
+Definition at line 208 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a7456cc6905bc3866dece32e53f59468f}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!insert@{insert}}
+\index{insert@{insert}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1binary__tree_a7456cc6905bc3866dece32e53f59468f}
+
+
+Inserting key if unique and returns iterator ( end() if failed ) 
+
+
+
+Definition at line 231 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a657c2c1f571ae0960b925c49a0141e7c}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!max\+\_\+node@{max\+\_\+node}}
+\index{max\+\_\+node@{max\+\_\+node}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{max\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::max\+\_\+node (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1binary__tree_a657c2c1f571ae0960b925c49a0141e7c}
+
+
+Finds the biggest element and returns iterator. 
+
+
+
+Definition at line 390 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_aaa5e75e63d1adb33b9e564446cd6d3bd}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1binary__tree_aaa5e75e63d1adb33b9e564446cd6d3bd}
+
+
+Tree number of max stored nodes. 
+
+
+
+Definition at line 416 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a4e2a6b711e97bc978ab707bd48b44635}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!memory@{memory}}
+\index{memory@{memory}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1binary__tree_a4e2a6b711e97bc978ab707bd48b44635}
+
+
+Definition at line 136 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_aa1064fb28f8e543049a87315548edb3d}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!min\+\_\+node@{min\+\_\+node}}
+\index{min\+\_\+node@{min\+\_\+node}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{min\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::min\+\_\+node (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1binary__tree_aa1064fb28f8e543049a87315548edb3d}
+
+
+Finds the smalles element and returns iterator. 
+
+
+
+Definition at line 370 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a83cebad3e5b34654274156bbc50704be}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf type}\& {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const {\bf handle} \&}]{handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1binary__tree_a83cebad3e5b34654274156bbc50704be}
+
+
+Definition at line 130 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a82e0c5b629a5c993fa61657150874cdb}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1binary__tree_a82e0c5b629a5c993fa61657150874cdb}
+
+
+Inserting key if unique and returns iterator ( end() if failed ) 
+
+
+
+Definition at line 256 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a266ff63e1c07266b2c7f31cc29b1f5c3}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!remove@{remove}}
+\index{remove@{remove}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1binary__tree_a266ff63e1c07266b2c7f31cc29b1f5c3}
+
+
+Find key and remove element. 
+
+
+
+Definition at line 281 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_a9e738d5a81082e3b5f653fd8e0caf705}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!size@{size}}
+\index{size@{size}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1binary__tree_a9e738d5a81082e3b5f653fd8e0caf705}
+
+
+Tree number of stored nodes. 
+
+
+
+Definition at line 410 of file binarytree.\+h.
+
+\hypertarget{classcrap_1_1binary__tree_abbd91c82bb942a5b77cadf0f9c086efc}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ static {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classcrap_1_1binary__tree_abbd91c82bb942a5b77cadf0f9c086efc}
+
+
+Definition at line 141 of file binarytree.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1binary__tree_a87521e484b4d0bce9b166eeb635ec085}{\index{crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}!invalid@{invalid}}
+\index{invalid@{invalid}!crap\+::binary\+\_\+tree@{crap\+::binary\+\_\+tree}}
+\subsubsection[{invalid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const uint32\+\_\+t {\bf crap\+::binary\+\_\+tree}$<$ T $>$\+::invalid = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1binary__tree_a87521e484b4d0bce9b166eeb635ec085}
+
+
+Definition at line 97 of file binarytree.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{binarytree_8h}{binarytree.\+h}\end{DoxyCompactItemize}

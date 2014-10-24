@@ -1,0 +1,161 @@
+\hypertarget{classcrap_1_1_audio_file_filter}{\section{crap\+:\+:Audio\+File\+Filter Class Reference}
+\label{classcrap_1_1_audio_file_filter}\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+}
+
+
+{\ttfamily \#include $<$audioimport.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Audio\+File\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_audio_file_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_audio_file_filter_ac425c182077ddaf689c3fb507cbbed9a}{Audio\+File\+Filter} (\hyperlink{classcrap_1_1_audio_manager}{Audio\+Manager} $\ast$manager)
+\item 
+virtual \hyperlink{classcrap_1_1_audio_file_filter_a497f1948321e9693a35504e5414e7c22}{$\sim$\+Audio\+File\+Filter} (void)
+\item 
+virtual void \hyperlink{classcrap_1_1_audio_file_filter_aba3859aed6fe298b9b9f3355d55e4681}{use} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ data)
+\item 
+virtual void \hyperlink{classcrap_1_1_audio_file_filter_a3d908e1de624fa11b50579aec91f9390}{import} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ input\+\_\+data, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ output\+\_\+data, uint32\+\_\+t size)
+\item 
+virtual uint32\+\_\+t \hyperlink{classcrap_1_1_audio_file_filter_aa72252d9d5d4712c1e9a7118d35978b1}{calculate\+Memory} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ input\+\_\+data, uint32\+\_\+t size)
+\item 
+virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \hyperlink{classcrap_1_1_audio_file_filter_a3a5390867a59a54da2eaf61e0a28b25d}{export\+Name} (\hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} import\+\_\+name)
+\item 
+virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \hyperlink{classcrap_1_1_audio_file_filter_ad33c23c9538347df97c9de4828bf9465}{export\+Type\+Name} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_audio_manager}{Audio\+Manager} $\ast$ \hyperlink{classcrap_1_1_audio_file_filter_afb0bc61bab0af0de00d70747b6b1ff0e}{\+\_\+manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file audioimport.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_audio_file_filter_ac425c182077ddaf689c3fb507cbbed9a}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!Audio\+File\+Filter@{Audio\+File\+Filter}}
+\index{Audio\+File\+Filter@{Audio\+File\+Filter}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{Audio\+File\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} crap\+::\+Audio\+File\+Filter\+::\+Audio\+File\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf Audio\+Manager} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1_audio_file_filter_ac425c182077ddaf689c3fb507cbbed9a}
+
+
+Definition at line 32 of file audioimport.\+h.
+
+\hypertarget{classcrap_1_1_audio_file_filter_a497f1948321e9693a35504e5414e7c22}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!````~Audio\+File\+Filter@{$\sim$\+Audio\+File\+Filter}}
+\index{````~Audio\+File\+Filter@{$\sim$\+Audio\+File\+Filter}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{$\sim$\+Audio\+File\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}virtual crap\+::\+Audio\+File\+Filter\+::$\sim$\+Audio\+File\+Filter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classcrap_1_1_audio_file_filter_a497f1948321e9693a35504e5414e7c22}
+
+
+Definition at line 33 of file audioimport.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_audio_file_filter_aa72252d9d5d4712c1e9a7118d35978b1}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!calculate\+Memory@{calculate\+Memory}}
+\index{calculate\+Memory@{calculate\+Memory}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{calculate\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Audio\+File\+Filter\+::calculate\+Memory (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{input\+\_\+data, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_audio_file_filter_aa72252d9d5d4712c1e9a7118d35978b1}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_ac02efd4c496384cda5a906a9168925c6}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 72 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_file_filter_a3a5390867a59a54da2eaf61e0a28b25d}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!export\+Name@{export\+Name}}
+\index{export\+Name@{export\+Name}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{export\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string64} crap\+::\+Audio\+File\+Filter\+::export\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf string64}}]{import\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_audio_file_filter_a3a5390867a59a54da2eaf61e0a28b25d}
+
+
+Definition at line 77 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_file_filter_ad33c23c9538347df97c9de4828bf9465}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!export\+Type\+Name@{export\+Type\+Name}}
+\index{export\+Type\+Name@{export\+Type\+Name}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{export\+Type\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string64} crap\+::\+Audio\+File\+Filter\+::export\+Type\+Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_audio_file_filter_ad33c23c9538347df97c9de4828bf9465}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_a453f47cae8bc4024fb4de89a2924a1aa}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 82 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_file_filter_a3d908e1de624fa11b50579aec91f9390}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!import@{import}}
+\index{import@{import}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{import}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+File\+Filter\+::import (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{input\+\_\+data, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{output\+\_\+data, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_audio_file_filter_a3d908e1de624fa11b50579aec91f9390}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_ad17609fc71bb6d2825b99812d1d6eef4}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 67 of file audioimport.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_file_filter_aba3859aed6fe298b9b9f3355d55e4681}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!use@{use}}
+\index{use@{use}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+File\+Filter\+::use (
+\begin{DoxyParamCaption}
+\item[{const {\bf string\+\_\+hash} \&}]{name, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcrap_1_1_audio_file_filter_aba3859aed6fe298b9b9f3355d55e4681}
+
+
+Implements \hyperlink{classcrap_1_1_resource_filter_a1f5cc743b14021977727db2564082c72}{crap\+::\+Resource\+Filter}.
+
+
+
+Definition at line 50 of file audioimport.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1_audio_file_filter_afb0bc61bab0af0de00d70747b6b1ff0e}{\index{crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}!\+\_\+manager@{\+\_\+manager}}
+\index{\+\_\+manager@{\+\_\+manager}!crap\+::\+Audio\+File\+Filter@{crap\+::\+Audio\+File\+Filter}}
+\subsubsection[{\+\_\+manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Audio\+Manager}$\ast$ crap\+::\+Audio\+File\+Filter\+::\+\_\+manager\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1_audio_file_filter_afb0bc61bab0af0de00d70747b6b1ff0e}
+
+
+Definition at line 42 of file audioimport.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{audioimport_8h}{audioimport.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{audioimport_8cpp}{audioimport.\+cpp}\end{DoxyCompactItemize}

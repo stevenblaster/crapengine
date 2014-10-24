@@ -1,0 +1,111 @@
+\hypertarget{classcrap_1_1stack__allocator}{\section{crap\+:\+:stack\+\_\+allocator Class Reference}
+\label{classcrap_1_1stack__allocator}\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+}
+
+
+{\ttfamily \#include $<$stackallocator.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{pointer\+\_\+void}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1stack__allocator_a91f7e72d7f669e0a25e53f14e2bf0e7e}{stack\+\_\+allocator} (uint32\+\_\+t size)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1stack__allocator_a9cafd8ae3316558ca6f1b68ed32bce47}{stack\+\_\+allocator} (\hyperlink{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{pointer\+\_\+void} start, \hyperlink{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{pointer\+\_\+void} end)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{pointer\+\_\+void} \hyperlink{classcrap_1_1stack__allocator_ab46f56492271335abc2a29c3f0ce05af}{allocate} (uint32\+\_\+t size, uint32\+\_\+t alignment, uint32\+\_\+t offset)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1stack__allocator_a9489281da591e65d9a331c2ff2deaa11}{deallocate} (\hyperlink{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{pointer\+\_\+void} pointer)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack__allocator_adedeab58b056fc17740b11149083a290}{allocation\+\_\+size} (\hyperlink{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{pointer\+\_\+void} pointer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file stackallocator.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}{\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}!pointer\+\_\+void@{pointer\+\_\+void}}
+\index{pointer\+\_\+void@{pointer\+\_\+void}!crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+\subsubsection[{pointer\+\_\+void}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::stack\+\_\+allocator\+::pointer\+\_\+void}}}\label{classcrap_1_1stack__allocator_a1595531e9229285629d99f036ebac325}
+
+
+Definition at line 17 of file stackallocator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1stack__allocator_a91f7e72d7f669e0a25e53f14e2bf0e7e}{\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}!stack\+\_\+allocator@{stack\+\_\+allocator}}
+\index{stack\+\_\+allocator@{stack\+\_\+allocator}!crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+\subsubsection[{stack\+\_\+allocator}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::stack\+\_\+allocator\+::stack\+\_\+allocator (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1stack__allocator_a91f7e72d7f669e0a25e53f14e2bf0e7e}
+
+
+Definition at line 38 of file stackallocator.\+h.
+
+\hypertarget{classcrap_1_1stack__allocator_a9cafd8ae3316558ca6f1b68ed32bce47}{\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}!stack\+\_\+allocator@{stack\+\_\+allocator}}
+\index{stack\+\_\+allocator@{stack\+\_\+allocator}!crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+\subsubsection[{stack\+\_\+allocator}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::stack\+\_\+allocator\+::stack\+\_\+allocator (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+void}}]{start, }
+\item[{{\bf pointer\+\_\+void}}]{end}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1stack__allocator_a9cafd8ae3316558ca6f1b68ed32bce47}
+
+
+Definition at line 44 of file stackallocator.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1stack__allocator_ab46f56492271335abc2a29c3f0ce05af}{\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}!allocate@{allocate}}
+\index{allocate@{allocate}!crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pointer\+\_\+t}$<$ void $>$ crap\+::stack\+\_\+allocator\+::allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size, }
+\item[{uint32\+\_\+t}]{alignment, }
+\item[{uint32\+\_\+t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1stack__allocator_ab46f56492271335abc2a29c3f0ce05af}
+
+
+Definition at line 50 of file stackallocator.\+h.
+
+\hypertarget{classcrap_1_1stack__allocator_adedeab58b056fc17740b11149083a290}{\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}!allocation\+\_\+size@{allocation\+\_\+size}}
+\index{allocation\+\_\+size@{allocation\+\_\+size}!crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+\subsubsection[{allocation\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::stack\+\_\+allocator\+::allocation\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+void}}]{pointer}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1stack__allocator_adedeab58b056fc17740b11149083a290}
+
+
+Definition at line 83 of file stackallocator.\+h.
+
+\hypertarget{classcrap_1_1stack__allocator_a9489281da591e65d9a331c2ff2deaa11}{\index{crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!crap\+::stack\+\_\+allocator@{crap\+::stack\+\_\+allocator}}
+\subsubsection[{deallocate}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::stack\+\_\+allocator\+::deallocate (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+void}}]{pointer}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1stack__allocator_a9489281da591e65d9a331c2ff2deaa11}
+
+
+Definition at line 75 of file stackallocator.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/memory/\hyperlink{stackallocator_8h}{stackallocator.\+h}\end{DoxyCompactItemize}

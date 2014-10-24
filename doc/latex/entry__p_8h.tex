@@ -1,0 +1,80 @@
+\hypertarget{entry__p_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/entry\+\_\+p.h File Reference}
+\label{entry__p_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/entry\+\_\+p.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/entry\+\_\+p.\+h}}
+}
+{\ttfamily \#include $<$bx/spscqueue.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}entry.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structentry_1_1_event}{entry\+::\+Event}
+\item 
+struct \hyperlink{structentry_1_1_key_event}{entry\+::\+Key\+Event}
+\item 
+struct \hyperlink{structentry_1_1_mouse_event}{entry\+::\+Mouse\+Event}
+\item 
+struct \hyperlink{structentry_1_1_size_event}{entry\+::\+Size\+Event}
+\item 
+class \hyperlink{classentry_1_1_event_queue}{entry\+::\+Event\+Queue}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceentry}{entry}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{entry__p_8h_a8d3f22ef1fc3e349abfacfc703dc8380}{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L}~0
+\item 
+\#define \hyperlink{entry__p_8h_ac5f34c5782752700138178b017a89d78}{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E}~1
+\item 
+\#define \hyperlink{entry__p_8h_ab3f3ec43eb309e699585a7f17d38125f}{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H}~1280
+\item 
+\#define \hyperlink{entry__p_8h_a9483d02f13223e7c1d9cab86d6578598}{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T}~720
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespaceentry_af1d986714ae748fb0b3b96b3af66ec63}{entry\+::main} (int \+\_\+argc, char $\ast$$\ast$\+\_\+argv)
+\item 
+const Event $\ast$ \hyperlink{namespaceentry_a8675f5da63bf76972fc3b0387ee32c42}{entry\+::poll} ()
+\item 
+void \hyperlink{namespaceentry_a52ca9ce82cbf661be5b3255ad18605fd}{entry\+::release} (const Event $\ast$\+\_\+event)
+\item 
+void \hyperlink{namespaceentry_afd1d3b44324599bc7627c433146ec82b}{entry\+::set\+Window\+Size} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\item 
+void \hyperlink{namespaceentry_a0bf80684c61fab67431f0441c5405a39}{entry\+::toggle\+Window\+Frame} ()
+\item 
+void \hyperlink{namespaceentry_ad0e6572af7dd4ba198d1e03bd12984c1}{entry\+::set\+Mouse\+Lock} (bool \+\_\+lock)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{entry__p_8h_ac5f34c5782752700138178b017a89d78}{\index{entry\+\_\+p.\+h@{entry\+\_\+p.\+h}!E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E@{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E}}
+\index{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E@{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E}!entry\+\_\+p.\+h@{entry\+\_\+p.\+h}}
+\subsubsection[{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+N\+A\+T\+I\+V\+E~1}}\label{entry__p_8h_ac5f34c5782752700138178b017a89d78}
+
+
+Definition at line 19 of file entry\+\_\+p.\+h.
+
+\hypertarget{entry__p_8h_a8d3f22ef1fc3e349abfacfc703dc8380}{\index{entry\+\_\+p.\+h@{entry\+\_\+p.\+h}!E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L@{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L}}
+\index{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L@{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L}!entry\+\_\+p.\+h@{entry\+\_\+p.\+h}}
+\subsubsection[{E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+T\+R\+Y\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+D\+L~0}}\label{entry__p_8h_a8d3f22ef1fc3e349abfacfc703dc8380}
+
+
+Definition at line 14 of file entry\+\_\+p.\+h.
+
+\hypertarget{entry__p_8h_a9483d02f13223e7c1d9cab86d6578598}{\index{entry\+\_\+p.\+h@{entry\+\_\+p.\+h}!E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T@{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T@{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T}!entry\+\_\+p.\+h@{entry\+\_\+p.\+h}}
+\subsubsection[{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T~720}}\label{entry__p_8h_a9483d02f13223e7c1d9cab86d6578598}
+
+
+Definition at line 26 of file entry\+\_\+p.\+h.
+
+\hypertarget{entry__p_8h_ab3f3ec43eb309e699585a7f17d38125f}{\index{entry\+\_\+p.\+h@{entry\+\_\+p.\+h}!E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H@{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H}}
+\index{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H@{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H}!entry\+\_\+p.\+h@{entry\+\_\+p.\+h}}
+\subsubsection[{E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+T\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+T\+H~1280}}\label{entry__p_8h_ab3f3ec43eb309e699585a7f17d38125f}
+
+
+Definition at line 25 of file entry\+\_\+p.\+h.
+

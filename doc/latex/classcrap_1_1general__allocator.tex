@@ -1,0 +1,131 @@
+\hypertarget{classcrap_1_1general__allocator}{\section{crap\+:\+:general\+\_\+allocator Class Reference}
+\label{classcrap_1_1general__allocator}\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+}
+
+
+{\ttfamily \#include $<$generalallocator.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{pointer\+\_\+void}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1general__allocator_acc43eae69b77e105c2b9955d8f79a260}{general\+\_\+allocator} (\hyperlink{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{pointer\+\_\+void} start, \hyperlink{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{pointer\+\_\+void} end)
+\begin{DoxyCompactList}\small\item\em constructor using given memory \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1general__allocator_a21e65b201415e41740abfb6f4f246abf}{$\sim$general\+\_\+allocator} (void)
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{pointer\+\_\+void} \hyperlink{classcrap_1_1general__allocator_a905cb869f9107b72ac8f0f8f4221dc20}{allocate} (uint32\+\_\+t size, uint32\+\_\+t alignment, uint32\+\_\+t offset)
+\begin{DoxyCompactList}\small\item\em allocate specific amount of bytes \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1general__allocator_a118dce5448b6c6c38089e757ff4d181a}{deallocate} (\hyperlink{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{pointer\+\_\+void} address)
+\begin{DoxyCompactList}\small\item\em deallocating memory, by taking header out of list \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1general__allocator_a0e323489710f40753c1c9d134edb2706}{allocation\+\_\+size} (\hyperlink{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{pointer\+\_\+void} address)
+\begin{DoxyCompactList}\small\item\em returning size of allocation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file generalallocator.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}{\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}!pointer\+\_\+void@{pointer\+\_\+void}}
+\index{pointer\+\_\+void@{pointer\+\_\+void}!crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+\subsubsection[{pointer\+\_\+void}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::general\+\_\+allocator\+::pointer\+\_\+void}}}\label{classcrap_1_1general__allocator_adc45630f82d3467f4a968e412cac88fc}
+
+
+Definition at line 66 of file generalallocator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1general__allocator_acc43eae69b77e105c2b9955d8f79a260}{\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}!general\+\_\+allocator@{general\+\_\+allocator}}
+\index{general\+\_\+allocator@{general\+\_\+allocator}!crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+\subsubsection[{general\+\_\+allocator}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::general\+\_\+allocator\+::general\+\_\+allocator (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+void}}]{start, }
+\item[{{\bf pointer\+\_\+void}}]{end}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1general__allocator_acc43eae69b77e105c2b9955d8f79a260}
+
+
+constructor using given memory 
+
+
+
+Definition at line 85 of file generalallocator.\+h.
+
+\hypertarget{classcrap_1_1general__allocator_a21e65b201415e41740abfb6f4f246abf}{\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}!````~general\+\_\+allocator@{$\sim$general\+\_\+allocator}}
+\index{````~general\+\_\+allocator@{$\sim$general\+\_\+allocator}!crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+\subsubsection[{$\sim$general\+\_\+allocator}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::general\+\_\+allocator\+::$\sim$general\+\_\+allocator (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1general__allocator_a21e65b201415e41740abfb6f4f246abf}
+
+
+destructor 
+
+
+
+Definition at line 97 of file generalallocator.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1general__allocator_a905cb869f9107b72ac8f0f8f4221dc20}{\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}!allocate@{allocate}}
+\index{allocate@{allocate}!crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pointer\+\_\+t}$<$ void $>$ crap\+::general\+\_\+allocator\+::allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size, }
+\item[{uint32\+\_\+t}]{alignment, }
+\item[{uint32\+\_\+t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1general__allocator_a905cb869f9107b72ac8f0f8f4221dc20}
+
+
+allocate specific amount of bytes 
+
+
+
+Definition at line 103 of file generalallocator.\+h.
+
+\hypertarget{classcrap_1_1general__allocator_a0e323489710f40753c1c9d134edb2706}{\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}!allocation\+\_\+size@{allocation\+\_\+size}}
+\index{allocation\+\_\+size@{allocation\+\_\+size}!crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+\subsubsection[{allocation\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::general\+\_\+allocator\+::allocation\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+void}}]{address}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1general__allocator_a0e323489710f40753c1c9d134edb2706}
+
+
+returning size of allocation 
+
+
+
+Definition at line 164 of file generalallocator.\+h.
+
+\hypertarget{classcrap_1_1general__allocator_a118dce5448b6c6c38089e757ff4d181a}{\index{crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!crap\+::general\+\_\+allocator@{crap\+::general\+\_\+allocator}}
+\subsubsection[{deallocate}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::general\+\_\+allocator\+::deallocate (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+void}}]{address}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1general__allocator_a118dce5448b6c6c38089e757ff4d181a}
+
+
+deallocating memory, by taking header out of list 
+
+
+
+Definition at line 144 of file generalallocator.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/memory/\hyperlink{generalallocator_8h}{generalallocator.\+h}\end{DoxyCompactItemize}

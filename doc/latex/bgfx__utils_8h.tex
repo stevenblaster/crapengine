@@ -1,0 +1,126 @@
+\hypertarget{bgfx__utils_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bgfx\+\_\+utils.h File Reference}
+\label{bgfx__utils_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bgfx\+\_\+utils.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bgfx\+\_\+utils.\+h}}
+}
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{bgfx__utils_8h_a5710e3832da94c58139614452759dc79}{load} (const char $\ast$\+\_\+file\+Path)
+\item 
+bgfx\+::\+Shader\+Handle \hyperlink{bgfx__utils_8h_ae3d140e1025227619cc5b3f5e4f7c428}{load\+Shader} (const char $\ast$\+\_\+name)
+\item 
+bgfx\+::\+Program\+Handle \hyperlink{bgfx__utils_8h_ad1a9ee6d4ed37ddb2432e80ac0764a37}{load\+Program} (const char $\ast$\+\_\+vs\+Name, const char $\ast$\+\_\+fs\+Name)
+\item 
+bgfx\+::\+Texture\+Handle \hyperlink{bgfx__utils_8h_ae7f21dd47ae138fb4a5a47dac836d632}{load\+Texture} (const char $\ast$\+\_\+name, uint32\+\_\+t \+\_\+flags=B\+G\+F\+X\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+N\+O\+N\+E, uint8\+\_\+t \+\_\+skip=0, bgfx\+::\+Texture\+Info $\ast$\+\_\+info=N\+U\+L\+L)
+\item 
+void \hyperlink{bgfx__utils_8h_a85392bb13fcddd7d7b62120052423f2a}{calc\+Tangents} (void $\ast$\+\_\+vertices, uint16\+\_\+t \+\_\+num\+Vertices, bgfx\+::\+Vertex\+Decl \+\_\+decl, const uint16\+\_\+t $\ast$\+\_\+indices, uint32\+\_\+t \+\_\+num\+Indices)
+\item 
+\hyperlink{struct_mesh}{Mesh} $\ast$ \hyperlink{bgfx__utils_8h_a27b634d946dfdd0b4283a51afa46e013}{mesh\+Load} (const char $\ast$\+\_\+file\+Path)
+\item 
+void \hyperlink{bgfx__utils_8h_a26dea13750570069f1df95bfeaf772fd}{mesh\+Unload} (\hyperlink{struct_mesh}{Mesh} $\ast$\+\_\+mesh)
+\item 
+void \hyperlink{bgfx__utils_8h_acecf214a59001c1a92f0a564e0a5ecce}{mesh\+Submit} (\hyperlink{struct_mesh}{Mesh} $\ast$\+\_\+mesh, uint8\+\_\+t \+\_\+id, bgfx\+::\+Program\+Handle \+\_\+program, float $\ast$\+\_\+mtx, uint64\+\_\+t \+\_\+state=B\+G\+F\+X\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+A\+S\+K)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bgfx__utils_8h_a85392bb13fcddd7d7b62120052423f2a}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!calc\+Tangents@{calc\+Tangents}}
+\index{calc\+Tangents@{calc\+Tangents}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{calc\+Tangents}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Tangents (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{\+\_\+vertices, }
+\item[{uint16\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{bgfx\+::\+Vertex\+Decl}]{\+\_\+decl, }
+\item[{const uint16\+\_\+t $\ast$}]{\+\_\+indices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Indices}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_a85392bb13fcddd7d7b62120052423f2a}
+
+
+Definition at line 113 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_a5710e3832da94c58139614452759dc79}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!load@{load}}
+\index{load@{load}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+file\+Path}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_a5710e3832da94c58139614452759dc79}
+
+
+Definition at line 28 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_ad1a9ee6d4ed37ddb2432e80ac0764a37}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!load\+Program@{load\+Program}}
+\index{load\+Program@{load\+Program}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{load\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Program\+Handle load\+Program (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+vs\+Name, }
+\item[{const char $\ast$}]{\+\_\+fs\+Name}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_ad1a9ee6d4ed37ddb2432e80ac0764a37}
+
+
+Definition at line 92 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_ae3d140e1025227619cc5b3f5e4f7c428}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!load\+Shader@{load\+Shader}}
+\index{load\+Shader@{load\+Shader}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{load\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Shader\+Handle load\+Shader (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_ae3d140e1025227619cc5b3f5e4f7c428}
+
+
+Definition at line 79 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_ae7f21dd47ae138fb4a5a47dac836d632}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!load\+Texture@{load\+Texture}}
+\index{load\+Texture@{load\+Texture}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{load\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Texture\+Handle load\+Texture (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{uint32\+\_\+t}]{\+\_\+flags = {\ttfamily BGFX\+\_\+TEXTURE\+\_\+NONE}, }
+\item[{uint8\+\_\+t}]{\+\_\+skip = {\ttfamily 0}, }
+\item[{bgfx\+::\+Texture\+Info $\ast$}]{\+\_\+info = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_ae7f21dd47ae138fb4a5a47dac836d632}
+
+
+Definition at line 108 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_a27b634d946dfdd0b4283a51afa46e013}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!mesh\+Load@{mesh\+Load}}
+\index{mesh\+Load@{mesh\+Load}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{mesh\+Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh}$\ast$ mesh\+Load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+file\+Path}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_a27b634d946dfdd0b4283a51afa46e013}
+
+
+Definition at line 409 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_acecf214a59001c1a92f0a564e0a5ecce}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!mesh\+Submit@{mesh\+Submit}}
+\index{mesh\+Submit@{mesh\+Submit}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{mesh\+Submit}]{\setlength{\rightskip}{0pt plus 5cm}void mesh\+Submit (
+\begin{DoxyParamCaption}
+\item[{{\bf Mesh} $\ast$}]{\+\_\+mesh, }
+\item[{uint8\+\_\+t}]{\+\_\+id, }
+\item[{bgfx\+::\+Program\+Handle}]{\+\_\+program, }
+\item[{float $\ast$}]{\+\_\+mtx, }
+\item[{uint64\+\_\+t}]{\+\_\+state = {\ttfamily BGFX\+\_\+STATE\+\_\+MASK}}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_acecf214a59001c1a92f0a564e0a5ecce}
+
+
+Definition at line 424 of file bgfx\+\_\+utils.\+cpp.
+
+\hypertarget{bgfx__utils_8h_a26dea13750570069f1df95bfeaf772fd}{\index{bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}!mesh\+Unload@{mesh\+Unload}}
+\index{mesh\+Unload@{mesh\+Unload}!bgfx\+\_\+utils.\+h@{bgfx\+\_\+utils.\+h}}
+\subsubsection[{mesh\+Unload}]{\setlength{\rightskip}{0pt plus 5cm}void mesh\+Unload (
+\begin{DoxyParamCaption}
+\item[{{\bf Mesh} $\ast$}]{\+\_\+mesh}
+\end{DoxyParamCaption}
+)}}\label{bgfx__utils_8h_a26dea13750570069f1df95bfeaf772fd}
+
+
+Definition at line 418 of file bgfx\+\_\+utils.\+cpp.
+

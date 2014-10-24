@@ -1,5 +1,5 @@
 
-#include "container/array.h"
+#include "container/sortedarray.h"
 
 #include "UnitTest++.h"
 #include "memory.h"
@@ -94,7 +94,7 @@ TEST(CrapSortedArrayEraseOverflow)
 
 TEST(CrapASortedrrayAt)
 {
-    float32_t* ptr = sorted_array->at(1);
+    float32_t* ptr = sorted_array->get(1);
     CHECK( ptr == 0 );
 }
 

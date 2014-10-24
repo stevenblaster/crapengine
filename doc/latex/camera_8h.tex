@@ -1,0 +1,185 @@
+\hypertarget{camera_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/camera.h File Reference}
+\label{camera_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/camera.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/camera.\+h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{camera_8h_ac52656165891ad0c4720e11638a6a1c4}{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P}~U\+I\+N\+T8\+\_\+\+C(0x1)
+\item 
+\#define \hyperlink{camera_8h_a1369f9a976f64709a93c616f05603626}{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N}~U\+I\+N\+T8\+\_\+\+C(0x2)
+\item 
+\#define \hyperlink{camera_8h_a906b42fd0c48f1b3536e42d68ed6bd2a}{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T}~U\+I\+N\+T8\+\_\+\+C(0x4)
+\item 
+\#define \hyperlink{camera_8h_a5a0f0acd689fec72570846e0e0aeba00}{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T}~U\+I\+N\+T8\+\_\+\+C(0x8)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{camera_8h_a5fe1b7af419d7fb20ad0201aabfe0ab5}{camera\+Create} ()
+\item 
+void \hyperlink{camera_8h_aa382472132a57e5e373563edbf69ee50}{camera\+Destroy} ()
+\item 
+void \hyperlink{camera_8h_abbf716ee62d7bca46a9b53715f760c51}{camera\+Set\+Position} (float $\ast$\+\_\+pos)
+\item 
+void \hyperlink{camera_8h_a0221b63e034cceaa04bad2e5565be6ad}{camera\+Set\+Horizontal\+Angle} (float \+\_\+horizontal\+Angle)
+\item 
+void \hyperlink{camera_8h_ad02a9e2376c7c9dd0483622e90e5c26d}{camera\+Set\+Vertical\+Angle} (float \+\_\+vertical\+Angle)
+\item 
+void \hyperlink{camera_8h_a211bd1c5c7b6898499d472338aa68497}{camera\+Set\+Key\+State} (uint8\+\_\+t \+\_\+key, bool \+\_\+down)
+\item 
+void \hyperlink{camera_8h_a51eda5a4776abb5f8d29e7509cf755d9}{camera\+Get\+View\+Mtx} (float $\ast$\+\_\+view\+Mtx)
+\item 
+void \hyperlink{camera_8h_abd61dd2faf37bf590cd4983e70d195d3}{camera\+Get\+Position} (float $\ast$\+\_\+pos)
+\item 
+void \hyperlink{camera_8h_a39ce348561e6e448836b455fc0eaea7d}{camera\+Get\+At} (float $\ast$\+\_\+at)
+\item 
+void \hyperlink{camera_8h_adf3ab47a888643e60fb6dd4d5c5d6024}{camera\+Update} (float \+\_\+delta\+Time, uint32\+\_\+t \+\_\+mx, uint32\+\_\+t \+\_\+my, bool \+\_\+move)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{camera_8h_a1369f9a976f64709a93c616f05603626}{\index{camera.\+h@{camera.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N}!camera.\+h@{camera.\+h}}
+\subsubsection[{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+W\+N~U\+I\+N\+T8\+\_\+\+C(0x2)}}\label{camera_8h_a1369f9a976f64709a93c616f05603626}
+
+
+Definition at line 7 of file camera.\+h.
+
+\hypertarget{camera_8h_a906b42fd0c48f1b3536e42d68ed6bd2a}{\index{camera.\+h@{camera.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T}!camera.\+h@{camera.\+h}}
+\subsubsection[{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+F\+T~U\+I\+N\+T8\+\_\+\+C(0x4)}}\label{camera_8h_a906b42fd0c48f1b3536e42d68ed6bd2a}
+
+
+Definition at line 8 of file camera.\+h.
+
+\hypertarget{camera_8h_a5a0f0acd689fec72570846e0e0aeba00}{\index{camera.\+h@{camera.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T}!camera.\+h@{camera.\+h}}
+\subsubsection[{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+R\+I\+G\+H\+T~U\+I\+N\+T8\+\_\+\+C(0x8)}}\label{camera_8h_a5a0f0acd689fec72570846e0e0aeba00}
+
+
+Definition at line 9 of file camera.\+h.
+
+\hypertarget{camera_8h_ac52656165891ad0c4720e11638a6a1c4}{\index{camera.\+h@{camera.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P@{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P}!camera.\+h@{camera.\+h}}
+\subsubsection[{C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+R\+A\+\_\+\+K\+E\+Y\+\_\+\+U\+P~U\+I\+N\+T8\+\_\+\+C(0x1)}}\label{camera_8h_ac52656165891ad0c4720e11638a6a1c4}
+
+
+Definition at line 6 of file camera.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{camera_8h_a5fe1b7af419d7fb20ad0201aabfe0ab5}{\index{camera.\+h@{camera.\+h}!camera\+Create@{camera\+Create}}
+\index{camera\+Create@{camera\+Create}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Create}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_a5fe1b7af419d7fb20ad0201aabfe0ab5}
+
+
+Definition at line 231 of file camera.\+cpp.
+
+\hypertarget{camera_8h_aa382472132a57e5e373563edbf69ee50}{\index{camera.\+h@{camera.\+h}!camera\+Destroy@{camera\+Destroy}}
+\index{camera\+Destroy@{camera\+Destroy}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Destroy}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_aa382472132a57e5e373563edbf69ee50}
+
+
+Definition at line 236 of file camera.\+cpp.
+
+\hypertarget{camera_8h_a39ce348561e6e448836b455fc0eaea7d}{\index{camera.\+h@{camera.\+h}!camera\+Get\+At@{camera\+Get\+At}}
+\index{camera\+Get\+At@{camera\+Get\+At}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Get\+At}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Get\+At (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{\+\_\+at}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_a39ce348561e6e448836b455fc0eaea7d}
+
+
+Definition at line 272 of file camera.\+cpp.
+
+\hypertarget{camera_8h_abd61dd2faf37bf590cd4983e70d195d3}{\index{camera.\+h@{camera.\+h}!camera\+Get\+Position@{camera\+Get\+Position}}
+\index{camera\+Get\+Position@{camera\+Get\+Position}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Get\+Position (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{\+\_\+pos}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_abd61dd2faf37bf590cd4983e70d195d3}
+
+
+Definition at line 267 of file camera.\+cpp.
+
+\hypertarget{camera_8h_a51eda5a4776abb5f8d29e7509cf755d9}{\index{camera.\+h@{camera.\+h}!camera\+Get\+View\+Mtx@{camera\+Get\+View\+Mtx}}
+\index{camera\+Get\+View\+Mtx@{camera\+Get\+View\+Mtx}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Get\+View\+Mtx}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Get\+View\+Mtx (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{\+\_\+view\+Mtx}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_a51eda5a4776abb5f8d29e7509cf755d9}
+
+
+Definition at line 262 of file camera.\+cpp.
+
+\hypertarget{camera_8h_a0221b63e034cceaa04bad2e5565be6ad}{\index{camera.\+h@{camera.\+h}!camera\+Set\+Horizontal\+Angle@{camera\+Set\+Horizontal\+Angle}}
+\index{camera\+Set\+Horizontal\+Angle@{camera\+Set\+Horizontal\+Angle}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Set\+Horizontal\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Set\+Horizontal\+Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+horizontal\+Angle}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_a0221b63e034cceaa04bad2e5565be6ad}
+
+
+Definition at line 247 of file camera.\+cpp.
+
+\hypertarget{camera_8h_a211bd1c5c7b6898499d472338aa68497}{\index{camera.\+h@{camera.\+h}!camera\+Set\+Key\+State@{camera\+Set\+Key\+State}}
+\index{camera\+Set\+Key\+State@{camera\+Set\+Key\+State}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Set\+Key\+State}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Set\+Key\+State (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+key, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_a211bd1c5c7b6898499d472338aa68497}
+
+
+Definition at line 257 of file camera.\+cpp.
+
+\hypertarget{camera_8h_abbf716ee62d7bca46a9b53715f760c51}{\index{camera.\+h@{camera.\+h}!camera\+Set\+Position@{camera\+Set\+Position}}
+\index{camera\+Set\+Position@{camera\+Set\+Position}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Set\+Position (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{\+\_\+pos}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_abbf716ee62d7bca46a9b53715f760c51}
+
+
+Definition at line 242 of file camera.\+cpp.
+
+\hypertarget{camera_8h_ad02a9e2376c7c9dd0483622e90e5c26d}{\index{camera.\+h@{camera.\+h}!camera\+Set\+Vertical\+Angle@{camera\+Set\+Vertical\+Angle}}
+\index{camera\+Set\+Vertical\+Angle@{camera\+Set\+Vertical\+Angle}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Set\+Vertical\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Set\+Vertical\+Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+vertical\+Angle}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_ad02a9e2376c7c9dd0483622e90e5c26d}
+
+
+Definition at line 252 of file camera.\+cpp.
+
+\hypertarget{camera_8h_adf3ab47a888643e60fb6dd4d5c5d6024}{\index{camera.\+h@{camera.\+h}!camera\+Update@{camera\+Update}}
+\index{camera\+Update@{camera\+Update}!camera.\+h@{camera.\+h}}
+\subsubsection[{camera\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void camera\+Update (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+delta\+Time, }
+\item[{uint32\+\_\+t}]{\+\_\+mx, }
+\item[{uint32\+\_\+t}]{\+\_\+my, }
+\item[{bool}]{\+\_\+move}
+\end{DoxyParamCaption}
+)}}\label{camera_8h_adf3ab47a888643e60fb6dd4d5c5d6024}
+
+
+Definition at line 277 of file camera.\+cpp.
+

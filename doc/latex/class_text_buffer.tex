@@ -1,0 +1,333 @@
+\hypertarget{class_text_buffer}{\section{Text\+Buffer Class Reference}
+\label{class_text_buffer}\index{Text\+Buffer@{Text\+Buffer}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_text_buffer_a8007ebfe26e61f881faf2bdf2684d2e8}{Text\+Buffer} (\hyperlink{class_font_manager}{Font\+Manager} $\ast$\+\_\+font\+Manager)
+\item 
+\hyperlink{class_text_buffer_ae6e62ee499ddea775d45fdf16ecebe06}{$\sim$\+Text\+Buffer} ()
+\item 
+void \hyperlink{class_text_buffer_a13356bfcc3acb9e86287f65d8e3276f0}{set\+Style} (uint32\+\_\+t \+\_\+flags=\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35ac828230a58c9428e9da9cf9e5f440813}{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L})
+\item 
+void \hyperlink{class_text_buffer_ae7823a0daf4a4aece545daf300a57722}{set\+Text\+Color} (uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_aaca48470033fe223673cd061c5c411bd}{set\+Background\+Color} (uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_a2b50d0fa59a6f30ed2d238621f1f92ee}{set\+Overline\+Color} (uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_ae3778e7512b9c64bf23a3df6178f93f6}{set\+Underline\+Color} (uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_aaa981ea6b1152022877d2973a53f63c3}{set\+Strike\+Through\+Color} (uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_af240416b25614c190fb18c52684f2767}{set\+Pen\+Position} (float \+\_\+x, float \+\_\+y)
+\item 
+void \hyperlink{class_text_buffer_adee33c747df6394a4eb2f67a7061e6f9}{append\+Text} (Font\+Handle \+\_\+font\+Handle, const char $\ast$\+\_\+string, const char $\ast$\+\_\+end=N\+U\+L\+L)
+\item 
+void \hyperlink{class_text_buffer_a2111469faa046a6e198ba825cc623fc6}{append\+Text} (Font\+Handle \+\_\+font\+Handle, const wchar\+\_\+t $\ast$\+\_\+string, const wchar\+\_\+t $\ast$\+\_\+end=N\+U\+L\+L)
+\item 
+void \hyperlink{class_text_buffer_afe90bba310c73d31b6b3e6439746fc02}{append\+Atlas\+Face} (uint16\+\_\+t \+\_\+face\+Index)
+\item 
+void \hyperlink{class_text_buffer_ac77de4fadc298d518a2ec439e223965f}{clear\+Text\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Clear the text buffer and reset its state (pen/color) \end{DoxyCompactList}\item 
+const uint8\+\_\+t $\ast$ \hyperlink{class_text_buffer_a62ef2f5ae57242c0d0842c7ab9c00b55}{get\+Vertex\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Get pointer to the vertex buffer to submit it to the graphic card. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_buffer_aea1cc32abd08bb2509eea3e0db12b80d}{get\+Vertex\+Count} () const 
+\begin{DoxyCompactList}\small\item\em Number of vertex in the vertex buffer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_buffer_a8dbb2fb6d0ea25c9e7379ebf1c2afe0e}{get\+Vertex\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Size in bytes of a vertex. \end{DoxyCompactList}\item 
+const uint16\+\_\+t $\ast$ \hyperlink{class_text_buffer_aa6fad402a64d9cc1e9691018a50e8c25}{get\+Index\+Buffer} () const 
+\begin{DoxyCompactList}\small\item\em get a pointer to the index buffer to submit it to the graphic \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_buffer_a6a36c65b7c4f34b0dc576980e526740d}{get\+Index\+Count} () const 
+\begin{DoxyCompactList}\small\item\em number of index in the index buffer \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_buffer_a5169f0886061c7f8d14fbd7577c74f6d}{get\+Index\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Size in bytes of an index. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_text_buffer_a7d1e73ac8869940943a2a5f022e3c6f8}{get\+Text\+Color} () const 
+\item 
+\hyperlink{struct_text_rectangle}{Text\+Rectangle} \hyperlink{class_text_buffer_a833ebdaf3b4626fc27258e6c9c4a10e6}{get\+Rectangle} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_text_buffer_a8007ebfe26e61f881faf2bdf2684d2e8}{\index{Text\+Buffer@{Text\+Buffer}!Text\+Buffer@{Text\+Buffer}}
+\index{Text\+Buffer@{Text\+Buffer}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Buffer\+::\+Text\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf Font\+Manager} $\ast$}]{\+\_\+font\+Manager}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_a8007ebfe26e61f881faf2bdf2684d2e8}
+\hyperlink{class_text_buffer}{Text\+Buffer} is bound to a font\+Manager for glyph retrieval \begin{DoxyRemark}{Remarks}
+the ownership of the manager is not taken 
+\end{DoxyRemark}
+
+
+Definition at line 192 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_ae6e62ee499ddea775d45fdf16ecebe06}{\index{Text\+Buffer@{Text\+Buffer}!````~Text\+Buffer@{$\sim$\+Text\+Buffer}}
+\index{````~Text\+Buffer@{$\sim$\+Text\+Buffer}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{$\sim$\+Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Buffer\+::$\sim$\+Text\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_ae6e62ee499ddea775d45fdf16ecebe06}
+
+
+Definition at line 218 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_text_buffer_afe90bba310c73d31b6b3e6439746fc02}{\index{Text\+Buffer@{Text\+Buffer}!append\+Atlas\+Face@{append\+Atlas\+Face}}
+\index{append\+Atlas\+Face@{append\+Atlas\+Face}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{append\+Atlas\+Face}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::append\+Atlas\+Face (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+face\+Index}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_afe90bba310c73d31b6b3e6439746fc02}
+Append a whole face of the atlas cube, mostly used for debugging and visualizing atlas. 
+
+Definition at line 274 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_adee33c747df6394a4eb2f67a7061e6f9}{\index{Text\+Buffer@{Text\+Buffer}!append\+Text@{append\+Text}}
+\index{append\+Text@{append\+Text}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{append\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::append\+Text (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+font\+Handle, }
+\item[{const char $\ast$}]{\+\_\+string, }
+\item[{const char $\ast$}]{\+\_\+end = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_adee33c747df6394a4eb2f67a7061e6f9}
+Append an A\+S\+C\+I\+I/utf-\/8 string to the buffer using current pen position and color. 
+
+Definition at line 225 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a2111469faa046a6e198ba825cc623fc6}{\index{Text\+Buffer@{Text\+Buffer}!append\+Text@{append\+Text}}
+\index{append\+Text@{append\+Text}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{append\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::append\+Text (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+font\+Handle, }
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+string, }
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+end = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_a2111469faa046a6e198ba825cc623fc6}
+Append a wide char unicode string to the buffer using current pen position and color. 
+
+Definition at line 250 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_ac77de4fadc298d518a2ec439e223965f}{\index{Text\+Buffer@{Text\+Buffer}!clear\+Text\+Buffer@{clear\+Text\+Buffer}}
+\index{clear\+Text\+Buffer@{clear\+Text\+Buffer}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{clear\+Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::clear\+Text\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_ac77de4fadc298d518a2ec439e223965f}
+
+
+Clear the text buffer and reset its state (pen/color) 
+
+
+
+Definition at line 307 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_aa6fad402a64d9cc1e9691018a50e8c25}{\index{Text\+Buffer@{Text\+Buffer}!get\+Index\+Buffer@{get\+Index\+Buffer}}
+\index{get\+Index\+Buffer@{get\+Index\+Buffer}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Index\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}const uint16\+\_\+t$\ast$ Text\+Buffer\+::get\+Index\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_aa6fad402a64d9cc1e9691018a50e8c25}
+
+
+get a pointer to the index buffer to submit it to the graphic 
+
+
+
+Definition at line 104 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a6a36c65b7c4f34b0dc576980e526740d}{\index{Text\+Buffer@{Text\+Buffer}!get\+Index\+Count@{get\+Index\+Count}}
+\index{get\+Index\+Count@{get\+Index\+Count}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Index\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Buffer\+::get\+Index\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a6a36c65b7c4f34b0dc576980e526740d}
+
+
+number of index in the index buffer 
+
+
+
+Definition at line 110 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a5169f0886061c7f8d14fbd7577c74f6d}{\index{Text\+Buffer@{Text\+Buffer}!get\+Index\+Size@{get\+Index\+Size}}
+\index{get\+Index\+Size@{get\+Index\+Size}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Index\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Buffer\+::get\+Index\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a5169f0886061c7f8d14fbd7577c74f6d}
+
+
+Size in bytes of an index. 
+
+
+
+Definition at line 116 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a833ebdaf3b4626fc27258e6c9c4a10e6}{\index{Text\+Buffer@{Text\+Buffer}!get\+Rectangle@{get\+Rectangle}}
+\index{get\+Rectangle@{get\+Rectangle}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Rectangle} Text\+Buffer\+::get\+Rectangle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a833ebdaf3b4626fc27258e6c9c4a10e6}
+
+
+Definition at line 126 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a7d1e73ac8869940943a2a5f022e3c6f8}{\index{Text\+Buffer@{Text\+Buffer}!get\+Text\+Color@{get\+Text\+Color}}
+\index{get\+Text\+Color@{get\+Text\+Color}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Buffer\+::get\+Text\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a7d1e73ac8869940943a2a5f022e3c6f8}
+
+
+Definition at line 121 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a62ef2f5ae57242c0d0842c7ab9c00b55}{\index{Text\+Buffer@{Text\+Buffer}!get\+Vertex\+Buffer@{get\+Vertex\+Buffer}}
+\index{get\+Vertex\+Buffer@{get\+Vertex\+Buffer}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Vertex\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t$\ast$ Text\+Buffer\+::get\+Vertex\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a62ef2f5ae57242c0d0842c7ab9c00b55}
+
+
+Get pointer to the vertex buffer to submit it to the graphic card. 
+
+
+
+Definition at line 86 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_aea1cc32abd08bb2509eea3e0db12b80d}{\index{Text\+Buffer@{Text\+Buffer}!get\+Vertex\+Count@{get\+Vertex\+Count}}
+\index{get\+Vertex\+Count@{get\+Vertex\+Count}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Vertex\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Buffer\+::get\+Vertex\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_aea1cc32abd08bb2509eea3e0db12b80d}
+
+
+Number of vertex in the vertex buffer. 
+
+
+
+Definition at line 92 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a8dbb2fb6d0ea25c9e7379ebf1c2afe0e}{\index{Text\+Buffer@{Text\+Buffer}!get\+Vertex\+Size@{get\+Vertex\+Size}}
+\index{get\+Vertex\+Size@{get\+Vertex\+Size}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{get\+Vertex\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Text\+Buffer\+::get\+Vertex\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a8dbb2fb6d0ea25c9e7379ebf1c2afe0e}
+
+
+Size in bytes of a vertex. 
+
+
+
+Definition at line 98 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_aaca48470033fe223673cd061c5c411bd}{\index{Text\+Buffer@{Text\+Buffer}!set\+Background\+Color@{set\+Background\+Color}}
+\index{set\+Background\+Color@{set\+Background\+Color}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Background\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Background\+Color (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_aaca48470033fe223673cd061c5c411bd}
+
+
+Definition at line 45 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a2b50d0fa59a6f30ed2d238621f1f92ee}{\index{Text\+Buffer@{Text\+Buffer}!set\+Overline\+Color@{set\+Overline\+Color}}
+\index{set\+Overline\+Color@{set\+Overline\+Color}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Overline\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Overline\+Color (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a2b50d0fa59a6f30ed2d238621f1f92ee}
+
+
+Definition at line 50 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_af240416b25614c190fb18c52684f2767}{\index{Text\+Buffer@{Text\+Buffer}!set\+Pen\+Position@{set\+Pen\+Position}}
+\index{set\+Pen\+Position@{set\+Pen\+Position}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Pen\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Pen\+Position (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_af240416b25614c190fb18c52684f2767}
+
+
+Definition at line 65 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_aaa981ea6b1152022877d2973a53f63c3}{\index{Text\+Buffer@{Text\+Buffer}!set\+Strike\+Through\+Color@{set\+Strike\+Through\+Color}}
+\index{set\+Strike\+Through\+Color@{set\+Strike\+Through\+Color}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Strike\+Through\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Strike\+Through\+Color (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_aaa981ea6b1152022877d2973a53f63c3}
+
+
+Definition at line 60 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_a13356bfcc3acb9e86287f65d8e3276f0}{\index{Text\+Buffer@{Text\+Buffer}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Style (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+flags = {\ttfamily {\bf S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_a13356bfcc3acb9e86287f65d8e3276f0}
+
+
+Definition at line 35 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_ae7823a0daf4a4aece545daf300a57722}{\index{Text\+Buffer@{Text\+Buffer}!set\+Text\+Color@{set\+Text\+Color}}
+\index{set\+Text\+Color@{set\+Text\+Color}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Text\+Color (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_ae7823a0daf4a4aece545daf300a57722}
+
+
+Definition at line 40 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_ae3778e7512b9c64bf23a3df6178f93f6}{\index{Text\+Buffer@{Text\+Buffer}!set\+Underline\+Color@{set\+Underline\+Color}}
+\index{set\+Underline\+Color@{set\+Underline\+Color}!Text\+Buffer@{Text\+Buffer}}
+\subsubsection[{set\+Underline\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+::set\+Underline\+Color (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_text_buffer_ae3778e7512b9c64bf23a3df6178f93f6}
+
+
+Definition at line 55 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{text__buffer__manager_8cpp}{text\+\_\+buffer\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

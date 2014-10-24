@@ -1,0 +1,166 @@
+\hypertarget{classcrap_1_1memory__pool}{\section{crap\+:\+:memory\+\_\+pool Class Reference}
+\label{classcrap_1_1memory__pool}\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+}
+
+
+{\ttfamily \#include $<$memorypool.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1memory__pool_a9d8b04bac053bfd845f4619bfbc2ac64}{memory\+\_\+pool} (void $\ast$ptr, uint32\+\_\+t \hyperlink{classcrap_1_1memory__pool_a2f3e04e4e27dcdef3ded60f2ee7ee939}{size}, uint32\+\_\+t alignment)
+\begin{DoxyCompactList}\small\item\em constructor using given memory \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1memory__pool_ac9c5827710ea2e286081ccf215de18c8}{$\sim$memory\+\_\+pool} (void)
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void $\ast$ \hyperlink{classcrap_1_1memory__pool_afb562c0ca4a48a1d703fe12a870a772e}{allocate} (uint32\+\_\+t \hyperlink{classcrap_1_1memory__pool_a2f3e04e4e27dcdef3ded60f2ee7ee939}{size})
+\begin{DoxyCompactList}\small\item\em allocate specific amount of bytes \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void $\ast$ \hyperlink{classcrap_1_1memory__pool_a5cabbef2d40ea3872bad37dcdf6ae0f1}{quick\+\_\+allocate} (uint32\+\_\+t \hyperlink{classcrap_1_1memory__pool_a2f3e04e4e27dcdef3ded60f2ee7ee939}{size})
+\begin{DoxyCompactList}\small\item\em allocate quickly by using biggest free block pointer \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1memory__pool_a9535c7027e4bbd89bb763ab461080ac1}{deallocate} (void $\ast$address)
+\begin{DoxyCompactList}\small\item\em deallocating memory, by taking header out of list \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1memory__pool_a2f3e04e4e27dcdef3ded60f2ee7ee939}{size} (void) const 
+\begin{DoxyCompactList}\small\item\em returns total size \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1memory__pool_af040347c41a0e1099a23812c0b53dca4}{current\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em returns current free space in pool (at all) \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{classcrap_1_1memory__pool_ad01cbb03dc6aaed343e2160221a1266b}{is\+\_\+in\+\_\+range} (void $\ast$address) const 
+\begin{DoxyCompactList}\small\item\em test if a pointer is in this pool \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file memorypool.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1memory__pool_a9d8b04bac053bfd845f4619bfbc2ac64}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!memory\+\_\+pool@{memory\+\_\+pool}}
+\index{memory\+\_\+pool@{memory\+\_\+pool}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{memory\+\_\+pool}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::memory\+\_\+pool\+::memory\+\_\+pool (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{uint32\+\_\+t}]{size, }
+\item[{uint32\+\_\+t}]{alignment}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__pool_a9d8b04bac053bfd845f4619bfbc2ac64}
+
+
+constructor using given memory 
+
+
+
+Definition at line 63 of file memorypool.\+h.
+
+\hypertarget{classcrap_1_1memory__pool_ac9c5827710ea2e286081ccf215de18c8}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!````~memory\+\_\+pool@{$\sim$memory\+\_\+pool}}
+\index{````~memory\+\_\+pool@{$\sim$memory\+\_\+pool}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{$\sim$memory\+\_\+pool}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::memory\+\_\+pool\+::$\sim$memory\+\_\+pool (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__pool_ac9c5827710ea2e286081ccf215de18c8}
+
+
+destructor 
+
+
+
+Definition at line 80 of file memorypool.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1memory__pool_afb562c0ca4a48a1d703fe12a870a772e}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!allocate@{allocate}}
+\index{allocate@{allocate}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ crap\+::memory\+\_\+pool\+::allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__pool_afb562c0ca4a48a1d703fe12a870a772e}
+
+
+allocate specific amount of bytes 
+
+
+
+Definition at line 89 of file memorypool.\+h.
+
+\hypertarget{classcrap_1_1memory__pool_af040347c41a0e1099a23812c0b53dca4}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!current\+\_\+size@{current\+\_\+size}}
+\index{current\+\_\+size@{current\+\_\+size}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{current\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::memory\+\_\+pool\+::current\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1memory__pool_af040347c41a0e1099a23812c0b53dca4}
+
+
+returns current free space in pool (at all) 
+
+
+
+Definition at line 56 of file memorypool.\+h.
+
+\hypertarget{classcrap_1_1memory__pool_a9535c7027e4bbd89bb763ab461080ac1}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{deallocate}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::memory\+\_\+pool\+::deallocate (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{address}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__pool_a9535c7027e4bbd89bb763ab461080ac1}
+
+
+deallocating memory, by taking header out of list 
+
+
+
+Definition at line 239 of file memorypool.\+h.
+
+\hypertarget{classcrap_1_1memory__pool_ad01cbb03dc6aaed343e2160221a1266b}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!is\+\_\+in\+\_\+range@{is\+\_\+in\+\_\+range}}
+\index{is\+\_\+in\+\_\+range@{is\+\_\+in\+\_\+range}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{is\+\_\+in\+\_\+range}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::memory\+\_\+pool\+::is\+\_\+in\+\_\+range (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{address}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1memory__pool_ad01cbb03dc6aaed343e2160221a1266b}
+
+
+test if a pointer is in this pool 
+
+
+
+Definition at line 292 of file memorypool.\+h.
+
+\hypertarget{classcrap_1_1memory__pool_a5cabbef2d40ea3872bad37dcdf6ae0f1}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!quick\+\_\+allocate@{quick\+\_\+allocate}}
+\index{quick\+\_\+allocate@{quick\+\_\+allocate}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{quick\+\_\+allocate}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ crap\+::memory\+\_\+pool\+::quick\+\_\+allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__pool_a5cabbef2d40ea3872bad37dcdf6ae0f1}
+
+
+allocate quickly by using biggest free block pointer 
+
+
+
+Definition at line 200 of file memorypool.\+h.
+
+\hypertarget{classcrap_1_1memory__pool_a2f3e04e4e27dcdef3ded60f2ee7ee939}{\index{crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}!size@{size}}
+\index{size@{size}!crap\+::memory\+\_\+pool@{crap\+::memory\+\_\+pool}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::memory\+\_\+pool\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1memory__pool_a2f3e04e4e27dcdef3ded60f2ee7ee939}
+
+
+returns total size 
+
+
+
+Definition at line 53 of file memorypool.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/memory/\hyperlink{memorypool_8h}{memorypool.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{utilities_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/utilities.h File Reference}
+\label{utilities_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/utilities.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/utilities.\+h}}
+}
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}asserts.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1pointer__t}{crap\+::pointer\+\_\+t$<$ T $>$}
+\item 
+struct \hyperlink{structcrap_1_1has__vtable}{crap\+::has\+\_\+vtable$<$ T $>$}
+\item 
+struct \hyperlink{structcrap_1_1has__vtable_1_1test__class}{crap\+::has\+\_\+vtable$<$ T $>$\+::test\+\_\+class}
+\item 
+struct \hyperlink{structcrap_1_1align__of}{crap\+::align\+\_\+of$<$ T $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits}{crap\+::limits$<$ T $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01bool_01_4}{crap\+::limits$<$ bool $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01char_01_4}{crap\+::limits$<$ char $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01int8__t_01_4}{crap\+::limits$<$ int8\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01uint8__t_01_4}{crap\+::limits$<$ uint8\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01int16__t_01_4}{crap\+::limits$<$ int16\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01uint16__t_01_4}{crap\+::limits$<$ uint16\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01int32__t_01_4}{crap\+::limits$<$ int32\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01uint32__t_01_4}{crap\+::limits$<$ uint32\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01int64__t_01_4}{crap\+::limits$<$ int64\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01uint64__t_01_4}{crap\+::limits$<$ uint64\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01float32__t_01_4}{crap\+::limits$<$ float32\+\_\+t $>$}
+\item 
+struct \hyperlink{structcrap_1_1limits_3_01float64__t_01_4}{crap\+::limits$<$ float64\+\_\+t $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utilities_8h_adde14e4f0d934b89e9780d4ac215547d}{C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint16\+\_\+t \hyperlink{namespacecrap_a1e69ee9b53bb851da43f22d07ec9477a}{crap\+::checksum\+\_\+crc} (uint8\+\_\+t $\ast$ptr, int32\+\_\+t size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a90c3baf4ad0666cdbe0eacf2bde8a038}{crap\+::copy\+\_\+object} (const T $\ast$source, T $\ast$destination)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a75ad252899eb75b40b1e47e1d0abd759}{crap\+::construct\+\_\+object} (T $\ast$source)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a295f267803b5948c3938f4977fc38321}{crap\+::copy\+\_\+construct\+\_\+object} (const T $\ast$source, void $\ast$destination)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a792b7b3060747a0895028c016326346d}{crap\+::destruct\+\_\+object} (const T $\ast$source)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_adf448af7e9a8a424b9c3d8f0199e9b77}{crap\+::copy\+\_\+array} (const T $\ast$source, T $\ast$destination, uint32\+\_\+t arraysize)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_ac70d81504526f09918fee8c68f331492}{crap\+::construct\+\_\+array} (T $\ast$source, uint32\+\_\+t arraysize)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a4c9d33b967452614ba78b76f0e6a8747}{crap\+::copy\+\_\+construct\+\_\+array} (const T $\ast$source, T $\ast$destination, uint32\+\_\+t arraysize)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_ad5ff6dc2c59dc874fa515af7da296592}{crap\+::destruct\+\_\+array} (const T $\ast$source, uint32\+\_\+t arraysize)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a95b52a09f38dc0b1d515b85fa7a72360}{crap\+::swap\+\_\+object} (T $\ast$source, T $\ast$destination)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_ad6af2d723fdb31702e5787a5b80ad15f}{crap\+::replace\+\_\+object} (T $\ast$source, T $\ast$destination)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a03d68a2fdaf86cc723a634e0db890e7b}{crap\+::insert\+\_\+into\+\_\+array} (const T $\ast$object, uint32\+\_\+t position, T $\ast$array, uint32\+\_\+t array\+\_\+size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a0f94f23f1a17abdede146e25465d5999}{crap\+::remove\+\_\+from\+\_\+array} (T $\ast$array, uint32\+\_\+t position, uint32\+\_\+t array\+\_\+size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespacecrap_a16007cc8111f19f0e1214617cb5e7ddc}{crap\+::bubblesort\+\_\+array} (T $\ast$source, uint32\+\_\+t arraysize)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{utilities_8h_adde14e4f0d934b89e9780d4ac215547d}{\index{utilities.\+h@{utilities.\+h}!C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H@{C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H@{C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H}!utilities.\+h@{utilities.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+T\+O\+O\+L\+S\+\_\+\+H}}\label{utilities_8h_adde14e4f0d934b89e9780d4ac215547d}
+
+
+Definition at line 4 of file utilities.\+h.
+

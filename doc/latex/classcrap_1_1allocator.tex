@@ -1,0 +1,141 @@
+\hypertarget{classcrap_1_1allocator}{\section{crap\+:\+:allocator Class Reference}
+\label{classcrap_1_1allocator}\index{crap\+::allocator@{crap\+::allocator}}
+}
+
+
+{\ttfamily \#include $<$allocator.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1allocator_a0c96f829f4199eeb4b6a94c64b572f9c}{void\+\_\+pointer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1allocator_ae6a556911f6eed146f803c98dea93f55}{allocator} (\hyperlink{classcrap_1_1allocator_a0c96f829f4199eeb4b6a94c64b572f9c}{void\+\_\+pointer} pointer, uint32\+\_\+t size)
+\item 
+virtual \hyperlink{classcrap_1_1allocator_a1a0b8fea96313726684c9730f407192d}{$\sim$allocator} (void)
+\item 
+virtual void $\ast$ \hyperlink{classcrap_1_1allocator_adf3d4488f3e0a84111205658fcd96e25}{allocate} (uint32\+\_\+t size, uint32\+\_\+t alignment=C\+R\+A\+P\+\_\+\+P\+T\+R\+\_\+\+S\+I\+Z\+E)=0
+\item 
+virtual void \hyperlink{classcrap_1_1allocator_a687baac32924015af6acb97c604de99b}{deallocate} (void $\ast$pointer)=0
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1allocator_a0c96f829f4199eeb4b6a94c64b572f9c}{void\+\_\+pointer} \hyperlink{classcrap_1_1allocator_a6713e2d0070b80855430380268d453a4}{get\+\_\+pointer} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1allocator_a717b14a3405fb3ea590155ea5580d1e5}{get\+\_\+size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1allocator_a2fc2cf7b7230a62ac37171353d7f9a0c}{get\+\_\+used\+\_\+memory} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1allocator_a52206ffa1d092281ec7c0e927da30ca4}{get\+\_\+allocation\+\_\+number} (void) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file allocator.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1allocator_a0c96f829f4199eeb4b6a94c64b572f9c}{\index{crap\+::allocator@{crap\+::allocator}!void\+\_\+pointer@{void\+\_\+pointer}}
+\index{void\+\_\+pointer@{void\+\_\+pointer}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{void\+\_\+pointer}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::allocator\+::void\+\_\+pointer}}}\label{classcrap_1_1allocator_a0c96f829f4199eeb4b6a94c64b572f9c}
+
+
+Definition at line 16 of file allocator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1allocator_ae6a556911f6eed146f803c98dea93f55}{\index{crap\+::allocator@{crap\+::allocator}!allocator@{allocator}}
+\index{allocator@{allocator}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{allocator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} crap\+::allocator\+::allocator (
+\begin{DoxyParamCaption}
+\item[{{\bf void\+\_\+pointer}}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1allocator_ae6a556911f6eed146f803c98dea93f55}
+
+
+Definition at line 18 of file allocator.\+h.
+
+\hypertarget{classcrap_1_1allocator_a1a0b8fea96313726684c9730f407192d}{\index{crap\+::allocator@{crap\+::allocator}!````~allocator@{$\sim$allocator}}
+\index{````~allocator@{$\sim$allocator}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{$\sim$allocator}]{\setlength{\rightskip}{0pt plus 5cm}virtual crap\+::allocator\+::$\sim$allocator (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classcrap_1_1allocator_a1a0b8fea96313726684c9730f407192d}
+
+
+Definition at line 23 of file allocator.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1allocator_adf3d4488f3e0a84111205658fcd96e25}{\index{crap\+::allocator@{crap\+::allocator}!allocate@{allocate}}
+\index{allocate@{allocate}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ crap\+::allocator\+::allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size, }
+\item[{uint32\+\_\+t}]{alignment = {\ttfamily CRAP\+\_\+PTR\+\_\+SIZE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1allocator_adf3d4488f3e0a84111205658fcd96e25}
+\hypertarget{classcrap_1_1allocator_a687baac32924015af6acb97c604de99b}{\index{crap\+::allocator@{crap\+::allocator}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{deallocate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void crap\+::allocator\+::deallocate (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1allocator_a687baac32924015af6acb97c604de99b}
+\hypertarget{classcrap_1_1allocator_a52206ffa1d092281ec7c0e927da30ca4}{\index{crap\+::allocator@{crap\+::allocator}!get\+\_\+allocation\+\_\+number@{get\+\_\+allocation\+\_\+number}}
+\index{get\+\_\+allocation\+\_\+number@{get\+\_\+allocation\+\_\+number}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{get\+\_\+allocation\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::allocator\+::get\+\_\+allocation\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1allocator_a52206ffa1d092281ec7c0e927da30ca4}
+
+
+Definition at line 38 of file allocator.\+h.
+
+\hypertarget{classcrap_1_1allocator_a6713e2d0070b80855430380268d453a4}{\index{crap\+::allocator@{crap\+::allocator}!get\+\_\+pointer@{get\+\_\+pointer}}
+\index{get\+\_\+pointer@{get\+\_\+pointer}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{get\+\_\+pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf void\+\_\+pointer} crap\+::allocator\+::get\+\_\+pointer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1allocator_a6713e2d0070b80855430380268d453a4}
+
+
+Definition at line 32 of file allocator.\+h.
+
+\hypertarget{classcrap_1_1allocator_a717b14a3405fb3ea590155ea5580d1e5}{\index{crap\+::allocator@{crap\+::allocator}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{get\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::allocator\+::get\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1allocator_a717b14a3405fb3ea590155ea5580d1e5}
+
+
+Definition at line 34 of file allocator.\+h.
+
+\hypertarget{classcrap_1_1allocator_a2fc2cf7b7230a62ac37171353d7f9a0c}{\index{crap\+::allocator@{crap\+::allocator}!get\+\_\+used\+\_\+memory@{get\+\_\+used\+\_\+memory}}
+\index{get\+\_\+used\+\_\+memory@{get\+\_\+used\+\_\+memory}!crap\+::allocator@{crap\+::allocator}}
+\subsubsection[{get\+\_\+used\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::allocator\+::get\+\_\+used\+\_\+memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1allocator_a2fc2cf7b7230a62ac37171353d7f9a0c}
+
+
+Definition at line 36 of file allocator.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/memory/\hyperlink{allocator_8h}{allocator.\+h}\end{DoxyCompactItemize}

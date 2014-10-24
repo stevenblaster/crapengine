@@ -1,0 +1,497 @@
+\hypertarget{classcrap_1_1array}{\section{crap\+:\+:array$<$ T $>$ Class Template Reference}
+\label{classcrap_1_1array}\index{crap\+::array$<$ T $>$@{crap\+::array$<$ T $>$}}
+}
+
+
+Simple array class.  
+
+
+
+
+{\ttfamily \#include $<$array.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1array_af72adceda49b018031c4fcc2cf62cfb5}{array} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1array_a3d91ef71204aa78a9a7bd9e7063151e8}{size})
+\begin{DoxyCompactList}\small\item\em Constructor of array class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1array}{array} \& \hyperlink{classcrap_1_1array_a0af5753ce249c8c4f6e59e6521c95ca7}{operator=} (const \hyperlink{classcrap_1_1array}{array} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator of array class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1array_ad72ebb4527f76bf253557c48619f8326}{$\sim$array} (void)
+\begin{DoxyCompactList}\small\item\em Destructor of array class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array_a3d91ef71204aa78a9a7bd9e7063151e8}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array_aec075c6b3b9af3688ef85bed2f19ef53}{max\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em Returning the maximum size of the array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \& \hyperlink{classcrap_1_1array_a184cc666b60394822d131bb9676937ff}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Index operator returning a member reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1array_a8f84b6feb0886aef202a86fc0ba5a862}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Index operator returning a constant member reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1array_a3daa9f7c2dfc0ea529507d8e1bed4def}{get} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Returns the pointer to a certain member. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T $\ast$ \hyperlink{classcrap_1_1array_a6b201791b042e2c4bdb5465741d77af6}{get} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Returns the constant pointer to a certain member. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array_afcc64517e2b719d1257eb8a4ed1a7eb9}{push\+\_\+back} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Inserts a new element at the end of the array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array_ae6c230d288cfe5934c6ee1e76e72474c}{pop\+\_\+back} (void)
+\begin{DoxyCompactList}\small\item\em Removes last element of the array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array_ae0ac64a23e023c74e9765947d4c69560}{erase\+\_\+at} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes the element at a certain position. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array_a34f587e9a5445845ae9a6802fa00fcee}{erase} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Removes an element equal to given reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array_a519c451e83aaae87fb21b9e6905f2235}{find} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Searches for an element and returns the index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1array_a7c1234696095b2e05343c9670c5a6ecd}{memory} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the memory. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array_a6d0dce186d942103d3ee73773fda560d}{sort} (void)
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the array using quicksort. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array_ae08a075c532e141fa05a756542d9b4df}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Calculates necessary memory for a certain number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{classcrap_1_1array_a9ad63bb5c848f0ba7ebef098a8b3a6ab}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\begin{DoxyCompactList}\small\item\em Defines an invalid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1array_a1813afbbcf7465a93b05f828b98498c9}{array} (const \hyperlink{classcrap_1_1array}{array} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Constructor kept private (do not use) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ T $>$ \hyperlink{classcrap_1_1array_a18129c001adcedf3644bf04e5cb6be25}{\+\_\+memory}
+\begin{DoxyCompactList}\small\item\em Pointer type to memory. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1array_aeebbf4b3828375ad799bb6f3638b5a3f}{\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Current number of elements. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1array_a75c6d374d83be41d0726ae6ca82541fa}{\+\_\+max\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Maximum number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class crap\+::array$<$ T $>$}
+
+Simple array class. 
+
+The data is kept packed by inserting the last element into the place of deleted elements 
+
+Definition at line 44 of file array.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1array_af72adceda49b018031c4fcc2cf62cfb5}{\index{crap\+::array@{crap\+::array}!array@{array}}
+\index{array@{array}!crap\+::array@{crap\+::array}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::array}$<$ T $>$\+::{\bf array} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1array_af72adceda49b018031c4fcc2cf62cfb5}
+
+
+Constructor of array class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & A pointer to the memory for the container \\
+\hline
+{\em size} & The size of the provided memory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_ad72ebb4527f76bf253557c48619f8326}{\index{crap\+::array@{crap\+::array}!````~array@{$\sim$array}}
+\index{````~array@{$\sim$array}!crap\+::array@{crap\+::array}}
+\subsubsection[{$\sim$array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::array}$<$ T $>$\+::$\sim${\bf array} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_ad72ebb4527f76bf253557c48619f8326}
+
+
+Destructor of array class. 
+
+
+
+Definition at line 222 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a1813afbbcf7465a93b05f828b98498c9}{\index{crap\+::array@{crap\+::array}!array@{array}}
+\index{array@{array}!crap\+::array@{crap\+::array}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::array}$<$ T $>$\+::{\bf array} (
+\begin{DoxyParamCaption}
+\item[{const {\bf array}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1array_a1813afbbcf7465a93b05f828b98498c9}
+
+
+Copy Constructor kept private (do not use) 
+
+
+
+Definition at line 228 of file array.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1array_a34f587e9a5445845ae9a6802fa00fcee}{\index{crap\+::array@{crap\+::array}!erase@{erase}}
+\index{erase@{erase}!crap\+::array@{crap\+::array}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf crap\+::array}$<$ T $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_a34f587e9a5445845ae9a6802fa00fcee}
+
+
+Removes an element equal to given reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 316 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_ae0ac64a23e023c74e9765947d4c69560}{\index{crap\+::array@{crap\+::array}!erase\+\_\+at@{erase\+\_\+at}}
+\index{erase\+\_\+at@{erase\+\_\+at}!crap\+::array@{crap\+::array}}
+\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::array}$<$ T $>$\+::erase\+\_\+at (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_ae0ac64a23e023c74e9765947d4c69560}
+
+
+Removes the element at a certain position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 298 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a519c451e83aaae87fb21b9e6905f2235}{\index{crap\+::array@{crap\+::array}!find@{find}}
+\index{find@{find}!crap\+::array@{crap\+::array}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_a519c451e83aaae87fb21b9e6905f2235}
+
+
+Searches for an element and returns the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to look for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element or \char`\"{}invalid\char`\"{} if not found 
+\end{DoxyReturn}
+
+
+Definition at line 325 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a3daa9f7c2dfc0ea529507d8e1bed4def}{\index{crap\+::array@{crap\+::array}!get@{get}}
+\index{get@{get}!crap\+::array@{crap\+::array}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::array}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_a3daa9f7c2dfc0ea529507d8e1bed4def}
+
+
+Returns the pointer to a certain member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to member or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a6b201791b042e2c4bdb5465741d77af6}{\index{crap\+::array@{crap\+::array}!get@{get}}
+\index{get@{get}!crap\+::array@{crap\+::array}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T $\ast$ {\bf crap\+::array}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array_a6b201791b042e2c4bdb5465741d77af6}
+
+
+Returns the constant pointer to a certain member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant pointer to member or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 267 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_aec075c6b3b9af3688ef85bed2f19ef53}{\index{crap\+::array@{crap\+::array}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::array@{crap\+::array}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array_aec075c6b3b9af3688ef85bed2f19ef53}
+
+
+Returning the maximum size of the array. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 240 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a7c1234696095b2e05343c9670c5a6ecd}{\index{crap\+::array@{crap\+::array}!memory@{memory}}
+\index{memory@{memory}!crap\+::array@{crap\+::array}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::array}$<$ T $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array_a7c1234696095b2e05343c9670c5a6ecd}
+
+
+Returns the pointer to the memory. 
+
+\begin{DoxyReturn}{Returns}
+Pointer type of array memory 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a0af5753ce249c8c4f6e59e6521c95ca7}{\index{crap\+::array@{crap\+::array}!operator=@{operator=}}
+\index{operator=@{operator=}!crap\+::array@{crap\+::array}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf array}$<$ T $>$ \& {\bf crap\+::array}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf array}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_a0af5753ce249c8c4f6e59e6521c95ca7}
+
+
+Assignment operator of array class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A constant reference to a other array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a184cc666b60394822d131bb9676937ff}{\index{crap\+::array@{crap\+::array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::array@{crap\+::array}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf crap\+::array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_a184cc666b60394822d131bb9676937ff}
+
+
+Index operator returning a member reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to member 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a8f84b6feb0886aef202a86fc0ba5a862}{\index{crap\+::array@{crap\+::array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::array@{crap\+::array}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf crap\+::array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array_a8f84b6feb0886aef202a86fc0ba5a862}
+
+
+Index operator returning a constant member reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant reference to member 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_ae6c230d288cfe5934c6ee1e76e72474c}{\index{crap\+::array@{crap\+::array}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!crap\+::array@{crap\+::array}}
+\subsubsection[{pop\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::array}$<$ T $>$\+::pop\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_ae6c230d288cfe5934c6ee1e76e72474c}
+
+
+Removes last element of the array. 
+
+
+
+Definition at line 287 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_afcc64517e2b719d1257eb8a4ed1a7eb9}{\index{crap\+::array@{crap\+::array}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::array@{crap\+::array}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_afcc64517e2b719d1257eb8a4ed1a7eb9}
+
+
+Inserts a new element at the end of the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element 
+\end{DoxyReturn}
+
+
+Definition at line 276 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a3d91ef71204aa78a9a7bd9e7063151e8}{\index{crap\+::array@{crap\+::array}!size@{size}}
+\index{size@{size}!crap\+::array@{crap\+::array}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array_a3d91ef71204aa78a9a7bd9e7063151e8}
+Returning the size of the array \begin{DoxyReturn}{Returns}
+The current number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_ae08a075c532e141fa05a756542d9b4df}{\index{crap\+::array@{crap\+::array}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::array@{crap\+::array}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1array_ae08a075c532e141fa05a756542d9b4df}
+
+
+Calculates necessary memory for a certain number of elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of necessary memory 
+\end{DoxyReturn}
+
+
+Definition at line 350 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a6d0dce186d942103d3ee73773fda560d}{\index{crap\+::array@{crap\+::array}!sort@{sort}}
+\index{sort@{sort}!crap\+::array@{crap\+::array}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::array}$<$ T $>$\+::sort (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array_a6d0dce186d942103d3ee73773fda560d}
+
+
+Sorts the elements of the array using quicksort. 
+
+
+
+Definition at line 344 of file array.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1array_a75c6d374d83be41d0726ae6ca82541fa}{\index{crap\+::array@{crap\+::array}!\+\_\+max\+\_\+size@{\+\_\+max\+\_\+size}}
+\index{\+\_\+max\+\_\+size@{\+\_\+max\+\_\+size}!crap\+::array@{crap\+::array}}
+\subsubsection[{\+\_\+max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::\+\_\+max\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1array_a75c6d374d83be41d0726ae6ca82541fa}
+
+
+Maximum number of elements. 
+
+
+
+Definition at line 197 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a18129c001adcedf3644bf04e5cb6be25}{\index{crap\+::array@{crap\+::array}!\+\_\+memory@{\+\_\+memory}}
+\index{\+\_\+memory@{\+\_\+memory}!crap\+::array@{crap\+::array}}
+\subsubsection[{\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf pointer\+\_\+t}$<$T$>$ {\bf crap\+::array}$<$ T $>$\+::\+\_\+memory\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1array_a18129c001adcedf3644bf04e5cb6be25}
+
+
+Pointer type to memory. 
+
+
+
+Definition at line 191 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_aeebbf4b3828375ad799bb6f3638b5a3f}{\index{crap\+::array@{crap\+::array}!\+\_\+size@{\+\_\+size}}
+\index{\+\_\+size@{\+\_\+size}!crap\+::array@{crap\+::array}}
+\subsubsection[{\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1array_aeebbf4b3828375ad799bb6f3638b5a3f}
+
+
+Current number of elements. 
+
+
+
+Definition at line 194 of file array.\+h.
+
+\hypertarget{classcrap_1_1array_a9ad63bb5c848f0ba7ebef098a8b3a6ab}{\index{crap\+::array@{crap\+::array}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::array@{crap\+::array}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::array}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1array_a9ad63bb5c848f0ba7ebef098a8b3a6ab}
+
+
+Defines an invalid index. 
+
+
+
+Definition at line 50 of file array.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{array_8h}{array.\+h}\end{DoxyCompactItemize}

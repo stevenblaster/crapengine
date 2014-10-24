@@ -1,0 +1,52 @@
+\hypertarget{cmd_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/cmd.h File Reference}
+\label{cmd_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/cmd.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/cmd.\+h}}
+}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{cmd_8h_aaab80fbdebf67debb124e449ae502c99}{Console\+Fn} )(\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$\+\_\+context, void $\ast$\+\_\+user\+Data, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cmd_8h_a68986a02faa07f35266e40d876765c08}{cmd\+Add} (const char $\ast$\+\_\+name, \hyperlink{cmd_8h_aaab80fbdebf67debb124e449ae502c99}{Console\+Fn} \+\_\+fn, void $\ast$\+\_\+user\+Data=N\+U\+L\+L)
+\item 
+void \hyperlink{cmd_8h_a76f76cd9f624ef2ad9c15580110c9238}{cmd\+Exec} (const char $\ast$\+\_\+cmd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cmd_8h_aaab80fbdebf67debb124e449ae502c99}{\index{cmd.\+h@{cmd.\+h}!Console\+Fn@{Console\+Fn}}
+\index{Console\+Fn@{Console\+Fn}!cmd.\+h@{cmd.\+h}}
+\subsubsection[{Console\+Fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ Console\+Fn)({\bf Cmd\+Context} $\ast$\+\_\+context, void $\ast$\+\_\+user\+Data, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)}}\label{cmd_8h_aaab80fbdebf67debb124e449ae502c99}
+
+
+Definition at line 10 of file cmd.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{cmd_8h_a68986a02faa07f35266e40d876765c08}{\index{cmd.\+h@{cmd.\+h}!cmd\+Add@{cmd\+Add}}
+\index{cmd\+Add@{cmd\+Add}!cmd.\+h@{cmd.\+h}}
+\subsubsection[{cmd\+Add}]{\setlength{\rightskip}{0pt plus 5cm}void cmd\+Add (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{{\bf Console\+Fn}}]{\+\_\+fn, }
+\item[{void $\ast$}]{\+\_\+user\+Data = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{cmd_8h_a68986a02faa07f35266e40d876765c08}
+
+
+Definition at line 91 of file cmd.\+cpp.
+
+\hypertarget{cmd_8h_a76f76cd9f624ef2ad9c15580110c9238}{\index{cmd.\+h@{cmd.\+h}!cmd\+Exec@{cmd\+Exec}}
+\index{cmd\+Exec@{cmd\+Exec}!cmd.\+h@{cmd.\+h}}
+\subsubsection[{cmd\+Exec}]{\setlength{\rightskip}{0pt plus 5cm}void cmd\+Exec (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+cmd}
+\end{DoxyParamCaption}
+)}}\label{cmd_8h_a76f76cd9f624ef2ad9c15580110c9238}
+
+
+Definition at line 96 of file cmd.\+cpp.
+

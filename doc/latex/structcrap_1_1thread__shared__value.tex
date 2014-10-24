@@ -1,0 +1,184 @@
+\hypertarget{structcrap_1_1thread__shared__value}{\section{crap\+:\+:thread\+\_\+shared\+\_\+value$<$ T, S $>$ Struct Template Reference}
+\label{structcrap_1_1thread__shared__value}\index{crap\+::thread\+\_\+shared\+\_\+value$<$ T, S $>$@{crap\+::thread\+\_\+shared\+\_\+value$<$ T, S $>$}}
+}
+
+
+{\ttfamily \#include $<$thread.\+h$>$}
+
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1thread__shared__value_a6b2471ad4d473c88c084fff8df54a9c9}{thread\+\_\+shared\+\_\+value} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1thread__shared__value_a653927a46a7caea4945a33dc7f44fa84}{$\sim$thread\+\_\+shared\+\_\+value} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{structcrap_1_1thread__shared__value_a4c0a3a14b1cf3dca675f3776f556fe86}{store} (const T \&value)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{structcrap_1_1thread__shared__value_a218d2dfd30d50fedf152af5db5cc38f4}{load} (T \&value)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{structcrap_1_1thread__shared__value_a38c3ac00309d0531759a2ab7721f37ee}{compare} (const T \&value) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{structcrap_1_1thread__shared__value_a86eee8ff8c4088b22d42d437489166bb}{less} (const T \&value) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{structcrap_1_1thread__shared__value_a03bf18399f5e1021bab2fd5fde1d7161}{increase} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{structcrap_1_1thread__shared__value_ada00d8a9e21133cb37781f334aac1949}{decrease} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{structcrap_1_1thread__shared__value_a00d461793654a558bf17d1544836359a}{atomic} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \hyperlink{structcrap_1_1thread__shared__value_afd8d6a1b90b3062d1a58cfb9991362e5}{get} (void) const 
+\item 
+\hyperlink{structcrap_1_1thread__shared__value_a38c1e0ba0f3ca0cbc8958ac175d7a8f8}{C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T} (4) T \+\_\+data \hyperlink{namespacecrap_a40f2b73ae646e41f3534198d19fbb188}{C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+E\+N\+D}(4)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcrap_1_1atomic__mutex}{atomic\+\_\+mutex} \hyperlink{structcrap_1_1thread__shared__value_aead78950e96504db162b4bf06628f4f5}{\+\_\+mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, uint32\+\_\+t S$>$struct crap\+::thread\+\_\+shared\+\_\+value$<$ T, S $>$}
+
+
+
+Definition at line 144 of file thread.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structcrap_1_1thread__shared__value_a6b2471ad4d473c88c084fff8df54a9c9}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!thread\+\_\+shared\+\_\+value@{thread\+\_\+shared\+\_\+value}}
+\index{thread\+\_\+shared\+\_\+value@{thread\+\_\+shared\+\_\+value}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{thread\+\_\+shared\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::{\bf thread\+\_\+shared\+\_\+value} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a6b2471ad4d473c88c084fff8df54a9c9}
+
+
+Definition at line 148 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a653927a46a7caea4945a33dc7f44fa84}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!````~thread\+\_\+shared\+\_\+value@{$\sim$thread\+\_\+shared\+\_\+value}}
+\index{````~thread\+\_\+shared\+\_\+value@{$\sim$thread\+\_\+shared\+\_\+value}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{$\sim$thread\+\_\+shared\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::$\sim${\bf thread\+\_\+shared\+\_\+value} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a653927a46a7caea4945a33dc7f44fa84}
+
+
+Definition at line 150 of file thread.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structcrap_1_1thread__shared__value_a00d461793654a558bf17d1544836359a}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!atomic@{atomic}}
+\index{atomic@{atomic}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{atomic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::atomic (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a00d461793654a558bf17d1544836359a}
+
+
+Definition at line 210 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a38c3ac00309d0531759a2ab7721f37ee}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!compare@{compare}}
+\index{compare@{compare}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::compare (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a38c3ac00309d0531759a2ab7721f37ee}
+
+
+Definition at line 174 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a38c1e0ba0f3ca0cbc8958ac175d7a8f8}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T@{C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T}}
+\index{C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T@{C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::C\+R\+A\+P\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+S\+T\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{4}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a38c1e0ba0f3ca0cbc8958ac175d7a8f8}
+\hypertarget{structcrap_1_1thread__shared__value_ada00d8a9e21133cb37781f334aac1949}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!decrease@{decrease}}
+\index{decrease@{decrease}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{decrease}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::decrease (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_ada00d8a9e21133cb37781f334aac1949}
+
+
+Definition at line 205 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_afd8d6a1b90b3062d1a58cfb9991362e5}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!get@{get}}
+\index{get@{get}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_afd8d6a1b90b3062d1a58cfb9991362e5}
+
+
+Definition at line 215 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a03bf18399f5e1021bab2fd5fde1d7161}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!increase@{increase}}
+\index{increase@{increase}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{increase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::increase (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a03bf18399f5e1021bab2fd5fde1d7161}
+
+
+Definition at line 200 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a86eee8ff8c4088b22d42d437489166bb}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!less@{less}}
+\index{less@{less}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{less}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::less (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a86eee8ff8c4088b22d42d437489166bb}
+
+
+Definition at line 187 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a218d2dfd30d50fedf152af5db5cc38f4}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!load@{load}}
+\index{load@{load}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::load (
+\begin{DoxyParamCaption}
+\item[{T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a218d2dfd30d50fedf152af5db5cc38f4}
+
+
+Definition at line 163 of file thread.\+h.
+
+\hypertarget{structcrap_1_1thread__shared__value_a4c0a3a14b1cf3dca675f3776f556fe86}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!store@{store}}
+\index{store@{store}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::store (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_a4c0a3a14b1cf3dca675f3776f556fe86}
+
+
+Definition at line 152 of file thread.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structcrap_1_1thread__shared__value_aead78950e96504db162b4bf06628f4f5}{\index{crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}!\+\_\+mutex@{\+\_\+mutex}}
+\index{\+\_\+mutex@{\+\_\+mutex}!crap\+::thread\+\_\+shared\+\_\+value@{crap\+::thread\+\_\+shared\+\_\+value}}
+\subsubsection[{\+\_\+mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, uint32\+\_\+t S$>$ {\bf atomic\+\_\+mutex} {\bf crap\+::thread\+\_\+shared\+\_\+value}$<$ T, S $>$\+::\+\_\+mutex\hspace{0.3cm}{\ttfamily [protected]}}}\label{structcrap_1_1thread__shared__value_aead78950e96504db162b4bf06628f4f5}
+
+
+Definition at line 222 of file thread.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/\hyperlink{thread_8h}{thread.\+h}\end{DoxyCompactItemize}

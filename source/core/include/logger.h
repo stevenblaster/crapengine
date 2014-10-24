@@ -241,7 +241,7 @@ struct log_target_file
         _logfile = openFile( logfile, CRAP_FILE_APPEND );
     }
 
-    log_target_file( void )
+    ~log_target_file( void )
     {
         closeFile( _logfile );
     }
@@ -259,7 +259,7 @@ extern intrusive_list<base_logger> logger_list;
 class base_logger
 {
 public:
-    CRAP_INLINE base_logger( void ) : _node( this, &logger_list ) {}
+    CRAP_INLINE base_logger( void ) : _node( this, &logger_list ), _id(0) {}
     virtual ~base_logger( void ) {}
     virtual void log( const char* message ) = 0;
 

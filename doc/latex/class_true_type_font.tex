@@ -1,0 +1,134 @@
+\hypertarget{class_true_type_font}{\section{True\+Type\+Font Class Reference}
+\label{class_true_type_font}\index{True\+Type\+Font@{True\+Type\+Font}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_true_type_font_ad32c45a5111d82794f1d8fe9d3a0f708}{True\+Type\+Font} ()
+\item 
+\hyperlink{class_true_type_font_a8a12b9e37d2cf9c494e49e0fa5335865}{$\sim$\+True\+Type\+Font} ()
+\item 
+bool \hyperlink{class_true_type_font_a47e4bdc35f4a09b9e6100b1dc325a5c9}{init} (const uint8\+\_\+t $\ast$\+\_\+buffer, uint32\+\_\+t \+\_\+buffer\+Size, int32\+\_\+t \+\_\+font\+Index, uint32\+\_\+t \+\_\+pixel\+Height)
+\item 
+\hyperlink{struct_font_info}{Font\+Info} \hyperlink{class_true_type_font_a68005356e6138ab8929b8d84c4674311}{get\+Font\+Info} ()
+\begin{DoxyCompactList}\small\item\em return the font descriptor of the current font \end{DoxyCompactList}\item 
+bool \hyperlink{class_true_type_font_aa71d2596ce6b22fa885dac09de3e8b7a}{bake\+Glyph\+Alpha} (\hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point} \+\_\+code\+Point, \hyperlink{struct_glyph_info}{Glyph\+Info} \&\+\_\+out\+Glyph\+Info, uint8\+\_\+t $\ast$\+\_\+out\+Buffer)
+\item 
+bool \hyperlink{class_true_type_font_a203f18bb394ae944e1cfd872b46613da}{bake\+Glyph\+Subpixel} (\hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point} \+\_\+code\+Point, \hyperlink{struct_glyph_info}{Glyph\+Info} \&\+\_\+out\+Glyph\+Info, uint8\+\_\+t $\ast$\+\_\+out\+Buffer)
+\item 
+bool \hyperlink{class_true_type_font_abf9ef5c6b5cd8d86256f5bd79fd3e2e1}{bake\+Glyph\+Distance} (\hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point} \+\_\+code\+Point, \hyperlink{struct_glyph_info}{Glyph\+Info} \&\+\_\+out\+Glyph\+Info, uint8\+\_\+t $\ast$\+\_\+out\+Buffer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file font\+\_\+manager.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_true_type_font_ad32c45a5111d82794f1d8fe9d3a0f708}{\index{True\+Type\+Font@{True\+Type\+Font}!True\+Type\+Font@{True\+Type\+Font}}
+\index{True\+Type\+Font@{True\+Type\+Font}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{True\+Type\+Font}]{\setlength{\rightskip}{0pt plus 5cm}True\+Type\+Font\+::\+True\+Type\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_ad32c45a5111d82794f1d8fe9d3a0f708}
+
+
+Definition at line 70 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_true_type_font_a8a12b9e37d2cf9c494e49e0fa5335865}{\index{True\+Type\+Font@{True\+Type\+Font}!````~True\+Type\+Font@{$\sim$\+True\+Type\+Font}}
+\index{````~True\+Type\+Font@{$\sim$\+True\+Type\+Font}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{$\sim$\+True\+Type\+Font}]{\setlength{\rightskip}{0pt plus 5cm}True\+Type\+Font\+::$\sim$\+True\+Type\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_a8a12b9e37d2cf9c494e49e0fa5335865}
+
+
+Definition at line 74 of file font\+\_\+manager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_true_type_font_aa71d2596ce6b22fa885dac09de3e8b7a}{\index{True\+Type\+Font@{True\+Type\+Font}!bake\+Glyph\+Alpha@{bake\+Glyph\+Alpha}}
+\index{bake\+Glyph\+Alpha@{bake\+Glyph\+Alpha}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{bake\+Glyph\+Alpha}]{\setlength{\rightskip}{0pt plus 5cm}bool True\+Type\+Font\+::bake\+Glyph\+Alpha (
+\begin{DoxyParamCaption}
+\item[{{\bf Code\+Point}}]{\+\_\+code\+Point, }
+\item[{{\bf Glyph\+Info} \&}]{\+\_\+out\+Glyph\+Info, }
+\item[{uint8\+\_\+t $\ast$}]{\+\_\+out\+Buffer}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_aa71d2596ce6b22fa885dac09de3e8b7a}
+raster a glyph as 8bit alpha to a memory buffer update the \hyperlink{struct_glyph_info}{Glyph\+Info} according to the raster strategy @ remark buffer min size\+: glyph\+Info.\+m\+\_\+width $\ast$ glyph\+Info $\ast$ height $\ast$ sizeof(char) 
+
+Definition at line 191 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_true_type_font_abf9ef5c6b5cd8d86256f5bd79fd3e2e1}{\index{True\+Type\+Font@{True\+Type\+Font}!bake\+Glyph\+Distance@{bake\+Glyph\+Distance}}
+\index{bake\+Glyph\+Distance@{bake\+Glyph\+Distance}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{bake\+Glyph\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}bool True\+Type\+Font\+::bake\+Glyph\+Distance (
+\begin{DoxyParamCaption}
+\item[{{\bf Code\+Point}}]{\+\_\+code\+Point, }
+\item[{{\bf Glyph\+Info} \&}]{\+\_\+out\+Glyph\+Info, }
+\item[{uint8\+\_\+t $\ast$}]{\+\_\+out\+Buffer}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_abf9ef5c6b5cd8d86256f5bd79fd3e2e1}
+raster a glyph as 8bit signed distance to a memory buffer update the \hyperlink{struct_glyph_info}{Glyph\+Info} according to the raster strategy @ remark buffer min size\+: glyph\+Info.\+m\+\_\+width $\ast$ glyph\+Info $\ast$ height $\ast$ sizeof(char) 
+
+Definition at line 355 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_true_type_font_a203f18bb394ae944e1cfd872b46613da}{\index{True\+Type\+Font@{True\+Type\+Font}!bake\+Glyph\+Subpixel@{bake\+Glyph\+Subpixel}}
+\index{bake\+Glyph\+Subpixel@{bake\+Glyph\+Subpixel}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{bake\+Glyph\+Subpixel}]{\setlength{\rightskip}{0pt plus 5cm}bool True\+Type\+Font\+::bake\+Glyph\+Subpixel (
+\begin{DoxyParamCaption}
+\item[{{\bf Code\+Point}}]{\+\_\+code\+Point, }
+\item[{{\bf Glyph\+Info} \&}]{\+\_\+out\+Glyph\+Info, }
+\item[{uint8\+\_\+t $\ast$}]{\+\_\+out\+Buffer}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_a203f18bb394ae944e1cfd872b46613da}
+raster a glyph as 32bit subpixel rgba to a memory buffer update the \hyperlink{struct_glyph_info}{Glyph\+Info} according to the raster strategy @ remark buffer min size\+: glyph\+Info.\+m\+\_\+width $\ast$ glyph\+Info $\ast$ height $\ast$ sizeof(uint32\+\_\+t) 
+
+Definition at line 225 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_true_type_font_a68005356e6138ab8929b8d84c4674311}{\index{True\+Type\+Font@{True\+Type\+Font}!get\+Font\+Info@{get\+Font\+Info}}
+\index{get\+Font\+Info@{get\+Font\+Info}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{get\+Font\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Font\+Info} True\+Type\+Font\+::get\+Font\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_a68005356e6138ab8929b8d84c4674311}
+
+
+return the font descriptor of the current font 
+
+
+
+Definition at line 144 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_true_type_font_a47e4bdc35f4a09b9e6100b1dc325a5c9}{\index{True\+Type\+Font@{True\+Type\+Font}!init@{init}}
+\index{init@{init}!True\+Type\+Font@{True\+Type\+Font}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool True\+Type\+Font\+::init (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+buffer, }
+\item[{uint32\+\_\+t}]{\+\_\+buffer\+Size, }
+\item[{int32\+\_\+t}]{\+\_\+font\+Index, }
+\item[{uint32\+\_\+t}]{\+\_\+pixel\+Height}
+\end{DoxyParamCaption}
+)}}\label{class_true_type_font_a47e4bdc35f4a09b9e6100b1dc325a5c9}
+Initialize from an external buffer \begin{DoxyRemark}{Remarks}
+The ownership of the buffer is external, and you must ensure it stays valid up to this object lifetime 
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+true if the initialization succeed 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file font\+\_\+manager.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{font__manager_8cpp}{font\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

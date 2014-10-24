@@ -1,0 +1,212 @@
+\hypertarget{namespaceentry}{\section{entry Namespace Reference}
+\label{namespaceentry}\index{entry@{entry}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structentry_1_1_event}{Event}
+\item 
+class \hyperlink{classentry_1_1_event_queue}{Event\+Queue}
+\item 
+struct \hyperlink{structentry_1_1_key}{Key}
+\item 
+struct \hyperlink{structentry_1_1_key_event}{Key\+Event}
+\item 
+struct \hyperlink{structentry_1_1_modifier}{Modifier}
+\item 
+struct \hyperlink{structentry_1_1_mouse_button}{Mouse\+Button}
+\item 
+struct \hyperlink{structentry_1_1_mouse_event}{Mouse\+Event}
+\item 
+struct \hyperlink{structentry_1_1_mouse_state}{Mouse\+State}
+\item 
+struct \hyperlink{structentry_1_1_size_event}{Size\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceentry_a64e500cbc02e0652e1c492d4eae7d2a2}{set\+Or\+Toggle} (uint32\+\_\+t \&\+\_\+flags, const char $\ast$\+\_\+name, uint32\+\_\+t \+\_\+bit, int \+\_\+first, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\item 
+void \hyperlink{namespaceentry_af22e216eea3d98ca19a81c42687eee31}{cmd} (const void $\ast$\+\_\+user\+Data)
+\item 
+int \hyperlink{namespaceentry_a0ebf6dc9ef91f487ad56d260d0a3c5fb}{cmd\+Mouse\+Lock} (\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$, void $\ast$, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\item 
+int \hyperlink{namespaceentry_a0daa467a5fde69bd7306a4bf7a621634}{cmd\+Graphics} (\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$, void $\ast$, int \+\_\+argc, char const $\ast$const $\ast$\+\_\+argv)
+\item 
+int \hyperlink{namespaceentry_a046e1eec8b8c1652b1a8eeec9f7b1d85}{cmd\+Exit} (\hyperlink{struct_cmd_context}{Cmd\+Context} $\ast$, void $\ast$, int, char const $\ast$const $\ast$)
+\item 
+int \hyperlink{namespaceentry_af1d986714ae748fb0b3b96b3af66ec63}{main} (int \+\_\+argc, char $\ast$$\ast$\+\_\+argv)
+\item 
+bool \hyperlink{namespaceentry_ac7854966247943ae0e4d104628c85de8}{process\+Events} (uint32\+\_\+t \&\+\_\+width, uint32\+\_\+t \&\+\_\+height, uint32\+\_\+t \&\+\_\+debug, uint32\+\_\+t \&\+\_\+reset, \hyperlink{structentry_1_1_mouse_state}{Mouse\+State} $\ast$\+\_\+mouse)
+\item 
+bx\+::\+File\+Reader\+I $\ast$ \hyperlink{namespaceentry_ad38197a50461fbbb1f920bd1da6a806b}{get\+File\+Reader} ()
+\item 
+bx\+::\+File\+Writer\+I $\ast$ \hyperlink{namespaceentry_a564287d7ab5a05538de9884d7d21a332}{get\+File\+Writer} ()
+\item 
+const \hyperlink{structentry_1_1_event}{Event} $\ast$ \hyperlink{namespaceentry_a8675f5da63bf76972fc3b0387ee32c42}{poll} ()
+\item 
+void \hyperlink{namespaceentry_a52ca9ce82cbf661be5b3255ad18605fd}{release} (const \hyperlink{structentry_1_1_event}{Event} $\ast$\+\_\+event)
+\item 
+void \hyperlink{namespaceentry_afd1d3b44324599bc7627c433146ec82b}{set\+Window\+Size} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\item 
+void \hyperlink{namespaceentry_a0bf80684c61fab67431f0441c5405a39}{toggle\+Window\+Frame} ()
+\item 
+void \hyperlink{namespaceentry_ad0e6572af7dd4ba198d1e03bd12984c1}{set\+Mouse\+Lock} (bool \+\_\+lock)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceentry_af22e216eea3d98ca19a81c42687eee31}{\index{entry@{entry}!cmd@{cmd}}
+\index{cmd@{cmd}!entry@{entry}}
+\subsubsection[{cmd}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::cmd (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{\+\_\+user\+Data}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_af22e216eea3d98ca19a81c42687eee31}
+
+
+Definition at line 47 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_a046e1eec8b8c1652b1a8eeec9f7b1d85}{\index{entry@{entry}!cmd\+Exit@{cmd\+Exit}}
+\index{cmd\+Exit@{cmd\+Exit}!entry@{entry}}
+\subsubsection[{cmd\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}int entry\+::cmd\+Exit (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Context} $\ast$}]{, }
+\item[{void $\ast$}]{, }
+\item[{int}]{, }
+\item[{char const $\ast$const $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a046e1eec8b8c1652b1a8eeec9f7b1d85}
+
+
+Definition at line 103 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_a0daa467a5fde69bd7306a4bf7a621634}{\index{entry@{entry}!cmd\+Graphics@{cmd\+Graphics}}
+\index{cmd\+Graphics@{cmd\+Graphics}!entry@{entry}}
+\subsubsection[{cmd\+Graphics}]{\setlength{\rightskip}{0pt plus 5cm}int entry\+::cmd\+Graphics (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Context} $\ast$}]{, }
+\item[{void $\ast$}]{, }
+\item[{int}]{\+\_\+argc, }
+\item[{char const $\ast$const $\ast$}]{\+\_\+argv}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a0daa467a5fde69bd7306a4bf7a621634}
+
+
+Definition at line 63 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_a0ebf6dc9ef91f487ad56d260d0a3c5fb}{\index{entry@{entry}!cmd\+Mouse\+Lock@{cmd\+Mouse\+Lock}}
+\index{cmd\+Mouse\+Lock@{cmd\+Mouse\+Lock}!entry@{entry}}
+\subsubsection[{cmd\+Mouse\+Lock}]{\setlength{\rightskip}{0pt plus 5cm}int entry\+::cmd\+Mouse\+Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Context} $\ast$}]{, }
+\item[{void $\ast$}]{, }
+\item[{int}]{\+\_\+argc, }
+\item[{char const $\ast$const $\ast$}]{\+\_\+argv}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a0ebf6dc9ef91f487ad56d260d0a3c5fb}
+
+
+Definition at line 52 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_ad38197a50461fbbb1f920bd1da6a806b}{\index{entry@{entry}!get\+File\+Reader@{get\+File\+Reader}}
+\index{get\+File\+Reader@{get\+File\+Reader}!entry@{entry}}
+\subsubsection[{get\+File\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}bx\+::\+File\+Reader\+I $\ast$ entry\+::get\+File\+Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_ad38197a50461fbbb1f920bd1da6a806b}
+
+
+Definition at line 236 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_a564287d7ab5a05538de9884d7d21a332}{\index{entry@{entry}!get\+File\+Writer@{get\+File\+Writer}}
+\index{get\+File\+Writer@{get\+File\+Writer}!entry@{entry}}
+\subsubsection[{get\+File\+Writer}]{\setlength{\rightskip}{0pt plus 5cm}bx\+::\+File\+Writer\+I $\ast$ entry\+::get\+File\+Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a564287d7ab5a05538de9884d7d21a332}
+
+
+Definition at line 241 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_af1d986714ae748fb0b3b96b3af66ec63}{\index{entry@{entry}!main@{main}}
+\index{main@{main}!entry@{entry}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int entry\+::main (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+argc, }
+\item[{char $\ast$$\ast$}]{\+\_\+argv}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_af1d986714ae748fb0b3b96b3af66ec63}
+
+
+Definition at line 122 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_a8675f5da63bf76972fc3b0387ee32c42}{\index{entry@{entry}!poll@{poll}}
+\index{poll@{poll}!entry@{entry}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Event}$\ast$ entry\+::poll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a8675f5da63bf76972fc3b0387ee32c42}
+\hypertarget{namespaceentry_ac7854966247943ae0e4d104628c85de8}{\index{entry@{entry}!process\+Events@{process\+Events}}
+\index{process\+Events@{process\+Events}!entry@{entry}}
+\subsubsection[{process\+Events}]{\setlength{\rightskip}{0pt plus 5cm}bool entry\+::process\+Events (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t \&}]{\+\_\+width, }
+\item[{uint32\+\_\+t \&}]{\+\_\+height, }
+\item[{uint32\+\_\+t \&}]{\+\_\+debug, }
+\item[{uint32\+\_\+t \&}]{\+\_\+reset, }
+\item[{Mouse\+State $\ast$}]{\+\_\+mouse}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_ac7854966247943ae0e4d104628c85de8}
+
+
+Definition at line 150 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_a52ca9ce82cbf661be5b3255ad18605fd}{\index{entry@{entry}!release@{release}}
+\index{release@{release}!entry@{entry}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::release (
+\begin{DoxyParamCaption}
+\item[{const Event $\ast$}]{\+\_\+event}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a52ca9ce82cbf661be5b3255ad18605fd}
+\hypertarget{namespaceentry_ad0e6572af7dd4ba198d1e03bd12984c1}{\index{entry@{entry}!set\+Mouse\+Lock@{set\+Mouse\+Lock}}
+\index{set\+Mouse\+Lock@{set\+Mouse\+Lock}!entry@{entry}}
+\subsubsection[{set\+Mouse\+Lock}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::set\+Mouse\+Lock (
+\begin{DoxyParamCaption}
+\item[{bool}]{\+\_\+lock}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_ad0e6572af7dd4ba198d1e03bd12984c1}
+\hypertarget{namespaceentry_a64e500cbc02e0652e1c492d4eae7d2a2}{\index{entry@{entry}!set\+Or\+Toggle@{set\+Or\+Toggle}}
+\index{set\+Or\+Toggle@{set\+Or\+Toggle}!entry@{entry}}
+\subsubsection[{set\+Or\+Toggle}]{\setlength{\rightskip}{0pt plus 5cm}bool entry\+::set\+Or\+Toggle (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t \&}]{\+\_\+flags, }
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{uint32\+\_\+t}]{\+\_\+bit, }
+\item[{int}]{\+\_\+first, }
+\item[{int}]{\+\_\+argc, }
+\item[{char const $\ast$const $\ast$}]{\+\_\+argv}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a64e500cbc02e0652e1c492d4eae7d2a2}
+
+
+Definition at line 26 of file entry.\+cpp.
+
+\hypertarget{namespaceentry_afd1d3b44324599bc7627c433146ec82b}{\index{entry@{entry}!set\+Window\+Size@{set\+Window\+Size}}
+\index{set\+Window\+Size@{set\+Window\+Size}!entry@{entry}}
+\subsubsection[{set\+Window\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::set\+Window\+Size (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+width, }
+\item[{uint32\+\_\+t}]{\+\_\+height}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_afd1d3b44324599bc7627c433146ec82b}
+\hypertarget{namespaceentry_a0bf80684c61fab67431f0441c5405a39}{\index{entry@{entry}!toggle\+Window\+Frame@{toggle\+Window\+Frame}}
+\index{toggle\+Window\+Frame@{toggle\+Window\+Frame}!entry@{entry}}
+\subsubsection[{toggle\+Window\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void entry\+::toggle\+Window\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceentry_a0bf80684c61fab67431f0441c5405a39}

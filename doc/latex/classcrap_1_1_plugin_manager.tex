@@ -1,0 +1,133 @@
+\hypertarget{classcrap_1_1_plugin_manager}{\section{crap\+:\+:Plugin\+Manager Class Reference}
+\label{classcrap_1_1_plugin_manager}\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+}
+
+
+{\ttfamily \#include $<$pluginmanager.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{classcrap_1_1_plugin_manager_a7b629b34ba99c8f47bfcb162aede7ad3}{init\+Function} )(void)
+\item 
+typedef void($\ast$ \hyperlink{classcrap_1_1_plugin_manager_a47c660838174ddcbcce80021757fb3a2}{deinit\+Function} )(void)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_plugin_manager_ab5139f73c8d354724ffdc1f2c78b1494}{Plugin\+Manager} (void $\ast$memory, uint32\+\_\+t memory\+\_\+size, const char $\ast$resource\+\_\+path)
+\item 
+\hyperlink{classcrap_1_1_plugin_manager_ab869462fb661b66250993fce61e79aa6}{$\sim$\+Plugin\+Manager} (void)
+\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1_plugin_manager_a032a19b50c263c5aa16275bff27f40d9}{load} (const char $\ast$filename)
+\item 
+void \hyperlink{classcrap_1_1_plugin_manager_aeeb4e23438881a48fa0bda0b1885a188}{init} (uint32\+\_\+t id)
+\item 
+void \hyperlink{classcrap_1_1_plugin_manager_a3e26eecc143191eeb14945ccd4e51e83}{deinit} (uint32\+\_\+t id)
+\item 
+void \hyperlink{classcrap_1_1_plugin_manager_a8d7bf2d50979c84ccd4c669e1fc89f16}{unload} (uint32\+\_\+t id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file pluginmanager.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_plugin_manager_a47c660838174ddcbcce80021757fb3a2}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!deinit\+Function@{deinit\+Function}}
+\index{deinit\+Function@{deinit\+Function}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{deinit\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ crap\+::\+Plugin\+Manager\+::deinit\+Function)(void)}}\label{classcrap_1_1_plugin_manager_a47c660838174ddcbcce80021757fb3a2}
+
+
+Definition at line 18 of file pluginmanager.\+h.
+
+\hypertarget{classcrap_1_1_plugin_manager_a7b629b34ba99c8f47bfcb162aede7ad3}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!init\+Function@{init\+Function}}
+\index{init\+Function@{init\+Function}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{init\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ crap\+::\+Plugin\+Manager\+::init\+Function)(void)}}\label{classcrap_1_1_plugin_manager_a7b629b34ba99c8f47bfcb162aede7ad3}
+
+
+Definition at line 17 of file pluginmanager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_plugin_manager_ab5139f73c8d354724ffdc1f2c78b1494}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!Plugin\+Manager@{Plugin\+Manager}}
+\index{Plugin\+Manager@{Plugin\+Manager}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{Plugin\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Plugin\+Manager\+::\+Plugin\+Manager (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{memory, }
+\item[{uint32\+\_\+t}]{memory\+\_\+size, }
+\item[{const char $\ast$}]{resource\+\_\+path}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1_plugin_manager_ab5139f73c8d354724ffdc1f2c78b1494}
+
+
+Definition at line 10 of file pluginmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_plugin_manager_ab869462fb661b66250993fce61e79aa6}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!````~Plugin\+Manager@{$\sim$\+Plugin\+Manager}}
+\index{````~Plugin\+Manager@{$\sim$\+Plugin\+Manager}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{$\sim$\+Plugin\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Plugin\+Manager\+::$\sim$\+Plugin\+Manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1_plugin_manager_ab869462fb661b66250993fce61e79aa6}
+
+
+Definition at line 17 of file pluginmanager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_plugin_manager_a3e26eecc143191eeb14945ccd4e51e83}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!deinit@{deinit}}
+\index{deinit@{deinit}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{deinit}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Plugin\+Manager\+::deinit (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1_plugin_manager_a3e26eecc143191eeb14945ccd4e51e83}
+
+
+Definition at line 42 of file pluginmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_plugin_manager_aeeb4e23438881a48fa0bda0b1885a188}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!init@{init}}
+\index{init@{init}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Plugin\+Manager\+::init (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1_plugin_manager_aeeb4e23438881a48fa0bda0b1885a188}
+
+
+Definition at line 35 of file pluginmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_plugin_manager_a032a19b50c263c5aa16275bff27f40d9}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!load@{load}}
+\index{load@{load}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Plugin\+Manager\+::load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1_plugin_manager_a032a19b50c263c5aa16275bff27f40d9}
+
+
+Definition at line 25 of file pluginmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_plugin_manager_a8d7bf2d50979c84ccd4c669e1fc89f16}{\index{crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}!unload@{unload}}
+\index{unload@{unload}!crap\+::\+Plugin\+Manager@{crap\+::\+Plugin\+Manager}}
+\subsubsection[{unload}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Plugin\+Manager\+::unload (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1_plugin_manager_a8d7bf2d50979c84ccd4c669e1fc89f16}
+
+
+Definition at line 49 of file pluginmanager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{pluginmanager_8h}{pluginmanager.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{pluginmanager_8cpp}{pluginmanager.\+cpp}\end{DoxyCompactItemize}

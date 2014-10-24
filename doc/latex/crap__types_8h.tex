@@ -1,0 +1,586 @@
+\hypertarget{crap__types_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/config/crap\+\_\+types.h File Reference}
+\label{crap__types_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/config/crap\+\_\+types.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/config/crap\+\_\+types.\+h}}
+}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$float.\+h$>$}\\*
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crap__types_8h_ae496720d5af7bbf6554782aedd3468df}{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H}
+\item 
+\#define \hyperlink{crap__types_8h_af43cb0539684f273c4101e77cedca958}{B\+O\+O\+L\+\_\+\+M\+A\+X}~1
+\item 
+\#define \hyperlink{crap__types_8h_a778eefd6535a9d4b752fca5dd0af58db}{C\+H\+A\+R\+\_\+\+M\+A\+X}~0x7f
+\item 
+\#define \hyperlink{crap__types_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{I\+N\+T8\+\_\+\+M\+A\+X}~0x7f
+\item 
+\#define \hyperlink{crap__types_8h_aeb4e270a084ee26fe73e799861bd0252}{U\+I\+N\+T8\+\_\+\+M\+A\+X}~0xff
+\item 
+\#define \hyperlink{crap__types_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{I\+N\+T16\+\_\+\+M\+A\+X}~0x7fff
+\item 
+\#define \hyperlink{crap__types_8h_a3ea490c9b3617d4479bd80ef93cd5602}{U\+I\+N\+T16\+\_\+\+M\+A\+X}~0xffff
+\item 
+\#define \hyperlink{crap__types_8h_a181807730d4a375f848ba139813ce04f}{I\+N\+T32\+\_\+\+M\+A\+X}~0x7fffffff
+\item 
+\#define \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}~0xffffffff
+\item 
+\#define \hyperlink{crap__types_8h_ad0d744f05898e32d01f73f8af3cd2071}{I\+N\+T64\+\_\+\+M\+A\+X}~0x7fffffffffffffff
+\item 
+\#define \hyperlink{crap__types_8h_a30654b4b67d97c42ca3f9b6052dda916}{U\+I\+N\+T64\+\_\+\+M\+A\+X}~0xffffffffffffffffu
+\item 
+\#define \hyperlink{crap__types_8h_a5cee676d90e2d0efeb55965af44e6841}{B\+O\+O\+L\+\_\+\+M\+I\+N}~0
+\item 
+\#define \hyperlink{crap__types_8h_a5d707bd32338557ced18c6ac76ca1b3a}{C\+H\+A\+R\+\_\+\+M\+I\+N}~( -\/\hyperlink{crap__types_8h_a778eefd6535a9d4b752fca5dd0af58db}{C\+H\+A\+R\+\_\+\+M\+A\+X} -\/1 )
+\item 
+\#define \hyperlink{crap__types_8h_aadcf2a81af243df333b31efa6461ab8e}{I\+N\+T8\+\_\+\+M\+I\+N}~( -\/\hyperlink{crap__types_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{I\+N\+T8\+\_\+\+M\+A\+X} -\/1 )
+\item 
+\#define \hyperlink{crap__types_8h_a9e34d054333a86f8c7f4d6ea4b0105ed}{U\+I\+N\+T8\+\_\+\+M\+I\+N}~0
+\item 
+\#define \hyperlink{crap__types_8h_ad4e9955955b27624963643eac448118a}{I\+N\+T16\+\_\+\+M\+I\+N}~( -\/\hyperlink{crap__types_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{I\+N\+T16\+\_\+\+M\+A\+X} -\/1 )
+\item 
+\#define \hyperlink{crap__types_8h_a4037c1ce09065675d4ac6928f9992412}{U\+I\+N\+T16\+\_\+\+M\+I\+N}~0
+\item 
+\#define \hyperlink{crap__types_8h_a688eb21a22db27c2b2bd5836943cdcbe}{I\+N\+T32\+\_\+\+M\+I\+N}~( -\/\hyperlink{crap__types_8h_a181807730d4a375f848ba139813ce04f}{I\+N\+T32\+\_\+\+M\+A\+X} -\/1 )
+\item 
+\#define \hyperlink{crap__types_8h_af2a8408fbb6decd71eb49bd3e4a1649f}{U\+I\+N\+T32\+\_\+\+M\+I\+N}~0
+\item 
+\#define \hyperlink{crap__types_8h_ab21f12f372f67b8ff0aa3432336ede67}{I\+N\+T64\+\_\+\+M\+I\+N}~( -\/\hyperlink{crap__types_8h_ad0d744f05898e32d01f73f8af3cd2071}{I\+N\+T64\+\_\+\+M\+A\+X} -\/1 )
+\item 
+\#define \hyperlink{crap__types_8h_a49201bdfc59cccf6f337a171f8ab4e91}{U\+I\+N\+T64\+\_\+\+M\+I\+N}~0
+\item 
+\#define \hyperlink{crap__types_8h_a695c793ec23d6f422876104ebb06db43}{F\+L\+O\+A\+T32\+\_\+\+M\+A\+X}~F\+L\+T\+\_\+\+M\+A\+X
+\item 
+\#define \hyperlink{crap__types_8h_aa5f999a63a9d878e957e128ecfcc9c9d}{F\+L\+O\+A\+T64\+\_\+\+M\+A\+X}~D\+B\+L\+\_\+\+M\+A\+X
+\item 
+\#define \hyperlink{crap__types_8h_a1d6ab48f4f8a3840c7066fe5af1b2d94}{F\+L\+O\+A\+T32\+\_\+\+M\+I\+N}~F\+L\+T\+\_\+\+M\+I\+N
+\item 
+\#define \hyperlink{crap__types_8h_a0b052f2acf395ad8a320f63ad6c2898a}{F\+L\+O\+A\+T64\+\_\+\+M\+I\+N}~D\+B\+L\+\_\+\+M\+I\+N
+\item 
+\#define \hyperlink{crap__types_8h_a182efb12c070fbc688f96f4cd8e7edd0}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00}~0x0
+\item 
+\#define \hyperlink{crap__types_8h_a986b152beb0af9366de422e504620347}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01}~0x1
+\item 
+\#define \hyperlink{crap__types_8h_af3d420d295146915ad508f9595e7d1b5}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02}~0x2
+\item 
+\#define \hyperlink{crap__types_8h_a0f164079eb61ffd64fedcb47e49a481d}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03}~0x4
+\item 
+\#define \hyperlink{crap__types_8h_a95e26a8231c5c09d4baf6eaf1f28a7fc}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}~0x8
+\item 
+\#define \hyperlink{crap__types_8h_ade4fec2dd5fc0c3a5027941990115186}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05}~0x10
+\item 
+\#define \hyperlink{crap__types_8h_a2c11c82490de14d6bf9cf4eb0d3a1137}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06}~0x20
+\item 
+\#define \hyperlink{crap__types_8h_abc83a2639372f265e737014a9145b93a}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07}~0x40
+\item 
+\#define \hyperlink{crap__types_8h_a81863849bafe526aeac0c61edd7d7910}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08}~0x80
+\item 
+\#define \hyperlink{crap__types_8h_a22b31427495776ac2b24322495c65ba0}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09}~0x100
+\item 
+\#define \hyperlink{crap__types_8h_a9b07aa05ba98fbdb1435388c2464385c}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}~0x200
+\item 
+\#define \hyperlink{crap__types_8h_a8bec309c7b137484be3c31789fa00608}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}~0x400
+\item 
+\#define \hyperlink{crap__types_8h_acbf4cf8cc4e87b83cefde0b7ce2db8dc}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12}~0x800
+\item 
+\#define \hyperlink{crap__types_8h_a86c1504c59cbafda23b93642f915286c}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13}~0x1000
+\item 
+\#define \hyperlink{crap__types_8h_abc2ec067d0c47d7826b7b594fc25ab7a}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14}~0x2000
+\item 
+\#define \hyperlink{crap__types_8h_a0ef3eed8f5322bc2dc1a3438fb8700f7}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15}~0x4000
+\item 
+\#define \hyperlink{crap__types_8h_a45a5ee352afdf71b27bfe9b94a538f3b}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16}~0x8000
+\item 
+\#define \hyperlink{crap__types_8h_aec0d327638ec50ab036d721dcf450608}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17}~0x10000
+\item 
+\#define \hyperlink{crap__types_8h_a4fc99f37356ca68df9bbca1d8bed4083}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18}~0x20000
+\item 
+\#define \hyperlink{crap__types_8h_aa9d568d5590ae947851ff8fd22544bdd}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19}~0x40000
+\item 
+\#define \hyperlink{crap__types_8h_ab4de162dde7cd8e7052b47e3988cb3f2}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20}~0x80000
+\item 
+\#define \hyperlink{crap__types_8h_ab3f3625e0914ab193abc1770142635c6}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21}~0x100000
+\item 
+\#define \hyperlink{crap__types_8h_a88ae89d588797a3a66abdde922810bcd}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22}~0x200000
+\item 
+\#define \hyperlink{crap__types_8h_a62d98e291f8a32d55309830079c837a3}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}~0x400000
+\item 
+\#define \hyperlink{crap__types_8h_a67f4adc6114c4ccdcab5d6f06e6c6b58}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24}~0x800000
+\item 
+\#define \hyperlink{crap__types_8h_ac8643ca0233286ac534ac06f029ed13c}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25}~0x1000000
+\item 
+\#define \hyperlink{crap__types_8h_af787a0474426221fa4fbe9267d2fc4cc}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26}~0x2000000
+\item 
+\#define \hyperlink{crap__types_8h_a5ac1a571623e447ac7d817e6f06d6a0d}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27}~0x4000000
+\item 
+\#define \hyperlink{crap__types_8h_a8f6fb51af8ee8b9cf5309e27fd577a94}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28}~0x8000000
+\item 
+\#define \hyperlink{crap__types_8h_a695c1c312ea1002594d6c92fb46bb542}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29}~0x10000000
+\item 
+\#define \hyperlink{crap__types_8h_a880f473c80206533cc08808a00f5b08f}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30}~0x20000000
+\item 
+\#define \hyperlink{crap__types_8h_a4334b4ff101a819e9ffc0f3f4ef8a7a6}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31}~0x40000000
+\item 
+\#define \hyperlink{crap__types_8h_a06c017a9bb4789a4ad5d1d79b259e607}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32}~0x80000000
+\item 
+\#define \hyperlink{crap__types_8h_a398b8d844fa800ccb99535948e04f27f}{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N}(left, right)~left\#\#right
+\item 
+\#define \hyperlink{crap__types_8h_a4fe78d60992c8eaae3cc470fdb7823e3}{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E}(left, right)~\hyperlink{crap__types_8h_a398b8d844fa800ccb99535948e04f27f}{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N}( left, right )
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef float \hyperlink{crap__types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}
+\item 
+typedef double \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crap__types_8h_af43cb0539684f273c4101e77cedca958}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!B\+O\+O\+L\+\_\+\+M\+A\+X@{B\+O\+O\+L\+\_\+\+M\+A\+X}}
+\index{B\+O\+O\+L\+\_\+\+M\+A\+X@{B\+O\+O\+L\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{B\+O\+O\+L\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+L\+\_\+\+M\+A\+X~1}}\label{crap__types_8h_af43cb0539684f273c4101e77cedca958}
+
+
+Definition at line 49 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a5cee676d90e2d0efeb55965af44e6841}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!B\+O\+O\+L\+\_\+\+M\+I\+N@{B\+O\+O\+L\+\_\+\+M\+I\+N}}
+\index{B\+O\+O\+L\+\_\+\+M\+I\+N@{B\+O\+O\+L\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{B\+O\+O\+L\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+L\+\_\+\+M\+I\+N~0}}\label{crap__types_8h_a5cee676d90e2d0efeb55965af44e6841}
+
+
+Definition at line 81 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a778eefd6535a9d4b752fca5dd0af58db}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+H\+A\+R\+\_\+\+M\+A\+X@{C\+H\+A\+R\+\_\+\+M\+A\+X}}
+\index{C\+H\+A\+R\+\_\+\+M\+A\+X@{C\+H\+A\+R\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+H\+A\+R\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+A\+R\+\_\+\+M\+A\+X~0x7f}}\label{crap__types_8h_a778eefd6535a9d4b752fca5dd0af58db}
+
+
+Definition at line 52 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a5d707bd32338557ced18c6ac76ca1b3a}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+H\+A\+R\+\_\+\+M\+I\+N@{C\+H\+A\+R\+\_\+\+M\+I\+N}}
+\index{C\+H\+A\+R\+\_\+\+M\+I\+N@{C\+H\+A\+R\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+H\+A\+R\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+A\+R\+\_\+\+M\+I\+N~( -\/{\bf C\+H\+A\+R\+\_\+\+M\+A\+X} -\/1 )}}\label{crap__types_8h_a5d707bd32338557ced18c6ac76ca1b3a}
+
+
+Definition at line 84 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a182efb12c070fbc688f96f4cd8e7edd0}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00~0x0}}\label{crap__types_8h_a182efb12c070fbc688f96f4cd8e7edd0}
+
+
+Definition at line 161 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a986b152beb0af9366de422e504620347}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01~0x1}}\label{crap__types_8h_a986b152beb0af9366de422e504620347}
+
+
+Definition at line 162 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_af3d420d295146915ad508f9595e7d1b5}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02~0x2}}\label{crap__types_8h_af3d420d295146915ad508f9595e7d1b5}
+
+
+Definition at line 163 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a0f164079eb61ffd64fedcb47e49a481d}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03~0x4}}\label{crap__types_8h_a0f164079eb61ffd64fedcb47e49a481d}
+
+
+Definition at line 164 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a95e26a8231c5c09d4baf6eaf1f28a7fc}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04~0x8}}\label{crap__types_8h_a95e26a8231c5c09d4baf6eaf1f28a7fc}
+
+
+Definition at line 165 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ade4fec2dd5fc0c3a5027941990115186}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05~0x10}}\label{crap__types_8h_ade4fec2dd5fc0c3a5027941990115186}
+
+
+Definition at line 166 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a2c11c82490de14d6bf9cf4eb0d3a1137}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+06~0x20}}\label{crap__types_8h_a2c11c82490de14d6bf9cf4eb0d3a1137}
+
+
+Definition at line 167 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_abc83a2639372f265e737014a9145b93a}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+07~0x40}}\label{crap__types_8h_abc83a2639372f265e737014a9145b93a}
+
+
+Definition at line 168 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a81863849bafe526aeac0c61edd7d7910}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+08~0x80}}\label{crap__types_8h_a81863849bafe526aeac0c61edd7d7910}
+
+
+Definition at line 169 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a22b31427495776ac2b24322495c65ba0}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+09~0x100}}\label{crap__types_8h_a22b31427495776ac2b24322495c65ba0}
+
+
+Definition at line 170 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a9b07aa05ba98fbdb1435388c2464385c}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10~0x200}}\label{crap__types_8h_a9b07aa05ba98fbdb1435388c2464385c}
+
+
+Definition at line 171 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a8bec309c7b137484be3c31789fa00608}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11~0x400}}\label{crap__types_8h_a8bec309c7b137484be3c31789fa00608}
+
+
+Definition at line 172 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_acbf4cf8cc4e87b83cefde0b7ce2db8dc}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12~0x800}}\label{crap__types_8h_acbf4cf8cc4e87b83cefde0b7ce2db8dc}
+
+
+Definition at line 173 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a86c1504c59cbafda23b93642f915286c}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13~0x1000}}\label{crap__types_8h_a86c1504c59cbafda23b93642f915286c}
+
+
+Definition at line 174 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_abc2ec067d0c47d7826b7b594fc25ab7a}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14~0x2000}}\label{crap__types_8h_abc2ec067d0c47d7826b7b594fc25ab7a}
+
+
+Definition at line 175 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a0ef3eed8f5322bc2dc1a3438fb8700f7}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+15~0x4000}}\label{crap__types_8h_a0ef3eed8f5322bc2dc1a3438fb8700f7}
+
+
+Definition at line 176 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a45a5ee352afdf71b27bfe9b94a538f3b}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+16~0x8000}}\label{crap__types_8h_a45a5ee352afdf71b27bfe9b94a538f3b}
+
+
+Definition at line 177 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_aec0d327638ec50ab036d721dcf450608}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+17~0x10000}}\label{crap__types_8h_aec0d327638ec50ab036d721dcf450608}
+
+
+Definition at line 178 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a4fc99f37356ca68df9bbca1d8bed4083}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+18~0x20000}}\label{crap__types_8h_a4fc99f37356ca68df9bbca1d8bed4083}
+
+
+Definition at line 179 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_aa9d568d5590ae947851ff8fd22544bdd}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+19~0x40000}}\label{crap__types_8h_aa9d568d5590ae947851ff8fd22544bdd}
+
+
+Definition at line 180 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ab4de162dde7cd8e7052b47e3988cb3f2}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20~0x80000}}\label{crap__types_8h_ab4de162dde7cd8e7052b47e3988cb3f2}
+
+
+Definition at line 181 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ab3f3625e0914ab193abc1770142635c6}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21~0x100000}}\label{crap__types_8h_ab3f3625e0914ab193abc1770142635c6}
+
+
+Definition at line 182 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a88ae89d588797a3a66abdde922810bcd}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22~0x200000}}\label{crap__types_8h_a88ae89d588797a3a66abdde922810bcd}
+
+
+Definition at line 183 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a62d98e291f8a32d55309830079c837a3}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23~0x400000}}\label{crap__types_8h_a62d98e291f8a32d55309830079c837a3}
+
+
+Definition at line 184 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a67f4adc6114c4ccdcab5d6f06e6c6b58}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+24~0x800000}}\label{crap__types_8h_a67f4adc6114c4ccdcab5d6f06e6c6b58}
+
+
+Definition at line 185 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ac8643ca0233286ac534ac06f029ed13c}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+25~0x1000000}}\label{crap__types_8h_ac8643ca0233286ac534ac06f029ed13c}
+
+
+Definition at line 186 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_af787a0474426221fa4fbe9267d2fc4cc}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+26~0x2000000}}\label{crap__types_8h_af787a0474426221fa4fbe9267d2fc4cc}
+
+
+Definition at line 187 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a5ac1a571623e447ac7d817e6f06d6a0d}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+27~0x4000000}}\label{crap__types_8h_a5ac1a571623e447ac7d817e6f06d6a0d}
+
+
+Definition at line 188 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a8f6fb51af8ee8b9cf5309e27fd577a94}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+28~0x8000000}}\label{crap__types_8h_a8f6fb51af8ee8b9cf5309e27fd577a94}
+
+
+Definition at line 189 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a695c1c312ea1002594d6c92fb46bb542}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+29~0x10000000}}\label{crap__types_8h_a695c1c312ea1002594d6c92fb46bb542}
+
+
+Definition at line 190 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a880f473c80206533cc08808a00f5b08f}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+30~0x20000000}}\label{crap__types_8h_a880f473c80206533cc08808a00f5b08f}
+
+
+Definition at line 191 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a4334b4ff101a819e9ffc0f3f4ef8a7a6}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+31~0x40000000}}\label{crap__types_8h_a4334b4ff101a819e9ffc0f3f4ef8a7a6}
+
+
+Definition at line 192 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a06c017a9bb4789a4ad5d1d79b259e607}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32}}
+\index{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32@{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+32~0x80000000}}\label{crap__types_8h_a06c017a9bb4789a4ad5d1d79b259e607}
+
+
+Definition at line 193 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a4fe78d60992c8eaae3cc470fdb7823e3}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E@{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E}}
+\index{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E@{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E(
+\begin{DoxyParamCaption}
+\item[{}]{left, }
+\item[{}]{right}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N}( left, right )}}\label{crap__types_8h_a4fe78d60992c8eaae3cc470fdb7823e3}
+
+
+Definition at line 197 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a398b8d844fa800ccb99535948e04f27f}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N@{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N}}
+\index{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N@{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+M\+B\+I\+N\+E\+\_\+\+I\+N\+T\+E\+R\+N(
+\begin{DoxyParamCaption}
+\item[{}]{left, }
+\item[{}]{right}
+\end{DoxyParamCaption}
+)~left\#\#right}}\label{crap__types_8h_a398b8d844fa800ccb99535948e04f27f}
+
+
+Definition at line 196 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ae496720d5af7bbf6554782aedd3468df}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H@{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H@{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+H}}\label{crap__types_8h_ae496720d5af7bbf6554782aedd3468df}
+
+
+Definition at line 4 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a695c793ec23d6f422876104ebb06db43}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!F\+L\+O\+A\+T32\+\_\+\+M\+A\+X@{F\+L\+O\+A\+T32\+\_\+\+M\+A\+X}}
+\index{F\+L\+O\+A\+T32\+\_\+\+M\+A\+X@{F\+L\+O\+A\+T32\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{F\+L\+O\+A\+T32\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+L\+O\+A\+T32\+\_\+\+M\+A\+X~F\+L\+T\+\_\+\+M\+A\+X}}\label{crap__types_8h_a695c793ec23d6f422876104ebb06db43}
+
+
+Definition at line 117 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a1d6ab48f4f8a3840c7066fe5af1b2d94}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!F\+L\+O\+A\+T32\+\_\+\+M\+I\+N@{F\+L\+O\+A\+T32\+\_\+\+M\+I\+N}}
+\index{F\+L\+O\+A\+T32\+\_\+\+M\+I\+N@{F\+L\+O\+A\+T32\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{F\+L\+O\+A\+T32\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+L\+O\+A\+T32\+\_\+\+M\+I\+N~F\+L\+T\+\_\+\+M\+I\+N}}\label{crap__types_8h_a1d6ab48f4f8a3840c7066fe5af1b2d94}
+
+
+Definition at line 123 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_aa5f999a63a9d878e957e128ecfcc9c9d}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!F\+L\+O\+A\+T64\+\_\+\+M\+A\+X@{F\+L\+O\+A\+T64\+\_\+\+M\+A\+X}}
+\index{F\+L\+O\+A\+T64\+\_\+\+M\+A\+X@{F\+L\+O\+A\+T64\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{F\+L\+O\+A\+T64\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+L\+O\+A\+T64\+\_\+\+M\+A\+X~D\+B\+L\+\_\+\+M\+A\+X}}\label{crap__types_8h_aa5f999a63a9d878e957e128ecfcc9c9d}
+
+
+Definition at line 120 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a0b052f2acf395ad8a320f63ad6c2898a}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!F\+L\+O\+A\+T64\+\_\+\+M\+I\+N@{F\+L\+O\+A\+T64\+\_\+\+M\+I\+N}}
+\index{F\+L\+O\+A\+T64\+\_\+\+M\+I\+N@{F\+L\+O\+A\+T64\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{F\+L\+O\+A\+T64\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+L\+O\+A\+T64\+\_\+\+M\+I\+N~D\+B\+L\+\_\+\+M\+I\+N}}\label{crap__types_8h_a0b052f2acf395ad8a320f63ad6c2898a}
+
+
+Definition at line 126 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T16\+\_\+\+M\+A\+X@{I\+N\+T16\+\_\+\+M\+A\+X}}
+\index{I\+N\+T16\+\_\+\+M\+A\+X@{I\+N\+T16\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T16\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T16\+\_\+\+M\+A\+X~0x7fff}}\label{crap__types_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}
+
+
+Definition at line 61 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ad4e9955955b27624963643eac448118a}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T16\+\_\+\+M\+I\+N@{I\+N\+T16\+\_\+\+M\+I\+N}}
+\index{I\+N\+T16\+\_\+\+M\+I\+N@{I\+N\+T16\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T16\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T16\+\_\+\+M\+I\+N~( -\/{\bf I\+N\+T16\+\_\+\+M\+A\+X} -\/1 )}}\label{crap__types_8h_ad4e9955955b27624963643eac448118a}
+
+
+Definition at line 93 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a181807730d4a375f848ba139813ce04f}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T32\+\_\+\+M\+A\+X@{I\+N\+T32\+\_\+\+M\+A\+X}}
+\index{I\+N\+T32\+\_\+\+M\+A\+X@{I\+N\+T32\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T32\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T32\+\_\+\+M\+A\+X~0x7fffffff}}\label{crap__types_8h_a181807730d4a375f848ba139813ce04f}
+
+
+Definition at line 67 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a688eb21a22db27c2b2bd5836943cdcbe}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T32\+\_\+\+M\+I\+N@{I\+N\+T32\+\_\+\+M\+I\+N}}
+\index{I\+N\+T32\+\_\+\+M\+I\+N@{I\+N\+T32\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T32\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T32\+\_\+\+M\+I\+N~( -\/{\bf I\+N\+T32\+\_\+\+M\+A\+X} -\/1 )}}\label{crap__types_8h_a688eb21a22db27c2b2bd5836943cdcbe}
+
+
+Definition at line 99 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ad0d744f05898e32d01f73f8af3cd2071}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T64\+\_\+\+M\+A\+X@{I\+N\+T64\+\_\+\+M\+A\+X}}
+\index{I\+N\+T64\+\_\+\+M\+A\+X@{I\+N\+T64\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T64\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T64\+\_\+\+M\+A\+X~0x7fffffffffffffff}}\label{crap__types_8h_ad0d744f05898e32d01f73f8af3cd2071}
+
+
+Definition at line 73 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ab21f12f372f67b8ff0aa3432336ede67}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T64\+\_\+\+M\+I\+N@{I\+N\+T64\+\_\+\+M\+I\+N}}
+\index{I\+N\+T64\+\_\+\+M\+I\+N@{I\+N\+T64\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T64\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T64\+\_\+\+M\+I\+N~( -\/{\bf I\+N\+T64\+\_\+\+M\+A\+X} -\/1 )}}\label{crap__types_8h_ab21f12f372f67b8ff0aa3432336ede67}
+
+
+Definition at line 105 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T8\+\_\+\+M\+A\+X@{I\+N\+T8\+\_\+\+M\+A\+X}}
+\index{I\+N\+T8\+\_\+\+M\+A\+X@{I\+N\+T8\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T8\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T8\+\_\+\+M\+A\+X~0x7f}}\label{crap__types_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}
+
+
+Definition at line 55 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_aadcf2a81af243df333b31efa6461ab8e}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!I\+N\+T8\+\_\+\+M\+I\+N@{I\+N\+T8\+\_\+\+M\+I\+N}}
+\index{I\+N\+T8\+\_\+\+M\+I\+N@{I\+N\+T8\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{I\+N\+T8\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T8\+\_\+\+M\+I\+N~( -\/{\bf I\+N\+T8\+\_\+\+M\+A\+X} -\/1 )}}\label{crap__types_8h_aadcf2a81af243df333b31efa6461ab8e}
+
+
+Definition at line 87 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a3ea490c9b3617d4479bd80ef93cd5602}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T16\+\_\+\+M\+A\+X@{U\+I\+N\+T16\+\_\+\+M\+A\+X}}
+\index{U\+I\+N\+T16\+\_\+\+M\+A\+X@{U\+I\+N\+T16\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T16\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T16\+\_\+\+M\+A\+X~0xffff}}\label{crap__types_8h_a3ea490c9b3617d4479bd80ef93cd5602}
+
+
+Definition at line 64 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a4037c1ce09065675d4ac6928f9992412}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T16\+\_\+\+M\+I\+N@{U\+I\+N\+T16\+\_\+\+M\+I\+N}}
+\index{U\+I\+N\+T16\+\_\+\+M\+I\+N@{U\+I\+N\+T16\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T16\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T16\+\_\+\+M\+I\+N~0}}\label{crap__types_8h_a4037c1ce09065675d4ac6928f9992412}
+
+
+Definition at line 96 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T32\+\_\+\+M\+A\+X@{U\+I\+N\+T32\+\_\+\+M\+A\+X}}
+\index{U\+I\+N\+T32\+\_\+\+M\+A\+X@{U\+I\+N\+T32\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T32\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T32\+\_\+\+M\+A\+X~0xffffffff}}\label{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}
+
+
+Definition at line 70 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_af2a8408fbb6decd71eb49bd3e4a1649f}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T32\+\_\+\+M\+I\+N@{U\+I\+N\+T32\+\_\+\+M\+I\+N}}
+\index{U\+I\+N\+T32\+\_\+\+M\+I\+N@{U\+I\+N\+T32\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T32\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T32\+\_\+\+M\+I\+N~0}}\label{crap__types_8h_af2a8408fbb6decd71eb49bd3e4a1649f}
+
+
+Definition at line 102 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a30654b4b67d97c42ca3f9b6052dda916}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T64\+\_\+\+M\+A\+X@{U\+I\+N\+T64\+\_\+\+M\+A\+X}}
+\index{U\+I\+N\+T64\+\_\+\+M\+A\+X@{U\+I\+N\+T64\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T64\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T64\+\_\+\+M\+A\+X~0xffffffffffffffffu}}\label{crap__types_8h_a30654b4b67d97c42ca3f9b6052dda916}
+
+
+Definition at line 76 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a49201bdfc59cccf6f337a171f8ab4e91}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T64\+\_\+\+M\+I\+N@{U\+I\+N\+T64\+\_\+\+M\+I\+N}}
+\index{U\+I\+N\+T64\+\_\+\+M\+I\+N@{U\+I\+N\+T64\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T64\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T64\+\_\+\+M\+I\+N~0}}\label{crap__types_8h_a49201bdfc59cccf6f337a171f8ab4e91}
+
+
+Definition at line 108 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_aeb4e270a084ee26fe73e799861bd0252}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T8\+\_\+\+M\+A\+X@{U\+I\+N\+T8\+\_\+\+M\+A\+X}}
+\index{U\+I\+N\+T8\+\_\+\+M\+A\+X@{U\+I\+N\+T8\+\_\+\+M\+A\+X}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T8\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T8\+\_\+\+M\+A\+X~0xff}}\label{crap__types_8h_aeb4e270a084ee26fe73e799861bd0252}
+
+
+Definition at line 58 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_a9e34d054333a86f8c7f4d6ea4b0105ed}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!U\+I\+N\+T8\+\_\+\+M\+I\+N@{U\+I\+N\+T8\+\_\+\+M\+I\+N}}
+\index{U\+I\+N\+T8\+\_\+\+M\+I\+N@{U\+I\+N\+T8\+\_\+\+M\+I\+N}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{U\+I\+N\+T8\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T8\+\_\+\+M\+I\+N~0}}\label{crap__types_8h_a9e34d054333a86f8c7f4d6ea4b0105ed}
+
+
+Definition at line 90 of file crap\+\_\+types.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{crap__types_8h_a4611b605e45ab401f02cab15c5e38715}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!float32\+\_\+t@{float32\+\_\+t}}
+\index{float32\+\_\+t@{float32\+\_\+t}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{float32\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef float {\bf float32\+\_\+t}}}\label{crap__types_8h_a4611b605e45ab401f02cab15c5e38715}
+
+
+Definition at line 113 of file crap\+\_\+types.\+h.
+
+\hypertarget{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{\index{crap\+\_\+types.\+h@{crap\+\_\+types.\+h}!float64\+\_\+t@{float64\+\_\+t}}
+\index{float64\+\_\+t@{float64\+\_\+t}!crap\+\_\+types.\+h@{crap\+\_\+types.\+h}}
+\subsubsection[{float64\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef double {\bf float64\+\_\+t}}}\label{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}
+
+
+Definition at line 114 of file crap\+\_\+types.\+h.
+

@@ -1,0 +1,283 @@
+\hypertarget{classcrap_1_1linear__map}{\section{crap\+:\+:linear\+\_\+map$<$ K, V $>$ Class Template Reference}
+\label{classcrap_1_1linear__map}\index{crap\+::linear\+\_\+map$<$ K, V $>$@{crap\+::linear\+\_\+map$<$ K, V $>$}}
+}
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1linear__map_1_1__type}{\+\_\+type}
+\item 
+struct \hyperlink{structcrap_1_1linear__map_1_1iterator}{iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_af77a9e092bd3ffb9557327bd3082e47f}{handle}
+\item 
+typedef struct \\*
+\hyperlink{structcrap_1_1linear__map_1_1__type}{crap\+::linear\+\_\+map\+::\+\_\+type} \hyperlink{classcrap_1_1linear__map_ad8544be54068ac03936e6696c076bf9a}{type}
+\item 
+typedef K \hyperlink{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{key}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1linear__map_a8326fafe5af8c531c329b038551dd03e}{linear\+\_\+map} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ pointer, uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_ab2b37254485aa0632b669d02e5191133}{size})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1linear__map_ae94f35f560f6a5c20000f1ebce19fc47}{$\sim$linear\+\_\+map} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_af829e7e5d2a60011b49d7d1c5add00b4}{push\+\_\+back} (const K \&\hyperlink{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{key}, const V \&value)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_ab2c81bf91c71c02ca7ed9137516ff90c}{push\+\_\+back} (const \hyperlink{classcrap_1_1linear__map_ad8544be54068ac03936e6696c076bf9a}{type} \&pair)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1linear__map_af4d851117280669c5fd76d864c650a33}{remove} (const K \&\hyperlink{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1linear__map_a071de7b95feb1dd86bd4835efc71d292}{remove} (uint32\+\_\+t index)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_a76e45ca918556e4d25e4f5a2212485e4}{find} (const K \&\hyperlink{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1linear__map_ad8544be54068ac03936e6696c076bf9a}{type} \hyperlink{classcrap_1_1linear__map_aa836c5c319dc247166560df69902e305}{operator\mbox{[}$\,$\mbox{]}} (const uint32\+\_\+t \&\hyperlink{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{key})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{classcrap_1_1linear__map_ac6ad8d8c1e75bcaf73988d99e584cfb8}{contains} (const K \&\hyperlink{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{key}) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_ab2b37254485aa0632b669d02e5191133}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_afdeaccc120d463c32198db34e7c27afe}{size\+\_\+max} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1linear__map_aa31b5e69f000c0ebceb923addfc37697}{memory} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1linear__map_1_1iterator}{iterator} \hyperlink{classcrap_1_1linear__map_ae69e9149dba703639acda486bed2b06f}{begin} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1linear__map_1_1iterator}{iterator} \hyperlink{classcrap_1_1linear__map_a30b07809d568128b588a1f67cb501bfc}{end} (void) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1linear__map_aaf8459292dd9138b928278187f709c7b}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classcrap_1_1linear__map_af77a9e092bd3ffb9557327bd3082e47f}{handle} \hyperlink{classcrap_1_1linear__map_a6d22362f376b8631f2a9683939aeea26}{invalid} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class crap\+::linear\+\_\+map$<$ K, V $>$}
+
+
+
+Definition at line 12 of file map.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1linear__map_af77a9e092bd3ffb9557327bd3082e47f}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!handle@{handle}}
+\index{handle@{handle}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::{\bf handle}}}\label{classcrap_1_1linear__map_af77a9e092bd3ffb9557327bd3082e47f}
+
+
+Definition at line 16 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!key@{key}}
+\index{key@{key}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef K {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::{\bf key}}}\label{classcrap_1_1linear__map_a710c4784756c34edffaba22d614a0af0}
+
+
+Definition at line 25 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_ad8544be54068ac03936e6696c076bf9a}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!type@{type}}
+\index{type@{type}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef struct {\bf crap\+::linear\+\_\+map\+::\+\_\+type}
+     {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::{\bf type}}}\label{classcrap_1_1linear__map_ad8544be54068ac03936e6696c076bf9a}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1linear__map_a8326fafe5af8c531c329b038551dd03e}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!linear\+\_\+map@{linear\+\_\+map}}
+\index{linear\+\_\+map@{linear\+\_\+map}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{linear\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::{\bf linear\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1linear__map_a8326fafe5af8c531c329b038551dd03e}
+
+
+Definition at line 118 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_ae94f35f560f6a5c20000f1ebce19fc47}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!````~linear\+\_\+map@{$\sim$linear\+\_\+map}}
+\index{````~linear\+\_\+map@{$\sim$linear\+\_\+map}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{$\sim$linear\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::$\sim${\bf linear\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1linear__map_ae94f35f560f6a5c20000f1ebce19fc47}
+
+
+Definition at line 133 of file map.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1linear__map_ae69e9149dba703639acda486bed2b06f}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!begin@{begin}}
+\index{begin@{begin}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf iterator} {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1linear__map_ae69e9149dba703639acda486bed2b06f}
+
+
+Definition at line 93 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_ac6ad8d8c1e75bcaf73988d99e584cfb8}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!contains@{contains}}
+\index{contains@{contains}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ bool {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::contains (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1linear__map_ac6ad8d8c1e75bcaf73988d99e584cfb8}
+
+
+Definition at line 244 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_a30b07809d568128b588a1f67cb501bfc}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!end@{end}}
+\index{end@{end}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf iterator} {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1linear__map_a30b07809d568128b588a1f67cb501bfc}
+
+
+Definition at line 98 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_a76e45ca918556e4d25e4f5a2212485e4}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!find@{find}}
+\index{find@{find}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1linear__map_a76e45ca918556e4d25e4f5a2212485e4}
+
+
+Definition at line 200 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_aa31b5e69f000c0ebceb923addfc37697}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!memory@{memory}}
+\index{memory@{memory}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1linear__map_aa31b5e69f000c0ebceb923addfc37697}
+
+
+Definition at line 88 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_aa836c5c319dc247166560df69902e305}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf linear\+\_\+map}$<$ K, V $>$\+::{\bf type} {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const uint32\+\_\+t \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1linear__map_aa836c5c319dc247166560df69902e305}
+
+
+Definition at line 230 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_af829e7e5d2a60011b49d7d1c5add00b4}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key, }
+\item[{const V \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1linear__map_af829e7e5d2a60011b49d7d1c5add00b4}
+
+
+Definition at line 140 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_ab2c81bf91c71c02ca7ed9137516ff90c}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const {\bf type} \&}]{pair}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1linear__map_ab2c81bf91c71c02ca7ed9137516ff90c}
+
+
+Definition at line 58 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_af4d851117280669c5fd76d864c650a33}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!remove@{remove}}
+\index{remove@{remove}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ void {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1linear__map_af4d851117280669c5fd76d864c650a33}
+
+
+Definition at line 155 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_a071de7b95feb1dd86bd4835efc71d292}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!remove@{remove}}
+\index{remove@{remove}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ void {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1linear__map_a071de7b95feb1dd86bd4835efc71d292}
+
+
+Definition at line 180 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_ab2b37254485aa0632b669d02e5191133}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!size@{size}}
+\index{size@{size}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1linear__map_ab2b37254485aa0632b669d02e5191133}
+
+
+Definition at line 250 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_afdeaccc120d463c32198db34e7c27afe}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!size\+\_\+max@{size\+\_\+max}}
+\index{size\+\_\+max@{size\+\_\+max}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{size\+\_\+max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::size\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1linear__map_afdeaccc120d463c32198db34e7c27afe}
+
+
+Definition at line 256 of file map.\+h.
+
+\hypertarget{classcrap_1_1linear__map_aaf8459292dd9138b928278187f709c7b}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ static {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classcrap_1_1linear__map_aaf8459292dd9138b928278187f709c7b}
+
+
+Definition at line 103 of file map.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1linear__map_a6d22362f376b8631f2a9683939aeea26}{\index{crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}!invalid@{invalid}}
+\index{invalid@{invalid}!crap\+::linear\+\_\+map@{crap\+::linear\+\_\+map}}
+\subsubsection[{invalid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ const {\bf handle} {\bf crap\+::linear\+\_\+map}$<$ K, V $>$\+::invalid = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1linear__map_a6d22362f376b8631f2a9683939aeea26}
+
+
+Definition at line 26 of file map.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{map_8h}{map.\+h}\end{DoxyCompactItemize}

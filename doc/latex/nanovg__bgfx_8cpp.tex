@@ -1,0 +1,85 @@
+\hypertarget{nanovg__bgfx_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/nanovg\+\_\+bgfx.cpp File Reference}
+\label{nanovg__bgfx_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/nanovg\+\_\+bgfx.\+cpp@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/nanovg\+\_\+bgfx.\+cpp}}
+}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}nanovg.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$bgfx.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}vs\+\_\+nanovg\+\_\+fill.\+bin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fs\+\_\+nanovg\+\_\+fill.\+bin.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nanovg__bgfx_8cpp_aa3fc854788a17b7630351f448020106b}{N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S}~1
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{nanovg__bgfx_8cpp_a8a3f0556920ad6b19a44ebc348ba02a9}{G\+L\+N\+V\+Gshader\+Type} 
+\item 
+enum \hyperlink{nanovg__bgfx_8cpp_afd3356ab2f588eaf351d65afc0a758b8}{G\+L\+N\+V\+Gcall\+Type} 
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ \hyperlink{nanovg__bgfx_8cpp_a166d7025889080a67f5c14f9fbea6f85}{nvg\+Create} (int atlasw, int atlash, int edgeaa, unsigned char viewid)
+\item 
+void \hyperlink{nanovg__bgfx_8cpp_a8414ef35e2ea4ccb377b02dfeb313f1f}{nvg\+Delete} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{nanovg__bgfx_8cpp_aa3fc854788a17b7630351f448020106b}{\index{nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}!N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S@{N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S}}
+\index{N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S@{N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S}!nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}}
+\subsubsection[{N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+V\+G\+\_\+\+A\+N\+T\+I\+A\+L\+I\+A\+S~1}}\label{nanovg__bgfx_8cpp_aa3fc854788a17b7630351f448020106b}
+
+
+Definition at line 23 of file nanovg\+\_\+bgfx.\+cpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{nanovg__bgfx_8cpp_afd3356ab2f588eaf351d65afc0a758b8}{\index{nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}!G\+L\+N\+V\+Gcall\+Type@{G\+L\+N\+V\+Gcall\+Type}}
+\index{G\+L\+N\+V\+Gcall\+Type@{G\+L\+N\+V\+Gcall\+Type}!nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}}
+\subsubsection[{G\+L\+N\+V\+Gcall\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf G\+L\+N\+V\+Gcall\+Type}}}\label{nanovg__bgfx_8cpp_afd3356ab2f588eaf351d65afc0a758b8}
+
+
+Definition at line 55 of file nanovg\+\_\+bgfx.\+cpp.
+
+\hypertarget{nanovg__bgfx_8cpp_a8a3f0556920ad6b19a44ebc348ba02a9}{\index{nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}!G\+L\+N\+V\+Gshader\+Type@{G\+L\+N\+V\+Gshader\+Type}}
+\index{G\+L\+N\+V\+Gshader\+Type@{G\+L\+N\+V\+Gshader\+Type}!nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}}
+\subsubsection[{G\+L\+N\+V\+Gshader\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf G\+L\+N\+V\+Gshader\+Type}}}\label{nanovg__bgfx_8cpp_a8a3f0556920ad6b19a44ebc348ba02a9}
+
+
+Definition at line 40 of file nanovg\+\_\+bgfx.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{nanovg__bgfx_8cpp_a166d7025889080a67f5c14f9fbea6f85}{\index{nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}!nvg\+Create@{nvg\+Create}}
+\index{nvg\+Create@{nvg\+Create}!nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}}
+\subsubsection[{nvg\+Create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcontext}$\ast$ nvg\+Create (
+\begin{DoxyParamCaption}
+\item[{int}]{atlasw, }
+\item[{int}]{atlash, }
+\item[{int}]{edgeaa, }
+\item[{unsigned char}]{viewid}
+\end{DoxyParamCaption}
+)}}\label{nanovg__bgfx_8cpp_a166d7025889080a67f5c14f9fbea6f85}
+
+
+Definition at line 981 of file nanovg\+\_\+bgfx.\+cpp.
+
+\hypertarget{nanovg__bgfx_8cpp_a8414ef35e2ea4ccb377b02dfeb313f1f}{\index{nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}!nvg\+Delete@{nvg\+Delete}}
+\index{nvg\+Delete@{nvg\+Delete}!nanovg\+\_\+bgfx.\+cpp@{nanovg\+\_\+bgfx.\+cpp}}
+\subsubsection[{nvg\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Delete (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg__bgfx_8cpp_a8414ef35e2ea4ccb377b02dfeb313f1f}
+
+
+Definition at line 1024 of file nanovg\+\_\+bgfx.\+cpp.
+

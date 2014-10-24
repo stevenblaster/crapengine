@@ -1,0 +1,124 @@
+\hypertarget{classcrap_1_1memory__manager}{\section{crap\+:\+:memory\+\_\+manager Class Reference}
+\label{classcrap_1_1memory__manager}\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+}
+
+
+{\ttfamily \#include $<$memorymanager.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1memory__manager_1_1configuration}{configuration}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1memory__manager_a93051d0ffc02d2ab63a57b2017f09d3a}{memory\+\_\+manager} (const \hyperlink{structcrap_1_1memory__manager_1_1configuration}{configuration} \&\hyperlink{unittests_2source_2configuration_8cpp_ab299729ec441e3eaf9b96a1eb763e02f}{config})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1memory__manager_ada901cbb868877d6d9af948281d24f07}{$\sim$memory\+\_\+manager} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void $\ast$ \hyperlink{classcrap_1_1memory__manager_aae41530d552578aa6d78ffec96dec69e}{allocate} (uint32\+\_\+t size)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1memory__manager_a3c6568f92b8a533287697480b702e285}{deallocate} (void $\ast$ptr)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1memory__stack}{memory\+\_\+stack} $\ast$ \hyperlink{classcrap_1_1memory__manager_a4bdb547c679ac3549ff4f53d308c24d4}{get\+\_\+stack} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1memory__manager_a3a23f795ece223dfad4bc89af91c6743}{create\+\_\+stack} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1memory__manager_a482f48449775ae5fd889881ccfb61d08}{destroy\+\_\+stack} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file memorymanager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1memory__manager_a93051d0ffc02d2ab63a57b2017f09d3a}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!memory\+\_\+manager@{memory\+\_\+manager}}
+\index{memory\+\_\+manager@{memory\+\_\+manager}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{memory\+\_\+manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::memory\+\_\+manager\+::memory\+\_\+manager (
+\begin{DoxyParamCaption}
+\item[{const {\bf configuration} \&}]{config}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_a93051d0ffc02d2ab63a57b2017f09d3a}
+
+
+Definition at line 108 of file memorymanager.\+h.
+
+\hypertarget{classcrap_1_1memory__manager_ada901cbb868877d6d9af948281d24f07}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!````~memory\+\_\+manager@{$\sim$memory\+\_\+manager}}
+\index{````~memory\+\_\+manager@{$\sim$memory\+\_\+manager}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{$\sim$memory\+\_\+manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::memory\+\_\+manager\+::$\sim$memory\+\_\+manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_ada901cbb868877d6d9af948281d24f07}
+
+
+Definition at line 126 of file memorymanager.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1memory__manager_aae41530d552578aa6d78ffec96dec69e}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!allocate@{allocate}}
+\index{allocate@{allocate}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ crap\+::memory\+\_\+manager\+::allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_aae41530d552578aa6d78ffec96dec69e}
+
+
+Definition at line 141 of file memorymanager.\+h.
+
+\hypertarget{classcrap_1_1memory__manager_a3a23f795ece223dfad4bc89af91c6743}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!create\+\_\+stack@{create\+\_\+stack}}
+\index{create\+\_\+stack@{create\+\_\+stack}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{create\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::memory\+\_\+manager\+::create\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_a3a23f795ece223dfad4bc89af91c6743}
+
+
+Definition at line 208 of file memorymanager.\+h.
+
+\hypertarget{classcrap_1_1memory__manager_a3c6568f92b8a533287697480b702e285}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{deallocate}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::memory\+\_\+manager\+::deallocate (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_a3c6568f92b8a533287697480b702e285}
+
+
+Definition at line 174 of file memorymanager.\+h.
+
+\hypertarget{classcrap_1_1memory__manager_a482f48449775ae5fd889881ccfb61d08}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!destroy\+\_\+stack@{destroy\+\_\+stack}}
+\index{destroy\+\_\+stack@{destroy\+\_\+stack}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{destroy\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::memory\+\_\+manager\+::destroy\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_a482f48449775ae5fd889881ccfb61d08}
+
+
+Definition at line 218 of file memorymanager.\+h.
+
+\hypertarget{classcrap_1_1memory__manager_a4bdb547c679ac3549ff4f53d308c24d4}{\index{crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}!get\+\_\+stack@{get\+\_\+stack}}
+\index{get\+\_\+stack@{get\+\_\+stack}!crap\+::memory\+\_\+manager@{crap\+::memory\+\_\+manager}}
+\subsubsection[{get\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf memory\+\_\+stack} $\ast$ crap\+::memory\+\_\+manager\+::get\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1memory__manager_a4bdb547c679ac3549ff4f53d308c24d4}
+
+
+Definition at line 201 of file memorymanager.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/memory/\hyperlink{memorymanager_8h}{memorymanager.\+h}\end{DoxyCompactItemize}

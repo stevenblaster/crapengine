@@ -1,0 +1,288 @@
+\hypertarget{class_text_buffer_manager}{\section{Text\+Buffer\+Manager Class Reference}
+\label{class_text_buffer_manager}\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+}
+
+
+{\ttfamily \#include $<$text\+\_\+buffer\+\_\+manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_text_buffer_manager_a5fd44704617e0be71bd38975987a3577}{Text\+Buffer\+Manager} (\hyperlink{class_font_manager}{Font\+Manager} $\ast$\+\_\+font\+Manager)
+\item 
+\hyperlink{class_text_buffer_manager_abbb2854ff5abdca74e863b3a02c58529}{$\sim$\+Text\+Buffer\+Manager} ()
+\item 
+Text\+Buffer\+Handle \hyperlink{class_text_buffer_manager_a5170b80d9986a2b8398b1657645aca28}{create\+Text\+Buffer} (uint32\+\_\+t \+\_\+type, \hyperlink{struct_buffer_type_af6eec2447862f2bd9c1f36408176ddda}{Buffer\+Type\+::\+Enum} \+\_\+buffer\+Type)
+\item 
+void \hyperlink{class_text_buffer_manager_a7f29cd35e4df9cb7fe3f1b31026d5106}{destroy\+Text\+Buffer} (Text\+Buffer\+Handle \+\_\+handle)
+\item 
+void \hyperlink{class_text_buffer_manager_a388121f70216d192c0f63e53b107c946}{submit\+Text\+Buffer} (Text\+Buffer\+Handle \+\_\+handle, uint8\+\_\+t \+\_\+id, int32\+\_\+t \+\_\+depth=0)
+\item 
+void \hyperlink{class_text_buffer_manager_ab73112a2456a4fe2f353a46a81a8cb43}{set\+Style} (Text\+Buffer\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+flags=\hyperlink{text__buffer__manager_8h_a41440449340237d5eb6b0c4f7357bd35ac828230a58c9428e9da9cf9e5f440813}{S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L})
+\item 
+void \hyperlink{class_text_buffer_manager_ac85ac034da9be4c44ebc1ddd35add225}{set\+Text\+Color} (Text\+Buffer\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_manager_a70b428b73e98290449bb588bc7eba124}{set\+Background\+Color} (Text\+Buffer\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_manager_ad8f0df51cfa8e782f4c79b96a77355c9}{set\+Overline\+Color} (Text\+Buffer\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_manager_ad172ff06de26d85eecc5114e21bd920a}{set\+Underline\+Color} (Text\+Buffer\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_manager_a95647c493a0982524117501cf95febf1}{set\+Strike\+Through\+Color} (Text\+Buffer\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+rgba=0x000000\+F\+F)
+\item 
+void \hyperlink{class_text_buffer_manager_aa043798bbd2d128fa1b38ee9075e9de7}{set\+Pen\+Position} (Text\+Buffer\+Handle \+\_\+handle, float \+\_\+x, float \+\_\+y)
+\item 
+void \hyperlink{class_text_buffer_manager_ab10876cf56d56a218c15c3a9f4b110fe}{append\+Text} (Text\+Buffer\+Handle \+\_\+handle, Font\+Handle \+\_\+font\+Handle, const char $\ast$\+\_\+string, const char $\ast$\+\_\+end=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Append an A\+S\+C\+I\+I/utf-\/8 string to the buffer using current pen position and color. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_buffer_manager_a5f623894fd3d041751aa7e7b272356e6}{append\+Text} (Text\+Buffer\+Handle \+\_\+handle, Font\+Handle \+\_\+font\+Handle, const wchar\+\_\+t $\ast$\+\_\+string, const wchar\+\_\+t $\ast$\+\_\+end=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Append a wide char unicode string to the buffer using current pen position and color. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_buffer_manager_a4f60ad87103f57bf1f89acc77206a20a}{append\+Atlas\+Face} (Text\+Buffer\+Handle \+\_\+handle, uint16\+\_\+t \+\_\+face\+Index)
+\begin{DoxyCompactList}\small\item\em Append a whole face of the atlas cube, mostly used for debugging and visualizing atlas. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_buffer_manager_abf7145a574c396e6efd03d65c83a8ef7}{clear\+Text\+Buffer} (Text\+Buffer\+Handle \+\_\+handle)
+\begin{DoxyCompactList}\small\item\em Clear the text buffer and reset its state (pen/color). \end{DoxyCompactList}\item 
+\hyperlink{struct_text_rectangle}{Text\+Rectangle} \hyperlink{class_text_buffer_manager_a9a93bbad7871ff3874475d4598277ff5}{get\+Rectangle} (Text\+Buffer\+Handle \+\_\+handle) const 
+\begin{DoxyCompactList}\small\item\em Return the rectangular size of the current text buffer (including all its content). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file text\+\_\+buffer\+\_\+manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_text_buffer_manager_a5fd44704617e0be71bd38975987a3577}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{Text\+Buffer\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Buffer\+Manager\+::\+Text\+Buffer\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Font\+Manager} $\ast$}]{\+\_\+font\+Manager}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a5fd44704617e0be71bd38975987a3577}
+
+
+Definition at line 548 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_abbb2854ff5abdca74e863b3a02c58529}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!````~Text\+Buffer\+Manager@{$\sim$\+Text\+Buffer\+Manager}}
+\index{````~Text\+Buffer\+Manager@{$\sim$\+Text\+Buffer\+Manager}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{$\sim$\+Text\+Buffer\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Buffer\+Manager\+::$\sim$\+Text\+Buffer\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_abbb2854ff5abdca74e863b3a02c58529}
+
+
+Definition at line 618 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_text_buffer_manager_a4f60ad87103f57bf1f89acc77206a20a}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!append\+Atlas\+Face@{append\+Atlas\+Face}}
+\index{append\+Atlas\+Face@{append\+Atlas\+Face}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{append\+Atlas\+Face}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::append\+Atlas\+Face (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint16\+\_\+t}]{\+\_\+face\+Index}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a4f60ad87103f57bf1f89acc77206a20a}
+
+
+Append a whole face of the atlas cube, mostly used for debugging and visualizing atlas. 
+
+
+
+Definition at line 882 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_ab10876cf56d56a218c15c3a9f4b110fe}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!append\+Text@{append\+Text}}
+\index{append\+Text@{append\+Text}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{append\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::append\+Text (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{Font\+Handle}]{\+\_\+font\+Handle, }
+\item[{const char $\ast$}]{\+\_\+string, }
+\item[{const char $\ast$}]{\+\_\+end = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_ab10876cf56d56a218c15c3a9f4b110fe}
+
+
+Append an A\+S\+C\+I\+I/utf-\/8 string to the buffer using current pen position and color. 
+
+
+
+Definition at line 868 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a5f623894fd3d041751aa7e7b272356e6}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!append\+Text@{append\+Text}}
+\index{append\+Text@{append\+Text}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{append\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::append\+Text (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{Font\+Handle}]{\+\_\+font\+Handle, }
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+string, }
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+end = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a5f623894fd3d041751aa7e7b272356e6}
+
+
+Append a wide char unicode string to the buffer using current pen position and color. 
+
+
+
+Definition at line 875 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_abf7145a574c396e6efd03d65c83a8ef7}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!clear\+Text\+Buffer@{clear\+Text\+Buffer}}
+\index{clear\+Text\+Buffer@{clear\+Text\+Buffer}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{clear\+Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::clear\+Text\+Buffer (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_abf7145a574c396e6efd03d65c83a8ef7}
+
+
+Clear the text buffer and reset its state (pen/color). 
+
+
+
+Definition at line 889 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a5170b80d9986a2b8398b1657645aca28}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!create\+Text\+Buffer@{create\+Text\+Buffer}}
+\index{create\+Text\+Buffer@{create\+Text\+Buffer}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{create\+Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Buffer\+Handle Text\+Buffer\+Manager\+::create\+Text\+Buffer (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+type, }
+\item[{{\bf Buffer\+Type\+::\+Enum}}]{\+\_\+buffer\+Type}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a5170b80d9986a2b8398b1657645aca28}
+
+
+Definition at line 630 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a7f29cd35e4df9cb7fe3f1b31026d5106}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!destroy\+Text\+Buffer@{destroy\+Text\+Buffer}}
+\index{destroy\+Text\+Buffer@{destroy\+Text\+Buffer}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{destroy\+Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::destroy\+Text\+Buffer (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a7f29cd35e4df9cb7fe3f1b31026d5106}
+
+
+Definition at line 645 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a9a93bbad7871ff3874475d4598277ff5}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!get\+Rectangle@{get\+Rectangle}}
+\index{get\+Rectangle@{get\+Rectangle}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{get\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Rectangle} Text\+Buffer\+Manager\+::get\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+) const}}\label{class_text_buffer_manager_a9a93bbad7871ff3874475d4598277ff5}
+
+
+Return the rectangular size of the current text buffer (including all its content). 
+
+
+
+Definition at line 896 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a70b428b73e98290449bb588bc7eba124}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Background\+Color@{set\+Background\+Color}}
+\index{set\+Background\+Color@{set\+Background\+Color}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Background\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Background\+Color (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a70b428b73e98290449bb588bc7eba124}
+
+
+Definition at line 833 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_ad8f0df51cfa8e782f4c79b96a77355c9}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Overline\+Color@{set\+Overline\+Color}}
+\index{set\+Overline\+Color@{set\+Overline\+Color}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Overline\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Overline\+Color (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_ad8f0df51cfa8e782f4c79b96a77355c9}
+
+
+Definition at line 840 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_aa043798bbd2d128fa1b38ee9075e9de7}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Pen\+Position@{set\+Pen\+Position}}
+\index{set\+Pen\+Position@{set\+Pen\+Position}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Pen\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Pen\+Position (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_aa043798bbd2d128fa1b38ee9075e9de7}
+
+
+Definition at line 861 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a95647c493a0982524117501cf95febf1}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Strike\+Through\+Color@{set\+Strike\+Through\+Color}}
+\index{set\+Strike\+Through\+Color@{set\+Strike\+Through\+Color}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Strike\+Through\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Strike\+Through\+Color (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a95647c493a0982524117501cf95febf1}
+
+
+Definition at line 854 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_ab73112a2456a4fe2f353a46a81a8cb43}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Style (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+flags = {\ttfamily {\bf S\+T\+Y\+L\+E\+\_\+\+N\+O\+R\+M\+A\+L}}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_ab73112a2456a4fe2f353a46a81a8cb43}
+
+
+Definition at line 819 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_ac85ac034da9be4c44ebc1ddd35add225}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Text\+Color@{set\+Text\+Color}}
+\index{set\+Text\+Color@{set\+Text\+Color}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Text\+Color (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_ac85ac034da9be4c44ebc1ddd35add225}
+
+
+Definition at line 826 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_ad172ff06de26d85eecc5114e21bd920a}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!set\+Underline\+Color@{set\+Underline\+Color}}
+\index{set\+Underline\+Color@{set\+Underline\+Color}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{set\+Underline\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::set\+Underline\+Color (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+rgba = {\ttfamily 0x000000FF}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_ad172ff06de26d85eecc5114e21bd920a}
+
+
+Definition at line 847 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+\hypertarget{class_text_buffer_manager_a388121f70216d192c0f63e53b107c946}{\index{Text\+Buffer\+Manager@{Text\+Buffer\+Manager}!submit\+Text\+Buffer@{submit\+Text\+Buffer}}
+\index{submit\+Text\+Buffer@{submit\+Text\+Buffer}!Text\+Buffer\+Manager@{Text\+Buffer\+Manager}}
+\subsubsection[{submit\+Text\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Buffer\+Manager\+::submit\+Text\+Buffer (
+\begin{DoxyParamCaption}
+\item[{Text\+Buffer\+Handle}]{\+\_\+handle, }
+\item[{uint8\+\_\+t}]{\+\_\+id, }
+\item[{int32\+\_\+t}]{\+\_\+depth = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_text_buffer_manager_a388121f70216d192c0f63e53b107c946}
+
+
+Definition at line 688 of file text\+\_\+buffer\+\_\+manager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{text__buffer__manager_8h}{text\+\_\+buffer\+\_\+manager.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{text__buffer__manager_8cpp}{text\+\_\+buffer\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

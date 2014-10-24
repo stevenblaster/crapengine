@@ -1,0 +1,83 @@
+\hypertarget{crap__simd_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/config/crap\+\_\+simd.h File Reference}
+\label{crap__simd_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/config/crap\+\_\+simd.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/config/crap\+\_\+simd.\+h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crap__simd_8h_aad1aea991392ec09ef54c5202942cbae}{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H}
+\item 
+\#define \hyperlink{crap__simd_8h_a7adf658547d2f56a83be4830ff7a86ca}{C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D}(func, reg)~\+\_\+\+\_\+asm \{	@
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}{mov} \hyperlink{crap__simd_8h_a8259ed8ebdcff00831ecadbba0fa93fc}{eax}
+\item 
+\hyperlink{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}{mov} func xor \hyperlink{crap__simd_8h_aa08d23a05ead3c90bb801d44c3783502}{ecx}
+\item 
+\hyperlink{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}{mov} func xor \hyperlink{crap__simd_8h_aa08d23a05ead3c90bb801d44c3783502}{ecx} \hyperlink{crap__simd_8h_a4d863748a7f4475060f6c193265bca9a}{cpuid}
+\item 
+\hyperlink{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}{mov} \hyperlink{crap__simd_8h_a4ec42e0c6f7e60aad1033d3c87feb793}{esi}
+\item 
+mov reg \hyperlink{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}{mov} \mbox{[}\hyperlink{crap__simd_8h_a4ec42e0c6f7e60aad1033d3c87feb793}{esi}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crap__simd_8h_aad1aea991392ec09ef54c5202942cbae}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H@{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H@{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+I\+M\+D\+\_\+\+H}}\label{crap__simd_8h_aad1aea991392ec09ef54c5202942cbae}
+
+
+Definition at line 4 of file crap\+\_\+simd.\+h.
+
+\hypertarget{crap__simd_8h_a7adf658547d2f56a83be4830ff7a86ca}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D@{C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D}}
+\index{C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D@{C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+P\+U\+I\+D(
+\begin{DoxyParamCaption}
+\item[{}]{func, }
+\item[{}]{reg}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+asm \{	@}}\label{crap__simd_8h_a7adf658547d2f56a83be4830ff7a86ca}
+
+
+Definition at line 112 of file crap\+\_\+simd.\+h.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{crap__simd_8h_a4d863748a7f4475060f6c193265bca9a}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!cpuid@{cpuid}}
+\index{cpuid@{cpuid}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{cpuid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mov} func xor {\bf ecx} cpuid}}\label{crap__simd_8h_a4d863748a7f4475060f6c193265bca9a}
+
+
+Definition at line 113 of file crap\+\_\+simd.\+h.
+
+\hypertarget{crap__simd_8h_a8259ed8ebdcff00831ecadbba0fa93fc}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!eax@{eax}}
+\index{eax@{eax}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{eax}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mov} eax}}\label{crap__simd_8h_a8259ed8ebdcff00831ecadbba0fa93fc}
+
+
+Definition at line 113 of file crap\+\_\+simd.\+h.
+
+\hypertarget{crap__simd_8h_aa08d23a05ead3c90bb801d44c3783502}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!ecx@{ecx}}
+\index{ecx@{ecx}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{ecx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mov} func xor ecx}}\label{crap__simd_8h_aa08d23a05ead3c90bb801d44c3783502}
+
+
+Definition at line 113 of file crap\+\_\+simd.\+h.
+
+\hypertarget{crap__simd_8h_a4ec42e0c6f7e60aad1033d3c87feb793}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!esi@{esi}}
+\index{esi@{esi}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{esi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mov} esi}}\label{crap__simd_8h_a4ec42e0c6f7e60aad1033d3c87feb793}
+
+
+Definition at line 116 of file crap\+\_\+simd.\+h.
+
+\hypertarget{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}{\index{crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}!mov@{mov}}
+\index{mov@{mov}!crap\+\_\+simd.\+h@{crap\+\_\+simd.\+h}}
+\subsubsection[{mov}]{\setlength{\rightskip}{0pt plus 5cm}mov reg {\bf eax} ebx {\bf ecx} mov}}\label{crap__simd_8h_a895d4fc9ca45a5c96ff0b786a5558e4a}
+
+
+Definition at line 116 of file crap\+\_\+simd.\+h.
+

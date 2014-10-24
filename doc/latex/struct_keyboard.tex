@@ -1,0 +1,121 @@
+\hypertarget{struct_keyboard}{\section{Keyboard Struct Reference}
+\label{struct_keyboard}\index{Keyboard@{Keyboard}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_keyboard_ad6b0bb849d6bb7cdf63091e40b5f5f7f}{Keyboard} ()
+\item 
+void \hyperlink{struct_keyboard_a765a73cd072fcad73db2d1d9824e7595}{reset} ()
+\item 
+void \hyperlink{struct_keyboard_ad0bb11ec06e8f98f469b2e26c4fe0640}{set\+Key\+State} (\hyperlink{structentry_1_1_key_a2c04c2d92f79b961243e4244603ca633}{entry\+::\+Key\+::\+Enum} \+\_\+key, uint8\+\_\+t \+\_\+modifiers, bool \+\_\+down)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{struct_keyboard_ad3fe9931dc47dbcba7d015b6e992e0aa}{encode\+Key\+State} (uint8\+\_\+t \+\_\+modifiers, bool \+\_\+down)
+\item 
+static void \hyperlink{struct_keyboard_a4ecf1b5b235b661456cd98539f006474}{decode\+Key\+State} (uint32\+\_\+t \+\_\+state, uint8\+\_\+t \&\+\_\+modifiers, bool \&\+\_\+down)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{struct_keyboard_a944513802a9cf2a7454b688f1a16d0d9}{m\+\_\+key} \mbox{[}256\mbox{]}
+\item 
+bool \hyperlink{struct_keyboard_a860c38146c813be2c304b9b64703dc99}{m\+\_\+once} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 61 of file input.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{struct_keyboard_ad6b0bb849d6bb7cdf63091e40b5f5f7f}{\index{Keyboard@{Keyboard}!Keyboard@{Keyboard}}
+\index{Keyboard@{Keyboard}!Keyboard@{Keyboard}}
+\subsubsection[{Keyboard}]{\setlength{\rightskip}{0pt plus 5cm}Keyboard\+::\+Keyboard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_keyboard_ad6b0bb849d6bb7cdf63091e40b5f5f7f}
+
+
+Definition at line 63 of file input.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_keyboard_a4ecf1b5b235b661456cd98539f006474}{\index{Keyboard@{Keyboard}!decode\+Key\+State@{decode\+Key\+State}}
+\index{decode\+Key\+State@{decode\+Key\+State}!Keyboard@{Keyboard}}
+\subsubsection[{decode\+Key\+State}]{\setlength{\rightskip}{0pt plus 5cm}static void Keyboard\+::decode\+Key\+State (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+state, }
+\item[{uint8\+\_\+t \&}]{\+\_\+modifiers, }
+\item[{bool \&}]{\+\_\+down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{struct_keyboard_a4ecf1b5b235b661456cd98539f006474}
+
+
+Definition at line 81 of file input.\+cpp.
+
+\hypertarget{struct_keyboard_ad3fe9931dc47dbcba7d015b6e992e0aa}{\index{Keyboard@{Keyboard}!encode\+Key\+State@{encode\+Key\+State}}
+\index{encode\+Key\+State@{encode\+Key\+State}!Keyboard@{Keyboard}}
+\subsubsection[{encode\+Key\+State}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t Keyboard\+::encode\+Key\+State (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+modifiers, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{struct_keyboard_ad3fe9931dc47dbcba7d015b6e992e0aa}
+
+
+Definition at line 73 of file input.\+cpp.
+
+\hypertarget{struct_keyboard_a765a73cd072fcad73db2d1d9824e7595}{\index{Keyboard@{Keyboard}!reset@{reset}}
+\index{reset@{reset}!Keyboard@{Keyboard}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Keyboard\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_keyboard_a765a73cd072fcad73db2d1d9824e7595}
+
+
+Definition at line 67 of file input.\+cpp.
+
+\hypertarget{struct_keyboard_ad0bb11ec06e8f98f469b2e26c4fe0640}{\index{Keyboard@{Keyboard}!set\+Key\+State@{set\+Key\+State}}
+\index{set\+Key\+State@{set\+Key\+State}!Keyboard@{Keyboard}}
+\subsubsection[{set\+Key\+State}]{\setlength{\rightskip}{0pt plus 5cm}void Keyboard\+::set\+Key\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf entry\+::\+Key\+::\+Enum}}]{\+\_\+key, }
+\item[{uint8\+\_\+t}]{\+\_\+modifiers, }
+\item[{bool}]{\+\_\+down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_keyboard_ad0bb11ec06e8f98f469b2e26c4fe0640}
+
+
+Definition at line 87 of file input.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_keyboard_a944513802a9cf2a7454b688f1a16d0d9}{\index{Keyboard@{Keyboard}!m\+\_\+key@{m\+\_\+key}}
+\index{m\+\_\+key@{m\+\_\+key}!Keyboard@{Keyboard}}
+\subsubsection[{m\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Keyboard\+::m\+\_\+key\mbox{[}256\mbox{]}}}\label{struct_keyboard_a944513802a9cf2a7454b688f1a16d0d9}
+
+
+Definition at line 93 of file input.\+cpp.
+
+\hypertarget{struct_keyboard_a860c38146c813be2c304b9b64703dc99}{\index{Keyboard@{Keyboard}!m\+\_\+once@{m\+\_\+once}}
+\index{m\+\_\+once@{m\+\_\+once}!Keyboard@{Keyboard}}
+\subsubsection[{m\+\_\+once}]{\setlength{\rightskip}{0pt plus 5cm}bool Keyboard\+::m\+\_\+once\mbox{[}256\mbox{]}}}\label{struct_keyboard_a860c38146c813be2c304b9b64703dc99}
+
+
+Definition at line 94 of file input.\+cpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/entry/\hyperlink{input_8cpp}{input.\+cpp}\end{DoxyCompactItemize}

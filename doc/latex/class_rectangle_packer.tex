@@ -1,0 +1,156 @@
+\hypertarget{class_rectangle_packer}{\section{Rectangle\+Packer Class Reference}
+\label{class_rectangle_packer}\index{Rectangle\+Packer@{Rectangle\+Packer}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rectangle_packer_a085a5a5e86e2a3e11848a2222489e54e}{Rectangle\+Packer} ()
+\item 
+\hyperlink{class_rectangle_packer_aff4a0fcb00765ac6f21684d48d5d93a6}{Rectangle\+Packer} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\item 
+void \hyperlink{class_rectangle_packer_a3aa3b8c8d4f36ab6cca66f0044870910}{init} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\begin{DoxyCompactList}\small\item\em non constructor initialization \end{DoxyCompactList}\item 
+bool \hyperlink{class_rectangle_packer_a3b08f7cff97b1c1bfb6052e743628919}{add\+Rectangle} (uint16\+\_\+t \+\_\+width, uint16\+\_\+t \+\_\+height, uint16\+\_\+t \&\+\_\+out\+X, uint16\+\_\+t \&\+\_\+out\+Y)
+\item 
+uint32\+\_\+t \hyperlink{class_rectangle_packer_a789511a029a766f0c1976e54b1d3a69f}{get\+Used\+Surface} ()
+\begin{DoxyCompactList}\small\item\em return the used surface in squared unit \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_rectangle_packer_a63cc81c1bd5ace744a4ba40002043413}{get\+Total\+Surface} ()
+\begin{DoxyCompactList}\small\item\em return the total available surface in squared unit \end{DoxyCompactList}\item 
+float \hyperlink{class_rectangle_packer_af0ab36707efe5e810b96a87d933135ac}{get\+Usage\+Ratio} ()
+\begin{DoxyCompactList}\small\item\em return the usage ratio of the available surface \mbox{[}0\+:1\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{class_rectangle_packer_afb92dc6a0d96dc70efeeda5f936bdef0}{clear} ()
+\begin{DoxyCompactList}\small\item\em reset to initial state \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file cube\+\_\+atlas.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_rectangle_packer_a085a5a5e86e2a3e11848a2222489e54e}{\index{Rectangle\+Packer@{Rectangle\+Packer}!Rectangle\+Packer@{Rectangle\+Packer}}
+\index{Rectangle\+Packer@{Rectangle\+Packer}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{Rectangle\+Packer}]{\setlength{\rightskip}{0pt plus 5cm}Rectangle\+Packer\+::\+Rectangle\+Packer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_rectangle_packer_a085a5a5e86e2a3e11848a2222489e54e}
+
+
+Definition at line 70 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_rectangle_packer_aff4a0fcb00765ac6f21684d48d5d93a6}{\index{Rectangle\+Packer@{Rectangle\+Packer}!Rectangle\+Packer@{Rectangle\+Packer}}
+\index{Rectangle\+Packer@{Rectangle\+Packer}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{Rectangle\+Packer}]{\setlength{\rightskip}{0pt plus 5cm}Rectangle\+Packer\+::\+Rectangle\+Packer (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+width, }
+\item[{uint32\+\_\+t}]{\+\_\+height}
+\end{DoxyParamCaption}
+)}}\label{class_rectangle_packer_aff4a0fcb00765ac6f21684d48d5d93a6}
+
+
+Definition at line 77 of file cube\+\_\+atlas.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_rectangle_packer_a3b08f7cff97b1c1bfb6052e743628919}{\index{Rectangle\+Packer@{Rectangle\+Packer}!add\+Rectangle@{add\+Rectangle}}
+\index{add\+Rectangle@{add\+Rectangle}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{add\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}bool Rectangle\+Packer\+::add\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+width, }
+\item[{uint16\+\_\+t}]{\+\_\+height, }
+\item[{uint16\+\_\+t \&}]{\+\_\+out\+X, }
+\item[{uint16\+\_\+t \&}]{\+\_\+out\+Y}
+\end{DoxyParamCaption}
+)}}\label{class_rectangle_packer_a3b08f7cff97b1c1bfb6052e743628919}
+find a suitable position for the given rectangle \begin{DoxyReturn}{Returns}
+true if the rectangle can be added, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_rectangle_packer_afb92dc6a0d96dc70efeeda5f936bdef0}{\index{Rectangle\+Packer@{Rectangle\+Packer}!clear@{clear}}
+\index{clear@{clear}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangle\+Packer\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_rectangle_packer_afb92dc6a0d96dc70efeeda5f936bdef0}
+
+
+reset to initial state 
+
+
+
+Definition at line 183 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_rectangle_packer_a63cc81c1bd5ace744a4ba40002043413}{\index{Rectangle\+Packer@{Rectangle\+Packer}!get\+Total\+Surface@{get\+Total\+Surface}}
+\index{get\+Total\+Surface@{get\+Total\+Surface}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{get\+Total\+Surface}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Rectangle\+Packer\+::get\+Total\+Surface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rectangle_packer_a63cc81c1bd5ace744a4ba40002043413}
+
+
+return the total available surface in squared unit 
+
+
+
+Definition at line 35 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_rectangle_packer_af0ab36707efe5e810b96a87d933135ac}{\index{Rectangle\+Packer@{Rectangle\+Packer}!get\+Usage\+Ratio@{get\+Usage\+Ratio}}
+\index{get\+Usage\+Ratio@{get\+Usage\+Ratio}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{get\+Usage\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}float Rectangle\+Packer\+::get\+Usage\+Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_rectangle_packer_af0ab36707efe5e810b96a87d933135ac}
+
+
+return the usage ratio of the available surface \mbox{[}0\+:1\mbox{]} 
+
+
+
+Definition at line 172 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_rectangle_packer_a789511a029a766f0c1976e54b1d3a69f}{\index{Rectangle\+Packer@{Rectangle\+Packer}!get\+Used\+Surface@{get\+Used\+Surface}}
+\index{get\+Used\+Surface@{get\+Used\+Surface}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{get\+Used\+Surface}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Rectangle\+Packer\+::get\+Used\+Surface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rectangle_packer_a789511a029a766f0c1976e54b1d3a69f}
+
+
+return the used surface in squared unit 
+
+
+
+Definition at line 29 of file cube\+\_\+atlas.\+cpp.
+
+\hypertarget{class_rectangle_packer_a3aa3b8c8d4f36ab6cca66f0044870910}{\index{Rectangle\+Packer@{Rectangle\+Packer}!init@{init}}
+\index{init@{init}!Rectangle\+Packer@{Rectangle\+Packer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangle\+Packer\+::init (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+width, }
+\item[{uint32\+\_\+t}]{\+\_\+height}
+\end{DoxyParamCaption}
+)}}\label{class_rectangle_packer_a3aa3b8c8d4f36ab6cca66f0044870910}
+
+
+non constructor initialization 
+
+
+
+Definition at line 87 of file cube\+\_\+atlas.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/\hyperlink{cube__atlas_8cpp}{cube\+\_\+atlas.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\hypertarget{struct_glyph_info}{\section{Glyph\+Info Struct Reference}
+\label{struct_glyph_info}\index{Glyph\+Info@{Glyph\+Info}}
+}
+
+
+A structure that describe a glyph.  
+
+
+
+
+{\ttfamily \#include $<$font\+\_\+manager.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{struct_glyph_info_ab597d9409c28f3e07b2d7158646faa3c}{glyph\+Index}
+\begin{DoxyCompactList}\small\item\em Index for faster retrieval. \end{DoxyCompactList}\item 
+float \hyperlink{struct_glyph_info_af8f1393ec498cdabefbaf08f77b62cbd}{width}
+\begin{DoxyCompactList}\small\item\em Glyph's width in pixels. \end{DoxyCompactList}\item 
+float \hyperlink{struct_glyph_info_a573a4ed41d755a152d2949d02a22449c}{height}
+\begin{DoxyCompactList}\small\item\em Glyph's height in pixels. \end{DoxyCompactList}\item 
+float \hyperlink{struct_glyph_info_af7c352469c5fa93aad86a5681fd21561}{offset\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Glyph's left offset in pixels. \end{DoxyCompactList}\item 
+float \hyperlink{struct_glyph_info_a0a4e24fed8ccb6af8efd08ee8b58d465}{offset\+\_\+y}
+\item 
+float \hyperlink{struct_glyph_info_ac7542ec73906552cf31d9b4ce0749d0c}{advance\+\_\+x}
+\item 
+float \hyperlink{struct_glyph_info_a30498d3b9435d104130fcfd2829d2817}{advance\+\_\+y}
+\item 
+uint16\+\_\+t \hyperlink{struct_glyph_info_a82c347997a66291d8d4aaa7db764d4e2}{region\+Index}
+\begin{DoxyCompactList}\small\item\em Region index in the atlas storing textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure that describe a glyph. 
+
+Definition at line 82 of file font\+\_\+manager.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_glyph_info_ac7542ec73906552cf31d9b4ce0749d0c}{\index{Glyph\+Info@{Glyph\+Info}!advance\+\_\+x@{advance\+\_\+x}}
+\index{advance\+\_\+x@{advance\+\_\+x}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{advance\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}float Glyph\+Info\+::advance\+\_\+x}}\label{struct_glyph_info_ac7542ec73906552cf31d9b4ce0749d0c}
+For horizontal text layouts, this is the unscaled horizontal distance in pixels used to increment the pen position when the glyph is drawn as part of a string of text. 
+
+Definition at line 105 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_a30498d3b9435d104130fcfd2829d2817}{\index{Glyph\+Info@{Glyph\+Info}!advance\+\_\+y@{advance\+\_\+y}}
+\index{advance\+\_\+y@{advance\+\_\+y}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{advance\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}float Glyph\+Info\+::advance\+\_\+y}}\label{struct_glyph_info_a30498d3b9435d104130fcfd2829d2817}
+For vertical text layouts, this is the unscaled vertical distance in pixels used to increment the pen position when the glyph is drawn as part of a string of text. 
+
+Definition at line 110 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_ab597d9409c28f3e07b2d7158646faa3c}{\index{Glyph\+Info@{Glyph\+Info}!glyph\+Index@{glyph\+Index}}
+\index{glyph\+Index@{glyph\+Index}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{glyph\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Glyph\+Info\+::glyph\+Index}}\label{struct_glyph_info_ab597d9409c28f3e07b2d7158646faa3c}
+
+
+Index for faster retrieval. 
+
+
+
+Definition at line 85 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_a573a4ed41d755a152d2949d02a22449c}{\index{Glyph\+Info@{Glyph\+Info}!height@{height}}
+\index{height@{height}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}float Glyph\+Info\+::height}}\label{struct_glyph_info_a573a4ed41d755a152d2949d02a22449c}
+
+
+Glyph's height in pixels. 
+
+
+
+Definition at line 91 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_af7c352469c5fa93aad86a5681fd21561}{\index{Glyph\+Info@{Glyph\+Info}!offset\+\_\+x@{offset\+\_\+x}}
+\index{offset\+\_\+x@{offset\+\_\+x}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{offset\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}float Glyph\+Info\+::offset\+\_\+x}}\label{struct_glyph_info_af7c352469c5fa93aad86a5681fd21561}
+
+
+Glyph's left offset in pixels. 
+
+
+
+Definition at line 94 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_a0a4e24fed8ccb6af8efd08ee8b58d465}{\index{Glyph\+Info@{Glyph\+Info}!offset\+\_\+y@{offset\+\_\+y}}
+\index{offset\+\_\+y@{offset\+\_\+y}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{offset\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}float Glyph\+Info\+::offset\+\_\+y}}\label{struct_glyph_info_a0a4e24fed8ccb6af8efd08ee8b58d465}
+Glyph's top offset in pixels.
+
+\begin{DoxyRemark}{Remarks}
+This is the distance from the baseline to the top-\/most glyph scan line, upwards y coordinates being positive. 
+\end{DoxyRemark}
+
+
+Definition at line 100 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_a82c347997a66291d8d4aaa7db764d4e2}{\index{Glyph\+Info@{Glyph\+Info}!region\+Index@{region\+Index}}
+\index{region\+Index@{region\+Index}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{region\+Index}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Glyph\+Info\+::region\+Index}}\label{struct_glyph_info_a82c347997a66291d8d4aaa7db764d4e2}
+
+
+Region index in the atlas storing textures. 
+
+
+
+Definition at line 113 of file font\+\_\+manager.\+h.
+
+\hypertarget{struct_glyph_info_af8f1393ec498cdabefbaf08f77b62cbd}{\index{Glyph\+Info@{Glyph\+Info}!width@{width}}
+\index{width@{width}!Glyph\+Info@{Glyph\+Info}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}float Glyph\+Info\+::width}}\label{struct_glyph_info_af8f1393ec498cdabefbaf08f77b62cbd}
+
+
+Glyph's width in pixels. 
+
+
+
+Definition at line 88 of file font\+\_\+manager.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{font__manager_8h}{font\+\_\+manager.\+h}\end{DoxyCompactItemize}

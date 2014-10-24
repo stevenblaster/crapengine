@@ -1,0 +1,217 @@
+\hypertarget{classcrap_1_1vector}{\section{crap\+:\+:vector$<$ T, A $>$ Class Template Reference}
+\label{classcrap_1_1vector}\index{crap\+::vector$<$ T, A $>$@{crap\+::vector$<$ T, A $>$}}
+}
+
+
+{\ttfamily \#include $<$vector.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcrap_1_1vector_1_1const__iterator}{const\+\_\+iterator}
+\item 
+class \hyperlink{classcrap_1_1vector_1_1iterator}{iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1vector_a61ab5234ed585b66741b16c7a39a468d}{vector} (uint32\+\_\+t \hyperlink{classcrap_1_1vector_ad563c5e3815c8072c3c4a13cd7f6d900}{size}=0)
+\item 
+\hyperlink{classcrap_1_1vector_a97195165b119d92d991dd249ff9d6ede}{$\sim$vector} (void)
+\item 
+\hyperlink{classcrap_1_1vector_1_1iterator}{iterator} \hyperlink{classcrap_1_1vector_a0cacd80285f1d3b409deae778f01dbd7}{begin} (void)
+\item 
+\hyperlink{classcrap_1_1vector_1_1iterator}{iterator} \hyperlink{classcrap_1_1vector_a592398b74783cc4838e700f3ce10de5d}{end} (void)
+\item 
+\hyperlink{classcrap_1_1vector_1_1iterator}{iterator} \hyperlink{classcrap_1_1vector_a22948a2090c5463c2dd78d3d7c91877f}{last} (void)
+\item 
+\hyperlink{classcrap_1_1vector_1_1iterator}{iterator} \hyperlink{classcrap_1_1vector_acd835a824c13a737b0ebeb42a26b4f97}{push\+\_\+back} (const T \&value)
+\item 
+\hyperlink{classcrap_1_1vector_1_1iterator}{iterator} \hyperlink{classcrap_1_1vector_abfa00af0d24f5cc24f4585d822992ef4}{operator\mbox{[}$\,$\mbox{]}} (const uint32\+\_\+t index)
+\item 
+void \hyperlink{classcrap_1_1vector_a4475e66c612c863460926f3531f5a1b1}{erase} (const \hyperlink{classcrap_1_1vector_1_1iterator}{iterator} \&it)
+\item 
+void \hyperlink{classcrap_1_1vector_adf2b7e209d4178b671135aee1f4549c1}{erase} (const \hyperlink{classcrap_1_1vector_1_1const__iterator}{const\+\_\+iterator} \&it)
+\item 
+void \hyperlink{classcrap_1_1vector_a4654c186148081562eb459ce2ff724bc}{erase} (const T \&value)
+\item 
+\hyperlink{classcrap_1_1vector_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classcrap_1_1vector_a12441ccc04b0b458c36c00bad2961c04}{find} (const T \&value)
+\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1vector_ad563c5e3815c8072c3c4a13cd7f6d900}{size} (void) const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcrap_1_1vector_a67171474c4da6cc8efe0c7fafefd2b2d}{iterator}
+\item 
+class \hyperlink{classcrap_1_1vector_ac220ce1c155db1ac44146c12d178056f}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$class crap\+::vector$<$ T, A $>$}
+
+
+
+Definition at line 14 of file vector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1vector_a61ab5234ed585b66741b16c7a39a468d}{\index{crap\+::vector@{crap\+::vector}!vector@{vector}}
+\index{vector@{vector}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ {\bf crap\+::vector}$<$ T, A $>$\+::{\bf vector} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_a61ab5234ed585b66741b16c7a39a468d}
+
+
+Definition at line 405 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a97195165b119d92d991dd249ff9d6ede}{\index{crap\+::vector@{crap\+::vector}!````~vector@{$\sim$vector}}
+\index{````~vector@{$\sim$vector}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{$\sim$vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ {\bf crap\+::vector}$<$ T, A $>$\+::$\sim${\bf vector} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_a97195165b119d92d991dd249ff9d6ede}
+
+
+Definition at line 462 of file vector.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1vector_a0cacd80285f1d3b409deae778f01dbd7}{\index{crap\+::vector@{crap\+::vector}!begin@{begin}}
+\index{begin@{begin}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$ {\bf iterator} {\bf crap\+::vector}$<$ T, A $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1vector_a0cacd80285f1d3b409deae778f01dbd7}
+
+
+Definition at line 364 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a592398b74783cc4838e700f3ce10de5d}{\index{crap\+::vector@{crap\+::vector}!end@{end}}
+\index{end@{end}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$ {\bf iterator} {\bf crap\+::vector}$<$ T, A $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1vector_a592398b74783cc4838e700f3ce10de5d}
+
+
+Definition at line 365 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a4475e66c612c863460926f3531f5a1b1}{\index{crap\+::vector@{crap\+::vector}!erase@{erase}}
+\index{erase@{erase}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ void {\bf crap\+::vector}$<$ T, A $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator} \&}]{it}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_a4475e66c612c863460926f3531f5a1b1}
+
+
+Definition at line 469 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_adf2b7e209d4178b671135aee1f4549c1}{\index{crap\+::vector@{crap\+::vector}!erase@{erase}}
+\index{erase@{erase}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ void {\bf crap\+::vector}$<$ T, A $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const {\bf const\+\_\+iterator} \&}]{it}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_adf2b7e209d4178b671135aee1f4549c1}
+
+
+Definition at line 514 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a4654c186148081562eb459ce2ff724bc}{\index{crap\+::vector@{crap\+::vector}!erase@{erase}}
+\index{erase@{erase}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ void {\bf crap\+::vector}$<$ T, A $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_a4654c186148081562eb459ce2ff724bc}
+
+
+Definition at line 562 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a12441ccc04b0b458c36c00bad2961c04}{\index{crap\+::vector@{crap\+::vector}!find@{find}}
+\index{find@{find}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ {\bf vector}$<$ T, A $>$\+::{\bf const\+\_\+iterator} {\bf crap\+::vector}$<$ T, A $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_a12441ccc04b0b458c36c00bad2961c04}
+
+
+Definition at line 571 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a22948a2090c5463c2dd78d3d7c91877f}{\index{crap\+::vector@{crap\+::vector}!last@{last}}
+\index{last@{last}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$ {\bf iterator} {\bf crap\+::vector}$<$ T, A $>$\+::last (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1vector_a22948a2090c5463c2dd78d3d7c91877f}
+
+
+Definition at line 366 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_abfa00af0d24f5cc24f4585d822992ef4}{\index{crap\+::vector@{crap\+::vector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ {\bf vector}$<$ T, A $>$\+::{\bf iterator} {\bf crap\+::vector}$<$ T, A $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_abfa00af0d24f5cc24f4585d822992ef4}
+
+
+Definition at line 456 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_acd835a824c13a737b0ebeb42a26b4f97}{\index{crap\+::vector@{crap\+::vector}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A $>$ {\bf vector}$<$ T, A $>$\+::{\bf iterator} {\bf crap\+::vector}$<$ T, A $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1vector_acd835a824c13a737b0ebeb42a26b4f97}
+
+
+Definition at line 425 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_ad563c5e3815c8072c3c4a13cd7f6d900}{\index{crap\+::vector@{crap\+::vector}!size@{size}}
+\index{size@{size}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$ uint32\+\_\+t {\bf crap\+::vector}$<$ T, A $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1vector_ad563c5e3815c8072c3c4a13cd7f6d900}
+
+
+Definition at line 378 of file vector.\+h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classcrap_1_1vector_ac220ce1c155db1ac44146c12d178056f}{\index{crap\+::vector@{crap\+::vector}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{const\+\_\+iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$ friend class {\bf const\+\_\+iterator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classcrap_1_1vector_ac220ce1c155db1ac44146c12d178056f}
+
+
+Definition at line 19 of file vector.\+h.
+
+\hypertarget{classcrap_1_1vector_a67171474c4da6cc8efe0c7fafefd2b2d}{\index{crap\+::vector@{crap\+::vector}!iterator@{iterator}}
+\index{iterator@{iterator}!crap\+::vector@{crap\+::vector}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename A = container\+\_\+allocator$<$\+T$>$$>$ friend class {\bf iterator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classcrap_1_1vector_a67171474c4da6cc8efe0c7fafefd2b2d}
+
+
+Definition at line 18 of file vector.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{vector_8h}{vector.\+h}\end{DoxyCompactItemize}

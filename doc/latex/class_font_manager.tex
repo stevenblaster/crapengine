@@ -1,0 +1,263 @@
+\hypertarget{class_font_manager}{\section{Font\+Manager Class Reference}
+\label{class_font_manager}\index{Font\+Manager@{Font\+Manager}}
+}
+
+
+{\ttfamily \#include $<$font\+\_\+manager.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_font_manager_1_1_cached_font}{Cached\+Font}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_font_manager_ad508580de43f7ae8e599465e920a667b}{Font\+Manager} (\hyperlink{class_atlas}{Atlas} $\ast$\+\_\+atlas)
+\item 
+\hyperlink{class_font_manager_a8e70d9a8d27b275c249cc2e6f1814599}{Font\+Manager} (uint32\+\_\+t \+\_\+texture\+Side\+Width=512)
+\item 
+\hyperlink{class_font_manager_aa190bb023b4cf2ad28e24c69ef57f380}{$\sim$\+Font\+Manager} ()
+\item 
+const \hyperlink{class_atlas}{Atlas} $\ast$ \hyperlink{class_font_manager_a8e27c0180aa58188e256f73f45b2efd4}{get\+Atlas} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the atlas used by the font manager (e.\+g. to add stuff to it) \end{DoxyCompactList}\item 
+True\+Type\+Handle \hyperlink{class_font_manager_aaae01d2d87df84d6abc12b99ed78fce3}{create\+Ttf} (const uint8\+\_\+t $\ast$\+\_\+buffer, uint32\+\_\+t \+\_\+size)
+\item 
+void \hyperlink{class_font_manager_af71a903546da32b824a491911fc81f98}{destroy\+Ttf} (True\+Type\+Handle \+\_\+handle)
+\begin{DoxyCompactList}\small\item\em Unload a True\+Type font (free font memory) but keep loaded glyphs. \end{DoxyCompactList}\item 
+Font\+Handle \hyperlink{class_font_manager_ac6478e79efdf486bc76f021495ff13fa}{create\+Font\+By\+Pixel\+Size} (True\+Type\+Handle \+\_\+handle, uint32\+\_\+t \+\_\+typeface\+Index, uint32\+\_\+t \+\_\+pixel\+Size, uint32\+\_\+t \+\_\+font\+Type=\hyperlink{font__manager_8h_a119102a78834acb4b005bbd03c92532a}{F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A})
+\begin{DoxyCompactList}\small\item\em Return a font whose height is a fixed pixel size. \end{DoxyCompactList}\item 
+Font\+Handle \hyperlink{class_font_manager_a43503676adcf2c6ce5d1ded8cd2216aa}{create\+Scaled\+Font\+To\+Pixel\+Size} (Font\+Handle \+\_\+base\+Font\+Handle, uint32\+\_\+t \+\_\+pixel\+Size)
+\begin{DoxyCompactList}\small\item\em Return a scaled child font whose height is a fixed pixel size. \end{DoxyCompactList}\item 
+void \hyperlink{class_font_manager_a55b170e0073e17316d9c19ad9d440780}{destroy\+Font} (Font\+Handle \+\_\+handle)
+\begin{DoxyCompactList}\small\item\em destroy a font (truetype or baked) \end{DoxyCompactList}\item 
+bool \hyperlink{class_font_manager_ab1dac95f67134eb73dd5e61c14227cfd}{preload\+Glyph} (Font\+Handle \+\_\+handle, const wchar\+\_\+t $\ast$\+\_\+string)
+\item 
+bool \hyperlink{class_font_manager_a9b18b35e1cfa51c9d9f84ca304efdd48}{preload\+Glyph} (Font\+Handle \+\_\+handle, \hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point} \+\_\+character)
+\begin{DoxyCompactList}\small\item\em Preload a single glyph, return true on success. \end{DoxyCompactList}\item 
+const \hyperlink{struct_font_info}{Font\+Info} \& \hyperlink{class_font_manager_a0ee2a1b80a7d14266f9bdbf79440807d}{get\+Font\+Info} (Font\+Handle \+\_\+handle) const 
+\item 
+const \hyperlink{struct_glyph_info}{Glyph\+Info} $\ast$ \hyperlink{class_font_manager_aebfb9062d19403b7fac416c147ef1f7c}{get\+Glyph\+Info} (Font\+Handle \+\_\+handle, \hyperlink{font__manager_8h_a1c37cd42ebdd07e09d01601a0989708e}{Code\+Point} \+\_\+code\+Point)
+\item 
+const \hyperlink{struct_glyph_info}{Glyph\+Info} \& \hyperlink{class_font_manager_a582c1db054eb509d58e80ca83f72307c}{get\+Black\+Glyph} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 119 of file font\+\_\+manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_font_manager_ad508580de43f7ae8e599465e920a667b}{\index{Font\+Manager@{Font\+Manager}!Font\+Manager@{Font\+Manager}}
+\index{Font\+Manager@{Font\+Manager}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{Font\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Font\+Manager\+::\+Font\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Atlas} $\ast$}]{\+\_\+atlas}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_ad508580de43f7ae8e599465e920a667b}
+Create the font manager using an external cube atlas (doesn't take ownership of the atlas). 
+
+Definition at line 446 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_a8e70d9a8d27b275c249cc2e6f1814599}{\index{Font\+Manager@{Font\+Manager}!Font\+Manager@{Font\+Manager}}
+\index{Font\+Manager@{Font\+Manager}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{Font\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Font\+Manager\+::\+Font\+Manager (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+texture\+Side\+Width = {\ttfamily 512}}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_a8e70d9a8d27b275c249cc2e6f1814599}
+Create the font manager and create the texture cube as B\+G\+R\+A8 with linear filtering. 
+
+Definition at line 453 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_aa190bb023b4cf2ad28e24c69ef57f380}{\index{Font\+Manager@{Font\+Manager}!````~Font\+Manager@{$\sim$\+Font\+Manager}}
+\index{````~Font\+Manager@{$\sim$\+Font\+Manager}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{$\sim$\+Font\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Font\+Manager\+::$\sim$\+Font\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_aa190bb023b4cf2ad28e24c69ef57f380}
+
+
+Definition at line 478 of file font\+\_\+manager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_font_manager_ac6478e79efdf486bc76f021495ff13fa}{\index{Font\+Manager@{Font\+Manager}!create\+Font\+By\+Pixel\+Size@{create\+Font\+By\+Pixel\+Size}}
+\index{create\+Font\+By\+Pixel\+Size@{create\+Font\+By\+Pixel\+Size}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{create\+Font\+By\+Pixel\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Font\+Handle Font\+Manager\+::create\+Font\+By\+Pixel\+Size (
+\begin{DoxyParamCaption}
+\item[{True\+Type\+Handle}]{\+\_\+handle, }
+\item[{uint32\+\_\+t}]{\+\_\+typeface\+Index, }
+\item[{uint32\+\_\+t}]{\+\_\+pixel\+Size, }
+\item[{uint32\+\_\+t}]{\+\_\+font\+Type = {\ttfamily {\bf F\+O\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+H\+A}}}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_ac6478e79efdf486bc76f021495ff13fa}
+
+
+Return a font whose height is a fixed pixel size. 
+
+
+
+Definition at line 515 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_a43503676adcf2c6ce5d1ded8cd2216aa}{\index{Font\+Manager@{Font\+Manager}!create\+Scaled\+Font\+To\+Pixel\+Size@{create\+Scaled\+Font\+To\+Pixel\+Size}}
+\index{create\+Scaled\+Font\+To\+Pixel\+Size@{create\+Scaled\+Font\+To\+Pixel\+Size}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{create\+Scaled\+Font\+To\+Pixel\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Font\+Handle Font\+Manager\+::create\+Scaled\+Font\+To\+Pixel\+Size (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+base\+Font\+Handle, }
+\item[{uint32\+\_\+t}]{\+\_\+pixel\+Size}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_a43503676adcf2c6ce5d1ded8cd2216aa}
+
+
+Return a scaled child font whose height is a fixed pixel size. 
+
+
+
+Definition at line 542 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_aaae01d2d87df84d6abc12b99ed78fce3}{\index{Font\+Manager@{Font\+Manager}!create\+Ttf@{create\+Ttf}}
+\index{create\+Ttf@{create\+Ttf}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{create\+Ttf}]{\setlength{\rightskip}{0pt plus 5cm}True\+Type\+Handle Font\+Manager\+::create\+Ttf (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+buffer, }
+\item[{uint32\+\_\+t}]{\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_aaae01d2d87df84d6abc12b99ed78fce3}
+Load a True\+Type font from a given buffer. The buffer is copied and thus can be freed or reused after this call.
+
+\begin{DoxyReturn}{Returns}
+invalid handle if the loading fail 
+\end{DoxyReturn}
+
+
+Definition at line 494 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_a55b170e0073e17316d9c19ad9d440780}{\index{Font\+Manager@{Font\+Manager}!destroy\+Font@{destroy\+Font}}
+\index{destroy\+Font@{destroy\+Font}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{destroy\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Font\+Manager\+::destroy\+Font (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_a55b170e0073e17316d9c19ad9d440780}
+
+
+destroy a font (truetype or baked) 
+
+
+
+Definition at line 571 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_af71a903546da32b824a491911fc81f98}{\index{Font\+Manager@{Font\+Manager}!destroy\+Ttf@{destroy\+Ttf}}
+\index{destroy\+Ttf@{destroy\+Ttf}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{destroy\+Ttf}]{\setlength{\rightskip}{0pt plus 5cm}void Font\+Manager\+::destroy\+Ttf (
+\begin{DoxyParamCaption}
+\item[{True\+Type\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_af71a903546da32b824a491911fc81f98}
+
+
+Unload a True\+Type font (free font memory) but keep loaded glyphs. 
+
+
+
+Definition at line 506 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_a8e27c0180aa58188e256f73f45b2efd4}{\index{Font\+Manager@{Font\+Manager}!get\+Atlas@{get\+Atlas}}
+\index{get\+Atlas@{get\+Atlas}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{get\+Atlas}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Atlas}$\ast$ Font\+Manager\+::get\+Atlas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_font_manager_a8e27c0180aa58188e256f73f45b2efd4}
+
+
+Retrieve the atlas used by the font manager (e.\+g. to add stuff to it) 
+
+
+
+Definition at line 133 of file font\+\_\+manager.\+h.
+
+\hypertarget{class_font_manager_a582c1db054eb509d58e80ca83f72307c}{\index{Font\+Manager@{Font\+Manager}!get\+Black\+Glyph@{get\+Black\+Glyph}}
+\index{get\+Black\+Glyph@{get\+Black\+Glyph}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{get\+Black\+Glyph}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Glyph\+Info}\& Font\+Manager\+::get\+Black\+Glyph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_font_manager_a582c1db054eb509d58e80ca83f72307c}
+
+
+Definition at line 175 of file font\+\_\+manager.\+h.
+
+\hypertarget{class_font_manager_a0ee2a1b80a7d14266f9bdbf79440807d}{\index{Font\+Manager@{Font\+Manager}!get\+Font\+Info@{get\+Font\+Info}}
+\index{get\+Font\+Info@{get\+Font\+Info}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{get\+Font\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Font\+Info} \& Font\+Manager\+::get\+Font\+Info (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+) const}}\label{class_font_manager_a0ee2a1b80a7d14266f9bdbf79440807d}
+Return the font descriptor of a font.
+
+\begin{DoxyRemark}{Remarks}
+the handle is required to be valid 
+\end{DoxyRemark}
+
+
+Definition at line 679 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_aebfb9062d19403b7fac416c147ef1f7c}{\index{Font\+Manager@{Font\+Manager}!get\+Glyph\+Info@{get\+Glyph\+Info}}
+\index{get\+Glyph\+Info@{get\+Glyph\+Info}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{get\+Glyph\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Glyph\+Info} $\ast$ Font\+Manager\+::get\+Glyph\+Info (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+handle, }
+\item[{{\bf Code\+Point}}]{\+\_\+code\+Point}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_aebfb9062d19403b7fac416c147ef1f7c}
+Return the rendering informations about the glyph region. Load the glyph from a True\+Type font if possible 
+
+Definition at line 685 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_ab1dac95f67134eb73dd5e61c14227cfd}{\index{Font\+Manager@{Font\+Manager}!preload\+Glyph@{preload\+Glyph}}
+\index{preload\+Glyph@{preload\+Glyph}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{preload\+Glyph}]{\setlength{\rightskip}{0pt plus 5cm}bool Font\+Manager\+::preload\+Glyph (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+handle, }
+\item[{const wchar\+\_\+t $\ast$}]{\+\_\+string}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_ab1dac95f67134eb73dd5e61c14227cfd}
+Preload a set of glyphs from a True\+Type file.
+
+\begin{DoxyReturn}{Returns}
+True if every glyph could be preloaded, false otherwise if the Font is a baked font, this only do validation on the characters. 
+\end{DoxyReturn}
+
+
+Definition at line 587 of file font\+\_\+manager.\+cpp.
+
+\hypertarget{class_font_manager_a9b18b35e1cfa51c9d9f84ca304efdd48}{\index{Font\+Manager@{Font\+Manager}!preload\+Glyph@{preload\+Glyph}}
+\index{preload\+Glyph@{preload\+Glyph}!Font\+Manager@{Font\+Manager}}
+\subsubsection[{preload\+Glyph}]{\setlength{\rightskip}{0pt plus 5cm}bool Font\+Manager\+::preload\+Glyph (
+\begin{DoxyParamCaption}
+\item[{Font\+Handle}]{\+\_\+handle, }
+\item[{{\bf Code\+Point}}]{\+\_\+character}
+\end{DoxyParamCaption}
+)}}\label{class_font_manager_a9b18b35e1cfa51c9d9f84ca304efdd48}
+
+
+Preload a single glyph, return true on success. 
+
+
+
+Definition at line 609 of file font\+\_\+manager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{font__manager_8h}{font\+\_\+manager.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/font/\hyperlink{font__manager_8cpp}{font\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

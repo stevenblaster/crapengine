@@ -3,7 +3,7 @@
 #ifndef CRAP_CORE_CONFIGURATION
 #define CRAP_CORE_CONFIGURATION
 
-#include "container/map.h"
+#include "container/sortedmap.h"
 #include "memory.h"
 
 #ifdef CRAP_NO_DEBUG

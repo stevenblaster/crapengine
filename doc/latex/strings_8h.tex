@@ -1,0 +1,148 @@
+\hypertarget{strings_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/strings.h File Reference}
+\label{strings_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/strings.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/strings.\+h}}
+}
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}asserts.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container/array.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcrap_1_1fixed__string}{crap\+::fixed\+\_\+string$<$ S $>$}
+\item 
+class \hyperlink{classcrap_1_1string__hash}{crap\+::string\+\_\+hash}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{strings_8h_a01997cb337a8898def113ac6aafb7943}{C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H}
+\item 
+\#define \hyperlink{strings_8h_a6fb20875d833790574e79ec26b0604bf}{H1}(s, i, x)~(x$\ast$65599u+(uint8\+\_\+t)s\mbox{[}(i)$<$strlen(s)?strlen(s)-\/1-\/(i)\+:strlen(s)\mbox{]})
+\item 
+\#define \hyperlink{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}{H4}(s, i, x)~\hyperlink{strings_8h_a6fb20875d833790574e79ec26b0604bf}{H1}(s,i,\hyperlink{strings_8h_a6fb20875d833790574e79ec26b0604bf}{H1}(s,i+1,\hyperlink{strings_8h_a6fb20875d833790574e79ec26b0604bf}{H1}(s,i+2,\hyperlink{strings_8h_a6fb20875d833790574e79ec26b0604bf}{H1}(s,i+3,x))))
+\item 
+\#define \hyperlink{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}{H16}(s, i, x)~\hyperlink{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}{H4}(s,i,\hyperlink{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}{H4}(s,i+4,\hyperlink{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}{H4}(s,i+8,\hyperlink{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}{H4}(s,i+12,x))))
+\item 
+\#define \hyperlink{strings_8h_a6e2c7e829530f901fc336e1380260d10}{H64}(s, i, x)~\hyperlink{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}{H16}(s,i,\hyperlink{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}{H16}(s,i+16,\hyperlink{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}{H16}(s,i+32,\hyperlink{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}{H16}(s,i+48,x))))
+\item 
+\#define \hyperlink{strings_8h_a22aa70592c6984c8ef92d56dae646fc0}{H256}(s, i, x)~\hyperlink{strings_8h_a6e2c7e829530f901fc336e1380260d10}{H64}(s,i,\hyperlink{strings_8h_a6e2c7e829530f901fc336e1380260d10}{H64}(s,i+64,\hyperlink{strings_8h_a6e2c7e829530f901fc336e1380260d10}{H64}(s,i+128,\hyperlink{strings_8h_a6e2c7e829530f901fc336e1380260d10}{H64}(s,i+192,x))))
+\item 
+\#define \hyperlink{strings_8h_a846960513cd4e605d6d5e1d8200d6d3f}{C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G}(s)~((uint32\+\_\+t)(\hyperlink{strings_8h_a22aa70592c6984c8ef92d56dae646fc0}{H256}(s,0,0)$^\wedge$(\hyperlink{strings_8h_a22aa70592c6984c8ef92d56dae646fc0}{H256}(s,0,0)$>$$>$16)))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef fixed\+\_\+string$<$ 8 $>$ \hyperlink{namespacecrap_ac2aa8c51f82e95df485b8fff38837fcb}{crap\+::string8}
+\item 
+typedef fixed\+\_\+string$<$ 16 $>$ \hyperlink{namespacecrap_a6cff91a13d8be23072b3a0754c947caa}{crap\+::string16}
+\item 
+typedef fixed\+\_\+string$<$ 32 $>$ \hyperlink{namespacecrap_aed2599e591e7287057648c41883194c6}{crap\+::string32}
+\item 
+typedef fixed\+\_\+string$<$ 64 $>$ \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{crap\+::string64}
+\item 
+typedef fixed\+\_\+string$<$ 128 $>$ \hyperlink{namespacecrap_a6d163720fa009acb153550f4486ff6da}{crap\+::string128}
+\item 
+typedef fixed\+\_\+string$<$ 256 $>$ \hyperlink{namespacecrap_af674ac1cc38a09c563c68dfc3b15e554}{crap\+::string256}
+\item 
+typedef fixed\+\_\+string$<$ 512 $>$ \hyperlink{namespacecrap_a52392ad28972b8b96725b2f7928d38fa}{crap\+::string512}
+\item 
+typedef fixed\+\_\+string$<$ 1024 $>$ \hyperlink{namespacecrap_acbceaa050a351b36f8b29129f49621c1}{crap\+::string1024}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$uint32\+\_\+t U$>$ }\\std\+::ostream \& \hyperlink{namespacecrap_a52bcba1c4c4b793a7120e1a9850fb989}{crap\+::operator$<$$<$} (std\+::ostream \&the\+Stream, const \hyperlink{classcrap_1_1fixed__string}{crap\+::fixed\+\_\+string}$<$ U $>$ \&fixedstring)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{strings_8h_a846960513cd4e605d6d5e1d8200d6d3f}{\index{strings.\+h@{strings.\+h}!C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G@{C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G}}
+\index{C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G@{C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G}!strings.\+h@{strings.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+H\+A\+S\+H\+\_\+\+S\+T\+R\+I\+N\+G(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~((uint32\+\_\+t)({\bf H256}(s,0,0)$^\wedge$({\bf H256}(s,0,0)$>$$>$16)))}}\label{strings_8h_a846960513cd4e605d6d5e1d8200d6d3f}
+
+
+Definition at line 23 of file strings.\+h.
+
+\hypertarget{strings_8h_a01997cb337a8898def113ac6aafb7943}{\index{strings.\+h@{strings.\+h}!C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H@{C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H}}
+\index{C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H@{C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H}!strings.\+h@{strings.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+H}}\label{strings_8h_a01997cb337a8898def113ac6aafb7943}
+
+
+Definition at line 4 of file strings.\+h.
+
+\hypertarget{strings_8h_a6fb20875d833790574e79ec26b0604bf}{\index{strings.\+h@{strings.\+h}!H1@{H1}}
+\index{H1@{H1}!strings.\+h@{strings.\+h}}
+\subsubsection[{H1}]{\setlength{\rightskip}{0pt plus 5cm}\#define H1(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{i, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x$\ast$65599u+(uint8\+\_\+t)s\mbox{[}(i)$<$strlen(s)?strlen(s)-\/1-\/(i)\+:strlen(s)\mbox{]})}}\label{strings_8h_a6fb20875d833790574e79ec26b0604bf}
+
+
+Definition at line 18 of file strings.\+h.
+
+\hypertarget{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}{\index{strings.\+h@{strings.\+h}!H16@{H16}}
+\index{H16@{H16}!strings.\+h@{strings.\+h}}
+\subsubsection[{H16}]{\setlength{\rightskip}{0pt plus 5cm}\#define H16(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{i, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf H4}(s,i,{\bf H4}(s,i+4,{\bf H4}(s,i+8,{\bf H4}(s,i+12,x))))}}\label{strings_8h_aa65bbfd5727db23d2cb098ee25b2a426}
+
+
+Definition at line 20 of file strings.\+h.
+
+\hypertarget{strings_8h_a22aa70592c6984c8ef92d56dae646fc0}{\index{strings.\+h@{strings.\+h}!H256@{H256}}
+\index{H256@{H256}!strings.\+h@{strings.\+h}}
+\subsubsection[{H256}]{\setlength{\rightskip}{0pt plus 5cm}\#define H256(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{i, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf H64}(s,i,{\bf H64}(s,i+64,{\bf H64}(s,i+128,{\bf H64}(s,i+192,x))))}}\label{strings_8h_a22aa70592c6984c8ef92d56dae646fc0}
+
+
+Definition at line 22 of file strings.\+h.
+
+\hypertarget{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}{\index{strings.\+h@{strings.\+h}!H4@{H4}}
+\index{H4@{H4}!strings.\+h@{strings.\+h}}
+\subsubsection[{H4}]{\setlength{\rightskip}{0pt plus 5cm}\#define H4(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{i, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf H1}(s,i,{\bf H1}(s,i+1,{\bf H1}(s,i+2,{\bf H1}(s,i+3,x))))}}\label{strings_8h_a378345c3cd7bd483e6eea4047ceb99da}
+
+
+Definition at line 19 of file strings.\+h.
+
+\hypertarget{strings_8h_a6e2c7e829530f901fc336e1380260d10}{\index{strings.\+h@{strings.\+h}!H64@{H64}}
+\index{H64@{H64}!strings.\+h@{strings.\+h}}
+\subsubsection[{H64}]{\setlength{\rightskip}{0pt plus 5cm}\#define H64(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{i, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf H16}(s,i,{\bf H16}(s,i+16,{\bf H16}(s,i+32,{\bf H16}(s,i+48,x))))}}\label{strings_8h_a6e2c7e829530f901fc336e1380260d10}
+
+
+Definition at line 21 of file strings.\+h.
+

@@ -1,4 +1,5 @@
 #include "container/map.h"
+#include "container/sortedmap.h"
 
 #include "UnitTest++.h"
 

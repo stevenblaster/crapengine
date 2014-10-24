@@ -1,0 +1,1392 @@
+\hypertarget{nanovg_8h}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/nanovg.h File Reference}
+\label{nanovg_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/nanovg.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/nanovg.\+h}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor}
+\item 
+struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint}
+\item 
+struct \hyperlink{struct_n_v_gglyph_position}{N\+V\+Gglyph\+Position}
+\item 
+struct \hyperlink{struct_n_v_gtext_row}{N\+V\+Gtext\+Row}
+\item 
+struct \hyperlink{struct_n_v_gscissor}{N\+V\+Gscissor}
+\item 
+struct \hyperlink{struct_n_v_gvertex}{N\+V\+Gvertex}
+\item 
+struct \hyperlink{struct_n_v_gpath}{N\+V\+Gpath}
+\item 
+struct \hyperlink{struct_n_v_gparams}{N\+V\+Gparams}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nanovg_8h_afed791233b6a0da941ba5d72fa9171a7}{N\+V\+G\+\_\+\+P\+I}~3.\+14159265358979323846264338327f
+\item 
+\#define \hyperlink{nanovg_8h_aee719f561435720ac1443889e41e2c42}{N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D}(v)~for (;;) \{ (void)(true ? (void)0 \+: ( (void)(v) ) ); break; \}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67}{N\+V\+Gwinding} \{ \hyperlink{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67ac7ec1f037de99f55bce8c38ef695af89}{N\+V\+G\+\_\+\+C\+C\+W} = 1, 
+\hyperlink{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67a48cf66f8a6a960337d40e59ce723a075}{N\+V\+G\+\_\+\+C\+W} = 2
+ \}
+\item 
+enum \hyperlink{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42}{N\+V\+Gsolidity} \{ \hyperlink{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42a84094ebdaec0c729173748fb0301b8a5}{N\+V\+G\+\_\+\+S\+O\+L\+I\+D} = 1, 
+\hyperlink{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42aef929c1e364fa1b8bfffb22d06188fca}{N\+V\+G\+\_\+\+H\+O\+L\+E} = 2
+ \}
+\item 
+enum \hyperlink{nanovg_8h_ae58574037d985679c69322a49fc8204f}{N\+V\+Gline\+Cap} \{ \\*
+\hyperlink{nanovg_8h_ae58574037d985679c69322a49fc8204fa0737225fe1db3da4822bd68244a4be49}{N\+V\+G\+\_\+\+B\+U\+T\+T}, 
+\hyperlink{nanovg_8h_ae58574037d985679c69322a49fc8204fafbacadf0e901bae584995e6033184830}{N\+V\+G\+\_\+\+R\+O\+U\+N\+D}, 
+\hyperlink{nanovg_8h_ae58574037d985679c69322a49fc8204fa0715bd9568c375dab33456e7a08aae52}{N\+V\+G\+\_\+\+S\+Q\+U\+A\+R\+E}, 
+\hyperlink{nanovg_8h_ae58574037d985679c69322a49fc8204fae3423531df9c7e2747b54e9b5a895813}{N\+V\+G\+\_\+\+B\+E\+V\+E\+L}, 
+\\*
+\hyperlink{nanovg_8h_ae58574037d985679c69322a49fc8204fa882d82cae99147d845661f2740a874b7}{N\+V\+G\+\_\+\+M\+I\+T\+E\+R}
+ \}
+\item 
+enum \hyperlink{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33}{N\+V\+Gpattern\+Repeat} \{ \hyperlink{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33a125c25cc1902beac82a0d74180b75334}{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+X} = 0x01, 
+\hyperlink{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33a2e0bac3bae7c1d9c7f437717078ceff3}{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+Y} = 0x02
+ \}
+\item 
+enum \hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2}{N\+V\+Galign} \{ \\*
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2aa081cbf38a8684fb0da9d76659e49ff9}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T} = 1$<$$<$0, 
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2a748a12c4815789e63ff309c74f4acd7d}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R} = 1$<$$<$1, 
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2af121fcf2bb9bfaab80f1371747028b9c}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T} = 1$<$$<$2, 
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2aecfd290142f25f4160e4ace840d6adf3}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P} = 1$<$$<$3, 
+\\*
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2a264be0aa76285fbf7f226c29131aceeb}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E} = 1$<$$<$4, 
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2acce0ffc728d4aefc4aa63366bd3bf98f}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M} = 1$<$$<$5, 
+\hyperlink{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2ada3eabd9951612771aca3e846d10e765}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E} = 1$<$$<$6
+ \}
+\item 
+enum \hyperlink{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147}{N\+V\+Galpha} \{ \hyperlink{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147ab31362e6b8ba973544cc8a1f297e8664}{N\+V\+G\+\_\+\+S\+T\+R\+A\+I\+G\+H\+T\+\_\+\+A\+L\+P\+H\+A}, 
+\hyperlink{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147ad21fe609665513792349d7b091f8e19e}{N\+V\+G\+\_\+\+P\+R\+E\+M\+U\+L\+T\+I\+P\+L\+I\+E\+D\+\_\+\+A\+L\+P\+H\+A}
+ \}
+\item 
+enum \hyperlink{nanovg_8h_afb61210c0ca4856dd69c151fe5131370}{N\+V\+Gtexture} \{ \hyperlink{nanovg_8h_afb61210c0ca4856dd69c151fe5131370aa36374ef4cd32b4730a6620474fc6ce5}{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+A\+L\+P\+H\+A} = 0x01, 
+\hyperlink{nanovg_8h_afb61210c0ca4856dd69c151fe5131370aab01edc19a3949785dfb9b8d42c10fba}{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+R\+G\+B\+A} = 0x02
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{nanovg_8h_aa601445772d5b4d349ff0dd0b9fccba0}{nvg\+Begin\+Frame} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int window\+Width, int window\+Height, float device\+Pixel\+Ratio, int alpha\+Blend)
+\item 
+void \hyperlink{nanovg_8h_a935851ef41c6b769ca4e99507fc9f033}{nvg\+End\+Frame} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_ab446615490072ea622519350065a4632}{nvg\+R\+G\+B} (unsigned char r, unsigned char g, unsigned char b)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_aaad5c224c6e26c49d508c6aa960b06e5}{nvg\+R\+G\+Bf} (float r, float g, float b)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_a6dc37efada9428cb762a878e77b5bfc5}{nvg\+R\+G\+B\+A} (unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_ad065c66dfed4b15b8daf831b170c5800}{nvg\+R\+G\+B\+Au} (unsigned int abgr)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_aafc0b7d3b54a9d1442e4131fc97f5145}{nvg\+R\+G\+B\+Af} (float r, float g, float b, float a)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_aa1c0b489f616d121703cacbe86618abd}{nvg\+Lerp\+R\+G\+B\+A} (struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} c0, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} c1, float u)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_a92957bcd4de13bf27a8fc947ab54bfd7}{nvg\+Trans\+R\+G\+B\+A} (struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} c0, unsigned char a)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_a948190c8ec568443ef1bc9fab66c0844}{nvg\+Trans\+R\+G\+B\+Af} (struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} c0, float a)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_a9c9bb353e9b6e5cbe838b10530de7209}{nvg\+H\+S\+L} (float h, float s, float l)
+\item 
+struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} \hyperlink{nanovg_8h_afeb3179edd8a8abfdd8879d26f012057}{nvg\+H\+S\+L\+A} (float h, float s, float l, unsigned char a)
+\item 
+void \hyperlink{nanovg_8h_a65f98b4dcaa308eba4b13c6bfec42e65}{nvg\+Save} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a8fb83c896f3604a9119f0b496432edb5}{nvg\+Restore} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a00fdf0da0a84a413b1587b9e6f2b08d3}{nvg\+Reset} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a312891cc39f41a08a59b2476ec98f148}{nvg\+Stroke\+Color} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} color)
+\item 
+void \hyperlink{nanovg_8h_a9ebe27cd9828e84af66e58141afd3b5f}{nvg\+Stroke\+Paint} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} paint)
+\item 
+void \hyperlink{nanovg_8h_af73388b75d98689b7cc8065f7725a050}{nvg\+Fill\+Color} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} color)
+\item 
+void \hyperlink{nanovg_8h_a1011771c82e814e4888de96a739c3281}{nvg\+Fill\+Paint} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} paint)
+\item 
+void \hyperlink{nanovg_8h_a3ce0dc52cedf4b9ee69108406adf0e67}{nvg\+Miter\+Limit} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float limit)
+\item 
+void \hyperlink{nanovg_8h_a1a873b26feba117daf087baac92642f9}{nvg\+Stroke\+Width} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float size)
+\item 
+void \hyperlink{nanovg_8h_a94d6c1cf6f51f8255d2928d54a63a12a}{nvg\+Line\+Cap} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int cap)
+\item 
+void \hyperlink{nanovg_8h_a1279d1a1a8c32c241c76ebdb553cf98e}{nvg\+Line\+Join} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int join)
+\item 
+void \hyperlink{nanovg_8h_ad76a3eee8d65138ed94469a6b80c7ceb}{nvg\+Reset\+Transform} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_ae9179cec96bd7d316100ae88f8bee253}{nvg\+Transform} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float a, float b, float c, float d, float e, float f)
+\item 
+void \hyperlink{nanovg_8h_a4e2611a7b79be1d628becd8d9cdc568d}{nvg\+Translate} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y)
+\item 
+void \hyperlink{nanovg_8h_a2a115a1a0c6f1672ccff6333ce0840ac}{nvg\+Rotate} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float angle)
+\item 
+void \hyperlink{nanovg_8h_ac6d998238009fc079e70189ab21f4136}{nvg\+Scale} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y)
+\item 
+int \hyperlink{nanovg_8h_adddc763d2f7c9c98d9ce256d7cfd96c7}{nvg\+Create\+Image} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, const char $\ast$filename)
+\item 
+int \hyperlink{nanovg_8h_a6bea9483ac80b4b555f6f3d4bfc85229}{nvg\+Create\+Image\+Mem} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, unsigned char $\ast$data, int ndata)
+\item 
+int \hyperlink{nanovg_8h_a8e6cdfe294b5151d19266088e0599e78}{nvg\+Create\+Image\+R\+G\+B\+A} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int w, int h, const unsigned char $\ast$data)
+\item 
+void \hyperlink{nanovg_8h_a2d7346cc98a0c1a428a61c649fad68fb}{nvg\+Update\+Image} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int image, const unsigned char $\ast$data)
+\item 
+void \hyperlink{nanovg_8h_af622550b5c71060a3539d2b0892f4114}{nvg\+Image\+Size} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int image, int $\ast$w, int $\ast$h)
+\item 
+void \hyperlink{nanovg_8h_a8bdbd90cce1467db2f0346ccfa89c380}{nvg\+Delete\+Image} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int image)
+\item 
+struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} \hyperlink{nanovg_8h_a2947f3f18de6947fada616b21ff55561}{nvg\+Linear\+Gradient} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float sx, float sy, float ex, float ey, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} icol, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} ocol)
+\item 
+struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} \hyperlink{nanovg_8h_ac29f814a6165f3fce204f94f170f08ba}{nvg\+Box\+Gradient} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, float w, float h, float r, float f, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} icol, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} ocol)
+\item 
+struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} \hyperlink{nanovg_8h_a6da555cd6b1f03e60bd9de92f6f048d2}{nvg\+Radial\+Gradient} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float cx, float cy, float inr, float outr, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} icol, struct \hyperlink{struct_n_v_gcolor}{N\+V\+Gcolor} ocol)
+\item 
+struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} \hyperlink{nanovg_8h_a2ab2fbea07591cae38ebd2a8624c544a}{nvg\+Image\+Pattern} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float ox, float oy, float ex, float ey, float angle, int image, int repeat)
+\item 
+void \hyperlink{nanovg_8h_a7f9fbff9f857af6cbdf6a1854579dd9d}{nvg\+Scissor} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, float w, float h)
+\item 
+void \hyperlink{nanovg_8h_a2613c59998090543fe6661df9074c1a6}{nvg\+Reset\+Scissor} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a51df2c0749ddc3c2716fc0b92b09d7b4}{nvg\+Begin\+Path} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_af2e5f5d01bd2769a76f84af95825604f}{nvg\+Move\+To} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y)
+\item 
+void \hyperlink{nanovg_8h_adf39a159b9b9e7e3bab22708d42c407b}{nvg\+Line\+To} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y)
+\item 
+void \hyperlink{nanovg_8h_ada809b58aa241844a572fdc2df4e34bf}{nvg\+Bezier\+To} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float c1x, float c1y, float c2x, float c2y, float x, float y)
+\item 
+void \hyperlink{nanovg_8h_acd89d531c087f2c2e6f142b4e117a28c}{nvg\+Arc\+To} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x1, float y1, float x2, float y2, float radius)
+\item 
+void \hyperlink{nanovg_8h_ab443a41065d2f215cb21b5686a1f25eb}{nvg\+Close\+Path} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a7a42f8336b9d1ea884017925e29050d3}{nvg\+Path\+Winding} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int dir)
+\item 
+void \hyperlink{nanovg_8h_a6713dc21d046b427b5ced23f580e1fca}{nvg\+Arc} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float cx, float cy, float r, float a0, float a1, int dir)
+\item 
+void \hyperlink{nanovg_8h_a5509d3d28d656da0c1412dce7a57f4c8}{nvg\+Rect} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, float w, float h)
+\item 
+void \hyperlink{nanovg_8h_a1ed082cf7d009f4dfa27eb7a99f1c96e}{nvg\+Rounded\+Rect} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, float w, float h, float r)
+\item 
+void \hyperlink{nanovg_8h_ab2a10b88ffa50cb54f82006f42af7cdc}{nvg\+Ellipse} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float cx, float cy, float rx, float ry)
+\item 
+void \hyperlink{nanovg_8h_aca291ad9c549b9653fc9eddd44ee9c95}{nvg\+Circle} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float cx, float cy, float r)
+\item 
+void \hyperlink{nanovg_8h_ae8f5ff6cb1b137fd88a6b20980075fcf}{nvg\+Fill} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a858845ee18b79e25ff4fc052c84b8ecc}{nvg\+Stroke} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+int \hyperlink{nanovg_8h_a25045f11d4c82dbded0a549a31aafc3a}{nvg\+Create\+Font} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, const char $\ast$name, const char $\ast$filename)
+\item 
+int \hyperlink{nanovg_8h_a0310f411576f88aba103db1393bf8cc0}{nvg\+Create\+Font\+Mem} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, const char $\ast$name, unsigned char $\ast$data, int ndata, int free\+Data)
+\item 
+int \hyperlink{nanovg_8h_aa8625fdd56530655940013411c763cf5}{nvg\+Find\+Font} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, const char $\ast$name)
+\item 
+void \hyperlink{nanovg_8h_afbe0b5755daae2f2f98d64eab19420ce}{nvg\+Font\+Size} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float size)
+\item 
+void \hyperlink{nanovg_8h_ad0239021d5b98a1846629d8b72122a02}{nvg\+Font\+Blur} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float blur)
+\item 
+void \hyperlink{nanovg_8h_a879ce6ca58f6bd5d284e200202340471}{nvg\+Text\+Letter\+Spacing} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float spacing)
+\item 
+void \hyperlink{nanovg_8h_a289533984f7088fd727a830820385498}{nvg\+Text\+Line\+Height} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float line\+Height)
+\item 
+void \hyperlink{nanovg_8h_a7beb303eafd57a760b19a0cdfa8f36bb}{nvg\+Text\+Align} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int align)
+\item 
+void \hyperlink{nanovg_8h_aac832d3704d32c506addf75d177a7d0b}{nvg\+Font\+Face\+Id} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, int font)
+\item 
+void \hyperlink{nanovg_8h_ae51617a8a825c192e79ecaee45098700}{nvg\+Font\+Face} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, const char $\ast$font)
+\item 
+float \hyperlink{nanovg_8h_abe57c4c8ea7b4a4e336ec1247e5874c3}{nvg\+Text} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, const char $\ast$string, const char $\ast$end)
+\item 
+void \hyperlink{nanovg_8h_aaec6ccb5c569490e2365fa1b455d36ed}{nvg\+Text\+Box} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, float break\+Row\+Width, const char $\ast$string, const char $\ast$end)
+\item 
+float \hyperlink{nanovg_8h_a8ccd33b0fe27cfff141a3bcd3f3bace9}{nvg\+Text\+Bounds} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, const char $\ast$string, const char $\ast$end, float $\ast$bounds)
+\item 
+void \hyperlink{nanovg_8h_ad3c3b44aa28e71ba16875a675d9dbd0e}{nvg\+Text\+Box\+Bounds} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, float break\+Row\+Width, const char $\ast$string, const char $\ast$end, float $\ast$bounds)
+\item 
+int \hyperlink{nanovg_8h_a053e4defd52f54bb252e613803798906}{nvg\+Text\+Glyph\+Positions} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float x, float y, const char $\ast$string, const char $\ast$end, struct \hyperlink{struct_n_v_gglyph_position}{N\+V\+Gglyph\+Position} $\ast$positions, int max\+Positions)
+\item 
+void \hyperlink{nanovg_8h_aa03d331bd99226f4d79eb06f0fe1f416}{nvg\+Text\+Metrics} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, float $\ast$ascender, float $\ast$descender, float $\ast$lineh)
+\item 
+int \hyperlink{nanovg_8h_a8146165742324e6fdc82ade53bd7f766}{nvg\+Text\+Break\+Lines} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx, const char $\ast$string, const char $\ast$end, float break\+Row\+Width, struct \hyperlink{struct_n_v_gtext_row}{N\+V\+Gtext\+Row} $\ast$rows, int max\+Rows)
+\item 
+struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ \hyperlink{nanovg_8h_a3a8fa5ecdc304a94d6a221a1c5f41982}{nvg\+Create\+Internal} (struct \hyperlink{struct_n_v_gparams}{N\+V\+Gparams} $\ast$params)
+\item 
+void \hyperlink{nanovg_8h_ab30a60aab3c4398eaf8634dc4c943198}{nvg\+Delete\+Internal} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+void \hyperlink{nanovg_8h_a1f16bba9b005d7ec56b56d08dc657d17}{nvg\+Debug\+Dump\+Path\+Cache} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\item 
+struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ \hyperlink{nanovg_8h_a166d7025889080a67f5c14f9fbea6f85}{nvg\+Create} (int atlasw, int atlash, int edgeaa, unsigned char viewid)
+\item 
+void \hyperlink{nanovg_8h_a8414ef35e2ea4ccb377b02dfeb313f1f}{nvg\+Delete} (struct \hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{nanovg_8h_aee719f561435720ac1443889e41e2c42}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D@{N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D}}
+\index{N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D@{N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+V\+G\+\_\+\+N\+O\+T\+U\+S\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~for (;;) \{ (void)(true ? (void)0 \+: ( (void)(v) ) ); break; \}}}\label{nanovg_8h_aee719f561435720ac1443889e41e2c42}
+
+
+Definition at line 540 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_afed791233b6a0da941ba5d72fa9171a7}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+P\+I@{N\+V\+G\+\_\+\+P\+I}}
+\index{N\+V\+G\+\_\+\+P\+I@{N\+V\+G\+\_\+\+P\+I}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+G\+\_\+\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+V\+G\+\_\+\+P\+I~3.\+14159265358979323846264338327f}}\label{nanovg_8h_afed791233b6a0da941ba5d72fa9171a7}
+
+
+Definition at line 26 of file nanovg.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Galign@{N\+V\+Galign}}
+\index{N\+V\+Galign@{N\+V\+Galign}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Galign}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Galign}}}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2aa081cbf38a8684fb0da9d76659e49ff9}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+L\+E\+F\+T}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2aa081cbf38a8684fb0da9d76659e49ff9}
+}]\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2a748a12c4815789e63ff309c74f4acd7d}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+N\+T\+E\+R}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2a748a12c4815789e63ff309c74f4acd7d}
+}]\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2af121fcf2bb9bfaab80f1371747028b9c}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+R\+I\+G\+H\+T}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2af121fcf2bb9bfaab80f1371747028b9c}
+}]\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2aecfd290142f25f4160e4ace840d6adf3}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+T\+O\+P}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2aecfd290142f25f4160e4ace840d6adf3}
+}]\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2a264be0aa76285fbf7f226c29131aceeb}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+M\+I\+D\+D\+L\+E}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2a264be0aa76285fbf7f226c29131aceeb}
+}]\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2acce0ffc728d4aefc4aa63366bd3bf98f}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+O\+T\+T\+O\+M}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2acce0ffc728d4aefc4aa63366bd3bf98f}
+}]\index{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E@{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2ada3eabd9951612771aca3e846d10e765}{N\+V\+G\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+A\+S\+E\+L\+I\+N\+E}\label{nanovg_8h_a6bef12bc5dbe98166ccae9602e39d1b2ada3eabd9951612771aca3e846d10e765}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 73 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Galpha@{N\+V\+Galpha}}
+\index{N\+V\+Galpha@{N\+V\+Galpha}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Galpha}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Galpha}}}\label{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+S\+T\+R\+A\+I\+G\+H\+T\+\_\+\+A\+L\+P\+H\+A@{N\+V\+G\+\_\+\+S\+T\+R\+A\+I\+G\+H\+T\+\_\+\+A\+L\+P\+H\+A}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+S\+T\+R\+A\+I\+G\+H\+T\+\_\+\+A\+L\+P\+H\+A@{N\+V\+G\+\_\+\+S\+T\+R\+A\+I\+G\+H\+T\+\_\+\+A\+L\+P\+H\+A}}\item[{\em 
+\hypertarget{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147ab31362e6b8ba973544cc8a1f297e8664}{N\+V\+G\+\_\+\+S\+T\+R\+A\+I\+G\+H\+T\+\_\+\+A\+L\+P\+H\+A}\label{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147ab31362e6b8ba973544cc8a1f297e8664}
+}]\index{N\+V\+G\+\_\+\+P\+R\+E\+M\+U\+L\+T\+I\+P\+L\+I\+E\+D\+\_\+\+A\+L\+P\+H\+A@{N\+V\+G\+\_\+\+P\+R\+E\+M\+U\+L\+T\+I\+P\+L\+I\+E\+D\+\_\+\+A\+L\+P\+H\+A}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+P\+R\+E\+M\+U\+L\+T\+I\+P\+L\+I\+E\+D\+\_\+\+A\+L\+P\+H\+A@{N\+V\+G\+\_\+\+P\+R\+E\+M\+U\+L\+T\+I\+P\+L\+I\+E\+D\+\_\+\+A\+L\+P\+H\+A}}\item[{\em 
+\hypertarget{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147ad21fe609665513792349d7b091f8e19e}{N\+V\+G\+\_\+\+P\+R\+E\+M\+U\+L\+T\+I\+P\+L\+I\+E\+D\+\_\+\+A\+L\+P\+H\+A}\label{nanovg_8h_a2e9ded37dd8bac846a9ed9eb89c6e147ad21fe609665513792349d7b091f8e19e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 85 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_ae58574037d985679c69322a49fc8204f}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Gline\+Cap@{N\+V\+Gline\+Cap}}
+\index{N\+V\+Gline\+Cap@{N\+V\+Gline\+Cap}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Gline\+Cap}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Gline\+Cap}}}\label{nanovg_8h_ae58574037d985679c69322a49fc8204f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+B\+U\+T\+T@{N\+V\+G\+\_\+\+B\+U\+T\+T}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+B\+U\+T\+T@{N\+V\+G\+\_\+\+B\+U\+T\+T}}\item[{\em 
+\hypertarget{nanovg_8h_ae58574037d985679c69322a49fc8204fa0737225fe1db3da4822bd68244a4be49}{N\+V\+G\+\_\+\+B\+U\+T\+T}\label{nanovg_8h_ae58574037d985679c69322a49fc8204fa0737225fe1db3da4822bd68244a4be49}
+}]\index{N\+V\+G\+\_\+\+R\+O\+U\+N\+D@{N\+V\+G\+\_\+\+R\+O\+U\+N\+D}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+R\+O\+U\+N\+D@{N\+V\+G\+\_\+\+R\+O\+U\+N\+D}}\item[{\em 
+\hypertarget{nanovg_8h_ae58574037d985679c69322a49fc8204fafbacadf0e901bae584995e6033184830}{N\+V\+G\+\_\+\+R\+O\+U\+N\+D}\label{nanovg_8h_ae58574037d985679c69322a49fc8204fafbacadf0e901bae584995e6033184830}
+}]\index{N\+V\+G\+\_\+\+S\+Q\+U\+A\+R\+E@{N\+V\+G\+\_\+\+S\+Q\+U\+A\+R\+E}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+S\+Q\+U\+A\+R\+E@{N\+V\+G\+\_\+\+S\+Q\+U\+A\+R\+E}}\item[{\em 
+\hypertarget{nanovg_8h_ae58574037d985679c69322a49fc8204fa0715bd9568c375dab33456e7a08aae52}{N\+V\+G\+\_\+\+S\+Q\+U\+A\+R\+E}\label{nanovg_8h_ae58574037d985679c69322a49fc8204fa0715bd9568c375dab33456e7a08aae52}
+}]\index{N\+V\+G\+\_\+\+B\+E\+V\+E\+L@{N\+V\+G\+\_\+\+B\+E\+V\+E\+L}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+B\+E\+V\+E\+L@{N\+V\+G\+\_\+\+B\+E\+V\+E\+L}}\item[{\em 
+\hypertarget{nanovg_8h_ae58574037d985679c69322a49fc8204fae3423531df9c7e2747b54e9b5a895813}{N\+V\+G\+\_\+\+B\+E\+V\+E\+L}\label{nanovg_8h_ae58574037d985679c69322a49fc8204fae3423531df9c7e2747b54e9b5a895813}
+}]\index{N\+V\+G\+\_\+\+M\+I\+T\+E\+R@{N\+V\+G\+\_\+\+M\+I\+T\+E\+R}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+M\+I\+T\+E\+R@{N\+V\+G\+\_\+\+M\+I\+T\+E\+R}}\item[{\em 
+\hypertarget{nanovg_8h_ae58574037d985679c69322a49fc8204fa882d82cae99147d845661f2740a874b7}{N\+V\+G\+\_\+\+M\+I\+T\+E\+R}\label{nanovg_8h_ae58574037d985679c69322a49fc8204fa882d82cae99147d845661f2740a874b7}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 60 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Gpattern\+Repeat@{N\+V\+Gpattern\+Repeat}}
+\index{N\+V\+Gpattern\+Repeat@{N\+V\+Gpattern\+Repeat}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Gpattern\+Repeat}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Gpattern\+Repeat}}}\label{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+X@{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+X}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+X@{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+X}}\item[{\em 
+\hypertarget{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33a125c25cc1902beac82a0d74180b75334}{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+X}\label{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33a125c25cc1902beac82a0d74180b75334}
+}]\index{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+Y@{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+Y}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+Y@{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+Y}}\item[{\em 
+\hypertarget{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33a2e0bac3bae7c1d9c7f437717078ceff3}{N\+V\+G\+\_\+\+R\+E\+P\+E\+A\+T\+Y}\label{nanovg_8h_a7ecf8b2a4e74f812de265c583a539f33a2e0bac3bae7c1d9c7f437717078ceff3}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 68 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Gsolidity@{N\+V\+Gsolidity}}
+\index{N\+V\+Gsolidity@{N\+V\+Gsolidity}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Gsolidity}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Gsolidity}}}\label{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+S\+O\+L\+I\+D@{N\+V\+G\+\_\+\+S\+O\+L\+I\+D}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+S\+O\+L\+I\+D@{N\+V\+G\+\_\+\+S\+O\+L\+I\+D}}\item[{\em 
+\hypertarget{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42a84094ebdaec0c729173748fb0301b8a5}{N\+V\+G\+\_\+\+S\+O\+L\+I\+D}\label{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42a84094ebdaec0c729173748fb0301b8a5}
+}]\index{N\+V\+G\+\_\+\+H\+O\+L\+E@{N\+V\+G\+\_\+\+H\+O\+L\+E}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+H\+O\+L\+E@{N\+V\+G\+\_\+\+H\+O\+L\+E}}\item[{\em 
+\hypertarget{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42aef929c1e364fa1b8bfffb22d06188fca}{N\+V\+G\+\_\+\+H\+O\+L\+E}\label{nanovg_8h_aae3b364a14db6cc9d523981fa1d17e42aef929c1e364fa1b8bfffb22d06188fca}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 55 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_afb61210c0ca4856dd69c151fe5131370}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Gtexture@{N\+V\+Gtexture}}
+\index{N\+V\+Gtexture@{N\+V\+Gtexture}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Gtexture}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Gtexture}}}\label{nanovg_8h_afb61210c0ca4856dd69c151fe5131370}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+A\+L\+P\+H\+A@{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+A\+L\+P\+H\+A}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+A\+L\+P\+H\+A@{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+A\+L\+P\+H\+A}}\item[{\em 
+\hypertarget{nanovg_8h_afb61210c0ca4856dd69c151fe5131370aa36374ef4cd32b4730a6620474fc6ce5}{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+A\+L\+P\+H\+A}\label{nanovg_8h_afb61210c0ca4856dd69c151fe5131370aa36374ef4cd32b4730a6620474fc6ce5}
+}]\index{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+R\+G\+B\+A@{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+R\+G\+B\+A}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+R\+G\+B\+A@{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+R\+G\+B\+A}}\item[{\em 
+\hypertarget{nanovg_8h_afb61210c0ca4856dd69c151fe5131370aab01edc19a3949785dfb9b8d42c10fba}{N\+V\+G\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+R\+G\+B\+A}\label{nanovg_8h_afb61210c0ca4856dd69c151fe5131370aab01edc19a3949785dfb9b8d42c10fba}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 482 of file nanovg.\+h.
+
+\hypertarget{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67}{\index{nanovg.\+h@{nanovg.\+h}!N\+V\+Gwinding@{N\+V\+Gwinding}}
+\index{N\+V\+Gwinding@{N\+V\+Gwinding}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{N\+V\+Gwinding}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf N\+V\+Gwinding}}}\label{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+V\+G\+\_\+\+C\+C\+W@{N\+V\+G\+\_\+\+C\+C\+W}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+C\+C\+W@{N\+V\+G\+\_\+\+C\+C\+W}}\item[{\em 
+\hypertarget{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67ac7ec1f037de99f55bce8c38ef695af89}{N\+V\+G\+\_\+\+C\+C\+W}\label{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67ac7ec1f037de99f55bce8c38ef695af89}
+}]\index{N\+V\+G\+\_\+\+C\+W@{N\+V\+G\+\_\+\+C\+W}!nanovg.\+h@{nanovg.\+h}}\index{nanovg.\+h@{nanovg.\+h}!N\+V\+G\+\_\+\+C\+W@{N\+V\+G\+\_\+\+C\+W}}\item[{\em 
+\hypertarget{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67a48cf66f8a6a960337d40e59ce723a075}{N\+V\+G\+\_\+\+C\+W}\label{nanovg_8h_acb5579b27c36aeea3400a18ff1c7fc67a48cf66f8a6a960337d40e59ce723a075}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 50 of file nanovg.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{nanovg_8h_a6713dc21d046b427b5ced23f580e1fca}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Arc@{nvg\+Arc}}
+\index{nvg\+Arc@{nvg\+Arc}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Arc}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Arc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{cx, }
+\item[{float}]{cy, }
+\item[{float}]{r, }
+\item[{float}]{a0, }
+\item[{float}]{a1, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a6713dc21d046b427b5ced23f580e1fca}
+
+
+Definition at line 1687 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_acd89d531c087f2c2e6f142b4e117a28c}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Arc\+To@{nvg\+Arc\+To}}
+\index{nvg\+Arc\+To@{nvg\+Arc\+To}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Arc\+To}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Arc\+To (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x1, }
+\item[{float}]{y1, }
+\item[{float}]{x2, }
+\item[{float}]{y2, }
+\item[{float}]{radius}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_acd89d531c087f2c2e6f142b4e117a28c}
+
+
+Definition at line 1619 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aa601445772d5b4d349ff0dd0b9fccba0}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Begin\+Frame@{nvg\+Begin\+Frame}}
+\index{nvg\+Begin\+Frame@{nvg\+Begin\+Frame}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Begin\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Begin\+Frame (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{window\+Width, }
+\item[{int}]{window\+Height, }
+\item[{float}]{device\+Pixel\+Ratio, }
+\item[{int}]{alpha\+Blend}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aa601445772d5b4d349ff0dd0b9fccba0}
+
+
+Definition at line 256 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a51df2c0749ddc3c2716fc0b92b09d7b4}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Begin\+Path@{nvg\+Begin\+Path}}
+\index{nvg\+Begin\+Path@{nvg\+Begin\+Path}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Begin\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Begin\+Path (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a51df2c0749ddc3c2716fc0b92b09d7b4}
+
+
+Definition at line 1595 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ada809b58aa241844a572fdc2df4e34bf}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Bezier\+To@{nvg\+Bezier\+To}}
+\index{nvg\+Bezier\+To@{nvg\+Bezier\+To}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Bezier\+To}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Bezier\+To (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{c1x, }
+\item[{float}]{c1y, }
+\item[{float}]{c2x, }
+\item[{float}]{c2y, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ada809b58aa241844a572fdc2df4e34bf}
+
+
+Definition at line 1613 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ac29f814a6165f3fce204f94f170f08ba}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Box\+Gradient@{nvg\+Box\+Gradient}}
+\index{nvg\+Box\+Gradient@{nvg\+Box\+Gradient}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Box\+Gradient}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gpaint} nvg\+Box\+Gradient (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{w, }
+\item[{float}]{h, }
+\item[{float}]{r, }
+\item[{float}]{f, }
+\item[{struct {\bf N\+V\+Gcolor}}]{icol, }
+\item[{struct {\bf N\+V\+Gcolor}}]{ocol}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ac29f814a6165f3fce204f94f170f08ba}
+
+
+Definition at line 701 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aca291ad9c549b9653fc9eddd44ee9c95}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Circle@{nvg\+Circle}}
+\index{nvg\+Circle@{nvg\+Circle}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Circle}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Circle (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{cx, }
+\item[{float}]{cy, }
+\item[{float}]{r}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aca291ad9c549b9653fc9eddd44ee9c95}
+
+
+Definition at line 1800 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ab443a41065d2f215cb21b5686a1f25eb}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Close\+Path@{nvg\+Close\+Path}}
+\index{nvg\+Close\+Path@{nvg\+Close\+Path}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Close\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Close\+Path (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ab443a41065d2f215cb21b5686a1f25eb}
+
+
+Definition at line 1675 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a166d7025889080a67f5c14f9fbea6f85}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create@{nvg\+Create}}
+\index{nvg\+Create@{nvg\+Create}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcontext}$\ast$ nvg\+Create (
+\begin{DoxyParamCaption}
+\item[{int}]{atlasw, }
+\item[{int}]{atlash, }
+\item[{int}]{edgeaa, }
+\item[{unsigned char}]{viewid}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a166d7025889080a67f5c14f9fbea6f85}
+
+
+Definition at line 981 of file nanovg\+\_\+bgfx.\+cpp.
+
+\hypertarget{nanovg_8h_a25045f11d4c82dbded0a549a31aafc3a}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create\+Font@{nvg\+Create\+Font}}
+\index{nvg\+Create\+Font@{nvg\+Create\+Font}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create\+Font}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Create\+Font (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a25045f11d4c82dbded0a549a31aafc3a}
+
+
+Definition at line 1887 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a0310f411576f88aba103db1393bf8cc0}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create\+Font\+Mem@{nvg\+Create\+Font\+Mem}}
+\index{nvg\+Create\+Font\+Mem@{nvg\+Create\+Font\+Mem}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create\+Font\+Mem}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Create\+Font\+Mem (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{name, }
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{ndata, }
+\item[{int}]{free\+Data}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a0310f411576f88aba103db1393bf8cc0}
+
+
+Definition at line 1892 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_adddc763d2f7c9c98d9ce256d7cfd96c7}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create\+Image@{nvg\+Create\+Image}}
+\index{nvg\+Create\+Image@{nvg\+Create\+Image}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create\+Image}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Create\+Image (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_adddc763d2f7c9c98d9ce256d7cfd96c7}
+
+
+Definition at line 587 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a6bea9483ac80b4b555f6f3d4bfc85229}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create\+Image\+Mem@{nvg\+Create\+Image\+Mem}}
+\index{nvg\+Create\+Image\+Mem@{nvg\+Create\+Image\+Mem}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create\+Image\+Mem}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Create\+Image\+Mem (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{data, }
+\item[{int}]{ndata}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a6bea9483ac80b4b555f6f3d4bfc85229}
+
+
+Definition at line 600 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a8e6cdfe294b5151d19266088e0599e78}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create\+Image\+R\+G\+B\+A@{nvg\+Create\+Image\+R\+G\+B\+A}}
+\index{nvg\+Create\+Image\+R\+G\+B\+A@{nvg\+Create\+Image\+R\+G\+B\+A}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create\+Image\+R\+G\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Create\+Image\+R\+G\+B\+A (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{w, }
+\item[{int}]{h, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a8e6cdfe294b5151d19266088e0599e78}
+
+
+Definition at line 613 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a3a8fa5ecdc304a94d6a221a1c5f41982}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Create\+Internal@{nvg\+Create\+Internal}}
+\index{nvg\+Create\+Internal@{nvg\+Create\+Internal}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Create\+Internal}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcontext}$\ast$ nvg\+Create\+Internal (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gparams} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a3a8fa5ecdc304a94d6a221a1c5f41982}
+
+
+Definition at line 191 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a1f16bba9b005d7ec56b56d08dc657d17}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Debug\+Dump\+Path\+Cache@{nvg\+Debug\+Dump\+Path\+Cache}}
+\index{nvg\+Debug\+Dump\+Path\+Cache@{nvg\+Debug\+Dump\+Path\+Cache}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Debug\+Dump\+Path\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Debug\+Dump\+Path\+Cache (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a1f16bba9b005d7ec56b56d08dc657d17}
+
+
+Definition at line 1805 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a8414ef35e2ea4ccb377b02dfeb313f1f}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Delete@{nvg\+Delete}}
+\index{nvg\+Delete@{nvg\+Delete}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Delete (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a8414ef35e2ea4ccb377b02dfeb313f1f}
+
+
+Definition at line 1024 of file nanovg\+\_\+bgfx.\+cpp.
+
+\hypertarget{nanovg_8h_a8bdbd90cce1467db2f0346ccfa89c380}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Delete\+Image@{nvg\+Delete\+Image}}
+\index{nvg\+Delete\+Image@{nvg\+Delete\+Image}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Delete\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Delete\+Image (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{image}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a8bdbd90cce1467db2f0346ccfa89c380}
+
+
+Definition at line 630 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ab30a60aab3c4398eaf8634dc4c943198}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Delete\+Internal@{nvg\+Delete\+Internal}}
+\index{nvg\+Delete\+Internal@{nvg\+Delete\+Internal}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Delete\+Internal}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Delete\+Internal (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ab30a60aab3c4398eaf8634dc4c943198}
+
+
+Definition at line 241 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ab2a10b88ffa50cb54f82006f42af7cdc}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Ellipse@{nvg\+Ellipse}}
+\index{nvg\+Ellipse@{nvg\+Ellipse}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Ellipse}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Ellipse (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{cx, }
+\item[{float}]{cy, }
+\item[{float}]{rx, }
+\item[{float}]{ry}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ab2a10b88ffa50cb54f82006f42af7cdc}
+
+
+Definition at line 1787 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a935851ef41c6b769ca4e99507fc9f033}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+End\+Frame@{nvg\+End\+Frame}}
+\index{nvg\+End\+Frame@{nvg\+End\+Frame}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+End\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+End\+Frame (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a935851ef41c6b769ca4e99507fc9f033}
+
+
+Definition at line 277 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ae8f5ff6cb1b137fd88a6b20980075fcf}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Fill@{nvg\+Fill}}
+\index{nvg\+Fill@{nvg\+Fill}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Fill (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ae8f5ff6cb1b137fd88a6b20980075fcf}
+
+
+Definition at line 1827 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_af73388b75d98689b7cc8065f7725a050}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Fill\+Color@{nvg\+Fill\+Color}}
+\index{nvg\+Fill\+Color@{nvg\+Fill\+Color}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Fill\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Fill\+Color (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{struct {\bf N\+V\+Gcolor}}]{color}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_af73388b75d98689b7cc8065f7725a050}
+
+
+Definition at line 574 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a1011771c82e814e4888de96a739c3281}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Fill\+Paint@{nvg\+Fill\+Paint}}
+\index{nvg\+Fill\+Paint@{nvg\+Fill\+Paint}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Fill\+Paint}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Fill\+Paint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{struct {\bf N\+V\+Gpaint}}]{paint}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a1011771c82e814e4888de96a739c3281}
+
+
+Definition at line 580 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aa8625fdd56530655940013411c763cf5}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Find\+Font@{nvg\+Find\+Font}}
+\index{nvg\+Find\+Font@{nvg\+Find\+Font}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Find\+Font}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Find\+Font (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aa8625fdd56530655940013411c763cf5}
+
+
+Definition at line 1897 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ad0239021d5b98a1846629d8b72122a02}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Font\+Blur@{nvg\+Font\+Blur}}
+\index{nvg\+Font\+Blur@{nvg\+Font\+Blur}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Font\+Blur}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Font\+Blur (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{blur}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ad0239021d5b98a1846629d8b72122a02}
+
+
+Definition at line 1910 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ae51617a8a825c192e79ecaee45098700}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Font\+Face@{nvg\+Font\+Face}}
+\index{nvg\+Font\+Face@{nvg\+Font\+Face}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Font\+Face}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Font\+Face (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{font}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ae51617a8a825c192e79ecaee45098700}
+
+
+Definition at line 1940 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aac832d3704d32c506addf75d177a7d0b}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Font\+Face\+Id@{nvg\+Font\+Face\+Id}}
+\index{nvg\+Font\+Face\+Id@{nvg\+Font\+Face\+Id}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Font\+Face\+Id}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Font\+Face\+Id (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{font}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aac832d3704d32c506addf75d177a7d0b}
+
+
+Definition at line 1934 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_afbe0b5755daae2f2f98d64eab19420ce}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Font\+Size@{nvg\+Font\+Size}}
+\index{nvg\+Font\+Size@{nvg\+Font\+Size}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Font\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Font\+Size (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{size}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_afbe0b5755daae2f2f98d64eab19420ce}
+
+
+Definition at line 1904 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a9c9bb353e9b6e5cbe838b10530de7209}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+H\+S\+L@{nvg\+H\+S\+L}}
+\index{nvg\+H\+S\+L@{nvg\+H\+S\+L}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+H\+S\+L}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+H\+S\+L (
+\begin{DoxyParamCaption}
+\item[{float}]{h, }
+\item[{float}]{s, }
+\item[{float}]{l}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a9c9bb353e9b6e5cbe838b10530de7209}
+
+
+Definition at line 353 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_afeb3179edd8a8abfdd8879d26f012057}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+H\+S\+L\+A@{nvg\+H\+S\+L\+A}}
+\index{nvg\+H\+S\+L\+A@{nvg\+H\+S\+L\+A}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+H\+S\+L\+A}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+H\+S\+L\+A (
+\begin{DoxyParamCaption}
+\item[{float}]{h, }
+\item[{float}]{s, }
+\item[{float}]{l, }
+\item[{unsigned char}]{a}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_afeb3179edd8a8abfdd8879d26f012057}
+
+
+Definition at line 371 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a2ab2fbea07591cae38ebd2a8624c544a}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Image\+Pattern@{nvg\+Image\+Pattern}}
+\index{nvg\+Image\+Pattern@{nvg\+Image\+Pattern}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Image\+Pattern}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gpaint} nvg\+Image\+Pattern (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{ox, }
+\item[{float}]{oy, }
+\item[{float}]{ex, }
+\item[{float}]{ey, }
+\item[{float}]{angle, }
+\item[{int}]{image, }
+\item[{int}]{repeat}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a2ab2fbea07591cae38ebd2a8624c544a}
+
+
+Definition at line 727 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_af622550b5c71060a3539d2b0892f4114}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Image\+Size@{nvg\+Image\+Size}}
+\index{nvg\+Image\+Size@{nvg\+Image\+Size}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Image\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Image\+Size (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{image, }
+\item[{int $\ast$}]{w, }
+\item[{int $\ast$}]{h}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_af622550b5c71060a3539d2b0892f4114}
+
+
+Definition at line 625 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aa1c0b489f616d121703cacbe86618abd}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Lerp\+R\+G\+B\+A@{nvg\+Lerp\+R\+G\+B\+A}}
+\index{nvg\+Lerp\+R\+G\+B\+A@{nvg\+Lerp\+R\+G\+B\+A}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Lerp\+R\+G\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+Lerp\+R\+G\+B\+A (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcolor}}]{c0, }
+\item[{struct {\bf N\+V\+Gcolor}}]{c1, }
+\item[{float}]{u}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aa1c0b489f616d121703cacbe86618abd}
+
+
+Definition at line 337 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a2947f3f18de6947fada616b21ff55561}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Linear\+Gradient@{nvg\+Linear\+Gradient}}
+\index{nvg\+Linear\+Gradient@{nvg\+Linear\+Gradient}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Linear\+Gradient}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gpaint} nvg\+Linear\+Gradient (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{sx, }
+\item[{float}]{sy, }
+\item[{float}]{ex, }
+\item[{float}]{ey, }
+\item[{struct {\bf N\+V\+Gcolor}}]{icol, }
+\item[{struct {\bf N\+V\+Gcolor}}]{ocol}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a2947f3f18de6947fada616b21ff55561}
+
+
+Definition at line 635 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a94d6c1cf6f51f8255d2928d54a63a12a}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Line\+Cap@{nvg\+Line\+Cap}}
+\index{nvg\+Line\+Cap@{nvg\+Line\+Cap}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Line\+Cap}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Line\+Cap (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{cap}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a94d6c1cf6f51f8255d2928d54a63a12a}
+
+
+Definition at line 510 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a1279d1a1a8c32c241c76ebdb553cf98e}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Line\+Join@{nvg\+Line\+Join}}
+\index{nvg\+Line\+Join@{nvg\+Line\+Join}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Line\+Join}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Line\+Join (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{join}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a1279d1a1a8c32c241c76ebdb553cf98e}
+
+
+Definition at line 516 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_adf39a159b9b9e7e3bab22708d42c407b}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Line\+To@{nvg\+Line\+To}}
+\index{nvg\+Line\+To@{nvg\+Line\+To}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Line\+To}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Line\+To (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_adf39a159b9b9e7e3bab22708d42c407b}
+
+
+Definition at line 1607 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a3ce0dc52cedf4b9ee69108406adf0e67}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Miter\+Limit@{nvg\+Miter\+Limit}}
+\index{nvg\+Miter\+Limit@{nvg\+Miter\+Limit}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Miter\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Miter\+Limit (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{limit}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a3ce0dc52cedf4b9ee69108406adf0e67}
+
+
+Definition at line 504 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_af2e5f5d01bd2769a76f84af95825604f}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Move\+To@{nvg\+Move\+To}}
+\index{nvg\+Move\+To@{nvg\+Move\+To}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Move\+To (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_af2e5f5d01bd2769a76f84af95825604f}
+
+
+Definition at line 1601 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a7a42f8336b9d1ea884017925e29050d3}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Path\+Winding@{nvg\+Path\+Winding}}
+\index{nvg\+Path\+Winding@{nvg\+Path\+Winding}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Path\+Winding}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Path\+Winding (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a7a42f8336b9d1ea884017925e29050d3}
+
+
+Definition at line 1681 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a6da555cd6b1f03e60bd9de92f6f048d2}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Radial\+Gradient@{nvg\+Radial\+Gradient}}
+\index{nvg\+Radial\+Gradient@{nvg\+Radial\+Gradient}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Radial\+Gradient}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gpaint} nvg\+Radial\+Gradient (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{cx, }
+\item[{float}]{cy, }
+\item[{float}]{inr, }
+\item[{float}]{outr, }
+\item[{struct {\bf N\+V\+Gcolor}}]{icol, }
+\item[{struct {\bf N\+V\+Gcolor}}]{ocol}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a6da555cd6b1f03e60bd9de92f6f048d2}
+
+
+Definition at line 674 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a5509d3d28d656da0c1412dce7a57f4c8}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Rect@{nvg\+Rect}}
+\index{nvg\+Rect@{nvg\+Rect}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Rect (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{w, }
+\item[{float}]{h}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a5509d3d28d656da0c1412dce7a57f4c8}
+
+
+Definition at line 1752 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a00fdf0da0a84a413b1587b9e6f2b08d3}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Reset@{nvg\+Reset}}
+\index{nvg\+Reset@{nvg\+Reset}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Reset}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a00fdf0da0a84a413b1587b9e6f2b08d3}
+
+
+Definition at line 473 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a2613c59998090543fe6661df9074c1a6}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Reset\+Scissor@{nvg\+Reset\+Scissor}}
+\index{nvg\+Reset\+Scissor@{nvg\+Reset\+Scissor}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Reset\+Scissor}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Reset\+Scissor (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a2613c59998090543fe6661df9074c1a6}
+
+
+Definition at line 762 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ad76a3eee8d65138ed94469a6b80c7ceb}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Reset\+Transform@{nvg\+Reset\+Transform}}
+\index{nvg\+Reset\+Transform@{nvg\+Reset\+Transform}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Reset\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Reset\+Transform (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ad76a3eee8d65138ed94469a6b80c7ceb}
+
+
+Definition at line 530 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a8fb83c896f3604a9119f0b496432edb5}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Restore@{nvg\+Restore}}
+\index{nvg\+Restore@{nvg\+Restore}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Restore}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Restore (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a8fb83c896f3604a9119f0b496432edb5}
+
+
+Definition at line 466 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ab446615490072ea622519350065a4632}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+R\+G\+B@{nvg\+R\+G\+B}}
+\index{nvg\+R\+G\+B@{nvg\+R\+G\+B}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+R\+G\+B}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+R\+G\+B (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{r, }
+\item[{unsigned char}]{g, }
+\item[{unsigned char}]{b}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ab446615490072ea622519350065a4632}
+
+
+Definition at line 282 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a6dc37efada9428cb762a878e77b5bfc5}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+R\+G\+B\+A@{nvg\+R\+G\+B\+A}}
+\index{nvg\+R\+G\+B\+A@{nvg\+R\+G\+B\+A}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+R\+G\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+R\+G\+B\+A (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{r, }
+\item[{unsigned char}]{g, }
+\item[{unsigned char}]{b, }
+\item[{unsigned char}]{a}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a6dc37efada9428cb762a878e77b5bfc5}
+
+
+Definition at line 292 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aafc0b7d3b54a9d1442e4131fc97f5145}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+R\+G\+B\+Af@{nvg\+R\+G\+B\+Af}}
+\index{nvg\+R\+G\+B\+Af@{nvg\+R\+G\+B\+Af}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+R\+G\+B\+Af}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+R\+G\+B\+Af (
+\begin{DoxyParamCaption}
+\item[{float}]{r, }
+\item[{float}]{g, }
+\item[{float}]{b, }
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aafc0b7d3b54a9d1442e4131fc97f5145}
+
+
+Definition at line 314 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ad065c66dfed4b15b8daf831b170c5800}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+R\+G\+B\+Au@{nvg\+R\+G\+B\+Au}}
+\index{nvg\+R\+G\+B\+Au@{nvg\+R\+G\+B\+Au}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+R\+G\+B\+Au}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+R\+G\+B\+Au (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{abgr}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ad065c66dfed4b15b8daf831b170c5800}
+
+
+Definition at line 303 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aaad5c224c6e26c49d508c6aa960b06e5}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+R\+G\+Bf@{nvg\+R\+G\+Bf}}
+\index{nvg\+R\+G\+Bf@{nvg\+R\+G\+Bf}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+R\+G\+Bf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+R\+G\+Bf (
+\begin{DoxyParamCaption}
+\item[{float}]{r, }
+\item[{float}]{g, }
+\item[{float}]{b}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aaad5c224c6e26c49d508c6aa960b06e5}
+
+
+Definition at line 287 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a2a115a1a0c6f1672ccff6333ce0840ac}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Rotate@{nvg\+Rotate}}
+\index{nvg\+Rotate@{nvg\+Rotate}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Rotate (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a2a115a1a0c6f1672ccff6333ce0840ac}
+
+
+Definition at line 544 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a1ed082cf7d009f4dfa27eb7a99f1c96e}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Rounded\+Rect@{nvg\+Rounded\+Rect}}
+\index{nvg\+Rounded\+Rect@{nvg\+Rounded\+Rect}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Rounded\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Rounded\+Rect (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{w, }
+\item[{float}]{h, }
+\item[{float}]{r}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a1ed082cf7d009f4dfa27eb7a99f1c96e}
+
+
+Definition at line 1764 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a65f98b4dcaa308eba4b13c6bfec42e65}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Save@{nvg\+Save}}
+\index{nvg\+Save@{nvg\+Save}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Save}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Save (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a65f98b4dcaa308eba4b13c6bfec42e65}
+
+
+Definition at line 457 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ac6d998238009fc079e70189ab21f4136}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Scale@{nvg\+Scale}}
+\index{nvg\+Scale@{nvg\+Scale}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Scale (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ac6d998238009fc079e70189ab21f4136}
+
+
+Definition at line 552 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a7f9fbff9f857af6cbdf6a1854579dd9d}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Scissor@{nvg\+Scissor}}
+\index{nvg\+Scissor@{nvg\+Scissor}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Scissor}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Scissor (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{w, }
+\item[{float}]{h}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a7f9fbff9f857af6cbdf6a1854579dd9d}
+
+
+Definition at line 749 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a858845ee18b79e25ff4fc052c84b8ecc}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Stroke@{nvg\+Stroke}}
+\index{nvg\+Stroke@{nvg\+Stroke}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Stroke}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Stroke (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a858845ee18b79e25ff4fc052c84b8ecc}
+
+
+Definition at line 1851 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a312891cc39f41a08a59b2476ec98f148}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Stroke\+Color@{nvg\+Stroke\+Color}}
+\index{nvg\+Stroke\+Color@{nvg\+Stroke\+Color}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Stroke\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Stroke\+Color (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{struct {\bf N\+V\+Gcolor}}]{color}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a312891cc39f41a08a59b2476ec98f148}
+
+
+Definition at line 561 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a9ebe27cd9828e84af66e58141afd3b5f}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Stroke\+Paint@{nvg\+Stroke\+Paint}}
+\index{nvg\+Stroke\+Paint@{nvg\+Stroke\+Paint}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Stroke\+Paint}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Stroke\+Paint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{struct {\bf N\+V\+Gpaint}}]{paint}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a9ebe27cd9828e84af66e58141afd3b5f}
+
+
+Definition at line 567 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a1a873b26feba117daf087baac92642f9}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Stroke\+Width@{nvg\+Stroke\+Width}}
+\index{nvg\+Stroke\+Width@{nvg\+Stroke\+Width}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Stroke\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Stroke\+Width (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{size}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a1a873b26feba117daf087baac92642f9}
+
+
+Definition at line 498 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_abe57c4c8ea7b4a4e336ec1247e5874c3}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text@{nvg\+Text}}
+\index{nvg\+Text@{nvg\+Text}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text}]{\setlength{\rightskip}{0pt plus 5cm}float nvg\+Text (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_abe57c4c8ea7b4a4e336ec1247e5874c3}
+
+
+Definition at line 1956 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a7beb303eafd57a760b19a0cdfa8f36bb}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Align@{nvg\+Text\+Align}}
+\index{nvg\+Text\+Align@{nvg\+Text\+Align}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Align}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Text\+Align (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{align}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a7beb303eafd57a760b19a0cdfa8f36bb}
+
+
+Definition at line 1928 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a8ccd33b0fe27cfff141a3bcd3f3bace9}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Bounds@{nvg\+Text\+Bounds}}
+\index{nvg\+Text\+Bounds@{nvg\+Text\+Bounds}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}float nvg\+Text\+Bounds (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end, }
+\item[{float $\ast$}]{bounds}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a8ccd33b0fe27cfff141a3bcd3f3bace9}
+
+
+Definition at line 2295 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aaec6ccb5c569490e2365fa1b455d36ed}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Box@{nvg\+Text\+Box}}
+\index{nvg\+Text\+Box@{nvg\+Text\+Box}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Box}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Text\+Box (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{break\+Row\+Width, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aaec6ccb5c569490e2365fa1b455d36ed}
+
+
+Definition at line 2027 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ad3c3b44aa28e71ba16875a675d9dbd0e}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Box\+Bounds@{nvg\+Text\+Box\+Bounds}}
+\index{nvg\+Text\+Box\+Bounds@{nvg\+Text\+Box\+Bounds}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Box\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Text\+Box\+Bounds (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{break\+Row\+Width, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end, }
+\item[{float $\ast$}]{bounds}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ad3c3b44aa28e71ba16875a675d9dbd0e}
+
+
+Definition at line 2320 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a8146165742324e6fdc82ade53bd7f766}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Break\+Lines@{nvg\+Text\+Break\+Lines}}
+\index{nvg\+Text\+Break\+Lines@{nvg\+Text\+Break\+Lines}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Break\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Text\+Break\+Lines (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end, }
+\item[{float}]{break\+Row\+Width, }
+\item[{struct {\bf N\+V\+Gtext\+Row} $\ast$}]{rows, }
+\item[{int}]{max\+Rows}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a8146165742324e6fdc82ade53bd7f766}
+
+
+Definition at line 2104 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a053e4defd52f54bb252e613803798906}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Glyph\+Positions@{nvg\+Text\+Glyph\+Positions}}
+\index{nvg\+Text\+Glyph\+Positions@{nvg\+Text\+Glyph\+Positions}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Glyph\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}int nvg\+Text\+Glyph\+Positions (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{end, }
+\item[{struct {\bf N\+V\+Gglyph\+Position} $\ast$}]{positions, }
+\item[{int}]{max\+Positions}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a053e4defd52f54bb252e613803798906}
+
+
+Definition at line 2060 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a879ce6ca58f6bd5d284e200202340471}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Letter\+Spacing@{nvg\+Text\+Letter\+Spacing}}
+\index{nvg\+Text\+Letter\+Spacing@{nvg\+Text\+Letter\+Spacing}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Letter\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Text\+Letter\+Spacing (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{spacing}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a879ce6ca58f6bd5d284e200202340471}
+
+
+Definition at line 1916 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a289533984f7088fd727a830820385498}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Line\+Height@{nvg\+Text\+Line\+Height}}
+\index{nvg\+Text\+Line\+Height@{nvg\+Text\+Line\+Height}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Line\+Height}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Text\+Line\+Height (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{line\+Height}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a289533984f7088fd727a830820385498}
+
+
+Definition at line 1922 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_aa03d331bd99226f4d79eb06f0fe1f416}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Text\+Metrics@{nvg\+Text\+Metrics}}
+\index{nvg\+Text\+Metrics@{nvg\+Text\+Metrics}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Text\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Text\+Metrics (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float $\ast$}]{ascender, }
+\item[{float $\ast$}]{descender, }
+\item[{float $\ast$}]{lineh}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_aa03d331bd99226f4d79eb06f0fe1f416}
+
+
+Definition at line 2391 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_ae9179cec96bd7d316100ae88f8bee253}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Transform@{nvg\+Transform}}
+\index{nvg\+Transform@{nvg\+Transform}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Transform (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{a, }
+\item[{float}]{b, }
+\item[{float}]{c, }
+\item[{float}]{d, }
+\item[{float}]{e, }
+\item[{float}]{f}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_ae9179cec96bd7d316100ae88f8bee253}
+
+
+Definition at line 523 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a4e2611a7b79be1d628becd8d9cdc568d}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Translate@{nvg\+Translate}}
+\index{nvg\+Translate@{nvg\+Translate}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Translate}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Translate (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a4e2611a7b79be1d628becd8d9cdc568d}
+
+
+Definition at line 536 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a92957bcd4de13bf27a8fc947ab54bfd7}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Trans\+R\+G\+B\+A@{nvg\+Trans\+R\+G\+B\+A}}
+\index{nvg\+Trans\+R\+G\+B\+A@{nvg\+Trans\+R\+G\+B\+A}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Trans\+R\+G\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+Trans\+R\+G\+B\+A (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcolor}}]{c0, }
+\item[{unsigned char}]{a}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a92957bcd4de13bf27a8fc947ab54bfd7}
+
+
+Definition at line 325 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a948190c8ec568443ef1bc9fab66c0844}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Trans\+R\+G\+B\+Af@{nvg\+Trans\+R\+G\+B\+Af}}
+\index{nvg\+Trans\+R\+G\+B\+Af@{nvg\+Trans\+R\+G\+B\+Af}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Trans\+R\+G\+B\+Af}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf N\+V\+Gcolor} nvg\+Trans\+R\+G\+B\+Af (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcolor}}]{c0, }
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a948190c8ec568443ef1bc9fab66c0844}
+
+
+Definition at line 331 of file nanovg.\+cpp.
+
+\hypertarget{nanovg_8h_a2d7346cc98a0c1a428a61c649fad68fb}{\index{nanovg.\+h@{nanovg.\+h}!nvg\+Update\+Image@{nvg\+Update\+Image}}
+\index{nvg\+Update\+Image@{nvg\+Update\+Image}!nanovg.\+h@{nanovg.\+h}}
+\subsubsection[{nvg\+Update\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void nvg\+Update\+Image (
+\begin{DoxyParamCaption}
+\item[{struct {\bf N\+V\+Gcontext} $\ast$}]{ctx, }
+\item[{int}]{image, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{nanovg_8h_a2d7346cc98a0c1a428a61c649fad68fb}
+
+
+Definition at line 618 of file nanovg.\+cpp.
+

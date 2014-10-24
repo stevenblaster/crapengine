@@ -1,0 +1,1194 @@
+\hypertarget{struct_imgui}{\section{Imgui Struct Reference}
+\label{struct_imgui}\index{Imgui@{Imgui}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_imgui_1_1_font}{Font}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_imgui_a0fd77c8f0d4e05fb61442d6ecc045ede}{Imgui} ()
+\item 
+Imgui\+Font\+Handle \hyperlink{struct_imgui_aea0d4687353e92f3c38438ccb48af7fe}{create\+Font} (const void $\ast$\+\_\+data, float \+\_\+font\+Size)
+\item 
+void \hyperlink{struct_imgui_a91b7aa6b3a1343321af148162fad4c5d}{set\+Font} (Imgui\+Font\+Handle \+\_\+handle)
+\item 
+Imgui\+Font\+Handle \hyperlink{struct_imgui_a9281a868379419f377b474128b283d3d}{create} (const void $\ast$\+\_\+data, float \+\_\+font\+Size)
+\item 
+void \hyperlink{struct_imgui_a73719120b5edd189cbc3e4693e7527e8}{destroy} ()
+\item 
+bool \hyperlink{struct_imgui_abd67f8cff4af17d94924459aab78eddc}{any\+Active} () const 
+\item 
+bool \hyperlink{struct_imgui_a4276ffb8d40339e7f16a6f33660ff845}{is\+Active} (uint32\+\_\+t \+\_\+id) const 
+\item 
+bool \hyperlink{struct_imgui_ae33b358fd9ca35967d5fa027f0ee070a}{is\+Hot} (uint32\+\_\+t \+\_\+id) const 
+\item 
+bool \hyperlink{struct_imgui_a77c88bf481d2c6ea655b7b7a3ea0358b}{in\+Rect} (int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, int32\+\_\+t \+\_\+width, int32\+\_\+t \+\_\+height, bool \+\_\+check\+Scroll=true) const 
+\item 
+bool \hyperlink{struct_imgui_a74171641f4498920f5ee0c0de99c020c}{is\+Enabled} (uint8\+\_\+t \+\_\+area\+Id)
+\item 
+void \hyperlink{struct_imgui_a77903dfff9f642acd8758b66e700ac1e}{set\+Enabled} (uint8\+\_\+t \+\_\+area\+Id)
+\item 
+void \hyperlink{struct_imgui_adf889d7fcbc65d2d9adb8ac1c8dbb826}{clear\+Input} ()
+\item 
+void \hyperlink{struct_imgui_a82c6855100fb9a94d25f2ce474a7e7dd}{clear\+Active} ()
+\item 
+void \hyperlink{struct_imgui_aff52f02a457baca3cf4abcb505814d72}{set\+Active} (uint32\+\_\+t \+\_\+id)
+\item 
+void \hyperlink{struct_imgui_a549bd89ab42007b891884aa2805ee6aa}{set\+Hot} (uint32\+\_\+t \+\_\+id)
+\item 
+bool \hyperlink{struct_imgui_a21bfcf6ad6f2b1c0ed84337bb4c9b7de}{button\+Logic} (uint32\+\_\+t \+\_\+id, bool \+\_\+over)
+\item 
+void \hyperlink{struct_imgui_ac9ead12c0619dd2bde67c40e7076160b}{update\+Input} (int32\+\_\+t \+\_\+mx, int32\+\_\+t \+\_\+my, uint8\+\_\+t \+\_\+button, int32\+\_\+t \+\_\+scroll)
+\item 
+void \hyperlink{struct_imgui_aace2d3cc1a44dde2a6ecaa10c20ae75e}{begin\+Frame} (int32\+\_\+t \+\_\+mx, int32\+\_\+t \+\_\+my, uint8\+\_\+t \+\_\+button, int32\+\_\+t \+\_\+scroll, uint16\+\_\+t \+\_\+width, uint16\+\_\+t \+\_\+height, uint8\+\_\+t \+\_\+view)
+\item 
+void \hyperlink{struct_imgui_a8f7e51edd72634a86fdaad6a8e92fbcd}{end\+Frame} ()
+\item 
+bool \hyperlink{struct_imgui_aa842ced9a03d6ce04db52db1998dbe8b}{begin\+Scroll\+Area} (const char $\ast$\+\_\+name, int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, int32\+\_\+t \+\_\+width, int32\+\_\+t \+\_\+height, int32\+\_\+t $\ast$\+\_\+scroll, bool \+\_\+enabled)
+\item 
+void \hyperlink{struct_imgui_a7906bd24dcf421288849809931c705a6}{end\+Scroll\+Area} ()
+\item 
+bool \hyperlink{struct_imgui_a4a85db7180a0eef035ead4360f51d8ff}{button} (const char $\ast$\+\_\+text, bool \+\_\+enabled)
+\item 
+bool \hyperlink{struct_imgui_ae577ae044217d48a9ab28c72733c25a1}{item} (const char $\ast$\+\_\+text, bool \+\_\+enabled)
+\item 
+bool \hyperlink{struct_imgui_a499361b2a207851a37a9122851851588}{check} (const char $\ast$\+\_\+text, bool \+\_\+checked, bool \+\_\+enabled)
+\item 
+void \hyperlink{struct_imgui_a5a23206faeeb15a7e311854f159b5c2a}{image} (bgfx\+::\+Texture\+Handle \+\_\+image, float \+\_\+lod, int32\+\_\+t \+\_\+width, int32\+\_\+t \+\_\+height, \hyperlink{struct_imgui_image_align_a5f02ce5e32468b0d112123cf21437313}{Imgui\+Image\+Align\+::\+Enum} \+\_\+align)
+\item 
+void \hyperlink{struct_imgui_a125c7cc9f698979111889fd3c532968f}{image} (bgfx\+::\+Texture\+Handle \+\_\+image, float \+\_\+lod, float \+\_\+width, float \+\_\+aspect, \hyperlink{struct_imgui_image_align_a5f02ce5e32468b0d112123cf21437313}{Imgui\+Image\+Align\+::\+Enum} \+\_\+align)
+\item 
+bool \hyperlink{struct_imgui_a79fc0ef2e155f87c65cc91833acc4a09}{collapse} (const char $\ast$\+\_\+text, const char $\ast$\+\_\+subtext, bool \+\_\+checked, bool \+\_\+enabled)
+\item 
+void \hyperlink{struct_imgui_a3625fb9706dd9c5c976f137024f1fe94}{label\+Vargs} (const char $\ast$\+\_\+format, va\+\_\+list \+\_\+arg\+List)
+\item 
+void \hyperlink{struct_imgui_a0e605987e3074be8cbb1fa799384ccf0}{value} (const char $\ast$\+\_\+text)
+\item 
+bool \hyperlink{struct_imgui_aca17483585c81bdca548cdc85ef9c049}{slider} (const char $\ast$\+\_\+text, float \&\+\_\+val, float \+\_\+vmin, float \+\_\+vmax, float \+\_\+vinc, bool \+\_\+enabled)
+\item 
+void \hyperlink{struct_imgui_a0a98864c2cbb8e4afb4dc568c6b792cb}{indent} ()
+\item 
+void \hyperlink{struct_imgui_a9aaecd1afae09a3e2df52a1edc429b6b}{unindent} ()
+\item 
+void \hyperlink{struct_imgui_a590069dcfa8ac1ff9ffd000a7811ad4e}{separator} ()
+\item 
+void \hyperlink{struct_imgui_a3a254325e703b5b1e195d8c1099e6264}{separator\+Line} ()
+\item 
+void \hyperlink{struct_imgui_a6caff752aae89260ab6daa20e03f9bd9}{draw\+Polygon} (const float $\ast$\+\_\+coords, uint32\+\_\+t \+\_\+num\+Coords, float \+\_\+r, uint32\+\_\+t \+\_\+abgr)
+\item 
+void \hyperlink{struct_imgui_a11dae8b849f587bfc5bf08e51cf75ec3}{draw\+Rect} (float \+\_\+x, float \+\_\+y, float w, float h, uint32\+\_\+t \+\_\+argb, float \+\_\+fth=1.\+0f)
+\item 
+void \hyperlink{struct_imgui_a1bf59452777707efcffef0098ae41cbc}{draw\+Rounded\+Rect} (float \+\_\+x, float \+\_\+y, float w, float h, float r, uint32\+\_\+t \+\_\+argb, float \+\_\+fth=1.\+0f)
+\item 
+void \hyperlink{struct_imgui_a0dbccd4252f7e64c95e2a7e3b1e62114}{draw\+Line} (float \+\_\+x0, float \+\_\+y0, float \+\_\+x1, float \+\_\+y1, float \+\_\+r, uint32\+\_\+t \+\_\+abgr, float \+\_\+fth=1.\+0f)
+\item 
+void \hyperlink{struct_imgui_a37860630a6f7ab9f490e8820698ce08a}{draw\+Triangle} (int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, int32\+\_\+t \+\_\+width, int32\+\_\+t \+\_\+height, int32\+\_\+t \+\_\+flags, uint32\+\_\+t \+\_\+abgr)
+\item 
+void \hyperlink{struct_imgui_a0eb9cc05c365d88c67ee39f5ca67182d}{get\+Baked\+Quad} (stbtt\+\_\+bakedchar $\ast$\+\_\+chardata, int32\+\_\+t char\+\_\+index, float $\ast$\+\_\+xpos, float $\ast$\+\_\+ypos, stbtt\+\_\+aligned\+\_\+quad $\ast$\+\_\+quad)
+\item 
+float \hyperlink{struct_imgui_a01f1fc7da85d8aa2882ad5024651735d}{get\+Text\+Length} (stbtt\+\_\+bakedchar $\ast$\+\_\+chardata, const char $\ast$\+\_\+text, uint32\+\_\+t \&\+\_\+num\+Vertices)
+\item 
+void \hyperlink{struct_imgui_a1a56de6ca760f7ab95eee560ad9a9c21}{draw\+Text} (int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, \hyperlink{struct_imgui_text_align_a8e5bef09f173b67144ba413e0ed392b1}{Imgui\+Text\+Align\+::\+Enum} \+\_\+align, const char $\ast$\+\_\+text, uint32\+\_\+t \+\_\+abgr)
+\item 
+void \hyperlink{struct_imgui_aa9855b572739855229c4858cb3a01909}{draw\+Text} (float \+\_\+x, float \+\_\+y, const char $\ast$\+\_\+text, \hyperlink{struct_imgui_text_align_a8e5bef09f173b67144ba413e0ed392b1}{Imgui\+Text\+Align\+::\+Enum} \+\_\+align, uint32\+\_\+t \+\_\+abgr)
+\item 
+void \hyperlink{struct_imgui_a85510a065c1d98f43142d6fdb885699d}{screen\+Quad} (int32\+\_\+t \+\_\+x, int32\+\_\+t \+\_\+y, int32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\item 
+void \hyperlink{struct_imgui_a6a042945fa89fe0c98016074f03d0b20}{color\+Wheel\+Widget} (float \+\_\+rgb\mbox{[}3\mbox{]}, bool \+\_\+respect\+Indentation, bool \+\_\+enabled)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a28eeab8c2fdd36902be42935ca1b068f}{m\+\_\+mx}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a54acd29561c96474b53bd8c3aa26d1c8}{m\+\_\+my}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_ace74bbf1a80fc8155680b2c7cc215866}{m\+\_\+scroll}
+\item 
+uint32\+\_\+t \hyperlink{struct_imgui_a5aa45e2447725b5ca76b14e5412c7cf5}{m\+\_\+active}
+\item 
+uint32\+\_\+t \hyperlink{struct_imgui_a63ac173d88de09657f1deba0418d8b93}{m\+\_\+hot}
+\item 
+uint32\+\_\+t \hyperlink{struct_imgui_a2b1f111fa4db6fd3a50d3e5c171e045d}{m\+\_\+hot\+To\+Be}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_aefd00be44d7c6a969eff513f2ffb4552}{m\+\_\+drag\+X}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a871d49118493dfed45309a8104a396f8}{m\+\_\+drag\+Y}
+\item 
+float \hyperlink{struct_imgui_ad4f0591e5e4bdb67821f66c66b7d9902}{m\+\_\+drag\+Orig}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_aa21d6fd70766cb804e86ddb341c1b689}{m\+\_\+widget\+X}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a042e283b16ddcc06e5d8070885aa8bd6}{m\+\_\+widget\+Y}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a09be3810b97464e9ec9d4d8883d1aca3}{m\+\_\+widget\+W}
+\item 
+bool \hyperlink{struct_imgui_af1c5e003ba01ccb02880f330c5f0eb9a}{m\+\_\+left}
+\item 
+bool \hyperlink{struct_imgui_ae92c0cc43267ec19debdd74742b3bf77}{m\+\_\+left\+Pressed}
+\item 
+bool \hyperlink{struct_imgui_a18c28b5938d175e28384fea64bf81d6e}{m\+\_\+left\+Released}
+\item 
+bool \hyperlink{struct_imgui_ad7bfdedfc25d70896a74b417113514b8}{m\+\_\+is\+Hot}
+\item 
+bool \hyperlink{struct_imgui_a6eaf1b0dc223c0f6c8281aec73533ed3}{m\+\_\+is\+Active}
+\item 
+bool \hyperlink{struct_imgui_a65c4171e4ded77458c189fd935b1fe36}{m\+\_\+went\+Active}
+\item 
+bool \hyperlink{struct_imgui_a361e294d6cab2d03e761c81a55f3ab3a}{m\+\_\+inside\+Current\+Scroll}
+\item 
+uint8\+\_\+t \hyperlink{struct_imgui_a49f3ba72d556e833159d3c53055e7ac5}{m\+\_\+area\+Id}
+\item 
+uint8\+\_\+t \hyperlink{struct_imgui_ab53ae39e3d5f0b9e95c40ed5f6167f2c}{m\+\_\+widget\+Id}
+\item 
+uint64\+\_\+t \hyperlink{struct_imgui_acbbe53140f85331b41d31dccd4b75c9e}{m\+\_\+enabled\+Area\+Ids}
+\item 
+uint16\+\_\+t \hyperlink{struct_imgui_a2dcf14acfafc445b001d77eb33c65730}{m\+\_\+scissor}
+\item 
+float \hyperlink{struct_imgui_aa3b9f011f9b3de1ca858e33207a4b833}{m\+\_\+temp\+Coords} \mbox{[}\hyperlink{imgui_8cpp_ac8b912735d9c4520ca6cb8fde885a56f}{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S} $\ast$2\mbox{]}
+\item 
+float \hyperlink{struct_imgui_a19066c64797331e561d4777a255ba382}{m\+\_\+temp\+Normals} \mbox{[}\hyperlink{imgui_8cpp_ac8b912735d9c4520ca6cb8fde885a56f}{M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S} $\ast$2\mbox{]}
+\item 
+float \hyperlink{struct_imgui_ab3588c2ae89dd63593b4b1e3c8de8d6a}{m\+\_\+circle\+Verts} \mbox{[}\hyperlink{imgui_8cpp_a3ab40b25c7d9283ac2c0cf0f591ee58f}{N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S} $\ast$2\mbox{]}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a8ea061e73972317ffdbae708cfea6acc}{m\+\_\+scroll\+Top}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a5f91076681b523cf51371482b60c89cb}{m\+\_\+scroll\+Bottom}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a05c7c15bafb234b3aa31dc8ef87cca90}{m\+\_\+scroll\+Right}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_aaa84d2ed9b429ebc8465793af4a69423}{m\+\_\+scroll\+Area\+Top}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_abb0e9f220b5bd0d58c9042531deb009d}{m\+\_\+scroll\+Area\+Width}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a82f08746442ad6d35d5a9916dad376e9}{m\+\_\+scroll\+Area\+Inner\+Width}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a556405944c01311715fc025bf22e69c8}{m\+\_\+scroll\+Area\+X}
+\item 
+int32\+\_\+t $\ast$ \hyperlink{struct_imgui_ace428922eb784a2e660c1db562ee39bc}{m\+\_\+scroll\+Val}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_a5b80f664bae3b24856f1e6f7ee997689}{m\+\_\+focus\+Top}
+\item 
+int32\+\_\+t \hyperlink{struct_imgui_ac240b307ef0daa1811a9990eb9e2fb4e}{m\+\_\+focus\+Bottom}
+\item 
+uint16\+\_\+t \hyperlink{struct_imgui_a30e8e81ea0ea2ceaaa9b495d7a93626a}{m\+\_\+scroll\+Id}
+\item 
+bool \hyperlink{struct_imgui_a7e1c85bf483a1096a09883f2993b54c9}{m\+\_\+inside\+Scroll\+Area}
+\item 
+uint16\+\_\+t \hyperlink{struct_imgui_a3851776e5fae774bbb128200ae886bcb}{m\+\_\+texture\+Width}
+\item 
+uint16\+\_\+t \hyperlink{struct_imgui_a13ed484d71e4e612c09ef37a793901b7}{m\+\_\+texture\+Height}
+\item 
+float \hyperlink{struct_imgui_a28072d6c7fc1eba7c4d26884d2cce6b9}{m\+\_\+inv\+Texture\+Width}
+\item 
+float \hyperlink{struct_imgui_a97a4abcedda839b676903c01cdacd3b3}{m\+\_\+inv\+Texture\+Height}
+\item 
+float \hyperlink{struct_imgui_a9f904b90c3c63bd0e5f611dcab6ae0c9}{m\+\_\+half\+Texel}
+\item 
+\hyperlink{struct_n_v_gcontext}{N\+V\+Gcontext} $\ast$ \hyperlink{struct_imgui_a9e19f6927feb38c0736babf2ef908e11}{m\+\_\+nvg}
+\item 
+uint8\+\_\+t \hyperlink{struct_imgui_a5b3df19de612269c5f48ebe7eb904052}{m\+\_\+view}
+\item 
+uint16\+\_\+t \hyperlink{struct_imgui_ae5864284805ff93aa9f823e4400f9699}{m\+\_\+current\+Font\+Idx}
+\item 
+bx\+::\+Handle\+Alloc\+T\\*
+$<$ \hyperlink{imgui_8cpp_a3af1d21ef7ab72a041fbfec717423f71}{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S} $>$ \hyperlink{struct_imgui_a5e2a8ede1963b850515781425f730373}{m\+\_\+font\+Handle}
+\item 
+\hyperlink{struct_imgui_1_1_font}{Font} \hyperlink{struct_imgui_ac6afbf99733c4ae9446120bd13549b51}{m\+\_\+fonts} \mbox{[}\hyperlink{imgui_8cpp_a3af1d21ef7ab72a041fbfec717423f71}{I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}\mbox{]}
+\item 
+bgfx\+::\+Uniform\+Handle \hyperlink{struct_imgui_a30263cbb0979de658a5075d42f6194c3}{u\+\_\+image\+Lod}
+\item 
+bgfx\+::\+Uniform\+Handle \hyperlink{struct_imgui_afa78c96bf20f3b39f798596df31b1064}{u\+\_\+tex\+Color}
+\item 
+bgfx\+::\+Program\+Handle \hyperlink{struct_imgui_ac3ba743de6b188ea34a5dff983c2f532}{m\+\_\+color\+Program}
+\item 
+bgfx\+::\+Program\+Handle \hyperlink{struct_imgui_ae886887ae19a1a9a4b3232de7c9f6e44}{m\+\_\+texture\+Program}
+\item 
+bgfx\+::\+Program\+Handle \hyperlink{struct_imgui_a69e5502448ed9bbccacdd41f01d81e2f}{m\+\_\+image\+Program}
+\item 
+bgfx\+::\+Texture\+Handle \hyperlink{struct_imgui_afbc6e41c677110223b6319da003596e5}{m\+\_\+missing\+Texture}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 259 of file imgui.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{struct_imgui_a0fd77c8f0d4e05fb61442d6ecc045ede}{\index{Imgui@{Imgui}!Imgui@{Imgui}}
+\index{Imgui@{Imgui}!Imgui@{Imgui}}
+\subsubsection[{Imgui}]{\setlength{\rightskip}{0pt plus 5cm}Imgui\+::\+Imgui (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a0fd77c8f0d4e05fb61442d6ecc045ede}
+
+
+Definition at line 261 of file imgui.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_imgui_abd67f8cff4af17d94924459aab78eddc}{\index{Imgui@{Imgui}!any\+Active@{any\+Active}}
+\index{any\+Active@{any\+Active}!Imgui@{Imgui}}
+\subsubsection[{any\+Active}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::any\+Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_abd67f8cff4af17d94924459aab78eddc}
+
+
+Definition at line 449 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aace2d3cc1a44dde2a6ecaa10c20ae75e}{\index{Imgui@{Imgui}!begin\+Frame@{begin\+Frame}}
+\index{begin\+Frame@{begin\+Frame}!Imgui@{Imgui}}
+\subsubsection[{begin\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::begin\+Frame (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+mx, }
+\item[{int32\+\_\+t}]{\+\_\+my, }
+\item[{uint8\+\_\+t}]{\+\_\+button, }
+\item[{int32\+\_\+t}]{\+\_\+scroll, }
+\item[{uint16\+\_\+t}]{\+\_\+width, }
+\item[{uint16\+\_\+t}]{\+\_\+height, }
+\item[{uint8\+\_\+t}]{\+\_\+view}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_aace2d3cc1a44dde2a6ecaa10c20ae75e}
+
+
+Definition at line 566 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aa842ced9a03d6ce04db52db1998dbe8b}{\index{Imgui@{Imgui}!begin\+Scroll\+Area@{begin\+Scroll\+Area}}
+\index{begin\+Scroll\+Area@{begin\+Scroll\+Area}!Imgui@{Imgui}}
+\subsubsection[{begin\+Scroll\+Area}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::begin\+Scroll\+Area (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{int32\+\_\+t}]{\+\_\+height, }
+\item[{int32\+\_\+t $\ast$}]{\+\_\+scroll, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_aa842ced9a03d6ce04db52db1998dbe8b}
+
+
+Definition at line 602 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a4a85db7180a0eef035ead4360f51d8ff}{\index{Imgui@{Imgui}!button@{button}}
+\index{button@{button}!Imgui@{Imgui}}
+\subsubsection[{button}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::button (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a4a85db7180a0eef035ead4360f51d8ff}
+
+
+Definition at line 756 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a21bfcf6ad6f2b1c0ed84337bb4c9b7de}{\index{Imgui@{Imgui}!button\+Logic@{button\+Logic}}
+\index{button\+Logic@{button\+Logic}!Imgui@{Imgui}}
+\subsubsection[{button\+Logic}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::button\+Logic (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+id, }
+\item[{bool}]{\+\_\+over}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a21bfcf6ad6f2b1c0ed84337bb4c9b7de}
+
+
+Definition at line 508 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a499361b2a207851a37a9122851851588}{\index{Imgui@{Imgui}!check@{check}}
+\index{check@{check}!Imgui@{Imgui}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::check (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool}]{\+\_\+checked, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a499361b2a207851a37a9122851851588}
+
+
+Definition at line 849 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a82c6855100fb9a94d25f2ce474a7e7dd}{\index{Imgui@{Imgui}!clear\+Active@{clear\+Active}}
+\index{clear\+Active@{clear\+Active}!Imgui@{Imgui}}
+\subsubsection[{clear\+Active}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::clear\+Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a82c6855100fb9a94d25f2ce474a7e7dd}
+
+
+Definition at line 490 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_adf889d7fcbc65d2d9adb8ac1c8dbb826}{\index{Imgui@{Imgui}!clear\+Input@{clear\+Input}}
+\index{clear\+Input@{clear\+Input}!Imgui@{Imgui}}
+\subsubsection[{clear\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::clear\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_adf889d7fcbc65d2d9adb8ac1c8dbb826}
+
+
+Definition at line 483 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a79fc0ef2e155f87c65cc91833acc4a09}{\index{Imgui@{Imgui}!collapse@{collapse}}
+\index{collapse@{collapse}!Imgui@{Imgui}}
+\subsubsection[{collapse}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::collapse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{const char $\ast$}]{\+\_\+subtext, }
+\item[{bool}]{\+\_\+checked, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a79fc0ef2e155f87c65cc91833acc4a09}
+
+
+Definition at line 964 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a6a042945fa89fe0c98016074f03d0b20}{\index{Imgui@{Imgui}!color\+Wheel\+Widget@{color\+Wheel\+Widget}}
+\index{color\+Wheel\+Widget@{color\+Wheel\+Widget}!Imgui@{Imgui}}
+\subsubsection[{color\+Wheel\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::color\+Wheel\+Widget (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+rgb\mbox{[}3\mbox{]}, }
+\item[{bool}]{\+\_\+respect\+Indentation, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a6a042945fa89fe0c98016074f03d0b20}
+
+
+Definition at line 1688 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a9281a868379419f377b474128b283d3d}{\index{Imgui@{Imgui}!create@{create}}
+\index{create@{create}!Imgui@{Imgui}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}Imgui\+Font\+Handle Imgui\+::create (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{\+\_\+data, }
+\item[{float}]{\+\_\+font\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a9281a868379419f377b474128b283d3d}
+
+
+Definition at line 337 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aea0d4687353e92f3c38438ccb48af7fe}{\index{Imgui@{Imgui}!create\+Font@{create\+Font}}
+\index{create\+Font@{create\+Font}!Imgui@{Imgui}}
+\subsubsection[{create\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Imgui\+Font\+Handle Imgui\+::create\+Font (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{\+\_\+data, }
+\item[{float}]{\+\_\+font\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_aea0d4687353e92f3c38438ccb48af7fe}
+
+
+Definition at line 316 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a73719120b5edd189cbc3e4693e7527e8}{\index{Imgui@{Imgui}!destroy@{destroy}}
+\index{destroy@{destroy}!Imgui@{Imgui}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a73719120b5edd189cbc3e4693e7527e8}
+
+
+Definition at line 429 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a0dbccd4252f7e64c95e2a7e3b1e62114}{\index{Imgui@{Imgui}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!Imgui@{Imgui}}
+\subsubsection[{draw\+Line}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Line (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x0, }
+\item[{float}]{\+\_\+y0, }
+\item[{float}]{\+\_\+x1, }
+\item[{float}]{\+\_\+y1, }
+\item[{float}]{\+\_\+r, }
+\item[{uint32\+\_\+t}]{\+\_\+abgr, }
+\item[{float}]{\+\_\+fth = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a0dbccd4252f7e64c95e2a7e3b1e62114}
+
+
+Definition at line 1380 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a6caff752aae89260ab6daa20e03f9bd9}{\index{Imgui@{Imgui}!draw\+Polygon@{draw\+Polygon}}
+\index{draw\+Polygon@{draw\+Polygon}!Imgui@{Imgui}}
+\subsubsection[{draw\+Polygon}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Polygon (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$}]{\+\_\+coords, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Coords, }
+\item[{float}]{\+\_\+r, }
+\item[{uint32\+\_\+t}]{\+\_\+abgr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a6caff752aae89260ab6daa20e03f9bd9}
+
+
+Definition at line 1212 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a11dae8b849f587bfc5bf08e51cf75ec3}{\index{Imgui@{Imgui}!draw\+Rect@{draw\+Rect}}
+\index{draw\+Rect@{draw\+Rect}!Imgui@{Imgui}}
+\subsubsection[{draw\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Rect (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y, }
+\item[{float}]{w, }
+\item[{float}]{h, }
+\item[{uint32\+\_\+t}]{\+\_\+argb, }
+\item[{float}]{\+\_\+fth = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a11dae8b849f587bfc5bf08e51cf75ec3}
+
+
+Definition at line 1330 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a1bf59452777707efcffef0098ae41cbc}{\index{Imgui@{Imgui}!draw\+Rounded\+Rect@{draw\+Rounded\+Rect}}
+\index{draw\+Rounded\+Rect@{draw\+Rounded\+Rect}!Imgui@{Imgui}}
+\subsubsection[{draw\+Rounded\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Rounded\+Rect (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y, }
+\item[{float}]{w, }
+\item[{float}]{h, }
+\item[{float}]{r, }
+\item[{uint32\+\_\+t}]{\+\_\+argb, }
+\item[{float}]{\+\_\+fth = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a1bf59452777707efcffef0098ae41cbc}
+
+
+Definition at line 1343 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a1a56de6ca760f7ab95eee560ad9a9c21}{\index{Imgui@{Imgui}!draw\+Text@{draw\+Text}}
+\index{draw\+Text@{draw\+Text}!Imgui@{Imgui}}
+\subsubsection[{draw\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Text (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{{\bf Imgui\+Text\+Align\+::\+Enum}}]{\+\_\+align, }
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{uint32\+\_\+t}]{\+\_\+abgr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a1a56de6ca760f7ab95eee560ad9a9c21}
+
+
+Definition at line 1507 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aa9855b572739855229c4858cb3a01909}{\index{Imgui@{Imgui}!draw\+Text@{draw\+Text}}
+\index{draw\+Text@{draw\+Text}!Imgui@{Imgui}}
+\subsubsection[{draw\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Text (
+\begin{DoxyParamCaption}
+\item[{float}]{\+\_\+x, }
+\item[{float}]{\+\_\+y, }
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{{\bf Imgui\+Text\+Align\+::\+Enum}}]{\+\_\+align, }
+\item[{uint32\+\_\+t}]{\+\_\+abgr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_aa9855b572739855229c4858cb3a01909}
+
+
+Definition at line 1512 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a37860630a6f7ab9f490e8820698ce08a}{\index{Imgui@{Imgui}!draw\+Triangle@{draw\+Triangle}}
+\index{draw\+Triangle@{draw\+Triangle}!Imgui@{Imgui}}
+\subsubsection[{draw\+Triangle}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::draw\+Triangle (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{int32\+\_\+t}]{\+\_\+height, }
+\item[{int32\+\_\+t}]{\+\_\+flags, }
+\item[{uint32\+\_\+t}]{\+\_\+abgr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a37860630a6f7ab9f490e8820698ce08a}
+
+
+Definition at line 1422 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a8f7e51edd72634a86fdaad6a8e92fbcd}{\index{Imgui@{Imgui}!end\+Frame@{end\+Frame}}
+\index{end\+Frame@{end\+Frame}!Imgui@{Imgui}}
+\subsubsection[{end\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::end\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a8f7e51edd72634a86fdaad6a8e92fbcd}
+
+
+Definition at line 596 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a7906bd24dcf421288849809931c705a6}{\index{Imgui@{Imgui}!end\+Scroll\+Area@{end\+Scroll\+Area}}
+\index{end\+Scroll\+Area@{end\+Scroll\+Area}!Imgui@{Imgui}}
+\subsubsection[{end\+Scroll\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::end\+Scroll\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a7906bd24dcf421288849809931c705a6}
+
+
+Definition at line 664 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a0eb9cc05c365d88c67ee39f5ca67182d}{\index{Imgui@{Imgui}!get\+Baked\+Quad@{get\+Baked\+Quad}}
+\index{get\+Baked\+Quad@{get\+Baked\+Quad}!Imgui@{Imgui}}
+\subsubsection[{get\+Baked\+Quad}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::get\+Baked\+Quad (
+\begin{DoxyParamCaption}
+\item[{stbtt\+\_\+bakedchar $\ast$}]{\+\_\+chardata, }
+\item[{int32\+\_\+t}]{char\+\_\+index, }
+\item[{float $\ast$}]{\+\_\+xpos, }
+\item[{float $\ast$}]{\+\_\+ypos, }
+\item[{stbtt\+\_\+aligned\+\_\+quad $\ast$}]{\+\_\+quad}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a0eb9cc05c365d88c67ee39f5ca67182d}
+
+
+Definition at line 1449 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a01f1fc7da85d8aa2882ad5024651735d}{\index{Imgui@{Imgui}!get\+Text\+Length@{get\+Text\+Length}}
+\index{get\+Text\+Length@{get\+Text\+Length}!Imgui@{Imgui}}
+\subsubsection[{get\+Text\+Length}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::get\+Text\+Length (
+\begin{DoxyParamCaption}
+\item[{stbtt\+\_\+bakedchar $\ast$}]{\+\_\+chardata, }
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{uint32\+\_\+t \&}]{\+\_\+num\+Vertices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a01f1fc7da85d8aa2882ad5024651735d}
+
+
+Definition at line 1468 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a5a23206faeeb15a7e311854f159b5c2a}{\index{Imgui@{Imgui}!image@{image}}
+\index{image@{image}!Imgui@{Imgui}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::image (
+\begin{DoxyParamCaption}
+\item[{bgfx\+::\+Texture\+Handle}]{\+\_\+image, }
+\item[{float}]{\+\_\+lod, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{int32\+\_\+t}]{\+\_\+height, }
+\item[{{\bf Imgui\+Image\+Align\+::\+Enum}}]{\+\_\+align}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a5a23206faeeb15a7e311854f159b5c2a}
+
+
+Definition at line 920 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a125c7cc9f698979111889fd3c532968f}{\index{Imgui@{Imgui}!image@{image}}
+\index{image@{image}!Imgui@{Imgui}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::image (
+\begin{DoxyParamCaption}
+\item[{bgfx\+::\+Texture\+Handle}]{\+\_\+image, }
+\item[{float}]{\+\_\+lod, }
+\item[{float}]{\+\_\+width, }
+\item[{float}]{\+\_\+aspect, }
+\item[{{\bf Imgui\+Image\+Align\+::\+Enum}}]{\+\_\+align}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a125c7cc9f698979111889fd3c532968f}
+
+
+Definition at line 956 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a0a98864c2cbb8e4afb4dc568c6b792cb}{\index{Imgui@{Imgui}!indent@{indent}}
+\index{indent@{indent}!Imgui@{Imgui}}
+\subsubsection[{indent}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::indent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a0a98864c2cbb8e4afb4dc568c6b792cb}
+
+
+Definition at line 1179 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a77c88bf481d2c6ea655b7b7a3ea0358b}{\index{Imgui@{Imgui}!in\+Rect@{in\+Rect}}
+\index{in\+Rect@{in\+Rect}!Imgui@{Imgui}}
+\subsubsection[{in\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::in\+Rect (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{int32\+\_\+t}]{\+\_\+height, }
+\item[{bool}]{\+\_\+check\+Scroll = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a77c88bf481d2c6ea655b7b7a3ea0358b}
+
+
+Definition at line 464 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a4276ffb8d40339e7f16a6f33660ff845}{\index{Imgui@{Imgui}!is\+Active@{is\+Active}}
+\index{is\+Active@{is\+Active}!Imgui@{Imgui}}
+\subsubsection[{is\+Active}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::is\+Active (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a4276ffb8d40339e7f16a6f33660ff845}
+
+
+Definition at line 454 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a74171641f4498920f5ee0c0de99c020c}{\index{Imgui@{Imgui}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Imgui@{Imgui}}
+\subsubsection[{is\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::is\+Enabled (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+area\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a74171641f4498920f5ee0c0de99c020c}
+
+
+Definition at line 473 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ae33b358fd9ca35967d5fa027f0ee070a}{\index{Imgui@{Imgui}!is\+Hot@{is\+Hot}}
+\index{is\+Hot@{is\+Hot}!Imgui@{Imgui}}
+\subsubsection[{is\+Hot}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::is\+Hot (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_ae33b358fd9ca35967d5fa027f0ee070a}
+
+
+Definition at line 459 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ae577ae044217d48a9ab28c72733c25a1}{\index{Imgui@{Imgui}!item@{item}}
+\index{item@{item}!Imgui@{Imgui}}
+\subsubsection[{item}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::item (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_ae577ae044217d48a9ab28c72733c25a1}
+
+
+Definition at line 801 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a3625fb9706dd9c5c976f137024f1fe94}{\index{Imgui@{Imgui}!label\+Vargs@{label\+Vargs}}
+\index{label\+Vargs@{label\+Vargs}!Imgui@{Imgui}}
+\subsubsection[{label\+Vargs}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::label\+Vargs (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+format, }
+\item[{va\+\_\+list}]{\+\_\+arg\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a3625fb9706dd9c5c976f137024f1fe94}
+
+
+Definition at line 1035 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a85510a065c1d98f43142d6fdb885699d}{\index{Imgui@{Imgui}!screen\+Quad@{screen\+Quad}}
+\index{screen\+Quad@{screen\+Quad}!Imgui@{Imgui}}
+\subsubsection[{screen\+Quad}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::screen\+Quad (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+x, }
+\item[{int32\+\_\+t}]{\+\_\+y, }
+\item[{int32\+\_\+t}]{\+\_\+width, }
+\item[{uint32\+\_\+t}]{\+\_\+height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a85510a065c1d98f43142d6fdb885699d}
+
+
+Definition at line 1631 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a590069dcfa8ac1ff9ffd000a7811ad4e}{\index{Imgui@{Imgui}!separator@{separator}}
+\index{separator@{separator}!Imgui@{Imgui}}
+\subsubsection[{separator}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::separator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a590069dcfa8ac1ff9ffd000a7811ad4e}
+
+
+Definition at line 1191 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a3a254325e703b5b1e195d8c1099e6264}{\index{Imgui@{Imgui}!separator\+Line@{separator\+Line}}
+\index{separator\+Line@{separator\+Line}!Imgui@{Imgui}}
+\subsubsection[{separator\+Line}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::separator\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a3a254325e703b5b1e195d8c1099e6264}
+
+
+Definition at line 1196 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aff52f02a457baca3cf4abcb505814d72}{\index{Imgui@{Imgui}!set\+Active@{set\+Active}}
+\index{set\+Active@{set\+Active}!Imgui@{Imgui}}
+\subsubsection[{set\+Active}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::set\+Active (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_aff52f02a457baca3cf4abcb505814d72}
+
+
+Definition at line 497 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a77903dfff9f642acd8758b66e700ac1e}{\index{Imgui@{Imgui}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Imgui@{Imgui}}
+\subsubsection[{set\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::set\+Enabled (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+area\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a77903dfff9f642acd8758b66e700ac1e}
+
+
+Definition at line 478 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a91b7aa6b3a1343321af148162fad4c5d}{\index{Imgui@{Imgui}!set\+Font@{set\+Font}}
+\index{set\+Font@{set\+Font}!Imgui@{Imgui}}
+\subsubsection[{set\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::set\+Font (
+\begin{DoxyParamCaption}
+\item[{Imgui\+Font\+Handle}]{\+\_\+handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a91b7aa6b3a1343321af148162fad4c5d}
+
+
+Definition at line 329 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a549bd89ab42007b891884aa2805ee6aa}{\index{Imgui@{Imgui}!set\+Hot@{set\+Hot}}
+\index{set\+Hot@{set\+Hot}!Imgui@{Imgui}}
+\subsubsection[{set\+Hot}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::set\+Hot (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a549bd89ab42007b891884aa2805ee6aa}
+
+
+Definition at line 503 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aca17483585c81bdca548cdc85ef9c049}{\index{Imgui@{Imgui}!slider@{slider}}
+\index{slider@{slider}!Imgui@{Imgui}}
+\subsubsection[{slider}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::slider (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text, }
+\item[{float \&}]{\+\_\+val, }
+\item[{float}]{\+\_\+vmin, }
+\item[{float}]{\+\_\+vmax, }
+\item[{float}]{\+\_\+vinc, }
+\item[{bool}]{\+\_\+enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_aca17483585c81bdca548cdc85ef9c049}
+
+
+Definition at line 1073 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a9aaecd1afae09a3e2df52a1edc429b6b}{\index{Imgui@{Imgui}!unindent@{unindent}}
+\index{unindent@{unindent}!Imgui@{Imgui}}
+\subsubsection[{unindent}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::unindent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a9aaecd1afae09a3e2df52a1edc429b6b}
+
+
+Definition at line 1185 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ac9ead12c0619dd2bde67c40e7076160b}{\index{Imgui@{Imgui}!update\+Input@{update\+Input}}
+\index{update\+Input@{update\+Input}!Imgui@{Imgui}}
+\subsubsection[{update\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::update\+Input (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{\+\_\+mx, }
+\item[{int32\+\_\+t}]{\+\_\+my, }
+\item[{uint8\+\_\+t}]{\+\_\+button, }
+\item[{int32\+\_\+t}]{\+\_\+scroll}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_ac9ead12c0619dd2bde67c40e7076160b}
+
+
+Definition at line 554 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a0e605987e3074be8cbb1fa799384ccf0}{\index{Imgui@{Imgui}!value@{value}}
+\index{value@{value}!Imgui@{Imgui}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}void Imgui\+::value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_imgui_a0e605987e3074be8cbb1fa799384ccf0}
+
+
+Definition at line 1058 of file imgui.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_imgui_a5aa45e2447725b5ca76b14e5412c7cf5}{\index{Imgui@{Imgui}!m\+\_\+active@{m\+\_\+active}}
+\index{m\+\_\+active@{m\+\_\+active}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+active}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Imgui\+::m\+\_\+active}}\label{struct_imgui_a5aa45e2447725b5ca76b14e5412c7cf5}
+
+
+Definition at line 1936 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a49f3ba72d556e833159d3c53055e7ac5}{\index{Imgui@{Imgui}!m\+\_\+area\+Id@{m\+\_\+area\+Id}}
+\index{m\+\_\+area\+Id@{m\+\_\+area\+Id}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+area\+Id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Imgui\+::m\+\_\+area\+Id}}\label{struct_imgui_a49f3ba72d556e833159d3c53055e7ac5}
+
+
+Definition at line 1953 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ab3588c2ae89dd63593b4b1e3c8de8d6a}{\index{Imgui@{Imgui}!m\+\_\+circle\+Verts@{m\+\_\+circle\+Verts}}
+\index{m\+\_\+circle\+Verts@{m\+\_\+circle\+Verts}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+circle\+Verts}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+circle\+Verts\mbox{[}{\bf N\+U\+M\+\_\+\+C\+I\+R\+C\+L\+E\+\_\+\+V\+E\+R\+T\+S} $\ast$2\mbox{]}}}\label{struct_imgui_ab3588c2ae89dd63593b4b1e3c8de8d6a}
+
+
+Definition at line 1961 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ac3ba743de6b188ea34a5dff983c2f532}{\index{Imgui@{Imgui}!m\+\_\+color\+Program@{m\+\_\+color\+Program}}
+\index{m\+\_\+color\+Program@{m\+\_\+color\+Program}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+color\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Program\+Handle Imgui\+::m\+\_\+color\+Program}}\label{struct_imgui_ac3ba743de6b188ea34a5dff983c2f532}
+
+
+Definition at line 2000 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ae5864284805ff93aa9f823e4400f9699}{\index{Imgui@{Imgui}!m\+\_\+current\+Font\+Idx@{m\+\_\+current\+Font\+Idx}}
+\index{m\+\_\+current\+Font\+Idx@{m\+\_\+current\+Font\+Idx}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+current\+Font\+Idx}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Imgui\+::m\+\_\+current\+Font\+Idx}}\label{struct_imgui_ae5864284805ff93aa9f823e4400f9699}
+
+
+Definition at line 1993 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ad4f0591e5e4bdb67821f66c66b7d9902}{\index{Imgui@{Imgui}!m\+\_\+drag\+Orig@{m\+\_\+drag\+Orig}}
+\index{m\+\_\+drag\+Orig@{m\+\_\+drag\+Orig}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+drag\+Orig}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+drag\+Orig}}\label{struct_imgui_ad4f0591e5e4bdb67821f66c66b7d9902}
+
+
+Definition at line 1941 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aefd00be44d7c6a969eff513f2ffb4552}{\index{Imgui@{Imgui}!m\+\_\+drag\+X@{m\+\_\+drag\+X}}
+\index{m\+\_\+drag\+X@{m\+\_\+drag\+X}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+drag\+X}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+drag\+X}}\label{struct_imgui_aefd00be44d7c6a969eff513f2ffb4552}
+
+
+Definition at line 1939 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a871d49118493dfed45309a8104a396f8}{\index{Imgui@{Imgui}!m\+\_\+drag\+Y@{m\+\_\+drag\+Y}}
+\index{m\+\_\+drag\+Y@{m\+\_\+drag\+Y}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+drag\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+drag\+Y}}\label{struct_imgui_a871d49118493dfed45309a8104a396f8}
+
+
+Definition at line 1940 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_acbbe53140f85331b41d31dccd4b75c9e}{\index{Imgui@{Imgui}!m\+\_\+enabled\+Area\+Ids@{m\+\_\+enabled\+Area\+Ids}}
+\index{m\+\_\+enabled\+Area\+Ids@{m\+\_\+enabled\+Area\+Ids}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+enabled\+Area\+Ids}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t Imgui\+::m\+\_\+enabled\+Area\+Ids}}\label{struct_imgui_acbbe53140f85331b41d31dccd4b75c9e}
+
+
+Definition at line 1955 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ac240b307ef0daa1811a9990eb9e2fb4e}{\index{Imgui@{Imgui}!m\+\_\+focus\+Bottom@{m\+\_\+focus\+Bottom}}
+\index{m\+\_\+focus\+Bottom@{m\+\_\+focus\+Bottom}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+focus\+Bottom}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+focus\+Bottom}}\label{struct_imgui_ac240b307ef0daa1811a9990eb9e2fb4e}
+
+
+Definition at line 1972 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a5b80f664bae3b24856f1e6f7ee997689}{\index{Imgui@{Imgui}!m\+\_\+focus\+Top@{m\+\_\+focus\+Top}}
+\index{m\+\_\+focus\+Top@{m\+\_\+focus\+Top}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+focus\+Top}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+focus\+Top}}\label{struct_imgui_a5b80f664bae3b24856f1e6f7ee997689}
+
+
+Definition at line 1971 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a5e2a8ede1963b850515781425f730373}{\index{Imgui@{Imgui}!m\+\_\+font\+Handle@{m\+\_\+font\+Handle}}
+\index{m\+\_\+font\+Handle@{m\+\_\+font\+Handle}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+font\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}bx\+::\+Handle\+Alloc\+T$<${\bf I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}$>$ Imgui\+::m\+\_\+font\+Handle}}\label{struct_imgui_a5e2a8ede1963b850515781425f730373}
+
+
+Definition at line 1994 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ac6afbf99733c4ae9446120bd13549b51}{\index{Imgui@{Imgui}!m\+\_\+fonts@{m\+\_\+fonts}}
+\index{m\+\_\+fonts@{m\+\_\+fonts}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+fonts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Font} Imgui\+::m\+\_\+fonts\mbox{[}{\bf I\+M\+G\+U\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+F\+O\+N\+T\+S}\mbox{]}}}\label{struct_imgui_ac6afbf99733c4ae9446120bd13549b51}
+
+
+Definition at line 1995 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a9f904b90c3c63bd0e5f611dcab6ae0c9}{\index{Imgui@{Imgui}!m\+\_\+half\+Texel@{m\+\_\+half\+Texel}}
+\index{m\+\_\+half\+Texel@{m\+\_\+half\+Texel}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+half\+Texel}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+half\+Texel}}\label{struct_imgui_a9f904b90c3c63bd0e5f611dcab6ae0c9}
+
+
+Definition at line 1980 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a63ac173d88de09657f1deba0418d8b93}{\index{Imgui@{Imgui}!m\+\_\+hot@{m\+\_\+hot}}
+\index{m\+\_\+hot@{m\+\_\+hot}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+hot}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Imgui\+::m\+\_\+hot}}\label{struct_imgui_a63ac173d88de09657f1deba0418d8b93}
+
+
+Definition at line 1937 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a2b1f111fa4db6fd3a50d3e5c171e045d}{\index{Imgui@{Imgui}!m\+\_\+hot\+To\+Be@{m\+\_\+hot\+To\+Be}}
+\index{m\+\_\+hot\+To\+Be@{m\+\_\+hot\+To\+Be}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+hot\+To\+Be}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Imgui\+::m\+\_\+hot\+To\+Be}}\label{struct_imgui_a2b1f111fa4db6fd3a50d3e5c171e045d}
+
+
+Definition at line 1938 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a69e5502448ed9bbccacdd41f01d81e2f}{\index{Imgui@{Imgui}!m\+\_\+image\+Program@{m\+\_\+image\+Program}}
+\index{m\+\_\+image\+Program@{m\+\_\+image\+Program}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+image\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Program\+Handle Imgui\+::m\+\_\+image\+Program}}\label{struct_imgui_a69e5502448ed9bbccacdd41f01d81e2f}
+
+
+Definition at line 2002 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a361e294d6cab2d03e761c81a55f3ab3a}{\index{Imgui@{Imgui}!m\+\_\+inside\+Current\+Scroll@{m\+\_\+inside\+Current\+Scroll}}
+\index{m\+\_\+inside\+Current\+Scroll@{m\+\_\+inside\+Current\+Scroll}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+inside\+Current\+Scroll}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+inside\+Current\+Scroll}}\label{struct_imgui_a361e294d6cab2d03e761c81a55f3ab3a}
+
+
+Definition at line 1951 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a7e1c85bf483a1096a09883f2993b54c9}{\index{Imgui@{Imgui}!m\+\_\+inside\+Scroll\+Area@{m\+\_\+inside\+Scroll\+Area}}
+\index{m\+\_\+inside\+Scroll\+Area@{m\+\_\+inside\+Scroll\+Area}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+inside\+Scroll\+Area}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+inside\+Scroll\+Area}}\label{struct_imgui_a7e1c85bf483a1096a09883f2993b54c9}
+
+
+Definition at line 1974 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a97a4abcedda839b676903c01cdacd3b3}{\index{Imgui@{Imgui}!m\+\_\+inv\+Texture\+Height@{m\+\_\+inv\+Texture\+Height}}
+\index{m\+\_\+inv\+Texture\+Height@{m\+\_\+inv\+Texture\+Height}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+inv\+Texture\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+inv\+Texture\+Height}}\label{struct_imgui_a97a4abcedda839b676903c01cdacd3b3}
+
+
+Definition at line 1979 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a28072d6c7fc1eba7c4d26884d2cce6b9}{\index{Imgui@{Imgui}!m\+\_\+inv\+Texture\+Width@{m\+\_\+inv\+Texture\+Width}}
+\index{m\+\_\+inv\+Texture\+Width@{m\+\_\+inv\+Texture\+Width}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+inv\+Texture\+Width}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+inv\+Texture\+Width}}\label{struct_imgui_a28072d6c7fc1eba7c4d26884d2cce6b9}
+
+
+Definition at line 1978 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a6eaf1b0dc223c0f6c8281aec73533ed3}{\index{Imgui@{Imgui}!m\+\_\+is\+Active@{m\+\_\+is\+Active}}
+\index{m\+\_\+is\+Active@{m\+\_\+is\+Active}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+is\+Active}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+is\+Active}}\label{struct_imgui_a6eaf1b0dc223c0f6c8281aec73533ed3}
+
+
+Definition at line 1949 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ad7bfdedfc25d70896a74b417113514b8}{\index{Imgui@{Imgui}!m\+\_\+is\+Hot@{m\+\_\+is\+Hot}}
+\index{m\+\_\+is\+Hot@{m\+\_\+is\+Hot}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+is\+Hot}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+is\+Hot}}\label{struct_imgui_ad7bfdedfc25d70896a74b417113514b8}
+
+
+Definition at line 1948 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_af1c5e003ba01ccb02880f330c5f0eb9a}{\index{Imgui@{Imgui}!m\+\_\+left@{m\+\_\+left}}
+\index{m\+\_\+left@{m\+\_\+left}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+left}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+left}}\label{struct_imgui_af1c5e003ba01ccb02880f330c5f0eb9a}
+
+
+Definition at line 1945 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ae92c0cc43267ec19debdd74742b3bf77}{\index{Imgui@{Imgui}!m\+\_\+left\+Pressed@{m\+\_\+left\+Pressed}}
+\index{m\+\_\+left\+Pressed@{m\+\_\+left\+Pressed}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+left\+Pressed}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+left\+Pressed}}\label{struct_imgui_ae92c0cc43267ec19debdd74742b3bf77}
+
+
+Definition at line 1946 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a18c28b5938d175e28384fea64bf81d6e}{\index{Imgui@{Imgui}!m\+\_\+left\+Released@{m\+\_\+left\+Released}}
+\index{m\+\_\+left\+Released@{m\+\_\+left\+Released}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+left\+Released}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+left\+Released}}\label{struct_imgui_a18c28b5938d175e28384fea64bf81d6e}
+
+
+Definition at line 1947 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_afbc6e41c677110223b6319da003596e5}{\index{Imgui@{Imgui}!m\+\_\+missing\+Texture@{m\+\_\+missing\+Texture}}
+\index{m\+\_\+missing\+Texture@{m\+\_\+missing\+Texture}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+missing\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Texture\+Handle Imgui\+::m\+\_\+missing\+Texture}}\label{struct_imgui_afbc6e41c677110223b6319da003596e5}
+
+
+Definition at line 2003 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a28eeab8c2fdd36902be42935ca1b068f}{\index{Imgui@{Imgui}!m\+\_\+mx@{m\+\_\+mx}}
+\index{m\+\_\+mx@{m\+\_\+mx}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+mx}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+mx}}\label{struct_imgui_a28eeab8c2fdd36902be42935ca1b068f}
+
+
+Definition at line 1933 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a54acd29561c96474b53bd8c3aa26d1c8}{\index{Imgui@{Imgui}!m\+\_\+my@{m\+\_\+my}}
+\index{m\+\_\+my@{m\+\_\+my}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+my}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+my}}\label{struct_imgui_a54acd29561c96474b53bd8c3aa26d1c8}
+
+
+Definition at line 1934 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a9e19f6927feb38c0736babf2ef908e11}{\index{Imgui@{Imgui}!m\+\_\+nvg@{m\+\_\+nvg}}
+\index{m\+\_\+nvg@{m\+\_\+nvg}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+nvg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\+V\+Gcontext}$\ast$ Imgui\+::m\+\_\+nvg}}\label{struct_imgui_a9e19f6927feb38c0736babf2ef908e11}
+
+
+Definition at line 1982 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a2dcf14acfafc445b001d77eb33c65730}{\index{Imgui@{Imgui}!m\+\_\+scissor@{m\+\_\+scissor}}
+\index{m\+\_\+scissor@{m\+\_\+scissor}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scissor}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Imgui\+::m\+\_\+scissor}}\label{struct_imgui_a2dcf14acfafc445b001d77eb33c65730}
+
+
+Definition at line 1956 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ace74bbf1a80fc8155680b2c7cc215866}{\index{Imgui@{Imgui}!m\+\_\+scroll@{m\+\_\+scroll}}
+\index{m\+\_\+scroll@{m\+\_\+scroll}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll}}\label{struct_imgui_ace74bbf1a80fc8155680b2c7cc215866}
+
+
+Definition at line 1935 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a82f08746442ad6d35d5a9916dad376e9}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Area\+Inner\+Width@{m\+\_\+scroll\+Area\+Inner\+Width}}
+\index{m\+\_\+scroll\+Area\+Inner\+Width@{m\+\_\+scroll\+Area\+Inner\+Width}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Area\+Inner\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Area\+Inner\+Width}}\label{struct_imgui_a82f08746442ad6d35d5a9916dad376e9}
+
+
+Definition at line 1968 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aaa84d2ed9b429ebc8465793af4a69423}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Area\+Top@{m\+\_\+scroll\+Area\+Top}}
+\index{m\+\_\+scroll\+Area\+Top@{m\+\_\+scroll\+Area\+Top}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Area\+Top}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Area\+Top}}\label{struct_imgui_aaa84d2ed9b429ebc8465793af4a69423}
+
+
+Definition at line 1966 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_abb0e9f220b5bd0d58c9042531deb009d}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Area\+Width@{m\+\_\+scroll\+Area\+Width}}
+\index{m\+\_\+scroll\+Area\+Width@{m\+\_\+scroll\+Area\+Width}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Area\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Area\+Width}}\label{struct_imgui_abb0e9f220b5bd0d58c9042531deb009d}
+
+
+Definition at line 1967 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a556405944c01311715fc025bf22e69c8}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Area\+X@{m\+\_\+scroll\+Area\+X}}
+\index{m\+\_\+scroll\+Area\+X@{m\+\_\+scroll\+Area\+X}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Area\+X}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Area\+X}}\label{struct_imgui_a556405944c01311715fc025bf22e69c8}
+
+
+Definition at line 1969 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a5f91076681b523cf51371482b60c89cb}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Bottom@{m\+\_\+scroll\+Bottom}}
+\index{m\+\_\+scroll\+Bottom@{m\+\_\+scroll\+Bottom}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Bottom}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Bottom}}\label{struct_imgui_a5f91076681b523cf51371482b60c89cb}
+
+
+Definition at line 1964 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a30e8e81ea0ea2ceaaa9b495d7a93626a}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Id@{m\+\_\+scroll\+Id}}
+\index{m\+\_\+scroll\+Id@{m\+\_\+scroll\+Id}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Id}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Imgui\+::m\+\_\+scroll\+Id}}\label{struct_imgui_a30e8e81ea0ea2ceaaa9b495d7a93626a}
+
+
+Definition at line 1973 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a05c7c15bafb234b3aa31dc8ef87cca90}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Right@{m\+\_\+scroll\+Right}}
+\index{m\+\_\+scroll\+Right@{m\+\_\+scroll\+Right}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Right}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Right}}\label{struct_imgui_a05c7c15bafb234b3aa31dc8ef87cca90}
+
+
+Definition at line 1965 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a8ea061e73972317ffdbae708cfea6acc}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Top@{m\+\_\+scroll\+Top}}
+\index{m\+\_\+scroll\+Top@{m\+\_\+scroll\+Top}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Top}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+scroll\+Top}}\label{struct_imgui_a8ea061e73972317ffdbae708cfea6acc}
+
+
+Definition at line 1963 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ace428922eb784a2e660c1db562ee39bc}{\index{Imgui@{Imgui}!m\+\_\+scroll\+Val@{m\+\_\+scroll\+Val}}
+\index{m\+\_\+scroll\+Val@{m\+\_\+scroll\+Val}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+scroll\+Val}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t$\ast$ Imgui\+::m\+\_\+scroll\+Val}}\label{struct_imgui_ace428922eb784a2e660c1db562ee39bc}
+
+
+Definition at line 1970 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aa3b9f011f9b3de1ca858e33207a4b833}{\index{Imgui@{Imgui}!m\+\_\+temp\+Coords@{m\+\_\+temp\+Coords}}
+\index{m\+\_\+temp\+Coords@{m\+\_\+temp\+Coords}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+temp\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+temp\+Coords\mbox{[}{\bf M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S} $\ast$2\mbox{]}}}\label{struct_imgui_aa3b9f011f9b3de1ca858e33207a4b833}
+
+
+Definition at line 1958 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a19066c64797331e561d4777a255ba382}{\index{Imgui@{Imgui}!m\+\_\+temp\+Normals@{m\+\_\+temp\+Normals}}
+\index{m\+\_\+temp\+Normals@{m\+\_\+temp\+Normals}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+temp\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}float Imgui\+::m\+\_\+temp\+Normals\mbox{[}{\bf M\+A\+X\+\_\+\+T\+E\+M\+P\+\_\+\+C\+O\+O\+R\+D\+S} $\ast$2\mbox{]}}}\label{struct_imgui_a19066c64797331e561d4777a255ba382}
+
+
+Definition at line 1959 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a13ed484d71e4e612c09ef37a793901b7}{\index{Imgui@{Imgui}!m\+\_\+texture\+Height@{m\+\_\+texture\+Height}}
+\index{m\+\_\+texture\+Height@{m\+\_\+texture\+Height}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+texture\+Height}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Imgui\+::m\+\_\+texture\+Height}}\label{struct_imgui_a13ed484d71e4e612c09ef37a793901b7}
+
+
+Definition at line 1977 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ae886887ae19a1a9a4b3232de7c9f6e44}{\index{Imgui@{Imgui}!m\+\_\+texture\+Program@{m\+\_\+texture\+Program}}
+\index{m\+\_\+texture\+Program@{m\+\_\+texture\+Program}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+texture\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Program\+Handle Imgui\+::m\+\_\+texture\+Program}}\label{struct_imgui_ae886887ae19a1a9a4b3232de7c9f6e44}
+
+
+Definition at line 2001 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a3851776e5fae774bbb128200ae886bcb}{\index{Imgui@{Imgui}!m\+\_\+texture\+Width@{m\+\_\+texture\+Width}}
+\index{m\+\_\+texture\+Width@{m\+\_\+texture\+Width}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+texture\+Width}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Imgui\+::m\+\_\+texture\+Width}}\label{struct_imgui_a3851776e5fae774bbb128200ae886bcb}
+
+
+Definition at line 1976 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a5b3df19de612269c5f48ebe7eb904052}{\index{Imgui@{Imgui}!m\+\_\+view@{m\+\_\+view}}
+\index{m\+\_\+view@{m\+\_\+view}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+view}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Imgui\+::m\+\_\+view}}\label{struct_imgui_a5b3df19de612269c5f48ebe7eb904052}
+
+
+Definition at line 1984 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a65c4171e4ded77458c189fd935b1fe36}{\index{Imgui@{Imgui}!m\+\_\+went\+Active@{m\+\_\+went\+Active}}
+\index{m\+\_\+went\+Active@{m\+\_\+went\+Active}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+went\+Active}]{\setlength{\rightskip}{0pt plus 5cm}bool Imgui\+::m\+\_\+went\+Active}}\label{struct_imgui_a65c4171e4ded77458c189fd935b1fe36}
+
+
+Definition at line 1950 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_ab53ae39e3d5f0b9e95c40ed5f6167f2c}{\index{Imgui@{Imgui}!m\+\_\+widget\+Id@{m\+\_\+widget\+Id}}
+\index{m\+\_\+widget\+Id@{m\+\_\+widget\+Id}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+widget\+Id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Imgui\+::m\+\_\+widget\+Id}}\label{struct_imgui_ab53ae39e3d5f0b9e95c40ed5f6167f2c}
+
+
+Definition at line 1954 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a09be3810b97464e9ec9d4d8883d1aca3}{\index{Imgui@{Imgui}!m\+\_\+widget\+W@{m\+\_\+widget\+W}}
+\index{m\+\_\+widget\+W@{m\+\_\+widget\+W}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+widget\+W}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+widget\+W}}\label{struct_imgui_a09be3810b97464e9ec9d4d8883d1aca3}
+
+
+Definition at line 1944 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_aa21d6fd70766cb804e86ddb341c1b689}{\index{Imgui@{Imgui}!m\+\_\+widget\+X@{m\+\_\+widget\+X}}
+\index{m\+\_\+widget\+X@{m\+\_\+widget\+X}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+widget\+X}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+widget\+X}}\label{struct_imgui_aa21d6fd70766cb804e86ddb341c1b689}
+
+
+Definition at line 1942 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a042e283b16ddcc06e5d8070885aa8bd6}{\index{Imgui@{Imgui}!m\+\_\+widget\+Y@{m\+\_\+widget\+Y}}
+\index{m\+\_\+widget\+Y@{m\+\_\+widget\+Y}!Imgui@{Imgui}}
+\subsubsection[{m\+\_\+widget\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Imgui\+::m\+\_\+widget\+Y}}\label{struct_imgui_a042e283b16ddcc06e5d8070885aa8bd6}
+
+
+Definition at line 1943 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_a30263cbb0979de658a5075d42f6194c3}{\index{Imgui@{Imgui}!u\+\_\+image\+Lod@{u\+\_\+image\+Lod}}
+\index{u\+\_\+image\+Lod@{u\+\_\+image\+Lod}!Imgui@{Imgui}}
+\subsubsection[{u\+\_\+image\+Lod}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Uniform\+Handle Imgui\+::u\+\_\+image\+Lod}}\label{struct_imgui_a30263cbb0979de658a5075d42f6194c3}
+
+
+Definition at line 1998 of file imgui.\+cpp.
+
+\hypertarget{struct_imgui_afa78c96bf20f3b39f798596df31b1064}{\index{Imgui@{Imgui}!u\+\_\+tex\+Color@{u\+\_\+tex\+Color}}
+\index{u\+\_\+tex\+Color@{u\+\_\+tex\+Color}!Imgui@{Imgui}}
+\subsubsection[{u\+\_\+tex\+Color}]{\setlength{\rightskip}{0pt plus 5cm}bgfx\+::\+Uniform\+Handle Imgui\+::u\+\_\+tex\+Color}}\label{struct_imgui_afa78c96bf20f3b39f798596df31b1064}
+
+
+Definition at line 1999 of file imgui.\+cpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/imgui/\hyperlink{imgui_8cpp}{imgui.\+cpp}\end{DoxyCompactItemize}

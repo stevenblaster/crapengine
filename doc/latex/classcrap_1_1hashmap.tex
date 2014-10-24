@@ -1,0 +1,173 @@
+\hypertarget{classcrap_1_1hashmap}{\section{crap\+:\+:hashmap$<$ K, V $>$ Class Template Reference}
+\label{classcrap_1_1hashmap}\index{crap\+::hashmap$<$ K, V $>$@{crap\+::hashmap$<$ K, V $>$}}
+}
+
+
+{\ttfamily \#include $<$hashmap.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1hashmap_1_1__type}{\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{classcrap_1_1hashmap_a290dd70891131cbc14ed79c1c5aa37e5}{handle}
+\item 
+typedef struct \hyperlink{structcrap_1_1hashmap_1_1__type}{crap\+::hashmap\+::\+\_\+type} \hyperlink{classcrap_1_1hashmap_a017f9bcee5d676125b3a765f33fc6e11}{type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1hashmap_a9c2da6605e2ce4becacbad391cb0c9f1}{hashmap} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1hashmap_ac843c6a985b40c7669f5b2360555fb79}{size})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1hashmap_a51162df5f902c54f00636f1d522cc178}{$\sim$hashmap} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1hashmap_a3a1085135a7a4087030cd77bde6b3406}{hashmap} (const \hyperlink{classcrap_1_1hashmap}{hashmap} \&other)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1hashmap}{hashmap} \& \hyperlink{classcrap_1_1hashmap_a3c969ffd9d18e2fea89835f64cc57ad4}{operator=} (const \hyperlink{classcrap_1_1hashmap}{hashmap} \&other)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1hashmap_a5ff696cf3f7474d028c5880913a70e59}{init} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1hashmap_ac843c6a985b40c7669f5b2360555fb79}{size})
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void $\ast$ \hyperlink{classcrap_1_1hashmap_a72e8837a88d38e4a82be149db450d57c}{deinit} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1hashmap_ac843c6a985b40c7669f5b2360555fb79}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1hashmap_ad7f0876bbf7a6f8bae426bac465cd908}{max\+\_\+size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V \& \hyperlink{classcrap_1_1hashmap_a28d765e6b0fb29a7882f084cdd427887}{operator\mbox{[}$\,$\mbox{]}} (const K \&index) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1hashmap_a158f033f63343bd601ee83c75061d996}{insert} (const K \&key, const V \&value)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V $\ast$ \hyperlink{classcrap_1_1hashmap_abae6c4b397855dca4c203a6de112e5e1}{find} (const K \&key) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classcrap_1_1hashmap_a290dd70891131cbc14ed79c1c5aa37e5}{handle} \hyperlink{classcrap_1_1hashmap_af1db8f222fca6a0d29c2873f2fd10c5f}{invalid} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class crap\+::hashmap$<$ K, V $>$}
+
+
+
+Definition at line 13 of file hashmap.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1hashmap_a290dd70891131cbc14ed79c1c5aa37e5}{\index{crap\+::hashmap@{crap\+::hashmap}!handle@{handle}}
+\index{handle@{handle}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ typedef uint32\+\_\+t {\bf crap\+::hashmap}$<$ K, V $>$\+::{\bf handle}}}\label{classcrap_1_1hashmap_a290dd70891131cbc14ed79c1c5aa37e5}
+
+
+Definition at line 17 of file hashmap.\+h.
+
+\hypertarget{classcrap_1_1hashmap_a017f9bcee5d676125b3a765f33fc6e11}{\index{crap\+::hashmap@{crap\+::hashmap}!type@{type}}
+\index{type@{type}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ typedef struct {\bf crap\+::hashmap\+::\+\_\+type}
+     {\bf crap\+::hashmap}$<$ K, V $>$\+::{\bf type}}}\label{classcrap_1_1hashmap_a017f9bcee5d676125b3a765f33fc6e11}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1hashmap_a9c2da6605e2ce4becacbad391cb0c9f1}{\index{crap\+::hashmap@{crap\+::hashmap}!hashmap@{hashmap}}
+\index{hashmap@{hashmap}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{hashmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::hashmap}$<$ K, V $>$\+::{\bf hashmap} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1hashmap_a9c2da6605e2ce4becacbad391cb0c9f1}
+\hypertarget{classcrap_1_1hashmap_a51162df5f902c54f00636f1d522cc178}{\index{crap\+::hashmap@{crap\+::hashmap}!````~hashmap@{$\sim$hashmap}}
+\index{````~hashmap@{$\sim$hashmap}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{$\sim$hashmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::hashmap}$<$ K, V $>$\+::$\sim${\bf hashmap} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1hashmap_a51162df5f902c54f00636f1d522cc178}
+\hypertarget{classcrap_1_1hashmap_a3a1085135a7a4087030cd77bde6b3406}{\index{crap\+::hashmap@{crap\+::hashmap}!hashmap@{hashmap}}
+\index{hashmap@{hashmap}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{hashmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::hashmap}$<$ K, V $>$\+::{\bf hashmap} (
+\begin{DoxyParamCaption}
+\item[{const {\bf hashmap}$<$ K, V $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1hashmap_a3a1085135a7a4087030cd77bde6b3406}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1hashmap_a72e8837a88d38e4a82be149db450d57c}{\index{crap\+::hashmap@{crap\+::hashmap}!deinit@{deinit}}
+\index{deinit@{deinit}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{deinit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void$\ast$ {\bf crap\+::hashmap}$<$ K, V $>$\+::deinit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1hashmap_a72e8837a88d38e4a82be149db450d57c}
+\hypertarget{classcrap_1_1hashmap_abae6c4b397855dca4c203a6de112e5e1}{\index{crap\+::hashmap@{crap\+::hashmap}!find@{find}}
+\index{find@{find}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V$\ast$ {\bf crap\+::hashmap}$<$ K, V $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1hashmap_abae6c4b397855dca4c203a6de112e5e1}
+\hypertarget{classcrap_1_1hashmap_a5ff696cf3f7474d028c5880913a70e59}{\index{crap\+::hashmap@{crap\+::hashmap}!init@{init}}
+\index{init@{init}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::hashmap}$<$ K, V $>$\+::init (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1hashmap_a5ff696cf3f7474d028c5880913a70e59}
+\hypertarget{classcrap_1_1hashmap_a158f033f63343bd601ee83c75061d996}{\index{crap\+::hashmap@{crap\+::hashmap}!insert@{insert}}
+\index{insert@{insert}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::hashmap}$<$ K, V $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key, }
+\item[{const V \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1hashmap_a158f033f63343bd601ee83c75061d996}
+\hypertarget{classcrap_1_1hashmap_ad7f0876bbf7a6f8bae426bac465cd908}{\index{crap\+::hashmap@{crap\+::hashmap}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::hashmap}$<$ K, V $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1hashmap_ad7f0876bbf7a6f8bae426bac465cd908}
+\hypertarget{classcrap_1_1hashmap_a3c969ffd9d18e2fea89835f64cc57ad4}{\index{crap\+::hashmap@{crap\+::hashmap}!operator=@{operator=}}
+\index{operator=@{operator=}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf hashmap}\& {\bf crap\+::hashmap}$<$ K, V $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf hashmap}$<$ K, V $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1hashmap_a3c969ffd9d18e2fea89835f64cc57ad4}
+\hypertarget{classcrap_1_1hashmap_a28d765e6b0fb29a7882f084cdd427887}{\index{crap\+::hashmap@{crap\+::hashmap}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V\& {\bf crap\+::hashmap}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1hashmap_a28d765e6b0fb29a7882f084cdd427887}
+\hypertarget{classcrap_1_1hashmap_ac843c6a985b40c7669f5b2360555fb79}{\index{crap\+::hashmap@{crap\+::hashmap}!size@{size}}
+\index{size@{size}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::hashmap}$<$ K, V $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1hashmap_ac843c6a985b40c7669f5b2360555fb79}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1hashmap_af1db8f222fca6a0d29c2873f2fd10c5f}{\index{crap\+::hashmap@{crap\+::hashmap}!invalid@{invalid}}
+\index{invalid@{invalid}!crap\+::hashmap@{crap\+::hashmap}}
+\subsubsection[{invalid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ const {\bf handle} {\bf crap\+::hashmap}$<$ K, V $>$\+::invalid = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1hashmap_af1db8f222fca6a0d29c2873f2fd10c5f}
+
+
+Definition at line 27 of file hashmap.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{hashmap_8h}{hashmap.\+h}\end{DoxyCompactItemize}

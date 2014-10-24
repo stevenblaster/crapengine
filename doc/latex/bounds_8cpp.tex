@@ -1,0 +1,211 @@
+\hypertarget{bounds_8cpp}{\section{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bounds.cpp File Reference}
+\label{bounds_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bounds.\+cpp@{/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/bounds.\+cpp}}
+}
+{\ttfamily \#include $<$bx/rng.\+h$>$}\\*
+{\ttfamily \#include $<$bx/fpumath.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}bounds.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{bounds_8cpp_a974b004169e743e538cc4f9af85eeb8d}{aabb\+To\+Obb} (\hyperlink{struct_obb}{Obb} \&\+\_\+obb, const \hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb)
+\begin{DoxyCompactList}\small\item\em Convert axis aligned bounding box to oriented bounding box. \end{DoxyCompactList}\item 
+void \hyperlink{bounds_8cpp_a2b4abf4014bcf0fd7ca4a530c59613f5}{sphere\+To\+Aabb} (\hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb, const \hyperlink{struct_sphere}{Sphere} \&\+\_\+sphere)
+\begin{DoxyCompactList}\small\item\em Convert sphere to axis aligned bounding box. \end{DoxyCompactList}\item 
+void \hyperlink{bounds_8cpp_a53173e536bce526ee67e0d997422a48a}{aabb\+Transform\+To\+Obb} (\hyperlink{struct_obb}{Obb} \&\+\_\+obb, const \hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb, const float $\ast$\+\_\+mtx)
+\item 
+float \hyperlink{bounds_8cpp_a99291e204a820d3417d26eedd0987853}{calc\+Area\+Aabb} (\hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb)
+\item 
+void \hyperlink{bounds_8cpp_ab3ec158501ec1e359a52d43f0e95a58f}{calc\+Aabb} (\hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb, const void $\ast$\+\_\+vertices, uint32\+\_\+t \+\_\+num\+Vertices, uint32\+\_\+t \+\_\+stride)
+\begin{DoxyCompactList}\small\item\em Calculate axis aligned bounding box. \end{DoxyCompactList}\item 
+void \hyperlink{bounds_8cpp_ac9162f3afd1bafbecf499ae23477178c}{calc\+Aabb} (\hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb, const float $\ast$\+\_\+mtx, const void $\ast$\+\_\+vertices, uint32\+\_\+t \+\_\+num\+Vertices, uint32\+\_\+t \+\_\+stride)
+\begin{DoxyCompactList}\small\item\em Transform vertices and calculate axis aligned bounding box. \end{DoxyCompactList}\item 
+void \hyperlink{bounds_8cpp_a781bdacb97e4a54f275030b74d97cdba}{aabb\+Expand} (\hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb, float \+\_\+factor)
+\begin{DoxyCompactList}\small\item\em Expand A\+A\+B\+B. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{bounds_8cpp_ac2c127adec34e34d8cbdb34f1c0b227e}{aabb\+Overlap\+Test} (\hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb0, \hyperlink{struct_aabb}{Aabb} \&\+\_\+aabb1)
+\item 
+void \hyperlink{bounds_8cpp_a7766718ae2bf71631da2a251dd668e03}{calc\+Obb} (\hyperlink{struct_obb}{Obb} \&\+\_\+obb, const void $\ast$\+\_\+vertices, uint32\+\_\+t \+\_\+num\+Vertices, uint32\+\_\+t \+\_\+stride, uint32\+\_\+t \+\_\+steps)
+\begin{DoxyCompactList}\small\item\em Calculate oriented bounding box. \end{DoxyCompactList}\item 
+void \hyperlink{bounds_8cpp_a8c8da6e2ff7f2b30f6374a80d6904e38}{calc\+Max\+Bounding\+Sphere} (\hyperlink{struct_sphere}{Sphere} \&\+\_\+sphere, const void $\ast$\+\_\+vertices, uint32\+\_\+t \+\_\+num\+Vertices, uint32\+\_\+t \+\_\+stride)
+\begin{DoxyCompactList}\small\item\em Calculate maximum bounding sphere. \end{DoxyCompactList}\item 
+void \hyperlink{bounds_8cpp_a5fa2b253d60000c0bcc38cf0c91b8e81}{calc\+Min\+Bounding\+Sphere} (\hyperlink{struct_sphere}{Sphere} \&\+\_\+sphere, const void $\ast$\+\_\+vertices, uint32\+\_\+t \+\_\+num\+Vertices, uint32\+\_\+t \+\_\+stride, float \+\_\+step)
+\begin{DoxyCompactList}\small\item\em Calculate minimum bounding sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bounds_8cpp_a781bdacb97e4a54f275030b74d97cdba}{\index{bounds.\+cpp@{bounds.\+cpp}!aabb\+Expand@{aabb\+Expand}}
+\index{aabb\+Expand@{aabb\+Expand}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{aabb\+Expand}]{\setlength{\rightskip}{0pt plus 5cm}void aabb\+Expand (
+\begin{DoxyParamCaption}
+\item[{{\bf Aabb} \&}]{\+\_\+aabb, }
+\item[{float}]{\+\_\+factor}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a781bdacb97e4a54f275030b74d97cdba}
+
+
+Expand A\+A\+B\+B. 
+
+
+
+Definition at line 122 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_ac2c127adec34e34d8cbdb34f1c0b227e}{\index{bounds.\+cpp@{bounds.\+cpp}!aabb\+Overlap\+Test@{aabb\+Overlap\+Test}}
+\index{aabb\+Overlap\+Test@{aabb\+Overlap\+Test}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{aabb\+Overlap\+Test}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t aabb\+Overlap\+Test (
+\begin{DoxyParamCaption}
+\item[{{\bf Aabb} \&}]{\+\_\+aabb0, }
+\item[{{\bf Aabb} \&}]{\+\_\+aabb1}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_ac2c127adec34e34d8cbdb34f1c0b227e}
+Returns 0 is two A\+A\+B\+B don't overlap, otherwise returns flags of overlap test. 
+
+Definition at line 132 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a974b004169e743e538cc4f9af85eeb8d}{\index{bounds.\+cpp@{bounds.\+cpp}!aabb\+To\+Obb@{aabb\+To\+Obb}}
+\index{aabb\+To\+Obb@{aabb\+To\+Obb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{aabb\+To\+Obb}]{\setlength{\rightskip}{0pt plus 5cm}void aabb\+To\+Obb (
+\begin{DoxyParamCaption}
+\item[{{\bf Obb} \&}]{\+\_\+obb, }
+\item[{const {\bf Aabb} \&}]{\+\_\+aabb}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a974b004169e743e538cc4f9af85eeb8d}
+
+
+Convert axis aligned bounding box to oriented bounding box. 
+
+
+
+Definition at line 10 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a53173e536bce526ee67e0d997422a48a}{\index{bounds.\+cpp@{bounds.\+cpp}!aabb\+Transform\+To\+Obb@{aabb\+Transform\+To\+Obb}}
+\index{aabb\+Transform\+To\+Obb@{aabb\+Transform\+To\+Obb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{aabb\+Transform\+To\+Obb}]{\setlength{\rightskip}{0pt plus 5cm}void aabb\+Transform\+To\+Obb (
+\begin{DoxyParamCaption}
+\item[{{\bf Obb} \&}]{\+\_\+obb, }
+\item[{const {\bf Aabb} \&}]{\+\_\+aabb, }
+\item[{const float $\ast$}]{\+\_\+mtx}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a53173e536bce526ee67e0d997422a48a}
+
+
+Definition at line 36 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_ab3ec158501ec1e359a52d43f0e95a58f}{\index{bounds.\+cpp@{bounds.\+cpp}!calc\+Aabb@{calc\+Aabb}}
+\index{calc\+Aabb@{calc\+Aabb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{calc\+Aabb}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Aabb (
+\begin{DoxyParamCaption}
+\item[{{\bf Aabb} \&}]{\+\_\+aabb, }
+\item[{const void $\ast$}]{\+\_\+vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+stride}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_ab3ec158501ec1e359a52d43f0e95a58f}
+
+
+Calculate axis aligned bounding box. 
+
+
+
+Definition at line 52 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_ac9162f3afd1bafbecf499ae23477178c}{\index{bounds.\+cpp@{bounds.\+cpp}!calc\+Aabb@{calc\+Aabb}}
+\index{calc\+Aabb@{calc\+Aabb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{calc\+Aabb}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Aabb (
+\begin{DoxyParamCaption}
+\item[{{\bf Aabb} \&}]{\+\_\+aabb, }
+\item[{const float $\ast$}]{\+\_\+mtx, }
+\item[{const void $\ast$}]{\+\_\+vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+stride}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_ac9162f3afd1bafbecf499ae23477178c}
+
+
+Transform vertices and calculate axis aligned bounding box. 
+
+
+
+Definition at line 86 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a99291e204a820d3417d26eedd0987853}{\index{bounds.\+cpp@{bounds.\+cpp}!calc\+Area\+Aabb@{calc\+Area\+Aabb}}
+\index{calc\+Area\+Aabb@{calc\+Area\+Aabb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{calc\+Area\+Aabb}]{\setlength{\rightskip}{0pt plus 5cm}float calc\+Area\+Aabb (
+\begin{DoxyParamCaption}
+\item[{{\bf Aabb} \&}]{\+\_\+aabb}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a99291e204a820d3417d26eedd0987853}
+
+
+Definition at line 44 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a8c8da6e2ff7f2b30f6374a80d6904e38}{\index{bounds.\+cpp@{bounds.\+cpp}!calc\+Max\+Bounding\+Sphere@{calc\+Max\+Bounding\+Sphere}}
+\index{calc\+Max\+Bounding\+Sphere@{calc\+Max\+Bounding\+Sphere}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{calc\+Max\+Bounding\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Max\+Bounding\+Sphere (
+\begin{DoxyParamCaption}
+\item[{{\bf Sphere} \&}]{\+\_\+sphere, }
+\item[{const void $\ast$}]{\+\_\+vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+stride}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a8c8da6e2ff7f2b30f6374a80d6904e38}
+
+
+Calculate maximum bounding sphere. 
+
+
+
+Definition at line 199 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a5fa2b253d60000c0bcc38cf0c91b8e81}{\index{bounds.\+cpp@{bounds.\+cpp}!calc\+Min\+Bounding\+Sphere@{calc\+Min\+Bounding\+Sphere}}
+\index{calc\+Min\+Bounding\+Sphere@{calc\+Min\+Bounding\+Sphere}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{calc\+Min\+Bounding\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Min\+Bounding\+Sphere (
+\begin{DoxyParamCaption}
+\item[{{\bf Sphere} \&}]{\+\_\+sphere, }
+\item[{const void $\ast$}]{\+\_\+vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+stride, }
+\item[{float}]{\+\_\+step}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a5fa2b253d60000c0bcc38cf0c91b8e81}
+
+
+Calculate minimum bounding sphere. 
+
+
+
+Definition at line 231 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a7766718ae2bf71631da2a251dd668e03}{\index{bounds.\+cpp@{bounds.\+cpp}!calc\+Obb@{calc\+Obb}}
+\index{calc\+Obb@{calc\+Obb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{calc\+Obb}]{\setlength{\rightskip}{0pt plus 5cm}void calc\+Obb (
+\begin{DoxyParamCaption}
+\item[{{\bf Obb} \&}]{\+\_\+obb, }
+\item[{const void $\ast$}]{\+\_\+vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+num\+Vertices, }
+\item[{uint32\+\_\+t}]{\+\_\+stride, }
+\item[{uint32\+\_\+t}]{\+\_\+steps}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a7766718ae2bf71631da2a251dd668e03}
+
+
+Calculate oriented bounding box. 
+
+
+
+Definition at line 151 of file bounds.\+cpp.
+
+\hypertarget{bounds_8cpp_a2b4abf4014bcf0fd7ca4a530c59613f5}{\index{bounds.\+cpp@{bounds.\+cpp}!sphere\+To\+Aabb@{sphere\+To\+Aabb}}
+\index{sphere\+To\+Aabb@{sphere\+To\+Aabb}!bounds.\+cpp@{bounds.\+cpp}}
+\subsubsection[{sphere\+To\+Aabb}]{\setlength{\rightskip}{0pt plus 5cm}void sphere\+To\+Aabb (
+\begin{DoxyParamCaption}
+\item[{{\bf Aabb} \&}]{\+\_\+aabb, }
+\item[{const {\bf Sphere} \&}]{\+\_\+sphere}
+\end{DoxyParamCaption}
+)}}\label{bounds_8cpp_a2b4abf4014bcf0fd7ca4a530c59613f5}
+
+
+Convert sphere to axis aligned bounding box. 
+
+
+
+Definition at line 22 of file bounds.\+cpp.
+

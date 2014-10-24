@@ -1,0 +1,160 @@
+\hypertarget{struct_n_v_gparams}{\section{N\+V\+Gparams Struct Reference}
+\label{struct_n_v_gparams}\index{N\+V\+Gparams@{N\+V\+Gparams}}
+}
+
+
+{\ttfamily \#include $<$nanovg.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{struct_n_v_gparams_a6976a0363fdbfa0ef1e756556ef05f97}{user\+Ptr}
+\item 
+int \hyperlink{struct_n_v_gparams_a6a77310845f0d6ca24955582625fc2f3}{atlas\+Width}
+\item 
+int \hyperlink{struct_n_v_gparams_a835232ed4e66c1cdbd8ed74ff822dde1}{atlas\+Height}
+\item 
+int \hyperlink{struct_n_v_gparams_a273c8d7199cc5dc4f1a69e12f0b90229}{edge\+Anti\+Alias}
+\item 
+int($\ast$ \hyperlink{struct_n_v_gparams_ae62f4124bb147d342edfcbc8c233c782}{render\+Create} )(void $\ast$uptr)
+\item 
+int($\ast$ \hyperlink{struct_n_v_gparams_a5c15e9da1c7021d104ac0915ddf8bcdf}{render\+Create\+Texture} )(void $\ast$uptr, int type, int w, int h, const unsigned char $\ast$data)
+\item 
+int($\ast$ \hyperlink{struct_n_v_gparams_a165c064c1c1a454a45e2848feedd5fdd}{render\+Delete\+Texture} )(void $\ast$uptr, int image)
+\item 
+int($\ast$ \hyperlink{struct_n_v_gparams_ab9ece91b2fa9528d2fde0a134086f3a5}{render\+Update\+Texture} )(void $\ast$uptr, int image, int x, int y, int w, int h, const unsigned char $\ast$data)
+\item 
+int($\ast$ \hyperlink{struct_n_v_gparams_a2ecbd50cea119eb702cfbab7538596b8}{render\+Get\+Texture\+Size} )(void $\ast$uptr, int image, int $\ast$w, int $\ast$h)
+\item 
+void($\ast$ \hyperlink{struct_n_v_gparams_aa58560027660da6375360427ad5271e2}{render\+Viewport} )(void $\ast$uptr, int width, int height, int alpha\+Blend)
+\item 
+void($\ast$ \hyperlink{struct_n_v_gparams_a5c2b79e8bf66c15b1f265c39cb4f277c}{render\+Flush} )(void $\ast$uptr, int alpha\+Blend)
+\item 
+void($\ast$ \hyperlink{struct_n_v_gparams_ac484f24518e2653dea0739b7f35a8614}{render\+Fill} )(void $\ast$uptr, struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} $\ast$paint, struct \hyperlink{struct_n_v_gscissor}{N\+V\+Gscissor} $\ast$scissor, float fringe, const float $\ast$bounds, const struct \hyperlink{struct_n_v_gpath}{N\+V\+Gpath} $\ast$paths, int npaths)
+\item 
+void($\ast$ \hyperlink{struct_n_v_gparams_a9b56486a8c43791466312e5b886539e0}{render\+Stroke} )(void $\ast$uptr, struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} $\ast$paint, struct \hyperlink{struct_n_v_gscissor}{N\+V\+Gscissor} $\ast$scissor, float fringe, float stroke\+Width, const struct \hyperlink{struct_n_v_gpath}{N\+V\+Gpath} $\ast$paths, int npaths)
+\item 
+void($\ast$ \hyperlink{struct_n_v_gparams_ac8410294c4712cda7b1754f123a9c4d5}{render\+Triangles} )(void $\ast$uptr, struct \hyperlink{struct_n_v_gpaint}{N\+V\+Gpaint} $\ast$paint, struct \hyperlink{struct_n_v_gscissor}{N\+V\+Gscissor} $\ast$scissor, const struct \hyperlink{struct_n_v_gvertex}{N\+V\+Gvertex} $\ast$verts, int nverts)
+\item 
+void($\ast$ \hyperlink{struct_n_v_gparams_a92fc1339d100af7cc4b5fdeb7b36e63c}{render\+Delete} )(void $\ast$uptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 510 of file nanovg.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_n_v_gparams_a835232ed4e66c1cdbd8ed74ff822dde1}{\index{N\+V\+Gparams@{N\+V\+Gparams}!atlas\+Height@{atlas\+Height}}
+\index{atlas\+Height@{atlas\+Height}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{atlas\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int N\+V\+Gparams\+::atlas\+Height}}\label{struct_n_v_gparams_a835232ed4e66c1cdbd8ed74ff822dde1}
+
+
+Definition at line 512 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a6a77310845f0d6ca24955582625fc2f3}{\index{N\+V\+Gparams@{N\+V\+Gparams}!atlas\+Width@{atlas\+Width}}
+\index{atlas\+Width@{atlas\+Width}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{atlas\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int N\+V\+Gparams\+::atlas\+Width}}\label{struct_n_v_gparams_a6a77310845f0d6ca24955582625fc2f3}
+
+
+Definition at line 512 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a273c8d7199cc5dc4f1a69e12f0b90229}{\index{N\+V\+Gparams@{N\+V\+Gparams}!edge\+Anti\+Alias@{edge\+Anti\+Alias}}
+\index{edge\+Anti\+Alias@{edge\+Anti\+Alias}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{edge\+Anti\+Alias}]{\setlength{\rightskip}{0pt plus 5cm}int N\+V\+Gparams\+::edge\+Anti\+Alias}}\label{struct_n_v_gparams_a273c8d7199cc5dc4f1a69e12f0b90229}
+
+
+Definition at line 513 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_ae62f4124bb147d342edfcbc8c233c782}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Create@{render\+Create}}
+\index{render\+Create@{render\+Create}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Create}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ N\+V\+Gparams\+::render\+Create)(void $\ast$uptr)}}\label{struct_n_v_gparams_ae62f4124bb147d342edfcbc8c233c782}
+
+
+Definition at line 514 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a5c15e9da1c7021d104ac0915ddf8bcdf}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Create\+Texture@{render\+Create\+Texture}}
+\index{render\+Create\+Texture@{render\+Create\+Texture}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Create\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ N\+V\+Gparams\+::render\+Create\+Texture)(void $\ast$uptr, int type, int w, int h, const unsigned char $\ast$data)}}\label{struct_n_v_gparams_a5c15e9da1c7021d104ac0915ddf8bcdf}
+
+
+Definition at line 515 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a92fc1339d100af7cc4b5fdeb7b36e63c}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Delete@{render\+Delete}}
+\index{render\+Delete@{render\+Delete}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ N\+V\+Gparams\+::render\+Delete)(void $\ast$uptr)}}\label{struct_n_v_gparams_a92fc1339d100af7cc4b5fdeb7b36e63c}
+
+
+Definition at line 524 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a165c064c1c1a454a45e2848feedd5fdd}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Delete\+Texture@{render\+Delete\+Texture}}
+\index{render\+Delete\+Texture@{render\+Delete\+Texture}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Delete\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ N\+V\+Gparams\+::render\+Delete\+Texture)(void $\ast$uptr, int image)}}\label{struct_n_v_gparams_a165c064c1c1a454a45e2848feedd5fdd}
+
+
+Definition at line 516 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_ac484f24518e2653dea0739b7f35a8614}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Fill@{render\+Fill}}
+\index{render\+Fill@{render\+Fill}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ N\+V\+Gparams\+::render\+Fill)(void $\ast$uptr, struct {\bf N\+V\+Gpaint} $\ast$paint, struct {\bf N\+V\+Gscissor} $\ast$scissor, float fringe, const float $\ast$bounds, const struct {\bf N\+V\+Gpath} $\ast$paths, int npaths)}}\label{struct_n_v_gparams_ac484f24518e2653dea0739b7f35a8614}
+
+
+Definition at line 521 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a5c2b79e8bf66c15b1f265c39cb4f277c}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Flush@{render\+Flush}}
+\index{render\+Flush@{render\+Flush}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Flush}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ N\+V\+Gparams\+::render\+Flush)(void $\ast$uptr, int alpha\+Blend)}}\label{struct_n_v_gparams_a5c2b79e8bf66c15b1f265c39cb4f277c}
+
+
+Definition at line 520 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a2ecbd50cea119eb702cfbab7538596b8}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Get\+Texture\+Size@{render\+Get\+Texture\+Size}}
+\index{render\+Get\+Texture\+Size@{render\+Get\+Texture\+Size}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Get\+Texture\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ N\+V\+Gparams\+::render\+Get\+Texture\+Size)(void $\ast$uptr, int image, int $\ast$w, int $\ast$h)}}\label{struct_n_v_gparams_a2ecbd50cea119eb702cfbab7538596b8}
+
+
+Definition at line 518 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a9b56486a8c43791466312e5b886539e0}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Stroke@{render\+Stroke}}
+\index{render\+Stroke@{render\+Stroke}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Stroke}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ N\+V\+Gparams\+::render\+Stroke)(void $\ast$uptr, struct {\bf N\+V\+Gpaint} $\ast$paint, struct {\bf N\+V\+Gscissor} $\ast$scissor, float fringe, float stroke\+Width, const struct {\bf N\+V\+Gpath} $\ast$paths, int npaths)}}\label{struct_n_v_gparams_a9b56486a8c43791466312e5b886539e0}
+
+
+Definition at line 522 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_ac8410294c4712cda7b1754f123a9c4d5}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Triangles@{render\+Triangles}}
+\index{render\+Triangles@{render\+Triangles}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Triangles}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ N\+V\+Gparams\+::render\+Triangles)(void $\ast$uptr, struct {\bf N\+V\+Gpaint} $\ast$paint, struct {\bf N\+V\+Gscissor} $\ast$scissor, const struct {\bf N\+V\+Gvertex} $\ast$verts, int nverts)}}\label{struct_n_v_gparams_ac8410294c4712cda7b1754f123a9c4d5}
+
+
+Definition at line 523 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_ab9ece91b2fa9528d2fde0a134086f3a5}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Update\+Texture@{render\+Update\+Texture}}
+\index{render\+Update\+Texture@{render\+Update\+Texture}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Update\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ N\+V\+Gparams\+::render\+Update\+Texture)(void $\ast$uptr, int image, int x, int y, int w, int h, const unsigned char $\ast$data)}}\label{struct_n_v_gparams_ab9ece91b2fa9528d2fde0a134086f3a5}
+
+
+Definition at line 517 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_aa58560027660da6375360427ad5271e2}{\index{N\+V\+Gparams@{N\+V\+Gparams}!render\+Viewport@{render\+Viewport}}
+\index{render\+Viewport@{render\+Viewport}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{render\+Viewport}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ N\+V\+Gparams\+::render\+Viewport)(void $\ast$uptr, int width, int height, int alpha\+Blend)}}\label{struct_n_v_gparams_aa58560027660da6375360427ad5271e2}
+
+
+Definition at line 519 of file nanovg.\+h.
+
+\hypertarget{struct_n_v_gparams_a6976a0363fdbfa0ef1e756556ef05f97}{\index{N\+V\+Gparams@{N\+V\+Gparams}!user\+Ptr@{user\+Ptr}}
+\index{user\+Ptr@{user\+Ptr}!N\+V\+Gparams@{N\+V\+Gparams}}
+\subsubsection[{user\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ N\+V\+Gparams\+::user\+Ptr}}\label{struct_n_v_gparams_a6976a0363fdbfa0ef1e756556ef05f97}
+
+
+Definition at line 511 of file nanovg.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/bgfx/nanovg/\hyperlink{nanovg_8h}{nanovg.\+h}\end{DoxyCompactItemize}

@@ -36,7 +36,7 @@ TEST(CrapArrayPushBack)
     for( uint32_t i=0; i< ARRAY_SPACE; ++i )
     {
         handles[i] = arr_ptr->push_back( rand() * 1.f );
-        CHECK( handles[i] != crap::array<float32_t>::invalid );
+        CHECK( handles[i] != crap::array<float32_t>::INVALID );
     }
 
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->size() );
@@ -49,7 +49,7 @@ TEST(CrapArrayPushBackOverflow)
 
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->size() );
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->max_size() );
-    CHECK( handle == crap::array<float32_t>::invalid );
+    CHECK( handle == crap::array<float32_t>::INVALID );
 }
 
 TEST(CrapArrayErase)
@@ -65,7 +65,7 @@ TEST(CrapArrayErase)
 TEST(CrapArrayEraseOverflow)
 {
     CHECK( arr_ptr->size() == 0 );
-    arr_ptr->erase_at( crap::array<float32_t>::invalid );
+    arr_ptr->erase_at( crap::array<float32_t>::INVALID );
     CHECK( arr_ptr->size() == 0 );
 }
 
