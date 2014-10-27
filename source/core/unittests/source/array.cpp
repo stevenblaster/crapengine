@@ -24,8 +24,8 @@ TEST(CrapCreateArray)
 {
 	gbm_a = new crap::BoundGeneralMemory(1024);
 
-	mem = gbm_a->allocate(sizeof(float32_t)*ARRAY_SPACE, crap::align_of<float32_t>::value );
-    arr_ptr = new crap::array<float32_t>( mem, sizeof(float32_t)*ARRAY_SPACE );
+	mem = gbm_a->allocate( crap::array<float32_t>::size_of_elements(ARRAY_SPACE), crap::align_of<float32_t>::value );
+    arr_ptr = new crap::array<float32_t>( mem, crap::array<float32_t>::size_of_elements(ARRAY_SPACE) );
 
     CHECK_EQUAL( 0, arr_ptr->size() );
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->max_size() );

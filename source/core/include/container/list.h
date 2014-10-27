@@ -74,6 +74,36 @@ public:
     CRAP_INLINE
     ~list( void );
 
+    /**
+     * @brief Returns current start index
+     * @return current start index
+     */
+    CRAP_INLINE
+	uint32_t start( void ) const;
+
+    /**
+     * @brief Returns current end index
+     * @return current end index
+     */
+    CRAP_INLINE
+	uint32_t end( void ) const;
+
+    /**
+     * @brief returns next index of provided index
+     * @param pos current position index
+     * @return next index of value
+     */
+    CRAP_INLINE
+	uint32_t next( uint32_t pos ) const;
+
+    /**
+     * @brief returns previous index of provided vale
+     * @param pos current position index
+     * @return previous index of value
+     */
+    CRAP_INLINE
+	uint32_t previous( uint32_t pos ) const;
+
 	/**
 	 * Returning the size of the list
 	 * @return The current number of elements
@@ -164,12 +194,6 @@ public:
     pointer_t<void> memory( void ) const;
 
 	/**
-	 * @brief Sorts the elements of the array using quicksort
-	 */
-    CRAP_INLINE
-    void sort( void );
-
-	/**
 	 * @brief Calculates necessary memory for a certain number of elements
 	 * @param number Number of elements
 	 * @return Size of necessary memory
@@ -184,11 +208,25 @@ protected:
 	 */
     list( const list& other );
 
+    /**
+     * @brief returns theoretical index position of
+     * a new element.
+     * @param element External element
+     * @return Position of element
+     */
+    uint32_t position( const T& element ) const;
+
     /// Pointer to indices
     pointer_t<list_index> _indices;
 
-    /// Pointer type to memory
-    pointer_t<T> _memory;
+    /// Pointer type to data
+    pointer_t<T> _data;
+
+    /// Start of the list
+    uint32_t _start;
+
+	// End of the list
+	uint32_t _end;
 
     /// Current number of elements
     uint32_t _size;
@@ -201,99 +239,253 @@ protected:
 /* Implementation */
 
 template<typename T>
-list<T>::list( void* pointer, uint32_t size ) : _indices(0), _memory(0), _size(0), _max_size(0)
+list<T>::list( void* pointer, uint32_t size ) :
+	_indices( pointer ), _data(0), _size(0), _max_size(0), _start(INVALID), _end(INVALID)
 {
+	const uint32_t combined = sizeof(T) + sizeof(list_index);
+	const uint32_t elements = size / combined;
 
+	_max_size = elements;
+	_data.as_void = _indices.as_type + elements;
 }
 
 template<typename T>
 list<T>& list<T>::operator=( const list& other )
 {
+	if( this != &other && other.max_size() <= _max_size )
+	{
+		destruct_array( _indices.as_type, _size );
+		destruct_array( _data.as_type, _size );
 
+		copy_construct_array( other._indices.as_type, _indices.as_type, other._size );
+		copy_construct_array( other._data.as_type, _data.as_type, other._size );
+
+		_size = other._size;
+	}
 }
 
 template<typename T>
 list<T>::~list( void )
 {
+	destruct_array( _indices.as_type, _size );
+	destruct_array( _data.as_type, _size );
+}
 
+template<typename T>
+uint32_t list<T>::start( void ) const
+{
+	return _start;
+}
+
+template<typename T>
+uint32_t list<T>::end( void ) const
+{
+	return _end;
+}
+
+template<typename T>
+uint32_t list<T>::next( uint32_t pos ) const
+{
+	if( pos < _size )
+	{
+		return _indices.as_type[pos].next;
+	}
+	return INVALID;
+}
+
+template<typename T>
+uint32_t list<T>::previous( uint32_t pos ) const
+{
+	if( pos < _size )
+	{
+		return _indices.as_type[pos].previous;
+	}
+	return INVALID;
 }
 
 template<typename T>
 uint32_t list<T>::size( void ) const
 {
-
+	return _size;
 }
 
 template<typename T>
 uint32_t list<T>::max_size( void ) const
 {
-
+	return _max_size;
 }
 
 template<typename T>
 T& list<T>::operator[]( uint32_t index )
 {
-
+	return *( get(index) );
 }
 
 template<typename T>
 const T& list<T>::operator[]( uint32_t index ) const
 {
-
+	return *( get(index) );
 }
 
 template<typename T>
 T* list<T>::get( uint32_t index )
 {
-
+	if( index < _size )
+		return _data.as_type + index;
+	else
+		return 0;
 }
 
 template<typename T>
 const T* list<T>::get( uint32_t index ) const
 {
-
+	if( index < _size )
+		return _data.as_type + index;
+	else
+		return 0;
 }
 
 template<typename T>
 uint32_t list<T>::insert( const T& object )
 {
+	if( _size == 0 )
+	{
+		_start = 0;
+		_end = 0;
+		_indices.as_type[0].next = INVALID;
+		_indices.as_type[0].previous = INVALID;
+	}
+	else if( _size < _max_size )
+	{
+		const uint32_t pos = position(object);
 
+		//last element
+		if( pos == INVALID )
+		{
+			_indices.as_type[_end].next = _size;
+			_indices.as_type[_size].next = INVALID;
+			_indices.as_type[_size].previous = _end;
+			_end = _size;
+		}
+		else if( pos == _start )
+		{
+			_indices.as_type[_start].previous = _size;
+			_indices.as_type[_size].next = _start;
+			_indices.as_type[_size].previous = INVALID;
+			_start = _size;
+		}
+		else
+		{
+			const uint32_t pre = _indices.as_type[pos].previous;
+			_indices.as_type[pos].previous = _size;
+			_indices.as_type[pre].next = _size;
+			_indices.as_type[_size].next = pos;
+			_indices.as_type[_size].previous = pre;
+		}
+	}
+	else
+		return INVALID;
+
+	copy_construct_object( &object, _data.as_type + _size );
+	return _size++;
 }
 
 template<typename T>
 void list<T>::pop_back( void )
 {
-
+	erase_at( _size - 1 );
 }
 
 template<typename T>
 void list<T>::erase_at( uint32_t index )
 {
+	// first correct indices
+	if( index < _size )
+	{
+		const list_index list_pos = _indices.as_type[index];
 
+		if( list_pos.next != INVALID )
+		{
+			_indices.as_type[ list_pos.next ].previous = list_pos.previous;
+		}
+		else
+			_end = list_pos.previous;
+
+		if( list_pos.previous != INVALID )
+		{
+			_indices.as_type[ list_pos.previous ].next = list_pos.next;
+		}
+		else
+			_start = list_pos.next;
+
+		destruct_object( _data.as_type + index );
+
+		//we have to copy...?
+		const uint32_t last_index = (_size-1);
+		if( index != last_index )
+		{
+			const list_index list_pos = _indices.as_type[last_index];
+
+			if( list_pos.next != INVALID )
+			{
+				_indices.as_type[ list_pos.next ].previous = index;
+			}
+			else
+				_end = index;
+
+			if( list_pos.previous != INVALID )
+			{
+				_indices.as_type[ list_pos.previous ].next = index;
+			}
+			else
+				_start = index;
+
+			_indices.as_type[ index ].next = list_pos.next;
+			_indices.as_type[ index ].previous = list_pos.previous;
+
+			copy_construct_object( _data.as_type + last_index, _data.as_type + index );
+			destruct_object( _data.as_type + last_index );
+		}
+
+		_size--;
+	}
 }
 
 template<typename T>
 void list<T>::erase( const T& object )
 {
-
+	uint32_t index = find( object );
+	if( index != INVALID )
+		erase_at( index );
 }
 
 template<typename T>
 uint32_t list<T>::find( const T& object )
 {
+	uint32_t index = _start;
 
+	while( index != INVALID )
+	{
+		if( _data.as_type[index] == object )
+		{
+			return index;
+		}
+
+		if( _data.as_type[index] > object )
+		{
+			return INVALID;
+		}
+
+		index = _indices.as_type[index].next;
+	}
+
+	return index;
 }
 
 template<typename T>
 pointer_t<void> list<T>::memory( void ) const
 {
-
-}
-
-template<typename T>
-void list<T>::sort( void )
-{
-
+	return _indices.as_void;
 }
 
 template<typename T>
@@ -303,9 +495,27 @@ uint32_t list<T>::size_of_elements( uint32_t number )
 }
 
 template<typename T>
-list<T>::list( const list& other ) : _indices(0), _memory(0), _size(0), _max_size(0)
+list<T>::list( const list& other ) :
+	_indices(0), _data(0), _size(0), _max_size(0), _start(INVALID), _end(INVALID)
 {
+	CRAP_ASSERT( ASSERT_BREAK, false, "Copy constructor is invalid" );
+}
 
+template<typename T>
+uint32_t list<T>::position( const T& element ) const
+{
+	uint32_t index = _start;
+	while( index != INVALID )
+	{
+		if( element < _data.as_type[index] )
+		{
+			return index;
+		}
+
+		index =_indices.as_type[index].next;
+	}
+
+	return index;
 }
 
 } /* namespace crap */

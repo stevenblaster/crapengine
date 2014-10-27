@@ -16,5 +16,6 @@ int main ()
     std::cout << "Press a button" << std::endl;
 	getchar();
 #endif
+
     return rtn;
 }

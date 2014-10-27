@@ -23,5 +23,6 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/delegates.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/directory.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/sorted_array.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/list.cpp
 PARENT_SCOPE
 )
