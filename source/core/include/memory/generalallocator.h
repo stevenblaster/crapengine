@@ -82,7 +82,8 @@ public:
 };
 
 // constructor with initialization
-general_allocator::general_allocator(pointer_void start, pointer_void end) : _block_start( start ), _block_end(end.as_uint8_t - sizeof(memory_block))
+general_allocator::general_allocator(pointer_void start, pointer_void end) :
+		_block_start( start ), _block_end(end.as_uint8_t - sizeof(memory_block)), _current_size(0)
 {
     _block_start.as_type->offset_prev = 0;
     _block_start.as_type->used_memory = 0;
