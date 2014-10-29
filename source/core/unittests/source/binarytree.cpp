@@ -43,7 +43,7 @@ TEST(BinaryPrint)
 {
 	for( uint32_t i=a_tree->begin(); i != a_tree->end(); i = a_tree->next(i) )
 	{
-		std::cout << *(a_tree->get(i)) << std::endl;
+		std::cout << (int32_t)*(a_tree->get(i)) << std::endl;
 	}
 }
 
