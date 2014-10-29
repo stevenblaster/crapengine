@@ -4,7 +4,7 @@
 #include "memory.h"
 
 #include "UnitTest++.h"
-
+#include "logger.h"
 
 
 //crap::memory_manager* mm;
@@ -20,6 +20,11 @@ crap::memory_source_none* se_none;
 crap::BoundMallocMemory* seboundmem;
 
 void* lele[3];
+
+TEST( AnnounceTestMemory )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"memory.h\"" );
+}
 
 TEST(SememConstruct)
 {

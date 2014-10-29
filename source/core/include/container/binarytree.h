@@ -1,5 +1,5 @@
 /**
- * @file list.h
+ * @file binarytree.h
  *
  * @brief Short description...
  *
@@ -21,18 +21,19 @@
 
 #include "utilities.h"
 
-//lib namespace
-namespace crap
-{
-
-
-/*
- *! @brief Binary search tree class
- */
-
 /**
  * @namespace crap
  * @brief Libraries namespace
+ */
+namespace crap
+{
+
+/**
+ * @class binary_tree
+ * @brief A red-black tree indexed based implementation
+ *
+ * The data is kept packed, the tree is connected
+ * by using indices.
  */
 template <typename T>
 class binary_tree
@@ -371,7 +372,91 @@ uint32_t binary_tree<T>::insert( const T& key )
     return  INVALID;
 }
 
+template <class T>
+void binary_tree<T>::erase_at( uint32_t index )
+{
+	if( index < _size )
+	{
+		T& key = _data.as_type[index];
 
+	    uint32_t parent_index = _indices.as_type[index].sub_nodes[binary_node::parent];
+	    uint32_t node_direction = binary_node::parent;
+	    if( parent_index != INVALID )
+	        node_direction = (_indices.as_type[parent_index].sub_nodes[binary_node::left] == index ) ? binary_node::left : binary_node::right;
+
+
+	    const uint32_t left_index = _indices.as_type[index].sub_nodes[binary_node::left];
+	    const uint32_t right_index = _indices.as_type[index].sub_nodes[binary_node::right];
+
+
+	    if( left_index == INVALID && right_index == INVALID )
+	    {
+	        if( parent_index != INVALID)
+	            _indices.as_type[parent_index].sub_nodes[node_direction] = INVALID;
+	        else
+	            _root = INVALID;
+	    }
+	    else if( left_index == INVALID )
+	    {
+	        if( parent_index != INVALID )
+	            _indices.as_type[parent_index].sub_nodes[node_direction] = right_index;
+	        else
+	            _root = right_index;
+
+	        _indices.as_type[right_index].sub_nodes[binary_node::parent] = parent_index;
+	    }
+	    else if( right_index == INVALID )
+	    {
+	        if( parent_index != INVALID )
+	            _indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
+	        else
+	            _root = left_index;
+
+	        _indices.as_type[left_index].sub_nodes[binary_node::parent] = parent_index;
+	    }
+	    else
+	    {
+	        const uint32_t moving_index = ( node_direction == binary_node::right ) ? right_index : left_index;
+	        const uint32_t replacing_index = ( node_direction == binary_node::right ) ? left_index : right_index;
+
+	        if( parent_index != INVALID )
+	            _indices.as_type[parent_index].sub_nodes[node_direction] = replacing_index;
+	        else
+	            _root = replacing_index;
+
+	        _indices.as_type[replacing_index].sub_nodes[binary_node::parent] = parent_index;
+
+	        uint32_t new_index = find_free( _data.as_type[moving_index] );
+	        CRAP_ASSERT( ASSERT_BREAK, new_index >= 0,  "Error while reordering data" );
+
+	        uint32_t new_direction = ( _data.as_type[new_index] < key ) ? binary_node::right : binary_node::left;
+	        CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[new_index].sub_nodes[new_direction] == INVALID ,  "Error while reordering data" );
+
+	        _indices.as_type[moving_index].sub_nodes[binary_node::parent] = new_index;
+	        _indices.as_type[new_index].sub_nodes[new_direction] = moving_index;
+	    }
+
+	    destruct_object( _data.as_type + index );
+
+	    //destroy old node
+	    if( index != _size-1 )
+	    {
+	        uint32_t last_parent_index = _indices.as_type[_size-1].sub_nodes[binary_node::parent];
+
+	        if( _indices.as_type[last_parent_index].sub_nodes[binary_node::left] == _size-1 )
+	            _indices.as_type[last_parent_index].sub_nodes[binary_node::left] = index;
+
+	        if( _indices.as_type[last_parent_index].sub_nodes[binary_node::right] == _size-1 )
+	            _indices.as_type[last_parent_index].sub_nodes[binary_node::right] = index;
+
+	        copy_construct_object( _data.as_type + _size-1, _data.as_type + index );
+	        destruct_object( _data.as_type + _size-1 );
+	    }
+
+	    //destroy former last node
+	    --_size;
+	}
+}
 
 template <class T>
 void binary_tree<T>::remove( const T& key )
@@ -381,82 +466,7 @@ void binary_tree<T>::remove( const T& key )
     if( used_index == INVALID )
         return;
 
-    uint32_t parent_index = _indices.as_type[used_index].sub_nodes[binary_node::parent];
-    uint32_t node_direction = binary_node::parent;
-    if( parent_index != INVALID )
-        node_direction = (_indices.as_type[parent_index].sub_nodes[binary_node::left] == used_index ) ? binary_node::left : binary_node::right;
-
-
-    const uint32_t left_index = _indices.as_type[used_index].sub_nodes[binary_node::left];
-    const uint32_t right_index = _indices.as_type[used_index].sub_nodes[binary_node::right];
-
-
-    if( left_index == INVALID && right_index == INVALID )
-    {
-        if( parent_index != INVALID)
-            _indices.as_type[parent_index].sub_nodes[node_direction] = INVALID;
-        else
-            _root = INVALID;
-    }
-    else if( left_index == INVALID )
-    {
-        if( parent_index != INVALID )
-            _indices.as_type[parent_index].sub_nodes[node_direction] = right_index;
-        else
-            _root = right_index;
-
-        _indices.as_type[right_index].sub_nodes[binary_node::parent] = parent_index;
-    }
-    else if( right_index == INVALID )
-    {
-        if( parent_index != INVALID )
-            _indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
-        else
-            _root = left_index;
-
-        _indices.as_type[left_index].sub_nodes[binary_node::parent] = parent_index;
-    }
-    else
-    {
-        const uint32_t moving_index = ( node_direction == binary_node::right ) ? right_index : left_index;
-        const uint32_t replacing_index = ( node_direction == binary_node::right ) ? left_index : right_index;
-
-        if( parent_index != INVALID )
-            _indices.as_type[parent_index].sub_nodes[node_direction] = replacing_index;
-        else
-            _root = replacing_index;
-
-        _indices.as_type[replacing_index].sub_nodes[binary_node::parent] = parent_index;
-
-        uint32_t new_index = find_free( _data.as_type[moving_index] );
-        CRAP_ASSERT( ASSERT_BREAK, new_index >= 0,  "Error while reordering data" );
-
-        uint32_t new_direction = ( _data.as_type[new_index] < key ) ? binary_node::right : binary_node::left;
-        CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[new_index].sub_nodes[new_direction] == INVALID ,  "Error while reordering data" );
-
-        _indices.as_type[moving_index].sub_nodes[binary_node::parent] = new_index;
-        _indices.as_type[new_index].sub_nodes[new_direction] = moving_index;
-    }
-
-    destruct_object( _data.as_type + used_index );
-
-    //destroy old node
-    if( used_index != _size-1 )
-    {
-        uint32_t last_parent_index = _indices.as_type[_size-1].sub_nodes[binary_node::parent];
-
-        if( _indices.as_type[last_parent_index].sub_nodes[binary_node::left] == _size-1 )
-            _indices.as_type[last_parent_index].sub_nodes[binary_node::left] = used_index;
-
-        if( _indices.as_type[last_parent_index].sub_nodes[binary_node::right] == _size-1 )
-            _indices.as_type[last_parent_index].sub_nodes[binary_node::right] = used_index;
-
-        copy_construct_object( _data.as_type + _size-1, _data.as_type + used_index );
-        destruct_object( _data.as_type + _size-1 );
-    }
-
-    //destroy former last node
-    --_size;
+    erase_at( used_index );
 
     return;
 }

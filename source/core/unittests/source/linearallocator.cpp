@@ -2,6 +2,7 @@
 #include "memory/linearallocator.h"
 
 #include "UnitTest++.h"
+#include "logger.h"
 
 namespace
 {
@@ -10,6 +11,11 @@ crap::linear_allocator* la;
 crap::pointer_t<void> pointers[11];
 
 crap::pointer_t<void> memory_la;
+
+TEST( AnnounceTestIndexedArray )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"memory/linearallocator.h\"" );
+}
 
 TEST(CrapCreateLinearAllocator)
 {

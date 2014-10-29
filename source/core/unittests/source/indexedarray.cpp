@@ -1,176 +1,94 @@
-#include "UnitTest++.h"
-//lib includes
 
-#include "strings.h"
+
 #include "container/indexedarray.h"
+
+#include "UnitTest++.h"
+#include "memory.h"
 #include "logger.h"
+
+#define INDEXEDARRAY_SPACE 10
 
 namespace
 {
 
-TEST( AnnounceTestIndexed )
+crap::BoundGeneralMemory* gbm_ia;
+void* mem;
+crap::indexed_array<float32_t>* iarr_ptr;
+uint32_t handles[INDEXEDARRAY_SPACE];
+
+TEST( AnnounceTestIndexedArray )
 {
     CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/indexedarray.h\"" );
 }
 
-/*
-crap::indexed_array< crap::string32>* _growing_indexed_array;
-uint32_t global_key;
-
-TEST(ContainerIndexdArrayTitle)
+TEST(CrapCreateIndexedArray)
 {
-	std::cout << "Testing \"container/indexedarray.h\"" << std::endl;
+	uint32_t size = crap::indexed_array<float32_t>::size_of_elements(INDEXEDARRAY_SPACE);
+	gbm_ia = new crap::BoundGeneralMemory(size*2);
+
+	mem = gbm_ia->allocate( size, crap::align_of<float32_t>::value );
+    iarr_ptr = new crap::indexed_array<float32_t>( mem, size );
+
+    CHECK_EQUAL( 0, iarr_ptr->size() );
+    CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->max_size() );
 }
 
-TEST(ContainerIndexdArrayConstructor)
+TEST(CrapIndexedArrayPushBack)
 {
-    _growing_indexed_array = new crap::indexed_array< crap::string32 >();
+    for( uint32_t i=0; i< INDEXEDARRAY_SPACE; ++i )
+    {
+        handles[i] = iarr_ptr->push_back( rand() * 1.f );
+        CHECK( handles[i] != crap::indexed_array<float32_t>::INVALID );
+    }
+
+    CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->size() );
+    CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->max_size() );
 }
 
-//happy testing
-TEST(ContainerIndexedArrayAddObject)
+TEST(CrapIndexedArrayPushBackOverflow)
 {
-    global_key = _growing_indexed_array->push_back( "Hallo, ich bins!" );
-    CHECK_EQUAL(1, _growing_indexed_array->size() );
-    CHECK( crap::string32("Hallo, ich bins!") == *_growing_indexed_array->find( global_key ) );
+    uint32_t handle = iarr_ptr->push_back( rand() * 1.f );
+
+    CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->size() );
+    CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->max_size() );
+    CHECK( handle == crap::indexed_array<float32_t>::INVALID );
 }
 
-TEST(ContainerIndexedArrayRemoveObject)
+TEST(CrapIndexedArrayErase)
 {
-    _growing_indexed_array->remove( global_key );
-    CHECK_EQUAL(0, _growing_indexed_array->size() );
-    _growing_indexed_array->find( global_key );
-    CHECK_EQUAL( (void*)0 ,_growing_indexed_array->find( global_key ) );
+    uint32_t a_size = iarr_ptr->size();
+    for( uint32_t i=0; i< INDEXEDARRAY_SPACE; ++i )
+    {
+        iarr_ptr->erase_at( handles[i] );
+        CHECK( iarr_ptr->size() == --a_size );
+    }
 }
 
-TEST(ContainerIndexedArrayFilledUp)
+TEST(CrapIndexedArrayEraseOverflow)
 {
-    size_t32 keys[10];
-	for( int i=0; i<10; ++i )
-	{
-        keys[i] = _growing_indexed_array->push_back( crap::convert<i32, crap::string32>( rand() ) );
-	}
-
-	std::cout << "\tPacked array:" << std::endl;
-
-    for( indexIterator it = _growing_indexed_array->begin(); it != _growing_indexed_array->end(); ++it )
-	{
-		std::cout << *it << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << "\tIndices:" << std::endl;
-
-	for( int i=0; i<10; ++i )
-	{
-        crap::string32* str_ptr = _growing_indexed_array->find( keys[i] );
-		std::cout << "index: " << keys[i] << " ptr " << str_ptr << " shows at \"";
-		if( str_ptr != 0 )
-			std::cout << *str_ptr;
-		std::cout << "\"" << std::endl;
-	}
-
-	//assertme: 
-    //indexKey mememe = _growing_indexed_array->push_back( crap::convert<i32, crap::string32>( rand() ) );
-
-	std::cout << "Removing " << keys[5] << std::endl << std::endl;
-    _growing_indexed_array->remove( keys[5] );
-
-	std::cout << "\tPacked array:" << std::endl;
-
-    for( indexIterator it = _growing_indexed_array->begin(); it != _growing_indexed_array->end(); ++it )
-	{
-		std::cout << *it << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << "\tIndices:" << std::endl;
-
-	for( int i=0; i<10; ++i )
-	{
-        crap::string32* str_ptr = _growing_indexed_array->find( keys[i] );
-		std::cout << "index: " << keys[i] << " ptr " << str_ptr << " shows at \"";
-		if( str_ptr != 0 )
-			std::cout << *str_ptr;
-		std::cout << "\"" << std::endl;
-	}
-
-	std::cout << "Removing " << keys[3] << std::endl << std::endl;
-    _growing_indexed_array->remove( keys[3] );
-
-	std::cout << "\tPacked array:" << std::endl;
-
-    for( indexIterator it = _growing_indexed_array->begin(); it != _growing_indexed_array->end(); ++it )
-	{
-		std::cout << *it << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << "\tIndices:" << std::endl;
-
-	for( int i=0; i<10; ++i )
-	{
-        crap::string32* str_ptr = _growing_indexed_array->find( keys[i] );
-		std::cout << "index: " << keys[i] << " ptr " << str_ptr << " shows at \"";
-		if( str_ptr != 0 )
-			std::cout << *str_ptr;
-		std::cout << "\"" << std::endl;
-	}
-
-	std::cout << "Removing " << keys[7] << std::endl << std::endl;
-    _growing_indexed_array->remove( keys[7] );
-
-	std::cout << "\tPacked array:" << std::endl;
-
-    for( indexIterator it = _growing_indexed_array->begin(); it != _growing_indexed_array->end(); ++it )
-	{
-		std::cout << *it << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << "\tIndices:" << std::endl;
-
-	for( int i=0; i<10; ++i )
-	{
-        crap::string32* str_ptr = _growing_indexed_array->find( keys[i] );
-		std::cout << "index: " << keys[i] << " ptr " << str_ptr << " shows at \"";
-		if( str_ptr != 0 )
-			std::cout << *str_ptr;
-		std::cout << "\"" << std::endl;
-	}
-
-    keys[3] = _growing_indexed_array->push_back( crap::convert<i32, crap::string32>( rand() ) );
-    std::cout << std::endl << "Added object got " << keys[3] << " as key" << std::endl << std::endl;
-
-    keys[7] = _growing_indexed_array->push_back( crap::convert<i32, crap::string32>( rand() ) );
-    std::cout << "Added object got " << keys[7] << " as key" << std::endl << std::endl;
-
-    keys[5] = _growing_indexed_array->push_back( crap::convert<i32, crap::string32>( rand() ) );
-    std::cout << "Added object got " << keys[5] << " as key" << std::endl << std::endl;
-
-	std::cout << "\tPacked array:" << std::endl;
-
-    for( indexIterator it = _growing_indexed_array->begin(); it != _growing_indexed_array->end(); ++it )
-	{
-		std::cout << *it << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << "\tIndices:" << std::endl;
-
-	for( int i=0; i<10; ++i )
-	{
-        crap::string32* str_ptr = _growing_indexed_array->find( keys[i] );
-		std::cout << "index: " << keys[i] << " ptr " << str_ptr << " shows at \"";
-		if( str_ptr != 0 )
-			std::cout << *str_ptr;
-		std::cout << "\"" << std::endl;
-	}
+    CHECK( iarr_ptr->size() == 0 );
+    iarr_ptr->erase_at( crap::indexed_array<float32_t>::INVALID );
+    CHECK( iarr_ptr->size() == 0 );
 }
 
-TEST(ContainerIndexdArrayDestructor)
+TEST(CrapIndexedArrayAt)
 {
-    delete _growing_indexed_array;
+    float32_t* ptr = iarr_ptr->get(1);
+    CHECK( ptr == 0 );
 }
-*/
+
+TEST(CrapIndexedArrayIndexOperator)
+{
+    iarr_ptr->operator[](1);
 }
+
+TEST(CrapDeinitArray)
+{
+    //delete handles;
+    delete iarr_ptr;
+	gbm_ia->deallocate(mem);
+	delete gbm_ia;
+}
+
+}
+

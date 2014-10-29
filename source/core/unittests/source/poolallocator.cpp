@@ -2,6 +2,7 @@
 #include "memory/poolallocator.h"
 
 #include "UnitTest++.h"
+#include "logger.h"
 
 namespace
 {
@@ -10,6 +11,11 @@ crap::pool_allocator<uint64_t>* sa;
 crap::pointer_t<void> pointers[11];
 
 crap::pointer_t<void> memory_sa = malloc( sizeof(void*)*10);
+
+TEST( AnnounceTestPoolAllocator )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"memory/poolallocator.h\"" );
+}
 
 TEST(CrapCreatePoolAllocator)
 {

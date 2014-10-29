@@ -16,6 +16,7 @@ crap::binary_tree<float32_t>* a_tree;
 crap::BoundGeneralMemory* gbm_bt;
 void* mem_bt;
 uint32_t bt_handles[ BT_ELEMENTS ];
+float32_t bt_values[ BT_ELEMENTS ];
 
 TEST( AnnounceTestBinary )
 {
@@ -34,7 +35,8 @@ TEST(BinaryInsert)
 {
 	for( uint32_t i=0; i<BT_ELEMENTS; ++i )
 	{
-		bt_handles[i] = a_tree->insert( rand() * 1.f );
+		bt_values[i] = rand() * 1.f;
+		bt_handles[i] = a_tree->insert( bt_values[i] );
 		CHECK( crap::binary_tree<float32_t>::INVALID != bt_handles[i] );
 	}
 }
@@ -43,7 +45,17 @@ TEST(BinaryPrint)
 {
 	for( uint32_t i=a_tree->begin(); i != a_tree->end(); i = a_tree->next(i) )
 	{
-		std::cout << (int32_t)*(a_tree->get(i)) << std::endl;
+		//std::cout << (int32_t)*(a_tree->get(i)) << std::endl;
+	}
+}
+
+TEST(BinaryDelete)
+{
+	uint32_t a_size = a_tree->size();
+	for( int32_t i=BT_ELEMENTS-1; i>=0; --i )
+	{
+        a_tree->erase_at( bt_handles[i] );
+        CHECK( a_tree->size() == --a_size );
 	}
 }
 

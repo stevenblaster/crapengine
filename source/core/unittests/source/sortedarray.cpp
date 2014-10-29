@@ -17,7 +17,7 @@ uint32_t handles[ARRAY_SPACE];
 
 TEST( AnnounceTestSortedArray )
 {
-    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/array.h\" (sorted array)" );
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/sortedarray.h\"" );
 }
 
 TEST(CrapCreateSortedArray)

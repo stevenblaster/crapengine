@@ -3,10 +3,17 @@
 
 #include "directory.h"
 
+#include "logger.h"
+
 crap::directory_t* my_dir;
 
 namespace
 {
+
+TEST( AnnounceTestDirectory )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"directory.h\"" );
+}
 
 TEST(CreateDirectoryT)
 {
@@ -27,7 +34,7 @@ TEST(PrintDirectory)
 {
     do
     {
-        std::cout << "FileName " << crap::directoryName( my_dir ) << " is a directory?->" << crap::isDirectory("../../../data", my_dir) << std::endl;
+        //std::cout << "FileName " << crap::directoryName( my_dir ) << " is a directory?->" << crap::isDirectory("../../../data", my_dir) << std::endl;
     } while( crap::nextDirectory( my_dir ) );
 }
 

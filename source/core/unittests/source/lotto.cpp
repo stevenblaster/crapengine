@@ -7,10 +7,15 @@
 
 #include "UnitTest++.h"
 
+#include "logger.h"
+
 namespace
 {
 
-
+TEST( AnnounceTestLotto )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"lotto.cpp xD\"" );
+}
 
 /*
 struct ziehung
@@ -48,7 +53,7 @@ TEST(FunitIsLotto)
     while( fgets(buffer,100,fp) )
     {
         sscanf( buffer, "%i,%i,%i,%i,%i,%i,%i", &all[c][0],&all[c][1],&all[c][2],&all[c][3],&all[c][4],&all[c][5],&all[c][6]);
-        printf("%s", buffer);
+        //printf("%s", buffer);
         c++;
     }
     //for( unsigned int i=0; i<c; ++i)
@@ -56,7 +61,7 @@ TEST(FunitIsLotto)
 
     for(uint32_t i = 1; i<11; ++i)
     {
-        printf( "ziehung %i: %i-%i-%i-%i-%i-%i Zz %i\n", c-i, all[c-i][0],all[c-i][1],all[c-i][2],all[c-i][3],all[c-i][4],all[c-i][5],all[c-i][6]);
+        //printf( "ziehung %i: %i-%i-%i-%i-%i-%i Zz %i\n", c-i, all[c-i][0],all[c-i][1],all[c-i][2],all[c-i][3],all[c-i][4],all[c-i][5],all[c-i][6]);
         for(uint32_t j=0; j<7;++j)
         {
             const uint32_t number = all[c-i][j] -1;
@@ -88,7 +93,7 @@ TEST(FunitIsLotto)
 
     for(uint32_t i=1; i<46; ++i)
     {
-        printf( "%u: %u\n", i, numbers_votings[i-1]);
+        //printf( "%u: %u\n", i, numbers_votings[i-1]);
     }
 
     uint32_t voted_numbers[45];

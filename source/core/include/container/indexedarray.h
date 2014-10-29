@@ -1,139 +1,227 @@
-////////////////////////////////////////////////////////
-//	CRAP Library
-//!		@file indexedarray.h
-//
-//	Author(s):
-//! 	@author Steffen Kopany <steffen@kopany.at>
-//
-//	Copyright:
-//!		@copyright Copyright (c) 2013 Steffen Kopany
-//
-//	Description:
-//!		@brief indexed "look-up table" - like array
-//
-//	Status (scratch, developed, final):
-//!		@version scratch
-//
-////////////////////////////////////////////////////////
-
+/**
+ * @file indexedarray.h
+ *
+ * @brief Short description...
+ *
+ * Long description...
+ *
+ * @copyright CrapGames 2014
+ *
+ * @author  Steffen Kopany
+ * @date 	Oct 29, 2014
+ */
 #pragma once
 
+/**
+ * @def CRAP_CORE_INDEXEDARRAY_H
+ * @brief header guard
+ */
 #ifndef CRAP_CORE_INDEXEDARRAY_H
 #define CRAP_CORE_INDEXEDARRAY_H
 
-#include "config/crap_compiler.h"
-#include "config/crap_types.h"
 #include "utilities.h"
 
-//lib namespace
+/**
+ * @namespace crap
+ * @brief Libraries namespace
+ */
 namespace crap
 {
 
+/**
+ * @class indexed_array
+ * @brief Simple array class using IDs
+ *
+ * The data is kept packed, the array is connected
+ * by using generation based IDs.
+ */
 template<typename T>
 class indexed_array
 {
 
 public:
 
-    typedef uint32_t handle;
-    typedef T type;
-    typedef T key;
-    static const uint32_t invalid = UINT32_MAX;
-    typedef pointer_t<void> pointer_void;
+	/// Invalid iD / index
+    static const uint32_t INVALID = UINT32_MAX;
 
+	/**
+	 * @struct nested struct used as index
+	 */
     struct packed_index
     {
         uint32_t	index_generation;
         uint32_t	next;
         uint32_t    data_index;
 
-        packed_index( void ) : index_generation(0), next(0) {}
-        ~packed_index( void ) { index_generation = 0; next = 0; }
+        /**
+         * @brief Constructor
+         */
+        CRAP_INLINE
+		packed_index( void ) : index_generation(0), next(0), data_index(0) {}
+
+        /**
+         * @brief Destructor
+         */
+        CRAP_INLINE
+        ~packed_index( void ) { index_generation = 0; next = 0; data_index = 0; }
     };
 
 
+    /**
+     * @brief Default Constructor
+     * @param pointer Pointer to memory
+     * @param size Size of provided memory
+     */
     CRAP_INLINE
-    indexed_array( pointer_void pointer, uint32_t size );
+    indexed_array( void* pointer, uint32_t size );
 
+    /**
+     * @brief Default Destructor
+     */
     CRAP_INLINE
     ~indexed_array( void );
 
-    CRAP_INLINE
-    indexed_array( const indexed_array& other );
-
+    /**
+     * @brief Assignment operator
+     * @param other Reference to existing indexed artray
+     * @return reference to self
+     */
     CRAP_INLINE
     indexed_array& operator=( const indexed_array& other );
 
+    /**
+     * @brief returns pointer to data
+     * @param id ID of an element
+     * @return Pointer to member or null
+     */
     CRAP_INLINE
-    T& operator[]( const uint32_t& id );
+	T* get( uint32_t id );
 
+    /**
+     * @brief returns pointer to data
+     * @param id ID of an element
+     * @return Pointer to member or null
+     */
     CRAP_INLINE
-    const T& operator[]( const uint32_t& id ) const;
+	const T* get( uint32_t id ) const;
 
+    /**
+     * @brief Index operator
+     * @param id ID of element
+     * @return Reference to element
+     */
+    CRAP_INLINE
+    T& operator[]( uint32_t id );
+
+    /**
+     * @brief Index operator
+     * @param id ID of element
+     * @return Reference to element
+     */
+    CRAP_INLINE
+    const T& operator[]( uint32_t id ) const;
+
+    /**
+     * @brief Adds new element to array
+     * @param object Reference to new element
+     * @return id of new element
+     */
     CRAP_INLINE
     uint32_t push_back( const T& object );
 
+    /**
+     * @brief Erase Element at with Given ID
+     * @param id ID of element
+     */
     CRAP_INLINE
-    uint32_t insert( const T& object );
+	void erase_at( uint32_t id );
 
+    /**
+     * @brief Removes element if found
+     * @param object Reference to objects
+     */
     CRAP_INLINE
-    void remove(uint32_t key );
+    void remove( const T& object );
 
+    /**
+     * @brief Finds id of element
+     * @param object Reference to element
+     * @return returns id or INVALID
+     */
     CRAP_INLINE
-    T* find( const uint32_t& key );
+    uint32_t find( const T& object );
 
-    CRAP_INLINE
-    const T* find( const uint32_t& key ) const;
-
-    CRAP_INLINE
-    uint32_t find( const T& key );
-
-    CRAP_INLINE
-    uint32_t index_of( const T* ptr ) const;
-
+    /**
+     * @brief returns current size
+     * @return current size of array
+     */
     CRAP_INLINE
     uint32_t size( void ) const;
 
+    /**
+     * @brief returns maximum size of container
+     * @return maximum number of elements
+     */
     CRAP_INLINE
     uint32_t max_size( void ) const;
 
+    /**
+     * @brief returns pointer to elements of array
+     * @return pointer to elements
+     */
 	CRAP_INLINE
-    T* get_array( void ) const;
+    T* data( void ) const;
 
+	/**
+	 * @brief Returns the pointer to the memory
+	 * @return Pointer type of array memory
+	 */
     CRAP_INLINE
-    pointer_t<void> memory( void ) const
-    {
-        return _indices.as_void;
-    }
+    pointer_t<void> memory( void ) const;
 
-    CRAP_INLINE static uint32_t size_of_elements( uint32_t number )
-    {
-        return (sizeof(packed_index)+sizeof(uint32_t)+sizeof(T)) * number;
-    }
+	/**
+	 * @brief Calculates necessary memory for a certain number of elements
+	 * @param number Number of elements
+	 * @return Size of necessary memory
+	 */
+    CRAP_INLINE static uint32_t size_of_elements( uint32_t number );
 
 private:
 
+	/**
+	 * @brief Copy Constructor kept private (do not use)
+	 */
+    indexed_array( const indexed_array& other );
+
+    /// Pointer to indices
     pointer_t<packed_index> _indices;
+
+    /// Pointer to reverse indicies
     pointer_t<uint32_t>     _data_to_indices;
+
+    /// Pointer to data
     pointer_t<T>            _data;
 
+    /// Freelist index
     uint32_t                _freelist;
+
+    /// Current size
     uint32_t                _size;
+
+    /// Maximum size
     uint32_t                _size_max;
 
-    const uint32_t          _base_value;
+    /// Base value (maximum generations/elements)
+    static const uint32_t   BASE_VALUE = 1000000;
 };
 
 
 template<typename T>
-indexed_array<T>::indexed_array( pointer_void pointer, uint32_t size ) :
+indexed_array<T>::indexed_array( void* pointer, uint32_t size ) :
     _freelist(0),
     _size_max( size / (sizeof(packed_index)+sizeof(uint32_t)+sizeof(T)) ),
     _size(0)
 {
-
-    _base_value = 1000000;
-
     _indices = pointer;
     _data_to_indices = _indices.as_type + _size_max;
     _data = _data_to_indices.as_type + _size_max;
@@ -153,22 +241,9 @@ indexed_array<T>::~indexed_array( void )
 }
 
 template<typename T>
-indexed_array<T>::indexed_array( const indexed_array& other )
+indexed_array<T>::indexed_array( const indexed_array& other ) : _size(0), _size_max(0), _freelist(0)
 {
-    CRAP_ASSERT(ASSERT_BREAK, _size_max <= other.max_size(),  "Memory is not sufficiant" );
-
-    for( uint32_t i=0; i<_size_max; ++i )
-    {
-        _indices.as_type[i].index_generation = other._indices.as_type[i].index_generation;
-        _indices.as_type[i].next = other._indices.as_type[i].next;
-        _data_to_indices.as_type[i] = other._data_to_indices.as_type[i];
-    }
-
-    copy_construct_array( other._data.as_type, _data.as_type, other._size );
-
-    _size = other._size;
-    _freelist = other._freelist;
-    _base_value = other._base_value;
+	CRAP_ASSERT( ASSERT_BREAK, false, "Index operator is not allowed" );
 }
 
 template<typename T>
@@ -184,37 +259,64 @@ indexed_array<T>& indexed_array<T>::operator=( const indexed_array& other )
         _data_to_indices.as_type[i] = other._data_to_indices.as_type[i];
     }
 
+    crap::destruct_array( _data.as_type, _size );
     copy_construct_array( other._data.as_type, _data.as_type, other._size );
 
     _size = other._size;
     _freelist = other._freelist;
-    _base_value = other._base_value;
 
     return *this;
 }
 
-
 template<typename T>
-T& indexed_array<T>::operator[]( const uint32_t& id )
+T* indexed_array<T>::get( uint32_t id )
 {
-    T* rtn = find( id );
-    CRAP_ASSERT(ASSERT_BREAK, rtn != 0 ,  "ID not valid" );
-    return *rtn;
+    const uint32_t generation = id / BASE_VALUE;
+    const uint32_t indices_index = id % BASE_VALUE;
+
+    if( _indices.as_type[ indices_index ].index_generation != generation )
+    {
+    	return 0;
+    }
+
+    const uint32_t find_index = _indices.as_type[ indices_index ].data_index;
+
+    return _data.as_type + find_index;
 }
 
 template<typename T>
-const T& indexed_array<T>::operator[]( const uint32_t& id ) const
+const T* indexed_array<T>::get( uint32_t id ) const
 {
-    const T* rtn = find( id );
-    CRAP_ASSERT(ASSERT_BREAK, rtn != 0 ,  "ID not valid" );
-    return *rtn;
+    const uint32_t generation = id / BASE_VALUE;
+    const uint32_t indices_index = id % BASE_VALUE;
+
+    if( _indices.as_type[ indices_index ].index_generation != generation )
+    {
+    	return 0;
+    }
+
+    const uint32_t find_index = _indices.as_type[ indices_index ].data_index;
+
+    return _data.as_type + find_index;
+}
+
+template<typename T>
+T& indexed_array<T>::operator[]( uint32_t id )
+{
+	return *( get(id) );
+}
+
+template<typename T>
+const T& indexed_array<T>::operator[]( uint32_t id ) const
+{
+	return *( get(id) );
 }
 
 template<typename T>
 uint32_t indexed_array<T>::push_back( const T& object )
 {
     if( _size >= _size_max )
-        return invalid;
+        return INVALID;
 
     //get free index spot
     const uint32_t indices_index	= _freelist;
@@ -244,35 +346,27 @@ uint32_t indexed_array<T>::push_back( const T& object )
     ++_size;
 
     //return extern index
-    return indices_index + ( _base_value * _indices.as_type[ indices_index ].index_generation );
+    return indices_index + ( BASE_VALUE * _indices.as_type[ indices_index ].index_generation );
 }
 
 template<typename T>
-uint32_t indexed_array<T>::insert( const T& object )
+void indexed_array<T>::erase_at( uint32_t id )
 {
-    push_back( object );
-}
+	if( id == INVALID )
+		return;
 
-template<typename T>
-void indexed_array<T>::remove( uint32_t key )
-{
     //calc generation and index
-    const uint32_t generation = key / _base_value;
-    const uint32_t indices_index = key % _base_value;
+    const uint32_t generation = id / BASE_VALUE;
+    const uint32_t indices_index = id % BASE_VALUE;
 
-    //assert if generation is conflicting
-    CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[ indices_index ].index_generation == generation,  "Index generation not correct" );
-
-    //return zero if element is deleted
-//    if( _indices[ indices_index ].get_flag( crap::packed_index::is_used ) == false )
-//        return;
+    if( _indices.as_type[ indices_index ].index_generation != generation )
+    	return;
 
     //get array index
     const uint32_t array_index = _indices.as_type[ indices_index ].data_index;
 
     //set index to delete state
     _indices.as_type[ indices_index ].data_index = 0;
-//    _indices[ indices_index ].unset_flag( crap::packed_index::is_used );
 
     //move nextpointer to current free spot
     _indices.as_type[ indices_index ].next = _freelist;
@@ -307,46 +401,13 @@ void indexed_array<T>::remove( uint32_t key )
     }
 }
 
-
 template<typename T>
-T* indexed_array<T>::find( const uint32_t& key )
+void indexed_array<T>::remove( const T& object )
 {
-    const uint32_t generation = key / _base_value;
-    const uint32_t indices_index = key % _base_value;
-
-    //assert if generation is conflicting
-    CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[ indices_index ].index_generation == generation,  "Index generation not correct" );
-
-    if( _indices.as_type[ indices_index ].index_generation != generation )
-        return 0;
-
-//    if( _indices[ indices_index ].get_flag( crap::packed_index::is_used ) == false )
-//        return 0;
-
-    const uint32_t find_index = _indices.as_type[ indices_index ].data_index;
-
-    return _data.as_type + find_index;
+	uint32_t id = find( object );
+	erase_at( id );
 }
 
-template<typename T>
-const T* indexed_array<T>::find( const uint32_t& key ) const
-{
-    const uint32_t generation = key / _base_value;
-    const uint32_t indices_index = key % _base_value;
-
-    //assert if generation is conflicting
-    CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[ indices_index ].index_generation == generation,  "Index generation not correct" );
-
-    if( _indices.as_type[ indices_index ].index_generation != generation )
-        return 0;
-
-//    if( _indices[ indices_index ].get_flag( crap::packed_index::is_used ) == false )
-//        return 0;
-
-    const uint32_t find_index = _indices.as_type[ indices_index ].data_index;
-
-    return _data.as_type + find_index;
-}
 
 template<typename T>
 uint32_t indexed_array<T>::find( const T& key )
@@ -356,25 +417,11 @@ uint32_t indexed_array<T>::find( const T& key )
         if( _data.as_type[i] == key )
         {
             const uint32_t idx = _data_to_indices.as_type[i];
-            return idx + ( _base_value * _indices.as_type[ idx ].index_generation );
+            return idx + ( BASE_VALUE * _indices.as_type[ idx ].index_generation );
         }
     }
 
-    return invalid;
-}
-
-template<typename T>
-uint32_t indexed_array<T>::index_of( const T* ptr ) const
-{
-    for( uint32_t i=0; i < _size; ++i )
-    {
-        if( ptr == _data.as_type + i )
-        {
-            const uint32_t indices_index = _data_to_indices.as_type[ i ];
-            return indices_index + ( _base_value * _indices.as_type[ indices_index ].index_generation );
-        }
-    }
-    return invalid;
+    return INVALID;
 }
 
 template<typename T>
@@ -390,9 +437,21 @@ uint32_t indexed_array<T>::max_size( void ) const
 }
 
 template<typename T>
-T* indexed_array<T>::get_array( void ) const
+T* indexed_array<T>::data( void ) const
 {
     return _data.as_type;
+}
+
+template<typename T>
+pointer_t<void> indexed_array<T>::memory( void ) const
+{
+    return _indices.as_void;
+}
+
+template<typename T>
+uint32_t indexed_array<T>::size_of_elements( uint32_t number )
+{
+    return (sizeof(packed_index)+sizeof(uint32_t)+sizeof(T)) * number;
 }
 
 

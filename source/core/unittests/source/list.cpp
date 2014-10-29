@@ -63,8 +63,8 @@ TEST(CrapListInsterOverflow)
 
 TEST(CrapListAll)
 {
-	for( uint32_t i = lst_ptr->start(); i != crap::list<test_struct>::INVALID; i = lst_ptr->next(i))
-		std::cout << (lst_ptr->get(i))->val << std::endl;
+//	for( uint32_t i = lst_ptr->start(); i != crap::list<test_struct>::INVALID; i = lst_ptr->next(i))
+//		std::cout << (lst_ptr->get(i))->val << std::endl;
 
 	//fflush(stdout);
 }

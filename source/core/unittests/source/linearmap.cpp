@@ -1,7 +1,8 @@
-#include "container/map.h"
+#include "container/linearmap.h"
 #include "container/sortedmap.h"
 
 #include "UnitTest++.h"
+#include "logger.h"
 
 namespace
 {
@@ -11,6 +12,10 @@ crap::linear_map<uint32_t, float32_t>* my_linear_map;
 crap::pointer_t<void> my_memory;
 crap::pointer_t<void> my_linear_memory;
 
+TEST( AnnounceTestMap )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/map.h\"" );
+}
 TEST(CreateMap)
 {
     uint32_t se_size = (sizeof(uint32_t) + sizeof(float32_t)) * 10000;

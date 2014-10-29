@@ -2,6 +2,7 @@
 #include "memory/stackallocator.h"
 
 #include "UnitTest++.h"
+#include "logger.h"
 
 namespace
 {
@@ -10,6 +11,12 @@ crap::stack_allocator* sa;
 crap::pointer_t<void> pointers[11];
 
 crap::pointer_t<void> memory_sa = malloc( sizeof(uint32_t)*10);
+
+
+TEST( AnnounceTestStackAllocator )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"memory/stackallocator.h\"" );
+}
 
 TEST(CrapCreateStackAllocator)
 {

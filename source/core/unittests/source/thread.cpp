@@ -2,6 +2,13 @@
 #include <iostream>
 #include <vector>
 
+#include "UnitTest++.h"
+#include "logger.h"
+
+TEST( AnnounceTestThread )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"thread.h\"" );
+}
 //#include "atomic.h"
 //#include "container/array.h"
 

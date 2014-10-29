@@ -4,13 +4,12 @@
 #ifndef CRAP_CORE_CONTAINER
 #define CRAP_CORE_CONTAINER
 
+#include <container/linearmap.h>
 #include "container/array.h"
 #include "container/binarytree.h"
 #include "container/hashmap.h"
 #include "container/indexedarray.h"
 #include "container/intrusivelist.h"
-#include "container/map.h"
-
 #include "memory.h"
 
 namespace crap

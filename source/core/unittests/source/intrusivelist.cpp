@@ -2,9 +2,9 @@
 #include "UnitTest++.h"
 
 #include "container/intrusivelist.h"
+#include "logger.h"
 
-
-namespace name
+namespace
 {
 
 class TestIntrusive
@@ -31,6 +31,11 @@ crap::intrusive_list<TestIntrusive> TestIntrusive::_list;
 
 TestIntrusive* intlist;
 
+TEST( AnnounceTestIntrusiveList )
+{
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/intrusivelist.h\"" );
+}
+
 TEST(CreateINtrusive)
 {
     intlist = (TestIntrusive*) malloc( sizeof(TestIntrusive) * 1024 );
@@ -48,7 +53,7 @@ TEST(CreateINtrusiveParse)
     {
         //std::cout << (*i)->number() << std::endl;
     }
-    std::cout << list->size() << std::endl;
+    //std::cout << list->size() << std::endl;
 }
 
 TEST(CreateINtrusiveDelete)
@@ -58,14 +63,14 @@ TEST(CreateINtrusiveDelete)
     {
         crap::destruct_object( intlist + i );
     }
-    std::cout << list->size() << std::endl;
+    //std::cout << list->size() << std::endl;
 
 
     for(uint32_t i=0; i< 512; ++i )
     {
         crap::destruct_object( intlist + i );
     }
-    std::cout << list->size() << std::endl;
+    //std::cout << list->size() << std::endl;
 }
 
 }

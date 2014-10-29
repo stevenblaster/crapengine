@@ -86,11 +86,11 @@ TEST(TestDelegateZero)
 
     dele.bind<dele_func>();
 
-    printf("Se delegate says: %i\n", dele.invoke());
+    //printf("Se delegate says: %i\n", dele.invoke());
 
     dele.bind<dele_test, &dele_test::dele_func>( &setest );
 
-    printf("Se delegate says again: %i\n", dele.invoke());
+   // printf("Se delegate says again: %i\n", dele.invoke());
 
 }
 
@@ -101,11 +101,11 @@ TEST(TestDelegateOne)
 
     dele2.bind<dele_add>();
 
-    printf("Se delegate adds: %i\n", dele2.invoke(25));
+    //printf("Se delegate adds: %i\n", dele2.invoke(25));
 
     dele2.bind<dele_test, &dele_test::dele_add>( &setest );
 
-    printf("Se delegate adds: %i\n", dele2.invoke(125));
+    //printf("Se delegate adds: %i\n", dele2.invoke(125));
 }
 
 TEST(TestDelegateTwo)
@@ -115,11 +115,11 @@ TEST(TestDelegateTwo)
 
     dele3.bind<dele_add2>();
 
-    printf("Se delegate adds: %i\n", dele3.invoke(25, 25));
+    //printf("Se delegate adds: %i\n", dele3.invoke(25, 25));
 
     dele3.bind<dele_test, &dele_test::dele_add2>( &setest );
 
-    printf("Se delegate adds: %i\n", dele3.invoke(50, 25));
+   // printf("Se delegate adds: %i\n", dele3.invoke(50, 25));
 }
 
 TEST(TestDelegateThree)
@@ -129,11 +129,11 @@ TEST(TestDelegateThree)
 
     dele3.bind<dele_mul>();
 
-    printf("Se delegate adds: %f\n", dele3.invoke(25, 25, 1.3f));
+    //printf("Se delegate adds: %f\n", dele3.invoke(25, 25, 1.3f));
 
     dele3.bind<dele_test, &dele_test::dele_mul>( &setest );
 
-    printf("Se delegate adds: %f\n", dele3.invoke(50, 25, 2.6f));
+    //printf("Se delegate adds: %f\n", dele3.invoke(50, 25, 2.6f));
 }
 
 TEST(TestDelegateFour)
@@ -143,11 +143,11 @@ TEST(TestDelegateFour)
 
     dele3.bind<dele_mul2>();
 
-    printf("Se delegate adds: %f\n", dele3.invoke(25, 25, 1.3f, 2.6f));
+    //printf("Se delegate adds: %f\n", dele3.invoke(25, 25, 1.3f, 2.6f));
 
     dele3.bind<dele_test, &dele_test::dele_mul2>( &setest );
 
-    printf("Se delegate adds: %f\n", dele3.invoke(50, 25, 2.6f, 4.3f));
+    //printf("Se delegate adds: %f\n", dele3.invoke(50, 25, 2.6f, 4.3f));
 }
 
 TEST(TestDelegateFive)
@@ -157,11 +157,11 @@ TEST(TestDelegateFive)
 
     dele3.bind<dele_div>();
 
-    printf("Se delegate adds: %f\n", dele3.invoke(25, 25, 1.3f, 2.6f,8));
+    //printf("Se delegate adds: %f\n", dele3.invoke(25, 25, 1.3f, 2.6f,8));
 
     dele3.bind<dele_test, &dele_test::dele_div>( &setest );
 
-    printf("Se delegate adds: %f\n", dele3.invoke(50, 25, 2.6f, 4.3f, 7));
+    //printf("Se delegate adds: %f\n", dele3.invoke(50, 25, 2.6f, 4.3f, 7));
 }
 
 }

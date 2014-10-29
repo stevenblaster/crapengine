@@ -7,10 +7,7 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/thread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lotto.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/memorymanager.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/memorypool.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/memorystack.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/memorytable.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/memory.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/array.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/linearallocator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackallocator.cpp
@@ -22,7 +19,7 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/intrusivelist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/delegates.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/directory.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/sorted_array.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sortedarray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/list.cpp
 PARENT_SCOPE
 )

@@ -4,11 +4,11 @@
 #ifndef CRAP_AUDIO_AUDIOMANAGER
 #define CRAP_AUDIO_AUDIOMANAGER
 
+#include <container/linearmap.h>
 #include "audiofile.h"
 #include "audiocontrol.h"
 #include "audiodevice.h"
 
-#include "container/map.h"
 #include "strings.h"
 #include "memory.h"
 

@@ -3,7 +3,7 @@ set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/array.h
    ${CMAKE_CURRENT_SOURCE_DIR}/hashmap.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/map.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/linearmap.h
    ${CMAKE_CURRENT_SOURCE_DIR}/sortedarray.h
    ${CMAKE_CURRENT_SOURCE_DIR}/list.h
    ${CMAKE_CURRENT_SOURCE_DIR}/indexedarray.h

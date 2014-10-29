@@ -1,7 +1,19 @@
+/**
+ * @file linearmap.h
+ *
+ * @brief Short description...
+ *
+ * Long description...
+ *
+ * @copyright CrapGames 2014
+ *
+ * @author  Steffen Kopany
+ * @date 	Oct 29, 2014
+ */
 #pragma once
 
-#ifndef CRAP_CORE_MAP
-#define CRAP_CORE_MAP
+#ifndef CRAP_CORE_LINEARMAP
+#define CRAP_CORE_LINEARMAP
 
 #include "utilities.h"
 
