@@ -12,7 +12,7 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/linearallocator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackallocator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/poolallocator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/map.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/linearmap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/indexedarray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/converter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/hashmap.cpp

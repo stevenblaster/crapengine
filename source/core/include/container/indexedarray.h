@@ -141,7 +141,7 @@ public:
      * @param object Reference to objects
      */
     CRAP_INLINE
-    void remove( const T& object );
+    void erase( const T& object );
 
     /**
      * @brief Finds id of element
@@ -402,7 +402,7 @@ void indexed_array<T>::erase_at( uint32_t id )
 }
 
 template<typename T>
-void indexed_array<T>::remove( const T& object )
+void indexed_array<T>::erase( const T& object )
 {
 	uint32_t id = find( object );
 	erase_at( id );

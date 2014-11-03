@@ -29,12 +29,12 @@ AudioManager::~AudioManager( void )
 {
     for( uint32_t i=0; i<_sources.size(); --i )
     {
-        destroyAudioSources( &(_sources[i].key), 1 );
+        destroyAudioSources( _sources.get_key(i), 1 );
     }
 
     for( uint32_t i=0; i<_buffers.size(); --i )
     {
-        destroyAudioBuffers( &(_buffers[i].value), 1 );
+        destroyAudioBuffers( _sources.get_key(i), 1 );
     }
 
     _allocator.deallocate( _buffers.memory().as_void );
@@ -55,39 +55,40 @@ uint32_t AudioManager::addBuffer( const string_hash& name, const AudioFile& data
 void AudioManager::removeBuffer( const string_hash& name )
 {
     uint32_t index = _buffers.find( name );
-    destroyAudioBuffers( &(_buffers[index].value), 1 );
-    _buffers.remove( index );
+    destroyAudioBuffers( _buffers.get_value(index), 1 );
+    _buffers.erase_at( index );
 }
 
 uint32_t AudioManager::leaseSource( const string_hash& name )
 {
     uint32_t index = _buffers.find( name );
-    AudioBuffer buffer = _buffers[index].value;
+    AudioBuffer buffer = *(_buffers.get_value(index));
     for( uint32_t i=0; i< _sources.size(); ++i )
     {
-        if( _sources[i].value == InvalidAudioBuffer )
+        if( *(_sources.get_value(i)) == InvalidAudioBuffer )
         {
-            _sources[i].value = buffer;
-            setAudioSourceBuffer( &(_sources[i].value), &(_sources[i].key) );
+            *(_sources.get_value(i)) = buffer;
+            setAudioSourceBuffer( _sources.get_value(i), _sources.get_key(i) );
             return i;
         }
     }
+    return UINT32_MAX;
 }
 
 void AudioManager::playSource( uint32_t leased_source )
 {
-    AudioSource source = _sources[leased_source].key;
-    playAudioSource(&source);
+    AudioSource* source = _sources.get_key(leased_source);
+    playAudioSource(source);
 }
 
 void AudioManager::releaseSource( uint32_t leased_source )
 {
-    _sources[leased_source].value = InvalidAudioBuffer;
+    *(_sources.get_value(leased_source)) = InvalidAudioBuffer;
 }
 
 void AudioManager::setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop)
 {
-    setAudioSourceInfo( &(_sources[leased_source].key), pitch, gain, loop );
+    setAudioSourceInfo( _sources.get_key(leased_source), pitch, gain, loop );
 }
 
 void AudioManager::setListenerData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT direction)
@@ -97,7 +98,7 @@ void AudioManager::setListenerData( float32_t* CRAP_RESTRICT position, float32_t
 
 void AudioManager::setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease )
 {
-    setAudioSource3DInfo( position, velocity, &(_sources[source_lease].key) );
+    setAudioSource3DInfo( position, velocity,_sources.get_key(source_lease));
 }
 
 } //namespace

@@ -1,73 +1,80 @@
 #include "container/linearmap.h"
-#include "container/sortedmap.h"
 
 #include "UnitTest++.h"
+#include "memory.h"
 #include "logger.h"
+
+#define LINEAR_MAP_SPACE 10
 
 namespace
 {
-
-crap::sorted_map<uint32_t, float32_t>* my_map;
+crap::BoundGeneralMemory* gbm_lm;
 crap::linear_map<uint32_t, float32_t>* my_linear_map;
-crap::pointer_t<void> my_memory;
-crap::pointer_t<void> my_linear_memory;
+void* linearmap_memory;
+uint32_t keys[LINEAR_MAP_SPACE];
+uint32_t map_invalid;
 
 TEST( AnnounceTestMap )
 {
-    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/map.h\"" );
-}
-TEST(CreateMap)
-{
-    uint32_t se_size = (sizeof(uint32_t) + sizeof(float32_t)) * 10000;
-    my_memory = malloc( se_size );
-    my_linear_memory = malloc( se_size );
-    my_map = new crap::sorted_map<uint32_t, float32_t>( my_memory, se_size );
-    my_linear_map = new crap::linear_map<uint32_t, float32_t>( my_linear_memory, se_size );
+    CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"container/linearmap.h\"" );
 }
 
-TEST(InsertMap)
+TEST(CreateLinearMap)
 {
-    for( uint32_t i=0; i< my_map->size_max(); ++i )
-    {
-        uint32_t serand = rand();
-        my_map->insert( serand, ((float32_t)serand) * 0.1f );
-    }
+    uint32_t size = crap::linear_map<uint32_t, float32_t>::size_of_elements( LINEAR_MAP_SPACE );
+    gbm_lm = new crap::BoundGeneralMemory( size*2 );
+    linearmap_memory = gbm_lm->allocate( size, crap::align_of<uint32_t>::value );
+    my_linear_map = new crap::linear_map<uint32_t, float32_t>( linearmap_memory, size );
+    map_invalid = crap::linear_map<uint32_t, float32_t>::INVALID;
 
-    for( uint32_t i=0; i< my_linear_map->size_max(); ++i )
-    {
-        uint32_t serand = rand();
-        my_linear_map->push_back( serand, ((float32_t)serand) * 0.1f );
-    }
+    CHECK( my_linear_map->max_size() ==  LINEAR_MAP_SPACE );
+    CHECK( my_linear_map->size() == 0 );
 }
 
-TEST(FindMap)
+TEST(InsertLinearMap)
 {
-    for(uint32_t i=0; i< my_map->size(); ++i)
+    for( uint32_t i=0; i< my_linear_map->max_size(); ++i )
     {
-        uint32_t num = rand() % my_map->size_max();
-        uint32_t found = my_map->find(num);
+    	keys[i] = rand();
+        uint32_t result = my_linear_map->push_back( keys[i], ((float32_t)keys[i]) * 0.1f );
+        CHECK( result != map_invalid);
     }
 
+    CHECK( my_linear_map->size() == my_linear_map->max_size() );
+}
+
+TEST(InsertLinearMapOverflow)
+{
+
+	uint32_t key = rand();
+	uint32_t result = my_linear_map->push_back( key, ((float32_t)key) * 0.1f );
+
+	CHECK( result == map_invalid );
+    CHECK( my_linear_map->size() == my_linear_map->max_size() );
+}
+
+TEST(FindLinearMap)
+{
     for(uint32_t i=0; i< my_linear_map->size(); ++i)
     {
-        uint32_t num = rand() % my_linear_map->size_max();
-        uint32_t found = my_linear_map->find(num);
+    	CHECK( my_linear_map->find( keys[i] ) == i );
     }
 }
 
-TEST(RemoveMap)
+TEST(RemoveLinearMap)
 {
-    for(uint32_t i=0; i< my_map->size(); ++i)
+    for(uint32_t i=0; i< LINEAR_MAP_SPACE; ++i)
     {
-        uint32_t num = rand() % my_map->size_max();
-        //my_map->remove(num);
+    	my_linear_map->erase( keys[i] );
+    	CHECK( my_linear_map->size() == LINEAR_MAP_SPACE - (i+1) );
     }
+}
 
-    for(uint32_t i=0; i< my_linear_map->size(); ++i)
-    {
-        uint32_t num = rand() % my_linear_map->size_max();
-        //my_linear_map->remove(num);
-    }
+TEST(DeleteLinearMap)
+{
+	delete my_linear_map;
+	gbm_lm->deallocate( linearmap_memory );
+	delete gbm_lm;
 }
 
 }

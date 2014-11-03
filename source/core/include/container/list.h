@@ -69,7 +69,7 @@ public:
     list& operator=( const list& other );
 
     /**
-     * @brief Destructor of array class
+     * @brief Destructor of list class
      */
     CRAP_INLINE
     ~list( void );
@@ -188,7 +188,7 @@ public:
 
 	/**
 	 * @brief Returns the pointer to the memory
-	 * @return Pointer type of array memory
+	 * @return Pointer to memory
 	 */
     CRAP_INLINE
     pointer_t<void> memory( void ) const;
