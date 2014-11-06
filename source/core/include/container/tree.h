@@ -16,8 +16,8 @@
  * @def CORE_INCLUDE_CONTAINER_LIST_H
  * @brief header guard
  */
-#ifndef CRAP_CONTAINER_BINARYTREE_H
-#define CRAP_CONTAINER_BINARYTREE_H
+#ifndef CRAP_CONTAINER_TREE_H
+#define CRAP_CONTAINER_TREE_H
 
 #include "utilities.h"
 
@@ -29,21 +29,21 @@ namespace crap
 {
 
 /**
- * @class binary_tree
+ * @class tree
  * @brief A red-black tree indexed based implementation
  *
  * The data is kept packed, the tree is connected
  * by using indices.
  */
 template <typename T>
-class binary_tree
+class tree
 {
 private:
 
 	/**
 	 * @struct nested struct used as index
 	 */
-    struct binary_node
+    struct tree_node
     {
     	/**
     	 * @enum names for the index array
@@ -61,7 +61,7 @@ private:
         /**
          * @brief Constructor
          */
-        binary_node( void )
+        tree_node( void )
         {
             sub_nodes[0] = INVALID;
             sub_nodes[1] = INVALID;
@@ -71,7 +71,7 @@ private:
         /**
          * @brief copy constructor
          */
-        binary_node( const binary_node& other )
+        tree_node( const tree_node& other )
         {
             sub_nodes[0] = other.sub_nodes[0];
             sub_nodes[1] = other.sub_nodes[1];
@@ -81,7 +81,7 @@ private:
         /**
          * @brief assignment operator
          */
-        binary_node& operator=( const binary_node& other )
+        tree_node& operator=( const tree_node& other )
         {
             sub_nodes[0] = other.sub_nodes[0];
             sub_nodes[1] = other.sub_nodes[1];
@@ -92,7 +92,7 @@ private:
     };
 
     /// pointer to indices
-    pointer_t<binary_node>  _indices;
+    pointer_t<tree_node>  _indices;
 
     /// pointer to data
     pointer_t<T>            _data;
@@ -109,7 +109,7 @@ private:
     void delete_recursive( uint32_t node_index );
 
     //! @brief Copy constructor
-    CRAP_INLINE binary_tree( const binary_tree& other );
+    CRAP_INLINE tree( const tree& other );
 
     //! @brief Finds key and returns free spot
     uint32_t find_free(const T& key) const;
@@ -125,13 +125,13 @@ public:
 	 * @param size size of provided memory
 	 */
     CRAP_INLINE
-	explicit binary_tree( void* memory, uint32_t size );
+	explicit tree( void* memory, uint32_t size );
 
 	/**
 	 * @brief destructor
 	 */
     CRAP_INLINE
-	~binary_tree( void );
+	~tree( void );
 
 	/**
 	 * @brief Finds key and returns index
@@ -266,27 +266,27 @@ public:
  */
 
 template <class T>
-void binary_tree<T>::delete_recursive( uint32_t node_index )
+void tree<T>::delete_recursive( uint32_t node_index )
 {
     if(node_index == INVALID)
 		return;
 
-    delete_recursive( _data.as_type[node_index].sub_node[binary_node::left] );
-    delete_recursive( _data.as_type[node_index].sub_node[binary_node::right] );
+    delete_recursive( _data.as_type[node_index].sub_node[tree_node::left] );
+    delete_recursive( _data.as_type[node_index].sub_node[tree_node::right] );
 
     remove(node_index);
 }
 
 template <class T>
 //! @brief Finds key and returns free spot
-uint32_t binary_tree<T>::find_free(const T& key) const
+uint32_t tree<T>::find_free(const T& key) const
 {
 	uint32_t last_index = INVALID;
     uint32_t current_index = _root;
 
     while( current_index != INVALID )
     {
-        binary_node* current_node = &(_indices.as_type[current_index]);
+        tree_node* current_node = &(_indices.as_type[current_index]);
 
         if( _data.as_type[current_index] == key )
             return INVALID;
@@ -294,9 +294,9 @@ uint32_t binary_tree<T>::find_free(const T& key) const
         last_index = current_index;
 
         if( _data.as_type[current_index] > key )
-            current_index = current_node->sub_nodes[binary_node::left];
+            current_index = current_node->sub_nodes[tree_node::left];
         else if( _data.as_type[current_index] < key )
-            current_index = current_node->sub_nodes[binary_node::right];
+            current_index = current_node->sub_nodes[tree_node::right];
     }
 
     return last_index;
@@ -308,36 +308,36 @@ uint32_t binary_tree<T>::find_free(const T& key) const
  */
 
 template <class T>
-binary_tree<T>::binary_tree( void* memory, uint32_t size ) :
-	_size(0), _size_max( size / (sizeof(binary_node)+sizeof(T))), _root(INVALID)
+tree<T>::tree( void* memory, uint32_t size ) :
+	_size(0), _size_max( size / (sizeof(tree_node)+sizeof(T))), _root(INVALID)
 {
     _indices = memory;
     _data = _indices.as_type + _size_max;
 }
 
 template <class T>
-binary_tree<T>::~binary_tree( void )
+tree<T>::~tree( void )
 {
 
 }
 
 template <class T>
-uint32_t binary_tree<T>::find( const T& key ) const
+uint32_t tree<T>::find( const T& key ) const
 {
     uint32_t current_index = _root;
 
     while( current_index != INVALID )
     {
-        binary_node* current_node = &(_indices.as_type[current_index]);
+        tree_node* current_node = &(_indices.as_type[current_index]);
 
         if( _data.as_type[current_index] == key )
             return current_index;
 
         if( _data.as_type[current_index] < key )
-            current_index = current_node->sub_nodes[binary_node::left];
+            current_index = current_node->sub_nodes[tree_node::left];
 
         if( _data.as_type[current_index] > key )
-            current_index = current_node->sub_nodes[binary_node::right];
+            current_index = current_node->sub_nodes[tree_node::right];
     }
 
     return current_index;
@@ -345,11 +345,11 @@ uint32_t binary_tree<T>::find( const T& key ) const
 
 
 template <class T>
-uint32_t binary_tree<T>::insert( const T& key )
+uint32_t tree<T>::insert( const T& key )
 {
 	if( _size < _size_max )
 	{
-		new ( _indices.as_type + _size ) binary_node();
+		new ( _indices.as_type + _size ) tree_node();
 		copy_construct_object( &key , _data.as_type + _size );
 
 		uint32_t free_index = find_free( key );
@@ -360,10 +360,10 @@ uint32_t binary_tree<T>::insert( const T& key )
 		}
 		else
 		{
-			uint32_t insert_direction = ( _data.as_type[free_index] < key ) ? binary_node::right : binary_node::left;
+			uint32_t insert_direction = ( _data.as_type[free_index] < key ) ? tree_node::right : tree_node::left;
 
 			_indices.as_type[free_index].sub_nodes[insert_direction] = _size;
-	        _indices.as_type[_size].sub_nodes[binary_node::parent] = free_index;
+	        _indices.as_type[_size].sub_nodes[tree_node::parent] = free_index;
 		}
 
 		return _size++;
@@ -373,20 +373,20 @@ uint32_t binary_tree<T>::insert( const T& key )
 }
 
 template <class T>
-void binary_tree<T>::erase_at( uint32_t index )
+void tree<T>::erase_at( uint32_t index )
 {
 	if( index < _size )
 	{
 		T& key = _data.as_type[index];
 
-	    uint32_t parent_index = _indices.as_type[index].sub_nodes[binary_node::parent];
-	    uint32_t node_direction = binary_node::parent;
+	    uint32_t parent_index = _indices.as_type[index].sub_nodes[tree_node::parent];
+	    uint32_t node_direction = tree_node::parent;
 	    if( parent_index != INVALID )
-	        node_direction = (_indices.as_type[parent_index].sub_nodes[binary_node::left] == index ) ? binary_node::left : binary_node::right;
+	        node_direction = (_indices.as_type[parent_index].sub_nodes[tree_node::left] == index ) ? tree_node::left : tree_node::right;
 
 
-	    const uint32_t left_index = _indices.as_type[index].sub_nodes[binary_node::left];
-	    const uint32_t right_index = _indices.as_type[index].sub_nodes[binary_node::right];
+	    const uint32_t left_index = _indices.as_type[index].sub_nodes[tree_node::left];
+	    const uint32_t right_index = _indices.as_type[index].sub_nodes[tree_node::right];
 
 
 	    if( left_index == INVALID && right_index == INVALID )
@@ -403,7 +403,7 @@ void binary_tree<T>::erase_at( uint32_t index )
 	        else
 	            _root = right_index;
 
-	        _indices.as_type[right_index].sub_nodes[binary_node::parent] = parent_index;
+	        _indices.as_type[right_index].sub_nodes[tree_node::parent] = parent_index;
 	    }
 	    else if( right_index == INVALID )
 	    {
@@ -412,27 +412,27 @@ void binary_tree<T>::erase_at( uint32_t index )
 	        else
 	            _root = left_index;
 
-	        _indices.as_type[left_index].sub_nodes[binary_node::parent] = parent_index;
+	        _indices.as_type[left_index].sub_nodes[tree_node::parent] = parent_index;
 	    }
 	    else
 	    {
-	        const uint32_t moving_index = ( node_direction == binary_node::right ) ? right_index : left_index;
-	        const uint32_t replacing_index = ( node_direction == binary_node::right ) ? left_index : right_index;
+	        const uint32_t moving_index = ( node_direction == tree_node::right ) ? right_index : left_index;
+	        const uint32_t replacing_index = ( node_direction == tree_node::right ) ? left_index : right_index;
 
 	        if( parent_index != INVALID )
 	            _indices.as_type[parent_index].sub_nodes[node_direction] = replacing_index;
 	        else
 	            _root = replacing_index;
 
-	        _indices.as_type[replacing_index].sub_nodes[binary_node::parent] = parent_index;
+	        _indices.as_type[replacing_index].sub_nodes[tree_node::parent] = parent_index;
 
 	        uint32_t new_index = find_free( _data.as_type[moving_index] );
 	        CRAP_ASSERT( ASSERT_BREAK, new_index >= 0,  "Error while reordering data" );
 
-	        uint32_t new_direction = ( _data.as_type[new_index] < key ) ? binary_node::right : binary_node::left;
+	        uint32_t new_direction = ( _data.as_type[new_index] < key ) ? tree_node::right : tree_node::left;
 	        CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[new_index].sub_nodes[new_direction] == INVALID ,  "Error while reordering data" );
 
-	        _indices.as_type[moving_index].sub_nodes[binary_node::parent] = new_index;
+	        _indices.as_type[moving_index].sub_nodes[tree_node::parent] = new_index;
 	        _indices.as_type[new_index].sub_nodes[new_direction] = moving_index;
 	    }
 
@@ -441,13 +441,13 @@ void binary_tree<T>::erase_at( uint32_t index )
 	    //destroy old node
 	    if( index != _size-1 )
 	    {
-	        uint32_t last_parent_index = _indices.as_type[_size-1].sub_nodes[binary_node::parent];
+	        uint32_t last_parent_index = _indices.as_type[_size-1].sub_nodes[tree_node::parent];
 
-	        if( _indices.as_type[last_parent_index].sub_nodes[binary_node::left] == _size-1 )
-	            _indices.as_type[last_parent_index].sub_nodes[binary_node::left] = index;
+	        if( _indices.as_type[last_parent_index].sub_nodes[tree_node::left] == _size-1 )
+	            _indices.as_type[last_parent_index].sub_nodes[tree_node::left] = index;
 
-	        if( _indices.as_type[last_parent_index].sub_nodes[binary_node::right] == _size-1 )
-	            _indices.as_type[last_parent_index].sub_nodes[binary_node::right] = index;
+	        if( _indices.as_type[last_parent_index].sub_nodes[tree_node::right] == _size-1 )
+	            _indices.as_type[last_parent_index].sub_nodes[tree_node::right] = index;
 
 	        copy_construct_object( _data.as_type + _size-1, _data.as_type + index );
 	        destruct_object( _data.as_type + _size-1 );
@@ -459,7 +459,7 @@ void binary_tree<T>::erase_at( uint32_t index )
 }
 
 template <class T>
-void binary_tree<T>::remove( const T& key )
+void tree<T>::remove( const T& key )
 {
     uint32_t used_index = find( key );
 
@@ -473,59 +473,59 @@ void binary_tree<T>::remove( const T& key )
 
 
 template <class T>
-uint32_t binary_tree<T>::begin( void ) const
+uint32_t tree<T>::begin( void ) const
 {
 	uint32_t return_index = _root;
 
-	while( _indices.as_type[return_index].sub_nodes[binary_node::left] != INVALID )
+	while( _indices.as_type[return_index].sub_nodes[tree_node::left] != INVALID )
 	{
-		return_index = _indices.as_type[return_index].sub_nodes[binary_node::left];
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::left];
 	}
 
 	return return_index;
 }
 
 template <class T>
-uint32_t binary_tree<T>::last( void ) const
+uint32_t tree<T>::last( void ) const
 {
 	uint32_t return_index = _root;
 
-	while( _indices.as_type[return_index].sub_nodes[binary_node::right] != INVALID )
+	while( _indices.as_type[return_index].sub_nodes[tree_node::right] != INVALID )
 	{
-		return_index = _indices.as_type[return_index].sub_nodes[binary_node::right];
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::right];
 	}
 
 	return return_index;
 }
 
 template <class T>
-uint32_t binary_tree<T>::end( void ) const
+uint32_t tree<T>::end( void ) const
 {
 	return INVALID;
 }
 
 template <class T>
-uint32_t binary_tree<T>::next( uint32_t index ) const
+uint32_t tree<T>::next( uint32_t index ) const
 {
 	if( index < _size )
 	{
-		if( _indices.as_type[index].sub_nodes[binary_node::right] != INVALID )
+		if( _indices.as_type[index].sub_nodes[tree_node::right] != INVALID )
 		{
-			uint32_t return_index = _indices.as_type[index].sub_nodes[binary_node::right];
-			while( _indices.as_type[return_index].sub_nodes[binary_node::left] != INVALID )
+			uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::right];
+			while( _indices.as_type[return_index].sub_nodes[tree_node::left] != INVALID )
 			{
-				return_index = _indices.as_type[return_index].sub_nodes[binary_node::left];
+				return_index = _indices.as_type[return_index].sub_nodes[tree_node::left];
 			}
 			return return_index;
 		}
 
-		uint32_t return_index = _indices.as_type[index].sub_nodes[binary_node::parent];
+		uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::parent];
 		uint32_t previous_index = index;
 
-		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[binary_node::right] )
+		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[tree_node::right] )
 		{
 			previous_index = return_index;
-			return_index = _indices.as_type[previous_index].sub_nodes[binary_node::parent];
+			return_index = _indices.as_type[previous_index].sub_nodes[tree_node::parent];
 		}
 
 		return return_index;
@@ -535,27 +535,27 @@ uint32_t binary_tree<T>::next( uint32_t index ) const
 }
 
 template <class T>
-uint32_t binary_tree<T>::previous( uint32_t index ) const
+uint32_t tree<T>::previous( uint32_t index ) const
 {
 	if( index < _size )
 	{
-		if( _indices.as_type[index].sub_nodes[binary_node::left] != INVALID )
+		if( _indices.as_type[index].sub_nodes[tree_node::left] != INVALID )
 		{
-			uint32_t return_index = _indices.as_type[index].sub_nodes[binary_node::left];
-			while( _indices.as_type[return_index].sub_nodes[binary_node::right] != INVALID )
+			uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::left];
+			while( _indices.as_type[return_index].sub_nodes[tree_node::right] != INVALID )
 			{
-				return_index = _indices.as_type[return_index].sub_nodes[binary_node::right];
+				return_index = _indices.as_type[return_index].sub_nodes[tree_node::right];
 			}
 			return return_index;
 		}
 
-		uint32_t return_index = _indices.as_type[index].sub_nodes[binary_node::parent];
+		uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::parent];
 		uint32_t previous_index = index;
 
-		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[binary_node::left] )
+		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[tree_node::left] )
 		{
 			previous_index = return_index;
-			return_index = _indices.as_type[previous_index].sub_nodes[binary_node::parent];
+			return_index = _indices.as_type[previous_index].sub_nodes[tree_node::parent];
 		}
 
 		return return_index;
@@ -565,19 +565,19 @@ uint32_t binary_tree<T>::previous( uint32_t index ) const
 }
 
 template <class T>
-uint32_t binary_tree<T>::size(void) const
+uint32_t tree<T>::size(void) const
 {
 	return _size;
 }
 
 template <class T>
-uint32_t binary_tree<T>::max_size(void) const
+uint32_t tree<T>::max_size(void) const
 {
     return _size_max;
 }
 
 template <class T>
-T* binary_tree<T>::get( uint32_t index )
+T* tree<T>::get( uint32_t index )
 {
 	if( index < _size )
 	{
@@ -588,7 +588,7 @@ T* binary_tree<T>::get( uint32_t index )
 }
 
 template <class T>
-const T* binary_tree<T>::get( uint32_t  index ) const
+const T* tree<T>::get( uint32_t  index ) const
 {
 	if( index < _size )
 	{
@@ -599,27 +599,27 @@ const T* binary_tree<T>::get( uint32_t  index ) const
 }
 
 template <class T>
-T& binary_tree<T>::operator[]( uint32_t index )
+T& tree<T>::operator[]( uint32_t index )
 {
     return *( _data.as_type + index );
 }
 
 template <class T>
-const T& binary_tree<T>::operator[]( uint32_t index ) const
+const T& tree<T>::operator[]( uint32_t index ) const
 {
     return *( _data.as_type + index );
 }
 
 template <class T>
-pointer_t<void> binary_tree<T>::memory( void ) const
+pointer_t<void> tree<T>::memory( void ) const
 {
     return _indices.as_void;
 }
 
 template <class T>
-uint32_t binary_tree<T>::size_of_elements( uint32_t number )
+uint32_t tree<T>::size_of_elements( uint32_t number )
 {
-    return (sizeof(binary_node)+sizeof(T)) * number;
+    return (sizeof(tree_node)+sizeof(T)) * number;
 }
 
 }	// namespace crap

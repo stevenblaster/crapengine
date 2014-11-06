@@ -27,7 +27,7 @@ void Configuration::load( const char* filename )
             string_hash hash(arr[0].c_str());
             string64 val = arr[1];
 
-            _config.push_back( ConfigMap::type(hash, val) );
+            _config.insert( hash, val );
         }
     }
 }

@@ -46,7 +46,7 @@ class sorted_array
 public:
 
 	/// Defines an invalid index
-    static const uint32_t invalid = UINT32_MAX;
+    static const uint32_t INVALID = UINT32_MAX;
 
     /**
      * @brief Constructor of array class
@@ -83,6 +83,41 @@ public:
 	 */
     CRAP_INLINE
     uint32_t max_size( void ) const;
+
+    /**
+     * @brief Returns first element of the array
+     * @return First valid index or INVALID
+     */
+    CRAP_INLINE
+	uint32_t begin( void ) const;
+
+    /**
+     * @brief returns first invalid element
+     * @return INVALID
+     */
+    CRAP_INLINE
+	uint32_t end( void ) const;
+
+    /**
+     * @brief returns last valid element
+     * @return last valid element or INVALID
+     */
+    CRAP_INLINE
+	uint32_t last( void ) const;
+
+    /**
+     * @brief returns next element
+     * @return next index or invlid
+     */
+    CRAP_INLINE
+	uint32_t next( uint32_t index ) const;
+
+    /**
+     * @brief returns previous index
+     * @return previous index or INVALID
+     */
+    CRAP_INLINE
+	uint32_t previous( uint32_t index ) const;
 
 	/**
 	 * @brief Index operator returning a member reference
@@ -230,6 +265,49 @@ uint32_t sorted_array<T>::max_size( void ) const
     return _max_size;
 }
 
+
+template< typename T>
+uint32_t sorted_array<T>::begin( void ) const
+{
+	if( _size > 0 )
+		return 0;
+
+	return INVALID;
+}
+
+template< typename T>
+uint32_t sorted_array<T>::end( void ) const
+{
+	return INVALID;
+}
+
+template< typename T>
+uint32_t sorted_array<T>::last( void ) const
+{
+	if( _size > 0 )
+		return _size-1;
+
+	return INVALID;
+}
+
+template< typename T>
+uint32_t sorted_array<T>::next( uint32_t index ) const
+{
+	if( _size > 0 && index < _size-1 )
+		return index+1;
+
+	return INVALID;
+}
+
+template< typename T>
+uint32_t sorted_array<T>::previous( uint32_t index ) const
+{
+	if( index < _size && index > 0 )
+		return index-1;
+
+	return INVALID;
+}
+
 template< typename T>
 T& sorted_array<T>::operator[]( uint32_t index )
 {
@@ -264,7 +342,7 @@ template< typename T>
 uint32_t sorted_array<T>::insert( const T& object )
 {
     if( _size+1 > _max_size )
-        return invalid;
+        return INVALID;
 
 
 	crap::copy_construct_object(  &object, _memory.as_type + _size++);
@@ -308,7 +386,7 @@ void sorted_array<T>::erase( const T& object )
 {
     uint32_t index = find( object );
 
-    if( index != invalid )
+    if( index != INVALID )
         erase_at(index);
 }
 
@@ -328,7 +406,7 @@ uint32_t sorted_array<T>::find( const T& object )
     while( _memory.as_type[median] != object )
     {
         if( median == 0 || (median == _size-1 && median != 1) )
-            return invalid;
+            return INVALID;
 
         if( median_value > 1 || median_value < -1 )
         {

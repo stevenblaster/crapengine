@@ -57,13 +57,13 @@ public:
          * @brief Constructor
          */
         CRAP_INLINE
-		packed_index( void ) : index_generation(0), next(0), data_index(0) {}
+		packed_index( void ) : index_generation(0), next(0), data_index(INVALID) {}
 
         /**
          * @brief Destructor
          */
         CRAP_INLINE
-        ~packed_index( void ) { index_generation = 0; next = 0; data_index = 0; }
+        ~packed_index( void ) { index_generation = 0; next = 0; data_index = INVALID; }
     };
 
 
@@ -88,6 +88,41 @@ public:
      */
     CRAP_INLINE
     indexed_array& operator=( const indexed_array& other );
+
+    /**
+      * @brief Returns first element of the array
+      * @return First valid index or INVALID
+      */
+     CRAP_INLINE
+ 	uint32_t begin( void ) const;
+
+     /**
+      * @brief returns first invalid element
+      * @return INVALID
+      */
+     CRAP_INLINE
+ 	uint32_t end( void ) const;
+
+     /**
+      * @brief returns last valid element
+      * @return last valid element or INVALID
+      */
+     CRAP_INLINE
+ 	uint32_t last( void ) const;
+
+     /**
+      * @brief returns next element
+      * @return next index or invlid
+      */
+     CRAP_INLINE
+ 	uint32_t next( uint32_t index ) const;
+
+     /**
+      * @brief returns previous index
+      * @return previous index or INVALID
+      */
+     CRAP_INLINE
+ 	uint32_t previous( uint32_t index ) const;
 
     /**
      * @brief returns pointer to data
@@ -266,6 +301,89 @@ indexed_array<T>& indexed_array<T>::operator=( const indexed_array& other )
     _freelist = other._freelist;
 
     return *this;
+}
+
+
+template< typename T>
+uint32_t indexed_array<T>::begin( void ) const
+{
+	if( _size == 0 )
+		return INVALID;
+
+	packed_index* idx = _indices.as_type;
+	uint32_t indices_index = 0;
+
+	while( idx->data_index == INVALID && idx->next < _size_max )
+	{
+		indices_index = idx->next;
+		idx = _indices.as_type + idx->next;
+	}
+
+	if( idx->next == _size_max )
+		return INVALID;
+
+	return indices_index + ( BASE_VALUE * _indices.as_type[ indices_index ].index_generation );
+}
+
+template< typename T>
+uint32_t indexed_array<T>::end( void ) const
+{
+	return INVALID;
+}
+
+template< typename T>
+uint32_t indexed_array<T>::last( void ) const
+{
+	if( _size == 0 )
+		return INVALID;
+
+	packed_index* idx = _indices.as_type;
+	uint32_t indices_index = 0;
+
+	while( idx->data_index != INVALID && idx->next < _size_max )
+	{
+		indices_index = idx->next;
+		idx = _indices.as_type + idx->next;
+	}
+
+	if( idx->next == _size_max )
+		return INVALID;
+
+	return indices_index + ( BASE_VALUE * _indices.as_type[ indices_index ].index_generation );
+}
+
+template< typename T>
+uint32_t indexed_array<T>::next( uint32_t id ) const
+{
+    const uint32_t generation = id / BASE_VALUE;
+    uint32_t indices_index = id % BASE_VALUE;
+
+    indices_index = _indices.as_type[indices_index].next;
+
+    return indices_index + ( BASE_VALUE * _indices.as_type[ indices_index ].index_generation );
+}
+
+template< typename T>
+uint32_t indexed_array<T>::previous( uint32_t id ) const
+{
+	if( _size == 0 )
+		return INVALID;
+
+    const uint32_t generation = id / BASE_VALUE;
+    uint32_t indices_index = id % BASE_VALUE;
+	packed_index* idx = _indices.as_type;
+	uint32_t index = 0;
+
+	while( idx->data_index != INVALID && idx->next < _size_max )
+	{
+		if( idx->next == indices_index )
+			return index;
+
+		index = idx->next;
+		idx = _indices.as_type + idx->next;
+	}
+
+	return INVALID;
 }
 
 template<typename T>

@@ -37,9 +37,9 @@ public:
     template<typename T>
     T getValue( string_hash id )
     {
-        ConfigMap::handle handle = _config.find( id );
-        CRAP_ASSERT( ASSERT_BREAK, handle != _config.invalid, "Configuration value not found" );
-        return crap::convert<string64, T>( _config[handle].value );
+        uint32_t handle = _config.find( id );
+        CRAP_ASSERT( ASSERT_BREAK, handle != ConfigMap::INVALID, "Configuration value not found" );
+        return crap::convert<string64, T>( _config[handle] );
     }
 
 private:

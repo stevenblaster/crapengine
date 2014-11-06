@@ -97,10 +97,10 @@ public:
 
 private:
 
-    typedef crap::sorted_map<ResourceName, ResourceInfo>        ResourceMap;
+    typedef crap::sorted_map<ResourceName, ResourceInfo> ResourceMap;
 
-    pointer_t<void> loadToMemory( ResourceMap::handle handle );
-    void unloadFromMemory( ResourceMap::handle handle );
+    pointer_t<void> loadToMemory( uint32_t handle );
+    void unloadFromMemory( uint32_t handle );
 
     RESOURCE_MEMORY                                     _allocator;
 

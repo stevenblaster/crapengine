@@ -5,8 +5,8 @@
 #define CRAP_CORE_CONTAINER
 
 #include <container/linearmap.h>
+#include <container/tree.h>
 #include "container/array.h"
-#include "container/binarytree.h"
 #include "container/hashmap.h"
 #include "container/indexedarray.h"
 #include "container/intrusivelist.h"

@@ -79,7 +79,7 @@ public:
      * @return current start index
      */
     CRAP_INLINE
-	uint32_t start( void ) const;
+	uint32_t begin( void ) const;
 
     /**
      * @brief Returns current end index
@@ -87,6 +87,13 @@ public:
      */
     CRAP_INLINE
 	uint32_t end( void ) const;
+
+    /**
+     * @brief returns last valid index
+     * @return index or INVALID
+     */
+    CRAP_INLINE
+	uint32_t last( void ) const;
 
     /**
      * @brief returns next index of provided index
@@ -272,13 +279,19 @@ list<T>::~list( void )
 }
 
 template<typename T>
-uint32_t list<T>::start( void ) const
+uint32_t list<T>::begin( void ) const
 {
 	return _start;
 }
 
 template<typename T>
 uint32_t list<T>::end( void ) const
+{
+	return INVALID;
+}
+
+template<typename T>
+uint32_t list<T>::last( void ) const
 {
 	return _end;
 }

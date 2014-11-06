@@ -69,7 +69,7 @@ public:
      * @return current start index
      */
     CRAP_INLINE
-	uint32_t start( void ) const;
+	uint32_t begin( void ) const;
 
     /**
      * @brief Returns current end index
@@ -247,12 +247,21 @@ linear_map<K,V>::~linear_map( void )
 template<typename K, typename V>
 linear_map<K,V>& linear_map<K,V>::operator=( const linear_map& other )
 {
-	//TODO
+	if( this != &other && other._size <= _max_size )
+	{
+	    destruct_array( _keys.as_type, _size );
+	    destruct_array( _values.as_type, _size );
+
+	    copy_construct_array( other._keys.as_type, _keys.as_type, other._size );
+	    copy_construct_array( other._values.as_type, _values.as_type, other._size );
+
+	    _size = other._size;
+	}
 	return *this;
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::start( void ) const
+uint32_t linear_map<K,V>::begin( void ) const
 {
 	return 0;
 }

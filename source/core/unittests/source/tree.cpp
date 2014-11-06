@@ -1,9 +1,9 @@
+#include <container/tree.h>
 #include "UnitTest++.h"
 
 #include <iostream>
 
 //lib includes
-#include "container/binarytree.h"
 #include "logger.h"
 #include "memory.h"
 
@@ -12,7 +12,7 @@
 namespace
 {
 
-crap::binary_tree<float32_t>* a_tree;
+crap::tree<float32_t>* a_tree;
 crap::BoundGeneralMemory* gbm_bt;
 void* mem_bt;
 uint32_t bt_handles[ BT_ELEMENTS ];
@@ -25,10 +25,10 @@ TEST( AnnounceTestBinary )
 
 TEST(CreateBinaryTree)
 {
-	const uint32_t mem_size = crap::binary_tree<float32_t>::size_of_elements(BT_ELEMENTS);
+	const uint32_t mem_size = crap::tree<float32_t>::size_of_elements(BT_ELEMENTS);
 	gbm_bt = new crap::BoundGeneralMemory( mem_size*2 );
 	mem_bt = gbm_bt->allocate( mem_size, crap::align_of<float32_t>::value );
-    a_tree = new crap::binary_tree<float32_t>( mem_bt, mem_size );
+    a_tree = new crap::tree<float32_t>( mem_bt, mem_size );
 }
 
 TEST(BinaryInsert)
@@ -37,7 +37,7 @@ TEST(BinaryInsert)
 	{
 		bt_values[i] = rand() * 1.f;
 		bt_handles[i] = a_tree->insert( bt_values[i] );
-		CHECK( crap::binary_tree<float32_t>::INVALID != bt_handles[i] );
+		CHECK( crap::tree<float32_t>::INVALID != bt_handles[i] );
 	}
 }
 

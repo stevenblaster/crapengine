@@ -85,6 +85,41 @@ public:
     CRAP_INLINE
     uint32_t max_size( void ) const;
 
+    /**
+     * @brief Returns first element of the array
+     * @return First valid index or INVALID
+     */
+    CRAP_INLINE
+	uint32_t begin( void ) const;
+
+    /**
+     * @brief returns first invalid element
+     * @return INVALID
+     */
+    CRAP_INLINE
+	uint32_t end( void ) const;
+
+    /**
+     * @brief returns last valid element
+     * @return last valid element or INVALID
+     */
+    CRAP_INLINE
+	uint32_t last( void ) const;
+
+    /**
+     * @brief returns next element
+     * @return next index or invlid
+     */
+    CRAP_INLINE
+	uint32_t next( uint32_t index ) const;
+
+    /**
+     * @brief returns previous index
+     * @return previous index or INVALID
+     */
+    CRAP_INLINE
+	uint32_t previous( uint32_t index ) const;
+
 	/**
 	 * @brief Index operator returning a member reference
 	 * @param index Index of a member variable
@@ -236,6 +271,48 @@ template< typename T>
 uint32_t array<T>::max_size( void ) const
 {
     return _max_size;
+}
+
+template< typename T>
+uint32_t array<T>::begin( void ) const
+{
+	if( _size > 0 )
+		return 0;
+
+	return INVALID;
+}
+
+template< typename T>
+uint32_t array<T>::end( void ) const
+{
+	return INVALID;
+}
+
+template< typename T>
+uint32_t array<T>::last( void ) const
+{
+	if( _size > 0 )
+		return _size-1;
+
+	return INVALID;
+}
+
+template< typename T>
+uint32_t array<T>::next( uint32_t index ) const
+{
+	if( _size > 0 && index < _size-1 )
+		return index+1;
+
+	return INVALID;
+}
+
+template< typename T>
+uint32_t array<T>::previous( uint32_t index ) const
+{
+	if( index < _size && index > 0 )
+		return index-1;
+
+	return INVALID;
 }
 
 template< typename T>

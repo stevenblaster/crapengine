@@ -1,6 +1,6 @@
 SET( SOURCES
     ${SOURCES}
-    ${CMAKE_CURRENT_SOURCE_DIR}/binarytree.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tree.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/assert.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/atomic.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/logger.cpp
@@ -15,7 +15,6 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/linearmap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/indexedarray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/converter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/hashmap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/intrusivelist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/delegates.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/directory.cpp

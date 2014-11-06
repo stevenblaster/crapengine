@@ -35,7 +35,7 @@ TEST(CrapSortedArrayInsert)
     for( uint32_t i=0; i< ARRAY_SPACE; ++i )
     {
         handles[i] = sorted_array->insert( rand() *1.f );
-        CHECK( handles[i] != crap::sorted_array<float32_t>::invalid );
+        CHECK( handles[i] != crap::sorted_array<float32_t>::INVALID );
 
         //for( uint32_t x=0; x<sorted_array->size(); x++)
         //{
@@ -65,7 +65,7 @@ TEST(CrapSortedArrayPushBackOverflow)
 
     CHECK_EQUAL( ARRAY_SPACE, sorted_array->size() );
     CHECK_EQUAL( ARRAY_SPACE, sorted_array->max_size() );
-    CHECK( handle == crap::sorted_array<float32_t>::invalid );
+    CHECK( handle == crap::sorted_array<float32_t>::INVALID );
 }
 
 TEST(CrapSortedArrayErase)
@@ -88,7 +88,7 @@ TEST(CrapSortedArrayErase)
 TEST(CrapSortedArrayEraseOverflow)
 {
     CHECK( sorted_array->size() == 0 );
-    sorted_array->erase_at( crap::sorted_array<float32_t>::invalid );
+    sorted_array->erase_at( crap::sorted_array<float32_t>::INVALID );
     CHECK( sorted_array->size() == 0 );
 }
 

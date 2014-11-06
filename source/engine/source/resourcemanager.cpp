@@ -23,10 +23,10 @@ ResourceManager::ResourceManager( uint32_t memory, uint32_t num_resources, const
 
 ResourceManager::~ResourceManager( void )
 {
-    for( ResourceMap::iterator it = _resources.begin(); it != _resources.end(); ++it )
+    for( uint32_t it = _resources.begin(); it != _resources.end(); it = _resources.next(it) )
     {
-        if( (*it).value.memory.as_type != 0 )
-            unloadFromMemory( it.get_handle() );
+        if( _resources[it].memory.as_type != 0 )
+            unloadFromMemory( it );
     }
     _allocator.deallocate( _resources.memory().as_void );
 }
@@ -85,11 +85,11 @@ void ResourceManager::saveXML( const char* filename )
     tinyxml2::XMLDocument doc;
     tinyxml2::XMLNode* resources_node = doc.NewElement("RESOURCES");
 
-    for( ResourceMap::iterator it = _resources.begin(); it != _resources.end(); ++it )
+    for( uint32_t it = _resources.begin(); it != _resources.end(); it = _resources.next(it) )
     {
-        const string64  resource_name = (*it).value.name;
-        const string64  resource_type = (*it).value.type_name;
-        const string64  resource_path = (*it).value.file_name;
+        const string64  resource_name = _resources[it].name;
+        const string64  resource_type = _resources[it].type_name;
+        const string64  resource_path = _resources[it].file_name;
 
         tinyxml2::XMLElement* new_element = doc.NewElement(resource_type.c_str());
         new_element->SetAttribute("name", resource_name.c_str() );
@@ -150,19 +150,19 @@ void ResourceManager::savePackage( const char* filename )
 
     file_t* handle = openFile( file_path.c_str() , CRAP_FILE_WRITE );
 
-    for( ResourceMap::iterator it = _resources.begin(); it != _resources.end(); ++it )
+    for( uint32_t it = _resources.begin(); it != _resources.end(); it = _resources.next(it) )
     {
         PackageContentInfo info;
-        info.name = (*it).key.hash();
-        info.type = (*it).value.type.hash();
-        info.size = (*it).value.size;
+        info.name = _resources.get_key(it)->hash();
+        info.type = _resources[it].type.hash();
+        info.size = _resources[it].size;
 
-        loadToMemory( it.get_handle() );
+        loadToMemory( it );
 
         writeToFile( handle, &info, sizeof(PackageContentInfo) );
-        writeToFile( handle, (*it).value.memory.as_void, info.size );
+        writeToFile( handle, _resources[it].memory.as_void, info.size );
 
-        unloadFromMemory( it.get_handle() );
+        unloadFromMemory( it );
 
     }
 
@@ -176,10 +176,10 @@ void ResourceManager::loadResources( const crap::array<string_hash>& items )
 {
     for( uint32_t i= 0; i<items.size(); ++i )
     {
-        ResourceMap::handle res_handle = _resources.find( items[i] );
-        CRAP_ASSERT( ASSERT_BREAK, res_handle != ResourceMap::invalid, "Resource not found!" );
+        uint32_t res_handle = _resources.find( items[i] );
+        CRAP_ASSERT( ASSERT_BREAK, res_handle != ResourceMap::INVALID, "Resource not found!" );
 
-        const ResourceType type = _resources[res_handle].value.type;
+        const ResourceType type = _resources[res_handle].type;
         const pointer_t<void> ptr = loadToMemory( res_handle );
 
         intrusive_node<ResourceFilter>* node = ResourceFilterList.begin();
@@ -193,30 +193,30 @@ void ResourceManager::loadResources( const crap::array<string_hash>& items )
     }
 }
 
-pointer_t<void> ResourceManager::loadToMemory( ResourceMap::handle handle )
+pointer_t<void> ResourceManager::loadToMemory( uint32_t handle )
 {
-    if( _resources[handle].value.memory.as_void == 0 )
+    if( _resources[handle].memory.as_void == 0 )
     {
-        const uint32_t resource_size = _resources[handle].value.size;
-        const char*    resource_path = _resources[handle].value.path.c_str();
+        const uint32_t resource_size = _resources[handle].size;
+        const char*    resource_path = _resources[handle].path.c_str();
 
-        _resources[handle].value.memory = _allocator.allocate( resource_size, 4 );
+        _resources[handle].memory = _allocator.allocate( resource_size, 4 );
         file_t* file = openFile( resource_path, CRAP_FILE_READ );
         CRAP_ASSERT( ASSERT_BREAK, file != 0, "Resource not found in filesystem!" );
-        readFromFile(file, _resources[handle].value.memory, resource_size );
+        readFromFile(file, _resources[handle].memory, resource_size );
 
         closeFile( file );
     }
 
-    return _resources[handle].value.memory;
+    return _resources[handle].memory;
 }
 
-void ResourceManager::unloadFromMemory( ResourceMap::handle handle )
+void ResourceManager::unloadFromMemory( uint32_t handle )
 {
-    if( _resources[handle].value.memory.as_void != 0 )
+    if( _resources[handle].memory.as_void != 0 )
     {
-        _allocator.deallocate( _resources[handle].value.memory.as_void );
-        _resources[handle].value.memory = 0;
+        _allocator.deallocate( _resources[handle].memory.as_void );
+        _resources[handle].memory = 0;
     }
 }
 
