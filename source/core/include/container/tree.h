@@ -92,7 +92,7 @@ private:
     };
 
     /// pointer to indices
-    pointer_t<tree_node>  _indices;
+    pointer_t<tree_node>  	_indices;
 
     /// pointer to data
     pointer_t<T>            _data;
@@ -265,14 +265,14 @@ public:
  * Protected Methods
  */
 
-template <class T>
+template<typename T>
 void tree<T>::delete_recursive( uint32_t node_index )
 {
     if(node_index == INVALID)
 		return;
 
-    delete_recursive( _data.as_type[node_index].sub_node[tree_node::left] );
-    delete_recursive( _data.as_type[node_index].sub_node[tree_node::right] );
+    delete_recursive( _indices.as_type[node_index].sub_nodes[tree_node::left] );
+    delete_recursive( _indices.as_type[node_index].sub_nodes[tree_node::right] );
 
     remove(node_index);
 }
@@ -318,7 +318,7 @@ tree<T>::tree( void* memory, uint32_t size ) :
 template <class T>
 tree<T>::~tree( void )
 {
-
+	delete_recursive( _root );
 }
 
 template <class T>

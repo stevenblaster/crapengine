@@ -4,7 +4,7 @@
 #ifndef CRAP_AUDIO_AUDIOMANAGER
 #define CRAP_AUDIO_AUDIOMANAGER
 
-#include <container/linearmap.h>
+#include <container/arraymap.h>
 #include "audiofile.h"
 #include "audiocontrol.h"
 #include "audiodevice.h"
@@ -49,8 +49,8 @@ private:
 
     AUDIO_MEMORY                            _allocator;
 
-    linear_map<AudioSource, AudioBuffer>    _sources;
-    linear_map<string_hash, AudioBuffer>    _buffers;
+    array_map<AudioSource, AudioBuffer>    	_sources;
+    array_map<string_hash, AudioBuffer>    	_buffers;
 };
 
 

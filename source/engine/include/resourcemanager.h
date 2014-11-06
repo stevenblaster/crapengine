@@ -3,8 +3,8 @@
 #ifndef CRAP_CORE_RESOURCEMANAGER
 #define CRAP_CORE_RESOURCEMANAGER
 
+#include <container/sortedarraymap.h>
 #include "container/intrusivelist.h"
-#include "container/sortedmap.h"
 #include "memory.h"
 
 #ifdef CRAP_NO_DEBUG
@@ -97,7 +97,7 @@ public:
 
 private:
 
-    typedef crap::sorted_map<ResourceName, ResourceInfo> ResourceMap;
+    typedef crap::sorted_array_map<ResourceName, ResourceInfo> ResourceMap;
 
     pointer_t<void> loadToMemory( uint32_t handle );
     void unloadFromMemory( uint32_t handle );

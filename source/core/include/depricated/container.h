@@ -4,7 +4,7 @@
 #ifndef CRAP_CORE_CONTAINER
 #define CRAP_CORE_CONTAINER
 
-#include <container/linearmap.h>
+#include <container/arraymap.h>
 #include <container/tree.h>
 #include "container/array.h"
 #include "container/hashmap.h"

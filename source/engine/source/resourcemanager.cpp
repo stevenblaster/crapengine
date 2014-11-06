@@ -11,7 +11,8 @@ intrusive_list<ResourceFilter> ResourceFilterList;
 
 ResourceManager::ResourceManager( uint32_t memory, uint32_t num_resources, const char* resource_path ) :
     _allocator( memory ),
-    _resources( _allocator.allocate( sorted_map<ResourceName, ResourceInfo>::size_of_elements(num_resources), 4 ), sorted_map<ResourceName, ResourceInfo>::size_of_elements(num_resources) ),
+    _resources( _allocator.allocate( sorted_array_map<ResourceName, ResourceInfo>::size_of_elements(num_resources), 4 ),
+    		sorted_array_map<ResourceName, ResourceInfo>::size_of_elements(num_resources) ),
     _path( resource_path )
 {
     const char lastletter = *(resource_path+strlen(resource_path)-1);

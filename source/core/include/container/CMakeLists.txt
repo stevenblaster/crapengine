@@ -2,11 +2,13 @@
 set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/array.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/linearmap.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/sortedarray.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/list.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/arraymap.h
    ${CMAKE_CURRENT_SOURCE_DIR}/indexedarray.h
    ${CMAKE_CURRENT_SOURCE_DIR}/intrusivelist.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/list.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/listmap.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/sortedarray.h
    ${CMAKE_CURRENT_SOURCE_DIR}/tree.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/treemap.h
    PARENT_SCOPE
 )

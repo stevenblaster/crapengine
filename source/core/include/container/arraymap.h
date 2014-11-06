@@ -1,5 +1,5 @@
 /**
- * @file linearmap.h
+ * @file arraymap.h
  *
  * @brief Short description...
  *
@@ -13,11 +13,11 @@
 #pragma once
 
 /**
- * @def CORE_INCLUDE_CONTAINER_LIST_H
+ * @def CRAP_CORE_ARRAYMAP
  * @brief header guard
  */
-#ifndef CRAP_CORE_LINEARMAP
-#define CRAP_CORE_LINEARMAP
+#ifndef CRAP_CORE_ARRAYMAP
+#define CRAP_CORE_ARRAYMAP
 
 #include "utilities.h"
 
@@ -29,13 +29,13 @@ namespace crap
 {
 
 /**
- * @class linear_map
+ * @class array_map
  * @brief Simple linear map
  *
  * The data is kept packed.
  */
 template<typename K, typename V>
-class linear_map
+class array_map
 {
 public:
 
@@ -43,26 +43,26 @@ public:
     static const uint32_t INVALID = UINT32_MAX;
 
     /**
-     * @brief Constructor of linear_map class
+     * @brief Constructor of array_map class
      * @param pointer A pointer to the memory for the container
      * @param size The size of the provided memory
      */
     CRAP_INLINE
-    explicit linear_map( void* pointer, uint32_t size );
+    explicit array_map( void* pointer, uint32_t size );
 
     /**
-     * @brief Assignment operator of linear_map class
+     * @brief Assignment operator of array_map class
      * @param other A constant reference to a other map
      * @return A reference to self
      */
     CRAP_INLINE
-	linear_map& operator=( const linear_map& other );
+	array_map& operator=( const array_map& other );
 
     /**
-     * @brief Destructor of linear_map class
+     * @brief Destructor of array_map class
      */
     CRAP_INLINE
-    ~linear_map( void );
+    ~array_map( void );
 
     /**
      * @brief Returns current start index
@@ -213,7 +213,7 @@ private:
 	/**
 	 * @brief Copy Constructor kept private (do not use)
 	 */
-    linear_map( const linear_map& other );
+    array_map( const array_map& other );
 
     /// Pointer to keys
     pointer_t<K> _keys;
@@ -229,7 +229,7 @@ private:
 };
 
 template<typename K, typename V>
-linear_map<K,V>::linear_map( void* pointer, uint32_t size ) : _keys(pointer), _size(0)
+array_map<K,V>::array_map( void* pointer, uint32_t size ) : _keys(pointer), _size(0)
 {
     const uint32_t number = size / ( sizeof(K) + sizeof(V) );
 
@@ -238,14 +238,14 @@ linear_map<K,V>::linear_map( void* pointer, uint32_t size ) : _keys(pointer), _s
 }
 
 template<typename K, typename V>
-linear_map<K,V>::~linear_map( void )
+array_map<K,V>::~array_map( void )
 {
     destruct_array( _keys.as_type, _size );
     destruct_array( _values.as_type, _size );
 }
 
 template<typename K, typename V>
-linear_map<K,V>& linear_map<K,V>::operator=( const linear_map& other )
+array_map<K,V>& array_map<K,V>::operator=( const array_map& other )
 {
 	if( this != &other && other._size <= _max_size )
 	{
@@ -261,19 +261,19 @@ linear_map<K,V>& linear_map<K,V>::operator=( const linear_map& other )
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::begin( void ) const
+uint32_t array_map<K,V>::begin( void ) const
 {
 	return 0;
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::end( void ) const
+uint32_t array_map<K,V>::end( void ) const
 {
 	return _size-1;
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::next( uint32_t pos ) const
+uint32_t array_map<K,V>::next( uint32_t pos ) const
 {
 	if( pos < _size-1 )
 		return ++pos;
@@ -282,7 +282,7 @@ uint32_t linear_map<K,V>::next( uint32_t pos ) const
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::previous( uint32_t pos ) const
+uint32_t array_map<K,V>::previous( uint32_t pos ) const
 {
 	if( pos > 0 && pos < _size-1 )
 		return --pos;
@@ -291,7 +291,7 @@ uint32_t linear_map<K,V>::previous( uint32_t pos ) const
 }
 
 template<typename K, typename V>
-K* linear_map<K,V>::get_key( uint32_t index )
+K* array_map<K,V>::get_key( uint32_t index )
 {
 	if( index < _size )
 		return _keys.as_type + index;
@@ -300,7 +300,7 @@ K* linear_map<K,V>::get_key( uint32_t index )
 }
 
 template<typename K, typename V>
-const K* linear_map<K,V>::get_key( uint32_t index ) const
+const K* array_map<K,V>::get_key( uint32_t index ) const
 {
 	if( index < _size )
 		return _keys.as_type + index;
@@ -309,7 +309,7 @@ const K* linear_map<K,V>::get_key( uint32_t index ) const
 }
 
 template<typename K, typename V>
-V* linear_map<K,V>::get_value( uint32_t index )
+V* array_map<K,V>::get_value( uint32_t index )
 {
 	if( index < _size )
 		return _values.as_type + index;
@@ -318,7 +318,7 @@ V* linear_map<K,V>::get_value( uint32_t index )
 }
 
 template<typename K, typename V>
-const V* linear_map<K,V>::get_value( uint32_t index ) const
+const V* array_map<K,V>::get_value( uint32_t index ) const
 {
 	if( index < _size )
 		return _values.as_type + index;
@@ -327,7 +327,7 @@ const V* linear_map<K,V>::get_value( uint32_t index ) const
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K, V>::push_back( const K& key, const V& value )
+uint32_t array_map<K, V>::push_back( const K& key, const V& value )
 {
 	const uint32_t current_size = _size;
 
@@ -346,7 +346,7 @@ uint32_t linear_map<K, V>::push_back( const K& key, const V& value )
 }
 
 template<typename K, typename V>
-void linear_map<K,V>::erase_at( uint32_t index )
+void array_map<K,V>::erase_at( uint32_t index )
 {
 	if( index < _size )
 	{
@@ -369,7 +369,7 @@ void linear_map<K,V>::erase_at( uint32_t index )
 }
 
 template<typename K, typename V>
-void linear_map<K,V>::erase( const K& key )
+void array_map<K,V>::erase( const K& key )
 {
 	const uint32_t index = find(key);
 
@@ -381,7 +381,7 @@ void linear_map<K,V>::erase( const K& key )
 
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::find( const K& key )
+uint32_t array_map<K,V>::find( const K& key )
 {
     for( uint32_t i=0; i<_size; ++i )
     {
@@ -395,7 +395,7 @@ uint32_t linear_map<K,V>::find( const K& key )
 }
 
 template<typename K, typename V>
-void linear_map<K, V>::pop_back( void )
+void array_map<K, V>::pop_back( void )
 {
 	const uint32_t current_size = _size;
 
@@ -409,7 +409,7 @@ void linear_map<K, V>::pop_back( void )
 }
 
 template<typename K, typename V>
-V& linear_map<K,V>::operator[]( const K& key )
+V& array_map<K,V>::operator[]( const K& key )
 {
     const uint32_t index = find( key );
     if( index != INVALID )
@@ -419,7 +419,7 @@ V& linear_map<K,V>::operator[]( const K& key )
 }
 
 template<typename K, typename V>
-const V& linear_map<K,V>::operator[]( const K& key ) const
+const V& array_map<K,V>::operator[]( const K& key ) const
 {
     const uint32_t index = find( key );
     if( index != INVALID )
@@ -430,29 +430,29 @@ const V& linear_map<K,V>::operator[]( const K& key ) const
 
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::size( void ) const
+uint32_t array_map<K,V>::size( void ) const
 {
     return _size;
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::max_size( void ) const
+uint32_t array_map<K,V>::max_size( void ) const
 {
     return _max_size;
 }
 
 template<typename K, typename V>
-pointer_t<void> linear_map<K,V>::memory( void ) const
+pointer_t<void> array_map<K,V>::memory( void ) const
 {
 	return _keys.as_void;
 }
 
 template<typename K, typename V>
-uint32_t linear_map<K,V>::size_of_elements( uint32_t number )
+uint32_t array_map<K,V>::size_of_elements( uint32_t number )
 {
 	return (sizeof(K) + sizeof(V)) * number;
 }
 
 } //namespace crap
 
-#endif //CRAP_CORE_MAP
+#endif //CRAP_CORE_ARRAYMAP

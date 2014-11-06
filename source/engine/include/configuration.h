@@ -3,7 +3,7 @@
 #ifndef CRAP_CORE_CONFIGURATION
 #define CRAP_CORE_CONFIGURATION
 
-#include "container/sortedmap.h"
+#include <container/sortedarraymap.h>
 #include "memory.h"
 
 #ifdef CRAP_NO_DEBUG
@@ -43,7 +43,7 @@ public:
     }
 
 private:
-    typedef sorted_map<string_hash, string64> ConfigMap;
+    typedef sorted_array_map<string_hash, string64> ConfigMap;
 
     CONFIG_MEMORY   _memory;
     ConfigMap       _config;

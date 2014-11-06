@@ -16,8 +16,8 @@
  * \def CORE_INCLUDE_CONTAINER_SORTEDMAP_H_
  * \brief header guard
  */
-#ifndef CORE_INCLUDE_CONTAINER_SORTEDMAP_H_
-#define CORE_INCLUDE_CONTAINER_SORTEDMAP_H_
+#ifndef CORE_INCLUDE_CONTAINER_SORTEDARRAYMAP_H_
+#define CORE_INCLUDE_CONTAINER_SORTEDARRAYMAP_H_
 
 #include "utilities.h"
 
@@ -25,7 +25,7 @@ namespace crap
 {
 
 template<typename K, typename V>
-class sorted_map
+class sorted_array_map
 {
 public:
 
@@ -33,26 +33,26 @@ public:
     static const uint32_t INVALID = UINT32_MAX;
 
     /**
-     * @brief Constructor of sorted_map class
+     * @brief Constructor of sorted_array_map class
      * @param pointer A pointer to the memory for the container
      * @param size The size of the provided memory
      */
     CRAP_INLINE
-    explicit sorted_map( void* pointer, uint32_t size );
+    explicit sorted_array_map( void* pointer, uint32_t size );
 
     /**
-     * @brief Assignment operator of sorted_map class
+     * @brief Assignment operator of sorted_array_map class
      * @param other A constant reference to a other map
      * @return A reference to self
      */
     CRAP_INLINE
-	sorted_map& operator=( const sorted_map& other );
+	sorted_array_map& operator=( const sorted_array_map& other );
 
     /**
-     * @brief Destructor of sorted_map class
+     * @brief Destructor of sorted_array_map class
      */
     CRAP_INLINE
-    ~sorted_map( void );
+    ~sorted_array_map( void );
 
     /**
      * @brief Returns current start index
@@ -203,7 +203,7 @@ private:
 	/**
 	 * @brief Copy Constructor kept private (do not use)
 	 */
-    sorted_map( const sorted_map& other );
+    sorted_array_map( const sorted_array_map& other );
 
     /// Pointer to keys
     pointer_t<K> _keys;
@@ -219,7 +219,7 @@ private:
 };
 
 template<typename K, typename V>
-sorted_map<K,V>::sorted_map( void* pointer, uint32_t size ) : _keys(pointer), _size(0)
+sorted_array_map<K,V>::sorted_array_map( void* pointer, uint32_t size ) : _keys(pointer), _size(0)
 {
     const uint32_t number = size / ( sizeof(K) + sizeof(V) );
 
@@ -228,14 +228,14 @@ sorted_map<K,V>::sorted_map( void* pointer, uint32_t size ) : _keys(pointer), _s
 }
 
 template<typename K, typename V>
-sorted_map<K,V>::~sorted_map( void )
+sorted_array_map<K,V>::~sorted_array_map( void )
 {
     destruct_array( _keys.as_type, _size );
     destruct_array( _values.as_type, _size );
 }
 
 template<typename K, typename V>
-sorted_map<K,V>& sorted_map<K,V>::operator=( const sorted_map& other )
+sorted_array_map<K,V>& sorted_array_map<K,V>::operator=( const sorted_array_map& other )
 {
 	if( this != &other && other._size <= _max_size )
 	{
@@ -251,19 +251,19 @@ sorted_map<K,V>& sorted_map<K,V>::operator=( const sorted_map& other )
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::begin( void ) const
+uint32_t sorted_array_map<K,V>::begin( void ) const
 {
 	return 0;
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::end( void ) const
+uint32_t sorted_array_map<K,V>::end( void ) const
 {
 	return _size-1;
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::next( uint32_t pos ) const
+uint32_t sorted_array_map<K,V>::next( uint32_t pos ) const
 {
 	if( pos < _size-1 )
 		return ++pos;
@@ -272,7 +272,7 @@ uint32_t sorted_map<K,V>::next( uint32_t pos ) const
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::previous( uint32_t pos ) const
+uint32_t sorted_array_map<K,V>::previous( uint32_t pos ) const
 {
 	if( pos > 0 && pos < _size-1 )
 		return --pos;
@@ -281,7 +281,7 @@ uint32_t sorted_map<K,V>::previous( uint32_t pos ) const
 }
 
 template<typename K, typename V>
-K* sorted_map<K,V>::get_key( uint32_t index )
+K* sorted_array_map<K,V>::get_key( uint32_t index )
 {
 	if( index < _size )
 		return _keys.as_type + index;
@@ -290,7 +290,7 @@ K* sorted_map<K,V>::get_key( uint32_t index )
 }
 
 template<typename K, typename V>
-const K* sorted_map<K,V>::get_key( uint32_t index ) const
+const K* sorted_array_map<K,V>::get_key( uint32_t index ) const
 {
 	if( index < _size )
 		return _keys.as_type + index;
@@ -299,7 +299,7 @@ const K* sorted_map<K,V>::get_key( uint32_t index ) const
 }
 
 template<typename K, typename V>
-V* sorted_map<K,V>::get_value( uint32_t index )
+V* sorted_array_map<K,V>::get_value( uint32_t index )
 {
 	if( index < _size )
 		return _values.as_type + index;
@@ -308,7 +308,7 @@ V* sorted_map<K,V>::get_value( uint32_t index )
 }
 
 template<typename K, typename V>
-const V* sorted_map<K,V>::get_value( uint32_t index ) const
+const V* sorted_array_map<K,V>::get_value( uint32_t index ) const
 {
 	if( index < _size )
 		return _values.as_type + index;
@@ -317,7 +317,7 @@ const V* sorted_map<K,V>::get_value( uint32_t index ) const
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K, V>::insert( const K& key, const V& value )
+uint32_t sorted_array_map<K, V>::insert( const K& key, const V& value )
 {
     if( _size+1 > _max_size )
         return INVALID;
@@ -342,7 +342,7 @@ uint32_t sorted_map<K, V>::insert( const K& key, const V& value )
 }
 
 template<typename K, typename V>
-void sorted_map<K,V>::erase_at( uint32_t index )
+void sorted_array_map<K,V>::erase_at( uint32_t index )
 {
 	if( index < _size )
 	{
@@ -365,7 +365,7 @@ void sorted_map<K,V>::erase_at( uint32_t index )
 }
 
 template<typename K, typename V>
-void sorted_map<K,V>::erase( const K& key )
+void sorted_array_map<K,V>::erase( const K& key )
 {
 	const uint32_t index = find(key);
 
@@ -377,7 +377,7 @@ void sorted_map<K,V>::erase( const K& key )
 
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::find( const K& key )
+uint32_t sorted_array_map<K,V>::find( const K& key )
 {
     for( uint32_t i=0; i<_size; ++i )
     {
@@ -391,7 +391,7 @@ uint32_t sorted_map<K,V>::find( const K& key )
 }
 
 template<typename K, typename V>
-void sorted_map<K, V>::pop_back( void )
+void sorted_array_map<K, V>::pop_back( void )
 {
 	const uint32_t current_size = _size;
 
@@ -405,7 +405,7 @@ void sorted_map<K, V>::pop_back( void )
 }
 
 template<typename K, typename V>
-V& sorted_map<K,V>::operator[]( const K& key )
+V& sorted_array_map<K,V>::operator[]( const K& key )
 {
     const uint32_t index = find( key );
     if( index != INVALID )
@@ -415,7 +415,7 @@ V& sorted_map<K,V>::operator[]( const K& key )
 }
 
 template<typename K, typename V>
-const V& sorted_map<K,V>::operator[]( const K& key ) const
+const V& sorted_array_map<K,V>::operator[]( const K& key ) const
 {
     const uint32_t index = find( key );
     if( index != INVALID )
@@ -426,25 +426,25 @@ const V& sorted_map<K,V>::operator[]( const K& key ) const
 
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::size( void ) const
+uint32_t sorted_array_map<K,V>::size( void ) const
 {
     return _size;
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::max_size( void ) const
+uint32_t sorted_array_map<K,V>::max_size( void ) const
 {
     return _max_size;
 }
 
 template<typename K, typename V>
-pointer_t<void> sorted_map<K,V>::memory( void ) const
+pointer_t<void> sorted_array_map<K,V>::memory( void ) const
 {
 	return _keys.as_void;
 }
 
 template<typename K, typename V>
-uint32_t sorted_map<K,V>::size_of_elements( uint32_t number )
+uint32_t sorted_array_map<K,V>::size_of_elements( uint32_t number )
 {
 	return (sizeof(K) + sizeof(V)) * number;
 }
@@ -453,4 +453,4 @@ uint32_t sorted_map<K,V>::size_of_elements( uint32_t number )
 } // namespace
 
 
-#endif /* CORE_INCLUDE_CONTAINER_SORTEDMAP_H_ */
+#endif /* CORE_INCLUDE_CONTAINER_SORTEDARRAYMAP_H_ */
