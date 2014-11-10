@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['video_5ftest',['video_test',['../structvideo__test.html',1,'']]]
+  ['wavefile',['WaveFile',['../structcrap_1_1_wave_file.html',1,'crap']]],
+  ['wavefilefilter',['WaveFileFilter',['../classcrap_1_1_wave_file_filter.html',1,'crap']]],
+  ['waveheader',['WaveHeader',['../structcrap_1_1_wave_file_1_1_wave_header.html',1,'crap::WaveFile']]]
 ];

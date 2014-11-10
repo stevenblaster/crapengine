@@ -378,6 +378,24 @@ const K* list_map<K,V>::get_key( uint32_t index ) const
 }
 
 template<typename K, typename V>
+V* list_map<K,V>::get_value( uint32_t index )
+{
+	if( index < _size )
+		return _values.as_type + index;
+	else
+		return 0;
+}
+
+template<typename K, typename V>
+const V* list_map<K,V>::get_value( uint32_t index ) const
+{
+	if( index < _size )
+		return _values.as_type + index;
+	else
+		return 0;
+}
+
+template<typename K, typename V>
 uint32_t list_map<K,V>::insert( const K& key, const V& value )
 {
 	if( _size == 0 )
@@ -419,7 +437,7 @@ uint32_t list_map<K,V>::insert( const K& key, const V& value )
 		return INVALID;
 
 	copy_construct_object( &key, _keys.as_type + _size );
-	copy_construct_object( &value, _values.as_type + size );
+	copy_construct_object( &value, _values.as_type + _size );
 	return _size++;
 }
 

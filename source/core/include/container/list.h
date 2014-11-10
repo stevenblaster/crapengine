@@ -267,6 +267,8 @@ list<T>& list<T>::operator=( const list& other )
 		copy_construct_array( other._indices.as_type, _indices.as_type, other._size );
 		copy_construct_array( other._data.as_type, _data.as_type, other._size );
 
+		_start = other._start;
+		_end = other._end;
 		_size = other._size;
 	}
 }
@@ -276,6 +278,10 @@ list<T>::~list( void )
 {
 	destruct_array( _indices.as_type, _size );
 	destruct_array( _data.as_type, _size );
+
+	_start = 0;
+	_end = 0;
+	_size = 0;
 }
 
 template<typename T>

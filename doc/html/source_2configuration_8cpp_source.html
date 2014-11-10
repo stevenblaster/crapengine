@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classcrap_1_1string__hash.html">string_hash</a> hash(arr[0].c_str());</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classcrap_1_1fixed__string.html">string64</a> val = arr[1];</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            _config.<a class="code" href="classcrap_1_1sorted__map.html#a5b023aff9ef7823601f02a1d94933f00">push_back</a>( <a class="code" href="structcrap_1_1sorted__map_1_1__type.html">ConfigMap::type</a>(hash, val) );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            _config.<a class="code" href="classcrap_1_1sorted__array__map.html#a052ea65b7ab0fec085aea90248c199bc">insert</a>( hash, val );</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
@@ -128,8 +128,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="file_8h_html"><div class="ttname"><a href="file_8h.html">file.h</a></div></div>
 <div class="ttc" id="classcrap_1_1fixed__string_html"><div class="ttname"><a href="classcrap_1_1fixed__string.html">crap::fixed_string&lt; 256 &gt;</a></div></div>
 <div class="ttc" id="namespacecrap_html_a95e7097ddb2306595f5b806a08268785"><div class="ttname"><a href="namespacecrap.html#a95e7097ddb2306595f5b806a08268785">crap::openFile</a></div><div class="ttdeci">file_t * openFile(const char *filename, const char *flags)</div><div class="ttdef"><b>Definition:</b> <a href="file_8cpp_source.html#l00014">file.cpp:14</a></div></div>
+<div class="ttc" id="classcrap_1_1sorted__array__map_html_a052ea65b7ab0fec085aea90248c199bc"><div class="ttname"><a href="classcrap_1_1sorted__array__map.html#a052ea65b7ab0fec085aea90248c199bc">crap::sorted_array_map::insert</a></div><div class="ttdeci">CRAP_INLINE uint32_t insert(const K &amp;key, const V &amp;value)</div><div class="ttdoc">Inserts a new element at the end of the map. </div><div class="ttdef"><b>Definition:</b> <a href="sortedarraymap_8h_source.html#l00320">sortedarraymap.h:320</a></div></div>
 <div class="ttc" id="classcrap_1_1fixed__string_html_a9469da3ecd583f01b8f5ca7db99ed4e4"><div class="ttname"><a href="classcrap_1_1fixed__string.html#a9469da3ecd583f01b8f5ca7db99ed4e4">crap::fixed_string::split</a></div><div class="ttdeci">void split(char seperator, crap::array&lt; fixed_string&lt; S &gt; &gt; *arr) const </div><div class="ttdef"><b>Definition:</b> <a href="strings_8h_source.html#l00389">strings.h:389</a></div></div>
-<div class="ttc" id="classcrap_1_1sorted__map_html_a5b023aff9ef7823601f02a1d94933f00"><div class="ttname"><a href="classcrap_1_1sorted__map.html#a5b023aff9ef7823601f02a1d94933f00">crap::sorted_map::push_back</a></div><div class="ttdeci">CRAP_INLINE uint32_t push_back(const type &amp;pair)</div><div class="ttdef"><b>Definition:</b> <a href="sortedmap_8h_source.html#l00072">sortedmap.h:72</a></div></div>
 <div class="ttc" id="classcrap_1_1_configuration_html_a279b4f6136af08abb47bbd803cf1cce8"><div class="ttname"><a href="classcrap_1_1_configuration.html#a279b4f6136af08abb47bbd803cf1cce8">crap::Configuration::load</a></div><div class="ttdeci">void load(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="source_2configuration_8cpp_source.html#l00008">configuration.cpp:8</a></div></div>
 <div class="ttc" id="configuration_8h_html"><div class="ttname"><a href="configuration_8h.html">configuration.h</a></div></div>
 <div class="ttc" id="classcrap_1_1string__hash_html"><div class="ttname"><a href="classcrap_1_1string__hash.html">crap::string_hash</a></div><div class="ttdef"><b>Definition:</b> <a href="strings_8h_source.html#l00509">strings.h:509</a></div></div>
@@ -137,13 +137,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacecrap_html_a88b135bd26154fde9e09c9638523203d"><div class="ttname"><a href="namespacecrap.html#a88b135bd26154fde9e09c9638523203d">crap::readLineFromFile</a></div><div class="ttdeci">char * readLineFromFile(file_t *CRAP_RESTRICThandle, pointer_void buffer, uint32_t buffersize)</div></div>
 <div class="ttc" id="namespacecrap_html"><div class="ttname"><a href="namespacecrap.html">crap</a></div><div class="ttdoc">Libraries namespace. </div><div class="ttdef"><b>Definition:</b> <a href="audiobuffer_8h_source.html#l00011">audiobuffer.h:11</a></div></div>
 <div class="ttc" id="classcrap_1_1array_html"><div class="ttname"><a href="classcrap_1_1array.html">crap::array</a></div><div class="ttdoc">Simple array class. </div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00044">array.h:44</a></div></div>
-<div class="ttc" id="structcrap_1_1sorted__map_1_1__type_html"><div class="ttname"><a href="structcrap_1_1sorted__map_1_1__type.html">crap::sorted_map::_type</a></div><div class="ttdef"><b>Definition:</b> <a href="sortedmap_8h_source.html#l00028">sortedmap.h:28</a></div></div>
 <div class="ttc" id="file_8h_html_a0e0fa9bc77500abd3177b6fff49883f3"><div class="ttname"><a href="file_8h.html#a0e0fa9bc77500abd3177b6fff49883f3">CRAP_FILE_READ</a></div><div class="ttdeci">#define CRAP_FILE_READ</div><div class="ttdef"><b>Definition:</b> <a href="file_8h_source.html#l00009">file.h:9</a></div></div>
-<div class="ttc" id="classcrap_1_1array_html_a3d91ef71204aa78a9a7bd9e7063151e8"><div class="ttname"><a href="classcrap_1_1array.html#a3d91ef71204aa78a9a7bd9e7063151e8">crap::array::size</a></div><div class="ttdeci">CRAP_INLINE uint32_t size(void) const </div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00234">array.h:234</a></div></div>
+<div class="ttc" id="classcrap_1_1array_html_a3d91ef71204aa78a9a7bd9e7063151e8"><div class="ttname"><a href="classcrap_1_1array.html#a3d91ef71204aa78a9a7bd9e7063151e8">crap::array::size</a></div><div class="ttdeci">CRAP_INLINE uint32_t size(void) const </div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00266">array.h:266</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 23 2014 23:49:29 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 7 2014 22:49:57 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['wave',['wave',['../structcrap_1_1_wave_file_1_1_wave_header.html#a4d2d3de7ee47f37c098224695afc9ced',1,'crap::WaveFile::WaveHeader']]],
-  ['width',['width',['../struct_atlas_region.html#afa487dd2e5e49d4e873d505b8b3d413e',1,'AtlasRegion::width()'],['../struct_glyph_info.html#af8f1393ec498cdabefbaf08f77b62cbd',1,'GlyphInfo::width()'],['../struct_text_rectangle.html#a301e23646ba32285edf4c9ee4898ec25',1,'TextRectangle::width()'],['../struct_f_o_n_sparams.html#aac83f900d8d0d99db419facda30dd9d2',1,'FONSparams::width()'],['../struct_n_v_gtext_row.html#a94481448fed11625d1aeb56531ecf3a0',1,'NVGtextRow::width()']]],
-  ['winding',['winding',['../struct_n_v_gpath.html#aefa1aea3e295c4934fe89b5e1eb58e59',1,'NVGpath']]]
+  ['x',['x',['../struct_atlas_region.html#aee785d751de233eac49a4bb9ea27bd70',1,'AtlasRegion::x()'],['../struct_f_o_n_stext_iter.html#a84dee1d692f8d5a0b276a4b3c14305ca',1,'FONStextIter::x()'],['../struct_n_v_gpoint.html#a326d40b39869030b6c45b5b882be9fbb',1,'NVGpoint::x()'],['../struct_n_v_gglyph_position.html#a45c4fbe8ff3c9e654b681fd57588037e',1,'NVGglyphPosition::x()'],['../struct_n_v_gvertex.html#ac0c7b65243540638addff48cfed1b45b',1,'NVGvertex::x()']]],
+  ['x0',['x0',['../struct_f_o_n_squad.html#a3afad57cffbd1350a09f208c631a9813',1,'FONSquad']]],
+  ['x1',['x1',['../struct_f_o_n_squad.html#a6db320ddee76b1f2fefcb2c6b31b525d',1,'FONSquad']]],
+  ['xform',['xform',['../struct_n_v_gstate.html#ad59f377ee80c48e3e37e4deb3464e030',1,'NVGstate::xform()'],['../struct_n_v_gpaint.html#a2f486f2a6c76c0fd46a6ea58aa587194',1,'NVGpaint::xform()'],['../struct_n_v_gscissor.html#a4ada1cb908081972303b3c793064e15a',1,'NVGscissor::xform()']]]
 ];

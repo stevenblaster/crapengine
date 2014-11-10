@@ -284,21 +284,30 @@ indexed_array<T>::indexed_array( const indexed_array& other ) : _size(0), _size_
 template<typename T>
 indexed_array<T>& indexed_array<T>::operator=( const indexed_array& other )
 {
-    CRAP_ASSERT(ASSERT_BREAK, this != &other ,  "Assignment operator on same object" );
-    CRAP_ASSERT(ASSERT_BREAK, _size_max <= other.max_size(),  "Memory is not sufficiant" );
+	if( this != &other && other._size_max <= _size_max )
+	{
+	    for( uint32_t i=0; i<_size_max; ++i )
+	    {
+	        _indices.as_type[i].index_generation = 0;
+	        _indices.as_type[i].next = i+1;
+	        _data_to_indices.as_type[i] = 0;
+	    }
 
-    for( uint32_t i=0; i<_size_max; ++i )
-    {
-        _indices.as_type[i].index_generation = other._indices.as_type[i].index_generation;
-        _indices.as_type[i].next = other._indices.as_type[i].next;
-        _data_to_indices.as_type[i] = other._data_to_indices.as_type[i];
-    }
+	    crap::destruct_array( _data.as_type, _size );
 
-    crap::destruct_array( _data.as_type, _size );
-    copy_construct_array( other._data.as_type, _data.as_type, other._size );
+	    for( uint32_t i=0; i<_size_max; ++i )
+	    {
+	        _indices.as_type[i].index_generation = other._indices.as_type[i].index_generation;
+	        _indices.as_type[i].next = other._indices.as_type[i].next;
+	        _indices.as_type[i].data_index = other._indices.as_type[i].data_index;
+	        _data_to_indices.as_type[i] = other._data_to_indices.as_type[i];
+	    }
 
-    _size = other._size;
-    _freelist = other._freelist;
+	    copy_construct_array( other._data.as_type, _data.as_type, other._size );
+
+	    _size = other._size;
+	    _freelist = other._freelist;
+	}
 
     return *this;
 }
@@ -359,6 +368,9 @@ uint32_t indexed_array<T>::next( uint32_t id ) const
     uint32_t indices_index = id % BASE_VALUE;
 
     indices_index = _indices.as_type[indices_index].next;
+
+    if( indices_index >= _size_max )
+    	return INVALID;
 
     return indices_index + ( BASE_VALUE * _indices.as_type[ indices_index ].index_generation );
 }

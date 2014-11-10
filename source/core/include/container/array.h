@@ -252,7 +252,8 @@ array<T>& array<T>::operator=( const array& other )
 template< typename T>
 array<T>::~array( void )
 {
-
+	for( int32_t i=_size-1; i>-1; --i )
+		erase_at(i);
 }
 
 template< typename T>

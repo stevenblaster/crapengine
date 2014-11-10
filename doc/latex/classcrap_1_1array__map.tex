@@ -1,0 +1,561 @@
+\hypertarget{classcrap_1_1array__map}{\section{crap\+:\+:array\+\_\+map$<$ K, V $>$ Class Template Reference}
+\label{classcrap_1_1array__map}\index{crap\+::array\+\_\+map$<$ K, V $>$@{crap\+::array\+\_\+map$<$ K, V $>$}}
+}
+
+
+Simple linear map.  
+
+
+
+
+{\ttfamily \#include $<$arraymap.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1array__map_ad8452f8a9a16d043796b5348a7865801}{array\+\_\+map} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1array__map_a3cabf7c30b1e7d29a8d0e4addbcf6f11}{size})
+\begin{DoxyCompactList}\small\item\em Constructor of \hyperlink{classcrap_1_1array__map}{array\+\_\+map} class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1array__map}{array\+\_\+map} \& \hyperlink{classcrap_1_1array__map_ad6c30d315809f4ab2a7a3333a060bd74}{operator=} (const \hyperlink{classcrap_1_1array__map}{array\+\_\+map} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator of \hyperlink{classcrap_1_1array__map}{array\+\_\+map} class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1array__map_aa34a83de1d308d255269d160f5a0929e}{$\sim$array\+\_\+map} (void)
+\begin{DoxyCompactList}\small\item\em Destructor of \hyperlink{classcrap_1_1array__map}{array\+\_\+map} class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_a631a78152d8e716195702f77b8dc3933}{begin} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns current start index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_a264c73b4b30631bcd6818e8004c5f69e}{end} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns current end index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_afa487961a9f3d61f7c759954298f3fe4}{next} (uint32\+\_\+t pos) const 
+\begin{DoxyCompactList}\small\item\em returns next index of provided index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_a4f417df221bbab8fe116d792d2b5d039}{previous} (uint32\+\_\+t pos) const 
+\begin{DoxyCompactList}\small\item\em returns previous index of provided vale \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_a3cabf7c30b1e7d29a8d0e4addbcf6f11}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_afc44d600189d7d77d3b310892d37340c}{max\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em Returning the maximum size of the list. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} K $\ast$ \hyperlink{classcrap_1_1array__map_a2e4b30cdbbe65343a212fa7c80519393}{get\+\_\+key} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Returns the pointer to a certain key. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const K $\ast$ \hyperlink{classcrap_1_1array__map_a456433fe04a8aa29b70d2f7d27598f03}{get\+\_\+key} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Returns a constant pointer to a certain key. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V $\ast$ \hyperlink{classcrap_1_1array__map_a4487a042bda4b2d7436d8e9c526cd8a3}{get\+\_\+value} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Returns the pointer to a certain value. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const V $\ast$ \hyperlink{classcrap_1_1array__map_a0f1e73f4448e6a67de07d4fb399cb327}{get\+\_\+value} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Returns the constant pointer to a certain value. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_affa53595eda01cd1a229accc734b95bb}{push\+\_\+back} (const K \&key, const V \&value)
+\begin{DoxyCompactList}\small\item\em Inserts a new element at the end of the map. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array__map_ac06042b8bb4e00fdb405b757e3e50529}{erase\+\_\+at} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes the element at a certain position. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array__map_a9c487b6b712e6951068294f9566b4c77}{erase} (const K \&key)
+\begin{DoxyCompactList}\small\item\em Removes a key/value element equal to given key. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1array__map_ad3200915686e26e3e6ae5573e1c24f19}{pop\+\_\+back} (void)
+\begin{DoxyCompactList}\small\item\em Removes last element of the list. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_a508782d23a95e5da6faf3345960ebe55}{find} (const K \&key)
+\begin{DoxyCompactList}\small\item\em Searches for an element and returns the index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V \& \hyperlink{classcrap_1_1array__map_a697a101ecc2d4349862165851f82adaf}{operator\mbox{[}$\,$\mbox{]}} (const K \&key)
+\begin{DoxyCompactList}\small\item\em Index operator returning a member value. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const V \& \hyperlink{classcrap_1_1array__map_a54bc335e6ab4b13e7c17d4d889ee6433}{operator\mbox{[}$\,$\mbox{]}} (const K \&key) const 
+\begin{DoxyCompactList}\small\item\em Index operator returning a constant member value. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1array__map_a7a498ac2d6aadc5c9ecdf71e2c142072}{memory} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1array__map_acbe6ebf74c40f5a5bb24299bd22b28d6}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Calculates necessary memory for a certain number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{classcrap_1_1array__map_af3441f93d975dab3aead6ba30e8ddf67}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\begin{DoxyCompactList}\small\item\em Defines an invalid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class crap\+::array\+\_\+map$<$ K, V $>$}
+
+Simple linear map. 
+
+The data is kept packed. 
+
+Definition at line 38 of file arraymap.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1array__map_ad8452f8a9a16d043796b5348a7865801}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!array\+\_\+map@{array\+\_\+map}}
+\index{array\+\_\+map@{array\+\_\+map}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{array\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::{\bf array\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1array__map_ad8452f8a9a16d043796b5348a7865801}
+
+
+Constructor of \hyperlink{classcrap_1_1array__map}{array\+\_\+map} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & A pointer to the memory for the container \\
+\hline
+{\em size} & The size of the provided memory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_aa34a83de1d308d255269d160f5a0929e}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!````~array\+\_\+map@{$\sim$array\+\_\+map}}
+\index{````~array\+\_\+map@{$\sim$array\+\_\+map}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{$\sim$array\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::$\sim${\bf array\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_aa34a83de1d308d255269d160f5a0929e}
+
+
+Destructor of \hyperlink{classcrap_1_1array__map}{array\+\_\+map} class. 
+
+
+
+Definition at line 241 of file arraymap.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1array__map_a631a78152d8e716195702f77b8dc3933}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!begin@{begin}}
+\index{begin@{begin}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a631a78152d8e716195702f77b8dc3933}
+
+
+Returns current start index. 
+
+\begin{DoxyReturn}{Returns}
+current start index 
+\end{DoxyReturn}
+
+
+Definition at line 265 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a264c73b4b30631bcd6818e8004c5f69e}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!end@{end}}
+\index{end@{end}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a264c73b4b30631bcd6818e8004c5f69e}
+
+
+Returns current end index. 
+
+\begin{DoxyReturn}{Returns}
+current end index 
+\end{DoxyReturn}
+
+
+Definition at line 271 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a9c487b6b712e6951068294f9566b4c77}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!erase@{erase}}
+\index{erase@{erase}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ void {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_a9c487b6b712e6951068294f9566b4c77}
+
+
+Removes a key/value element equal to given key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Constant reference of key to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 373 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_ac06042b8bb4e00fdb405b757e3e50529}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!erase\+\_\+at@{erase\+\_\+at}}
+\index{erase\+\_\+at@{erase\+\_\+at}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ void {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::erase\+\_\+at (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_ac06042b8bb4e00fdb405b757e3e50529}
+
+
+Removes the element at a certain position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a508782d23a95e5da6faf3345960ebe55}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!find@{find}}
+\index{find@{find}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_a508782d23a95e5da6faf3345960ebe55}
+
+
+Searches for an element and returns the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Constant reference of key to look for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element or \char`\"{}invalid\char`\"{} if not found 
+\end{DoxyReturn}
+
+
+Definition at line 385 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a2e4b30cdbbe65343a212fa7c80519393}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{get\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ K $\ast$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::get\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_a2e4b30cdbbe65343a212fa7c80519393}
+
+
+Returns the pointer to a certain key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to key or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 295 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a456433fe04a8aa29b70d2f7d27598f03}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{get\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ const K $\ast$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::get\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a456433fe04a8aa29b70d2f7d27598f03}
+
+
+Returns a constant pointer to a certain key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+constant Pointer to key or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a4487a042bda4b2d7436d8e9c526cd8a3}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{get\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ V $\ast$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::get\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_a4487a042bda4b2d7436d8e9c526cd8a3}
+
+
+Returns the pointer to a certain value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to value or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 313 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a0f1e73f4448e6a67de07d4fb399cb327}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{get\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ const V $\ast$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::get\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a0f1e73f4448e6a67de07d4fb399cb327}
+
+
+Returns the constant pointer to a certain value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant pointer to value or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 322 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_afc44d600189d7d77d3b310892d37340c}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_afc44d600189d7d77d3b310892d37340c}
+
+
+Returning the maximum size of the list. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 440 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a7a498ac2d6aadc5c9ecdf71e2c142072}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!memory@{memory}}
+\index{memory@{memory}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a7a498ac2d6aadc5c9ecdf71e2c142072}
+
+
+Returns the pointer to the memory. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to memory 
+\end{DoxyReturn}
+
+
+Definition at line 446 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_afa487961a9f3d61f7c759954298f3fe4}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!next@{next}}
+\index{next@{next}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::next (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_afa487961a9f3d61f7c759954298f3fe4}
+
+
+returns next index of provided index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & current position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next index of value 
+\end{DoxyReturn}
+
+
+Definition at line 277 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_ad6c30d315809f4ab2a7a3333a060bd74}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!operator=@{operator=}}
+\index{operator=@{operator=}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf array\+\_\+map}$<$ K, V $>$ \& {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf array\+\_\+map}$<$ K, V $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_ad6c30d315809f4ab2a7a3333a060bd74}
+
+
+Assignment operator of \hyperlink{classcrap_1_1array__map}{array\+\_\+map} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A constant reference to a other map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 249 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a697a101ecc2d4349862165851f82adaf}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ V \& {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_a697a101ecc2d4349862165851f82adaf}
+
+
+Index operator returning a member value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to value 
+\end{DoxyReturn}
+
+
+Definition at line 413 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a54bc335e6ab4b13e7c17d4d889ee6433}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V $>$ const V \& {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a54bc335e6ab4b13e7c17d4d889ee6433}
+
+
+Index operator returning a constant member value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant reference to value 
+\end{DoxyReturn}
+
+
+Definition at line 423 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_ad3200915686e26e3e6ae5573e1c24f19}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{pop\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ void {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::pop\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_ad3200915686e26e3e6ae5573e1c24f19}
+
+
+Removes last element of the list. 
+
+
+
+Definition at line 399 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a4f417df221bbab8fe116d792d2b5d039}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!previous@{previous}}
+\index{previous@{previous}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::previous (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a4f417df221bbab8fe116d792d2b5d039}
+
+
+returns previous index of provided vale 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & current position index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+previous index of value 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_affa53595eda01cd1a229accc734b95bb}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key, }
+\item[{const V \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1array__map_affa53595eda01cd1a229accc734b95bb}
+
+
+Inserts a new element at the end of the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Constant reference of key to insert \\
+\hline
+{\em value} & Constant reference of value to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element 
+\end{DoxyReturn}
+
+
+Definition at line 331 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_a3cabf7c30b1e7d29a8d0e4addbcf6f11}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!size@{size}}
+\index{size@{size}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1array__map_a3cabf7c30b1e7d29a8d0e4addbcf6f11}
+Returning the size of the list \begin{DoxyReturn}{Returns}
+The current number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 434 of file arraymap.\+h.
+
+\hypertarget{classcrap_1_1array__map_acbe6ebf74c40f5a5bb24299bd22b28d6}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1array__map_acbe6ebf74c40f5a5bb24299bd22b28d6}
+
+
+Calculates necessary memory for a certain number of elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of necessary memory 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file arraymap.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1array__map_af3441f93d975dab3aead6ba30e8ddf67}{\index{crap\+::array\+\_\+map@{crap\+::array\+\_\+map}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::array\+\_\+map@{crap\+::array\+\_\+map}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ const uint32\+\_\+t {\bf crap\+::array\+\_\+map}$<$ K, V $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1array__map_af3441f93d975dab3aead6ba30e8ddf67}
+
+
+Defines an invalid index. 
+
+
+
+Definition at line 43 of file arraymap.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{arraymap_8h}{arraymap.\+h}\end{DoxyCompactItemize}

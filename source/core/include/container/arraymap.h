@@ -242,6 +242,7 @@ array_map<K,V>::~array_map( void )
 {
     destruct_array( _keys.as_type, _size );
     destruct_array( _values.as_type, _size );
+    _size = 0;
 }
 
 template<typename K, typename V>

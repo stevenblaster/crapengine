@@ -92,52 +92,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="poolallocator_8h.html">memory/poolallocator.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;UnitTest++.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="classcrap_1_1pool__allocator.html">crap::pool_allocator&lt;uint64_t&gt;</a>* sa;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">crap::pointer_t&lt;void&gt;</a> pointers[11];</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">crap::pointer_t&lt;void&gt;</a> memory_sa = malloc( <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*)*10);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>(CrapCreatePoolAllocator)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    sa = <span class="keyword">new</span> <a class="code" href="classcrap_1_1pool__allocator.html">crap::pool_allocator&lt;uint64_t&gt;</a>(memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>, memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*)*10);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>(CrapAllocatePoolAllocator)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span>( uint32_t i=0; i&lt;11; ++i )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        pointers[i] = sa-&gt;<a class="code" href="classcrap_1_1pool__allocator.html#ab0c964f5ebcac28ac4c722349635bdce">allocate</a>( <span class="keyword">sizeof</span>(uint64_t), <a class="code" href="structcrap_1_1align__of.html">crap::align_of&lt;uint64_t&gt;::value</a>, 0 );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> uint32_t difference = pointers[i].<a class="code" href="structcrap_1_1pointer__t.html#ae1469dc75976e619e2b330e7be44a2fa">as_number</a> - memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#ae1469dc75976e619e2b330e7be44a2fa">as_number</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;Difference is &quot; &lt;&lt; difference &lt;&lt; &quot; address is &quot; &lt;&lt; pointers[i].as_number &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>(CrapDestroyPoolAllocator)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    sa-&gt;~pool_allocator();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    free( memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a> );</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="classcrap_1_1pool__allocator.html">crap::pool_allocator&lt;uint64_t&gt;</a>* sa;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">crap::pointer_t&lt;void&gt;</a> pointers[11];</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">crap::pointer_t&lt;void&gt;</a> memory_sa = malloc( <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*)*10);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>( AnnounceTestPoolAllocator )</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="logger_8h.html#a5d190da52c095994643201b8cc965f72">CRAP_DEBUG_LOG</a>( <a class="code" href="logger_8h.html#af8df519e0d93f01f0237a41a093e19f8">LOG_CHANNEL_CORE</a>| <a class="code" href="logger_8h.html#ade1fdab2d4531d8bdf9b9bf22b96c44f">LOG_TARGET_COUT</a>| <a class="code" href="logger_8h.html#a542529c1654a19379e8db5625bc7801e">LOG_TYPE_DEBUG</a>, <span class="stringliteral">&quot;Starting tests for \&quot;memory/poolallocator.h\&quot;&quot;</span> );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>(CrapCreatePoolAllocator)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    sa = <span class="keyword">new</span> <a class="code" href="classcrap_1_1pool__allocator.html">crap::pool_allocator&lt;uint64_t&gt;</a>(memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>, memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*)*10);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>(CrapAllocatePoolAllocator)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span>( uint32_t i=0; i&lt;11; ++i )</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        pointers[i] = sa-&gt;<a class="code" href="classcrap_1_1pool__allocator.html#ab0c964f5ebcac28ac4c722349635bdce">allocate</a>( <span class="keyword">sizeof</span>(uint64_t), <a class="code" href="structcrap_1_1align__of.html">crap::align_of&lt;uint64_t&gt;::value</a>, 0 );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> uint32_t difference = pointers[i].<a class="code" href="structcrap_1_1pointer__t.html#ae1469dc75976e619e2b330e7be44a2fa">as_number</a> - memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#ae1469dc75976e619e2b330e7be44a2fa">as_number</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;Difference is &quot; &lt;&lt; difference &lt;&lt; &quot; address is &quot; &lt;&lt; pointers[i].as_number &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a>(CrapDestroyPoolAllocator)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    sa-&gt;~pool_allocator();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    free( memory_sa.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a> );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="ttc" id="structcrap_1_1align__of_html"><div class="ttname"><a href="structcrap_1_1align__of.html">crap::align_of</a></div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00260">utilities.h:260</a></div></div>
+<div class="ttc" id="logger_8h_html_a5d190da52c095994643201b8cc965f72"><div class="ttname"><a href="logger_8h.html#a5d190da52c095994643201b8cc965f72">CRAP_DEBUG_LOG</a></div><div class="ttdeci">#define CRAP_DEBUG_LOG(flags, message,...)</div><div class="ttdef"><b>Definition:</b> <a href="logger_8h_source.html#l00330">logger.h:330</a></div></div>
 <div class="ttc" id="atomic_8cpp_html_a1a5555f2eeb69250b62a601e1bd0b4d6"><div class="ttname"><a href="atomic_8cpp.html#a1a5555f2eeb69250b62a601e1bd0b4d6">TEST</a></div><div class="ttdeci">TEST(AnnounceTestAtomic)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00005">atomic.cpp:5</a></div></div>
+<div class="ttc" id="logger_8h_html_af8df519e0d93f01f0237a41a093e19f8"><div class="ttname"><a href="logger_8h.html#af8df519e0d93f01f0237a41a093e19f8">LOG_CHANNEL_CORE</a></div><div class="ttdeci">#define LOG_CHANNEL_CORE</div><div class="ttdef"><b>Definition:</b> <a href="logger_8h_source.html#l00017">logger.h:17</a></div></div>
 <div class="ttc" id="classcrap_1_1pool__allocator_html"><div class="ttname"><a href="classcrap_1_1pool__allocator.html">crap::pool_allocator</a></div><div class="ttdef"><b>Definition:</b> <a href="poolallocator_8h_source.html#l00015">poolallocator.h:15</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html_a60272c75c04aaafaf6a4339f10d81b32"><div class="ttname"><a href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">crap::pointer_t::as_void</a></div><div class="ttdeci">void * as_void</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00022">utilities.h:22</a></div></div>
 <div class="ttc" id="poolallocator_8h_html"><div class="ttname"><a href="poolallocator_8h.html">poolallocator.h</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html_abc75378cf1e3c1cb65e93c1a765a5c0b"><div class="ttname"><a href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">crap::pointer_t::as_uint8_t</a></div><div class="ttdeci">uint8_t * as_uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00028">utilities.h:28</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html_ae1469dc75976e619e2b330e7be44a2fa"><div class="ttname"><a href="structcrap_1_1pointer__t.html#ae1469dc75976e619e2b330e7be44a2fa">crap::pointer_t::as_number</a></div><div class="ttdeci">size_t as_number</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00047">utilities.h:47</a></div></div>
+<div class="ttc" id="logger_8h_html_a542529c1654a19379e8db5625bc7801e"><div class="ttname"><a href="logger_8h.html#a542529c1654a19379e8db5625bc7801e">LOG_TYPE_DEBUG</a></div><div class="ttdeci">#define LOG_TYPE_DEBUG</div><div class="ttdef"><b>Definition:</b> <a href="logger_8h_source.html#l00027">logger.h:27</a></div></div>
+<div class="ttc" id="logger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html"><div class="ttname"><a href="structcrap_1_1pointer__t.html">crap::pointer_t&lt; void &gt;</a></div></div>
 <div class="ttc" id="classcrap_1_1pool__allocator_html_ab0c964f5ebcac28ac4c722349635bdce"><div class="ttname"><a href="classcrap_1_1pool__allocator.html#ab0c964f5ebcac28ac4c722349635bdce">crap::pool_allocator::allocate</a></div><div class="ttdeci">CRAP_INLINE pointer_void allocate(uint32_t size, uint32_t alignment, uint32_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="poolallocator_8h_source.html#l00077">poolallocator.h:77</a></div></div>
+<div class="ttc" id="logger_8h_html_ade1fdab2d4531d8bdf9b9bf22b96c44f"><div class="ttname"><a href="logger_8h.html#ade1fdab2d4531d8bdf9b9bf22b96c44f">LOG_TARGET_COUT</a></div><div class="ttdeci">#define LOG_TARGET_COUT</div><div class="ttdef"><b>Definition:</b> <a href="logger_8h_source.html#l00030">logger.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 23 2014 23:49:29 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 7 2014 22:49:57 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

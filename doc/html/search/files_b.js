@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['nanovg_2ecpp',['nanovg.cpp',['../nanovg_8cpp.html',1,'']]],
-  ['nanovg_2eh',['nanovg.h',['../nanovg_8h.html',1,'']]],
-  ['nanovg_5fbgfx_2ecpp',['nanovg_bgfx.cpp',['../nanovg__bgfx_8cpp.html',1,'']]]
+  ['packrect_2eh',['packrect.h',['../packrect_8h.html',1,'']]],
+  ['plugin_2eh',['plugin.h',['../plugin_8h.html',1,'']]],
+  ['pluginmanager_2ecpp',['pluginmanager.cpp',['../pluginmanager_8cpp.html',1,'']]],
+  ['pluginmanager_2eh',['pluginmanager.h',['../pluginmanager_8h.html',1,'']]],
+  ['poolallocator_2ecpp',['poolallocator.cpp',['../poolallocator_8cpp.html',1,'']]],
+  ['poolallocator_2eh',['poolallocator.h',['../poolallocator_8h.html',1,'']]]
 ];

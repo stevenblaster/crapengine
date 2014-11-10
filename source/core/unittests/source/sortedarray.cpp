@@ -68,6 +68,28 @@ TEST(CrapSortedArrayPushBackOverflow)
     CHECK( handle == crap::sorted_array<float32_t>::INVALID );
 }
 
+TEST(CrapSortedArrayAssignemtnOperator)
+{
+	void* mem2 = gbm_sa->allocate( crap::sorted_array<float32_t>::size_of_elements(ARRAY_SPACE), crap::align_of<float32_t>::value );
+	crap::sorted_array<float32_t> other( mem2, crap::sorted_array<float32_t>::size_of_elements(ARRAY_SPACE) );
+	other = *sorted_array;
+
+
+	CHECK( other.size() == sorted_array->size() );
+
+	for( uint32_t i=0; i< other.size(); ++i )
+		CHECK( *(other.get(i)) == *(sorted_array->get(i)) );
+
+	other.~sorted_array();
+	gbm_sa->deallocate( mem2 );
+}
+
+TEST(CrapSortedArrayBeginEndNextPrevious)
+{
+	for( uint32_t i = sorted_array->begin(); i != sorted_array->end(); i = sorted_array->next(i) )
+		CHECK( sorted_array->get(i) != 0 );
+}
+
 TEST(CrapSortedArrayErase)
 {
     uint32_t a_size = sorted_array->size();

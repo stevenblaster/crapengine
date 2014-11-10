@@ -3,6 +3,11 @@
 }
 
 
+Simple array class using I\+Ds.  
+
+
+
+
 {\ttfamily \#include $<$indexedarray.\+h$>$}
 
 \subsection*{Classes}
@@ -10,118 +15,95 @@
 \item 
 struct \hyperlink{structcrap_1_1indexed__array_1_1packed__index}{packed\+\_\+index}
 \end{DoxyCompactItemize}
-\subsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a2bf08c14ec39108ed7bdd9b570dc55ba}{handle}
-\item 
-typedef T \hyperlink{classcrap_1_1indexed__array_a30710c6c57a6a6fbe151809b415c856e}{type}
-\item 
-typedef T \hyperlink{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}{key}
-\item 
-typedef \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1indexed__array_a8590198c1f75bc14843f09c491a446e9}{pointer\+\_\+void}
-\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1indexed__array_a0121c2ef3faa6ecc80d74ce45d4ef7c8}{indexed\+\_\+array} (\hyperlink{classcrap_1_1indexed__array_a8590198c1f75bc14843f09c491a446e9}{pointer\+\_\+void} pointer, uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a1ac98bff03a0d2b8fafb5fde8102cf12}{size})
-\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1indexed__array_aee95ccdd855e1c33573553d72bac4006}{indexed\+\_\+array} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a1ac98bff03a0d2b8fafb5fde8102cf12}{size})
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1indexed__array_a78715475a2dc120cc9f662308b25c0fc}{$\sim$indexed\+\_\+array} (void)
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1indexed__array_af1d70c02662c8c5f02f8ed85819ed10b}{indexed\+\_\+array} (const \hyperlink{classcrap_1_1indexed__array}{indexed\+\_\+array} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Default Destructor. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1indexed__array}{indexed\+\_\+array} \& \hyperlink{classcrap_1_1indexed__array_ad2d8756225ace11cc732be55def9fa70}{operator=} (const \hyperlink{classcrap_1_1indexed__array}{indexed\+\_\+array} \&other)
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \& \hyperlink{classcrap_1_1indexed__array_ac3b52ad3a4bd642e6035cb88477b7344}{operator\mbox{[}$\,$\mbox{]}} (const uint32\+\_\+t \&id)
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1indexed__array_ae974395e629c2825fc4480a54e6d7855}{operator\mbox{[}$\,$\mbox{]}} (const uint32\+\_\+t \&id) const 
-\item 
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a8f0c3a88be6e04750288918e2c170bce}{begin} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns first element of the array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a8e7001ee5afd3c7c7949357de39207c8}{end} (void) const 
+\begin{DoxyCompactList}\small\item\em returns first invalid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_ac715421267db850e0b50fd43a4c0bd76}{last} (void) const 
+\begin{DoxyCompactList}\small\item\em returns last valid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a3ef6beea7d33b6bad387497833c62a18}{next} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns next element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_ace250954282e768fde057d53fbba9f28}{previous} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns previous index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1indexed__array_a269b17c858dd7ebd72db65f0d83d0046}{get} (uint32\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em returns pointer to data \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T $\ast$ \hyperlink{classcrap_1_1indexed__array_ab6d8b2c449fcbf9c0e31f01616c104e7}{get} (uint32\+\_\+t id) const 
+\begin{DoxyCompactList}\small\item\em returns pointer to data \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \& \hyperlink{classcrap_1_1indexed__array_aab15cf4e755310e6c3b05977de4cdab5}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Index operator. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1indexed__array_a8c32ee41e2657fbc65e7bd639ef46b77}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t id) const 
+\begin{DoxyCompactList}\small\item\em Index operator. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a89575aa1f42788edc2aab95297dcd6c0}{push\+\_\+back} (const T \&object)
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a496146e2513dee4859d3ef70839c5ea9}{insert} (const T \&object)
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1indexed__array_a6e7a3fb3a6a9a09fdae51c0e8ffec77a}{remove} (uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}{key})
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1indexed__array_aa6bbce28615cee47b105fcfd42a23e71}{find} (const uint32\+\_\+t \&\hyperlink{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}{key})
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T $\ast$ \hyperlink{classcrap_1_1indexed__array_aa7effe2215d00e3f0f123cfef02d14c7}{find} (const uint32\+\_\+t \&\hyperlink{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}{key}) const 
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a197e2439b74f3861aa477271f489ce12}{find} (const T \&\hyperlink{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}{key})
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_ad588a32c7ec05f42456111aac4752f1f}{index\+\_\+of} (const T $\ast$ptr) const 
-\item 
+\begin{DoxyCompactList}\small\item\em Adds new element to array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1indexed__array_adb85b6576eab1ff1417ce7cb36623475}{erase\+\_\+at} (uint32\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Erase Element at with Given I\+D. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1indexed__array_a3586220d147f590559c7bb69a331ab4b}{erase} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Removes element if found. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a51a6cc95bab591b58538787eafc86164}{find} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Finds id of element. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a1ac98bff03a0d2b8fafb5fde8102cf12}{size} (void) const 
-\item 
+\begin{DoxyCompactList}\small\item\em returns current size \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a1d6f82e3d913f90275c752e13b8f1627}{max\+\_\+size} (void) const 
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1indexed__array_a78058f9d658fd04c748165dba9180b20}{get\+\_\+array} (void) const 
-\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1indexed__array_adea5294fbe10448b8c55c06b8a8c7645}{memory} (void) const 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em returns maximum size of container \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1indexed__array_a0b98dabd34b89333da63b9f9472264e9}{data} (void) const 
+\begin{DoxyCompactList}\small\item\em returns pointer to elements of array \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1indexed__array_a1529542ed308445e101e5540b7498d4e}{memory} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_af126de924b0a1ca234676bf95a349a72}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
-\end{DoxyCompactItemize}
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a258d01b64551591270099716ced5d3b7}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Calculates necessary memory for a certain number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_a547a4e2b6bf39bfc62f7e5017b93136e}{invalid} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
-\end{DoxyCompactItemize}
+static const uint32\+\_\+t \hyperlink{classcrap_1_1indexed__array_aa3ba1587d20c46f7557a7cacaf4d9cd8}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\begin{DoxyCompactList}\small\item\em Invalid i\+D / index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$class crap\+::indexed\+\_\+array$<$ T $>$}
 
+Simple array class using I\+Ds. 
 
-
-Definition at line 33 of file indexedarray.\+h.
-
-
-
-\subsection{Member Typedef Documentation}
-\hypertarget{classcrap_1_1indexed__array_a2bf08c14ec39108ed7bdd9b570dc55ba}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!handle@{handle}}
-\index{handle@{handle}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ typedef uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::{\bf handle}}}\label{classcrap_1_1indexed__array_a2bf08c14ec39108ed7bdd9b570dc55ba}
-
-
-Definition at line 38 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!key@{key}}
-\index{key@{key}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ typedef T {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::{\bf key}}}\label{classcrap_1_1indexed__array_afdc964d76a19bb2f302fe43fefa5b5f3}
-
-
-Definition at line 40 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_a8590198c1f75bc14843f09c491a446e9}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!pointer\+\_\+void@{pointer\+\_\+void}}
-\index{pointer\+\_\+void@{pointer\+\_\+void}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{pointer\+\_\+void}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ typedef {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::{\bf pointer\+\_\+void}}}\label{classcrap_1_1indexed__array_a8590198c1f75bc14843f09c491a446e9}
-
-
-Definition at line 42 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_a30710c6c57a6a6fbe151809b415c856e}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!type@{type}}
-\index{type@{type}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ typedef T {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::{\bf type}}}\label{classcrap_1_1indexed__array_a30710c6c57a6a6fbe151809b415c856e}
-
+The data is kept packed, the array is connected by using generation based I\+Ds. 
 
 Definition at line 39 of file indexedarray.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classcrap_1_1indexed__array_a0121c2ef3faa6ecc80d74ce45d4ef7c8}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!indexed\+\_\+array@{indexed\+\_\+array}}
+\hypertarget{classcrap_1_1indexed__array_aee95ccdd855e1c33573553d72bac4006}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!indexed\+\_\+array@{indexed\+\_\+array}}
 \index{indexed\+\_\+array@{indexed\+\_\+array}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
 \subsubsection[{indexed\+\_\+array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::{\bf indexed\+\_\+array} (
 \begin{DoxyParamCaption}
-\item[{{\bf pointer\+\_\+void}}]{pointer, }
+\item[{void $\ast$}]{pointer, }
 \item[{uint32\+\_\+t}]{size}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_a0121c2ef3faa6ecc80d74ce45d4ef7c8}
+)}}\label{classcrap_1_1indexed__array_aee95ccdd855e1c33573553d72bac4006}
 
 
-Definition at line 129 of file indexedarray.\+h.
+Default Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & Pointer to memory \\
+\hline
+{\em size} & Size of provided memory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file indexedarray.\+h.
 
 \hypertarget{classcrap_1_1indexed__array_a78715475a2dc120cc9f662308b25c0fc}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!````~indexed\+\_\+array@{$\sim$indexed\+\_\+array}}
 \index{````~indexed\+\_\+array@{$\sim$indexed\+\_\+array}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
@@ -132,87 +114,195 @@ Definition at line 129 of file indexedarray.\+h.
 )}}\label{classcrap_1_1indexed__array_a78715475a2dc120cc9f662308b25c0fc}
 
 
-Definition at line 150 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_af1d70c02662c8c5f02f8ed85819ed10b}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!indexed\+\_\+array@{indexed\+\_\+array}}
-\index{indexed\+\_\+array@{indexed\+\_\+array}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{indexed\+\_\+array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::{\bf indexed\+\_\+array} (
-\begin{DoxyParamCaption}
-\item[{const {\bf indexed\+\_\+array}$<$ T $>$ \&}]{other}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_af1d70c02662c8c5f02f8ed85819ed10b}
+Default Destructor. 
 
 
-Definition at line 156 of file indexedarray.\+h.
+
+Definition at line 273 of file indexedarray.\+h.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classcrap_1_1indexed__array_aa6bbce28615cee47b105fcfd42a23e71}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!find@{find}}
-\index{find@{find}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::find (
-\begin{DoxyParamCaption}
-\item[{const uint32\+\_\+t \&}]{key}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_aa6bbce28615cee47b105fcfd42a23e71}
-
-
-Definition at line 312 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_aa7effe2215d00e3f0f123cfef02d14c7}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!find@{find}}
-\index{find@{find}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T $\ast$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::find (
-\begin{DoxyParamCaption}
-\item[{const uint32\+\_\+t \&}]{key}
-\end{DoxyParamCaption}
-) const}}\label{classcrap_1_1indexed__array_aa7effe2215d00e3f0f123cfef02d14c7}
-
-
-Definition at line 332 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_a197e2439b74f3861aa477271f489ce12}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!find@{find}}
-\index{find@{find}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::find (
-\begin{DoxyParamCaption}
-\item[{const T \&}]{key}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_a197e2439b74f3861aa477271f489ce12}
-
-
-Definition at line 352 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_a78058f9d658fd04c748165dba9180b20}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!get\+\_\+array@{get\+\_\+array}}
-\index{get\+\_\+array@{get\+\_\+array}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{get\+\_\+array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::get\+\_\+array (
+\hypertarget{classcrap_1_1indexed__array_a8f0c3a88be6e04750288918e2c170bce}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!begin@{begin}}
+\index{begin@{begin}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::begin (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1indexed__array_a78058f9d658fd04c748165dba9180b20}
+) const}}\label{classcrap_1_1indexed__array_a8f0c3a88be6e04750288918e2c170bce}
 
 
-Definition at line 393 of file indexedarray.\+h.
+Returns first element of the array. 
 
-\hypertarget{classcrap_1_1indexed__array_ad588a32c7ec05f42456111aac4752f1f}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!index\+\_\+of@{index\+\_\+of}}
-\index{index\+\_\+of@{index\+\_\+of}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{index\+\_\+of}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::index\+\_\+of (
+\begin{DoxyReturn}{Returns}
+First valid index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 317 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a0b98dabd34b89333da63b9f9472264e9}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!data@{data}}
+\index{data@{data}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::data (
 \begin{DoxyParamCaption}
-\item[{const T $\ast$}]{ptr}
+\item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1indexed__array_ad588a32c7ec05f42456111aac4752f1f}
+) const}}\label{classcrap_1_1indexed__array_a0b98dabd34b89333da63b9f9472264e9}
 
 
-Definition at line 367 of file indexedarray.\+h.
+returns pointer to elements of array 
 
-\hypertarget{classcrap_1_1indexed__array_a496146e2513dee4859d3ef70839c5ea9}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!insert@{insert}}
-\index{insert@{insert}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::insert (
+\begin{DoxyReturn}{Returns}
+pointer to elements 
+\end{DoxyReturn}
+
+
+Definition at line 570 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a8e7001ee5afd3c7c7949357de39207c8}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!end@{end}}
+\index{end@{end}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1indexed__array_a8e7001ee5afd3c7c7949357de39207c8}
+
+
+returns first invalid element 
+
+\begin{DoxyReturn}{Returns}
+I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a3586220d147f590559c7bb69a331ab4b}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!erase@{erase}}
+\index{erase@{erase}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::erase (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{object}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_a496146e2513dee4859d3ef70839c5ea9}
+)}}\label{classcrap_1_1indexed__array_a3586220d147f590559c7bb69a331ab4b}
 
 
-Definition at line 251 of file indexedarray.\+h.
+Removes element if found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Reference to objects \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 535 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_adb85b6576eab1ff1417ce7cb36623475}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!erase\+\_\+at@{erase\+\_\+at}}
+\index{erase\+\_\+at@{erase\+\_\+at}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::erase\+\_\+at (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1indexed__array_adb85b6576eab1ff1417ce7cb36623475}
+
+
+Erase Element at with Given I\+D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D of element \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 483 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a51a6cc95bab591b58538787eafc86164}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!find@{find}}
+\index{find@{find}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1indexed__array_a51a6cc95bab591b58538787eafc86164}
+
+
+Finds id of element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Reference to element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns id or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 543 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a269b17c858dd7ebd72db65f0d83d0046}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!get@{get}}
+\index{get@{get}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1indexed__array_a269b17c858dd7ebd72db65f0d83d0046}
+
+
+returns pointer to data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D of an element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to member or null 
+\end{DoxyReturn}
+
+
+Definition at line 402 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_ab6d8b2c449fcbf9c0e31f01616c104e7}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!get@{get}}
+\index{get@{get}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T $\ast$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1indexed__array_ab6d8b2c449fcbf9c0e31f01616c104e7}
+
+
+returns pointer to data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D of an element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to member or null 
+\end{DoxyReturn}
+
+
+Definition at line 418 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_ac715421267db850e0b50fd43a4c0bd76}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!last@{last}}
+\index{last@{last}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1indexed__array_ac715421267db850e0b50fd43a4c0bd76}
+
+
+returns last valid element 
+
+\begin{DoxyReturn}{Returns}
+last valid element or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 344 of file indexedarray.\+h.
 
 \hypertarget{classcrap_1_1indexed__array_a1d6f82e3d913f90275c752e13b8f1627}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!max\+\_\+size@{max\+\_\+size}}
 \index{max\+\_\+size@{max\+\_\+size}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
@@ -223,18 +313,50 @@ Definition at line 251 of file indexedarray.\+h.
 ) const}}\label{classcrap_1_1indexed__array_a1d6f82e3d913f90275c752e13b8f1627}
 
 
-Definition at line 387 of file indexedarray.\+h.
+returns maximum size of container 
 
-\hypertarget{classcrap_1_1indexed__array_adea5294fbe10448b8c55c06b8a8c7645}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!memory@{memory}}
+\begin{DoxyReturn}{Returns}
+maximum number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 564 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a1529542ed308445e101e5540b7498d4e}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!memory@{memory}}
 \index{memory@{memory}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf pointer\+\_\+t}$<$void$>$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::memory (
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::memory (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1indexed__array_adea5294fbe10448b8c55c06b8a8c7645}
+) const}}\label{classcrap_1_1indexed__array_a1529542ed308445e101e5540b7498d4e}
 
 
-Definition at line 104 of file indexedarray.\+h.
+Returns the pointer to the memory. 
+
+\begin{DoxyReturn}{Returns}
+Pointer type of array memory 
+\end{DoxyReturn}
+
+
+Definition at line 576 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a3ef6beea7d33b6bad387497833c62a18}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!next@{next}}
+\index{next@{next}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::next (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1indexed__array_a3ef6beea7d33b6bad387497833c62a18}
+
+
+returns next element 
+
+\begin{DoxyReturn}{Returns}
+next index or invlid 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file indexedarray.\+h.
 
 \hypertarget{classcrap_1_1indexed__array_ad2d8756225ace11cc732be55def9fa70}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!operator=@{operator=}}
 \index{operator=@{operator=}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
@@ -245,29 +367,83 @@ Definition at line 104 of file indexedarray.\+h.
 )}}\label{classcrap_1_1indexed__array_ad2d8756225ace11cc732be55def9fa70}
 
 
-Definition at line 175 of file indexedarray.\+h.
+Assignment operator. 
 
-\hypertarget{classcrap_1_1indexed__array_ac3b52ad3a4bd642e6035cb88477b7344}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Reference to existing indexed artray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_aab15cf4e755310e6c3b05977de4cdab5}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
 \subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
 \begin{DoxyParamCaption}
-\item[{const uint32\+\_\+t \&}]{id}
+\item[{uint32\+\_\+t}]{id}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_ac3b52ad3a4bd642e6035cb88477b7344}
+)}}\label{classcrap_1_1indexed__array_aab15cf4e755310e6c3b05977de4cdab5}
 
 
-Definition at line 198 of file indexedarray.\+h.
+Index operator. 
 
-\hypertarget{classcrap_1_1indexed__array_ae974395e629c2825fc4480a54e6d7855}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to element 
+\end{DoxyReturn}
+
+
+Definition at line 434 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a8c32ee41e2657fbc65e7bd639ef46b77}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
 \subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
 \begin{DoxyParamCaption}
-\item[{const uint32\+\_\+t \&}]{id}
+\item[{uint32\+\_\+t}]{id}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1indexed__array_ae974395e629c2825fc4480a54e6d7855}
+) const}}\label{classcrap_1_1indexed__array_a8c32ee41e2657fbc65e7bd639ef46b77}
 
 
-Definition at line 206 of file indexedarray.\+h.
+Index operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to element 
+\end{DoxyReturn}
+
+
+Definition at line 440 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_ace250954282e768fde057d53fbba9f28}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!previous@{previous}}
+\index{previous@{previous}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::previous (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1indexed__array_ace250954282e768fde057d53fbba9f28}
+
+
+returns previous index 
+
+\begin{DoxyReturn}{Returns}
+previous index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 379 of file indexedarray.\+h.
 
 \hypertarget{classcrap_1_1indexed__array_a89575aa1f42788edc2aab95297dcd6c0}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!push\+\_\+back@{push\+\_\+back}}
 \index{push\+\_\+back@{push\+\_\+back}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
@@ -278,18 +454,19 @@ Definition at line 206 of file indexedarray.\+h.
 )}}\label{classcrap_1_1indexed__array_a89575aa1f42788edc2aab95297dcd6c0}
 
 
-Definition at line 214 of file indexedarray.\+h.
-
-\hypertarget{classcrap_1_1indexed__array_a6e7a3fb3a6a9a09fdae51c0e8ffec77a}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!remove@{remove}}
-\index{remove@{remove}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::remove (
-\begin{DoxyParamCaption}
-\item[{uint32\+\_\+t}]{key}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1indexed__array_a6e7a3fb3a6a9a09fdae51c0e8ffec77a}
+Adds new element to array. 
 
 
-Definition at line 257 of file indexedarray.\+h.
+\begin{DoxyParams}{Parameters}
+{\em object} & Reference to new element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of new element 
+\end{DoxyReturn}
+
+
+Definition at line 446 of file indexedarray.\+h.
 
 \hypertarget{classcrap_1_1indexed__array_a1ac98bff03a0d2b8fafb5fde8102cf12}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!size@{size}}
 \index{size@{size}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
@@ -300,28 +477,51 @@ Definition at line 257 of file indexedarray.\+h.
 ) const}}\label{classcrap_1_1indexed__array_a1ac98bff03a0d2b8fafb5fde8102cf12}
 
 
-Definition at line 381 of file indexedarray.\+h.
+returns current size 
 
-\hypertarget{classcrap_1_1indexed__array_af126de924b0a1ca234676bf95a349a72}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\begin{DoxyReturn}{Returns}
+current size of array 
+\end{DoxyReturn}
+
+
+Definition at line 558 of file indexedarray.\+h.
+
+\hypertarget{classcrap_1_1indexed__array_a258d01b64551591270099716ced5d3b7}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
 \index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{number}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classcrap_1_1indexed__array_af126de924b0a1ca234676bf95a349a72}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1indexed__array_a258d01b64551591270099716ced5d3b7}
 
 
-Definition at line 109 of file indexedarray.\+h.
+Calculates necessary memory for a certain number of elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of necessary memory 
+\end{DoxyReturn}
+
+
+Definition at line 582 of file indexedarray.\+h.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classcrap_1_1indexed__array_a547a4e2b6bf39bfc62f7e5017b93136e}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!invalid@{invalid}}
-\index{invalid@{invalid}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
-\subsubsection[{invalid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::invalid = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1indexed__array_a547a4e2b6bf39bfc62f7e5017b93136e}
+\hypertarget{classcrap_1_1indexed__array_aa3ba1587d20c46f7557a7cacaf4d9cd8}{\index{crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::indexed\+\_\+array@{crap\+::indexed\+\_\+array}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::indexed\+\_\+array}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1indexed__array_aa3ba1587d20c46f7557a7cacaf4d9cd8}
 
 
-Definition at line 41 of file indexedarray.\+h.
+Invalid i\+D / index. 
+
+
+
+Definition at line 45 of file indexedarray.\+h.
 
 
 

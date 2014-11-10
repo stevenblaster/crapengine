@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['resourcename',['ResourceName',['../classcrap_1_1_resource_manager.html#a1aa9ba8213544040ec264aa4b1651f78',1,'crap::ResourceManager']]],
-  ['resourcepath',['ResourcePath',['../classcrap_1_1_resource_manager.html#a65958e1fcdda3a97f5ef9e006e30fad8',1,'crap::ResourceManager']]],
-  ['resourcetype',['ResourceType',['../classcrap_1_1_resource_manager.html#a68532afc0951e49f936b71bbf9bdf804',1,'crap::ResourceManager']]]
+  ['thread_5ft',['thread_t',['../namespacecrap.html#acd6ada6ce68b7a664e02cc09a05cdeb3',1,'crap']]],
+  ['tick_5ft',['tick_t',['../namespacecrap.html#ad017b1c2078d1f4d59557eda5d95b149',1,'crap']]],
+  ['tid_5ft',['tid_t',['../namespacecrap.html#ac21fdaa6d61c6dfcc98ddbb9fd7566ca',1,'crap']]]
 ];

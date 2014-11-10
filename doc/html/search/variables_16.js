@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['x',['x',['../struct_atlas_region.html#aee785d751de233eac49a4bb9ea27bd70',1,'AtlasRegion::x()'],['../struct_f_o_n_stext_iter.html#a84dee1d692f8d5a0b276a4b3c14305ca',1,'FONStextIter::x()'],['../struct_n_v_gpoint.html#a326d40b39869030b6c45b5b882be9fbb',1,'NVGpoint::x()'],['../struct_n_v_gglyph_position.html#a45c4fbe8ff3c9e654b681fd57588037e',1,'NVGglyphPosition::x()'],['../struct_n_v_gvertex.html#ac0c7b65243540638addff48cfed1b45b',1,'NVGvertex::x()']]],
-  ['x0',['x0',['../struct_f_o_n_squad.html#a3afad57cffbd1350a09f208c631a9813',1,'FONSquad']]],
-  ['x1',['x1',['../struct_f_o_n_squad.html#a6db320ddee76b1f2fefcb2c6b31b525d',1,'FONSquad']]],
-  ['xform',['xform',['../struct_n_v_gstate.html#ad59f377ee80c48e3e37e4deb3464e030',1,'NVGstate::xform()'],['../struct_n_v_gpaint.html#a2f486f2a6c76c0fd46a6ea58aa587194',1,'NVGpaint::xform()'],['../struct_n_v_gscissor.html#a4ada1cb908081972303b3c793064e15a',1,'NVGscissor::xform()']]]
+  ['y',['y',['../struct_atlas_region.html#a27b91687289b01babe0625c869d216b3',1,'AtlasRegion::y()'],['../struct_f_o_n_stext_iter.html#a67aabad5be6a2e582f855d3fc985e482',1,'FONStextIter::y()'],['../struct_n_v_gpoint.html#a40a1ffbc5c699987afffd14a8bb4741b',1,'NVGpoint::y()'],['../struct_n_v_gvertex.html#a41db7ce4c246f4647ee2fb95005980f0',1,'NVGvertex::y()']]],
+  ['y0',['y0',['../struct_f_o_n_squad.html#af92a5d58d387d08575a149b3869ad994',1,'FONSquad']]],
+  ['y1',['y1',['../struct_f_o_n_squad.html#a7d11aed083800fc600fa2b736c7eb973',1,'FONSquad']]]
 ];

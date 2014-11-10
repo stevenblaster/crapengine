@@ -12,7 +12,7 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/linearallocator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackallocator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/poolallocator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/linearmap.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/arraymap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/indexedarray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/converter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/intrusivelist.cpp
@@ -20,5 +20,8 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/directory.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/sortedarray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/list.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/listmap.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sortedarraymap.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/treemap.cpp
 PARENT_SCOPE
 )

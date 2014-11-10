@@ -100,19 +100,51 @@ private:
     /// root index
     uint32_t                _root;
 
+    /// weight of tree (negative left, positive right)
+    int32_t					_weight;
+
     /// current size
     uint32_t                _size;
 
     /// maximum size
     uint32_t                _size_max;
 
+    /**
+     * @brief deletes a tree recirsively beginning from node index
+     * @param node_index Index to start deleting from
+     */
     void delete_recursive( uint32_t node_index );
 
-    //! @brief Copy constructor
-    CRAP_INLINE tree( const tree& other );
+    /**
+     * @brief copy constructor held private
+     */
+    CRAP_INLINE
+	tree( const tree& other );
 
-    //! @brief Finds key and returns free spot
-    uint32_t find_free(const T& key) const;
+    /**
+     * @brief finds the correct node for a new key
+     * @param key The key to be placed
+     * @param direction pointer to integer to store the direction from node
+     * @return the index of parent node
+     */
+    CRAP_INLINE
+    uint32_t find_free(const T& key, int32_t* direction ) const;
+
+    /**
+     * @brief Helper function getting node with lowest value from index
+     * @param index Index to start searching from
+     * @return index with lowest value or INVALID
+     */
+    CRAP_INLINE
+	uint32_t first_from( uint32_t index ) const;
+
+    /**
+     * @brief Helper function getting node with highest value from index
+     * @param index Index to start searching from
+     * @return index with highest value or INVALID
+     */
+    CRAP_INLINE
+	uint32_t last_from( uint32_t index ) const;
 
 public:
 
@@ -161,7 +193,7 @@ public:
 	 * @param key The key value to remove
 	 */
     CRAP_INLINE
-    void remove( const T& key );
+    void erase( const T& key );
 
 	/**
 	 * @brief Finds the smalles element and returns index
@@ -232,6 +264,13 @@ public:
     CRAP_INLINE
     const T& operator[]( uint32_t index ) const;
 
+    /**
+     * @brief Current weight of the tree
+     * @return negative number for left, positive for right and zero for balanced
+     */
+    CRAP_INLINE
+	int32_t weight( void ) const;
+
 	/**
 	 * @brief Tree number of stored nodes
 	 * @return current size
@@ -274,15 +313,16 @@ void tree<T>::delete_recursive( uint32_t node_index )
     delete_recursive( _indices.as_type[node_index].sub_nodes[tree_node::left] );
     delete_recursive( _indices.as_type[node_index].sub_nodes[tree_node::right] );
 
-    remove(node_index);
+    erase_at(node_index);
 }
 
 template <class T>
 //! @brief Finds key and returns free spot
-uint32_t tree<T>::find_free(const T& key) const
+uint32_t tree<T>::find_free(const T& key, int32_t* direction ) const
 {
 	uint32_t last_index = INVALID;
     uint32_t current_index = _root;
+    *direction = 0;
 
     while( current_index != INVALID )
     {
@@ -294,14 +334,47 @@ uint32_t tree<T>::find_free(const T& key) const
         last_index = current_index;
 
         if( _data.as_type[current_index] > key )
+        {
             current_index = current_node->sub_nodes[tree_node::left];
+            if( *direction == 0 )
+            	*direction = -1;
+        }
         else if( _data.as_type[current_index] < key )
+        {
             current_index = current_node->sub_nodes[tree_node::right];
+            if( *direction == 0 )
+            	*direction = 1;
+        }
     }
 
     return last_index;
 }
 
+template<typename T>
+uint32_t tree<T>::first_from( uint32_t index ) const
+{
+	uint32_t return_index = index;
+
+	while( _indices.as_type[return_index].sub_nodes[tree_node::left] != INVALID )
+	{
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::left];
+	}
+
+	return return_index;
+}
+
+template<typename T>
+uint32_t tree<T>::last_from( uint32_t index ) const
+{
+	uint32_t return_index = index;
+
+	while( _indices.as_type[return_index].sub_nodes[tree_node::right] != INVALID )
+	{
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::right];
+	}
+
+	return return_index;
+}
 
 /*
  * Public methods
@@ -309,7 +382,7 @@ uint32_t tree<T>::find_free(const T& key) const
 
 template <class T>
 tree<T>::tree( void* memory, uint32_t size ) :
-	_size(0), _size_max( size / (sizeof(tree_node)+sizeof(T))), _root(INVALID)
+	_size(0), _size_max( size / (sizeof(tree_node)+sizeof(T))), _root(INVALID), _weight(0)
 {
     _indices = memory;
     _data = _indices.as_type + _size_max;
@@ -352,7 +425,8 @@ uint32_t tree<T>::insert( const T& key )
 		new ( _indices.as_type + _size ) tree_node();
 		copy_construct_object( &key , _data.as_type + _size );
 
-		uint32_t free_index = find_free( key );
+		int32_t direction;
+		uint32_t free_index = find_free( key, &direction );
 
 		if( free_index == INVALID )
 		{
@@ -366,6 +440,7 @@ uint32_t tree<T>::insert( const T& key )
 	        _indices.as_type[_size].sub_nodes[tree_node::parent] = free_index;
 		}
 
+		_weight += direction;
 		return _size++;
 	}
 
@@ -377,80 +452,153 @@ void tree<T>::erase_at( uint32_t index )
 {
 	if( index < _size )
 	{
-		T& key = _data.as_type[index];
+		const uint32_t parent_index = _indices.as_type[index].sub_nodes[tree_node::parent];
+		const uint32_t left_index = _indices.as_type[index].sub_nodes[tree_node::left];
+		const uint32_t right_index = _indices.as_type[index].sub_nodes[tree_node::right];
 
-	    uint32_t parent_index = _indices.as_type[index].sub_nodes[tree_node::parent];
-	    uint32_t node_direction = tree_node::parent;
-	    if( parent_index != INVALID )
-	        node_direction = (_indices.as_type[parent_index].sub_nodes[tree_node::left] == index ) ? tree_node::left : tree_node::right;
+		//root node
+		if( parent_index == INVALID )
+		{
+			if( right_index == INVALID )
+			{
+				_root = left_index;
+				_weight++;
+			}
+			else if( left_index == INVALID )
+			{
+				_root = right_index;
+				_weight--;
+			}
+			else if( left_index != INVALID && right_index != INVALID )
+			{
+				if( _weight <= 0 )
+				{
+					const uint32_t last_index = last_from( left_index );
+					_indices.as_type[left_index].sub_nodes[tree_node::parent] = INVALID;
+					_indices.as_type[right_index].sub_nodes[tree_node::parent] = last_index;
+					_indices.as_type[last_index].sub_nodes[tree_node::right] = right_index;
+					_root = left_index;
+					_weight++;
+				}
+				else
+				{
+					const uint32_t last_index = first_from( right_index );
+					_indices.as_type[right_index].sub_nodes[tree_node::parent] = INVALID;
+					_indices.as_type[left_index].sub_nodes[tree_node::parent] = last_index;
+					_indices.as_type[last_index].sub_nodes[tree_node::left] = left_index;
+					_root = right_index;
+					_weight--;
+				}
+			}
+			else
+				_root = INVALID;
+		}
+		else
+		{
+			if( _indices.as_type[parent_index].sub_nodes[tree_node::left] == index )
+			{
+				if( left_index == INVALID && right_index == INVALID )
+				{
+					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = INVALID;
+				}
+				else if( left_index == INVALID )
+				{
+					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = right_index;
+				}
+				else if( right_index == INVALID )
+				{
+					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = left_index;
+				}
+				else
+				{
+					const uint32_t closest_index = first_from( right_index );
+					_indices.as_type[closest_index].sub_nodes[ tree_node::left ] = left_index;
+					_indices.as_type[left_index].sub_nodes[ tree_node::parent ] = closest_index;
+					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = right_index;
+				}
+			}
+			else if( _indices.as_type[parent_index].sub_nodes[tree_node::right] == index )
+			{
+				if( left_index == INVALID && right_index == INVALID )
+				{
+					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = INVALID;
+				}
+				else if( left_index == INVALID )
+				{
+					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = right_index;
+				}
+				else if( right_index == INVALID )
+				{
+					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = left_index;
+				}
+				else
+				{
+					const uint32_t closest_index = last_from( left_index );
+					_indices.as_type[closest_index].sub_nodes[ tree_node::right ] = right_index;
+					_indices.as_type[right_index].sub_nodes[ tree_node::parent ] = closest_index;
+					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = left_index;
 
+				}
+			}
 
-	    const uint32_t left_index = _indices.as_type[index].sub_nodes[tree_node::left];
-	    const uint32_t right_index = _indices.as_type[index].sub_nodes[tree_node::right];
+			//weight..
+			uint32_t check_index = _indices.as_type[index].sub_nodes[ tree_node::parent ];
+			while( check_index != INVALID )
+			{
+				if( _indices.as_type[check_index].sub_nodes[ tree_node::left ] == check_index  && check_index == _root )
+				{
+					_weight++;
+					break;
+				}
+				if( _indices.as_type[check_index].sub_nodes[ tree_node::right] == check_index  && check_index == _root )
+				{
+					_weight--;
+					break;
+				}
 
-
-	    if( left_index == INVALID && right_index == INVALID )
-	    {
-	        if( parent_index != INVALID)
-	            _indices.as_type[parent_index].sub_nodes[node_direction] = INVALID;
-	        else
-	            _root = INVALID;
-	    }
-	    else if( left_index == INVALID )
-	    {
-	        if( parent_index != INVALID )
-	            _indices.as_type[parent_index].sub_nodes[node_direction] = right_index;
-	        else
-	            _root = right_index;
-
-	        _indices.as_type[right_index].sub_nodes[tree_node::parent] = parent_index;
-	    }
-	    else if( right_index == INVALID )
-	    {
-	        if( parent_index != INVALID )
-	            _indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
-	        else
-	            _root = left_index;
-
-	        _indices.as_type[left_index].sub_nodes[tree_node::parent] = parent_index;
-	    }
-	    else
-	    {
-	        const uint32_t moving_index = ( node_direction == tree_node::right ) ? right_index : left_index;
-	        const uint32_t replacing_index = ( node_direction == tree_node::right ) ? left_index : right_index;
-
-	        if( parent_index != INVALID )
-	            _indices.as_type[parent_index].sub_nodes[node_direction] = replacing_index;
-	        else
-	            _root = replacing_index;
-
-	        _indices.as_type[replacing_index].sub_nodes[tree_node::parent] = parent_index;
-
-	        uint32_t new_index = find_free( _data.as_type[moving_index] );
-	        CRAP_ASSERT( ASSERT_BREAK, new_index >= 0,  "Error while reordering data" );
-
-	        uint32_t new_direction = ( _data.as_type[new_index] < key ) ? tree_node::right : tree_node::left;
-	        CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[new_index].sub_nodes[new_direction] == INVALID ,  "Error while reordering data" );
-
-	        _indices.as_type[moving_index].sub_nodes[tree_node::parent] = new_index;
-	        _indices.as_type[new_index].sub_nodes[new_direction] = moving_index;
-	    }
+				check_index = _indices.as_type[check_index].sub_nodes[ tree_node::parent ];
+			}
+		}
 
 	    destruct_object( _data.as_type + index );
 
-	    //destroy old node
+	    //keep stuff packed
 	    if( index != _size-1 )
 	    {
-	        uint32_t last_parent_index = _indices.as_type[_size-1].sub_nodes[tree_node::parent];
+	    	const uint32_t last_index = _size-1;
 
-	        if( _indices.as_type[last_parent_index].sub_nodes[tree_node::left] == _size-1 )
-	            _indices.as_type[last_parent_index].sub_nodes[tree_node::left] = index;
+	    	const uint32_t last_parent =  _indices.as_type[last_index].sub_nodes[tree_node::parent];
+	    	const uint32_t last_left =  _indices.as_type[last_index].sub_nodes[tree_node::left];
+	    	const uint32_t last_right =  _indices.as_type[last_index].sub_nodes[tree_node::right];
 
-	        if( _indices.as_type[last_parent_index].sub_nodes[tree_node::right] == _size-1 )
-	            _indices.as_type[last_parent_index].sub_nodes[tree_node::right] = index;
+	    	if( last_parent != INVALID )
+	    	{
+	    		if( _indices.as_type[last_parent].sub_nodes[tree_node::left] == last_index )
+	    			_indices.as_type[last_parent].sub_nodes[tree_node::left] = index;
+	    		else
+	    			_indices.as_type[last_parent].sub_nodes[tree_node::right] = index;
+	    	}
 
-	        copy_construct_object( _data.as_type + _size-1, _data.as_type + index );
-	        destruct_object( _data.as_type + _size-1 );
+	    	if( last_left != INVALID )
+	    	{
+	    		_indices.as_type[last_left].sub_nodes[tree_node::parent] = index;
+	    	}
+
+	    	if( last_right != INVALID )
+	    	{
+	    		_indices.as_type[last_right].sub_nodes[tree_node::parent] = index;
+	    	}
+
+	    	_indices.as_type[index].sub_nodes[tree_node::parent] = last_parent;
+	    	_indices.as_type[index].sub_nodes[tree_node::left] = last_left;
+	    	_indices.as_type[index].sub_nodes[tree_node::right] = last_right;
+
+	    	_indices.as_type[last_index].sub_nodes[tree_node::parent] = INVALID;
+	    	_indices.as_type[last_index].sub_nodes[tree_node::left] = INVALID;
+	    	_indices.as_type[last_index].sub_nodes[tree_node::right] = INVALID;
+
+	        copy_construct_object( _data.as_type + last_index, _data.as_type + index );
+	        destruct_object( _data.as_type + last_index );
 	    }
 
 	    //destroy former last node
@@ -459,7 +607,7 @@ void tree<T>::erase_at( uint32_t index )
 }
 
 template <class T>
-void tree<T>::remove( const T& key )
+void tree<T>::erase( const T& key )
 {
     uint32_t used_index = find( key );
 
@@ -562,6 +710,12 @@ uint32_t tree<T>::previous( uint32_t index ) const
 	}
 
 	return INVALID;
+}
+
+template <class T>
+int32_t tree<T>::weight(void) const
+{
+	return _weight;
 }
 
 template <class T>

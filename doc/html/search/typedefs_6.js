@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['handle',['handle',['../classcrap_1_1binary__tree.html#a750a57d699f2974e6a5415300a9696ff',1,'crap::binary_tree::handle()'],['../classcrap_1_1hashmap.html#a290dd70891131cbc14ed79c1c5aa37e5',1,'crap::hashmap::handle()'],['../classcrap_1_1indexed__array.html#a2bf08c14ec39108ed7bdd9b570dc55ba',1,'crap::indexed_array::handle()'],['../singletoncrap_1_1intrusive__list.html#a34ddb2f1e2fe47098b3227bb6b6e9e58',1,'crap::intrusive_list::handle()'],['../classcrap_1_1linear__map.html#af77a9e092bd3ffb9557327bd3082e47f',1,'crap::linear_map::handle()'],['../classcrap_1_1sorted__map.html#a741a562ba6e22dc1a20e103e75619189',1,'crap::sorted_map::handle()'],['../classcrap_1_1container.html#acc6e787516e0ca6f07b767a782a582a4',1,'crap::container::handle()']]]
+  ['initfunction',['initFunction',['../classcrap_1_1_plugin_manager.html#a7b629b34ba99c8f47bfcb162aede7ad3',1,'crap::PluginManager']]],
+  ['inputbindingfn',['InputBindingFn',['../input_8h.html#a53c371a6cdc3ef9cb2852842a395f051',1,'input.h']]],
+  ['inputbindingmap',['InputBindingMap',['../struct_input.html#a89b980cb6a99a7390101f2b9df56c93e',1,'Input']]]
 ];

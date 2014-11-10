@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['packrect_2eh',['packrect.h',['../packrect_8h.html',1,'']]],
-  ['plugin_2eh',['plugin.h',['../plugin_8h.html',1,'']]],
-  ['pluginmanager_2ecpp',['pluginmanager.cpp',['../pluginmanager_8cpp.html',1,'']]],
-  ['pluginmanager_2eh',['pluginmanager.h',['../pluginmanager_8h.html',1,'']]],
-  ['poolallocator_2ecpp',['poolallocator.cpp',['../poolallocator_8cpp.html',1,'']]],
-  ['poolallocator_2eh',['poolallocator.h',['../poolallocator_8h.html',1,'']]]
+  ['resourcemanager_2ecpp',['resourcemanager.cpp',['../source_2resourcemanager_8cpp.html',1,'']]],
+  ['resourcemanager_2ecpp',['resourcemanager.cpp',['../unittests_2source_2resourcemanager_8cpp.html',1,'']]],
+  ['resourcemanager_2eh',['resourcemanager.h',['../resourcemanager_8h.html',1,'']]]
 ];

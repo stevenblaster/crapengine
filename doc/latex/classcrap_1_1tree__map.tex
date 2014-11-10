@@ -1,0 +1,534 @@
+\hypertarget{classcrap_1_1tree__map}{\section{crap\+:\+:tree\+\_\+map$<$ K, V $>$ Class Template Reference}
+\label{classcrap_1_1tree__map}\index{crap\+::tree\+\_\+map$<$ K, V $>$@{crap\+::tree\+\_\+map$<$ K, V $>$}}
+}
+
+
+{\ttfamily \#include $<$treemap.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1tree__map_a6a4a68fa3fb61c3d9d97e1575a638736}{tree\+\_\+map} (void $\ast$\hyperlink{classcrap_1_1tree__map_a478da4a9798b325ef27494a2c9a178f4}{memory}, uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a8f64f41ca15631a937cbca9c8e6fdcec}{size})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1tree__map_a0b2a381e1a3627fdb4394d795162f50b}{$\sim$tree\+\_\+map} (void)
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a46b641ad05589465628201f999153638}{find} (const K \&key) const 
+\begin{DoxyCompactList}\small\item\em Finds key and returns index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a413036914eb0b67e78f13ea57d8c586e}{insert} (const K \&key, const V \&value)
+\begin{DoxyCompactList}\small\item\em Inserting key if unique and returns index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1tree__map_add39f3a7ad51cc8bdf41b89dbd93e7e9}{erase\+\_\+at} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes key at given index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1tree__map_a4e7f6c5e909954c0ce8fb747eb67e560}{erase} (const K \&key)
+\begin{DoxyCompactList}\small\item\em Find key and remove element. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a9c58b3571994b80be731851994a76efe}{begin} (void) const 
+\begin{DoxyCompactList}\small\item\em Finds the smalles element and returns index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a85216dea6bbcc284a0c32dc4dafbceba}{last} (void) const 
+\begin{DoxyCompactList}\small\item\em Finds the biggest element and returns index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a833fd2d7bf97560a8c1caa956eed8cdf}{end} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns invalid element. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a051007118a7093cae6c8f01e454fbe85}{next} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em get following index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a5abad3c74353a3ffd5809a5ad90a5043}{previous} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em get previous index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} K $\ast$ \hyperlink{classcrap_1_1tree__map_a769dfe2def3e2f7afec379330a5dccd5}{get\+\_\+key} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em returns pointer of given index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const K $\ast$ \hyperlink{classcrap_1_1tree__map_adc132a76869010965935305174c18969}{get\+\_\+key} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns pointer of given index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V $\ast$ \hyperlink{classcrap_1_1tree__map_ae7e9ee14f25b0f6eff1c873ecee23a42}{get\+\_\+value} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em returns pointer of given index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const V $\ast$ \hyperlink{classcrap_1_1tree__map_a9d76484289e78739fe2f171af0a6b8af}{get\+\_\+value} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns pointer of given index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} V \& \hyperlink{classcrap_1_1tree__map_a7f4c3ff977dafbe9c0ba7c7f02cfd065}{operator\mbox{[}$\,$\mbox{]}} (const K \&index)
+\begin{DoxyCompactList}\small\item\em index operator \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const V \& \hyperlink{classcrap_1_1tree__map_a07a5165b7daf95b8e84d3c6d8f1a5c02}{operator\mbox{[}$\,$\mbox{]}} (const K \&index) const 
+\begin{DoxyCompactList}\small\item\em index operator \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a8f64f41ca15631a937cbca9c8e6fdcec}{size} (void) const 
+\begin{DoxyCompactList}\small\item\em Tree number of stored nodes. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a94af2fa29c262d2d686d2716ad89e2bf}{max\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em Tree number of max stored nodes. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1tree__map_a478da4a9798b325ef27494a2c9a178f4}{memory} (void) const 
+\begin{DoxyCompactList}\small\item\em returns pointer to memory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a3e4f7f3bc27339ca317f1753badc3ba7}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em returns necessary memory for given number of elements \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{classcrap_1_1tree__map_a56839c4c0ac1ec3167db293f2b31382f}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\begin{DoxyCompactList}\small\item\em an invalid key \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class crap\+::tree\+\_\+map$<$ K, V $>$}
+
+
+
+Definition at line 35 of file treemap.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1tree__map_a6a4a68fa3fb61c3d9d97e1575a638736}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!tree\+\_\+map@{tree\+\_\+map}}
+\index{tree\+\_\+map@{tree\+\_\+map}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{tree\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::{\bf tree\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{memory, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1tree__map_a6a4a68fa3fb61c3d9d97e1575a638736}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em memory} & pointer to memory \\
+\hline
+{\em size} & size of provided memory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 326 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a0b2a381e1a3627fdb4394d795162f50b}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!````~tree\+\_\+map@{$\sim$tree\+\_\+map}}
+\index{````~tree\+\_\+map@{$\sim$tree\+\_\+map}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{$\sim$tree\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::$\sim${\bf tree\+\_\+map} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_a0b2a381e1a3627fdb4394d795162f50b}
+
+
+destructor 
+
+
+
+Definition at line 335 of file treemap.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1tree__map_a9c58b3571994b80be731851994a76efe}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!begin@{begin}}
+\index{begin@{begin}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a9c58b3571994b80be731851994a76efe}
+
+
+Finds the smalles element and returns index. 
+
+\begin{DoxyReturn}{Returns}
+index to smalles node 
+\end{DoxyReturn}
+
+
+Definition at line 497 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a833fd2d7bf97560a8c1caa956eed8cdf}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!end@{end}}
+\index{end@{end}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a833fd2d7bf97560a8c1caa956eed8cdf}
+
+
+Returns invalid element. 
+
+\begin{DoxyReturn}{Returns}
+constant I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 523 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a4e7f6c5e909954c0ce8fb747eb67e560}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!erase@{erase}}
+\index{erase@{erase}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ void {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_a4e7f6c5e909954c0ce8fb747eb67e560}
+
+
+Find key and remove element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key value to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 483 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_add39f3a7ad51cc8bdf41b89dbd93e7e9}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!erase\+\_\+at@{erase\+\_\+at}}
+\index{erase\+\_\+at@{erase\+\_\+at}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ void {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::erase\+\_\+at (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_add39f3a7ad51cc8bdf41b89dbd93e7e9}
+
+
+Removes key at given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index value to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a46b641ad05589465628201f999153638}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!find@{find}}
+\index{find@{find}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a46b641ad05589465628201f999153638}
+
+
+Finds key and returns index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key value to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of key or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 341 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a769dfe2def3e2f7afec379330a5dccd5}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{get\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ K $\ast$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::get\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_a769dfe2def3e2f7afec379330a5dccd5}
+
+
+returns pointer of given index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to element or 0 
+\end{DoxyReturn}
+
+
+Definition at line 601 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_adc132a76869010965935305174c18969}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{get\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ const K $\ast$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::get\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_adc132a76869010965935305174c18969}
+
+
+returns pointer of given index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to element or 0 
+\end{DoxyReturn}
+
+
+Definition at line 612 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_ae7e9ee14f25b0f6eff1c873ecee23a42}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{get\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ V $\ast$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::get\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_ae7e9ee14f25b0f6eff1c873ecee23a42}
+
+
+returns pointer of given index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to element or 0 
+\end{DoxyReturn}
+
+
+Definition at line 623 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a9d76484289e78739fe2f171af0a6b8af}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{get\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ const V $\ast$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::get\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a9d76484289e78739fe2f171af0a6b8af}
+
+
+returns pointer of given index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to element or 0 
+\end{DoxyReturn}
+
+
+Definition at line 634 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a413036914eb0b67e78f13ea57d8c586e}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!insert@{insert}}
+\index{insert@{insert}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{key, }
+\item[{const V \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_a413036914eb0b67e78f13ea57d8c586e}
+
+
+Inserting key if unique and returns index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key value to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of key or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 364 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a85216dea6bbcc284a0c32dc4dafbceba}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!last@{last}}
+\index{last@{last}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::last (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a85216dea6bbcc284a0c32dc4dafbceba}
+
+
+Finds the biggest element and returns index. 
+
+\begin{DoxyReturn}{Returns}
+index to biggest node 
+\end{DoxyReturn}
+
+
+Definition at line 510 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a94af2fa29c262d2d686d2716ad89e2bf}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a94af2fa29c262d2d686d2716ad89e2bf}
+
+
+Tree number of max stored nodes. 
+
+\begin{DoxyReturn}{Returns}
+maximum size 
+\end{DoxyReturn}
+
+
+Definition at line 595 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a478da4a9798b325ef27494a2c9a178f4}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!memory@{memory}}
+\index{memory@{memory}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a478da4a9798b325ef27494a2c9a178f4}
+
+
+returns pointer to memory 
+
+\begin{DoxyReturn}{Returns}
+pointer to memory 
+\end{DoxyReturn}
+
+
+Definition at line 657 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a051007118a7093cae6c8f01e454fbe85}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!next@{next}}
+\index{next@{next}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::next (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a051007118a7093cae6c8f01e454fbe85}
+
+
+get following index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & current index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next index 
+\end{DoxyReturn}
+
+
+Definition at line 529 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a7f4c3ff977dafbe9c0ba7c7f02cfd065}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ V \& {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{index}
+\end{DoxyParamCaption}
+)}}\label{classcrap_1_1tree__map_a7f4c3ff977dafbe9c0ba7c7f02cfd065}
+
+
+index operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & to element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+refernce to element 
+\end{DoxyReturn}
+
+
+Definition at line 645 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a07a5165b7daf95b8e84d3c6d8f1a5c02}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ const V \& {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const K \&}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a07a5165b7daf95b8e84d3c6d8f1a5c02}
+
+
+index operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & to element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+refernce to element 
+\end{DoxyReturn}
+
+
+Definition at line 651 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a5abad3c74353a3ffd5809a5ad90a5043}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!previous@{previous}}
+\index{previous@{previous}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::previous (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a5abad3c74353a3ffd5809a5ad90a5043}
+
+
+get previous index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & current index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+previous index 
+\end{DoxyReturn}
+
+
+Definition at line 559 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a8f64f41ca15631a937cbca9c8e6fdcec}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!size@{size}}
+\index{size@{size}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1tree__map_a8f64f41ca15631a937cbca9c8e6fdcec}
+
+
+Tree number of stored nodes. 
+
+\begin{DoxyReturn}{Returns}
+current size 
+\end{DoxyReturn}
+
+
+Definition at line 589 of file treemap.\+h.
+
+\hypertarget{classcrap_1_1tree__map_a3e4f7f3bc27339ca317f1753badc3ba7}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K , typename V $>$ uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1tree__map_a3e4f7f3bc27339ca317f1753badc3ba7}
+
+
+returns necessary memory for given number of elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount of memory 
+\end{DoxyReturn}
+
+
+Definition at line 663 of file treemap.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1tree__map_a56839c4c0ac1ec3167db293f2b31382f}{\index{crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::tree\+\_\+map@{crap\+::tree\+\_\+map}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ const uint32\+\_\+t {\bf crap\+::tree\+\_\+map}$<$ K, V $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1tree__map_a56839c4c0ac1ec3167db293f2b31382f}
+
+
+an invalid key 
+
+
+
+Definition at line 119 of file treemap.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{treemap_8h}{treemap.\+h}\end{DoxyCompactItemize}

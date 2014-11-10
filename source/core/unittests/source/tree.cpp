@@ -26,7 +26,7 @@ TEST( AnnounceTestBinary )
 TEST(CreateBinaryTree)
 {
 	const uint32_t mem_size = crap::tree<float32_t>::size_of_elements(BT_ELEMENTS);
-	gbm_bt = new crap::BoundGeneralMemory( mem_size*2 );
+	gbm_bt = new crap::BoundGeneralMemory( mem_size*3 );
 	mem_bt = gbm_bt->allocate( mem_size, crap::align_of<float32_t>::value );
     a_tree = new crap::tree<float32_t>( mem_bt, mem_size );
 }
@@ -41,12 +41,41 @@ TEST(BinaryInsert)
 	}
 }
 
-TEST(BinaryPrint)
+TEST(InsertLinearMapOverflow)
 {
-	for( uint32_t i=a_tree->begin(); i != a_tree->end(); i = a_tree->next(i) )
+
+	uint32_t key = rand();
+	uint32_t result = a_tree->insert(((float32_t)key) * 0.1f );
+
+	CHECK( result == crap::tree<float32_t>::INVALID );
+    CHECK( a_tree->size() == a_tree->max_size() );
+}
+
+TEST(CrapLinearMapBeginEnd)
+{
+	for( uint32_t i = a_tree->begin(); i != a_tree->end(); i = a_tree->next(i) )
 	{
-		//std::cout << (int32_t)*(a_tree->get(i)) << std::endl;
+		CHECK( a_tree->get(i) != 0 );
+		std::cout << "Key: " << (int32_t)*a_tree->get(i) << std::endl;
 	}
+
+}
+
+TEST(CrapArrayMapAssignmentOperator )
+{
+	void* mem2 = gbm_bt->allocate( crap::tree<float32_t>::size_of_elements(BT_ELEMENTS), crap::align_of<float32_t>::value );
+	crap::tree<float32_t> other( mem2, crap::tree<float32_t>::size_of_elements(BT_ELEMENTS) );
+	other = *a_tree;
+
+	CHECK( other.size() == a_tree->size() );
+
+	for( uint32_t i=0; i< other.size(); ++i )
+	{
+		CHECK( *(other.get(i)) == *(a_tree->get(i)) );
+	}
+
+	other.~tree();
+	gbm_bt->deallocate( mem2 );
 }
 
 TEST(BinaryDelete)
@@ -59,14 +88,6 @@ TEST(BinaryDelete)
 	}
 }
 
-TEST(BinaryRemove)
-{
-    a_tree->remove( 5 );
-    a_tree->remove( 1 );
-    a_tree->remove( 4 );
-    a_tree->remove( 2 );
-    a_tree->remove( 3 );
-}
 
 TEST(DestroyBinaryTree)
 {

@@ -89,120 +89,461 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="list_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef CORE_INCLUDE_CONTAINER_LIST_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="list_8h.html#a776b60fcbd45e9eb16668cd7730921c8">   21</a></span>&#160;<span class="preprocessor">#define CORE_INCLUDE_CONTAINER_LIST_H</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crap__compiler_8h.html">config/crap_compiler.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utilities_8h.html">utilities.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecrap.html">crap</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcrap_1_1list.html">list</a></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#af6ca677970fb2d6f6f22b82d89e9b183">   47</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t <a class="code" href="classcrap_1_1list.html#af6ca677970fb2d6f6f22b82d89e9b183">INVALID</a> = <a class="code" href="crap__types_8h.html#ab5eb23180f7cc12b7d6c04a8ec067fdd">UINT32_MAX</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcrap_1_1list.html#ae58fdb9473343db78b852d4f87507e75">list</a>( <span class="keywordtype">void</span>* pointer, uint32_t <a class="code" href="classcrap_1_1list.html#aacf0c986772d9bbd3de619f032c01c9a">size</a> );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classcrap_1_1list.html">list</a>&amp; <a class="code" href="classcrap_1_1list.html#ab90f49ea8c97e94bc42c9fc014bb22ae">operator=</a>( <span class="keyword">const</span> <a class="code" href="classcrap_1_1list.html">list</a>&amp; other );</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef CORE_INCLUDE_CONTAINER_LIST_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define CORE_INCLUDE_CONTAINER_LIST_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crap__compiler_8h.html">config/crap_compiler.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utilities_8h.html">utilities.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecrap.html">crap</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcrap_1_1list.html">list</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#af6ca677970fb2d6f6f22b82d89e9b183">   46</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t <a class="code" href="classcrap_1_1list.html#af6ca677970fb2d6f6f22b82d89e9b183">INVALID</a> = <a class="code" href="crap__types_8h.html#ab5eb23180f7cc12b7d6c04a8ec067fdd">UINT32_MAX</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structcrap_1_1list_1_1list__index.html">   48</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">   50</a></span>&#160;        uint32_t <a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">   51</a></span>&#160;        uint32_t <a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="structcrap_1_1list_1_1list__index.html">list_index</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcrap_1_1list.html#a2bc0befe212c391e2bd0a2da33f2b8af">list</a>( <span class="keywordtype">void</span>* pointer, uint32_t <a class="code" href="classcrap_1_1list.html#a43bed0e21b4168ab1d03bd4f15e5ef39">size</a> );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classcrap_1_1list.html#aa6b4215fb357b3567d4e0f78d2381139">~list</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classcrap_1_1list.html">list</a>&amp; <a class="code" href="classcrap_1_1list.html#a58adc5e0fede322174f6d702fc7f4269">operator=</a>( <span class="keyword">const</span> <a class="code" href="classcrap_1_1list.html">list</a>&amp; other );</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#aacf0c986772d9bbd3de619f032c01c9a">size</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#aa35f01bd506a4aadc5e9bad18892a73c">max_size</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    T&amp; <a class="code" href="classcrap_1_1list.html#ab45db9b147db1dd2ea21ccc22e98e288">operator[]</a>( uint32_t index );</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> T&amp; <a class="code" href="classcrap_1_1list.html#ab45db9b147db1dd2ea21ccc22e98e288">operator[]</a>( uint32_t index ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    T* <span class="keyword">get</span>( uint32_t index );</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">const</span> T* <span class="keyword">get</span>( uint32_t index ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a6e93d2e1648136f378f1621e53533802">insert</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#a54d024e2e4402b54fe6c882fcf2f90ee">pop_back</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#a2ce2638cad5a4caa1b61b094aeac56fb">erase_at</a>( uint32_t index );</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#afff59cae243e844850c190b81995dcd8">erase</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a4f2d71e5e5b79e64f8d6b679b8476113">find</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classcrap_1_1list.html#aa9af3bd7d01cddf42bebe032f85aa015">~list</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a74d83709a5e89b96fb2505a51caf4a57">begin</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#ac5704b9d8a4f223d792cffbb3f964443">end</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#ae58d892b4fb67f2f1c41d1fa7a9db458">last</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#afe067c95e97e08a7872f459710aff110">next</a>( uint32_t pos ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a41fdc3057f207b89b1c45c26e221b17c">previous</a>( uint32_t pos ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a43bed0e21b4168ab1d03bd4f15e5ef39">size</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a41a8b5175164a73084ccd13407d7633b">max_size</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    T&amp; <a class="code" href="classcrap_1_1list.html#a17306f6051d7ad15f5d8ce729c4b9dc1">operator[]</a>( uint32_t index );</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">const</span> T&amp; <a class="code" href="classcrap_1_1list.html#a17306f6051d7ad15f5d8ce729c4b9dc1">operator[]</a>( uint32_t index ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    T* <span class="keyword">get</span>( uint32_t index );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> <a class="code" href="classcrap_1_1list.html#af621d27bbcbfdab681087e3c3ee1b4c5">memory</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">const</span> T* <span class="keyword">get</span>( uint32_t index ) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#abb256fdbcf9a1d1356ed6e2243f88f98">sort</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a55cbabce5d86a596dcf89bddb6dc9997">insert</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">static</span> uint32_t <a class="code" href="classcrap_1_1list.html#ad17fd8a0ca1d748b8c0ec9931ca1fb72">size_of_elements</a>( uint32_t number );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#a408fdc946d47cd275392403f2b4a8d20">pop_back</a>( <span class="keywordtype">void</span> );</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classcrap_1_1list.html#ae58fdb9473343db78b852d4f87507e75">list</a>( <span class="keyword">const</span> <a class="code" href="classcrap_1_1list.html">list</a>&amp; other );</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#af7dd74ffe0e7c02d9d53c08c5a7d3e0f">erase_at</a>( uint32_t index );</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;T&gt;</a> <a class="code" href="classcrap_1_1list.html#a91e68cdffc589e85501a76100cf02b74">_memory</a>;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">  191</a></span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">_size</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">  194</a></span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">_max_size</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#aa27b7effb6d4f3722bdeef510644dffb">erase</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#ae739feefb029d29431ac04e5434bcb10">find</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> );</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;} <span class="comment">/* namespace crap */</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CORE_INCLUDE_CONTAINER_LIST_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> <a class="code" href="classcrap_1_1list.html#afe0f3c4215857ef0996e826496403330">memory</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">static</span> uint32_t <a class="code" href="classcrap_1_1list.html#a495a51ee86d8c65e62c2439635f4bec4">size_of_elements</a>( uint32_t number );</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="classcrap_1_1list.html#a2bc0befe212c391e2bd0a2da33f2b8af">list</a>( <span class="keyword">const</span> <a class="code" href="classcrap_1_1list.html">list</a>&amp; other );</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#ac06d4d6001c9e07be8272925d68da033">position</a>( <span class="keyword">const</span> T&amp; element ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a2875e0226ccb2e4c5a74e33073bfdc6f">  227</a></span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;list_index&gt;</a> <a class="code" href="classcrap_1_1list.html#a2875e0226ccb2e4c5a74e33073bfdc6f">_indices</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#af2d97cc0bbfc61a2c087c58e682b8336">  230</a></span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;T&gt;</a> <a class="code" href="classcrap_1_1list.html#af2d97cc0bbfc61a2c087c58e682b8336">_data</a>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a0bf2b54bd0906b835d8a4d18d41717ce">  233</a></span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a0bf2b54bd0906b835d8a4d18d41717ce">_start</a>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// End of the list</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a787116724be64ac6cfd3dd47ea90f13c">  236</a></span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a787116724be64ac6cfd3dd47ea90f13c">_end</a>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">  239</a></span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">_size</a>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">  242</a></span>&#160;    uint32_t <a class="code" href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">_max_size</a>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;};</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">/* Implementation */</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a2bc0befe212c391e2bd0a2da33f2b8af">  249</a></span>&#160;<a class="code" href="classcrap_1_1list.html#a2bc0befe212c391e2bd0a2da33f2b8af">list&lt;T&gt;::list</a>( <span class="keywordtype">void</span>* pointer, uint32_t size ) :</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    _indices( pointer ), _data(0), _size(0), _max_size(0), _start(INVALID), _end(INVALID)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keyword">const</span> uint32_t combined = <span class="keyword">sizeof</span>(T) + <span class="keyword">sizeof</span>(<a class="code" href="structcrap_1_1list_1_1list__index.html">list_index</a>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">const</span> uint32_t elements = size / combined;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">_max_size</a> = elements;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="classcrap_1_1list.html#af2d97cc0bbfc61a2c087c58e682b8336">_data</a>.as_void = <a class="code" href="classcrap_1_1list.html#a2875e0226ccb2e4c5a74e33073bfdc6f">_indices</a>.as_type + elements;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a58adc5e0fede322174f6d702fc7f4269">  260</a></span>&#160;<a class="code" href="classcrap_1_1list.html">list&lt;T&gt;</a>&amp; <a class="code" href="classcrap_1_1list.html#a58adc5e0fede322174f6d702fc7f4269">list&lt;T&gt;::operator=</a>( <span class="keyword">const</span> <a class="code" href="classcrap_1_1list.html">list</a>&amp; other )</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span>( <span class="keyword">this</span> != &amp;other &amp;&amp; other.<a class="code" href="classcrap_1_1list.html#a41a8b5175164a73084ccd13407d7633b">max_size</a>() &lt;= _max_size )</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="namespacecrap.html#ad5ff6dc2c59dc874fa515af7da296592">destruct_array</a>( _indices.as_type, _size );</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <a class="code" href="namespacecrap.html#ad5ff6dc2c59dc874fa515af7da296592">destruct_array</a>( _data.as_type, _size );</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <a class="code" href="namespacecrap.html#a4c9d33b967452614ba78b76f0e6a8747">copy_construct_array</a>( other.<a class="code" href="classcrap_1_1list.html#a2875e0226ccb2e4c5a74e33073bfdc6f">_indices</a>.as_type, _indices.as_type, other.<a class="code" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">_size</a> );</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="namespacecrap.html#a4c9d33b967452614ba78b76f0e6a8747">copy_construct_array</a>( other.<a class="code" href="classcrap_1_1list.html#af2d97cc0bbfc61a2c087c58e682b8336">_data</a>.as_type, _data.as_type, other.<a class="code" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">_size</a> );</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        _start = other.<a class="code" href="classcrap_1_1list.html#a0bf2b54bd0906b835d8a4d18d41717ce">_start</a>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        _end = other.<a class="code" href="classcrap_1_1list.html#a787116724be64ac6cfd3dd47ea90f13c">_end</a>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        _size = other.<a class="code" href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">_size</a>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#aa9af3bd7d01cddf42bebe032f85aa015">  277</a></span>&#160;<a class="code" href="classcrap_1_1list.html#aa9af3bd7d01cddf42bebe032f85aa015">list&lt;T&gt;::~list</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="namespacecrap.html#ad5ff6dc2c59dc874fa515af7da296592">destruct_array</a>( _indices.as_type, _size );</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="namespacecrap.html#ad5ff6dc2c59dc874fa515af7da296592">destruct_array</a>( _data.as_type, _size );</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    _start = 0;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    _end = 0;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    _size = 0;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a74d83709a5e89b96fb2505a51caf4a57">  288</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#a74d83709a5e89b96fb2505a51caf4a57">list&lt;T&gt;::begin</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">return</span> _start;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#ac5704b9d8a4f223d792cffbb3f964443">  294</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#ac5704b9d8a4f223d792cffbb3f964443">list&lt;T&gt;::end</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> INVALID;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#ae58d892b4fb67f2f1c41d1fa7a9db458">  300</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#ae58d892b4fb67f2f1c41d1fa7a9db458">list&lt;T&gt;::last</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">return</span> _end;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#afe067c95e97e08a7872f459710aff110">  306</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#afe067c95e97e08a7872f459710aff110">list&lt;T&gt;::next</a>( uint32_t pos )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">if</span>( pos &lt; _size )</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">return</span> _indices.as_type[pos].next;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> INVALID;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a41fdc3057f207b89b1c45c26e221b17c">  316</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#a41fdc3057f207b89b1c45c26e221b17c">list&lt;T&gt;::previous</a>( uint32_t pos )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">if</span>( pos &lt; _size )</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">return</span> _indices.as_type[pos].previous;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">return</span> INVALID;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a43bed0e21b4168ab1d03bd4f15e5ef39">  326</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#a43bed0e21b4168ab1d03bd4f15e5ef39">list&lt;T&gt;::size</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">return</span> _size;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a41a8b5175164a73084ccd13407d7633b">  332</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#a41a8b5175164a73084ccd13407d7633b">list&lt;T&gt;::max_size</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">return</span> _max_size;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a17306f6051d7ad15f5d8ce729c4b9dc1">  338</a></span>&#160;T&amp; <a class="code" href="classcrap_1_1list.html#a17306f6051d7ad15f5d8ce729c4b9dc1">list&lt;T&gt;::operator[]</a>( uint32_t index )</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">return</span> *( <span class="keyword">get</span>(index) );</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a5885b0112e88dad71550bb8c226d17d6">  344</a></span>&#160;<span class="keyword">const</span> T&amp; <a class="code" href="classcrap_1_1list.html#a17306f6051d7ad15f5d8ce729c4b9dc1">list&lt;T&gt;::operator[]</a>( uint32_t index )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> *( <span class="keyword">get</span>(index) );</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a1be4e745571c7c0d404b1b2d0d644c2a">  350</a></span>&#160;T* <a class="code" href="classcrap_1_1list.html#a1be4e745571c7c0d404b1b2d0d644c2a">list&lt;T&gt;::get</a>( uint32_t index )</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span>( index &lt; _size )</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">return</span> _data.as_type + index;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#afa377dc1324654683fc632a2e7e2c0da">  359</a></span>&#160;<span class="keyword">const</span> T* <a class="code" href="classcrap_1_1list.html#a1be4e745571c7c0d404b1b2d0d644c2a">list&lt;T&gt;::get</a>( uint32_t index )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">if</span>( index &lt; _size )</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">return</span> _data.as_type + index;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a55cbabce5d86a596dcf89bddb6dc9997">  368</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#a55cbabce5d86a596dcf89bddb6dc9997">list&lt;T&gt;::insert</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> )</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">if</span>( _size == 0 )</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        _start = 0;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        _end = 0;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        _indices.as_type[0].next = INVALID;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        _indices.as_type[0].previous = INVALID;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( _size &lt; _max_size )</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keyword">const</span> uint32_t pos = position(<span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="comment">//last element</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">if</span>( pos == INVALID )</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            _indices.as_type[_end].next = _size;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            _indices.as_type[_size].next = INVALID;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            _indices.as_type[_size].previous = _end;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            _end = _size;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>( pos == _start )</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            _indices.as_type[_start].previous = _size;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            _indices.as_type[_size].next = _start;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            _indices.as_type[_size].previous = INVALID;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            _start = _size;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keyword">const</span> uint32_t pre = _indices.as_type[pos].previous;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            _indices.as_type[pos].previous = _size;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            _indices.as_type[pre].next = _size;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            _indices.as_type[_size].next = pos;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            _indices.as_type[_size].previous = pre;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">return</span> INVALID;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <a class="code" href="namespacecrap.html#a295f267803b5948c3938f4977fc38321">copy_construct_object</a>( &amp;<span class="keywordtype">object</span>, _data.as_type + _size );</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordflow">return</span> _size++;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a408fdc946d47cd275392403f2b4a8d20">  413</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#a408fdc946d47cd275392403f2b4a8d20">list&lt;T&gt;::pop_back</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;{</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    erase_at( _size - 1 );</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00419"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#af7dd74ffe0e7c02d9d53c08c5a7d3e0f">  419</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#af7dd74ffe0e7c02d9d53c08c5a7d3e0f">list&lt;T&gt;::erase_at</a>( uint32_t index )</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;{</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="comment">// first correct indices</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">if</span>( index &lt; _size )</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keyword">const</span> <a class="code" href="structcrap_1_1list_1_1list__index.html">list_index</a> list_pos = _indices.as_type[index];</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">if</span>( list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a> != INVALID )</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            _indices.as_type[ list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a> ].<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a> = list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            _end = list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a>;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">if</span>( list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a> != INVALID )</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        {</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            _indices.as_type[ list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a> ].next = list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a>;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            _start = list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a>;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <a class="code" href="namespacecrap.html#a792b7b3060747a0895028c016326346d">destruct_object</a>( _data.as_type + index );</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="comment">//we have to copy...?</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <span class="keyword">const</span> uint32_t last_index = (_size-1);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">if</span>( index != last_index )</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        {</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            <span class="keyword">const</span> <a class="code" href="structcrap_1_1list_1_1list__index.html">list_index</a> list_pos = _indices.as_type[last_index];</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keywordflow">if</span>( list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a> != INVALID )</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            {</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                _indices.as_type[ list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a> ].<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a> = index;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            }</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                _end = index;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            <span class="keywordflow">if</span>( list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a> != INVALID )</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                _indices.as_type[ list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a> ].next = index;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            }</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                _start = index;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            _indices.as_type[ index ].next = list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">next</a>;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            _indices.as_type[ index ].previous = list_pos.<a class="code" href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">previous</a>;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <a class="code" href="namespacecrap.html#a295f267803b5948c3938f4977fc38321">copy_construct_object</a>( _data.as_type + last_index, _data.as_type + index );</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <a class="code" href="namespacecrap.html#a792b7b3060747a0895028c016326346d">destruct_object</a>( _data.as_type + last_index );</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        }</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        _size--;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    }</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;}</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00474"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#aa27b7effb6d4f3722bdeef510644dffb">  474</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcrap_1_1list.html#aa27b7effb6d4f3722bdeef510644dffb">list&lt;T&gt;::erase</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> )</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;{</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    uint32_t index = find( <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordflow">if</span>( index != INVALID )</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        erase_at( index );</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00482"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#ae739feefb029d29431ac04e5434bcb10">  482</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#ae739feefb029d29431ac04e5434bcb10">list&lt;T&gt;::find</a>( <span class="keyword">const</span> T&amp; <span class="keywordtype">object</span> )</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;{</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    uint32_t index = _start;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordflow">while</span>( index != INVALID )</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    {</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="keywordflow">if</span>( _data.as_type[index] == <span class="keywordtype">object</span> )</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        }</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <span class="keywordflow">if</span>( _data.as_type[index] &gt; <span class="keywordtype">object</span> )</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        {</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="keywordflow">return</span> INVALID;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        }</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        index = _indices.as_type[index].next;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    }</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00505"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#afe0f3c4215857ef0996e826496403330">  505</a></span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> <a class="code" href="classcrap_1_1list.html#afe0f3c4215857ef0996e826496403330">list&lt;T&gt;::memory</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keywordflow">return</span> _indices.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>;</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;}</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00511"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a495a51ee86d8c65e62c2439635f4bec4">  511</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#a495a51ee86d8c65e62c2439635f4bec4">list&lt;T&gt;::size_of_elements</a>( uint32_t number )</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;{</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keywordflow">return</span> ( <span class="keyword">sizeof</span>(T) + <span class="keyword">sizeof</span>(<a class="code" href="structcrap_1_1list_1_1list__index.html">list_index</a>) ) * number;</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;}</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00517"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#a2aca3019f7e393128c40987e33082ecd">  517</a></span>&#160;<a class="code" href="classcrap_1_1list.html#a2bc0befe212c391e2bd0a2da33f2b8af">list&lt;T&gt;::list</a>( <span class="keyword">const</span> <a class="code" href="classcrap_1_1list.html">list</a>&amp; other ) :</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    _indices(0), _data(0), _size(0), _max_size(0), _start(INVALID), _end(INVALID)</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;{</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <a class="code" href="asserts_8h.html#a0b92b3d5b8f1a265a6e82cdfb3afd482">CRAP_ASSERT</a>( <a class="code" href="asserts_8h.html#a832d2cedd8d70ec09527a7214b93d8e5">ASSERT_BREAK</a>, <span class="keyword">false</span>, <span class="stringliteral">&quot;Copy constructor is invalid&quot;</span> );</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;}</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00524"></a><span class="lineno"><a class="line" href="classcrap_1_1list.html#ac06d4d6001c9e07be8272925d68da033">  524</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1list.html#ac06d4d6001c9e07be8272925d68da033">list&lt;T&gt;::position</a>( <span class="keyword">const</span> T&amp; element )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    uint32_t index = _start;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordflow">while</span>( index != INVALID )</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    {</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <span class="keywordflow">if</span>( element &lt; _data.as_type[index] )</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        }</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        index =_indices.as_type[index].next;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    }</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;}</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;} <span class="comment">/* namespace crap */</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CORE_INCLUDE_CONTAINER_LIST_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classcrap_1_1list_html_a0bf2b54bd0906b835d8a4d18d41717ce"><div class="ttname"><a href="classcrap_1_1list.html#a0bf2b54bd0906b835d8a4d18d41717ce">crap::list::_start</a></div><div class="ttdeci">uint32_t _start</div><div class="ttdoc">Start of the list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00233">list.h:233</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_aa27b7effb6d4f3722bdeef510644dffb"><div class="ttname"><a href="classcrap_1_1list.html#aa27b7effb6d4f3722bdeef510644dffb">crap::list::erase</a></div><div class="ttdeci">CRAP_INLINE void erase(const T &amp;object)</div><div class="ttdoc">Removes an element equal to given reference. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00474">list.h:474</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_afe067c95e97e08a7872f459710aff110"><div class="ttname"><a href="classcrap_1_1list.html#afe067c95e97e08a7872f459710aff110">crap::list::next</a></div><div class="ttdeci">CRAP_INLINE uint32_t next(uint32_t pos) const </div><div class="ttdoc">returns next index of provided index </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00306">list.h:306</a></div></div>
+<div class="ttc" id="structcrap_1_1list_1_1list__index_html"><div class="ttname"><a href="structcrap_1_1list_1_1list__index.html">crap::list::list_index</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00048">list.h:48</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a43bed0e21b4168ab1d03bd4f15e5ef39"><div class="ttname"><a href="classcrap_1_1list.html#a43bed0e21b4168ab1d03bd4f15e5ef39">crap::list::size</a></div><div class="ttdeci">CRAP_INLINE uint32_t size(void) const </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00326">list.h:326</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a1be4e745571c7c0d404b1b2d0d644c2a"><div class="ttname"><a href="classcrap_1_1list.html#a1be4e745571c7c0d404b1b2d0d644c2a">crap::list::get</a></div><div class="ttdeci">CRAP_INLINE T * get(uint32_t index)</div><div class="ttdoc">Returns the pointer to a certain member. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00350">list.h:350</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_ae739feefb029d29431ac04e5434bcb10"><div class="ttname"><a href="classcrap_1_1list.html#ae739feefb029d29431ac04e5434bcb10">crap::list::find</a></div><div class="ttdeci">CRAP_INLINE uint32_t find(const T &amp;object)</div><div class="ttdoc">Searches for an element and returns the index. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00482">list.h:482</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_ac06d4d6001c9e07be8272925d68da033"><div class="ttname"><a href="classcrap_1_1list.html#ac06d4d6001c9e07be8272925d68da033">crap::list::position</a></div><div class="ttdeci">uint32_t position(const T &amp;element) const </div><div class="ttdoc">returns theoretical index position of a new element. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00524">list.h:524</a></div></div>
 <div class="ttc" id="utilities_8h_html"><div class="ttname"><a href="utilities_8h.html">utilities.h</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_aa35f01bd506a4aadc5e9bad18892a73c"><div class="ttname"><a href="classcrap_1_1list.html#aa35f01bd506a4aadc5e9bad18892a73c">crap::list::max_size</a></div><div class="ttdeci">CRAP_INLINE uint32_t max_size(void) const </div><div class="ttdoc">Returning the maximum size of the list. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_a8c38722c28fc087444acc484f7b0aa38"><div class="ttname"><a href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">crap::list::_size</a></div><div class="ttdeci">uint32_t _size</div><div class="ttdoc">Current number of elements. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00191">list.h:191</a></div></div>
+<div class="ttc" id="structcrap_1_1list_1_1list__index_html_a85ebc5cb08981041d102ee1a3d9f3cec"><div class="ttname"><a href="structcrap_1_1list_1_1list__index.html#a85ebc5cb08981041d102ee1a3d9f3cec">crap::list::list_index::next</a></div><div class="ttdeci">uint32_t next</div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00051">list.h:51</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a2875e0226ccb2e4c5a74e33073bfdc6f"><div class="ttname"><a href="classcrap_1_1list.html#a2875e0226ccb2e4c5a74e33073bfdc6f">crap::list::_indices</a></div><div class="ttdeci">pointer_t&lt; list_index &gt; _indices</div><div class="ttdoc">Pointer to indices. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00227">list.h:227</a></div></div>
+<div class="ttc" id="asserts_8h_html_a0b92b3d5b8f1a265a6e82cdfb3afd482"><div class="ttname"><a href="asserts_8h.html#a0b92b3d5b8f1a265a6e82cdfb3afd482">CRAP_ASSERT</a></div><div class="ttdeci">#define CRAP_ASSERT(behavoir, test, message,...)</div><div class="ttdef"><b>Definition:</b> <a href="asserts_8h_source.html#l00032">asserts.h:32</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a8c38722c28fc087444acc484f7b0aa38"><div class="ttname"><a href="classcrap_1_1list.html#a8c38722c28fc087444acc484f7b0aa38">crap::list::_size</a></div><div class="ttdeci">uint32_t _size</div><div class="ttdoc">Current number of elements. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00239">list.h:239</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a41a8b5175164a73084ccd13407d7633b"><div class="ttname"><a href="classcrap_1_1list.html#a41a8b5175164a73084ccd13407d7633b">crap::list::max_size</a></div><div class="ttdeci">CRAP_INLINE uint32_t max_size(void) const </div><div class="ttdoc">Returning the maximum size of the list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00332">list.h:332</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a74d83709a5e89b96fb2505a51caf4a57"><div class="ttname"><a href="classcrap_1_1list.html#a74d83709a5e89b96fb2505a51caf4a57">crap::list::begin</a></div><div class="ttdeci">CRAP_INLINE uint32_t begin(void) const </div><div class="ttdoc">Returns current start index. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00288">list.h:288</a></div></div>
+<div class="ttc" id="asserts_8h_html_a832d2cedd8d70ec09527a7214b93d8e5"><div class="ttname"><a href="asserts_8h.html#a832d2cedd8d70ec09527a7214b93d8e5">ASSERT_BREAK</a></div><div class="ttdeci">#define ASSERT_BREAK</div><div class="ttdef"><b>Definition:</b> <a href="asserts_8h_source.html#l00029">asserts.h:29</a></div></div>
 <div class="ttc" id="config__x86_8h_html_a5a40526b8d842e7ff731509998bb0f1c"><div class="ttname"><a href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div><div class="ttdeci">#define CRAP_INLINE</div><div class="ttdef"><b>Definition:</b> <a href="config__x86_8h_source.html#l00086">config_x86.h:86</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_ab45db9b147db1dd2ea21ccc22e98e288"><div class="ttname"><a href="classcrap_1_1list.html#ab45db9b147db1dd2ea21ccc22e98e288">crap::list::operator[]</a></div><div class="ttdeci">CRAP_INLINE T &amp; operator[](uint32_t index)</div><div class="ttdoc">Index operator returning a member reference. </div></div>
+<div class="ttc" id="classcrap_1_1list_html_a55cbabce5d86a596dcf89bddb6dc9997"><div class="ttname"><a href="classcrap_1_1list.html#a55cbabce5d86a596dcf89bddb6dc9997">crap::list::insert</a></div><div class="ttdeci">CRAP_INLINE uint32_t insert(const T &amp;object)</div><div class="ttdoc">Inserts a new element into sorted position. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00368">list.h:368</a></div></div>
 <div class="ttc" id="crap__compiler_8h_html"><div class="ttname"><a href="crap__compiler_8h.html">crap_compiler.h</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_a91e68cdffc589e85501a76100cf02b74"><div class="ttname"><a href="classcrap_1_1list.html#a91e68cdffc589e85501a76100cf02b74">crap::list::_memory</a></div><div class="ttdeci">pointer_t&lt; T &gt; _memory</div><div class="ttdoc">Pointer type to memory. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00188">list.h:188</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html"><div class="ttname"><a href="classcrap_1_1list.html">crap::list</a></div><div class="ttdoc">Simple list class. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00041">list.h:41</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_a4f2d71e5e5b79e64f8d6b679b8476113"><div class="ttname"><a href="classcrap_1_1list.html#a4f2d71e5e5b79e64f8d6b679b8476113">crap::list::find</a></div><div class="ttdeci">CRAP_INLINE uint32_t find(const T &amp;object)</div><div class="ttdoc">Searches for an element and returns the index. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_abb256fdbcf9a1d1356ed6e2243f88f98"><div class="ttname"><a href="classcrap_1_1list.html#abb256fdbcf9a1d1356ed6e2243f88f98">crap::list::sort</a></div><div class="ttdeci">CRAP_INLINE void sort(void)</div><div class="ttdoc">Sorts the elements of the array using quicksort. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_ae71931f777bfb9dd77a8a4acfd0eb84c"><div class="ttname"><a href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">crap::list::_max_size</a></div><div class="ttdeci">uint32_t _max_size</div><div class="ttdoc">Maximum number of elements. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00194">list.h:194</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_aacf0c986772d9bbd3de619f032c01c9a"><div class="ttname"><a href="classcrap_1_1list.html#aacf0c986772d9bbd3de619f032c01c9a">crap::list::size</a></div><div class="ttdeci">CRAP_INLINE uint32_t size(void) const </div></div>
-<div class="ttc" id="classcrap_1_1list_html_aa6b4215fb357b3567d4e0f78d2381139"><div class="ttname"><a href="classcrap_1_1list.html#aa6b4215fb357b3567d4e0f78d2381139">crap::list::~list</a></div><div class="ttdeci">CRAP_INLINE ~list(void)</div><div class="ttdoc">Destructor of array class. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_ad17fd8a0ca1d748b8c0ec9931ca1fb72"><div class="ttname"><a href="classcrap_1_1list.html#ad17fd8a0ca1d748b8c0ec9931ca1fb72">crap::list::size_of_elements</a></div><div class="ttdeci">static CRAP_INLINE uint32_t size_of_elements(uint32_t number)</div><div class="ttdoc">Calculates necessary memory for a certain number of elements. </div></div>
+<div class="ttc" id="classcrap_1_1list_html"><div class="ttname"><a href="classcrap_1_1list.html">crap::list</a></div><div class="ttdoc">Simple list class. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00040">list.h:40</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a495a51ee86d8c65e62c2439635f4bec4"><div class="ttname"><a href="classcrap_1_1list.html#a495a51ee86d8c65e62c2439635f4bec4">crap::list::size_of_elements</a></div><div class="ttdeci">static CRAP_INLINE uint32_t size_of_elements(uint32_t number)</div><div class="ttdoc">Calculates necessary memory for a certain number of elements. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00511">list.h:511</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a408fdc946d47cd275392403f2b4a8d20"><div class="ttname"><a href="classcrap_1_1list.html#a408fdc946d47cd275392403f2b4a8d20">crap::list::pop_back</a></div><div class="ttdeci">CRAP_INLINE void pop_back(void)</div><div class="ttdoc">Removes last element of the list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00413">list.h:413</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_af2d97cc0bbfc61a2c087c58e682b8336"><div class="ttname"><a href="classcrap_1_1list.html#af2d97cc0bbfc61a2c087c58e682b8336">crap::list::_data</a></div><div class="ttdeci">pointer_t&lt; T &gt; _data</div><div class="ttdoc">Pointer type to data. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00230">list.h:230</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_af7dd74ffe0e7c02d9d53c08c5a7d3e0f"><div class="ttname"><a href="classcrap_1_1list.html#af7dd74ffe0e7c02d9d53c08c5a7d3e0f">crap::list::erase_at</a></div><div class="ttdeci">CRAP_INLINE void erase_at(uint32_t index)</div><div class="ttdoc">Removes the element at a certain position. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00419">list.h:419</a></div></div>
+<div class="ttc" id="structcrap_1_1pointer__t_html_a60272c75c04aaafaf6a4339f10d81b32"><div class="ttname"><a href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">crap::pointer_t::as_void</a></div><div class="ttdeci">void * as_void</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00022">utilities.h:22</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_ae71931f777bfb9dd77a8a4acfd0eb84c"><div class="ttname"><a href="classcrap_1_1list.html#ae71931f777bfb9dd77a8a4acfd0eb84c">crap::list::_max_size</a></div><div class="ttdeci">uint32_t _max_size</div><div class="ttdoc">Maximum number of elements. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00242">list.h:242</a></div></div>
+<div class="ttc" id="namespacecrap_html_ad5ff6dc2c59dc874fa515af7da296592"><div class="ttname"><a href="namespacecrap.html#ad5ff6dc2c59dc874fa515af7da296592">crap::destruct_array</a></div><div class="ttdeci">CRAP_INLINE void destruct_array(const T *source, uint32_t arraysize)</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00195">utilities.h:195</a></div></div>
+<div class="ttc" id="namespacecrap_html_a4c9d33b967452614ba78b76f0e6a8747"><div class="ttname"><a href="namespacecrap.html#a4c9d33b967452614ba78b76f0e6a8747">crap::copy_construct_array</a></div><div class="ttdeci">CRAP_INLINE void copy_construct_array(const T *source, T *destination, uint32_t arraysize)</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00187">utilities.h:187</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_ae58d892b4fb67f2f1c41d1fa7a9db458"><div class="ttname"><a href="classcrap_1_1list.html#ae58d892b4fb67f2f1c41d1fa7a9db458">crap::list::last</a></div><div class="ttdeci">CRAP_INLINE uint32_t last(void) const </div><div class="ttdoc">returns last valid index </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00300">list.h:300</a></div></div>
+<div class="ttc" id="namespacecrap_html_a792b7b3060747a0895028c016326346d"><div class="ttname"><a href="namespacecrap.html#a792b7b3060747a0895028c016326346d">crap::destruct_object</a></div><div class="ttdeci">CRAP_INLINE void destruct_object(const T *source)</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00157">utilities.h:157</a></div></div>
 <div class="ttc" id="crap__types_8h_html_ab5eb23180f7cc12b7d6c04a8ec067fdd"><div class="ttname"><a href="crap__types_8h.html#ab5eb23180f7cc12b7d6c04a8ec067fdd">UINT32_MAX</a></div><div class="ttdeci">#define UINT32_MAX</div><div class="ttdef"><b>Definition:</b> <a href="crap__types_8h_source.html#l00070">crap_types.h:70</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_afff59cae243e844850c190b81995dcd8"><div class="ttname"><a href="classcrap_1_1list.html#afff59cae243e844850c190b81995dcd8">crap::list::erase</a></div><div class="ttdeci">CRAP_INLINE void erase(const T &amp;object)</div><div class="ttdoc">Removes an element equal to given reference. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_ae58fdb9473343db78b852d4f87507e75"><div class="ttname"><a href="classcrap_1_1list.html#ae58fdb9473343db78b852d4f87507e75">crap::list::list</a></div><div class="ttdeci">CRAP_INLINE list(void *pointer, uint32_t size)</div><div class="ttdoc">Constructor of list class. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_a6e93d2e1648136f378f1621e53533802"><div class="ttname"><a href="classcrap_1_1list.html#a6e93d2e1648136f378f1621e53533802">crap::list::insert</a></div><div class="ttdeci">CRAP_INLINE uint32_t insert(const T &amp;object)</div><div class="ttdoc">Inserts a new element into sorted position. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_af621d27bbcbfdab681087e3c3ee1b4c5"><div class="ttname"><a href="classcrap_1_1list.html#af621d27bbcbfdab681087e3c3ee1b4c5">crap::list::memory</a></div><div class="ttdeci">CRAP_INLINE pointer_t&lt; void &gt; memory(void) const </div><div class="ttdoc">Returns the pointer to the memory. </div></div>
+<div class="ttc" id="classcrap_1_1list_html_a2bc0befe212c391e2bd0a2da33f2b8af"><div class="ttname"><a href="classcrap_1_1list.html#a2bc0befe212c391e2bd0a2da33f2b8af">crap::list::list</a></div><div class="ttdeci">CRAP_INLINE list(void *pointer, uint32_t size)</div><div class="ttdoc">Constructor of list class. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00249">list.h:249</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_afe0f3c4215857ef0996e826496403330"><div class="ttname"><a href="classcrap_1_1list.html#afe0f3c4215857ef0996e826496403330">crap::list::memory</a></div><div class="ttdeci">CRAP_INLINE pointer_t&lt; void &gt; memory(void) const </div><div class="ttdoc">Returns the pointer to the memory. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00505">list.h:505</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_aa9af3bd7d01cddf42bebe032f85aa015"><div class="ttname"><a href="classcrap_1_1list.html#aa9af3bd7d01cddf42bebe032f85aa015">crap::list::~list</a></div><div class="ttdeci">CRAP_INLINE ~list(void)</div><div class="ttdoc">Destructor of list class. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00277">list.h:277</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html"><div class="ttname"><a href="structcrap_1_1pointer__t.html">crap::pointer_t&lt; void &gt;</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_a2ce2638cad5a4caa1b61b094aeac56fb"><div class="ttname"><a href="classcrap_1_1list.html#a2ce2638cad5a4caa1b61b094aeac56fb">crap::list::erase_at</a></div><div class="ttdeci">CRAP_INLINE void erase_at(uint32_t index)</div><div class="ttdoc">Removes the element at a certain position. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_ab90f49ea8c97e94bc42c9fc014bb22ae"><div class="ttname"><a href="classcrap_1_1list.html#ab90f49ea8c97e94bc42c9fc014bb22ae">crap::list::operator=</a></div><div class="ttdeci">CRAP_INLINE list &amp; operator=(const list &amp;other)</div><div class="ttdoc">Assignment operator of list class. </div></div>
+<div class="ttc" id="classcrap_1_1list_html_ac5704b9d8a4f223d792cffbb3f964443"><div class="ttname"><a href="classcrap_1_1list.html#ac5704b9d8a4f223d792cffbb3f964443">crap::list::end</a></div><div class="ttdeci">CRAP_INLINE uint32_t end(void) const </div><div class="ttdoc">Returns current end index. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00294">list.h:294</a></div></div>
+<div class="ttc" id="namespacecrap_html_a295f267803b5948c3938f4977fc38321"><div class="ttname"><a href="namespacecrap.html#a295f267803b5948c3938f4977fc38321">crap::copy_construct_object</a></div><div class="ttdeci">CRAP_INLINE void copy_construct_object(const T *source, void *destination)</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00151">utilities.h:151</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a17306f6051d7ad15f5d8ce729c4b9dc1"><div class="ttname"><a href="classcrap_1_1list.html#a17306f6051d7ad15f5d8ce729c4b9dc1">crap::list::operator[]</a></div><div class="ttdeci">CRAP_INLINE T &amp; operator[](uint32_t index)</div><div class="ttdoc">Index operator returning a member reference. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00338">list.h:338</a></div></div>
 <div class="ttc" id="namespacecrap_html"><div class="ttname"><a href="namespacecrap.html">crap</a></div><div class="ttdoc">Libraries namespace. </div><div class="ttdef"><b>Definition:</b> <a href="audiobuffer_8h_source.html#l00011">audiobuffer.h:11</a></div></div>
-<div class="ttc" id="classcrap_1_1list_html_a54d024e2e4402b54fe6c882fcf2f90ee"><div class="ttname"><a href="classcrap_1_1list.html#a54d024e2e4402b54fe6c882fcf2f90ee">crap::list::pop_back</a></div><div class="ttdeci">CRAP_INLINE void pop_back(void)</div><div class="ttdoc">Removes last element of the list. </div></div>
-<div class="ttc" id="classcrap_1_1list_html_af6ca677970fb2d6f6f22b82d89e9b183"><div class="ttname"><a href="classcrap_1_1list.html#af6ca677970fb2d6f6f22b82d89e9b183">crap::list::INVALID</a></div><div class="ttdeci">static const uint32_t INVALID</div><div class="ttdoc">Defines an invalid index. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00047">list.h:47</a></div></div>
+<div class="ttc" id="structcrap_1_1list_1_1list__index_html_a16be27e9969e8256df96367d8de4c325"><div class="ttname"><a href="structcrap_1_1list_1_1list__index.html#a16be27e9969e8256df96367d8de4c325">crap::list::list_index::previous</a></div><div class="ttdeci">uint32_t previous</div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00050">list.h:50</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a58adc5e0fede322174f6d702fc7f4269"><div class="ttname"><a href="classcrap_1_1list.html#a58adc5e0fede322174f6d702fc7f4269">crap::list::operator=</a></div><div class="ttdeci">CRAP_INLINE list &amp; operator=(const list &amp;other)</div><div class="ttdoc">Assignment operator of list class. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00260">list.h:260</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a41fdc3057f207b89b1c45c26e221b17c"><div class="ttname"><a href="classcrap_1_1list.html#a41fdc3057f207b89b1c45c26e221b17c">crap::list::previous</a></div><div class="ttdeci">CRAP_INLINE uint32_t previous(uint32_t pos) const </div><div class="ttdoc">returns previous index of provided vale </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00316">list.h:316</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_af6ca677970fb2d6f6f22b82d89e9b183"><div class="ttname"><a href="classcrap_1_1list.html#af6ca677970fb2d6f6f22b82d89e9b183">crap::list::INVALID</a></div><div class="ttdeci">static const uint32_t INVALID</div><div class="ttdoc">Defines an invalid index. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00046">list.h:46</a></div></div>
+<div class="ttc" id="classcrap_1_1list_html_a787116724be64ac6cfd3dd47ea90f13c"><div class="ttname"><a href="classcrap_1_1list.html#a787116724be64ac6cfd3dd47ea90f13c">crap::list::_end</a></div><div class="ttdeci">uint32_t _end</div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00236">list.h:236</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 23 2014 23:49:29 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 7 2014 22:49:56 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

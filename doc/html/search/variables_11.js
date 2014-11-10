@@ -1,19 +1,12 @@
 var searchData=
 [
-  ['s0',['s0',['../struct_f_o_n_squad.html#a3adfc2773c508cc686564474faa32491',1,'FONSquad']]],
-  ['s1',['s1',['../struct_f_o_n_squad.html#a25bd9940964ba17228ad1eea3f305c46',1,'FONSquad']]],
-  ['scale',['scale',['../struct_font_info.html#ad14ef24faacbdb52fc598ebe1deedfa1',1,'FontInfo::scale()'],['../struct_f_o_n_stext_iter.html#a5738db7ad58f0e63b18ea45749a19b1a',1,'FONStextIter::scale()']]],
-  ['scissor',['scissor',['../struct_n_v_gstate.html#a75bd77e78aa4304e0e019933fd3307ab',1,'NVGstate']]],
-  ['se_5ftype',['se_type',['../structvideo__test.html#a9e1cea69be7fc7a2314f9e73a11f7c6d',1,'video_test']]],
-  ['size',['size',['../structcrap_1_1_audio_header.html#abb74cac78b291b8f8548566db8aa1112',1,'crap::AudioHeader::size()'],['../structcrap_1_1_audio_file.html#ad5c536e16fbd38393346b0bc2c7ba099',1,'crap::AudioFile::size()'],['../structcrap_1_1_resource_manager_1_1_resource_info.html#a6f6d3295854ec9c59bb39ad39764c7d8',1,'crap::ResourceManager::ResourceInfo::size()'],['../structcrap_1_1_resource_manager_1_1_package_content_info.html#a44623b6eae3303892db7cc79fbd1b29d',1,'crap::ResourceManager::PackageContentInfo::size()']]],
-  ['size_5fback',['SIZE_BACK',['../structcrap_1_1no__bounds.html#af9c6959f51073f04ba5a9c7afd1ae5a6',1,'crap::no_bounds::SIZE_BACK()'],['../structcrap_1_1dead__bounds.html#a6267a01dd25345bf0e461e195f106e83',1,'crap::dead_bounds::SIZE_BACK()'],['../structcrap_1_1deadbeaf__bounds.html#a83d1119c597f6e36b2daf83922a1ec6e',1,'crap::deadbeaf_bounds::SIZE_BACK()']]],
-  ['size_5ffront',['SIZE_FRONT',['../structcrap_1_1no__bounds.html#a54eb57eb2eb31dfe9a285d5dcc3663e0',1,'crap::no_bounds::SIZE_FRONT()'],['../structcrap_1_1dead__bounds.html#aacd105207fa9af97704d416ff4580807',1,'crap::dead_bounds::SIZE_FRONT()'],['../structcrap_1_1deadbeaf__bounds.html#af8de969a7504a7bc2bc13f8fc478b764',1,'crap::deadbeaf_bounds::SIZE_FRONT()']]],
-  ['spacing',['spacing',['../struct_f_o_n_stext_iter.html#a9918e73c1fa648fe7381825f0a4e1580',1,'FONStextIter']]],
-  ['stack_5fsize',['stack_size',['../structcrap_1_1memory__manager_1_1configuration.html#ab2398e2eef2484e19c711e4a5afade26',1,'crap::memory_manager::configuration']]],
-  ['start',['start',['../struct_n_v_gtext_row.html#ae0d868be9f65a22eba6fc01f969aea0b',1,'NVGtextRow']]],
-  ['states',['states',['../struct_n_v_gcontext.html#a8912216e631b9f2106c386003d22daa3',1,'NVGcontext']]],
-  ['str',['str',['../struct_f_o_n_stext_iter.html#afa9f4ba21030480d65c7fd4f1eab477c',1,'FONStextIter::str()'],['../struct_n_v_gglyph_position.html#a62e56b71765965db1a72812af0e733f1',1,'NVGglyphPosition::str()']]],
-  ['stroke',['stroke',['../struct_n_v_gstate.html#a0423f044a0ef4445270156232c88b340',1,'NVGstate::stroke()'],['../struct_n_v_gpath.html#a3376451a0d636e69cfb1e8988feaf780',1,'NVGpath::stroke()']]],
-  ['stroketricount',['strokeTriCount',['../struct_n_v_gcontext.html#a543111c48849661847b5bf9707e7aac6',1,'NVGcontext']]],
-  ['strokewidth',['strokeWidth',['../struct_n_v_gstate.html#a0266a3e8c86c689a7eba07cf1b8adac2',1,'NVGstate']]]
+  ['t0',['t0',['../struct_f_o_n_squad.html#ab9a0182a9c2d25c165f11fffeb56b130',1,'FONSquad']]],
+  ['t1',['t1',['../struct_f_o_n_squad.html#ab3c79f5439b37cf9c1eafa6d4f623ad9',1,'FONSquad']]],
+  ['tesstol',['tessTol',['../struct_n_v_gcontext.html#a12879e67beadb4dfd5dbd43aa8b87de9',1,'NVGcontext']]],
+  ['textalign',['textAlign',['../struct_n_v_gstate.html#a892bf3be3137e966108164c93730ce2b',1,'NVGstate']]],
+  ['texttricount',['textTriCount',['../struct_n_v_gcontext.html#ae02585c93bfdeab6edd75d4777480ed1',1,'NVGcontext']]],
+  ['track_5fallocations',['track_allocations',['../structcrap_1_1memory__manager_1_1configuration.html#a1e65aab18541fd1200bc32e344de79f7',1,'crap::memory_manager::configuration']]],
+  ['truetypefont',['trueTypeFont',['../struct_font_manager_1_1_cached_font.html#ae16bb9253da5738d86915ab81cda7410',1,'FontManager::CachedFont']]],
+  ['type',['type',['../structcrap_1_1_resource_manager_1_1_resource_info.html#a58a31f45846c4603d02693161794bc19',1,'crap::ResourceManager::ResourceInfo::type()'],['../structcrap_1_1_resource_manager_1_1_package_content_info.html#aa44d918f7f16824c05c04466d6823c26',1,'crap::ResourceManager::PackageContentInfo::type()']]],
+  ['type_5fname',['type_name',['../structcrap_1_1_resource_manager_1_1_resource_info.html#abd763473d907b5232dd360092e754f00',1,'crap::ResourceManager::ResourceInfo']]]
 ];

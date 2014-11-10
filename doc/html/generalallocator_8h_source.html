@@ -157,98 +157,99 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// constructor with initialization</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#acc43eae69b77e105c2b9955d8f79a260">   85</a></span>&#160;<a class="code" href="classcrap_1_1general__allocator.html#acc43eae69b77e105c2b9955d8f79a260">general_allocator::general_allocator</a>(<a class="code" href="structcrap_1_1pointer__t.html">pointer_void</a> start, <a class="code" href="structcrap_1_1pointer__t.html">pointer_void</a> end) : _block_start( start ), _block_end(end.as_uint8_t - sizeof(memory_block))</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_prev = 0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;used_memory = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next = _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - _block_start.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    _block_end.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_prev = _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - _block_start.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    _block_end.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;used_memory = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    _block_end.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next = 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// destructor</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a21e65b201415e41740abfb6f4f246abf">   97</a></span>&#160;<a class="code" href="classcrap_1_1general__allocator.html#a21e65b201415e41740abfb6f4f246abf">general_allocator::~general_allocator</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="asserts_8h.html#a0b92b3d5b8f1a265a6e82cdfb3afd482">CRAP_ASSERT</a>(<a class="code" href="asserts_8h.html#a832d2cedd8d70ec09527a7214b93d8e5">ASSERT_BREAK</a>, _block_start.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next == _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>,  <span class="stringliteral">&quot;Still allocations present&quot;</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// allocate memory</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a905cb869f9107b72ac8f0f8f4221dc20">  103</a></span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> <a class="code" href="classcrap_1_1general__allocator.html#a905cb869f9107b72ac8f0f8f4221dc20">general_allocator::allocate</a>( uint32_t size, uint32_t alignment, uint32_t offset )</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">const</span> uint32_t total_size = size + alignment + offset + <span class="keyword">sizeof</span>(memory_block);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> current_block = _block_start;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">while</span>(current_block.as_uint8_t &lt; _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> )</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        memory_block&amp; current = *current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">const</span> uint32_t free_memory = (current.offset_next - current.used_memory) - <span class="keyword">sizeof</span>(memory_block);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span>( free_memory &gt;= total_size )</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> next_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + current.offset_next;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> temp_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> += current.used_memory + offset + (<span class="keyword">sizeof</span>(memory_block)*2);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#ae1c918d1b41417dea3eff113eeb6745d">align_forward</a>(alignment);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> -= ( offset + <span class="keyword">sizeof</span>(memory_block) );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            memory_block&amp; inserted = *temp_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            inserted.offset_prev = temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - current_block.as_uint8_t;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            inserted.offset_next = next_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            inserted.used_memory = (size+offset);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            memory_block&amp; next = *next_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            current.offset_next = inserted.offset_prev;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            next.offset_prev = inserted.offset_next;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> += 1;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span> temp_block.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        current_block.as_uint8_t += current.offset_next;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">// deallocate</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a118dce5448b6c6c38089e757ff4d181a">  144</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcrap_1_1general__allocator.html#a118dce5448b6c6c38089e757ff4d181a">general_allocator::deallocate</a>(<a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> pointer)</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">//if NULL do nothing</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span>( pointer.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a> == 0 )</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> current_block = pointer.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> -= 1;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">const</span> memory_block deletion_block = *( current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> );</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">const</span> uint32_t complete_offset = deletion_block.offset_next + deletion_block.offset_prev;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> previous_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - deletion_block.offset_prev;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> next_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + deletion_block.offset_next;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    previous_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next = complete_offset;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    next_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_prev = complete_offset;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">// allocation size</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a0e323489710f40753c1c9d134edb2706">  164</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1general__allocator.html#a0e323489710f40753c1c9d134edb2706">general_allocator::allocation_size</a>(<a class="code" href="structcrap_1_1pointer__t.html">pointer_void</a> address)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> block = address;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> -= 1;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;used_memory;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#acc43eae69b77e105c2b9955d8f79a260">   85</a></span>&#160;<a class="code" href="classcrap_1_1general__allocator.html#acc43eae69b77e105c2b9955d8f79a260">general_allocator::general_allocator</a>(<a class="code" href="structcrap_1_1pointer__t.html">pointer_void</a> start, <a class="code" href="structcrap_1_1pointer__t.html">pointer_void</a> end) :</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        _block_start( start ), _block_end(end.as_uint8_t - sizeof(memory_block)), _current_size(0)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_prev = 0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;used_memory = 0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next = _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - _block_start.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    _block_end.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_prev = _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - _block_start.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    _block_end.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;used_memory = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    _block_end.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next = 0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// destructor</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a21e65b201415e41740abfb6f4f246abf">   98</a></span>&#160;<a class="code" href="classcrap_1_1general__allocator.html#a21e65b201415e41740abfb6f4f246abf">general_allocator::~general_allocator</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="asserts_8h.html#a0b92b3d5b8f1a265a6e82cdfb3afd482">CRAP_ASSERT</a>(<a class="code" href="asserts_8h.html#a832d2cedd8d70ec09527a7214b93d8e5">ASSERT_BREAK</a>, _block_start.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + _block_start.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next == _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>,  <span class="stringliteral">&quot;Still allocations present&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// allocate memory</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a905cb869f9107b72ac8f0f8f4221dc20">  104</a></span>&#160;<a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> <a class="code" href="classcrap_1_1general__allocator.html#a905cb869f9107b72ac8f0f8f4221dc20">general_allocator::allocate</a>( uint32_t size, uint32_t alignment, uint32_t offset )</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">const</span> uint32_t total_size = size + alignment + offset + <span class="keyword">sizeof</span>(memory_block);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> current_block = _block_start;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">while</span>(current_block.as_uint8_t &lt; _block_end.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> )</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        memory_block&amp; current = *current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">const</span> uint32_t free_memory = (current.offset_next - current.used_memory) - <span class="keyword">sizeof</span>(memory_block);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span>( free_memory &gt;= total_size )</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> next_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + current.offset_next;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> temp_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> += current.used_memory + offset + (<span class="keyword">sizeof</span>(memory_block)*2);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#ae1c918d1b41417dea3eff113eeb6745d">align_forward</a>(alignment);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> -= ( offset + <span class="keyword">sizeof</span>(memory_block) );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            memory_block&amp; inserted = *temp_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            inserted.offset_prev = temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - current_block.as_uint8_t;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            inserted.offset_next = next_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - temp_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            inserted.used_memory = (size+offset);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            memory_block&amp; next = *next_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            current.offset_next = inserted.offset_prev;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            next.offset_prev = inserted.offset_next;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            temp_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> += 1;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">return</span> temp_block.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        current_block.as_uint8_t += current.offset_next;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">// deallocate</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a118dce5448b6c6c38089e757ff4d181a">  145</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcrap_1_1general__allocator.html#a118dce5448b6c6c38089e757ff4d181a">general_allocator::deallocate</a>(<a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;void&gt;</a> pointer)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">//if NULL do nothing</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span>( pointer.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a> == 0 )</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> current_block = pointer.<a class="code" href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">as_void</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> -= 1;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">const</span> memory_block deletion_block = *( current_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">const</span> uint32_t complete_offset = deletion_block.offset_next + deletion_block.offset_prev;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> previous_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> - deletion_block.offset_prev;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> next_block = current_block.<a class="code" href="structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b">as_uint8_t</a> + deletion_block.offset_next;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    previous_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_next = complete_offset;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    next_block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;offset_prev = complete_offset;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">// allocation size</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classcrap_1_1general__allocator.html#a0e323489710f40753c1c9d134edb2706">  165</a></span>&#160;uint32_t <a class="code" href="classcrap_1_1general__allocator.html#a0e323489710f40753c1c9d134edb2706">general_allocator::allocation_size</a>(<a class="code" href="structcrap_1_1pointer__t.html">pointer_void</a> address)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="structcrap_1_1pointer__t.html">pointer_t&lt;memory_block&gt;</a> block = address;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a> -= 1;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> block.<a class="code" href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">as_type</a>-&gt;used_memory;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}   <span class="comment">//namespace crap</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}   <span class="comment">//namespace crap</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif // CRAP_CORE_GENERALALLOCATOR</span></div>
-<div class="ttc" id="classcrap_1_1general__allocator_html_a905cb869f9107b72ac8f0f8f4221dc20"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a905cb869f9107b72ac8f0f8f4221dc20">crap::general_allocator::allocate</a></div><div class="ttdeci">CRAP_INLINE pointer_void allocate(uint32_t size, uint32_t alignment, uint32_t offset)</div><div class="ttdoc">allocate specific amount of bytes </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00103">generalallocator.h:103</a></div></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif // CRAP_CORE_GENERALALLOCATOR</span></div>
+<div class="ttc" id="classcrap_1_1general__allocator_html_a905cb869f9107b72ac8f0f8f4221dc20"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a905cb869f9107b72ac8f0f8f4221dc20">crap::general_allocator::allocate</a></div><div class="ttdeci">CRAP_INLINE pointer_void allocate(uint32_t size, uint32_t alignment, uint32_t offset)</div><div class="ttdoc">allocate specific amount of bytes </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00104">generalallocator.h:104</a></div></div>
 <div class="ttc" id="utilities_8h_html"><div class="ttname"><a href="utilities_8h.html">utilities.h</a></div></div>
 <div class="ttc" id="asserts_8h_html"><div class="ttname"><a href="asserts_8h.html">asserts.h</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html_ae1c918d1b41417dea3eff113eeb6745d"><div class="ttname"><a href="structcrap_1_1pointer__t.html#ae1c918d1b41417dea3eff113eeb6745d">crap::pointer_t::align_forward</a></div><div class="ttdeci">CRAP_INLINE void align_forward(size_t alignment)</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00068">utilities.h:68</a></div></div>
@@ -258,10 +259,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="config__x86_8h_html_a5a40526b8d842e7ff731509998bb0f1c"><div class="ttname"><a href="config__x86_8h.html#a5a40526b8d842e7ff731509998bb0f1c">CRAP_INLINE</a></div><div class="ttdeci">#define CRAP_INLINE</div><div class="ttdef"><b>Definition:</b> <a href="config__x86_8h_source.html#l00086">config_x86.h:86</a></div></div>
 <div class="ttc" id="crap__compiler_8h_html"><div class="ttname"><a href="crap__compiler_8h.html">crap_compiler.h</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html_a345d4e69dd07c3dcaacbb462f3d67745"><div class="ttname"><a href="structcrap_1_1pointer__t.html#a345d4e69dd07c3dcaacbb462f3d67745">crap::pointer_t::as_type</a></div><div class="ttdeci">T * as_type</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00020">utilities.h:20</a></div></div>
-<div class="ttc" id="classcrap_1_1general__allocator_html_a118dce5448b6c6c38089e757ff4d181a"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a118dce5448b6c6c38089e757ff4d181a">crap::general_allocator::deallocate</a></div><div class="ttdeci">CRAP_INLINE void deallocate(pointer_void address)</div><div class="ttdoc">deallocating memory, by taking header out of list </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00144">generalallocator.h:144</a></div></div>
-<div class="ttc" id="classcrap_1_1general__allocator_html_a0e323489710f40753c1c9d134edb2706"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a0e323489710f40753c1c9d134edb2706">crap::general_allocator::allocation_size</a></div><div class="ttdeci">CRAP_INLINE uint32_t allocation_size(pointer_void address)</div><div class="ttdoc">returning size of allocation </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00164">generalallocator.h:164</a></div></div>
+<div class="ttc" id="classcrap_1_1general__allocator_html_a118dce5448b6c6c38089e757ff4d181a"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a118dce5448b6c6c38089e757ff4d181a">crap::general_allocator::deallocate</a></div><div class="ttdeci">CRAP_INLINE void deallocate(pointer_void address)</div><div class="ttdoc">deallocating memory, by taking header out of list </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00145">generalallocator.h:145</a></div></div>
+<div class="ttc" id="classcrap_1_1general__allocator_html_a0e323489710f40753c1c9d134edb2706"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a0e323489710f40753c1c9d134edb2706">crap::general_allocator::allocation_size</a></div><div class="ttdeci">CRAP_INLINE uint32_t allocation_size(pointer_void address)</div><div class="ttdoc">returning size of allocation </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00165">generalallocator.h:165</a></div></div>
 <div class="ttc" id="classcrap_1_1general__allocator_html_adc45630f82d3467f4a968e412cac88fc"><div class="ttname"><a href="classcrap_1_1general__allocator.html#adc45630f82d3467f4a968e412cac88fc">crap::general_allocator::pointer_void</a></div><div class="ttdeci">pointer_t&lt; void &gt; pointer_void</div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00066">generalallocator.h:66</a></div></div>
-<div class="ttc" id="classcrap_1_1general__allocator_html_a21e65b201415e41740abfb6f4f246abf"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a21e65b201415e41740abfb6f4f246abf">crap::general_allocator::~general_allocator</a></div><div class="ttdeci">CRAP_INLINE ~general_allocator(void)</div><div class="ttdoc">destructor </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00097">generalallocator.h:97</a></div></div>
+<div class="ttc" id="classcrap_1_1general__allocator_html_a21e65b201415e41740abfb6f4f246abf"><div class="ttname"><a href="classcrap_1_1general__allocator.html#a21e65b201415e41740abfb6f4f246abf">crap::general_allocator::~general_allocator</a></div><div class="ttdeci">CRAP_INLINE ~general_allocator(void)</div><div class="ttdoc">destructor </div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00098">generalallocator.h:98</a></div></div>
 <div class="ttc" id="structcrap_1_1pointer__t_html_a60272c75c04aaafaf6a4339f10d81b32"><div class="ttname"><a href="structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32">crap::pointer_t::as_void</a></div><div class="ttdeci">void * as_void</div><div class="ttdef"><b>Definition:</b> <a href="utilities_8h_source.html#l00022">utilities.h:22</a></div></div>
 <div class="ttc" id="crap__types_8h_html"><div class="ttname"><a href="crap__types_8h.html">crap_types.h</a></div></div>
 <div class="ttc" id="classcrap_1_1general__allocator_html"><div class="ttname"><a href="classcrap_1_1general__allocator.html">crap::general_allocator</a></div><div class="ttdef"><b>Definition:</b> <a href="generalallocator_8h_source.html#l00037">generalallocator.h:37</a></div></div>
@@ -271,7 +272,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 23 2014 23:49:29 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 7 2014 22:49:56 for Crap Engine 2 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

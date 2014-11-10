@@ -5,7 +5,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define LIST_SPACE 100
+#define LIST_SPACE 10
 
 namespace
 {
@@ -20,7 +20,7 @@ struct test_struct
 
 crap::BoundGeneralMemory* gbm_l;
 void* mem;
-crap::list<test_struct>* lst_ptr;
+crap::list<float32_t>* lst_ptr;
 uint32_t handles[LIST_SPACE];
 
 TEST( AnnounceTestList )
@@ -30,10 +30,10 @@ TEST( AnnounceTestList )
 
 TEST(CrapCreateList)
 {
-	gbm_l = new crap::BoundGeneralMemory( crap::list<test_struct>::size_of_elements(LIST_SPACE) *2);
+	gbm_l = new crap::BoundGeneralMemory( crap::list<float32_t>::size_of_elements(LIST_SPACE) *3 );
 
-	mem = gbm_l->allocate( crap::list<test_struct>::size_of_elements(LIST_SPACE), crap::align_of<test_struct>::value );
-    lst_ptr = new crap::list<test_struct>( mem, crap::list<test_struct>::size_of_elements(LIST_SPACE) );
+	mem = gbm_l->allocate( crap::list<float32_t>::size_of_elements(LIST_SPACE), crap::align_of<float32_t>::value );
+    lst_ptr = new crap::list<float32_t>( mem, crap::list<float32_t>::size_of_elements(LIST_SPACE) );
 
     CHECK_EQUAL( 0, lst_ptr->size() );
     CHECK_EQUAL( LIST_SPACE, lst_ptr->max_size() );
@@ -43,9 +43,9 @@ TEST(CrapListInsert)
 {
     for( uint32_t i=0; i< LIST_SPACE; ++i )
     {
-    	test_struct s(rand());
+    	float32_t s = rand()*1.f;
         handles[i] = lst_ptr->insert( s );
-        CHECK( handles[i] != crap::list<test_struct>::INVALID );
+        CHECK( handles[i] != crap::list<float32_t>::INVALID );
     }
 
     CHECK_EQUAL( LIST_SPACE, lst_ptr->size() );
@@ -58,15 +58,28 @@ TEST(CrapListInsterOverflow)
 
     CHECK_EQUAL( LIST_SPACE, lst_ptr->size() );
     CHECK_EQUAL( LIST_SPACE, lst_ptr->max_size() );
-    CHECK( handle == crap::list<test_struct>::INVALID );
+    CHECK( handle == crap::list<float32_t>::INVALID );
 }
 
-TEST(CrapListAll)
+TEST(CrapListAssignemtnOperator)
 {
-//	for( uint32_t i = lst_ptr->start(); i != crap::list<test_struct>::INVALID; i = lst_ptr->next(i))
-//		std::cout << (lst_ptr->get(i))->val << std::endl;
+	void* mem2 = gbm_l->allocate( crap::list<float32_t>::size_of_elements(LIST_SPACE), crap::align_of<float32_t>::value );
+	crap::list<float32_t> other( mem2, crap::list<float32_t>::size_of_elements(LIST_SPACE) );
+	other = *lst_ptr;
 
-	//fflush(stdout);
+	CHECK( other.size() == lst_ptr->size() );
+
+	for( uint32_t i=0; i< other.size(); ++i )
+		CHECK( *(other.get(i)) == *(lst_ptr->get(i)) );
+
+	other.~list();
+	gbm_l->deallocate( mem2 );
+}
+
+TEST(CrapListBeginEndNextPrevious)
+{
+	for( uint32_t i = lst_ptr->begin(); i != lst_ptr->end(); i = lst_ptr->next(i) )
+		CHECK( lst_ptr->get(i) != 0 );
 }
 
 TEST(CrapListErase)
@@ -88,7 +101,7 @@ TEST(CrapListEraseOverflow)
 
 TEST(CrapListGet)
 {
-    test_struct* ptr = lst_ptr->get(1);
+    float32_t* ptr = lst_ptr->get(1);
     CHECK( ptr == 0 );
 }
 

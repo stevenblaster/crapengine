@@ -22,7 +22,8 @@ TEST( AnnounceTestArray )
 
 TEST(CrapCreateArray)
 {
-	gbm_a = new crap::BoundGeneralMemory(1024);
+	uint32_t necessary = crap::array<float32_t>::size_of_elements(ARRAY_SPACE);
+	gbm_a = new crap::BoundGeneralMemory( necessary * 4 );
 
 	mem = gbm_a->allocate( crap::array<float32_t>::size_of_elements(ARRAY_SPACE), crap::align_of<float32_t>::value );
     arr_ptr = new crap::array<float32_t>( mem, crap::array<float32_t>::size_of_elements(ARRAY_SPACE) );
@@ -50,6 +51,27 @@ TEST(CrapArrayPushBackOverflow)
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->size() );
     CHECK_EQUAL( ARRAY_SPACE, arr_ptr->max_size() );
     CHECK( handle == crap::array<float32_t>::INVALID );
+}
+
+TEST(CrapArrayAssignmentOperator )
+{
+	void* mem2 = gbm_a->allocate( crap::array<float32_t>::size_of_elements(ARRAY_SPACE), crap::align_of<float32_t>::value );
+	crap::array<float32_t> other( mem2, crap::array<float32_t>::size_of_elements(ARRAY_SPACE) );
+	other = *arr_ptr;
+
+	CHECK( other.size() == arr_ptr->size() );
+
+	for( uint32_t i=0; i< other.size(); ++i )
+		CHECK( *(other.get(i)) == *(arr_ptr->get(i)) );
+
+	other.~array();
+	gbm_a->deallocate( mem2 );
+}
+
+TEST(CrapArrayBeginEndNextPrevious)
+{
+	for( uint32_t i = arr_ptr->begin(); i != arr_ptr->end(); i = arr_ptr->next(i) )
+		CHECK( arr_ptr->get(i) != 0 );
 }
 
 TEST(CrapArrayErase)

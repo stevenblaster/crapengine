@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['v',['v',['../struct_n_v_gvertex.html#a545d3a48f8be2f17850542c4214e7489',1,'NVGvertex']]],
-  ['value',['value',['../structcrap_1_1linear__map_1_1__type.html#ade151d9a1da867bb307bf9fbd0872c9e',1,'crap::linear_map::_type::value()'],['../structcrap_1_1sorted__map_1_1__type.html#a8409b0b8df10fd4513da6f09d53d2ba3',1,'crap::sorted_map::_type::value()'],['../structtinyxml2_1_1_entity.html#a7334e81e33b4615655a403711b24f3ed',1,'tinyxml2::Entity::value()']]],
-  ['version',['version',['../structcrap_1_1_wave_file_1_1_wave_header.html#ac2091625d4920909edeee79423f884b1',1,'crap::WaveFile::WaveHeader']]],
-  ['verts',['verts',['../struct_n_v_gpath_cache.html#a2f6986b4b0e13acbd9f98b67d34a8d16',1,'NVGpathCache']]]
+  ['wave',['wave',['../structcrap_1_1_wave_file_1_1_wave_header.html#a4d2d3de7ee47f37c098224695afc9ced',1,'crap::WaveFile::WaveHeader']]],
+  ['width',['width',['../struct_atlas_region.html#afa487dd2e5e49d4e873d505b8b3d413e',1,'AtlasRegion::width()'],['../struct_glyph_info.html#af8f1393ec498cdabefbaf08f77b62cbd',1,'GlyphInfo::width()'],['../struct_text_rectangle.html#a301e23646ba32285edf4c9ee4898ec25',1,'TextRectangle::width()'],['../struct_f_o_n_sparams.html#aac83f900d8d0d99db419facda30dd9d2',1,'FONSparams::width()'],['../struct_n_v_gtext_row.html#a94481448fed11625d1aeb56531ecf3a0',1,'NVGtextRow::width()']]],
+  ['winding',['winding',['../struct_n_v_gpath.html#aefa1aea3e295c4934fe89b5e1eb58e59',1,'NVGpath']]]
 ];

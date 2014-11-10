@@ -24,7 +24,7 @@ TEST( AnnounceTestIndexedArray )
 TEST(CrapCreateIndexedArray)
 {
 	uint32_t size = crap::indexed_array<float32_t>::size_of_elements(INDEXEDARRAY_SPACE);
-	gbm_ia = new crap::BoundGeneralMemory(size*2);
+	gbm_ia = new crap::BoundGeneralMemory(size*3);
 
 	mem = gbm_ia->allocate( size, crap::align_of<float32_t>::value );
     iarr_ptr = new crap::indexed_array<float32_t>( mem, size );
@@ -52,6 +52,27 @@ TEST(CrapIndexedArrayPushBackOverflow)
     CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->size() );
     CHECK_EQUAL( INDEXEDARRAY_SPACE, iarr_ptr->max_size() );
     CHECK( handle == crap::indexed_array<float32_t>::INVALID );
+}
+
+TEST(CrapIndexedArrayAssignmentOperator )
+{
+	void* mem2 = gbm_ia->allocate( crap::indexed_array<float32_t>::size_of_elements(INDEXEDARRAY_SPACE), crap::align_of<float32_t>::value );
+	crap::indexed_array<float32_t> other( mem2, crap::indexed_array<float32_t>::size_of_elements(INDEXEDARRAY_SPACE) );
+	other = *iarr_ptr;
+
+	CHECK( other.size() == iarr_ptr->size() );
+
+	for( uint32_t i=0; i< other.size(); ++i )
+		CHECK( *(other.get( handles[i] )) == *(iarr_ptr->get( handles[i] )) );
+
+	other.~indexed_array();
+	gbm_ia->deallocate( mem2 );
+}
+
+TEST(CrapIndexedArrayBeginEndNextPrevious)
+{
+	for( uint32_t i = iarr_ptr->begin(); i != iarr_ptr->end(); i = iarr_ptr->next(i) )
+		CHECK( iarr_ptr->get(i) != 0 );
 }
 
 TEST(CrapIndexedArrayErase)

@@ -1,6 +1,21 @@
 var searchData=
 [
-  ['pid_5ft',['pid_t',['../namespacecrap.html#a16bdcfd808340c5c364a5c78bbb1f39a',1,'crap']]],
-  ['pointer_5fvoid',['pointer_void',['../classcrap_1_1indexed__array.html#a8590198c1f75bc14843f09c491a446e9',1,'crap::indexed_array::pointer_void()'],['../classcrap_1_1general__allocator.html#adc45630f82d3467f4a968e412cac88fc',1,'crap::general_allocator::pointer_void()'],['../classcrap_1_1linear__allocator.html#a1caef970a097c32e6266ba996d42b8de',1,'crap::linear_allocator::pointer_void()'],['../classcrap_1_1malloc__allocator.html#a9e5d7117b39a74b329c4921a3658e1f3',1,'crap::malloc_allocator::pointer_void()'],['../structcrap_1_1no__bounds.html#a674e7cd02d3b54fe9a3690e9aa735468',1,'crap::no_bounds::pointer_void()'],['../structcrap_1_1dead__bounds.html#a1f3c4f9646f45b9c4f1dc351d94e96bb',1,'crap::dead_bounds::pointer_void()'],['../structcrap_1_1deadbeaf__bounds.html#ab42e3320a8d0a0039e0939887805fc32',1,'crap::deadbeaf_bounds::pointer_void()'],['../structcrap_1_1no__tagging.html#ad6207e0a8c15892cc0263e77e0e0add6',1,'crap::no_tagging::pointer_void()'],['../structcrap_1_1no__tracking.html#af73abf0cb41ffe7aa60e37885885f328',1,'crap::no_tracking::pointer_void()'],['../classcrap_1_1pool__allocator.html#a017b14f47ade2415878807d9f28fddce',1,'crap::pool_allocator::pointer_void()'],['../classcrap_1_1stack__allocator.html#a1595531e9229285629d99f036ebac325',1,'crap::stack_allocator::pointer_void()'],['../namespacecrap.html#aa4cb82451ede6b73c49d862af29aebb3',1,'crap::pointer_void()']]],
-  ['primitivearray',['PrimitiveArray',['../bgfx__utils_8cpp.html#abac1e58aea522298a661dd5a89dfb1f8',1,'bgfx_utils.cpp']]]
+  ['sem_5ft',['sem_t',['../namespacecrap.html#a8389bdde2ea5b1b5884c12d7f82c0e39',1,'crap']]],
+  ['simplegeneralmemory',['SimpleGeneralMemory',['../namespacecrap.html#a0f685df0fdfec9a4cbf9aaeab41a73a5',1,'crap']]],
+  ['simplegeneralmemorymt',['SimpleGeneralMemoryMT',['../namespacecrap.html#a8c3afedb9f5acb5aa0e4e2767ccf0118',1,'crap']]],
+  ['simplelinearmemory',['SimpleLinearMemory',['../namespacecrap.html#a15a43bda87dfd4f909e30e1df3b1cee7',1,'crap']]],
+  ['simplelinearmemorymt',['SimpleLinearMemoryMT',['../namespacecrap.html#a98a843d877d8c0558c40574d0a0019e3',1,'crap']]],
+  ['simplemallocmemory',['SimpleMallocMemory',['../namespacecrap.html#a8711640793bf2ed760185fe66c8e3d03',1,'crap']]],
+  ['simplemallocmemorymt',['SimpleMallocMemoryMT',['../namespacecrap.html#a86d2d770530309cb5cb92249b5efadcb',1,'crap']]],
+  ['simplestackmemory',['SimpleStackMemory',['../namespacecrap.html#a1265b2d1470f9e9196ec1ffcb2fd0701',1,'crap']]],
+  ['simplestackmemorymt',['SimpleStackMemoryMT',['../namespacecrap.html#aa7a4e4bf8df096c0ab06b0fdbf4c3c0f',1,'crap']]],
+  ['sourceinfo',['SourceInfo',['../namespacecrap.html#acad6ca15596aab071175697e764086bb',1,'crap']]],
+  ['string1024',['string1024',['../namespacecrap.html#acbceaa050a351b36f8b29129f49621c1',1,'crap']]],
+  ['string128',['string128',['../namespacecrap.html#a6d163720fa009acb153550f4486ff6da',1,'crap']]],
+  ['string16',['string16',['../namespacecrap.html#a6cff91a13d8be23072b3a0754c947caa',1,'crap']]],
+  ['string256',['string256',['../namespacecrap.html#af674ac1cc38a09c563c68dfc3b15e554',1,'crap']]],
+  ['string32',['string32',['../namespacecrap.html#aed2599e591e7287057648c41883194c6',1,'crap']]],
+  ['string512',['string512',['../namespacecrap.html#a52392ad28972b8b96725b2f7928d38fa',1,'crap']]],
+  ['string64',['string64',['../namespacecrap.html#a2b8a7358804e1a9c3c32f12d8cdcfdf8',1,'crap']]],
+  ['string8',['string8',['../namespacecrap.html#ac2aa8c51f82e95df485b8fff38837fcb',1,'crap']]]
 ];

@@ -23,6 +23,16 @@ Simple array class.
 \item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a13a95ae7b2941347d60cb984c9e39a16}{max\+\_\+size} (void) const 
 \begin{DoxyCompactList}\small\item\em Returning the maximum size of the array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a83a8f70389a4ef6fc253b09b5451d2ae}{begin} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns first element of the array. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a36c18186d8ee7a7ec354e5a66e6290fa}{end} (void) const 
+\begin{DoxyCompactList}\small\item\em returns first invalid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a8381fa6352db0e0aa4658804d6bc55b3}{last} (void) const 
+\begin{DoxyCompactList}\small\item\em returns last valid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a45778a5a4b586b2c5eb41b814e50ed6d}{next} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns next element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a14d4d1a846c7dbc43e0384367a95838f}{previous} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns previous index \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \& \hyperlink{classcrap_1_1sorted__array_a7e79056988befaef9bafaf83b889f39c}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Index operator returning a member reference. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1sorted__array_a51bb152c1698d83bca43b2be14489098}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index) const 
@@ -51,7 +61,7 @@ static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a9f413d7e9b3f458d98a9c80727886abc}{invalid} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+static const uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_aa250f06b74b940be0c7e37e775e6765b}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
 \begin{DoxyCompactList}\small\item\em Defines an invalid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -62,11 +72,11 @@ static const uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_a9f413d7e9b3f45
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ T $>$ \hyperlink{classcrap_1_1sorted__array_afa20ac100c5b603d0a522c94e7cd549f}{\+\_\+memory}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer type to memory. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_ad33ca1ee9c30abf81658b3c2773ae9d1}{\+\_\+size}
-\item 
+\begin{DoxyCompactList}\small\item\em Current number of elements. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{classcrap_1_1sorted__array_aea8cbb8c465d41aebecdf939113fa993}{\+\_\+max\+\_\+size}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -102,7 +112,7 @@ Constructor of array class.
 \end{DoxyParams}
 
 
-Definition at line 190 of file sortedarray.\+h.
+Definition at line 224 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_aae64790ce1bb794ad34a6c529a0d4c3a}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!````~sorted\+\_\+array@{$\sim$sorted\+\_\+array}}
 \index{````~sorted\+\_\+array@{$\sim$sorted\+\_\+array}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -117,7 +127,7 @@ Destructor of array class.
 
 
 
-Definition at line 211 of file sortedarray.\+h.
+Definition at line 245 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_abc66df9473d0f3fd1659f4cce186a9f3}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!sorted\+\_\+array@{sorted\+\_\+array}}
 \index{sorted\+\_\+array@{sorted\+\_\+array}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -132,11 +142,47 @@ Copy Constructor kept private (do not use)
 
 
 
-Definition at line 217 of file sortedarray.\+h.
+Definition at line 251 of file sortedarray.\+h.
 
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1sorted__array_a83a8f70389a4ef6fc253b09b5451d2ae}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!begin@{begin}}
+\index{begin@{begin}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__array_a83a8f70389a4ef6fc253b09b5451d2ae}
+
+
+Returns first element of the array. 
+
+\begin{DoxyReturn}{Returns}
+First valid index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 270 of file sortedarray.\+h.
+
+\hypertarget{classcrap_1_1sorted__array_a36c18186d8ee7a7ec354e5a66e6290fa}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!end@{end}}
+\index{end@{end}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__array_a36c18186d8ee7a7ec354e5a66e6290fa}
+
+
+returns first invalid element 
+
+\begin{DoxyReturn}{Returns}
+I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 279 of file sortedarray.\+h.
+
 \hypertarget{classcrap_1_1sorted__array_a515100392a0ff72425b6ff30d476df55}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!erase@{erase}}
 \index{erase@{erase}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
 \subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::erase (
@@ -155,7 +201,7 @@ Removes an element equal to given reference.
 \end{DoxyParams}
 
 
-Definition at line 308 of file sortedarray.\+h.
+Definition at line 385 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a5ad794c314b02288f6c4e727f6ed5dd6}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!erase\+\_\+at@{erase\+\_\+at}}
 \index{erase\+\_\+at@{erase\+\_\+at}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -175,7 +221,7 @@ Removes the element at a certain position.
 \end{DoxyParams}
 
 
-Definition at line 298 of file sortedarray.\+h.
+Definition at line 375 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_aca7ebbadcad54d26b850e6dffd8d5400}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!find@{find}}
 \index{find@{find}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -198,7 +244,7 @@ Index of inserted element or \char`\"{}invalid\char`\"{} if not found
 \end{DoxyReturn}
 
 
-Definition at line 317 of file sortedarray.\+h.
+Definition at line 394 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_ad7ad4afd75618637a3ce602c9ef35c53}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!get@{get}}
 \index{get@{get}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -221,7 +267,7 @@ Pointer to member or null if invalid
 \end{DoxyReturn}
 
 
-Definition at line 247 of file sortedarray.\+h.
+Definition at line 324 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_ab2794eb1badb682879d1e7e26bef4fa6}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!get@{get}}
 \index{get@{get}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -244,7 +290,7 @@ Constant pointer to member or null if invalid
 \end{DoxyReturn}
 
 
-Definition at line 256 of file sortedarray.\+h.
+Definition at line 333 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a7b6e539b39a094c918f3c3f60749eab6}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!insert@{insert}}
 \index{insert@{insert}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -267,7 +313,25 @@ Index of inserted element
 \end{DoxyReturn}
 
 
-Definition at line 265 of file sortedarray.\+h.
+Definition at line 342 of file sortedarray.\+h.
+
+\hypertarget{classcrap_1_1sorted__array_a8381fa6352db0e0aa4658804d6bc55b3}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!last@{last}}
+\index{last@{last}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__array_a8381fa6352db0e0aa4658804d6bc55b3}
+
+
+returns last valid element 
+
+\begin{DoxyReturn}{Returns}
+last valid element or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a13a95ae7b2941347d60cb984c9e39a16}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!max\+\_\+size@{max\+\_\+size}}
 \index{max\+\_\+size@{max\+\_\+size}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -285,7 +349,7 @@ The maximum number of elements
 \end{DoxyReturn}
 
 
-Definition at line 229 of file sortedarray.\+h.
+Definition at line 263 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a924b156d8b1da6c5a240d9a8ae78db4a}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!memory@{memory}}
 \index{memory@{memory}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -303,7 +367,25 @@ Pointer type of array memory
 \end{DoxyReturn}
 
 
-Definition at line 352 of file sortedarray.\+h.
+Definition at line 429 of file sortedarray.\+h.
+
+\hypertarget{classcrap_1_1sorted__array_a45778a5a4b586b2c5eb41b814e50ed6d}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!next@{next}}
+\index{next@{next}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::next (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__array_a45778a5a4b586b2c5eb41b814e50ed6d}
+
+
+returns next element 
+
+\begin{DoxyReturn}{Returns}
+next index or invlid 
+\end{DoxyReturn}
+
+
+Definition at line 294 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a5283ecb6e3f0d3515605e5d1f5f1d60b}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!operator=@{operator=}}
 \index{operator=@{operator=}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -326,7 +408,7 @@ A reference to self
 \end{DoxyReturn}
 
 
-Definition at line 196 of file sortedarray.\+h.
+Definition at line 230 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a7e79056988befaef9bafaf83b889f39c}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -349,7 +431,7 @@ Reference to member
 \end{DoxyReturn}
 
 
-Definition at line 235 of file sortedarray.\+h.
+Definition at line 312 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a51bb152c1698d83bca43b2be14489098}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -372,7 +454,7 @@ Constant reference to member
 \end{DoxyReturn}
 
 
-Definition at line 241 of file sortedarray.\+h.
+Definition at line 318 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a0dcea6e2e1958df560c4277c68d56173}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!pop\+\_\+back@{pop\+\_\+back}}
 \index{pop\+\_\+back@{pop\+\_\+back}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -387,7 +469,25 @@ Removes last element of the array.
 
 
 
-Definition at line 287 of file sortedarray.\+h.
+Definition at line 364 of file sortedarray.\+h.
+
+\hypertarget{classcrap_1_1sorted__array_a14d4d1a846c7dbc43e0384367a95838f}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!previous@{previous}}
+\index{previous@{previous}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
+\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::previous (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classcrap_1_1sorted__array_a14d4d1a846c7dbc43e0384367a95838f}
+
+
+returns previous index 
+
+\begin{DoxyReturn}{Returns}
+previous index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a296560cdb46c44a1aef6e06b122c10f5}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!size@{size}}
 \index{size@{size}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -401,7 +501,7 @@ The current number of elements
 \end{DoxyReturn}
 
 
-Definition at line 223 of file sortedarray.\+h.
+Definition at line 257 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_a61c4294fb8cf1f0e0e9306f548988ac8}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
 \index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
@@ -424,7 +524,7 @@ Size of necessary memory
 \end{DoxyReturn}
 
 
-Definition at line 358 of file sortedarray.\+h.
+Definition at line 435 of file sortedarray.\+h.
 
 
 
@@ -434,25 +534,37 @@ Definition at line 358 of file sortedarray.\+h.
 \subsubsection[{\+\_\+max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::\+\_\+max\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1sorted__array_aea8cbb8c465d41aebecdf939113fa993}
 
 
-Definition at line 185 of file sortedarray.\+h.
+Maximum number of elements. 
+
+
+
+Definition at line 219 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_afa20ac100c5b603d0a522c94e7cd549f}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!\+\_\+memory@{\+\_\+memory}}
 \index{\+\_\+memory@{\+\_\+memory}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
 \subsubsection[{\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf pointer\+\_\+t}$<$T$>$ {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::\+\_\+memory\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1sorted__array_afa20ac100c5b603d0a522c94e7cd549f}
 
 
-Definition at line 183 of file sortedarray.\+h.
+Pointer type to memory. 
+
+
+
+Definition at line 213 of file sortedarray.\+h.
 
 \hypertarget{classcrap_1_1sorted__array_ad33ca1ee9c30abf81658b3c2773ae9d1}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!\+\_\+size@{\+\_\+size}}
 \index{\+\_\+size@{\+\_\+size}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
 \subsubsection[{\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1sorted__array_ad33ca1ee9c30abf81658b3c2773ae9d1}
 
 
-Definition at line 184 of file sortedarray.\+h.
+Current number of elements. 
 
-\hypertarget{classcrap_1_1sorted__array_a9f413d7e9b3f458d98a9c80727886abc}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!invalid@{invalid}}
-\index{invalid@{invalid}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
-\subsubsection[{invalid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::invalid = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1sorted__array_a9f413d7e9b3f458d98a9c80727886abc}
+
+
+Definition at line 216 of file sortedarray.\+h.
+
+\hypertarget{classcrap_1_1sorted__array_aa250f06b74b940be0c7e37e775e6765b}{\index{crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::sorted\+\_\+array@{crap\+::sorted\+\_\+array}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::sorted\+\_\+array}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1sorted__array_aa250f06b74b940be0c7e37e775e6765b}
 
 
 Defines an invalid index. 

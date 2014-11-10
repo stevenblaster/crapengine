@@ -9,8 +9,6 @@ var searchData=
   ['configuration_2ecpp',['configuration.cpp',['../source_2configuration_8cpp.html',1,'']]],
   ['configuration_2ecpp',['configuration.cpp',['../unittests_2source_2configuration_8cpp.html',1,'']]],
   ['configuration_2eh',['configuration.h',['../configuration_8h.html',1,'']]],
-  ['container_2ecpp',['container.cpp',['../container_8cpp.html',1,'']]],
-  ['container_2eh',['container.h',['../container_8h.html',1,'']]],
   ['containermemory_2eh',['containermemory.h',['../containermemory_8h.html',1,'']]],
   ['convert_2eh',['convert.h',['../convert_8h.html',1,'']]],
   ['converter_2ecpp',['converter.cpp',['../converter_8cpp.html',1,'']]],

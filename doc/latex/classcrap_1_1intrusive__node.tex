@@ -8,27 +8,27 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classcrap_1_1intrusive__node_a7863e5579135b4b6e3c9b22254f1d811}{intrusive\+\_\+node} (T $\ast$\hyperlink{classcrap_1_1intrusive__node_a64fa7fffc54fe23e13c2b42f610ac52c}{parent}, \hyperlink{singletoncrap_1_1intrusive__list}{intrusive\+\_\+list}$<$ T $>$ $\ast$\hyperlink{classcrap_1_1list}{list})
-\item 
-\hyperlink{classcrap_1_1intrusive__node_aec5f593295bf0dd3134ea26eafd4a9ba}{$\sim$intrusive\+\_\+node} (void)
-\item 
-T $\ast$ \hyperlink{classcrap_1_1intrusive__node_aaf1a29a9a378c9bb05e01fe579540e33}{operator-\/$>$} (void)
-\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1intrusive__node_aa8313184bdab330161351d6f29fb689c}{intrusive\+\_\+node} (T $\ast$\hyperlink{classcrap_1_1intrusive__node_a64fa7fffc54fe23e13c2b42f610ac52c}{parent}, \hyperlink{singletoncrap_1_1intrusive__list}{intrusive\+\_\+list}$<$ T $>$ $\ast$\hyperlink{classcrap_1_1list}{list})
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1intrusive__node_ac158a93b90ccb4ca68bc8b2f9170dcfa}{$\sim$intrusive\+\_\+node} (void)
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1intrusive__node_abde18cd1dac827f8480044ef588cdcbb}{operator-\/$>$} (void)
+\begin{DoxyCompactList}\small\item\em operator-\/$>$ returning parent pointer \end{DoxyCompactList}\item 
 T $\ast$ \hyperlink{classcrap_1_1intrusive__node_a64fa7fffc54fe23e13c2b42f610ac52c}{parent} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em provides pointer to parent \end{DoxyCompactList}\item 
 \hyperlink{classcrap_1_1intrusive__node}{intrusive\+\_\+node} $\ast$ \hyperlink{classcrap_1_1intrusive__node_a284c8a3480e6e5195633b01d90abf85d}{next} (void) const 
-\item 
+\begin{DoxyCompactList}\small\item\em returns pointer to next node \end{DoxyCompactList}\item 
 \hyperlink{classcrap_1_1intrusive__node}{intrusive\+\_\+node} $\ast$ \hyperlink{classcrap_1_1intrusive__node_a366a5d51e32c3d204d229dd36785495b}{previous} (void) const 
-\item 
+\begin{DoxyCompactList}\small\item\em returns pointer to previous node \end{DoxyCompactList}\item 
 \hyperlink{singletoncrap_1_1intrusive__list}{intrusive\+\_\+list}$<$ T $>$ $\ast$ \hyperlink{classcrap_1_1intrusive__node_abfef045836dcfefba5c5189267d0cedd}{list} (void) const 
-\item 
+\begin{DoxyCompactList}\small\item\em returns pointer to intrusive list \end{DoxyCompactList}\item 
 bool \hyperlink{classcrap_1_1intrusive__node_a03a03db2b8ce66d8f3a609ac432bcb87}{operator==} (const \hyperlink{classcrap_1_1intrusive__node}{intrusive\+\_\+node} \&other)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em compare operator \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classcrap_1_1intrusive__node_a8abfe7a49da2ca301723ee176edb482f}{intrusive\+\_\+list$<$ T $>$}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em defining list class as friend \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -36,33 +36,48 @@ class \hyperlink{classcrap_1_1intrusive__node_a8abfe7a49da2ca301723ee176edb482f}
 
 
 
-Definition at line 34 of file intrusivelist.\+h.
+Definition at line 42 of file intrusivelist.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classcrap_1_1intrusive__node_a7863e5579135b4b6e3c9b22254f1d811}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!intrusive\+\_\+node@{intrusive\+\_\+node}}
+\hypertarget{classcrap_1_1intrusive__node_aa8313184bdab330161351d6f29fb689c}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!intrusive\+\_\+node@{intrusive\+\_\+node}}
 \index{intrusive\+\_\+node@{intrusive\+\_\+node}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
-\subsubsection[{intrusive\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf crap\+::intrusive\+\_\+node}$<$ T $>$\+::{\bf intrusive\+\_\+node} (
+\subsubsection[{intrusive\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::intrusive\+\_\+node}$<$ T $>$\+::{\bf intrusive\+\_\+node} (
 \begin{DoxyParamCaption}
 \item[{T $\ast$}]{parent, }
 \item[{{\bf intrusive\+\_\+list}$<$ T $>$ $\ast$}]{list}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classcrap_1_1intrusive__node_a7863e5579135b4b6e3c9b22254f1d811}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classcrap_1_1intrusive__node_aa8313184bdab330161351d6f29fb689c}
 
 
-Definition at line 38 of file intrusivelist.\+h.
+default constructor 
 
-\hypertarget{classcrap_1_1intrusive__node_aec5f593295bf0dd3134ea26eafd4a9ba}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!````~intrusive\+\_\+node@{$\sim$intrusive\+\_\+node}}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to parent \\
+\hline
+{\em list} & Pointer to intrusive list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file intrusivelist.\+h.
+
+\hypertarget{classcrap_1_1intrusive__node_ac158a93b90ccb4ca68bc8b2f9170dcfa}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!````~intrusive\+\_\+node@{$\sim$intrusive\+\_\+node}}
 \index{````~intrusive\+\_\+node@{$\sim$intrusive\+\_\+node}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
-\subsubsection[{$\sim$intrusive\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf crap\+::intrusive\+\_\+node}$<$ T $>$\+::$\sim${\bf intrusive\+\_\+node} (
+\subsubsection[{$\sim$intrusive\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf crap\+::intrusive\+\_\+node}$<$ T $>$\+::$\sim${\bf intrusive\+\_\+node} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_aec5f593295bf0dd3134ea26eafd4a9ba}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_ac158a93b90ccb4ca68bc8b2f9170dcfa}
 
 
-Definition at line 43 of file intrusivelist.\+h.
+default destructor 
+
+
+
+Definition at line 61 of file intrusivelist.\+h.
 
 
 
@@ -76,7 +91,14 @@ Definition at line 43 of file intrusivelist.\+h.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_abfef045836dcfefba5c5189267d0cedd}
 
 
-Definition at line 71 of file intrusivelist.\+h.
+returns pointer to intrusive list 
+
+\begin{DoxyReturn}{Returns}
+pointer to list 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file intrusivelist.\+h.
 
 \hypertarget{classcrap_1_1intrusive__node_a284c8a3480e6e5195633b01d90abf85d}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!next@{next}}
 \index{next@{next}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
@@ -87,18 +109,32 @@ Definition at line 71 of file intrusivelist.\+h.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_a284c8a3480e6e5195633b01d90abf85d}
 
 
-Definition at line 61 of file intrusivelist.\+h.
+returns pointer to next node 
 
-\hypertarget{classcrap_1_1intrusive__node_aaf1a29a9a378c9bb05e01fe579540e33}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!operator-\/$>$@{operator-\/$>$}}
+\begin{DoxyReturn}{Returns}
+pointer to next node 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file intrusivelist.\+h.
+
+\hypertarget{classcrap_1_1intrusive__node_abde18cd1dac827f8480044ef588cdcbb}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!operator-\/$>$@{operator-\/$>$}}
 \index{operator-\/$>$@{operator-\/$>$}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
-\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf crap\+::intrusive\+\_\+node}$<$ T $>$\+::operator-\/$>$ (
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T$\ast$ {\bf crap\+::intrusive\+\_\+node}$<$ T $>$\+::operator-\/$>$ (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_aaf1a29a9a378c9bb05e01fe579540e33}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_abde18cd1dac827f8480044ef588cdcbb}
 
 
-Definition at line 51 of file intrusivelist.\+h.
+operator-\/$>$ returning parent pointer 
+
+\begin{DoxyReturn}{Returns}
+pointer to parent 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file intrusivelist.\+h.
 
 \hypertarget{classcrap_1_1intrusive__node_a03a03db2b8ce66d8f3a609ac432bcb87}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!operator==@{operator==}}
 \index{operator==@{operator==}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
@@ -109,7 +145,19 @@ Definition at line 51 of file intrusivelist.\+h.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_a03a03db2b8ce66d8f3a609ac432bcb87}
 
 
-Definition at line 76 of file intrusivelist.\+h.
+compare operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & reference to compared node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of comparsion 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file intrusivelist.\+h.
 
 \hypertarget{classcrap_1_1intrusive__node_a64fa7fffc54fe23e13c2b42f610ac52c}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!parent@{parent}}
 \index{parent@{parent}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
@@ -120,7 +168,14 @@ Definition at line 76 of file intrusivelist.\+h.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_a64fa7fffc54fe23e13c2b42f610ac52c}
 
 
-Definition at line 56 of file intrusivelist.\+h.
+provides pointer to parent 
+
+\begin{DoxyReturn}{Returns}
+pointer to parent 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file intrusivelist.\+h.
 
 \hypertarget{classcrap_1_1intrusive__node_a366a5d51e32c3d204d229dd36785495b}{\index{crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}!previous@{previous}}
 \index{previous@{previous}!crap\+::intrusive\+\_\+node@{crap\+::intrusive\+\_\+node}}
@@ -131,7 +186,14 @@ Definition at line 56 of file intrusivelist.\+h.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1intrusive__node_a366a5d51e32c3d204d229dd36785495b}
 
 
-Definition at line 66 of file intrusivelist.\+h.
+returns pointer to previous node 
+
+\begin{DoxyReturn}{Returns}
+pointer to previous node 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file intrusivelist.\+h.
 
 
 
@@ -141,7 +203,11 @@ Definition at line 66 of file intrusivelist.\+h.
 \subsubsection[{intrusive\+\_\+list$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ friend class {\bf intrusive\+\_\+list}$<$ T $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classcrap_1_1intrusive__node_a8abfe7a49da2ca301723ee176edb482f}
 
 
-Definition at line 88 of file intrusivelist.\+h.
+defining list class as friend 
+
+
+
+Definition at line 136 of file intrusivelist.\+h.
 
 
 

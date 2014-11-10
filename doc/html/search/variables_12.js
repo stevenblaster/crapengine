@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['t0',['t0',['../struct_f_o_n_squad.html#ab9a0182a9c2d25c165f11fffeb56b130',1,'FONSquad']]],
-  ['t1',['t1',['../struct_f_o_n_squad.html#ab3c79f5439b37cf9c1eafa6d4f623ad9',1,'FONSquad']]],
-  ['tesstol',['tessTol',['../struct_n_v_gcontext.html#a12879e67beadb4dfd5dbd43aa8b87de9',1,'NVGcontext']]],
-  ['textalign',['textAlign',['../struct_n_v_gstate.html#a892bf3be3137e966108164c93730ce2b',1,'NVGstate']]],
-  ['texttricount',['textTriCount',['../struct_n_v_gcontext.html#ae02585c93bfdeab6edd75d4777480ed1',1,'NVGcontext']]],
-  ['track_5fallocations',['track_allocations',['../structcrap_1_1memory__manager_1_1configuration.html#a1e65aab18541fd1200bc32e344de79f7',1,'crap::memory_manager::configuration']]],
-  ['truetypefont',['trueTypeFont',['../struct_font_manager_1_1_cached_font.html#ae16bb9253da5738d86915ab81cda7410',1,'FontManager::CachedFont']]],
-  ['type',['type',['../structcrap_1_1_resource_manager_1_1_resource_info.html#a58a31f45846c4603d02693161794bc19',1,'crap::ResourceManager::ResourceInfo::type()'],['../structcrap_1_1_resource_manager_1_1_package_content_info.html#aa44d918f7f16824c05c04466d6823c26',1,'crap::ResourceManager::PackageContentInfo::type()']]],
-  ['type_5fname',['type_name',['../structcrap_1_1_resource_manager_1_1_resource_info.html#abd763473d907b5232dd360092e754f00',1,'crap::ResourceManager::ResourceInfo']]]
+  ['u',['u',['../struct_n_v_gvertex.html#a088da6dbeb6388326111df98b74e23e4',1,'NVGvertex']]],
+  ['u_5fimagelod',['u_imageLod',['../struct_imgui.html#a30263cbb0979de658a5075d42f6194c3',1,'Imgui']]],
+  ['u_5ftexcolor',['u_texColor',['../struct_imgui.html#afa78c96bf20f3b39f798596df31b1064',1,'Imgui']]],
+  ['underlineposition',['underlinePosition',['../struct_font_info.html#a7e89e9a15aca664a36a63e1222838777',1,'FontInfo']]],
+  ['underlinethickness',['underlineThickness',['../struct_font_info.html#a0657ed0e246772231bb768cae16d4f08',1,'FontInfo']]],
+  ['userptr',['userPtr',['../struct_f_o_n_sparams.html#a3a6a794c1b7b473d0ac6beb232a8f1e9',1,'FONSparams::userPtr()'],['../struct_n_v_gparams.html#a6976a0363fdbfa0ef1e756556ef05f97',1,'NVGparams::userPtr()']]],
+  ['utf8state',['utf8state',['../struct_f_o_n_stext_iter.html#a325cc1ced940302cd1685adc6781de19',1,'FONStextIter']]]
 ];
