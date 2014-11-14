@@ -20,7 +20,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define LINEAR_MAP_SPACE 10
+#define LINEAR_MAP_SPACE 100
 
 namespace
 {
@@ -102,16 +102,25 @@ TEST(FindLinearMap)
     for(uint32_t i=0; i< LINEAR_MAP_SPACE; ++i)
     {
     	uint32_t value = my_tree_map->find( keys[i] );
-    	CHECK( *my_tree_map->get_key( value ) == keys[i] );
+    	//std::cout << "Index of " << keys[i] << " is value " << value << std::endl;
+    	CHECK( *(my_tree_map->get_key( value )) == keys[i] );
     }
 }
 
-TEST(RemoveLinearMap)
+TEST(RemoveLinearTreeMap)
 {
+	uint32_t a_size = my_tree_map->size();
     for(uint32_t i=0; i< LINEAR_MAP_SPACE; ++i)
     {
+//        for(uint32_t j=0; j< LINEAR_MAP_SPACE; ++j)
+//        {
+//        	uint32_t value = my_tree_map->find( keys[j] );
+//        	std::cout << "Index of " << keys[j] << " is value " << value << std::endl;
+//        }
+//        std::cout << "=============================" << std::endl;
+//        std::cout << "Erasing: " << keys[i] << std::endl;
     	my_tree_map->erase( keys[i] );
-    	CHECK( my_tree_map->size() == LINEAR_MAP_SPACE - (i+1) );
+    	CHECK( my_tree_map->size() == --a_size );
     }
 }
 

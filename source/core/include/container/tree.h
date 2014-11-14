@@ -63,9 +63,19 @@ private:
          */
         tree_node( void )
         {
-            sub_nodes[0] = INVALID;
-            sub_nodes[1] = INVALID;
-            sub_nodes[2] = INVALID;
+            sub_nodes[ parent ] = INVALID;
+            sub_nodes[ left ] = INVALID;
+            sub_nodes[ right ] = INVALID;
+        }
+
+        /**
+         * @brief Destructor
+         */
+        ~tree_node( void )
+        {
+            sub_nodes[ parent ] = INVALID;
+            sub_nodes[ left ] = INVALID;
+            sub_nodes[ right ] = INVALID;
         }
 
         /**
@@ -73,9 +83,9 @@ private:
          */
         tree_node( const tree_node& other )
         {
-            sub_nodes[0] = other.sub_nodes[0];
-            sub_nodes[1] = other.sub_nodes[1];
-            sub_nodes[2] = other.sub_nodes[2];
+            sub_nodes[ parent ] = other.sub_nodes[ parent ];
+            sub_nodes[ left ] = other.sub_nodes[ left ];
+            sub_nodes[ right ] = other.sub_nodes[ right ];
         }
 
         /**
@@ -83,9 +93,9 @@ private:
          */
         tree_node& operator=( const tree_node& other )
         {
-            sub_nodes[0] = other.sub_nodes[0];
-            sub_nodes[1] = other.sub_nodes[1];
-            sub_nodes[2] = other.sub_nodes[2];
+            sub_nodes[ parent ] = other.sub_nodes[ parent ];
+            sub_nodes[ left ] = other.sub_nodes[ left ];
+            sub_nodes[ right ] = other.sub_nodes[ right ];
 
             return *this;
         }
@@ -164,6 +174,14 @@ public:
 	 */
     CRAP_INLINE
 	~tree( void );
+
+    /**
+     * @brief assignment operator
+     * @param othter Reference to other tree
+     * @return reference to self
+     */
+    CRAP_INLINE
+	tree& operator=( const tree& other );
 
 	/**
 	 * @brief Finds key and returns index
@@ -395,6 +413,23 @@ tree<T>::~tree( void )
 }
 
 template <class T>
+tree<T>& tree<T>::operator=( const tree<T>& other )
+{
+	if( this != &other && other._size_max <= _size_max )
+	{
+		destruct_array( _indices.as_type, _size );
+		destruct_array( _data.as_type, _size );
+
+		copy_construct_array( other._indices.as_type, _indices.as_type, other._size );
+		copy_construct_array( other._data.as_type, _data.as_type, other._size );
+
+		_size = other._size;
+		_weight = other._weight;
+		_root = other._root;
+	}
+}
+
+template <class T>
 uint32_t tree<T>::find( const T& key ) const
 {
     uint32_t current_index = _root;
@@ -406,10 +441,9 @@ uint32_t tree<T>::find( const T& key ) const
         if( _data.as_type[current_index] == key )
             return current_index;
 
-        if( _data.as_type[current_index] < key )
-            current_index = current_node->sub_nodes[tree_node::left];
-
         if( _data.as_type[current_index] > key )
+            current_index = current_node->sub_nodes[tree_node::left];
+        else if( _data.as_type[current_index] < key )
             current_index = current_node->sub_nodes[tree_node::right];
     }
 
@@ -425,7 +459,7 @@ uint32_t tree<T>::insert( const T& key )
 		new ( _indices.as_type + _size ) tree_node();
 		copy_construct_object( &key , _data.as_type + _size );
 
-		int32_t direction;
+		int32_t direction = 0;
 		uint32_t free_index = find_free( key, &direction );
 
 		if( free_index == INVALID )
@@ -456,149 +490,134 @@ void tree<T>::erase_at( uint32_t index )
 		const uint32_t left_index = _indices.as_type[index].sub_nodes[tree_node::left];
 		const uint32_t right_index = _indices.as_type[index].sub_nodes[tree_node::right];
 
-		//root node
-		if( parent_index == INVALID )
+		uint32_t node_direction = INVALID;
+		if( parent_index != INVALID )
 		{
-			if( right_index == INVALID )
+			node_direction = (_indices.as_type[parent_index].sub_nodes[tree_node::left] == index ) ?
+								tree_node::left : tree_node::right;
+		}
+
+		if( parent_index == INVALID && left_index == INVALID && right_index == INVALID )
+		{
+			_root = INVALID;
+			_weight = 0;
+		}
+		else if( parent_index == INVALID && left_index != INVALID && right_index == INVALID )
+		{
+			_root = left_index;
+			_weight++;
+			_indices.as_type[left_index].sub_nodes[tree_node::parent] = INVALID;
+		}
+		else if( parent_index == INVALID && left_index == INVALID && right_index != INVALID )
+		{
+			_root = right_index;
+			_weight--;
+			_indices.as_type[right_index].sub_nodes[tree_node::parent] = INVALID;
+		}
+		else if( parent_index == INVALID && left_index != INVALID && right_index != INVALID )
+		{
+			if( _weight < 0 )
 			{
 				_root = left_index;
+				const uint32_t connection_index = last_from( left_index );
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::right] = right_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = connection_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = INVALID;
 				_weight++;
 			}
-			else if( left_index == INVALID )
+			else
 			{
 				_root = right_index;
+				const uint32_t connection_index = first_from( right_index );
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::left] = left_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = connection_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = INVALID;
 				_weight--;
 			}
-			else if( left_index != INVALID && right_index != INVALID )
+		}
+		else if( parent_index != INVALID && left_index == INVALID && right_index == INVALID )
+		{
+			_indices.as_type[parent_index].sub_nodes[node_direction] = INVALID;
+		}
+		else if( parent_index != INVALID && left_index != INVALID && right_index == INVALID )
+		{
+			_indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
+			_indices.as_type[left_index].sub_nodes[tree_node::parent] = parent_index;
+		}
+		else if( parent_index != INVALID && left_index == INVALID && right_index != INVALID )
+		{
+			_indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
+			_indices.as_type[right_index].sub_nodes[tree_node::parent] = parent_index;
+		}
+
+		if( parent_index != INVALID && left_index != INVALID && right_index != INVALID )
+		{
+			if( _weight < 0 )
 			{
-				if( _weight <= 0 )
-				{
-					const uint32_t last_index = last_from( left_index );
-					_indices.as_type[left_index].sub_nodes[tree_node::parent] = INVALID;
-					_indices.as_type[right_index].sub_nodes[tree_node::parent] = last_index;
-					_indices.as_type[last_index].sub_nodes[tree_node::right] = right_index;
-					_root = left_index;
-					_weight++;
-				}
-				else
-				{
-					const uint32_t last_index = first_from( right_index );
-					_indices.as_type[right_index].sub_nodes[tree_node::parent] = INVALID;
-					_indices.as_type[left_index].sub_nodes[tree_node::parent] = last_index;
-					_indices.as_type[last_index].sub_nodes[tree_node::left] = left_index;
-					_root = right_index;
-					_weight--;
-				}
+				const uint32_t connection_index = last_from( left_index );
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::right] = right_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = connection_index;
+				_indices.as_type[ parent_index ].sub_nodes[node_direction] = left_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = parent_index;
 			}
 			else
-				_root = INVALID;
-		}
-		else
-		{
-			if( _indices.as_type[parent_index].sub_nodes[tree_node::left] == index )
 			{
-				if( left_index == INVALID && right_index == INVALID )
-				{
-					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = INVALID;
-				}
-				else if( left_index == INVALID )
-				{
-					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = right_index;
-				}
-				else if( right_index == INVALID )
-				{
-					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = left_index;
-				}
-				else
-				{
-					const uint32_t closest_index = first_from( right_index );
-					_indices.as_type[closest_index].sub_nodes[ tree_node::left ] = left_index;
-					_indices.as_type[left_index].sub_nodes[ tree_node::parent ] = closest_index;
-					_indices.as_type[parent_index].sub_nodes[ tree_node::left ] = right_index;
-				}
-			}
-			else if( _indices.as_type[parent_index].sub_nodes[tree_node::right] == index )
-			{
-				if( left_index == INVALID && right_index == INVALID )
-				{
-					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = INVALID;
-				}
-				else if( left_index == INVALID )
-				{
-					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = right_index;
-				}
-				else if( right_index == INVALID )
-				{
-					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = left_index;
-				}
-				else
-				{
-					const uint32_t closest_index = last_from( left_index );
-					_indices.as_type[closest_index].sub_nodes[ tree_node::right ] = right_index;
-					_indices.as_type[right_index].sub_nodes[ tree_node::parent ] = closest_index;
-					_indices.as_type[parent_index].sub_nodes[ tree_node::right ] = left_index;
-
-				}
-			}
-
-			//weight..
-			uint32_t check_index = _indices.as_type[index].sub_nodes[ tree_node::parent ];
-			while( check_index != INVALID )
-			{
-				if( _indices.as_type[check_index].sub_nodes[ tree_node::left ] == check_index  && check_index == _root )
-				{
-					_weight++;
-					break;
-				}
-				if( _indices.as_type[check_index].sub_nodes[ tree_node::right] == check_index  && check_index == _root )
-				{
-					_weight--;
-					break;
-				}
-
-				check_index = _indices.as_type[check_index].sub_nodes[ tree_node::parent ];
+				const uint32_t connection_index = first_from( right_index );
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::left] = left_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = connection_index;
+				_indices.as_type[ parent_index ].sub_nodes[node_direction] = right_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = parent_index;
 			}
 		}
 
-	    destruct_object( _data.as_type + index );
+		destruct_object( _data.as_type + index );
+	    destruct_object( _indices.as_type + index );
+
+	    const uint32_t last_index = _size-1;
 
 	    //keep stuff packed
-	    if( index != _size-1 )
+	    if( index != last_index )
 	    {
-	    	const uint32_t last_index = _size-1;
+	    	const uint32_t last_node_parent =  _indices.as_type[last_index].sub_nodes[tree_node::parent];
+	    	const uint32_t last_node_left =  _indices.as_type[last_index].sub_nodes[tree_node::left];
+	    	const uint32_t last_node_right =  _indices.as_type[last_index].sub_nodes[tree_node::right];
 
-	    	const uint32_t last_parent =  _indices.as_type[last_index].sub_nodes[tree_node::parent];
-	    	const uint32_t last_left =  _indices.as_type[last_index].sub_nodes[tree_node::left];
-	    	const uint32_t last_right =  _indices.as_type[last_index].sub_nodes[tree_node::right];
-
-	    	if( last_parent != INVALID )
+	    	if( last_node_parent != INVALID )
 	    	{
-	    		if( _indices.as_type[last_parent].sub_nodes[tree_node::left] == last_index )
-	    			_indices.as_type[last_parent].sub_nodes[tree_node::left] = index;
+	    		if( _indices.as_type[last_node_parent].sub_nodes[tree_node::left] == last_index )
+	    		{
+	    			_indices.as_type[last_node_parent].sub_nodes[tree_node::left] = index;
+	    		}
+	    		else if( _indices.as_type[last_node_parent].sub_nodes[tree_node::right] == last_index )
+	    		{
+	    			_indices.as_type[last_node_parent].sub_nodes[tree_node::right] = index;
+	    		}
 	    		else
-	    			_indices.as_type[last_parent].sub_nodes[tree_node::right] = index;
+	    		{
+	    			//..nothing
+	    		}
 	    	}
 
-	    	if( last_left != INVALID )
+	    	if( last_node_left != INVALID )
 	    	{
-	    		_indices.as_type[last_left].sub_nodes[tree_node::parent] = index;
+	    		_indices.as_type[last_node_left].sub_nodes[tree_node::parent] = index;
 	    	}
 
-	    	if( last_right != INVALID )
+	    	if( last_node_right != INVALID )
 	    	{
-	    		_indices.as_type[last_right].sub_nodes[tree_node::parent] = index;
+	    		_indices.as_type[last_node_right].sub_nodes[tree_node::parent] = index;
 	    	}
 
-	    	_indices.as_type[index].sub_nodes[tree_node::parent] = last_parent;
-	    	_indices.as_type[index].sub_nodes[tree_node::left] = last_left;
-	    	_indices.as_type[index].sub_nodes[tree_node::right] = last_right;
+	    	copy_construct_object( _indices.as_type + last_index, _indices.as_type + index );
+	    	destruct_object( _indices.as_type + last_index );
 
-	    	_indices.as_type[last_index].sub_nodes[tree_node::parent] = INVALID;
-	    	_indices.as_type[last_index].sub_nodes[tree_node::left] = INVALID;
-	    	_indices.as_type[last_index].sub_nodes[tree_node::right] = INVALID;
-
-	        copy_construct_object( _data.as_type + last_index, _data.as_type + index );
+	    	copy_construct_object( _data.as_type + last_index, _data.as_type + index );
 	        destruct_object( _data.as_type + last_index );
+
+	        if( last_index == _root )
+	        {
+		    	_root = index;
+	        }
 	    }
 
 	    //destroy former last node
