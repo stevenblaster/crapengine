@@ -39,7 +39,10 @@ private:
 	/**
 	 * @struct nested struct used as index
 	 */
-    struct tree_map_node
+	/**
+	 * @struct nested struct used as index
+	 */
+    struct tree_node
     {
     	/**
     	 * @enum names for the index array
@@ -57,14 +60,7 @@ private:
         /**
          * @brief Constructor
          */
-        tree_map_node( void )
-        {
-            sub_nodes[ parent ] = INVALID;
-            sub_nodes[ left ] = INVALID;
-            sub_nodes[ right ] = INVALID;
-        }
-
-        ~tree_map_node( void )
+        tree_node( void )
         {
             sub_nodes[ parent ] = INVALID;
             sub_nodes[ left ] = INVALID;
@@ -72,9 +68,19 @@ private:
         }
 
         /**
-         * @brief destructor
+         * @brief Destructor
          */
-        tree_map_node( const tree_map_node& other )
+        ~tree_node( void )
+        {
+            sub_nodes[ parent ] = INVALID;
+            sub_nodes[ left ] = INVALID;
+            sub_nodes[ right ] = INVALID;
+        }
+
+        /**
+         * @brief copy constructor
+         */
+        tree_node( const tree_node& other )
         {
             sub_nodes[ parent ] = other.sub_nodes[ parent ];
             sub_nodes[ left ] = other.sub_nodes[ left ];
@@ -84,7 +90,7 @@ private:
         /**
          * @brief assignment operator
          */
-        tree_map_node& operator=( const tree_map_node& other )
+        tree_node& operator=( const tree_node& other )
         {
             sub_nodes[ parent ] = other.sub_nodes[ parent ];
             sub_nodes[ left ] = other.sub_nodes[ left ];
@@ -95,7 +101,7 @@ private:
     };
 
     /// pointer to indices
-    pointer_t<tree_map_node>  _indices;
+    pointer_t<tree_node>  _indices;
 
     /// pointer to keys
     pointer_t<K>            _keys;
@@ -121,7 +127,7 @@ private:
     CRAP_INLINE tree_map( const tree_map& other );
 
     //! @brief Finds key and returns free spot
-    uint32_t find_free(const K& key, int32_t* direction ) const;
+    uint32_t find_free(const K& key ) const;
 
     /**
      * @brief Helper function getting node with lowest value from index
@@ -327,44 +333,49 @@ void tree_map<K,V>::delete_recursive( uint32_t node_index )
     if(node_index == INVALID)
 		return;
 
-    delete_recursive( _indices.as_type[node_index].sub_nodes[tree_map_node::left] );
-    delete_recursive( _indices.as_type[node_index].sub_nodes[tree_map_node::right] );
+    delete_recursive( _indices.as_type[node_index].sub_nodes[tree_node::left] );
+    delete_recursive( _indices.as_type[node_index].sub_nodes[tree_node::right] );
 
     erase_at(node_index);
 }
 
 template <typename K, typename V>
 //! @brief Finds key and returns free spot
-uint32_t tree_map<K,V>::find_free(const K& key, int32_t* direction ) const
+uint32_t tree_map<K,V>::find_free( const K& key ) const
 {
-	uint32_t last_index = INVALID;
-    uint32_t current_index = _root;
-    *direction = 0;
+	uint32_t current_index = _root;
 
     while( current_index != INVALID )
     {
-        tree_map_node* current_node = &(_indices.as_type[current_index]);
-
-        if( _keys.as_type[current_index] == key )
-            return INVALID;
-
-        last_index = current_index;
-
-        if( _keys.as_type[current_index] > key )
-        {
-            current_index = current_node->sub_nodes[tree_map_node::left];
-            if( *direction == 0 )
-            	*direction = -1;
-        }
-        else if( _keys.as_type[current_index] < key )
-        {
-            current_index = current_node->sub_nodes[tree_map_node::right];
-            if( *direction == 0 )
-            	*direction = 1;
-        }
+    	if( _keys.as_type[current_index] > key)
+    	{
+    		if( _indices.as_type[current_index].sub_nodes[tree_node::left] != INVALID )
+    		{
+    			current_index = _indices.as_type[current_index].sub_nodes[tree_node::left];
+    		}
+    		else
+    		{
+    			return current_index;
+    		}
+    	}
+    	else if( _keys.as_type[current_index] < key)
+    	{
+    		if( _indices.as_type[current_index].sub_nodes[tree_node::right] != INVALID )
+    		{
+    			current_index = _indices.as_type[current_index].sub_nodes[tree_node::right];
+    		}
+    		else
+    		{
+    			return current_index;
+    		}
+    	}
+    	else
+    	{
+    		return INVALID;
+    	}
     }
 
-    return last_index;
+    return INVALID;
 }
 
 template <typename K, typename V>
@@ -372,9 +383,9 @@ uint32_t tree_map<K,V>::first_from( uint32_t index ) const
 {
 	uint32_t return_index = index;
 
-	while( _indices.as_type[return_index].sub_nodes[tree_map_node::left] != INVALID )
+	while( _indices.as_type[return_index].sub_nodes[tree_node::left] != INVALID )
 	{
-		return_index = _indices.as_type[return_index].sub_nodes[tree_map_node::left];
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::left];
 	}
 
 	return return_index;
@@ -385,9 +396,9 @@ uint32_t tree_map<K,V>::last_from( uint32_t index ) const
 {
 	uint32_t return_index = index;
 
-	while( _indices.as_type[return_index].sub_nodes[tree_map_node::right] != INVALID )
+	while( _indices.as_type[return_index].sub_nodes[tree_node::right] != INVALID )
 	{
-		return_index = _indices.as_type[return_index].sub_nodes[tree_map_node::right];
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::right];
 	}
 
 	return return_index;
@@ -399,7 +410,7 @@ uint32_t tree_map<K,V>::last_from( uint32_t index ) const
 
 template <typename K, typename V>
 tree_map<K,V>::tree_map( void* memory, uint32_t size ) :
-	_size(0), _size_max( size / (sizeof(tree_map_node)+sizeof(K)+sizeof(V)) ), _root(INVALID), _weight(0)
+	_size(0), _size_max( size / size_of_elements(1) ), _root(INVALID), _weight(0)
 {
     _indices = memory;
     _keys.as_void = _indices.as_type + _size_max;
@@ -415,7 +426,7 @@ tree_map<K,V>::~tree_map( void )
 template <typename K, typename V>
 tree_map<K,V>& tree_map<K,V>::operator=( const tree_map<K,V>& other )
 {
-	if( this != &other && other._size_max <= _size_max )
+	if( this != &other && other._size <= _size_max )
 	{
 		destruct_array( _indices.as_type, _size );
 		destruct_array( _keys.as_type, _size );
@@ -438,18 +449,24 @@ uint32_t tree_map<K,V>::find( const K& key ) const
 
     while( current_index != INVALID )
     {
-        tree_map_node* current_node = &(_indices.as_type[current_index]);
+    	if( _keys.as_type[current_index] == key )
+    		return current_index;
 
-        if( _keys.as_type[current_index] == key )
-            return current_index;
-
-        if( _keys.as_type[current_index] > key )
-            current_index = current_node->sub_nodes[tree_map_node::left];
-        else if( _keys.as_type[current_index] < key )
-            current_index = current_node->sub_nodes[tree_map_node::right];
+    	if( _keys.as_type[current_index] > key)
+    	{
+    		current_index = _indices.as_type[current_index].sub_nodes[tree_node::left];
+    	}
+    	else if( _keys.as_type[current_index] < key)
+    	{
+    		current_index = _indices.as_type[current_index].sub_nodes[tree_node::right];
+    	}
+    	else
+    	{
+    		return INVALID;
+    	}
     }
 
-    return current_index;
+    return INVALID;
 }
 
 
@@ -458,27 +475,32 @@ uint32_t tree_map<K,V>::insert( const K& key, const V& value )
 {
 	if( _size < _size_max )
 	{
-
-		construct_object( _indices.as_type + _size );
+		new ( _indices.as_type + _size ) tree_node();
 		copy_construct_object( &key , _keys.as_type + _size );
 		copy_construct_object( &value , _values.as_type + _size );
 
-		int32_t direction = 0;
-		uint32_t free_index = find_free( key, &direction );
+		uint32_t free_index = find_free( key );
 
-		if( free_index == INVALID )
+		if( _size == 0 )
 		{
 			_root = _size;
 		}
-		else
+		else if( free_index != INVALID )
 		{
-			uint32_t insert_direction = ( _keys.as_type[free_index] < key ) ? tree_map_node::right : tree_map_node::left;
+			uint32_t insert_direction = ( _keys.as_type[free_index] < key ) ? tree_node::right : tree_node::left;
+
+			CRAP_ASSERT( ASSERT_BREAK, _indices.as_type[free_index].sub_nodes[insert_direction] == INVALID, "Insert direction not invalid" );
 
 			_indices.as_type[free_index].sub_nodes[insert_direction] = _size;
-	        _indices.as_type[_size].sub_nodes[tree_map_node::parent] = free_index;
+	        _indices.as_type[_size].sub_nodes[tree_node::parent] = free_index;
+
+	        _weight += ( insert_direction == tree_node::right ) ? 1 : -1;
+		}
+		else
+		{
+			return INVALID;
 		}
 
-		_weight += direction;
 		return _size++;
 	}
 
@@ -490,33 +512,36 @@ void tree_map<K,V>::erase_at( uint32_t index )
 {
 	if( index < _size )
 	{
-		const uint32_t parent_index = _indices.as_type[index].sub_nodes[tree_map_node::parent];
-		const uint32_t left_index = _indices.as_type[index].sub_nodes[tree_map_node::left];
-		const uint32_t right_index = _indices.as_type[index].sub_nodes[tree_map_node::right];
+		const uint32_t parent_index = _indices.as_type[index].sub_nodes[tree_node::parent];
+		const uint32_t left_index = _indices.as_type[index].sub_nodes[tree_node::left];
+		const uint32_t right_index = _indices.as_type[index].sub_nodes[tree_node::right];
 
 		uint32_t node_direction = INVALID;
 		if( parent_index != INVALID )
 		{
-			node_direction = (_indices.as_type[parent_index].sub_nodes[tree_map_node::left] == index ) ?
-								tree_map_node::left : tree_map_node::right;
+			node_direction = (_indices.as_type[parent_index].sub_nodes[tree_node::left] == index ) ?
+								tree_node::left : tree_node::right;
 		}
 
 		if( parent_index == INVALID && left_index == INVALID && right_index == INVALID )
 		{
+			CRAP_ASSERT( ASSERT_BREAK, _root == index, "Root wasnt indexxx....");
 			_root = INVALID;
 			_weight = 0;
 		}
 		else if( parent_index == INVALID && left_index != INVALID && right_index == INVALID )
 		{
+			CRAP_ASSERT( ASSERT_BREAK, _root == index, "Root wasnt indexxx....");
 			_root = left_index;
 			_weight++;
-			_indices.as_type[left_index].sub_nodes[tree_map_node::parent] = INVALID;
+			_indices.as_type[left_index].sub_nodes[tree_node::parent] = INVALID;
 		}
 		else if( parent_index == INVALID && left_index == INVALID && right_index != INVALID )
 		{
+			CRAP_ASSERT( ASSERT_BREAK, _root == index, "Root wasnt indexxx....");
 			_root = right_index;
 			_weight--;
-			_indices.as_type[right_index].sub_nodes[tree_map_node::parent] = INVALID;
+			_indices.as_type[right_index].sub_nodes[tree_node::parent] = INVALID;
 		}
 		else if( parent_index == INVALID && left_index != INVALID && right_index != INVALID )
 		{
@@ -524,18 +549,18 @@ void tree_map<K,V>::erase_at( uint32_t index )
 			{
 				_root = left_index;
 				const uint32_t connection_index = last_from( left_index );
-				_indices.as_type[ connection_index ].sub_nodes[tree_map_node::right] = right_index;
-				_indices.as_type[ right_index ].sub_nodes[tree_map_node::parent] = connection_index;
-				_indices.as_type[ left_index ].sub_nodes[tree_map_node::parent] = INVALID;
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::right] = right_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = connection_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = INVALID;
 				_weight++;
 			}
 			else
 			{
 				_root = right_index;
 				const uint32_t connection_index = first_from( right_index );
-				_indices.as_type[ connection_index ].sub_nodes[tree_map_node::left] = left_index;
-				_indices.as_type[ left_index ].sub_nodes[tree_map_node::parent] = connection_index;
-				_indices.as_type[ right_index ].sub_nodes[tree_map_node::parent] = INVALID;
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::left] = left_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = connection_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = INVALID;
 				_weight--;
 			}
 		}
@@ -546,12 +571,12 @@ void tree_map<K,V>::erase_at( uint32_t index )
 		else if( parent_index != INVALID && left_index != INVALID && right_index == INVALID )
 		{
 			_indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
-			_indices.as_type[left_index].sub_nodes[tree_map_node::parent] = parent_index;
+			_indices.as_type[left_index].sub_nodes[tree_node::parent] = parent_index;
 		}
 		else if( parent_index != INVALID && left_index == INVALID && right_index != INVALID )
 		{
 			_indices.as_type[parent_index].sub_nodes[node_direction] = left_index;
-			_indices.as_type[right_index].sub_nodes[tree_map_node::parent] = parent_index;
+			_indices.as_type[right_index].sub_nodes[tree_node::parent] = parent_index;
 		}
 
 		if( parent_index != INVALID && left_index != INVALID && right_index != INVALID )
@@ -559,44 +584,43 @@ void tree_map<K,V>::erase_at( uint32_t index )
 			if( _weight < 0 )
 			{
 				const uint32_t connection_index = last_from( left_index );
-				_indices.as_type[ connection_index ].sub_nodes[tree_map_node::right] = right_index;
-				_indices.as_type[ right_index ].sub_nodes[tree_map_node::parent] = connection_index;
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::right] = right_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = connection_index;
 				_indices.as_type[ parent_index ].sub_nodes[node_direction] = left_index;
-				_indices.as_type[ left_index ].sub_nodes[tree_map_node::parent] = parent_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = parent_index;
 			}
 			else
 			{
 				const uint32_t connection_index = first_from( right_index );
-				_indices.as_type[ connection_index ].sub_nodes[tree_map_node::left] = left_index;
-				_indices.as_type[ left_index ].sub_nodes[tree_map_node::parent] = connection_index;
+				_indices.as_type[ connection_index ].sub_nodes[tree_node::left] = left_index;
+				_indices.as_type[ left_index ].sub_nodes[tree_node::parent] = connection_index;
 				_indices.as_type[ parent_index ].sub_nodes[node_direction] = right_index;
-				_indices.as_type[ right_index ].sub_nodes[tree_map_node::parent] = parent_index;
+				_indices.as_type[ right_index ].sub_nodes[tree_node::parent] = parent_index;
 			}
 		}
 
+		destruct_object( _indices.as_type + index );
 		destruct_object( _keys.as_type + index );
 	    destruct_object( _values.as_type + index );
-
-	    destruct_object( _indices.as_type + index );
 
 	    const uint32_t last_index = _size-1;
 
 	    //keep stuff packed
 	    if( index != last_index )
 	    {
-	    	const uint32_t last_node_parent =  _indices.as_type[last_index].sub_nodes[tree_map_node::parent];
-	    	const uint32_t last_node_left =  _indices.as_type[last_index].sub_nodes[tree_map_node::left];
-	    	const uint32_t last_node_right =  _indices.as_type[last_index].sub_nodes[tree_map_node::right];
+	    	const uint32_t last_node_parent =  _indices.as_type[last_index].sub_nodes[tree_node::parent];
+	    	const uint32_t last_node_left =  _indices.as_type[last_index].sub_nodes[tree_node::left];
+	    	const uint32_t last_node_right =  _indices.as_type[last_index].sub_nodes[tree_node::right];
 
 	    	if( last_node_parent != INVALID )
 	    	{
-	    		if( _indices.as_type[last_node_parent].sub_nodes[tree_map_node::left] == last_index )
+	    		if( _indices.as_type[last_node_parent].sub_nodes[tree_node::left] == last_index )
 	    		{
-	    			_indices.as_type[last_node_parent].sub_nodes[tree_map_node::left] = index;
+	    			_indices.as_type[last_node_parent].sub_nodes[tree_node::left] = index;
 	    		}
-	    		else if( _indices.as_type[last_node_parent].sub_nodes[tree_map_node::right] == last_index )
+	    		else if( _indices.as_type[last_node_parent].sub_nodes[tree_node::right] == last_index )
 	    		{
-	    			_indices.as_type[last_node_parent].sub_nodes[tree_map_node::right] = index;
+	    			_indices.as_type[last_node_parent].sub_nodes[tree_node::right] = index;
 	    		}
 	    		else
 	    		{
@@ -606,12 +630,12 @@ void tree_map<K,V>::erase_at( uint32_t index )
 
 	    	if( last_node_left != INVALID )
 	    	{
-	    		_indices.as_type[last_node_left].sub_nodes[tree_map_node::parent] = index;
+	    		_indices.as_type[last_node_left].sub_nodes[tree_node::parent] = index;
 	    	}
 
 	    	if( last_node_right != INVALID )
 	    	{
-	    		_indices.as_type[last_node_right].sub_nodes[tree_map_node::parent] = index;
+	    		_indices.as_type[last_node_right].sub_nodes[tree_node::parent] = index;
 	    	}
 
 	    	copy_construct_object( _indices.as_type + last_index, _indices.as_type + index );
@@ -653,9 +677,9 @@ uint32_t tree_map<K,V>::begin( void ) const
 {
 	uint32_t return_index = _root;
 
-	while( _indices.as_type[return_index].sub_nodes[tree_map_node::left] != INVALID )
+	while( _indices.as_type[return_index].sub_nodes[tree_node::left] != INVALID )
 	{
-		return_index = _indices.as_type[return_index].sub_nodes[tree_map_node::left];
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::left];
 	}
 
 	return return_index;
@@ -666,9 +690,9 @@ uint32_t tree_map<K,V>::last( void ) const
 {
 	uint32_t return_index = _root;
 
-	while( _indices.as_type[return_index].sub_nodes[tree_map_node::right] != INVALID )
+	while( _indices.as_type[return_index].sub_nodes[tree_node::right] != INVALID )
 	{
-		return_index = _indices.as_type[return_index].sub_nodes[tree_map_node::right];
+		return_index = _indices.as_type[return_index].sub_nodes[tree_node::right];
 	}
 
 	return return_index;
@@ -685,23 +709,23 @@ uint32_t tree_map<K,V>::next( uint32_t index ) const
 {
 	if( index < _size )
 	{
-		if( _indices.as_type[index].sub_nodes[tree_map_node::right] != INVALID )
+		if( _indices.as_type[index].sub_nodes[tree_node::right] != INVALID )
 		{
-			uint32_t return_index = _indices.as_type[index].sub_nodes[tree_map_node::right];
-			while( _indices.as_type[return_index].sub_nodes[tree_map_node::left] != INVALID )
+			uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::right];
+			while( _indices.as_type[return_index].sub_nodes[tree_node::left] != INVALID )
 			{
-				return_index = _indices.as_type[return_index].sub_nodes[tree_map_node::left];
+				return_index = _indices.as_type[return_index].sub_nodes[tree_node::left];
 			}
 			return return_index;
 		}
 
-		uint32_t return_index = _indices.as_type[index].sub_nodes[tree_map_node::parent];
+		uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::parent];
 		uint32_t previous_index = index;
 
-		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[tree_map_node::right] )
+		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[tree_node::right] )
 		{
 			previous_index = return_index;
-			return_index = _indices.as_type[previous_index].sub_nodes[tree_map_node::parent];
+			return_index = _indices.as_type[previous_index].sub_nodes[tree_node::parent];
 		}
 
 		return return_index;
@@ -715,23 +739,23 @@ uint32_t tree_map<K,V>::previous( uint32_t index ) const
 {
 	if( index < _size )
 	{
-		if( _indices.as_type[index].sub_nodes[tree_map_node::left] != INVALID )
+		if( _indices.as_type[index].sub_nodes[tree_node::left] != INVALID )
 		{
-			uint32_t return_index = _indices.as_type[index].sub_nodes[tree_map_node::left];
-			while( _indices.as_type[return_index].sub_nodes[tree_map_node::right] != INVALID )
+			uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::left];
+			while( _indices.as_type[return_index].sub_nodes[tree_node::right] != INVALID )
 			{
-				return_index = _indices.as_type[return_index].sub_nodes[tree_map_node::right];
+				return_index = _indices.as_type[return_index].sub_nodes[tree_node::right];
 			}
 			return return_index;
 		}
 
-		uint32_t return_index = _indices.as_type[index].sub_nodes[tree_map_node::parent];
+		uint32_t return_index = _indices.as_type[index].sub_nodes[tree_node::parent];
 		uint32_t previous_index = index;
 
-		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[tree_map_node::left] )
+		while( return_index != INVALID && previous_index == _indices.as_type[return_index].sub_nodes[tree_node::left] )
 		{
 			previous_index = return_index;
-			return_index = _indices.as_type[previous_index].sub_nodes[tree_map_node::parent];
+			return_index = _indices.as_type[previous_index].sub_nodes[tree_node::parent];
 		}
 
 		return return_index;
@@ -823,7 +847,7 @@ pointer_t<void> tree_map<K,V>::memory( void ) const
 template <typename K, typename V>
 uint32_t tree_map<K,V>::size_of_elements( uint32_t number )
 {
-    return (sizeof(tree_map_node)+sizeof(K)+sizeof(V)) * number;
+    return (sizeof(tree_node)+sizeof(K)+sizeof(V)) * number;
 }
 
 }	// namespace crap

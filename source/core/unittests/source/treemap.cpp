@@ -49,11 +49,13 @@ TEST(CreateLinearMap)
 
 TEST(InsertLinearMap)
 {
-    for( uint32_t i=0; i< my_tree_map->max_size(); ++i )
-    {
+	uint32_t i = 0;
+	while( my_tree_map->size() < my_tree_map->max_size() )
+	{
     	keys[i] = rand();
         uint32_t result = my_tree_map->insert( keys[i], ((float32_t)keys[i]) * 0.1f );
-        CHECK( result != map_invalid);
+        if( map_invalid != result )
+        	i++;
     }
 
     CHECK( my_tree_map->size() == my_tree_map->max_size() );
@@ -110,8 +112,8 @@ TEST(FindLinearMap)
 TEST(RemoveLinearTreeMap)
 {
 	uint32_t a_size = my_tree_map->size();
-    for(uint32_t i=0; i< LINEAR_MAP_SPACE; ++i)
-    {
+	for( int32_t i=LINEAR_MAP_SPACE-1; i>=0; --i )
+	{
 //        for(uint32_t j=0; j< LINEAR_MAP_SPACE; ++j)
 //        {
 //        	uint32_t value = my_tree_map->find( keys[j] );
@@ -119,6 +121,9 @@ TEST(RemoveLinearTreeMap)
 //        }
 //        std::cout << "=============================" << std::endl;
 //        std::cout << "Erasing: " << keys[i] << std::endl;
+		uint32_t idx = my_tree_map->find( keys[i]);
+		CHECK( idx != map_invalid );
+
     	my_tree_map->erase( keys[i] );
     	CHECK( my_tree_map->size() == --a_size );
     }
