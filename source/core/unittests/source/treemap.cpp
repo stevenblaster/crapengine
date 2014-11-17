@@ -112,7 +112,7 @@ TEST(FindLinearMap)
 TEST(RemoveLinearTreeMap)
 {
 	uint32_t a_size = my_tree_map->size();
-	for( int32_t i=LINEAR_MAP_SPACE-1; i>=0; --i )
+	for( int32_t i=0; i<LINEAR_MAP_SPACE; ++i )
 	{
 //        for(uint32_t j=0; j< LINEAR_MAP_SPACE; ++j)
 //        {

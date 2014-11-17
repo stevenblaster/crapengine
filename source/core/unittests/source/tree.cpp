@@ -7,7 +7,7 @@
 #include "logger.h"
 #include "memory.h"
 
-#define BT_ELEMENTS 1000000
+#define BT_ELEMENTS 10000
 
 namespace
 {
