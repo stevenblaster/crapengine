@@ -3,7 +3,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define LINEAR_MAP_SPACE 10
+#define LINEAR_MAP_SPACE 10000
 
 namespace
 {
@@ -79,9 +79,9 @@ TEST(CrapArrayMapAssignmentOperator )
 
 TEST(FindLinearMap)
 {
-    for(uint32_t i=0; i< my_array_map->size(); ++i)
+    for(uint32_t i=0; i<LINEAR_MAP_SPACE; ++i)
     {
-    	CHECK( my_array_map->find( keys[i] ) == i );
+    	CHECK( my_array_map->find( keys[i] ) != map_invalid );
     }
 }
 

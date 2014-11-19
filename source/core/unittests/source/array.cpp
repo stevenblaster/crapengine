@@ -5,7 +5,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define ARRAY_SPACE 1000000
+#define ARRAY_SPACE 100000
 
 namespace
 {

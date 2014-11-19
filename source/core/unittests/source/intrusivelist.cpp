@@ -3,6 +3,9 @@
 
 #include "container/intrusivelist.h"
 #include "logger.h"
+#include "memory.h"
+
+#define INTRUSIVE_SIZE 100000
 
 namespace
 {
@@ -12,23 +15,22 @@ class TestIntrusive
 
 public:
 
-    TestIntrusive( uint32_t num ) : _node(this, &_list), _number(num)
+    TestIntrusive( uint32_t num, crap::intrusive_list<TestIntrusive>* list ) : _node(this, list), _number(num)
     {
 
     }
 
     uint32_t number( void ) const { return _number; }
     crap::intrusive_node<TestIntrusive> _node;
-    static crap::intrusive_list<TestIntrusive> _list;
 
 private:
 
     uint32_t _number;
-
 };
 
-crap::intrusive_list<TestIntrusive> TestIntrusive::_list;
-
+crap::BoundGeneralMemory* gbm_ilist;
+void* mem_int;
+crap::intrusive_list<TestIntrusive>* intrusivelist;
 TestIntrusive* intlist;
 
 TEST( AnnounceTestIntrusiveList )
@@ -38,39 +40,52 @@ TEST( AnnounceTestIntrusiveList )
 
 TEST(CreateINtrusive)
 {
-    intlist = (TestIntrusive*) malloc( sizeof(TestIntrusive) * 1024 );
+	gbm_ilist = new crap::BoundGeneralMemory( sizeof(TestIntrusive)*INTRUSIVE_SIZE + (sizeof(crap::intrusive_list<TestIntrusive>)*10));
 
-    for(uint32_t i=0; i< 1024; ++i )
+	mem_int = gbm_ilist->allocate( sizeof(crap::intrusive_list<TestIntrusive>), crap::align_of< crap::intrusive_list<TestIntrusive> >::value  );
+	intrusivelist = new ( mem_int ) crap::intrusive_list<TestIntrusive>();
+
+	mem_int = gbm_ilist->allocate( sizeof(TestIntrusive)*INTRUSIVE_SIZE, crap::align_of<TestIntrusive>::value );
+    intlist = (TestIntrusive*) malloc( sizeof(TestIntrusive) * INTRUSIVE_SIZE );
+
+    for(uint32_t i=0; i< INTRUSIVE_SIZE; ++i )
     {
-        new (intlist + i) TestIntrusive(i);
+        new (intlist + i) TestIntrusive(i,intrusivelist);
     }
 }
 
-TEST(CreateINtrusiveParse)
+TEST(CreateIntrusiveParse)
 {
-    crap::intrusive_list<TestIntrusive>* list = &TestIntrusive::_list;
-    for( crap::intrusive_node<TestIntrusive>* i = list->begin(); i != list->end(); i = i->next() )
+    for( crap::intrusive_node<TestIntrusive>* it = intrusivelist->begin(); it != intrusivelist->end(); it = intrusivelist->next(it) )
     {
-        //std::cout << (*i)->number() << std::endl;
+        //std::cout << (*it)->number() << std::endl;
     }
     //std::cout << list->size() << std::endl;
 }
 
-TEST(CreateINtrusiveDelete)
+TEST(CreateIntrusiveDelete)
 {
-    crap::intrusive_list<TestIntrusive>* list = &TestIntrusive::_list;
-    for(uint32_t i=512; i< 1024; ++i )
+    for(uint32_t i=INTRUSIVE_SIZE/2; i< INTRUSIVE_SIZE; ++i )
     {
         crap::destruct_object( intlist + i );
     }
     //std::cout << list->size() << std::endl;
 
 
-    for(uint32_t i=0; i< 512; ++i )
+    for(uint32_t i=0; i< INTRUSIVE_SIZE/2; ++i )
     {
         crap::destruct_object( intlist + i );
     }
     //std::cout << list->size() << std::endl;
+}
+
+TEST(DeleteIntrusiveList)
+{
+	gbm_ilist->deallocate( mem_int );
+	mem_int = intrusivelist;
+	crap::destruct_object( intrusivelist );
+	gbm_ilist->deallocate( mem_int );
+	delete gbm_ilist;
 }
 
 }

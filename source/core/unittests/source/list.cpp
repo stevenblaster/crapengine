@@ -5,7 +5,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define LIST_SPACE 10
+#define LIST_SPACE 10000
 
 namespace
 {

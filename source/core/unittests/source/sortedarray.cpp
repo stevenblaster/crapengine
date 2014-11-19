@@ -5,7 +5,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define ARRAY_SPACE 10
+#define ARRAY_SPACE 10000
 
 namespace
 {
@@ -22,7 +22,7 @@ TEST( AnnounceTestSortedArray )
 
 TEST(CrapCreateSortedArray)
 {
-	gbm_sa = new crap::BoundGeneralMemory(1024);
+	gbm_sa = new crap::BoundGeneralMemory( crap::sorted_array<float32_t>::size_of_elements( ARRAY_SPACE ) * 3 );
 	sorted_mem = gbm_sa->allocate( sizeof(float32_t)*ARRAY_SPACE, crap::align_of<float32_t>::value );
     sorted_array = new crap::sorted_array<float32_t>( sorted_mem, sizeof(float32_t)*ARRAY_SPACE );
 

@@ -20,7 +20,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define LINEAR_MAP_SPACE 100
+#define LINEAR_MAP_SPACE 10000
 
 namespace
 {

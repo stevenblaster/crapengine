@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "logger.h"
 
-#define INDEXEDARRAY_SPACE 10
+#define INDEXEDARRAY_SPACE 100000
 
 namespace
 {
