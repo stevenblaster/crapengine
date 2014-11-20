@@ -12,9 +12,6 @@
 
 #include "file.h"
 #include "utilities.h"
-#include "nanovg/nanovg.h"
-#define BLENDISH_IMPLEMENTATION
-//#include "blendish.h"
 
 video_test::video_test( void )
 {
@@ -159,18 +156,11 @@ void video_test::start( void )
             keys[u] = rand();
             levels[u] = rand() % 9;
         }
-
-        NVGcontext* nvg = nvgCreate(500, 300, 1, 0);
-        bgfx::setViewSeq(0, true);
+       bgfx::setViewSeq(0, true);
 
         while ( glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS )
         {
-            /**/
-            nvgBeginPath(nvg);
-            nvgRect(nvg, 100,100, 120,30);
-            nvgFillColor(nvg, nvgRGBA(255,192,0,255));
-            nvgFill(nvg);
-            /**/
+
             float view[16];
             float proj[16];
             bx::mtxLookAt(view, eye, at);
