@@ -109,6 +109,12 @@ struct has_vtable
     static const bool RESULT = (sizeof(test_class) == sizeof(T));
 };
 
+template<>
+struct has_vtable<uint8_t>
+{
+    static const bool RESULT = false;
+};
+
 CRAP_INLINE uint16_t checksum_crc( uint8_t* ptr, int32_t size )
 {
     uint16_t     crc =   0;

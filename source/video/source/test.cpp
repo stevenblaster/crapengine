@@ -12,6 +12,7 @@
 
 #include "file.h"
 #include "utilities.h"
+#include "rendercontext.h"
 
 video_test::video_test( void )
 {
@@ -124,21 +125,32 @@ void video_test::start( void )
             , PosColorVertex::ms_decl
             );
 
+        crap::VertexDeclaration vb_decl;
+        crap::VertexAttribute vb_attr[2];
+        crap::setVertexAttribute( vb_attr[0], crap::Attribute::position, 3, crap::AttributeType::flt32 );
+        crap::setVertexAttribute( vb_attr[1], crap::Attribute::color0, 4, crap::AttributeType::uint8, true );
+        crap::setVertexDeclarationAttributes( vb_decl, vb_attr, 2 );
+        crap::RenderHandle vb_buffer = crap::createStaticVertexBuffer( s_cubeVertices, sizeof(s_cubeVertices), &vb_decl );
+
+        crap::file_t* vs_file = crap::openFile( "../../../data/vs_instancing.bin", CRAP_FILE_READBINARY );
+        uint32_t vs_size = crap::fileSize("../../../data/vs_instancing.bin");
+        char vs_memory[ vs_size ];
+        crap::readFromFile( vs_file, vs_memory, vs_size );
+        crap::RenderHandle vs_handle = crap::createShader( vs_memory, vs_size );
+
+        crap::file_t* fs_file = crap::openFile( "../../../data/fs_instancing.bin", CRAP_FILE_READBINARY );
+        uint32_t fs_size = crap::fileSize("../../../data/fs_instancing.bin");
+        char fs_memory[ fs_size ];
+        crap::readFromFile( fs_file, fs_memory, fs_size );
+        crap::RenderHandle fs_handle = crap::createShader( fs_memory, fs_size );
+
+        crap::RenderHandle pr_handle = crap::createProgram( vs_handle, fs_handle );
+
         // Create static index buffer.
         bgfx::IndexBufferHandle ibh = bgfx::createIndexBuffer(
             // Static data can be passed with bgfx::makeRef
             bgfx::makeRef(s_cubeIndices, sizeof(s_cubeIndices) )
             );
-
-        bx::CrtFileReader fr;
-
-        const bgfx::Memory* mem1 = loadMem( &fr, "../../../data/vs_instancing.bin");
-        bgfx::ShaderHandle sh_1 = bgfx::createShader( mem1 );
-
-        const bgfx::Memory* mem2 = loadMem( &fr, "../../../data/fs_instancing.bin");
-        bgfx::ShaderHandle sh_2 = bgfx::createShader( mem2 );
-
-        bgfx::ProgramHandle program = bgfx::createProgram(sh_1, sh_2, true /* destroy shaders when program is destroyed */);
 
         float at[3] = { 50.0f, 50.0f, 0.0f };
         float eye[3] = { 50.0f, 50.0f, -100.0f };
@@ -156,7 +168,7 @@ void video_test::start( void )
             keys[u] = rand();
             levels[u] = rand() % 9;
         }
-       bgfx::setViewSeq(0, true);
+        bgfx::setViewSeq(0, true);
 
         while ( glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS )
         {
@@ -216,41 +228,16 @@ void video_test::start( void )
                     data += instanceStride;
                 }
 
-
-
-
-//                for (uint32_t yy = 0; yy < 220; ++yy)
-//                {
-//                    for (uint32_t xx = 0; xx < 220; ++xx)
-//                    {
-//                        float* mtx = (float*)data;
-//                        bx::mtxRotateXY(mtx, time + xx*0.21f, time + yy*0.37f);
-//                        mtx[12] = -330.0f + float(xx)*3.0f;
-//                        mtx[13] = -330.0f + float(yy)*3.0f;
-//                        mtx[14] = -330.0f + float(yy)*3.0f;//0.0f;
-
-//                        float* color = (float*)&data[64];
-//                        color[0] = sin(time+float(xx)/11.0f)*0.5f+0.5f;
-//                        color[1] = cos(time+float(yy)/11.0f)*0.5f+0.5f;
-//                        color[2] = sin(time*3.0f)*0.5f+0.5f;
-//                        color[3] = 1.0f;
-
-//                        data += instanceStride;
-//                    }
-//                }
             }
 
-//            float mtx[16] = {0.f};
-//            bx::mtxRotateXY(mtx,0,0);
-
-//            // Set model matrix for rendering.
-//            bgfx::setTransform(mtx);
-
             // Set vertex and fragment shaders.
-            bgfx::setProgram(program);
+            //bgfx::setProgram(program);
+            crap::setProgram( pr_handle );
 
             // Set vertex and index buffer.
             bgfx::setVertexBuffer(vbh);
+            //crap::setVertexBuffer( vb_buffer );
+
             bgfx::setIndexBuffer(ibh);
 
             // Set instance data buffer.
