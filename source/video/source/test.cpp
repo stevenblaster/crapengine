@@ -100,6 +100,7 @@ void video_test::start( void )
 
         bgfx::glfwSetWindow( window );
 
+
         bgfx::init();
         bgfx::reset(width, height, reset);
 
