@@ -18,8 +18,6 @@
 namespace crap
 {
 
-bgfx::VertexDecl ms_decl;
-
 RenderHandle createStaticVertexBuffer(pointer_t<void> memory, uint32_t size, VertexDeclaration* declaration )
 {
     bgfx::VertexDecl* decl = (bgfx::VertexDecl*) declaration;
@@ -102,29 +100,16 @@ void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32
 	}
 }
 
-void setVertexAttribute( VertexAttribute& attribute, Attribute::Enum  attrib, uint8_t num, AttributeType::Enum type, bool norm , bool asInt )
+VertexDeclaration& setVertexDeclarationAttribute(VertexDeclaration& declaration, Attribute::Enum attrib, uint8_t num,
+			AttributeType::Enum type, bool norm/* = false*/, bool asInt/* = false*/ )
 {
-    attribute.attribute = attrib;
-    attribute.num = num;
-    attribute.attributeType = type;
-    attribute.normailzed = norm;
-    attribute.as_int = asInt;
-}
-
-void setVertexDeclarationAttributes( VertexDeclaration& declaration, VertexAttribute* attributes, uint32_t number )
-{
-    VertexDeclaration& decl = declaration.begin();
-	for( uint32_t i=0; i<number; ++i )
-	{
-        decl = decl.add(
-				bgfx::Attrib::Enum(attributes->attribute),
-				attributes->num,
-				bgfx::AttribType::Enum(attributes->attributeType),
-				attributes->normailzed,
-				attributes->as_int
-			);
-	}
-	decl.end();
+	return declaration.add(
+					bgfx::Attrib::Enum(attrib),
+					num,
+					bgfx::AttribType::Enum(type),
+					norm,
+					asInt
+				);
 }
 
 void setProgram( RenderHandle handle )

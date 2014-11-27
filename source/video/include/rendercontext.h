@@ -27,7 +27,7 @@ namespace crap
 {
 
 typedef struct bgfx::VertexDecl VertexDeclaration;
-typedef bgfx::InstanceDataBuffer InstanceBuffer;
+typedef struct bgfx::InstanceDataBuffer InstanceBuffer;
 typedef uint16_t RenderHandle;
 
 struct Attribute
@@ -67,17 +67,6 @@ struct AttributeType
 	};
 };
 
-struct VertexAttribute
-{
-	Attribute::Enum 	attribute;
-	AttributeType::Enum	attributeType;
-	uint8_t				num;
-	bool				normailzed;
-	bool				as_int;
-};
-
-extern bgfx::VertexDecl ms_decl;
-
 RenderHandle createStaticVertexBuffer(pointer_t<void> memory, uint32_t size, VertexDeclaration* declaration );
 
 void destroyStaticVertexBuffer( RenderHandle staticBuffer );
@@ -100,9 +89,7 @@ InstanceBuffer* createInstanceBuffer( uint32_t elementSize, uint32_t elementNumb
 
 void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32_t size );
 
-void setVertexAttribute( VertexAttribute& attribute, Attribute::Enum attrib, uint8_t num, AttributeType::Enum type, bool norm = false, bool asInt = false );
-
-void setVertexDeclarationAttributes(VertexDeclaration& declaration, VertexAttribute* attributes, uint32_t number );
+VertexDeclaration& setVertexDeclarationAttribute(VertexDeclaration& declaration, Attribute::Enum attrib, uint8_t num, AttributeType::Enum type, bool norm = false, bool asInt = false );
 
 void setProgram( RenderHandle handle );
 
