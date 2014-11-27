@@ -102,14 +102,13 @@ void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32
 	}
 }
 
-void setVertexAttribute( VertexAttribute& attribute, Attribute::Enum  _attrib, uint8_t _num, AttributeType::Enum _type, bool _norm , bool _asInt )
+void setVertexAttribute( VertexAttribute& attribute, Attribute::Enum  attrib, uint8_t num, AttributeType::Enum type, bool norm , bool asInt )
 {
-    attribute.attribute = _attrib;
-    attribute.num = _num;
-    attribute.attributeType = _type;
-    attribute.normailzed = _norm;
-    attribute.as_int = _asInt;
-
+    attribute.attribute = attrib;
+    attribute.num = num;
+    attribute.attributeType = type;
+    attribute.normailzed = norm;
+    attribute.as_int = asInt;
 }
 
 void setVertexDeclarationAttributes( VertexDeclaration& declaration, VertexAttribute* attributes, uint32_t number )
@@ -118,9 +117,9 @@ void setVertexDeclarationAttributes( VertexDeclaration& declaration, VertexAttri
 	for( uint32_t i=0; i<number; ++i )
 	{
         decl = decl.add(
-				(bgfx::Attrib::Enum)attributes->attribute,
+				bgfx::Attrib::Enum(attributes->attribute),
 				attributes->num,
-				(bgfx::AttribType::Enum)attributes->attributeType,
+				bgfx::AttribType::Enum(attributes->attributeType),
 				attributes->normailzed,
 				attributes->as_int
 			);

@@ -53,7 +53,7 @@ static PosColorVertex s_cubeVertices[8] =
     { 1.0f, -1.0f, -1.0f, 0xffffffff },
 };
 
-static const uint16_t s_cubeIndices[36] =
+static uint16_t s_cubeIndices[36] =
 {
     0, 1, 2, // 0
     1, 3, 2,
@@ -69,24 +69,9 @@ static const uint16_t s_cubeIndices[36] =
     6, 3, 7,
 };
 
-static const bgfx::Memory* loadMem(bx::FileReaderI* _reader, const char* _filePath)
-{
-    if (0 == bx::open(_reader, _filePath) )
-    {
-        uint32_t size = (uint32_t)bx::getSize(_reader);
-        const bgfx::Memory* mem = bgfx::alloc(size+1);
-        bx::read(_reader, mem->data, size);
-        bx::close(_reader);
-        mem->data[mem->size-1] = '\0';
-        return mem;
-    }
-
-    return NULL;
-}
-
 void video_test::start( void )
 {
-    uint32_t width = 1280;
+    	uint32_t width = 1280;
         uint32_t height = 720;
         uint32_t debug = BGFX_DEBUG_TEXT;
         uint32_t reset = BGFX_RESET_VSYNC;
@@ -100,13 +85,11 @@ void video_test::start( void )
 
         bgfx::glfwSetWindow( window );
 
-
         bgfx::init();
         bgfx::reset(width, height, reset);
 
         // Enable debug text.
         bgfx::setDebug(debug);
-
 
         // Set view 0 clear state.
         bgfx::setViewClear(0
@@ -133,25 +116,27 @@ void video_test::start( void )
         crap::setVertexDeclarationAttributes( vb_decl, vb_attr, 2 );
         crap::RenderHandle vb_buffer = crap::createStaticVertexBuffer( s_cubeVertices, sizeof(s_cubeVertices), &vb_decl );
 
-        crap::file_t* vs_file = crap::openFile( "../../../data/vs_instancing.bin", CRAP_FILE_READBINARY );
-        uint32_t vs_size = crap::fileSize("../../../data/vs_instancing.bin");
+        crap::RenderHandle ib_buffer = crap::createStaticIndexBuffer( s_cubeIndices, sizeof(s_cubeIndices) );
+
+        crap::file_t* vs_file = crap::openFile( "../data/vs_instancing.bin", CRAP_FILE_READBINARY );
+        uint32_t vs_size = crap::fileSize("../data/vs_instancing.bin");//("../../../data/vs_instancing.bin");
         char vs_memory[ vs_size ];
         crap::readFromFile( vs_file, vs_memory, vs_size );
         crap::RenderHandle vs_handle = crap::createShader( vs_memory, vs_size );
 
-        crap::file_t* fs_file = crap::openFile( "../../../data/fs_instancing.bin", CRAP_FILE_READBINARY );
-        uint32_t fs_size = crap::fileSize("../../../data/fs_instancing.bin");
+        crap::file_t* fs_file = crap::openFile( "../data/fs_instancing.bin", CRAP_FILE_READBINARY );
+        uint32_t fs_size = crap::fileSize("../data/fs_instancing.bin");
         char fs_memory[ fs_size ];
         crap::readFromFile( fs_file, fs_memory, fs_size );
         crap::RenderHandle fs_handle = crap::createShader( fs_memory, fs_size );
 
         crap::RenderHandle pr_handle = crap::createProgram( vs_handle, fs_handle );
 
-        // Create static index buffer.
-        bgfx::IndexBufferHandle ibh = bgfx::createIndexBuffer(
-            // Static data can be passed with bgfx::makeRef
-            bgfx::makeRef(s_cubeIndices, sizeof(s_cubeIndices) )
-            );
+//        // Create static index buffer.
+//        bgfx::IndexBufferHandle ibh = bgfx::createIndexBuffer(
+//            // Static data can be passed with bgfx::makeRef
+//            bgfx::makeRef(s_cubeIndices, sizeof(s_cubeIndices) )
+//            );
 
         float at[3] = { 50.0f, 50.0f, 0.0f };
         float eye[3] = { 50.0f, 50.0f, -100.0f };
@@ -239,7 +224,8 @@ void video_test::start( void )
             bgfx::setVertexBuffer(vbh);
             //crap::setVertexBuffer( vb_buffer );
 
-            bgfx::setIndexBuffer(ibh);
+            //bgfx::setIndexBuffer(ibh);
+            crap::setIndexBuffer(ib_buffer);
 
             // Set instance data buffer.
             bgfx::setInstanceDataBuffer(idb);

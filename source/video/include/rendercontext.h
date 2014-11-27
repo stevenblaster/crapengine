@@ -100,7 +100,7 @@ InstanceBuffer* createInstanceBuffer( uint32_t elementSize, uint32_t elementNumb
 
 void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32_t size );
 
-void setVertexAttribute( VertexAttribute& attributes, Attribute::Enum  _attrib, uint8_t _num, AttributeType::Enum _type, bool _norm = false, bool _asInt = false );
+void setVertexAttribute( VertexAttribute& attribute, Attribute::Enum attrib, uint8_t num, AttributeType::Enum type, bool norm = false, bool asInt = false );
 
 void setVertexDeclarationAttributes(VertexDeclaration& declaration, VertexAttribute* attributes, uint32_t number );
 
