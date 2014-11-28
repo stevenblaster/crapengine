@@ -63,7 +63,6 @@ void video_test::start( void )
         uint32_t debug = BGFX_DEBUG_TEXT;
         uint32_t reset = BGFX_RESET_VSYNC;
 
-
         if (!glfwInit())
             exit(EXIT_FAILURE);
 
@@ -94,11 +93,10 @@ void video_test::start( void )
         vb_decl.end();
 
         crap::RenderHandle vb_buffer = crap::createStaticVertexBuffer( s_cubeVertices, sizeof(s_cubeVertices), &vb_decl );
-
         crap::RenderHandle ib_buffer = crap::createStaticIndexBuffer( s_cubeIndices, sizeof(s_cubeIndices) );
 
         crap::file_t* vs_file = crap::openFile( "../data/vs_instancing.bin", CRAP_FILE_READBINARY );
-        uint32_t vs_size = crap::fileSize("../data/vs_instancing.bin");//("../../../data/vs_instancing.bin");
+        uint32_t vs_size = crap::fileSize("../data/vs_instancing.bin");
         char vs_memory[ vs_size ];
         crap::readFromFile( vs_file, vs_memory, vs_size );
         crap::RenderHandle vs_handle = crap::createShader( vs_memory, vs_size );
@@ -132,20 +130,23 @@ void video_test::start( void )
         uint32_t inst_size = 100*80;
         crap::pointer_t<void> inst_data( new char[ inst_size ] );
 
+
+        uint8_t* data = inst_data.as_uint8_t;
+
+        for( uint32_t y=0; y<100; ++y )
         {
-        	uint8_t* data = inst_data.as_uint8_t;
+         	float* mtx = (float*)data;
+            bx::mtxRotateXY(mtx, 0, 0);
+            keyToCoords( mtx[12], mtx[13], mtx[14], keys[y], levels[y] );
 
-            for( uint32_t y=0; y<100; ++y )
-            {
-            	float* mtx = (float*)data;
-                bx::mtxRotateXY(mtx, 0, 0);
-                keyToCoords( mtx[12], mtx[13], mtx[14], keys[y], levels[y] );
+            bx::mtxScale(mtx, 10, 10, 10);
 
-                bx::mtxScale(mtx, 10, 10, 10);
-
-                data += 80;
-             }
-
+            float* color = (float*)&data[64];
+            color[0] = sin(256+float(y)/11.0f)*0.5f+0.5f;
+            color[1] = cos(256+float(y)/11.0f)*0.5f+0.5f;
+            color[2] = sin(256*3.0f)*0.5f+0.5f;
+            color[3] = 1.0f;
+            data += 80;
         }
 
         while ( glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS )
@@ -186,31 +187,7 @@ void video_test::start( void )
 //            const bgfx::InstanceDataBuffer* idb = bgfx::allocInstanceDataBuffer(100, instanceStride);
 
             crap::InstanceBuffer* ib_handle = crap::createInstanceBuffer( 100, 80 );
-
-            if( ib_handle != 0 )
-            {
-                //uint8_t* data = idb->data;
-                //uint8_t* data = ib_handle->data;
-            	uint8_t* data = inst_data.as_uint8_t;
-
-                for( uint32_t y=0; y<100; ++y )
-                {
-//                    float* mtx = (float*)data;
-//                    bx::mtxRotateXY(mtx, 0, 0);
-//                    keyToCoords( mtx[12], mtx[13], mtx[14], keys[y], levels[y] );
-//
-//                    bx::mtxScale(mtx, 10, 10, 10);
-
-                    float* color = (float*)&data[64];
-                    color[0] = sin(time+float(y)/11.0f)*0.5f+0.5f;
-                    color[1] = cos(time+float(y)/11.0f)*0.5f+0.5f;
-                    color[2] = sin(time*3.0f)*0.5f+0.5f;
-                    color[3] = 1.0f;
-
-                    data += instanceStride;
-                }
-
-            }
+            crap::setInstanceBufferData(ib_handle, inst_data, inst_size );
 
             // Set vertex and fragment shaders.
             //bgfx::setProgram(program);
@@ -225,7 +202,7 @@ void video_test::start( void )
 
             // Set instance data buffer.
             //bgfx::setInstanceDataBuffer(idb);
-            crap::setInstanceBufferData(ib_handle, inst_data, inst_size );
+            crap::setInstanceBuffer( ib_handle );
 
             // Set render states.
             bgfx::setState(BGFX_STATE_DEFAULT);

@@ -89,6 +89,8 @@ InstanceBuffer* createInstanceBuffer( uint32_t elementSize, uint32_t elementNumb
 
 void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32_t size );
 
+void setInstanceBuffer( InstanceBuffer* buffer, uint16_t number = crap::limits<uint16_t>::MAX );
+
 VertexDeclaration& setVertexDeclarationAttribute(VertexDeclaration& declaration, Attribute::Enum attrib, uint8_t num, AttributeType::Enum type, bool norm = false, bool asInt = false );
 
 void setProgram( RenderHandle handle );

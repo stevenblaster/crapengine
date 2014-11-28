@@ -88,7 +88,7 @@ void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32
 {
 	if( buffer != 0 )
 	{
-		if( size == buffer->size )
+		if( size <= buffer->size )
 		{
 			pointer_t<void> buffer_data = buffer->data;
 			for( uint32_t i = 0; i<buffer->num; ++i )
@@ -97,6 +97,14 @@ void setInstanceBufferData( InstanceBuffer* buffer, pointer_t<void> data, uint32
 			}
 			buffer_data.as_uint8_t += buffer->stride;
 		}
+	}
+}
+
+void setInstanceBuffer( InstanceBuffer* buffer, uint16_t number /*= crap::limits<uint16_t>::MAX*/ )
+{
+	if( buffer != 0 )
+	{
+		bgfx::setInstanceDataBuffer( buffer, number );
 	}
 }
 
