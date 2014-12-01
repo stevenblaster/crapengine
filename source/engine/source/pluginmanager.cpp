@@ -1,7 +1,7 @@
 
+#include <plugin.h>
 #include "strings.h"
 #include "dynamiclibrary.h"
-#include "plugin.h"
 #include "pluginmanager.h"
 
 namespace crap

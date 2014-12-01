@@ -14,7 +14,7 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/tools.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/asserts.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/strings.cpp
-#   ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/sockets.cpp
 #   ${CMAKE_CURRENT_SOURCE_DIR}/configuration.cpp
 #   ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.cpp
    PARENT_SCOPE

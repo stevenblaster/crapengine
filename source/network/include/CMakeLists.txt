@@ -12,10 +12,10 @@
 set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/test.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/configuration.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/audioimport.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/squareworld.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/thread.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/asserts.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/logger.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/strings.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h
    PARENT_SCOPE
 )
