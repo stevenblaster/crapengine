@@ -23,5 +23,6 @@ SET( SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/listmap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/sortedarraymap.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/treemap.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/queue.cpp
 PARENT_SCOPE
 )

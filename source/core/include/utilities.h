@@ -115,7 +115,7 @@ struct has_vtable<uint8_t>
     static const bool RESULT = false;
 };
 
-CRAP_INLINE uint16_t checksum_crc( uint8_t* ptr, int32_t size )
+CRAP_INLINE uint16_t crc16( uint8_t* ptr, int32_t size )
 {
     uint16_t     crc =   0;
     uint8_t      i =     0;
@@ -136,6 +136,23 @@ CRAP_INLINE uint16_t checksum_crc( uint8_t* ptr, int32_t size )
         } while(--i);
     }
     return crc;
+}
+
+CRAP_INLINE uint32_t crc32( uint8_t* ptr, int32_t size )
+{
+   uint32_t		mask = 0;
+   uint32_t		crc  = 0xFFFFFFFF;
+
+   for( uint32_t i=0; i<size; ++i )
+   {
+	   crc = crc ^ ptr[i];
+	   for( uint32_t j=7; j>= 0; --j )
+	   {
+		   mask = -(crc & 1);
+		   crc = (crc >> 1) ^ (0xEDB88320 & mask);
+	   }
+   }
+   return ~crc;
 }
 
 template<typename T>

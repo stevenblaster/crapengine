@@ -23,6 +23,7 @@
 #include <netinet/in.h>
 #include <fcntl.h>
 #include <netinet/in_systm.h>
+#include <unistd.h>
 
 #include "config/crap_platform.h"
 #include "asserts.h"
@@ -131,20 +132,70 @@ bool sendDatagram( socket_t socket, pointer_t<void> data, uint32_t size, uint16_
     return result == size;
 }
 
-bool receiveDatagram( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t port , ipv4_t address /*=IPV4_ANY*/ )
+bool connectStream( socket_t socket, uint16_t port, ipv4_t address/* = IPV4_BROADCAST */ )
 {
 	sockaddr_in addr;
 	addr.sin_family = crap::socket::ip_v4;
 	addr.sin_addr.s_addr = htonl( address );
 	addr.sin_port = htons( port );
 
-#ifdef CRAP_PLATFORM_WINDOWS  || CRAP_PLATFORM_XBOX
+	int32_t addr_lenght = sizeof(addr);
+	int32_t result = ::connect( socket, (sockaddr*)&addr, addr_lenght );
+	return result != -1;
+}
+
+bool listenStream( socket_t socket, uint32_t max_pending )
+{
+	int32_t result = ::listen(socket, max_pending );
+	return result != -1;
+}
+
+socket_t acceptStream( socket_t socket, uint16_t port, ipv4_t address/* = IPV4_BROADCAST */ )
+{
+	sockaddr_in addr;
+	addr.sin_family = crap::socket::ip_v4;
+	addr.sin_addr.s_addr = htonl( address );
+	addr.sin_port = htons( port );
+
+#ifdef CRAP_PLATFORM_WINDOWS || CRAP_PLATFORM_XBOX
+	iint32_t addr_lenght = sizeof(addr);
+#else
+    uint32_t addr_lenght = sizeof(addr);
+#endif
+
+    return ::accept( socket, (sockaddr*)&addr, &addr_lenght);
+}
+
+int32_t receiveDatagram( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t* port , ipv4_t* address )
+{
+	sockaddr_in addr;
+	addr.sin_family = crap::socket::ip_v4;
+	addr.sin_addr.s_addr = (address != 0 ) ? htonl( *address ) : htonl(IPV4_ANY);
+	addr.sin_port = htons( *port );
+
+#ifdef CRAP_PLATFORM_WINDOWS || CRAP_PLATFORM_XBOX
 	int32_t addr_length = sizeof(addr);
 #else
 	uint32_t addr_length = sizeof(addr);
+#endif
 
 	int32_t result = ::recvfrom( socket, buffer.as_void, size, 0, (sockaddr*)&addr, &addr_length );
-	return result != 0;
+	*address = ntohl( addr.sin_addr.s_addr );
+	*port = ntohs(addr.sin_port );
+
+	return result;
+}
+
+bool sendStream( socket_t socket, pointer_t<void> data, uint32_t size )
+{
+	int32_t result = ::send( socket, data.as_const_void, size, 0 );
+    return result == size;
+}
+
+bool receiveStream( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t port , ipv4_t address /*=IPV4_ANY*/ )
+{
+	int32_t result = ::recv( socket, buffer.as_void, size, 0 );
+	return result == size;
 }
 
 } //namespace crap

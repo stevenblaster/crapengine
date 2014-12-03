@@ -34,6 +34,7 @@ typedef uint16_t	port_t;
 
 static const uint32_t IPV4_ANY = 0;
 static const uint32_t IPV4_BROADCAST = 0xffffffff;
+static const int32_t PORT_INVALID = -1;
 
 namespace socket
 {
@@ -73,7 +74,14 @@ void setBlocking( bool blocking );
 void closeSocket( socket_t socket );
 
 bool sendDatagram( socket_t socket, pointer_t<void> data, uint32_t size, uint16_t port, ipv4_t addr = IPV4_BROADCAST );
-bool receiveDatagram( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t port, ipv4_t addr = IPV4_ANY );
+int32_t receiveDatagram( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t* port, ipv4_t* addr );
+
+bool connectStream( socket_t socket, uint16_t port, ipv4_t address = IPV4_BROADCAST );
+bool listenStream( socket_t socket, uint32_t max_pending );
+socket_t acceptStream( socket_t socket, uint16_t port, ipv4_t address = IPV4_BROADCAST );
+
+bool sendStream( socket_t socket, pointer_t<void> data, uint32_t size, uint16_t port, ipv4_t addr = IPV4_BROADCAST );
+bool receiveStream( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t port, ipv4_t addr = IPV4_ANY );
 
 ipv4_t createIPv4( uint8_t first, uint8_t second, uint8_t third, uint8_t fourth );
 ipv4_t createIPv4( const crap::string16& str );
