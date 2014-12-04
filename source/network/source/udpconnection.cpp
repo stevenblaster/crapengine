@@ -37,9 +37,15 @@ bool UdpConnection::receive( void )
 		uint32_t login_id = _connections.find( user_id );
 
 		// fresh login
-		if( header.as_type->login_flag == 1 && login_id == array_map<uint32_t, ConnectionInformation>::INVALID )
+		if( header.as_type->login_flag == 1 && login_id == ConnectionMap::INVALID )
 		{
-			return handleLogin( header.as_type, info );
+			return userLogin( header.as_type, info );
+		}
+
+		// logout
+		if( header.as_type->logoff_flag == 1 && login_id != ConnectionMap::INVALID )
+		{
+			return userLogout( user_id );
 		}
 
 		return true;
@@ -47,6 +53,8 @@ bool UdpConnection::receive( void )
 
 	return false;
 }
+
+
 
 bool UdpConnection::compareChecksum( ConnectionHeader* CRAP_RESTRICT header ) const
 {
@@ -59,12 +67,35 @@ bool UdpConnection::compareChecksum( ConnectionHeader* CRAP_RESTRICT header ) co
 	return checkSum == header->checksum;
 }
 
-bool UdpConnection::handleLogin( ConnectionHeader* CRAP_RESTRICT header, ConnectionInformation& info )
+bool UdpConnection::userLogin( ConnectionHeader* CRAP_RESTRICT header, ConnectionInformation& info )
 {
 	info.user_time = 0;
 
 	uint32_t index = _connections.push_back( header->user_id, info );
-	return index != array_map<uint32_t, ConnectionInformation>::INVALID;
+	if( index != ConnectionMap::INVALID )
+	{
+		for( uint32_t i = 0; i < _eventArray.size(); ++i )
+		{
+			_eventArray[i].invoke( Event::LOGIN, header->user_id, &info );
+		}
+		return true;
+	}
+	return false;
+}
+
+bool UdpConnection::userLogout( uint32_t user_id )
+{
+	uint32_t index = _connections.find( user_id );
+	if( index != ConnectionMap::INVALID )
+	{
+		for( uint32_t i = 0; i < _eventArray.size(); ++i )
+		{
+			_eventArray[i].invoke( Event::LOGOUT, user_id, &_connections[index] );
+		}
+		_connections.erase_at( index );
+		return true;
+	}
+	return false;
 }
 
 }
