@@ -31,17 +31,17 @@ UdpConnection::UdpConnection( port_t port, uint32_t packetSize,
 		_session_id(UINT32_MAX)
 {
 	_socket = createSocket( socket::ip_v4, socket::datagram, socket::udp);
-	CRAP_ASSERT(ASSERT_BREAK, openSocket( _socket, port ), "Could not open UDP Socket on port %s", port );
+	CRAP_ASSERT(ASSERT_BREAK, openSocket( _socket, port ), "Could not open UDP Socket on port"PRIu16, port );
 	setBlocking( _socket, false );
 	_session_id = rand();
 
-	//CRAP_DEBUG_LOG( LOG_NETWORK, "Created UPD connection on port %s.", port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Created UPD connection on port "PRIu16".", port );
 }
 
 UdpConnection::~UdpConnection( void )
 {
 	closeSocket( _socket );
-	CRAP_DEBUG_LOG( LOG_NETWORK, "Closed UPD connection on port %s.", _port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Closed UPD connection on port "PRIu16".", _port );
 }
 
 void UdpConnection::connect( ipv4_t address, port_t port )
@@ -115,7 +115,7 @@ bool UdpConnection::sendData( uint32_t user_id, pointer_t<void> data, uint32_t s
 	uint32_t index = _connections.find( user_id );
 	if( _socket != -1 && index != ConnectionMap::INVALID )
 	{
-		CRAP_DEBUG_LOG( LOG_NETWORK, "Sending data to user ID:"PRIu32", IP:%u, port:%s", user_id, createIPv4String( _connections[index].user_ip).c_str(), _connections[index].user_port );
+		CRAP_DEBUG_LOG( LOG_NETWORK, "Sending data to user ID:"PRIu32", IP:%s, port:"PRIu16, user_id, createIPv4String( _connections[index].user_ip).c_str(), _connections[index].user_port );
 
 		pointer_t<ConnectionHeader> buffer = alloca( sizeof(ConnectionHeader) + size );
 		memset( buffer.as_void, 0, sizeof( ConnectionHeader) );
@@ -150,7 +150,7 @@ bool UdpConnection::compareChecksum( ConnectionHeader* CRAP_RESTRICT header ) co
 
 bool UdpConnection::userLogin( ConnectionHeader* CRAP_RESTRICT header, ConnectionInformation& info )
 {
-	CRAP_DEBUG_LOG( LOG_NETWORK, "Received login request from user ID:"PRIu32", IP:%u, port:%s", header->user_id, createIPv4String( info.user_ip).c_str(), info.user_port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Received login request from user ID:"PRIu32", IP:%s, port:"PRIu16, header->user_id, createIPv4String( info.user_ip).c_str(), info.user_port );
 
 	info.user_time = 0;
 
@@ -222,7 +222,7 @@ bool UdpConnection::userResync( uint32_t user_id )
 
 bool UdpConnection::sendLogin( ipv4_t address, port_t port )
 {
-	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending login to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending login to IP:%s, port:"PRIu16, createIPv4String( address ).c_str(), port );
 
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
@@ -240,7 +240,7 @@ bool UdpConnection::sendLogin( ipv4_t address, port_t port )
 
 bool UdpConnection::sendLogout( ipv4_t address, port_t port )
 {
-	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending logout to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending logout to IP:%s, port:"PRIu16, createIPv4String( address ).c_str(), port );
 
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
@@ -258,7 +258,7 @@ bool UdpConnection::sendLogout( ipv4_t address, port_t port )
 
 bool UdpConnection::sendSync( ipv4_t address, port_t port )
 {
-	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending sync to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending sync to IP:%s, port:"PRIu16, createIPv4String( address ).c_str(), port );
 
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
@@ -276,7 +276,7 @@ bool UdpConnection::sendSync( ipv4_t address, port_t port )
 
 bool UdpConnection::sendResync( ipv4_t address, port_t port )
 {
-	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending resync to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending resync to IP:%s, port:"PRIu16, createIPv4String( address ).c_str(), port );
 
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
