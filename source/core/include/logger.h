@@ -18,6 +18,7 @@
 #define LOG_CHANNEL_VIDEO               CRAP_BIT_02
 #define LOG_CHANNEL_AUDIO               CRAP_BIT_03
 #define LOG_CHANNEL_PHYSIC              CRAP_BIT_04
+#define LOG_CHANNEL_NETWORK             CRAP_BIT_05
 
 #define LOG_TYPE_NONE                   CRAP_BIT_10
 #define LOG_TYPE_INFO                   CRAP_BIT_11
@@ -127,6 +128,15 @@ struct log_channel_physic
     static const uint32_t ID = LOG_CHANNEL_PHYSIC;
 };
 
+struct log_channel_network
+{
+    template<uint32_t S>
+    CRAP_INLINE void write( crap::fixed_string<S>* string )
+    {
+        string->concat("[NETWORK]::");
+    }
+    static const uint32_t ID = LOG_CHANNEL_NETWORK;
+};
 
 struct log_type_none
 {

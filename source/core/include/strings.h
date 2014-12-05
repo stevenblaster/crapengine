@@ -417,8 +417,8 @@ void fixed_string<S>::merge( crap::array<fixed_string>* list, char glue )
         if(current_pos != 0)
             _memory[current_pos++] = glue;
 
-        memcpy( &_memory[current_pos], list->at(i)->c_str(), list->at(i)->size() );
-        current_pos += list->at(i)->size();
+        memcpy( &_memory[current_pos], list->get(i)->c_str(), list->get(i)->size() );
+        current_pos += list->get(i)->size();
     }
 }
 

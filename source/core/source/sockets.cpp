@@ -58,6 +58,22 @@ ipv4_t createIPv4( const crap::string16& str )
 			);
 }
 
+string16 createIPv4String( ipv4_t address )
+{
+	const uint32_t size = sizeof(string16) * 4;
+	char mem[ size ];
+	crap::array<crap::string16> arr( &mem, size );
+
+	arr.push_back( crap::convert<uint8_t, string16>( (address >> 24 ) & 0xff ) );
+	arr.push_back(  crap::convert<uint8_t, string16>( (address >> 16 ) & 0xff ) );
+	arr.push_back( crap::convert<uint8_t, string16>( (address >> 8 ) & 0xff ) );
+	arr.push_back( crap::convert<uint8_t, string16>( address & 0xff ) );
+
+	string16 value;
+	value.merge( &arr, '.' );
+	return value;
+}
+
 socket_t createSocket( socket::family fam, socket::datatype type, socket::protocol prot )
 {
 #ifdef CRAP_PLATFORM_WINDOWS  || CRAP_PLATFORM_XBOX

@@ -85,6 +85,7 @@ bool receiveStream( socket_t socket, pointer_t<void> buffer, uint32_t size, uint
 
 ipv4_t createIPv4( uint8_t first, uint8_t second, uint8_t third, uint8_t fourth );
 ipv4_t createIPv4( const crap::string16& str );
+string16 createIPv4String( ipv4_t address );
 
 } // namespace crap
 

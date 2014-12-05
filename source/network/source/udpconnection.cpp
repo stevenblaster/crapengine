@@ -11,7 +11,11 @@
  * @date 	Dec 2, 2014
  */
 
+#include "strings.h"
+#include "logger.h"
 #include "udpconnection.h"
+
+#define LOG_NETWORK LOG_CHANNEL_NETWORK | LOG_TARGET_COUT| LOG_TYPE_DEBUG
 
 namespace crap
 {
@@ -30,11 +34,14 @@ UdpConnection::UdpConnection( port_t port, uint32_t packetSize,
 	CRAP_ASSERT(ASSERT_BREAK, openSocket( _socket, port ), "Could not open UDP Socket on port %s", port );
 	setBlocking( _socket, false );
 	_session_id = rand();
+
+	//CRAP_DEBUG_LOG( LOG_NETWORK, "Created UPD connection on port %s.", port );
 }
 
 UdpConnection::~UdpConnection( void )
 {
 	closeSocket( _socket );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Closed UPD connection on port %s.", _port );
 }
 
 void UdpConnection::connect( ipv4_t address, port_t port )
@@ -108,6 +115,8 @@ bool UdpConnection::sendData( uint32_t user_id, pointer_t<void> data, uint32_t s
 	uint32_t index = _connections.find( user_id );
 	if( _socket != -1 && index != ConnectionMap::INVALID )
 	{
+		CRAP_DEBUG_LOG( LOG_NETWORK, "Sending data to user ID:"PRIu32", IP:%u, port:%s", user_id, createIPv4String( _connections[index].user_ip).c_str(), _connections[index].user_port );
+
 		pointer_t<ConnectionHeader> buffer = alloca( sizeof(ConnectionHeader) + size );
 		memset( buffer.as_void, 0, sizeof( ConnectionHeader) );
 		buffer.as_type->size = 2 + (size/4) + (size % 4 != 0) ? 1 : 0;
@@ -141,6 +150,8 @@ bool UdpConnection::compareChecksum( ConnectionHeader* CRAP_RESTRICT header ) co
 
 bool UdpConnection::userLogin( ConnectionHeader* CRAP_RESTRICT header, ConnectionInformation& info )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Received login request from user ID:"PRIu32", IP:%u, port:%s", header->user_id, createIPv4String( info.user_ip).c_str(), info.user_port );
+
 	info.user_time = 0;
 
 	uint32_t index = _connections.push_back( header->user_id, info );
@@ -158,6 +169,8 @@ bool UdpConnection::userLogin( ConnectionHeader* CRAP_RESTRICT header, Connectio
 
 bool UdpConnection::userLogout( uint32_t user_id )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Received logout request of user ID:"PRIu32, user_id );
+
 	uint32_t index = _connections.find( user_id );
 	if( index != ConnectionMap::INVALID )
 	{
@@ -174,6 +187,8 @@ bool UdpConnection::userLogout( uint32_t user_id )
 
 bool UdpConnection::userSync( uint32_t user_id )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Received sync request of user ID:"PRIu32, user_id );
+
 	uint32_t index = _connections.find( user_id );
 	if( index != ConnectionMap::INVALID )
 	{
@@ -190,6 +205,8 @@ bool UdpConnection::userSync( uint32_t user_id )
 
 bool UdpConnection::userResync( uint32_t user_id )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Received resync of user ID:"PRIu32, user_id );
+
 	uint32_t index = _connections.find( user_id );
 	if( index != ConnectionMap::INVALID )
 	{
@@ -205,6 +222,8 @@ bool UdpConnection::userResync( uint32_t user_id )
 
 bool UdpConnection::sendLogin( ipv4_t address, port_t port )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending login to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
 
@@ -221,6 +240,8 @@ bool UdpConnection::sendLogin( ipv4_t address, port_t port )
 
 bool UdpConnection::sendLogout( ipv4_t address, port_t port )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending logout to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
 
@@ -237,6 +258,8 @@ bool UdpConnection::sendLogout( ipv4_t address, port_t port )
 
 bool UdpConnection::sendSync( ipv4_t address, port_t port )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending sync to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
 
@@ -253,6 +276,8 @@ bool UdpConnection::sendSync( ipv4_t address, port_t port )
 
 bool UdpConnection::sendResync( ipv4_t address, port_t port )
 {
+	CRAP_DEBUG_LOG( LOG_NETWORK, "Sending resync to IP:%u, port:%s", createIPv4String( address ).c_str(), port );
+
 	uint8_t buffer[ sizeof( ConnectionHeader ) ];
 	pointer_t<ConnectionHeader> header = buffer;
 
@@ -267,5 +292,5 @@ bool UdpConnection::sendResync( ipv4_t address, port_t port )
 	return sendDatagram( _socket, header.as_void, sizeof(ConnectionHeader), port, address );
 }
 
-}
+} /* namespace crap */
 
