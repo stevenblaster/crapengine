@@ -64,6 +64,18 @@ struct pointer_t
     CRAP_INLINE
     pointer_t<T>& operator=( const pointer_t<U>& other ) { as_void = other.as_void; return *this; }
 
+    template<typename U>
+    CRAP_INLINE
+    bool operator==( const pointer_t<U>& other ) const { return as_number == other.as_number; }
+
+    template<typename U>
+    CRAP_INLINE
+    bool operator!=( const pointer_t<U>& other ) const { return as_number != other.as_number; }
+
+    template<typename U>
+    CRAP_INLINE
+    bool operator<( const pointer_t<U>& other ) const { return as_number < other.as_number; }
+
     CRAP_INLINE
     void align_forward( size_t alignment )
     {

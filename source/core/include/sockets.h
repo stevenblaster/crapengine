@@ -69,8 +69,8 @@ enum protocol
 } //namespace socket
 
 socket_t createSocket( socket::family fam, socket::datatype type, socket::protocol prot );
-bool openSocket( socket_t socket, port_t port, bool blocking );
-void setBlocking( bool blocking );
+bool openSocket( socket_t socket, port_t port );
+bool setBlocking( socket_t socket, bool blocking );
 void closeSocket( socket_t socket );
 
 bool sendDatagram( socket_t socket, pointer_t<void> data, uint32_t size, uint16_t port, ipv4_t addr = IPV4_BROADCAST );

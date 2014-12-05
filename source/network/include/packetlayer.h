@@ -27,12 +27,12 @@ struct ConnectionHeader
     uint32_t size 			: 8; //complete size of packet in 32 bit parts
     uint32_t data_flag 		: 1;
     uint32_t sync_flag 		: 1;
+    uint32_t resync_flag	: 1;
     uint32_t login_flag 	: 1;
     uint32_t logoff_flag 	: 1;
     uint32_t reserved_flag1 : 1;
     uint32_t reserved_flag2 : 1;
     uint32_t reserved_flag3 : 1;
-    uint32_t reserved_flag4 : 1;
 };
 
 struct ConnectionInformation

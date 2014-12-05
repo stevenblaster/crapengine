@@ -85,7 +85,7 @@ bool openSocket( socket_t socket, port_t port )
 	addr.sin_addr.s_addr = htonl( crap::IPV4_ANY );
 	addr.sin_port = htons( port );
 
-	int32_t result = ::bind( socket, (const sockaddr*) &addr, sizeof(sockaddr_in) );
+	int32_t result = ::bind( socket, (const sockaddr*) &addr, sizeof(sockaddr) );
 
 	return result != -1;
 }

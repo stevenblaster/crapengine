@@ -62,17 +62,17 @@ public:
         return *this;
     }
 
-    bool operator==( const delegate& other )
+    bool operator==( const delegate& other ) const
     {
         return _stub.first == other._stub.first && _stub.second == other._stub.second;
     }
 
-    bool operator!=( const delegate& other )
+    bool operator!=( const delegate& other ) const
     {
         return !(operator==(other));
     }
 
-    bool operator<( const delegate& other )
+    bool operator<( const delegate& other ) const
     {
         return _stub.first < other._stub.first && _stub.second < other._stub.second;
     }
@@ -153,17 +153,17 @@ public:
         return *this;
     }
 
-    bool operator==( const delegate& other )
+    bool operator==( const delegate& other ) const
     {
         return _stub.first == other._stub.first && _stub.second == other._stub.second;
     }
 
-    bool operator!=( const delegate& other )
+    bool operator!=( const delegate& other ) const
     {
         return !(operator==(other));
     }
 
-    bool operator<( const delegate& other )
+    bool operator<( const delegate& other ) const
     {
         return _stub.first < other._stub.first && _stub.second < other._stub.second;
     }
@@ -245,17 +245,17 @@ public:
         return *this;
     }
 
-    bool operator==( const delegate& other )
+    bool operator==( const delegate& other ) const
     {
         return _stub.first == other._stub.first && _stub.second == other._stub.second;
     }
 
-    bool operator!=( const delegate& other )
+    bool operator!=( const delegate& other ) const
     {
         return !(operator==(other));
     }
 
-    bool operator<( const delegate& other )
+    bool operator<( const delegate& other ) const
     {
         return _stub.first < other._stub.first && _stub.second < other._stub.second;
     }
@@ -337,17 +337,17 @@ public:
         return *this;
     }
 
-    bool operator==( const delegate& other )
+    bool operator==( const delegate& other ) const
     {
         return _stub.first == other._stub.first && _stub.second == other._stub.second;
     }
 
-    bool operator!=( const delegate& other )
+    bool operator!=( const delegate& other ) const
     {
         return !(operator==(other));
     }
 
-    bool operator<( const delegate& other )
+    bool operator<( const delegate& other ) const
     {
         return _stub.first < other._stub.first && _stub.second < other._stub.second;
     }
@@ -429,17 +429,17 @@ public:
         return *this;
     }
 
-    bool operator==( const delegate& other )
+    bool operator==( const delegate& other ) const
     {
         return _stub.first == other._stub.first && _stub.second == other._stub.second;
     }
 
-    bool operator!=( const delegate& other )
+    bool operator!=( const delegate& other ) const
     {
         return !(operator==(other));
     }
 
-    bool operator<( const delegate& other )
+    bool operator<( const delegate& other ) const
     {
         return _stub.first < other._stub.first && _stub.second < other._stub.second;
     }
@@ -521,17 +521,17 @@ public:
         return *this;
     }
 
-    bool operator==( const delegate& other )
+    bool operator==( const delegate& other ) const
     {
         return _stub.first == other._stub.first && _stub.second == other._stub.second;
     }
 
-    bool operator!=( const delegate& other )
+    bool operator!=( const delegate& other ) const
     {
         return !(operator==(other));
     }
 
-    bool operator<( const delegate& other )
+    bool operator<( const delegate& other ) const
     {
         return _stub.first < other._stub.first && _stub.second < other._stub.second;
     }

@@ -414,7 +414,7 @@ V& array_map<K,V>::operator[]( const K& key )
 {
     const uint32_t index = find( key );
     if( index != INVALID )
-    	return get_value( index );
+    	return *get_value( index );
 
     return *((V*)0);
 }
@@ -424,7 +424,7 @@ const V& array_map<K,V>::operator[]( const K& key ) const
 {
     const uint32_t index = find( key );
     if( index != INVALID )
-    	return get_value( index );
+    	return *get_value( index );
 
     return *((V*)0);
 }
