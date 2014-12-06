@@ -11,5 +11,6 @@ set(SOURCES
    ${SOURCES}
    ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/udpconnection.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/udpreliability.cpp
    PARENT_SCOPE
 )

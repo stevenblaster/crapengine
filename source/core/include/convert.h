@@ -1179,6 +1179,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIi8, variable );                                     \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1193,6 +1194,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIu8, variable );                                     \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1207,6 +1209,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIi16, variable );                                    \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1221,6 +1224,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIu16, variable );                                    \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1235,6 +1239,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIi32, variable );                                    \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1249,6 +1254,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIu32, variable );                                    \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1263,6 +1269,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIi64, variable );                                    \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1277,6 +1284,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%" PRIu64, variable );                                    \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1291,6 +1299,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%f", variable );                                          \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
@@ -1305,13 +1314,14 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     {                                                                                       \
         string_type string;                                                                 \
         sprintf( string.c_str(), "%fl", variable );                                         \
+        string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
     template<>                                                                              \
     CRAP_INLINE float64_t convert< string_type, float64_t >( const string_type& variable )  \
     {                                                                                       \
         float64_t buffer;                                                                   \
-        sscanf(variable.c_str(), "%fl", &buffer);                                            \
+        sscanf(variable.c_str(), "%fl", &buffer);                                           \
         return buffer;                                                                      \
     }
 

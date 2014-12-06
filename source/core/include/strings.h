@@ -410,15 +410,12 @@ void fixed_string<S>::split( char seperator, crap::array<fixed_string<S> >* arr 
 template<uint32_t S>
 void fixed_string<S>::merge( crap::array<fixed_string>* list, char glue )
 {
-    uint32_t current_pos = 0;
-
     for(uint32_t i=0; i<list->size(); ++i)
     {
-        if(current_pos != 0)
-            _memory[current_pos++] = glue;
+        if(i != 0)
+        	concat( glue );
 
-        memcpy( &_memory[current_pos], list->get(i)->c_str(), list->get(i)->size() );
-        current_pos += list->get(i)->size();
+        concat( *(list->get(i)) );
     }
 }
 

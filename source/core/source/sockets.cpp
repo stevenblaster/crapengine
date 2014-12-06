@@ -42,35 +42,14 @@ ipv4_t createIPv4( uint8_t first, uint8_t second, uint8_t third, uint8_t fourth 
 
 ipv4_t createIPv4( const crap::string16& str )
 {
-	const uint32_t size = sizeof(string16) * 4;
-	char mem[ size ];
-	crap::array<crap::string16> arr( &mem, size );
-	str.split( '.', &arr );
-
-	if( arr.size() != 4 )
-		return 0;
-
-	return createIPv4(
-			crap::convert<string16, uint8_t>( arr[0] ),
-			crap::convert<string16, uint8_t>( arr[1] ),
-			crap::convert<string16, uint8_t>( arr[2] ),
-			crap::convert<string16, uint8_t>( arr[3] )
-			);
+	uint8_t a,b,c,d;
+	sscanf( str.c_str(), "%" SCNu8 ".%" SCNu8 ".%" SCNu8 ".%" SCNu8, &a,&b,&c,&d );
+	return createIPv4(a, b, c, d);
 }
 
 string16 createIPv4String( ipv4_t address )
 {
-	const uint32_t size = sizeof(string16) * 4;
-	char mem[ size ];
-	crap::array<crap::string16> arr( &mem, size );
-
-	arr.push_back( crap::convert<uint8_t, string16>( (address >> 24 ) & 0xff ) );
-	arr.push_back(  crap::convert<uint8_t, string16>( (address >> 16 ) & 0xff ) );
-	arr.push_back( crap::convert<uint8_t, string16>( (address >> 8 ) & 0xff ) );
-	arr.push_back( crap::convert<uint8_t, string16>( address & 0xff ) );
-
-	string16 value;
-	value.merge( &arr, '.' );
+	string16 value( "%" PRIu8 ".%" PRIu8 ".%" PRIu8 ".%" PRIu8, (address >> 24 ) & 0xff, (address >> 16 ) & 0xff, (address >> 8 ) & 0xff, address & 0xff );
 	return value;
 }
 

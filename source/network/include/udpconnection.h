@@ -18,7 +18,8 @@
 #include "container/arraymap.h"
 #include "delegates.h"
 #include "sockets.h"
-#include "packetlayer.h"
+
+#include "packetinformation.h"
 
 namespace crap
 {
@@ -44,14 +45,15 @@ public:
 	typedef delegate< void(Event::Enum, uint32_t, ConnectionInformation* )> EventFunction;
 	typedef array<EventFunction> EventArray;
 
-	UdpConnection( port_t port, uint32_t packetSize,
+	UdpConnection( port_t port,
 			pointer_t<void> connectionMemory, uint32_t connectionSize,
 			pointer_t<void> eventMemory, uint32_t eventSize );
+
 	~UdpConnection( void );
 
 	void connect( ipv4_t address, port_t port );
 	bool receive( void );
-	bool sendData( uint32_t user_id, pointer_t<void> data, uint32_t size );
+	bool send( uint32_t user_id, pointer_t<void> data, uint32_t size );
 
 	template< class C, void (C::*F)( UdpConnection::Event::Enum, uint32_t, ConnectionInformation* ) >
 	bool registerForEvents( C* instance );
@@ -92,7 +94,6 @@ private:
 	uint32_t _session_id;
 	socket_t _socket;
 	uint16_t _port;
-	uint32_t _packet_size;
 };
 
 template< class C, void (C::*F)( UdpConnection::Event::Enum, uint32_t, ConnectionInformation* ) >

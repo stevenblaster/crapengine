@@ -20,10 +20,9 @@
 namespace crap
 {
 
-UdpConnection::UdpConnection( port_t port, uint32_t packetSize,
+UdpConnection::UdpConnection( port_t port,
 		pointer_t<void> connectionMemory, uint32_t connectionSize,
 		pointer_t<void> eventMemory, uint32_t eventSize ) :
-		_packet_size(packetSize),
 		_port(port),
 		_connections( connectionMemory.as_void , connectionSize ),
 		_eventArray( eventMemory.as_void , eventSize ),
@@ -51,14 +50,15 @@ void UdpConnection::connect( ipv4_t address, port_t port )
 
 bool UdpConnection::receive( void )
 {
-	uint8_t buffer[ _packet_size ];
+	uint8_t buffer[ CRAP_MAX_PACKET_SIZE ];
 
 	ConnectionInformation info;
 	info.user_ip = IPV4_ANY;
 	info.user_port = _port;
 	info.user_time = 0;
 
-	int32_t received_bytes = crap::receiveDatagram( _socket, buffer, _packet_size, &info.user_port, &info.user_ip );
+
+	int32_t received_bytes = crap::receiveDatagram( _socket, buffer, CRAP_MAX_PACKET_SIZE, &info.user_port, &info.user_ip );
 
 	if( received_bytes >= sizeof(ConnectionHeader) )
 	{
@@ -110,25 +110,26 @@ bool UdpConnection::receive( void )
 	return false;
 }
 
-bool UdpConnection::sendData( uint32_t user_id, pointer_t<void> data, uint32_t size )
+bool UdpConnection::send( uint32_t user_id, pointer_t<void> data, uint32_t size )
 {
 	uint32_t index = _connections.find( user_id );
 	if( _socket != -1 && index != ConnectionMap::INVALID )
 	{
 		CRAP_DEBUG_LOG( LOG_NETWORK, "Sending data to user ID:%" PRIu32 ", IP:%s, port:%" PRIu16, user_id, createIPv4String( _connections[index].user_ip).c_str(), _connections[index].user_port );
 
-		pointer_t<ConnectionHeader> buffer = alloca( sizeof(ConnectionHeader) + size );
-		memset( buffer.as_void, 0, sizeof( ConnectionHeader) );
-		buffer.as_type->size = 2 + (size/4) + (size % 4 != 0) ? 1 : 0;
-		buffer.as_type->data_flag = 1;
-		buffer.as_type->user_id = _session_id;
+		uint8_t buffer[ CRAP_MAX_PACKET_SIZE ];
+		pointer_t<ConnectionHeader> header = buffer;
+		memset( buffer, 0, sizeof( ConnectionHeader) );
+		header.as_type->size = 2 + (size/4) + (size % 4 != 0) ? 1 : 0;
+		header.as_type->data_flag = 1;
+		header.as_type->user_id = _session_id;
 
-		const uint16_t checksum = crc16( buffer.as_uint8_t, sizeof(ConnectionHeader));
-		buffer.as_type->checksum = checksum;
+		const uint16_t checksum = crc16( header.as_uint8_t, sizeof(ConnectionHeader));
+		header.as_type->checksum = checksum;
 
-		memcpy( buffer.as_type + 1, data.as_void, size );
+		memcpy( header.as_type + 1, data.as_void, size );
 
-		return sendDatagram( _socket, buffer.as_void,
+		return sendDatagram( _socket, header.as_void,
 				size + sizeof(ConnectionHeader),
 				_connections[index].user_port,
 				_connections[index].user_ip );
@@ -194,7 +195,7 @@ bool UdpConnection::userSync( uint32_t user_id )
 	{
 		for( uint32_t i = 0; i < _eventArray.size(); ++i )
 		{
-			_eventArray[i].invoke( Event::LOGOUT, user_id, &_connections[index] );
+			_eventArray[i].invoke( Event::SYNC, user_id, &_connections[index] );
 		}
 		_connections[index].user_time = 0;
 		sendResync( _connections[index].user_ip, _connections[index].user_port );
@@ -212,7 +213,7 @@ bool UdpConnection::userResync( uint32_t user_id )
 	{
 		for( uint32_t i = 0; i < _eventArray.size(); ++i )
 		{
-			_eventArray[i].invoke( Event::LOGOUT, user_id, &_connections[index] );
+			_eventArray[i].invoke( Event::RESYNC, user_id, &_connections[index] );
 		}
 		_connections[index].user_time = 0;
 		return true;
