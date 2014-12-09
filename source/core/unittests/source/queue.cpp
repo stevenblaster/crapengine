@@ -50,7 +50,7 @@ TEST(CrapQueuePushBack)
         handles[i] = queue_ptr->push_back( yep );
         CHECK( handles[i] != crap::queue<float32_t>::INVALID );
 
-        std::cout << "index " << handles[i] << ", " << yep << std::endl;
+        //std::cout << "index " << handles[i] << ", " << yep << std::endl;
     }
 
     CHECK_EQUAL( QUEUE_SPACE, queue_ptr->size() );
@@ -71,7 +71,7 @@ TEST(CrapQueuePopAll)
 	uint32_t index = queue_ptr->begin();
 	while( index != crap::queue<float32_t>::INVALID )
 	{
-		std::cout << "index " << index << ", " << *(queue_ptr->get(index)) << std::endl;
+		//std::cout << "index " << index << ", " << *(queue_ptr->get(index)) << std::endl;
 		queue_ptr->pop();
 		index = queue_ptr->begin();
 	}

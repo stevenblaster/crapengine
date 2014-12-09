@@ -65,6 +65,7 @@ struct ReliabilityOutgoing
 {
 	uint32_t user_id;
 	uint32_t counter;
+	uint32_t size;
 	ReliabilityHeader header;
 	uint8_t data[CRAP_MAX_PACKET_SIZE];
 };
