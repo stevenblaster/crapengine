@@ -47,13 +47,16 @@ public:
 
 	UdpConnection( port_t port,
 			pointer_t<void> connectionMemory, uint32_t connectionSize,
-			pointer_t<void> eventMemory, uint32_t eventSize );
+			pointer_t<void> eventMemory, uint32_t eventSize,
+			uint32_t update_frequency,
+			uint32_t idle_time );
 
 	~UdpConnection( void );
 
 	void connect( ipv4_t address, port_t port );
 	bool receive( void );
 	bool send( uint32_t user_id, pointer_t<void> data, uint32_t size );
+	bool update( uint32_t deltatime );
 
 	template< class C, void (C::*F)( UdpConnection::Event::Enum, uint32_t, ConnectionInformation* ) >
 	bool registerForEvents( C* instance );
@@ -94,6 +97,10 @@ private:
 	uint32_t _session_id;
 	socket_t _socket;
 	uint16_t _port;
+
+	uint32_t _idle_time;
+	uint32_t _passed_time;
+	uint32_t _update_frequency;
 };
 
 template< class C, void (C::*F)( UdpConnection::Event::Enum, uint32_t, ConnectionInformation* ) >

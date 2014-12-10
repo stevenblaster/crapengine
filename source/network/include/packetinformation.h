@@ -41,8 +41,8 @@ struct ConnectionHeader
 struct ConnectionInformation
 {
 	ipv4_t		user_ip;
+	uint32_t 	user_time;
 	port_t		user_port;
-	uint16_t 	user_time;
 };
 
 struct ReliabilityHeader
@@ -64,7 +64,7 @@ struct ReliabilityHeader
 struct ReliabilityOutgoing
 {
 	uint32_t user_id;
-	uint32_t counter;
+	uint32_t age;
 	uint32_t size;
 	ReliabilityHeader header;
 	uint8_t data[CRAP_MAX_PACKET_SIZE];

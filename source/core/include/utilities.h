@@ -158,7 +158,7 @@ CRAP_INLINE uint32_t crc32( uint8_t* ptr, int32_t size )
    for( uint32_t i=0; i<size; ++i )
    {
 	   crc = crc ^ ptr[i];
-	   for( uint32_t j=7; j>= 0; --j )
+	   for( int32_t j=7; j>= 0; --j )
 	   {
 		   mask = -(crc & 1);
 		   crc = (crc >> 1) ^ (0xEDB88320 & mask);
