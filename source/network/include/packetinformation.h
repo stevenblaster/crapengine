@@ -66,7 +66,6 @@ struct ReliabilityOutgoing
 	uint32_t user_id;
 	uint32_t age;
 	uint32_t size;
-	ReliabilityHeader header;
 	uint8_t data[CRAP_MAX_PACKET_SIZE];
 };
 
@@ -76,7 +75,7 @@ struct ReliabilityIncoming
 	uint32_t age;
     uint32_t number;
     uint32_t last_size;
-	uint32_t info[255];
+    ReliabilityHeader info[255];
 	uint8_t data[ (CRAP_MAX_PACKET_SIZE-sizeof(ConnectionHeader)-sizeof(ReliabilityHeader)) * 255 ];
 };
 

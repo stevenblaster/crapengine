@@ -36,9 +36,12 @@ bool UdpReliability::receive( uint32_t user_id, pointer_t<void> data, uint32_t s
 {
 	pointer_t<ReliabilityHeader> header = data.as_void;
 
+	CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Receiving message %u with %u bytes from user %u.", header.as_type->message_id, size, user_id );
+
 	//checking checksum
 	if( !compareChecksum( header.as_type, size ) )
 	{
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Checksum test failed!" );
 		return false;
 	}
 
@@ -70,7 +73,7 @@ bool UdpReliability::send( uint32_t user_id, pointer_t<void> data, uint32_t size
 	const uint32_t packet_number = ( size <= max_data_size ) ? 1 : (size/max_data_size) + (data_diff != 0);
 	const uint8_t message_id = rand() & 0xff;
 
-	CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Sending message %u with %u packets to user %u", message_id, packet_number, user_id );
+	CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Creating message %u with %u packets for user %u", message_id, packet_number, user_id );
 
 	for( uint32_t i=0; i< packet_number; ++i )
 	{
@@ -87,18 +90,17 @@ bool UdpReliability::send( uint32_t user_id, pointer_t<void> data, uint32_t size
 		uint32_t checksum = crc32( header.as_uint8_t, data_size );
 		header.as_type->checksum = checksum;
 
-		_outFunction.invoke( user_id, header.as_void, data_size );
 		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Sending packet %u/%u of message (%u) with size %u.", i+1, packet_number, message_id, data_only_size );
+		_outFunction.invoke( user_id, header.as_void, data_size );
 
 		if( !fire_and_forget )
 		{
 			ReliabilityOutgoing buffer;
 			buffer.user_id = user_id;
 			buffer.age = 0;
-			buffer.size = data_only_size;
-			memcpy( &(buffer.header), &header, sizeof(ReliabilityHeader) );
-			memcpy(buffer.data, data.as_void, data_only_size );
-			_outgoingMap.push_back( user_id | message_id, buffer );
+			buffer.size = data_size;
+			memcpy(buffer.data, header.as_void, data_size );
+			_outgoingMap.push_back( message_id << 16 | i+1, buffer );
 		}
 	}
 
@@ -110,6 +112,8 @@ bool UdpReliability::update( uint32_t deltatime )
 	_passed_time += deltatime;
 	if( _passed_time >= _update_frequency )
 	{
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Updating %u outgoing messages in queue.", _outgoingMap.size() );
+
 		for( uint32_t i=0; i< _outgoingMap.size(); ++i )
 		{
 			ReliabilityOutgoing* out_data = _outgoingMap.get_value(i);
@@ -123,17 +127,20 @@ bool UdpReliability::update( uint32_t deltatime )
 				continue;
 			}
 
-			const uint32_t data_size = sizeof(ConnectionHeader) + out_data->size;
-			pointer_t<ReliabilityHeader> header = alloca( data_size );
-			memcpy( header.as_type, &(out_data->header), sizeof(ReliabilityHeader));
-			memcpy( header.as_type + 1, out_data->data, out_data->size );
+			pointer_t<ReliabilityHeader> header = alloca( out_data->size );
+			memcpy( header.as_type, out_data->data, out_data->size );
+			header.as_type->checksum = 0;
+			const uint32_t checksum = crc32( header.as_uint8_t, out_data->size );
+			header.as_type->checksum = checksum;
 
-			CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Sending packet %u/%u of message (%u) with size %u.", out_data->header.number_current, out_data->header.number_total, out_data->header.message_id, out_data->size );
+			CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Sending packet %u/%u of message (%u) with size %u.", header.as_type->number_current, header.as_type->number_total, header.as_type->message_id, out_data->size-sizeof(ReliabilityHeader) );
 
-			_outFunction.invoke( _outgoingMap.get_value(i)->user_id, header.as_void, data_size );
+			_outFunction.invoke( _outgoingMap.get_value(i)->user_id, header.as_void, out_data->size );
 
 			out_data->age = new_time;
 		}
+
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Updating %u incoming messages in queue.", _incomingMap.size() );
 
 		for( uint32_t i=0; i< _incomingMap.size(); ++i )
 		{
@@ -148,9 +155,16 @@ bool UdpReliability::update( uint32_t deltatime )
 				continue;
 			}
 
-			ReliabilityHeader header;
-			memset( &header, 0, sizeof(ReliabilityHeader));
-			sendAck( in_data->user_id, &header );
+			for( uint32_t j=0; j< in_data->number; ++j )
+			{
+				if( in_data->info[j].sequence_flag != 0 )
+				{
+					CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] \t Packet %u of %u has been received", j+1, in_data->number );
+					sendAck( in_data->user_id, &(in_data->info[j]) );
+				}
+				else
+					CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] \t Packet %u of %u has NOT been received", j+1, in_data->number );
+			}
 
 			in_data->age = new_time;
 		}
@@ -191,32 +205,40 @@ bool UdpReliability::receiveData( uint32_t user_id, ReliabilityHeader* CRAP_REST
 		if( _incomingMap[packet_id].number == header->number_current )
 			_incomingMap[packet_id].last_size = packet_size;
 
-		if( _incomingMap[packet_id].info[ packet_index ] == 0 )
+		if( _incomingMap[packet_id].info[ packet_index ].sequence_flag == 0 )
 		{
-			_incomingMap[packet_id].info[ packet_index ] = 1;
-			mempcpy( _incomingMap[packet_id].data + max_packet_size * packet_index, header+1, packet_size );
+			memcpy( _incomingMap[packet_id].info + packet_index, header, sizeof(ReliabilityHeader) );
+			memcpy( _incomingMap[packet_id].data + (max_packet_size * packet_index), header+1, packet_size );
 		}
 
-		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Received DATA from user %u. Packet %u, %u/%u", user_id, header->message_id, header->number_current, header->number_total);
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Received data from user %u. Packet %u, %u/%u", user_id, header->message_id, header->number_current, header->number_total);
 
+		bool done = true;
 		for( uint32_t i=0; i< _incomingMap[packet_id].number; ++i )
 		{
-			if( _incomingMap[packet_id].info[i] == 0 )
+			if( _incomingMap[packet_id].info[i].sequence_flag == 0 )
 			{
-				return true;
+				CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] \t Packet %u of %u has NOT been received", i+1, _incomingMap[packet_id].number );
+				done = false;
 			}
+			else
+				CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] \t Packet %u of %u has been received", i+1, _incomingMap[packet_id].number );
+
 		}
 
-		//package is ready
-		uint32_t total_size = max_packet_size * (_incomingMap[packet_id].number-1) + _incomingMap[packet_id].last_size;
-		pointer_t<void> buffer = alloca( total_size );
+		if( done )
+		{
+			//package is ready
+			uint32_t total_size = max_packet_size * (_incomingMap[packet_id].number-1) + _incomingMap[packet_id].last_size;
+			pointer_t<void> buffer = alloca( total_size );
 
-		memcpy( buffer.as_uint8_t, _incomingMap[packet_id].data, total_size );
+			memcpy( buffer.as_uint8_t, _incomingMap[packet_id].data, total_size );
 
-		_incomingMap.erase_at( index );
+			_incomingMap.erase_at( index );
 
-		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Packet completed." );
-		return _inFunction.invoke( user_id, buffer.as_void, total_size );
+			CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Packet completed." );
+			return _inFunction.invoke( user_id, buffer.as_void, total_size );
+		}
 	}
 	else
 	{
@@ -226,15 +248,14 @@ bool UdpReliability::receiveData( uint32_t user_id, ReliabilityHeader* CRAP_REST
 		incoming.number = header->number_total;
 		incoming.last_size = (header->number_total == header->number_current) ? packet_size : 0;
 
-		memset(incoming.info, 0, size - sizeof( ReliabilityHeader ) );
-		incoming.info[ packet_index ] = 1;
+		memset(incoming.info, 0, sizeof( ReliabilityHeader )*255 );
 
-		memcpy( incoming.data + (packet_index * packet_size), header + 1, packet_size);
+		memcpy( incoming.info + packet_index, header, sizeof(ReliabilityHeader) );
+		memcpy( incoming.data + (packet_index * max_packet_size), header + 1, packet_size);
 
 		_incomingMap.push_back( packet_id, incoming );
 
-		//CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] New packet received." );
-		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Received DATA from user %u. Packet %u, %u/%u", user_id, header->message_id, header->number_current, header->number_total);
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Received data from user %u. Packet %u, %u/%u", user_id, header->message_id, header->number_current, header->number_total);
 
 		if( header->number_total == 1 )
 			return _inFunction.invoke( user_id, header + 1, size - sizeof( ReliabilityHeader ) );
@@ -254,7 +275,7 @@ bool UdpReliability::receiveAck( uint32_t user_id, ReliabilityHeader* CRAP_RESTR
 {
 	CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Received ACK from user %u. Packet %u, %u/%u", user_id, header->message_id, header->number_current, header->number_total);
 
-	const uint32_t packet_id = user_id | header->message_id;
+	const uint32_t packet_id = header->message_id << 16 | header->number_current;
 	uint32_t index = _outgoingMap.find( packet_id );
 
 	if( index != OutgoingMap::INVALID )

@@ -69,10 +69,13 @@ bool UdpConnection::receive( void )
 
 		pointer_t<ConnectionHeader> header = buffer;
 
-		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Receiving data from user ID:%" PRIu32 ", IP:%s, port:%" PRIu16, header.as_type->user_id, createIPv4String( info.user_ip ).c_str(), info.user_port );
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Receiving %u bytes from user ID:%" PRIu32 ", IP:%s, port:%" PRIu16, received_bytes, header.as_type->user_id, createIPv4String( info.user_ip ).c_str(), info.user_port );
 
 		if( !compareChecksum( header.as_type ) )
+		{
+			CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Checksum test failed!" );
 			return false;
+		}
 
 		uint32_t user_id = header.as_type->user_id;
 		uint32_t login_id = _connections.find( user_id );
@@ -104,6 +107,7 @@ bool UdpConnection::receive( void )
 		//data flag
 		if( header.as_type->data_flag == 1 && login_id != ConnectionMap::INVALID )
 		{
+			_connections[user_id].user_time = 0;
 			delegate<bool( uint32_t, pointer_t<void>, uint32_t )> empty;
 			if( _dataFunction != empty )
 			{
@@ -122,7 +126,7 @@ bool UdpConnection::send( uint32_t user_id, pointer_t<void> data, uint32_t size 
 	uint32_t index = _connections.find( user_id );
 	if( _socket != -1 && index != ConnectionMap::INVALID )
 	{
-		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Sending data to user ID:%" PRIu32 ", IP:%s, port:%" PRIu16, user_id, createIPv4String( _connections[user_id].user_ip).c_str(), _connections[user_id].user_port );
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Sending %u bytes to user ID:%" PRIu32 ", IP:%s, port:%" PRIu16, size, user_id, createIPv4String( _connections[user_id].user_ip).c_str(), _connections[user_id].user_port );
 
 		uint8_t buffer[ CRAP_MAX_PACKET_SIZE ];
 		pointer_t<ConnectionHeader> header = buffer;
@@ -149,6 +153,7 @@ bool UdpConnection::update( uint32_t deltatime )
 	_passed_time += deltatime;
 	if( _passed_time >= _update_frequency )
 	{
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Updating %u connections", _connections.size() );
 		for( uint32_t i = 0; i< _connections.size(); ++i )
 		{
 			const uint32_t current_time = _connections.get_value(i)->user_time;
@@ -166,6 +171,7 @@ bool UdpConnection::update( uint32_t deltatime )
 			_connections.get_value(i)->user_time = new_time;
 		}
 		_passed_time = 0;
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Finished updating" );
 		return true;
 	}
 	return false;
