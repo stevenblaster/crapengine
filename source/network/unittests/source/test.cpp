@@ -34,7 +34,7 @@ int main( void )
 	crap::UdpReliability rel( 100, 100, new char[1024*100], 1024*100, new char[1024*100], 1024*100, 50 );
 	crap::UdpReliability rel2( 100, 100, new char[1024*100], 1024*100, new char[1024*100], 1024*100, 50 );
 
-	crap::UdpErrorGenerator err( 30 );
+	crap::UdpErrorGenerator err( 0 );
 	err.setOutFunction<crap::UdpConnection, &crap::UdpConnection::send>( &conn );
 
 	conn.setDataFunction<crap::UdpReliability, &crap::UdpReliability::receive>( &rel );
@@ -74,7 +74,7 @@ int main( void )
 		const uint32_t delta = (new_tick - tick) / freq;
 
 		rel.update( delta );
-		rel2.update( delta );
+		//rel2.update( delta );
 
 		conn.receive();
 		conn2.receive();
