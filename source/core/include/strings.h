@@ -148,7 +148,7 @@ fixed_string<S>& fixed_string<S>::operator=( const fixed_string<S>& other )
     CRAP_ASSERT( ASSERT_BREAK, this != &other,  "Assignment operator on same object" );
 
     _size = other._size;
-    memcpy( _memory, other._memory, S );
+    memcpy( _memory, other._memory, other._size );
     return *this;
 }
 

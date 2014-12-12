@@ -17,6 +17,7 @@
 
 #include "utilities.h"
 #include "strings.h"
+#include "sockets.h"
 
 namespace crap
 {
@@ -32,8 +33,9 @@ ipv6_t;
 
 typedef uint16_t	port_t;
 
-static const uint32_t IPV4_ANY = 0;
+static const uint32_t IPV4_ANY = 0x00000000;
 static const uint32_t IPV4_BROADCAST = 0xffffffff;
+static const uint32_t IPV4_LOCALHOST = 0x7f000001;
 static const int32_t PORT_INVALID = -1;
 
 namespace socket

@@ -72,7 +72,7 @@ TEST( CreateUdpConnection )
 
 TEST( ConnectUPDConnection )
 {
-	crap::ipv4_t ip = crap::createIPv4("127.0.0.1");
+	crap::ipv4_t ip = crap::IPV4_LOCALHOST;//crap::createIPv4("127.0.0.1");
 
 	crap::tick_t tick, freq;
 	crap::timer_get_tick( &tick );

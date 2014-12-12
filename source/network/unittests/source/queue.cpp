@@ -75,10 +75,10 @@ public:
 
 	void setString( crap::string1024& str ) { _buffer = str; }
 
-	uint32_t dataSize( void ) const { return _buffer.size(); }
+	uint32_t dataSize( void ) const { return _buffer.size()+1; }
 
 	void readData( crap::pointer_t<void> pointer ) { _buffer = pointer.as_char; }
-	void writeData( crap::pointer_t<void> pointer ) { memcpy( pointer.as_void, _buffer.c_str(), _buffer.size() );}
+	void writeData( crap::pointer_t<void> pointer ) { memcpy( pointer.as_void, _buffer.c_str(), _buffer.size()+1 );}
 
 	bool execute( uint32_t user_id, uint32_t deltatime ) { std::cout << _buffer.c_str() << std::endl; return true; }
 
@@ -145,13 +145,11 @@ TEST( CreateUdpConnection )
 	queue->setOutFunction<crap::UdpReliability, &crap::UdpReliability::send>( reliabilty );
 
 	reliabilty->setInFunction<&inFunc>();
-
-	testCommand = new TestPacketCommand();
 }
 
 TEST( ConnectUPDConnection )
 {
-	crap::ipv4_t ip = crap::createIPv4("127.0.0.1");
+	crap::ipv4_t ip = crap::IPV4_LOCALHOST;//crap::createIPv4("127.0.0.1");
 	connection->connect( ip, 22346 );
 	connection2->receive();
 	connection->receive();
@@ -174,9 +172,10 @@ TEST( SendDataUdpReliability )
 			"Obulus maximus in Geldtaschus!! Manchmal sitz ich auf dem Klo und denke mir drückende Sachen"
 			" aus, versuche produktiv zu agieren, und befreie Materie von ihren Einschränkungen.");
 
-	testCommand->setString( str );
+	TestPacketCommand testCommand;// = new TestPacketCommand();
+	testCommand.setString( str );
 
-	queue->enqueueOutgoing( user2, testCommand );
+	queue->enqueueOutgoing( user2, &testCommand );
 	queue->processOutgoing( 1024 );
 
 	crap::tick_t tick, freq;

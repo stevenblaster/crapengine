@@ -173,12 +173,14 @@ template< class C, bool (C::*F)( uint32_t, pointer_t<void>, uint32_t) >
 bool UdpConnection::setDataFunction( C* instance )
 {
 	_dataFunction.bind<C,F>(instance);
+	return true;
 }
 
 template< bool (*F)( uint32_t, pointer_t<void>, uint32_t ) >
 bool UdpConnection::setDataFunction( void )
 {
 	_dataFunction.bind<F>();
+	return true;
 }
 
 } /* namespace crap */

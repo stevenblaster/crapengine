@@ -10,8 +10,9 @@
  * @author  steffen
  * @date 	Nov 30, 2014
  */
+#include "config/crap_platform.h"
 
-#ifdef CRAP_PLATFORM_WINDOWS  || CRAP_PLATFORM_XBOX
+#ifdef CRAP_PLATFORM_WINDOWS
 
 #include <ws2tcpip.h>
 #pragma comment(lib, "wsock32.lib")
@@ -25,12 +26,13 @@
 #include <netinet/in_systm.h>
 #include <unistd.h>
 
-#include "config/crap_platform.h"
+#endif
+
 #include "asserts.h"
 #include "sockets.h"
 #include "convert.h"
 
-#endif
+
 
 namespace crap
 {
@@ -55,11 +57,11 @@ string16 createIPv4String( ipv4_t address )
 
 socket_t createSocket( socket::family fam, socket::datatype type, socket::protocol prot )
 {
-#ifdef CRAP_PLATFORM_WINDOWS  || CRAP_PLATFORM_XBOX
+#ifdef CRAP_PLATFORM_WINDOWS
 
     WSADATA wsaData;
     int32_t result = WSAStartup( MAKEWORD(2,2), &wsaData );
-    CRAP_ASSERT( ASSERT_BREAK, result == NO_ERROR, "Could not setup Windows socket (result %i"), result);
+    CRAP_ASSERT( ASSERT_BREAK, result == NO_ERROR, "Could not setup Windows socket (result %i)", result);
 
 #endif
 
@@ -87,7 +89,7 @@ bool openSocket( socket_t socket, port_t port )
 
 bool setBlocking( socket_t socket, bool blocking )
 {
-#ifdef CRAP_PLATFORM_WINDOWS  || CRAP_PLATFORM_XBOX
+#ifdef CRAP_PLATFORM_WINDOWS
 
     DWORD nonBlocking = (blocking) ? 0 : 1;
     int32_t result = ioctlsocket( socket, FIONBIO, &nonBlocking );
@@ -104,7 +106,7 @@ bool setBlocking( socket_t socket, bool blocking )
 
 void closeSocket( socket_t socket )
 {
-#ifdef CRAP_PLATFORM_WINDOWS  || CRAP_PLATFORM_XBOX
+#ifdef CRAP_PLATFORM_WINDOWS
 
     WSACleanup();
     closesocket( socket );
@@ -123,7 +125,7 @@ bool sendDatagram( socket_t socket, pointer_t<void> data, uint32_t size, uint16_
 	addr.sin_addr.s_addr = htonl( address );
 	addr.sin_port = htons( port );
 
-    int32_t result = ::sendto( socket, data.as_const_void, size, 0, (sockaddr*)&addr, sizeof(addr) );
+    int32_t result = ::sendto( socket, data.as_const_char, size, 0, (sockaddr*)&addr, sizeof(addr) );
     return result == size;
 }
 
@@ -152,8 +154,8 @@ socket_t acceptStream( socket_t socket, uint16_t port, ipv4_t address/* = IPV4_B
 	addr.sin_addr.s_addr = htonl( address );
 	addr.sin_port = htons( port );
 
-#ifdef CRAP_PLATFORM_WINDOWS || CRAP_PLATFORM_XBOX
-	iint32_t addr_lenght = sizeof(addr);
+#ifdef CRAP_PLATFORM_WINDOWS
+	int32_t addr_lenght = sizeof(addr);
 #else
     uint32_t addr_lenght = sizeof(addr);
 #endif
@@ -168,13 +170,13 @@ int32_t receiveDatagram( socket_t socket, pointer_t<void> buffer, uint32_t size,
 	addr.sin_addr.s_addr = (address != 0 ) ? htonl( *address ) : htonl(IPV4_ANY);
 	addr.sin_port = htons( *port );
 
-#ifdef CRAP_PLATFORM_WINDOWS || CRAP_PLATFORM_XBOX
+#ifdef CRAP_PLATFORM_WINDOWS
 	int32_t addr_length = sizeof(addr);
 #else
 	uint32_t addr_length = sizeof(addr);
 #endif
 
-	int32_t result = ::recvfrom( socket, buffer.as_void, size, 0, (sockaddr*)&addr, &addr_length );
+	int32_t result = ::recvfrom( socket, buffer.as_char, size, 0, (sockaddr*)&addr, &addr_length );
 	*address = ntohl( addr.sin_addr.s_addr );
 	*port = ntohs(addr.sin_port );
 
@@ -183,13 +185,13 @@ int32_t receiveDatagram( socket_t socket, pointer_t<void> buffer, uint32_t size,
 
 bool sendStream( socket_t socket, pointer_t<void> data, uint32_t size )
 {
-	int32_t result = ::send( socket, data.as_const_void, size, 0 );
+	int32_t result = ::send( socket, data.as_const_char, size, 0 );
     return result == size;
 }
 
 bool receiveStream( socket_t socket, pointer_t<void> buffer, uint32_t size, uint16_t port , ipv4_t address /*=IPV4_ANY*/ )
 {
-	int32_t result = ::recv( socket, buffer.as_void, size, 0 );
+	int32_t result = ::recv( socket, buffer.as_char, size, 0 );
 	return result == size;
 }
 

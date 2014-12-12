@@ -84,24 +84,28 @@ template< class C, bool (C::*F)( uint32_t, pointer_t<void>, uint32_t) >
 bool UdpErrorGenerator::setOutFunction( C* instance )
 {
 	_outFunction.bind<C,F>(instance);
+	return true;
 }
 
 template< bool (*F)( uint32_t, pointer_t<void>, uint32_t ) >
 bool UdpErrorGenerator::setOutFunction( void )
 {
 	_outFunction.bind<F>();
+	return true;
 }
 
 template< class C, bool (C::*F)( uint32_t, pointer_t<void>, uint32_t) >
 bool UdpErrorGenerator::setInFunction( C* instance )
 {
 	_inFunction.bind<C,F>(instance);
+	return true;
 }
 
 template< bool (*F)( uint32_t, pointer_t<void>, uint32_t ) >
 bool UdpErrorGenerator::setInFunction( void )
 {
 	_inFunction.bind<F>();
+	return true;
 }
 
 } /* namespace crap */
