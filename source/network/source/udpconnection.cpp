@@ -171,7 +171,7 @@ bool UdpConnection::update( uint32_t deltatime )
 			_connections.get_value(i)->user_time = new_time;
 		}
 		_passed_time = 0;
-		CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Finished updating" );
+
 		return true;
 	}
 	return false;

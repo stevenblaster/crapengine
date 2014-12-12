@@ -32,7 +32,7 @@ public:
 	UdpReliability( uint32_t ttl_incoming, uint32_t ttl_outgoing,
 			pointer_t<void> outMem, uint32_t outMemSize,
 			pointer_t<void> inMem, uint32_t inMemsize,
-			uint32_t update_frequencym);
+			uint32_t update_frequency );
 
 	bool receive( uint32_t user_id, pointer_t<void> data, uint32_t size );
 	bool send( uint32_t user_id, pointer_t<void> data, uint32_t size, bool fire_and_forget = false );
@@ -49,6 +49,12 @@ public:
 
 	template< bool (*F)( uint32_t, pointer_t<void>, uint32_t ) >
 	bool setInFunction( void );
+
+	CRAP_INLINE
+	OutgoingMap* outgoingMap( void ) { return &_outgoingMap; }
+
+	CRAP_INLINE
+	IncomingMap* incomingMap( void ) { return &_incomingMap; }
 
 private:
 

@@ -9,7 +9,7 @@ TEST( AnnounceTestThread )
 {
     CRAP_DEBUG_LOG( LOG_CHANNEL_CORE| LOG_TARGET_COUT| LOG_TYPE_DEBUG, "Starting tests for \"thread.h\"" );
 }
-//#include "atomic.h"
+#include "atomic.h"
 //#include "container/array.h"
 
 //#include "container/container_index.h"

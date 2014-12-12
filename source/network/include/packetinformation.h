@@ -79,6 +79,14 @@ struct ReliabilityIncoming
 	uint8_t data[ (CRAP_MAX_PACKET_SIZE-sizeof(ConnectionHeader)-sizeof(ReliabilityHeader)) * 255 ];
 };
 
+struct NetworkCommandData
+{
+	uint32_t userID;
+	uint32_t commandID;
+	bool	fireAndForget;
+	uint8_t data[ (CRAP_MAX_PACKET_SIZE-sizeof(ConnectionHeader)-sizeof(ReliabilityHeader)-sizeof(uint32_t)) * 255 ];
+};
+
 } /* namespace crap */
 
 #endif /* NETWORK_INCLUDE_PACKETINFORMATION_H_ */

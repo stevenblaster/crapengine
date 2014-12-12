@@ -21,6 +21,9 @@
 
 #include "packetinformation.h"
 
+/**
+ * @namespace crap
+ */
 namespace crap
 {
 
@@ -28,6 +31,7 @@ class UdpConnection
 {
 public:
 
+	/// Event types
 	struct Event
 	{
 		enum Enum
@@ -75,6 +79,18 @@ public:
 
 	template< bool (*F)( uint32_t, pointer_t<void>, uint32_t ) >
 	bool setDataFunction( void );
+
+	CRAP_INLINE
+	uint32_t connectionID( void ) const { return _session_id; }
+
+	CRAP_INLINE
+	ConnectionMap* connectionMap( void ) { return &_connections; }
+
+	CRAP_INLINE
+	EventArray* eventArray( void ) { return &_eventArray; }
+
+	CRAP_INLINE
+	port_t listenPort( void ) const { return _port; }
 
 private:
 
@@ -165,6 +181,6 @@ bool UdpConnection::setDataFunction( void )
 	_dataFunction.bind<F>();
 }
 
-}
+} /* namespace crap */
 
 #endif /* NETWORK_INCLUDE_UDPCONNECTION_H_ */

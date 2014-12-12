@@ -8,6 +8,8 @@
 #include "config/crap_platform.h"
 #include "config/crap_types.h"
 
+#ifdef CRAP_PLATFORM_WINDOWS || CRAP_PLATFORM_XBOX
+
 namespace crap
 {
 
@@ -45,5 +47,7 @@ CRAP_INLINE int32_t mutex_unlock( mutex_t* mutex )
 
 
 } //namspace crap
+
+#endif //WIN/XBOX
 
 #endif //CRAP_THREAD_MSVC_H

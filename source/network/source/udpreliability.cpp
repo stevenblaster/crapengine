@@ -12,6 +12,7 @@
  */
 
 #include "logger.h"
+#include "packetinformation.h"
 #include "udpreliability.h"
 
 #define LOG_NETWORK LOG_CHANNEL_NETWORK | LOG_TARGET_COUT| LOG_TYPE_DEBUG
@@ -123,6 +124,8 @@ bool UdpReliability::update( uint32_t deltatime )
 
 			if( new_time >= _outgoingTTL )
 			{
+				CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Erasing outdated packet (%u)", out_data->age );
+
 				_outgoingMap.erase_at(i--);
 				continue;
 			}
@@ -151,6 +154,7 @@ bool UdpReliability::update( uint32_t deltatime )
 
 			if( new_time >= _incomingTTL )
 			{
+				CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] Erasing outdated packet (%u)", in_data->age );
 				_incomingMap.erase_at(i--);
 				continue;
 			}
@@ -242,6 +246,7 @@ bool UdpReliability::receiveData( uint32_t user_id, ReliabilityHeader* CRAP_REST
 	}
 	else
 	{
+		CRAP_DEBUG_LOG( LOG_NETWORK, "[REL] New packet from user %u. Packet %u (internal:%u)", user_id, header->message_id, packet_id );
 		ReliabilityIncoming incoming;
 		incoming.user_id = user_id;
 		incoming.age = 0;
