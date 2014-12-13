@@ -53,7 +53,7 @@ public:
 
 	~UdpNetwork( void );
 
-	void broadcastConnection( void );
+	void broadcastConnection( int32_t device_index = -1 );
 	void connectTo( ipv4_t ip, port_t port );
 
 	void enqueue( uint32_t user_id, NetworkCommand* command, bool fireAndForget=false);

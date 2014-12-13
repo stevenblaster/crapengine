@@ -66,7 +66,7 @@ TEST( AnnounceTestUdpConnection )
 
 TEST( CreateUdpConnection )
 {
-	network = new crap::UdpNetwork( PORT, 10, 10, 30000, 100, 100, 1000, 1000, 1024, 1024, 10, 50);
+	network = new crap::UdpNetwork( PORT, 10, 10, 30000, 100, 100, 10000, 10000, 1024, 1024, 10, 2000);
 
 	network->registerForEvents<&regFunc>();
 	testCommand = new TestPacketCommand();
@@ -88,8 +88,10 @@ TEST( ConnectUPDConnection )
 		const uint32_t delta = (new_tick - tick) / freq;
 
 		network->broadcastConnection();
+		network->update( delta );
 
-		crap::sleep_mil_sec(1000);
+		tick = new_tick;
+		crap::sleep_mil_sec(2000);
 	}
 	CHECK( user != 0 );
 }
@@ -109,13 +111,15 @@ TEST( SendDataUdpReliability )
 	crap::tick_t tick, freq;
 	crap::timer_get_tick( &tick );
 	crap::timer_frequency( &freq );
-	freq /= 100000;
+	freq /= 1000;
 	uint32_t counter = 0;
 	while( 1 )
 	{
 		crap::tick_t new_tick;
 		crap::timer_get_tick( &new_tick );
 		const uint32_t delta = (new_tick - tick) / freq;
+
+		CRAP_DEBUG_LOG( LOG_CHANNEL_NETWORK | LOG_TARGET_COUT| LOG_TYPE_DEBUG, "DELTATIME %u", delta );
 
 		network->update( delta );
 
@@ -124,6 +128,8 @@ TEST( SendDataUdpReliability )
 
 		counter += delta;
 		tick = new_tick;
+
+		crap::sleep_mil_sec(2000);
 	}
 }
 
