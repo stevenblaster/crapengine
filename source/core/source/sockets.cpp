@@ -184,10 +184,10 @@ void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* ar
 #ifdef CRAP_PLATFORM_WINDOWS
 
 	INTERFACE_INFO infolist[100] = {};
-	uin32_t bytes_returned = 0;
+	uint32_t bytes_returned = 0;
 	uint32_t interface_number = 0;
 
-	int32_t result = WSAIoctl(socket, SIO_GET_INTERFACE_LIST, NULL, 0, (void*)infolist, sizeof(infolist), &bytes_returned, NULL, NULL);
+	int32_t result = WSAIoctl(socket, SIO_GET_INTERFACE_LIST, NULL, 0, (void*)infolist, sizeof(infolist), (LPDWORD)&bytes_returned, NULL, NULL);
 	interface_number = bytes_returned / sizeof(INTERFACE_INFO);
 
 	for( uint32_t i = 0; i < interface_number; ++i )
@@ -196,9 +196,9 @@ void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* ar
 		{
 			interface_adresses addresses;
 
-			addresses.address = ntohl( infolist[i].iiAddress.AddressIn.sin_addr );
-			addresses.broadcast = ntohl( infolist[index].iiBroadcastAddress.AddressIn.sin_addr );
-			addresses.netmask = ntohl( infolist[index].iiNetmask.AddressIn.sin_addr );
+			addresses.address = ntohl( infolist[i].iiAddress.AddressIn.sin_addr.S_un.S_addr );
+			addresses.broadcast = ntohl( infolist[i].iiBroadcastAddress.AddressIn.sin_addr.S_un.S_addr );
+			addresses.netmask = ntohl( infolist[i].iiNetmask.AddressIn.sin_addr.S_un.S_addr );
 
 			array->push_back( addresses );
 	    }

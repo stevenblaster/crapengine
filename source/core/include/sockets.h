@@ -20,7 +20,8 @@
 #include <ws2tcpip.h>
 #include <iphlpapi.h>
 #pragma comment(lib, "wsock32.lib")
-#pragma comment(lib, "iphlpapi.lib")
+//#pragma comment(lib, "iphlpapi.lib")
+#pragma comment(lib, "Ws2_32.lib")
 
 #else
 
