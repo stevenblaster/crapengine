@@ -15,9 +15,29 @@
 #ifndef CORE_INCLUDE_SOCKETS_H_
 #define CORE_INCLUDE_SOCKETS_H_
 
+#ifdef CRAP_PLATFORM_WINDOWS
+
+#include <ws2tcpip.h>
+#include <iphlpapi.h>
+#pragma comment(lib, "wsock32.lib")
+#pragma comment(lib, "iphlpapi.lib")
+
+#else
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/ioctl.h>
+#include <netinet/in.h>
+#include <fcntl.h>
+#include <netinet/in_systm.h>
+#include <unistd.h>
+#include <net/if.h>
+
+#endif
+
 #include "utilities.h"
 #include "strings.h"
-#include "sockets.h"
+#include "container/array.h"
 
 namespace crap
 {
@@ -33,9 +53,17 @@ ipv6_t;
 
 typedef uint16_t	port_t;
 
-static const uint32_t IPV4_ANY = 0x00000000;
-static const uint32_t IPV4_BROADCAST = 0xffffffff;
-static const uint32_t IPV4_LOCALHOST = 0x7f000001;
+typedef struct s_interfaceAddr
+{
+	ipv4_t	address;
+	ipv4_t	broadcast;
+	ipv4_t	netmask;
+}
+interface_adresses;
+
+static const uint32_t IPV4_ANY = INADDR_ANY;
+static const uint32_t IPV4_BROADCAST = INADDR_BROADCAST;
+static const uint32_t IPV4_LOCALHOST = INADDR_LOOPBACK; // 0x7f000001;
 static const int32_t PORT_INVALID = -1;
 
 namespace socket
@@ -88,6 +116,8 @@ bool receiveStream( socket_t socket, pointer_t<void> buffer, uint32_t size, uint
 ipv4_t createIPv4( uint8_t first, uint8_t second, uint8_t third, uint8_t fourth );
 ipv4_t createIPv4( const crap::string16& str );
 string16 createIPv4String( ipv4_t address );
+
+void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* array );
 
 } // namespace crap
 

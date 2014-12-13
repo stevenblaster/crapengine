@@ -21,6 +21,8 @@
 #include "networkcommandqueue.h"
 #include "udpnetwork.h"
 
+#define PORT 23465
+
 namespace
 {
 
@@ -64,7 +66,7 @@ TEST( AnnounceTestUdpConnection )
 
 TEST( CreateUdpConnection )
 {
-	network = new crap::UdpNetwork( 22345, 10, 10, 30000, 100, 100, 1000, 1000, 1024, 1024, 10, 50);
+	network = new crap::UdpNetwork( PORT, 10, 10, 30000, 100, 100, 1000, 1000, 1024, 1024, 10, 50);
 
 	network->registerForEvents<&regFunc>();
 	testCommand = new TestPacketCommand();

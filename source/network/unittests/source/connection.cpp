@@ -16,6 +16,8 @@
 #include "logger.h"
 #include "udpconnection.h"
 
+#define PORT 23465
+
 namespace
 {
 
@@ -60,8 +62,8 @@ TEST( CreateUdpConnection )
 	mem4 = gbm_nc->allocate( other_mem, 4 );
 
 
-	connection = new crap::UdpConnection(22345, mem, conn_mem, mem2, other_mem, 50, 1000 );
-	connection2 = new crap::UdpConnection(22346, mem3, conn_mem, mem4, other_mem, 50, 1000 );
+	connection = new crap::UdpConnection(PORT, mem, conn_mem, mem2, other_mem, 50, 1000 );
+	connection2 = new crap::UdpConnection(PORT+1, mem3, conn_mem, mem4, other_mem, 50, 1000 );
 
 	connection->registerForEvents<&regFunc>();
 	connection2->registerForEvents<&regFunc2>();
@@ -70,7 +72,7 @@ TEST( CreateUdpConnection )
 TEST( ConnectUPDConnection )
 {
 	crap::ipv4_t ip = crap::IPV4_LOCALHOST; //crap::createIPv4("127.0.0.1");
-	connection->connect( ip, 22346 );
+	connection->connect( ip, PORT+1 );
 	connection2->receive();
 	connection->receive();
 	connection2->receive();
