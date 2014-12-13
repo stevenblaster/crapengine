@@ -13,6 +13,7 @@
 
 #include "strings.h"
 #include "logger.h"
+#include "packetinformation.h"
 #include "udpconnection.h"
 
 #define LOG_NETWORK LOG_CHANNEL_NETWORK | LOG_TARGET_COUT| LOG_TYPE_DEBUG

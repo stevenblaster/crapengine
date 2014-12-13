@@ -81,7 +81,12 @@ UdpNetwork::~UdpNetwork( void )
 
 void UdpNetwork::broadcastConnection( void )
 {
-	_connection.connect( IPV4_BROADCAST, _connection.listenPort() );
+	uint8_t buffer[ sizeof(interface_adresses)*100 ];
+	crap::array<crap::interface_adresses> address_array( buffer, sizeof(interface_adresses)*100 );
+	crap::getInterfaceAddresses( _connection.socket(), &address_array );
+
+	for( uint32_t i=0; i< address_array.size(); ++i )
+		_connection.connect( address_array.get(i)->broadcast, _connection.listenPort() );
 }
 
 void UdpNetwork::connectTo( ipv4_t ip, port_t port )

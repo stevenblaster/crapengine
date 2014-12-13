@@ -81,6 +81,9 @@ public:
 	bool setDataFunction( void );
 
 	CRAP_INLINE
+	socket_t socket( void ) const { return _socket; }
+
+	CRAP_INLINE
 	uint32_t connectionID( void ) const { return _session_id; }
 
 	CRAP_INLINE
