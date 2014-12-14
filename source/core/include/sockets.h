@@ -15,6 +15,8 @@
 #ifndef CORE_INCLUDE_SOCKETS_H_
 #define CORE_INCLUDE_SOCKETS_H_
 
+#include "config/crap_platform.h"
+
 #ifdef CRAP_PLATFORM_WINDOWS
 
 #include <ws2tcpip.h>

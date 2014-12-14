@@ -271,6 +271,8 @@ list<T>& list<T>::operator=( const list& other )
 		_end = other._end;
 		_size = other._size;
 	}
+
+	return *this;
 }
 
 template<typename T>

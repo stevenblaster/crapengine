@@ -150,7 +150,7 @@ CRAP_INLINE uint16_t crc16( uint8_t* ptr, int32_t size )
     return crc;
 }
 
-CRAP_INLINE uint32_t crc32( uint8_t* ptr, int32_t size )
+CRAP_INLINE uint32_t crc32( uint8_t* ptr, uint32_t size )
 {
    uint32_t		mask = 0;
    uint32_t		crc  = 0xFFFFFFFF;

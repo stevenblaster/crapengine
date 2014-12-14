@@ -457,6 +457,7 @@ tree<T>& tree<T>::operator=( const tree<T>& other )
 		_weight = other._weight;
 		_root = other._root;
 	}
+	return *this;
 }
 
 template <typename T>

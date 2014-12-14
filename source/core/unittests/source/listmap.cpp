@@ -47,7 +47,8 @@ TEST(InsertLinearMap)
 {
     for( uint32_t i=0; i< my_list_map->max_size(); ++i )
     {
-    	keys[i] = rand();
+		uint32_t rando = rand();
+    	keys[i] = rando;
         uint32_t result = my_list_map->insert( keys[i], ((float32_t)keys[i]) * 0.1f );
         CHECK( result != map_invalid);
     }
@@ -94,7 +95,7 @@ TEST(FindLinearMap)
 {
     for(uint32_t i=0; i< my_list_map->size(); ++i)
     {
-    	CHECK( my_list_map->find( keys[i] ) == i );
+    	CHECK_EQUAL( my_list_map->find( keys[i] ), i );
     }
 }
 

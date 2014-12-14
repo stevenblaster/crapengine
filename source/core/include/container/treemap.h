@@ -466,6 +466,7 @@ tree_map<K,V>& tree_map<K,V>::operator=( const tree_map<K,V>& other )
 		_weight = other._weight;
 		_root = other._root;
 	}
+	return *this;
 }
 
 template <typename K, typename V>

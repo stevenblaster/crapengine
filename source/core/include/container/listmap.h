@@ -287,6 +287,7 @@ list_map<K,V>& list_map<K,V>::operator=( const list_map& other )
 
 		_size = other._size;
 	}
+	return *this;
 }
 
 template<typename K, typename V>

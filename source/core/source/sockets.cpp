@@ -200,6 +200,8 @@ uint32_t getInterfaceAddresses( socket_t socket, interface_adresses* arr, uint32
 				arr[index].address = ntohl( infolist[i].iiAddress.AddressIn.sin_addr.S_un.S_addr );
 				arr[index].broadcast = ntohl( infolist[i].iiBroadcastAddress.AddressIn.sin_addr.S_un.S_addr );
 				arr[index].netmask = ntohl( infolist[i].iiNetmask.AddressIn.sin_addr.S_un.S_addr );
+				if( arr[index].address != INADDR_LOOPBACK )
+					arr[index].broadcast = arr[index].address | ( ~ arr[index].netmask );
 			}
 
 			index++;
