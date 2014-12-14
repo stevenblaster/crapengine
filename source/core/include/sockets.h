@@ -118,7 +118,7 @@ ipv4_t createIPv4( uint8_t first, uint8_t second, uint8_t third, uint8_t fourth 
 ipv4_t createIPv4( const crap::string16& str );
 string16 createIPv4String( ipv4_t address );
 
-void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* array );
+uint32_t getInterfaceAddresses( socket_t socket, interface_adresses* arr, uint32_t array_size );
 
 } // namespace crap
 

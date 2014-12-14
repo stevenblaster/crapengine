@@ -179,8 +179,9 @@ bool receiveStream( socket_t socket, pointer_t<void> buffer, uint32_t size, uint
 	return result == size;
 }
 
-void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* array )
+uint32_t getInterfaceAddresses( socket_t socket, interface_adresses* arr, uint32_t array_size )
 {
+	uint32_t index = 0;
 #ifdef CRAP_PLATFORM_WINDOWS
 
 	INTERFACE_INFO infolist[100] = {};
@@ -194,13 +195,14 @@ void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* ar
 	{
 		if (infolist[i].iiAddress.Address.sa_family == AF_INET)
 		{
-			interface_adresses addresses;
+			if( index < array_size && arr != 0 )
+			{
+				arr[index].address = ntohl( infolist[i].iiAddress.AddressIn.sin_addr.S_un.S_addr );
+				arr[index].broadcast = ntohl( infolist[i].iiBroadcastAddress.AddressIn.sin_addr.S_un.S_addr );
+				arr[index].netmask = ntohl( infolist[i].iiNetmask.AddressIn.sin_addr.S_un.S_addr );
+			}
 
-			addresses.address = ntohl( infolist[i].iiAddress.AddressIn.sin_addr.S_un.S_addr );
-			addresses.broadcast = ntohl( infolist[i].iiBroadcastAddress.AddressIn.sin_addr.S_un.S_addr );
-			addresses.netmask = ntohl( infolist[i].iiNetmask.AddressIn.sin_addr.S_un.S_addr );
-
-			array->push_back( addresses );
+			index++;
 	    }
 	}
 #else
@@ -217,29 +219,28 @@ void getInterfaceAddresses( socket_t socket, crap::array<interface_adresses>* ar
 		{
 			if (ifr[i].ifr_addr.sa_family == AF_INET)
 			{
-				interface_adresses addresses;
-
-				if( ioctl(socket, SIOCGIFADDR, &ifr[i]) == 0 )
+				if( ioctl(socket, SIOCGIFADDR, &ifr[i]) == 0 && index < array_size && arr != 0 )
 				{
-					addresses.address = ntohl( ((struct sockaddr_in *)(&ifr[i].ifr_addr))->sin_addr.s_addr );
+					arr[index].address = ntohl( ((struct sockaddr_in *)(&ifr[i].ifr_addr))->sin_addr.s_addr );
 				}
 
-				if( ioctl(socket, SIOCGIFBRDADDR, &ifr[i]) == 0 )
+				if( ioctl(socket, SIOCGIFBRDADDR, &ifr[i]) == 0 && index < array_size && arr != 0 )
 				{
-					addresses.broadcast = ntohl( ((struct sockaddr_in *)(&ifr[i].ifr_broadaddr))->sin_addr.s_addr );
+					arr[index].broadcast = ntohl( ((struct sockaddr_in *)(&ifr[i].ifr_broadaddr))->sin_addr.s_addr );
 				}
 
-				if( ioctl(socket, SIOCGIFNETMASK, &ifr[i]) == 0 )
+				if( ioctl(socket, SIOCGIFNETMASK, &ifr[i]) == 0 && index < array_size && arr != 0 )
 				{
-					addresses.netmask = ntohl( ((struct sockaddr_in *)(&ifr[i].ifr_netmask))->sin_addr.s_addr );
+					arr[index].netmask = ntohl( ((struct sockaddr_in *)(&ifr[i].ifr_netmask))->sin_addr.s_addr );
 				}
 
-				array->push_back( addresses );
+				index++;
 			}
 		}
 	}
-
 #endif
+
+	return index;
 }
 
 } //namespace crap

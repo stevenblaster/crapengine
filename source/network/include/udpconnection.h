@@ -117,6 +117,7 @@ private:
 	socket_t _socket;
 	uint16_t _port;
 
+
 	uint32_t _idle_time;
 	uint32_t _passed_time;
 	uint32_t _update_frequency;

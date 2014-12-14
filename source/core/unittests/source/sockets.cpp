@@ -22,10 +22,9 @@
 namespace
 {
 
-crap::BoundGeneralMemory* iface_q;
-void* mem;
-crap::array<crap::interface_adresses>* if_array;
+crap::interface_adresses if_array[IFACE_SPACE];
 crap::socket_t socket;
+uint32_t devices;
 
 TEST( AnnounceTestQueue )
 {
@@ -34,33 +33,26 @@ TEST( AnnounceTestQueue )
 
 TEST(CrapCreateArray)
 {
-	uint32_t necessary = crap::array<crap::interface_adresses>::size_of_elements(IFACE_SPACE);
-	iface_q = new crap::BoundGeneralMemory( necessary * 4 );
-
-	mem = iface_q->allocate( necessary , 4 );
-	if_array = new crap::array<crap::interface_adresses>( mem, necessary );
+	uint32_t devices;
 
 	socket = crap::createSocket( crap::socket::ip_v4, crap::socket::datagram, crap::socket::udp );
 }
 
 TEST( crapgetInterfaces )
 {
-	crap::getInterfaceAddresses( socket, if_array );
+	devices = crap::getInterfaceAddresses( socket, if_array, IFACE_SPACE );
 
-	for( uint32_t i=0; i< if_array->size(); ++i )
+	for( uint32_t i=0; i< devices; ++i )
 	{
-		std::cout << "IP:" << crap::createIPv4String( if_array->get(i)->address ) << std::endl;
-		std::cout << "BC:" << crap::createIPv4String( if_array->get(i)->broadcast ) << std::endl;
-		std::cout << "NM:" << crap::createIPv4String( if_array->get(i)->netmask ) << std::endl;
+		std::cout << "IP:" << crap::createIPv4String( if_array[i].address ) << std::endl;
+		std::cout << "BC:" << crap::createIPv4String( if_array[i].broadcast ) << std::endl;
+		std::cout << "NM:" << crap::createIPv4String( if_array[i].netmask ) << std::endl;
 	}
 }
 
 TEST( crapdestroytheshit )
 {
 	crap::closeSocket( socket );
-	delete if_array;
-	iface_q->deallocate( mem );
-	delete iface_q;
 }
 
 }

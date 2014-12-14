@@ -81,6 +81,12 @@ bool UdpConnection::receive( void )
 		uint32_t user_id = header.as_type->user_id;
 		uint32_t login_id = _connections.find( user_id );
 
+		if( user_id == _session_id )
+		{
+			CRAP_DEBUG_LOG( LOG_NETWORK, "[CON] Ignoring own packet!" );
+			return false;
+		}
+
 		// fresh login
 		if( header.as_type->login_flag == 1 && login_id == ConnectionMap::INVALID )
 		{

@@ -66,7 +66,7 @@ TEST( AnnounceTestUdpConnection )
 
 TEST( CreateUdpConnection )
 {
-	network = new crap::UdpNetwork( PORT, 10, 10, 30000, 100, 100, 10000, 10000, 1024, 1024, 10, 2000);
+	network = new crap::UdpNetwork( PORT, 10, 10, 30000, 100, 100, 20000, 20000, 1024, 1024, 10, 2000);
 
 	network->registerForEvents<&regFunc>();
 	testCommand = new TestPacketCommand();
@@ -87,7 +87,7 @@ TEST( ConnectUPDConnection )
 		crap::timer_get_tick( &new_tick );
 		const uint32_t delta = (new_tick - tick) / freq;
 
-		network->broadcastConnection();
+		network->broadcastConnection(1);
 		network->update( delta );
 
 		tick = new_tick;
@@ -123,7 +123,7 @@ TEST( SendDataUdpReliability )
 
 		network->update( delta );
 
-		if( network->queue()->processIncoming( delta ) )
+		if( network->queue()->processIncoming( delta )  )
 			break;
 
 		counter += delta;
@@ -135,7 +135,7 @@ TEST( SendDataUdpReliability )
 
 TEST( UdpReliabilityPacketoutdated )
 {
-	network->update(3000);
+	network->update(30001);
 }
 
 TEST( CloseUDPConnection )
