@@ -29,6 +29,7 @@ namespace
 crap::UdpNetwork* network;
 
 uint32_t user=0;
+bool endme = false;
 
 void regFunc( crap::UdpConnection::Event::Enum num, uint32_t uid, crap::ConnectionInformation* ci )
 {
@@ -51,7 +52,7 @@ public:
 	void readData( crap::pointer_t<void> pointer ) { _buffer = pointer.as_char; }
 	void writeData( crap::pointer_t<void> pointer ) { memcpy( pointer.as_void, _buffer.c_str(), _buffer.size() );}
 
-	bool execute( uint32_t user_id, uint32_t deltatime ) { std::cout << _buffer.c_str() << std::endl; return true; }
+	bool execute( uint32_t user_id, uint32_t deltatime ) { std::cout << _buffer.c_str() << std::endl; endme=true; return true; }
 
 private:
 	crap::string1024 _buffer;
@@ -123,7 +124,7 @@ TEST( SendDataUdpReliability )
 
 		network->update( delta );
 
-		if( network->queue()->processIncoming( delta )  )
+		if( endme )
 			break;
 
 		counter += delta;
