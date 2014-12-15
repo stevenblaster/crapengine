@@ -7,11 +7,6 @@ SET(CRAP_CORE_VERSION
     ${CRAP_CORE_MAJOR_VERSION}.${CRAP_CORE_MINOR_VERSION}.${CRAP_CORE_PATCH_VERSION}
 )
 
-OPTION(CRAP_BUILD_ENGINE_UNITTEST "Build crap engine unittests" OFF)
-IF(CRAP_BUILD_ENGINE_UNITTEST)
-    ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/unittests)
-ENDIF(CRAP_BUILD_ENGINE_UNITTEST)
-
 ###################################
 #   SET PREPROCESSOR DEFINES      #
 #   USAGE: #define EXMAPLE=0      #
@@ -37,7 +32,7 @@ ENDIF(LINUX)
 
 IF(NOT WIN32)
 IF(NOT APPLE)
-    FIND_PACKAGE(X11)
+ #   FIND_PACKAGE(X11)
     FIND_PACKAGE(Threads)
 ENDIF(NOT APPLE)
 ENDIF(NOT WIN32)
@@ -53,11 +48,8 @@ ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/source)
 
 ### CRAPLIB
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/audio/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/video/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/physic/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/scripting/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/network/include)
 
 IF(MSVC)
 ### SET VISUAL STUDIO FILTERS
@@ -100,13 +92,13 @@ SET(HEADERS
 #####################################
 #           Creating Lib            #
 #####################################
-ADD_LIBRARY(crap_engine ${SOURCES} ${HEADERS})
+ADD_LIBRARY(crap_plugins MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
 #    TARGET_LINK_LIBRARIES(crap_core ${OPENGL_LIBRARIES} ${OPENAL_LIBRARY} ${GLFW_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_engine crap_core crap_audio crap_video crap_physic crap_scripting)
+     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core)
 ELSE()
 #    TARGET_LINK_LIBRARIES(crap_core ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${OPENAL_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_engine crap_core crap_audio crap_video crap_physic crap_scripting ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 #     TARGET_LINK_LIBRARIES(crap_core)
 ENDIF(WIN32)
 

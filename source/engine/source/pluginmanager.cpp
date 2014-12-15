@@ -34,16 +34,21 @@ uint32_t PluginManager::load( const char* filename )
 
 void PluginManager::init( uint32_t id )
 {
-    Plugin* plugin = (Plugin*) _handles[id];
-
-    plugin->init();
+	char* lError = dlerror();
+	plugin_init initfunc = (plugin_init)librarySymbol(_handles[id], "_init");
+	lError = dlerror();
+	CRAP_ASSERT( ASSERT_BREAK, lError == 0, "Error while loading symbol: %s", lError );
+	initfunc();
 }
 
 void PluginManager::deinit( uint32_t id )
 {
-    Plugin* plugin = (Plugin*) _handles[id];
+	char* lError = dlerror();
+	Plugin* deinitfunc = (Plugin*)librarySymbol(_handles[id], "l_addr");
 
-    plugin->deinit();
+	lError = dlerror();
+	CRAP_ASSERT( ASSERT_BREAK, lError == 0, "Error while loading symbol: %s", lError );
+	deinitfunc->deinit();
 }
 
 void PluginManager::unload( uint32_t id )

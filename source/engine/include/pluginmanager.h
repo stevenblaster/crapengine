@@ -5,9 +5,14 @@
 #define CRAP_CORE_PLUGINMANAGER
 
 #include "container/array.h"
+#include "plugin.h"
 
 namespace crap
 {
+
+typedef Plugin *(*plugin_init)();
+typedef Plugin *(*plugin_deinit)();
+
 
 class PluginManager
 {

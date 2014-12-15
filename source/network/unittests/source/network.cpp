@@ -47,10 +47,10 @@ public:
 
 	void setString( crap::string1024& str ) { _buffer = str; }
 
-	uint32_t dataSize( void ) const { return _buffer.size(); }
+	uint32_t dataSize( void ) const { return _buffer.size()+1; }
 
 	void readData( crap::pointer_t<void> pointer ) { _buffer = pointer.as_char; }
-	void writeData( crap::pointer_t<void> pointer ) { memcpy( pointer.as_void, _buffer.c_str(), _buffer.size() );}
+	void writeData( crap::pointer_t<void> pointer ) { memcpy( pointer.as_void, _buffer.c_str(), _buffer.size()+1 );}
 
 	bool execute( uint32_t user_id, uint32_t deltatime ) { std::cout << _buffer.c_str() << std::endl; endme=true; return true; }
 

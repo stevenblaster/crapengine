@@ -4,6 +4,7 @@
 #include <sys/stat.h>
 
 #include "config/crap_platform.h"
+#include "asserts.h"
 #include "file.h"
 
 //lib namespace
