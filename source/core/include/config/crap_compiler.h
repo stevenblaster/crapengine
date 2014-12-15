@@ -34,8 +34,8 @@
     #define CRAP_THREAD_LOCAL __thread
     #define CRAP_BREAKPOINT asm("int3")
     #define CRAP_RESTRICT __restrict
-    #define CRAP_API_EXPORT __attribute__((visibility ("default")))
-    #define CRAP_API_IMPORT __attribute__((visibility ("default")))
+    #define CRAP_API_EXPORT //__attribute__((visibility ("default")))
+    #define CRAP_API_IMPORT //__attribute__((visibility ("default")))
     #define CRAP_API_LOCAL __attribute__((visibility ("hidden")))
 
 #elif defined(__BORLANDC__)
@@ -85,8 +85,8 @@
     #define CRAP_THREAD_LOCAL __thread
     #define CRAP_BREAKPOINT asm("int3")
     #define CRAP_RESTRICT __restrict
-    #define CRAP_API_EXPORT __attribute__((visibility ("default")))
-    #define CRAP_API_IMPORT __attribute__((visibility ("default")))
+    #define CRAP_API_EXPORT //__attribute__((visibility ("default")))
+    #define CRAP_API_IMPORT //__attribute__((visibility ("default")))
     #define CRAP_API_LOCAL __attribute__((visibility ("hidden")))
 
 #else
