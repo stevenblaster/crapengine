@@ -2,6 +2,7 @@
 #include <plugin.h>
 #include "strings.h"
 #include "dynamiclibrary.h"
+#include "logger.h"
 #include "pluginmanager.h"
 
 namespace crap
@@ -24,39 +25,56 @@ PluginManager::~PluginManager( void )
 
 uint32_t PluginManager::load( const char* filename )
 {
+	dlerror();
     string256 full_path = _path + filename;
     dlhandle_t handle = loadLibrary( full_path.c_str() );
+    if( handle != 0 )
+    {
+    	createFunction func = (createFunction)librarySymbol( handle, "createPlugin");
+    	if( func != 0 )
+    	{
+    		Plugin* ptr = func(0);
+    		return _handles.push_back( handle, ptr );
+    	}
+    }
 
-    CRAP_ASSERT( ASSERT_BREAK, handle != 0, "Could not load library %s", full_path.c_str() );
-
-    return _handles.push_back( handle );
+    crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", dlerror() );
+    return array_map<void*, Plugin*>::INVALID;
 }
 
 void PluginManager::init( uint32_t id )
 {
-	char* lError = dlerror();
-	plugin_init initfunc = (plugin_init)librarySymbol(_handles[id], "_init");
-	lError = dlerror();
-	CRAP_ASSERT( ASSERT_BREAK, lError == 0, "Error while loading symbol: %s", lError );
-	initfunc();
+	if( id < _handles.size() )
+	{
+		Plugin* plugin = *(_handles.get_value( id ));
+		plugin->init();
+	}
 }
 
 void PluginManager::deinit( uint32_t id )
 {
-	char* lError = dlerror();
-	Plugin* deinitfunc = (Plugin*)librarySymbol(_handles[id], "l_addr");
-
-	lError = dlerror();
-	CRAP_ASSERT( ASSERT_BREAK, lError == 0, "Error while loading symbol: %s", lError );
-	deinitfunc->deinit();
+	if( id < _handles.size() )
+	{
+		Plugin* plugin = *(_handles.get_value( id ));
+		plugin->deinit();
+	}
 }
 
 void PluginManager::unload( uint32_t id )
 {
-    dlhandle_t plugin =  _handles[id];
-
-    _handles.erase(plugin);
-    closeLibrary(plugin);
+	if( id < _handles.size() )
+	{
+    	destroyFunction func = (destroyFunction)librarySymbol( *(_handles.get_key(id)), "destroyPlugin");
+    	if( func != 0 )
+    	{
+    		Plugin* ptr = *(_handles.get_value(id));
+    		func(ptr);
+    		closeLibrary( *(_handles.get_key(id)) );
+    		_handles.erase_at(id);
+    		return;
+    	}
+	}
+	crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", dlerror() );
 }
 
 }

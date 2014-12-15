@@ -4,23 +4,21 @@
 #ifndef CRAP_CORE_PLUGINMANAGER
 #define CRAP_CORE_PLUGINMANAGER
 
-#include "container/array.h"
+#include "container/arraymap.h"
 #include "plugin.h"
 
 namespace crap
 {
-
-typedef Plugin *(*plugin_init)();
-typedef Plugin *(*plugin_deinit)();
-
 
 class PluginManager
 {
 
 public:
 
+	typedef Plugin* (*createFunction)( void* mem );
     typedef void (*initFunction)( void );
     typedef void (*deinitFunction)( void );
+    typedef void (*destroyFunction)(Plugin* plugin );
 
     PluginManager( void* memory, uint32_t memory_size, const char* resource_path );
     ~PluginManager( void );
@@ -34,7 +32,7 @@ public:
 private:
 
     string256       _path;
-    array<void*>    _handles;
+    array_map<void*, Plugin*>    _handles;
 };
 
 } //namespace crap
