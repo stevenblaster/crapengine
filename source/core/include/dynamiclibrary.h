@@ -50,6 +50,15 @@ CRAP_INLINE dlsymbol_t librarySymbol( dlhandle_t handle, const char* symbolname 
 #endif
 }
 
+CRAP_INLINE char* libraryError( void )
+{
+#ifdef CRAP_COMPILER_MSVC
+	return 0;
+#else
+	return dlerror();
+#endif
+}
+
 } //namespace crap
 
 

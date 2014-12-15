@@ -25,7 +25,7 @@ PluginManager::~PluginManager( void )
 
 uint32_t PluginManager::load( const char* filename )
 {
-	dlerror();
+	libraryError();
     string256 full_path = _path + filename;
     dlhandle_t handle = loadLibrary( full_path.c_str() );
     if( handle != 0 )
@@ -38,7 +38,7 @@ uint32_t PluginManager::load( const char* filename )
     	}
     }
 
-    crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", dlerror() );
+    crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
     return array_map<void*, Plugin*>::INVALID;
 }
 
@@ -74,7 +74,7 @@ void PluginManager::unload( uint32_t id )
     		return;
     	}
 	}
-	crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", dlerror() );
+	crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
 }
 
 }

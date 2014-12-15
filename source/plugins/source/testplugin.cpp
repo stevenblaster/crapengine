@@ -11,6 +11,8 @@
  * @date 	Dec 6, 2014
  */
 
+#define CRAP_DL_EXPORT
+
 #include <cstdio>
 #include "plugin.h"
 

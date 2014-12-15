@@ -17,10 +17,16 @@ int main( void )
     		{
     			CRAP_ASSERT( ASSERT_BREAK, false, "Woot?!");
     		}
-
+#ifdef CRAP_COMPILER_MSVC
+	crap::PluginManager manager( new char[1024], 1024, "../../../data/plugins" );
+#else
 	crap::PluginManager manager( new char[1024], 1024, "../data/plugins" );
-	//crap::file_t* filo = crap::openFile( "../../../../data/plugins/libcrap_plugins.so", CRAP_FILE_READ );
+#endif
+#ifdef CRAP_COMPILER_MSVC
+	uint32_t test = manager.load( "crap_plugins.dll" );
+#else
 	uint32_t test = manager.load( "libcrap_plugins.so" );
+#endif
 
 	manager.init(test);
 	manager.deinit(test);

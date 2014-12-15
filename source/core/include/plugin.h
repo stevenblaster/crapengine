@@ -32,9 +32,9 @@ public:
 };
 
 //#define CRAP_PLUGIN_CONSTRUCT( type ) Plugin* CRAP_DL_API createPlugin( void* memory ) { return new (memory) type(); }
-#define CRAP_PLUGIN_CONSTRUCT( type ) Plugin* CRAP_DL_API createPlugin( type* memory ) { return new type(); }
-#define CRAP_PLUGIN_DESTRUCT( type ) void CRAP_DL_API destroyPlugin( type* instance ) { instance->~type(); }
-#define CRAP_PLUGIN_SIZE( type )  uint32_t CRAP_DL_API pluginSize( void ) { return sizeof(type); }
+#define CRAP_PLUGIN_CONSTRUCT( type ) CRAP_DL_API Plugin*  createPlugin( type* memory ) { return new type(); }
+#define CRAP_PLUGIN_DESTRUCT( type ) CRAP_DL_API void destroyPlugin( type* instance ) { instance->~type(); }
+#define CRAP_PLUGIN_SIZE( type )  CRAP_DL_API uint32_t pluginSize( void ) { return sizeof(type); }
 #define CRAP_PLUGIN_FACTORY( type ) extern "C" { CRAP_PLUGIN_CONSTRUCT(type) CRAP_PLUGIN_DESTRUCT( type ) CRAP_PLUGIN_SIZE( type ) }
 
 #define CRAP_DECLARE_PLUGIN( type ) class type : public crap::Plugin
