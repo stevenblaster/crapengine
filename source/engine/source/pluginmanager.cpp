@@ -30,12 +30,12 @@ uint32_t PluginManager::load( const char* filename )
     dlhandle_t handle = loadLibrary( full_path.c_str() );
     if( handle != 0 )
     {
-    	createFunction func = (createFunction)librarySymbol( handle, "createPlugin");
-    	if( func != 0 )
-    	{
-    		Plugin* ptr = func(0);
-    		return _handles.push_back( handle, ptr );
-    	}
+		createFunction func = (createFunction)librarySymbol( handle, "createPlugin");
+		if( func != 0 )
+		{
+			Plugin* ptr = func(0);
+			return _handles.push_back( handle, ptr );
+		}
     }
 
     crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
@@ -64,15 +64,15 @@ void PluginManager::unload( uint32_t id )
 {
 	if( id < _handles.size() )
 	{
-    	destroyFunction func = (destroyFunction)librarySymbol( *(_handles.get_key(id)), "destroyPlugin");
-    	if( func != 0 )
-    	{
-    		Plugin* ptr = *(_handles.get_value(id));
-    		func(ptr);
-    		closeLibrary( *(_handles.get_key(id)) );
-    		_handles.erase_at(id);
-    		return;
-    	}
+		destroyFunction func = (destroyFunction)librarySymbol( *(_handles.get_key(id)), "destroyPlugin");
+		if( func != 0 )
+		{
+			Plugin* ptr = *(_handles.get_value(id));
+			func(ptr);
+			closeLibrary( *(_handles.get_key(id)) );
+			_handles.erase_at(id);
+			return;
+		}
 	}
 	crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
 }
