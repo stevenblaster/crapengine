@@ -17,10 +17,12 @@ int main( void )
     		{
     			CRAP_ASSERT( ASSERT_BREAK, false, "Woot?!");
     		}
+
+    std::cout << "Dir is " << directoryName(&my_dir) << std::endl;
 #ifdef CRAP_COMPILER_MSVC
-	crap::PluginManager manager( new char[1024], 1024, "../../../data/plugins" );
+	crap::PluginManager manager( 100, 1024*100, "../../../data/plugins" );
 #else
-	crap::PluginManager manager( new char[1024], 1024, "../data/plugins" );
+	crap::PluginManager manager( 100, 1024*100 , "../data/plugins" );
 #endif
 #ifdef CRAP_COMPILER_MSVC
 	uint32_t test = manager.load( "crap_plugins.dll" );
@@ -33,20 +35,6 @@ int main( void )
 	manager.unload(test);
 
 	std::cout << "lala\n";
-   //physictest test;
-
-//    uint32_t level = 3;
-//    uint32_t index = 5;
-//
-//    uint32_t key = crap::insertIndexToKey(0, index, level);
-//
-//    std::cout << "The key is " << key << std::endl;
-//
-//    uint32_t my_index = crap::extractIndexFromKey( key, level );
-//
-//    std::cout << "The Index is " << my_index << std::endl;
-//
-//    crap::SquareWorld sw( 20 );
 
 return 0;
 }

@@ -6,6 +6,14 @@
 
 #include "container/arraymap.h"
 #include "plugin.h"
+#include "memory.h"
+
+#ifdef CRAP_NO_DEBUG
+#define PLUGIN_MEMORY SimpleGeneralMemory
+#else
+#define PLUGIN_MEMORY BoundGeneralMemory
+#endif
+
 
 namespace crap
 {
@@ -14,13 +22,16 @@ class PluginManager
 {
 
 public:
+	typedef array_map<void*, Plugin*> 	PluginMap;
+	typedef array_map<Plugin*, void*> 	MemoryMap;
 
 	typedef Plugin* (*createFunction)( void* mem );
     typedef void (*initFunction)( void );
     typedef void (*deinitFunction)( void );
+    typedef uint32_t (*sizeFunction)( void );
     typedef void (*destroyFunction)(Plugin* plugin );
 
-    PluginManager( void* memory, uint32_t memory_size, const char* resource_path );
+    PluginManager( uint32_t max_plugins, uint32_t memory_size, const char* resource_path );
     ~PluginManager( void );
 
     uint32_t load( const char* filename );
@@ -31,8 +42,10 @@ public:
 
 private:
 
-    string256       _path;
-    array_map<void*, Plugin*>    _handles;
+    PLUGIN_MEMORY 				_allocator;
+    string256       			_path;
+    PluginMap   				_handles;
+    MemoryMap					_memMap;
 };
 
 } //namespace crap

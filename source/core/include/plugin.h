@@ -4,6 +4,8 @@
 #ifndef CRAP_CORE_PLUGIN
 #define CRAP_CORE_PLUGIN
 
+#include <new>
+
 #include "config/crap_types.h"
 #include "config/crap_platform.h"
 #include "config/crap_compiler.h"
@@ -31,8 +33,7 @@ public:
     virtual uint32_t id( void ) = 0;
 };
 
-//#define CRAP_PLUGIN_CONSTRUCT( type ) Plugin* CRAP_DL_API createPlugin( void* memory ) { return new (memory) type(); }
-#define CRAP_PLUGIN_CONSTRUCT( type ) CRAP_DL_API Plugin*  createPlugin( type* memory ) { return new type(); }
+#define CRAP_PLUGIN_CONSTRUCT( type ) CRAP_DL_API Plugin* createPlugin( void* memory ) { return new (memory) type(); }
 #define CRAP_PLUGIN_DESTRUCT( type ) CRAP_DL_API void destroyPlugin( type* instance ) { instance->~type(); }
 #define CRAP_PLUGIN_SIZE( type )  CRAP_DL_API uint32_t pluginSize( void ) { return sizeof(type); }
 #define CRAP_PLUGIN_FACTORY( type ) extern "C" { CRAP_PLUGIN_CONSTRUCT(type) CRAP_PLUGIN_DESTRUCT( type ) CRAP_PLUGIN_SIZE( type ) }

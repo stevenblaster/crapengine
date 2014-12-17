@@ -46,8 +46,6 @@ public:
 
 };
 
-//CRAP_PLUGIN_CONSTRUCT( TestPlugin )
-//TestPlugin* CRAP_DL_API createPlugin( TestPlugin* memory ) { return new (memory) TestPlugin(); }
 CRAP_PLUGIN_FACTORY( TestPlugin )
 
 } /* namespace crap */
