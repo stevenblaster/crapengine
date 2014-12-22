@@ -7,21 +7,6 @@ SET(CRAP_CORE_VERSION
     ${CRAP_CORE_MAJOR_VERSION}.${CRAP_CORE_MINOR_VERSION}.${CRAP_CORE_PATCH_VERSION}
 )
 
-OPTION(CRAP_BUILD_NETWORK_PLUGIN "Build crap network plugin" OFF)
-IF(CRAP_BUILD_NETWORK_PLUGIN)
-    ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/network)
-ENDIF(CRAP_BUILD_NETWORK_PLUGIN)
-
-OPTION(CRAP_BUILD_RESOURCE_PLUGIN "Build crap resource plugin" OFF)
-IF(CRAP_BUILD_RESOURCE_PLUGIN)
-    ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/resources)
-ENDIF(CRAP_BUILD_RESOURCE_PLUGIN)
-
-OPTION(CRAP_BUILD_COMPONENT_PLUGIN "Build crap component plugin" OFF)
-IF(CRAP_BUILD_COMPONENT_PLUGIN)
-    ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/components)
-ENDIF(CRAP_BUILD_COMPONENT_PLUGIN)
-
 ###################################
 #   SET PREPROCESSOR DEFINES      #
 #   USAGE: #define EXMAPLE=0      #
@@ -107,13 +92,13 @@ SET(HEADERS
 #####################################
 #           Creating Lib            #
 #####################################
-ADD_LIBRARY(crap_plugins MODULE ${SOURCES} ${HEADERS})
+ADD_LIBRARY(crap_resources_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
 #    TARGET_LINK_LIBRARIES(crap_core ${OPENGL_LIBRARIES} ${OPENAL_LIBRARY} ${GLFW_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core)
+     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_engine crap_core)
 ELSE()
 #    TARGET_LINK_LIBRARIES(crap_core ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${OPENAL_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 #     TARGET_LINK_LIBRARIES(crap_core)
 ENDIF(WIN32)
 

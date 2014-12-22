@@ -13,7 +13,7 @@ namespace crap
 class WaveFileFilter : public ResourceFilter
 {
 public:
-    CRAP_INLINE WaveFileFilter( AudioManager* manager ) : ResourceFilter("WaveFile") {}
+    CRAP_INLINE WaveFileFilter( AudioManager* manager ) : ResourceFilter("WaveFile"), _manager(manager) {}
     virtual ~WaveFileFilter( void ) {}
 
     virtual void use( const string_hash& name, pointer_t<void> data );
@@ -29,7 +29,7 @@ protected:
 class AudioFileFilter : public ResourceFilter
 {
 public:
-    CRAP_INLINE AudioFileFilter( AudioManager* manager ) : ResourceFilter("Audio") {}
+    CRAP_INLINE AudioFileFilter( AudioManager* manager ) : ResourceFilter("Audio"), _manager(manager) {}
     virtual ~AudioFileFilter( void ) {}
 
     virtual void use( const string_hash& name, pointer_t<void> data );
