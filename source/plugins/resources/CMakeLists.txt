@@ -43,12 +43,20 @@ ENDIF(NOT WIN32)
 #   Setting up source&header vars   #
 #####################################
 
+FIND_PACKAGE(CrapCore REQUIRED)
+FIND_PACKAGE(CrapEngine REQUIRED)
+FIND_PACKAGE(CrapAudio REQUIRED)
+FIND_PACKAGE(CrapNetwork REQUIRED)
+
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/source)
+
+#message(WARNING, ${CMAKE_CURRENT_SOURCE_DIR} )
 
 ### CRAPLIB
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/audio/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/network/include)
 
 IF(MSVC)
@@ -94,11 +102,8 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_resources_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
-#    TARGET_LINK_LIBRARIES(crap_core ${OPENGL_LIBRARIES} ${OPENAL_LIBRARY} ${GLFW_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_engine crap_core)
+     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_engine crap_core crap_audio)
 ELSE()
-#    TARGET_LINK_LIBRARIES(crap_core ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${OPENAL_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
-#     TARGET_LINK_LIBRARIES(crap_core)
+	TARGET_LINK_LIBRARIES(crap_resources_plugin crap_engine crap_core crap_audio ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 

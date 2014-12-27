@@ -110,10 +110,10 @@ SET(HEADERS
 ADD_LIBRARY(crap_plugins MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
 #    TARGET_LINK_LIBRARIES(crap_core ${OPENGL_LIBRARIES} ${OPENAL_LIBRARY} ${GLFW_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core)
+     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core crap_audio)
 ELSE()
 #    TARGET_LINK_LIBRARIES(crap_core ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${OPENAL_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+     TARGET_LINK_LIBRARIES(crap_plugins crap_network crap_engine crap_core crap_audio ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 #     TARGET_LINK_LIBRARIES(crap_core)
 ENDIF(WIN32)
 

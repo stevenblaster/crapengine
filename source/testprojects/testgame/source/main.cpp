@@ -57,6 +57,9 @@ int main( void )
 	const uint32_t pluginMemory = config.getValue<uint32_t>("PLUGIN_MEMORY");
 	crap::PluginManager pluginManager(pluginNumber, pluginMemory);
 
+	//set pluginmanager as subsystem
+	crap::SubSystem plugin_sys( "PluginManager", &pluginManager );
+
 	//set Directory listener
 	const uint32_t pluginFunctionNumber = config.getValue<uint32_t>("PLUGIN_FUNCTION_NUM");
 	const uint32_t pluginFileNumber = config.getValue<uint32_t>("PLUGIN_FILES_NUM");

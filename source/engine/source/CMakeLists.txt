@@ -14,7 +14,7 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/resourcefilter.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/audioimport.cpp
+#   ${CMAKE_CURRENT_SOURCE_DIR}/audioimport.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/squareworld.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/system.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/converter.cpp
