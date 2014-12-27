@@ -47,6 +47,7 @@ void ResourceManager::loadXML( const string64& filename )
     CRAP_ASSERT( ASSERT_BREAK, handle != 0, "Could not open file %s", file_path.c_str() );
 
     pointer_t<void> buffer(_allocator.allocate(buffer_size, 4) );
+	memset( buffer.as_void, 0, buffer_size ); //windows fix...
     readFromFile( handle, buffer, buffer_size );
 
     tinyxml2::XMLDocument doc;

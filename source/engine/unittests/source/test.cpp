@@ -21,7 +21,7 @@ int main( void )
 	crap::PluginManager manager( 100, 1024*100 );
 
 #ifdef CRAP_COMPILER_MSVC
-	crap::string256 lala("../../../data/plugins");
+	crap::string256 lala("../../../data/plugins/");
 #else
 	crap::string256 lala("../data/plugins");
 #endif

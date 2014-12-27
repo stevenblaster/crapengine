@@ -131,9 +131,13 @@ CRAP_INLINE void getAbsolutePath( directory_t* dir, string256* absolute )
 
 #else
 
-    char** lppPart;
-    GetFullPathName( dir->info.cFileName, 256, buffer, lppPart);
-    *absolute = buffer;
+	char** lppPart = {0};
+	GetFullPathName( dir->path.c_str(), 256, buffer, lppPart);
+	*absolute = buffer;
+//	absolute->concat('\\');
+//	absolute->concat( dir->info.cFileName );
+//    GetFullPathName( dir->info.cFileName, 256, buffer, lppPart);
+//    *absolute = buffer;
 
 #endif
 
