@@ -172,7 +172,10 @@ CRAP_INLINE uint64_t getLastWriteTime( directory_t* dir )
 
 #else
 
-    return (uint64_t)dir->info.ftLastWriteTime;
+	uint64_t rtn = 0;
+	rtn |= (uint64_t)(dir->info.ftLastWriteTime.dwHighDateTime << 32);
+	rtn |= dir->info.ftLastWriteTime.dwLowDateTime;
+	return rtn;
 
 #endif
 }

@@ -35,7 +35,7 @@ void WaveFileFilter::import( string_hash name, pointer_t<void> memory, uint32_t 
 
     AudioManager* am = crap::CrapSystem.getSubSystem<crap::AudioManager>( "AudioManager" );
     if( am != 0 )
-    	am->addBuffer( "WaveFile", file );
+    	am->addBuffer( name, file );
 }
 
 } /* namespace crap */

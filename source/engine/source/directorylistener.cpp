@@ -94,6 +94,7 @@ void DirectoryListener::scanDirectory( const string256& path )
 bool DirectoryListener::update( uint32_t deltatime )
 {
 	scanDirectory( _path );
+	return true;
 }
 
 } /* namespace crap */
