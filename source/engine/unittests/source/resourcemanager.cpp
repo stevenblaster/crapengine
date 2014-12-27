@@ -62,17 +62,17 @@ TEST(LoadXML)
     rm->loadXML( filename );
 }
 
-TEST(SaveXML)
-{
-    char filename[] = "resources_test.xml";
-    rm->saveXML( filename );
-}
+//TEST(SaveXML)
+//{
+//    char filename[] = "resources_test.xml";
+//    rm->saveXML( filename );
+//}
 
-TEST(SavePackage)
-{
-    char filename[] = "package_test.pack";
-    rm->savePackage( filename );
-}
+//TEST(SavePackage)
+//{
+//    char filename[] = "package_test.pack";
+//    rm->savePackage( filename );
+//}
 
 TEST(LoadPackage)
 {
@@ -80,17 +80,17 @@ TEST(LoadPackage)
     rm->loadPackage( filename );
 }
 
-TEST(LoadFilter)
-{
-    FunFilter filter("Audio");
-    void* mem = malloc(1024);
-    crap::array<crap::string_hash> arr( mem, 1024);
-    arr.push_back("Yes");
-    rm->loadResources(arr);
-    free(mem);
-
-    rm->importFile("/home/steffen/Programming/crapengine2/data/yes.wav", "Audio", "Yessir");
-}
+//TEST(LoadFilter)
+//{
+//    FunFilter filter("Audio");
+//    void* mem = malloc(1024);
+//    crap::array<crap::string_hash> arr( mem, 1024);
+//    arr.push_back("Yes");
+//    rm->loadResources(arr);
+//    free(mem);
+//
+//    rm->importFile("/home/steffen/Programming/crapengine2/data/yes.wav", "Audio", "Yessir");
+//}
 
 TEST(DeleteRM)
 {

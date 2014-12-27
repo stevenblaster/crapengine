@@ -1,6 +1,4 @@
-
-
 <RESOURCES>
-	<Audio name="Yes">yes.wav</Audio>
-	<Audio name="Nagut">nagut.wav</Audio>
+	<WaveFile name="Yes">yes.wav</WaveFile>
+	<WaveFile name="Nagut">nagut.wav</WaveFile>
 </RESOURCES>

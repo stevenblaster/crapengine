@@ -40,7 +40,7 @@ TEST(CrapCreateArray)
 
 TEST( crapgetInterfaces )
 {
-	devices = crap::getInterfaceAddresses( socket, if_array, IFACE_SPACE );
+	devices = crap::getInterfaceAddresses( socket, &(if_array[0]), IFACE_SPACE );
 
 	for( uint32_t i=0; i< devices; ++i )
 	{

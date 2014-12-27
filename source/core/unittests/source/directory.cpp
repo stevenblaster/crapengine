@@ -34,6 +34,9 @@ TEST(PrintDirectory)
 {
     do
     {
+    	crap::string256 buf;
+    	crap::getAbsolutePath( my_dir, &buf );
+    	std::cout << buf.c_str() << " changed at " << crap::getLastWriteTime( my_dir ) << std::endl;
         //std::cout << "FileName " << crap::directoryName( my_dir ) << " is a directory?->" << crap::isDirectory("../../../data", my_dir) << std::endl;
     } while( crap::nextDirectory( my_dir ) );
 }

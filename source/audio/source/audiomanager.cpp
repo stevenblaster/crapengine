@@ -1,4 +1,5 @@
 
+#include "logger.h"
 #include "audiomanager.h"
 
 
@@ -22,6 +23,8 @@ AudioManager::AudioManager( uint32_t buffer_num, uint32_t source_num ) :
         _sources.push_back( source, InvalidAudioBuffer );
     }
 
+    const uint32_t memory = (( sizeof(AudioSource)+sizeof(AudioBuffer))*source_num*2 ) + ((sizeof(string_hash)+sizeof(AudioBuffer))*buffer_num * 2);
+    crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Audiomanager with %i bytes memory, max. %i buffers and max. %i sources created", memory, buffer_num, source_num );
     setAudioDopplerEffects(1.f, 1.f);
 }
 

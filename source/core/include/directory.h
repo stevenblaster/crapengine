@@ -39,6 +39,7 @@ typedef struct s_directory_t
 {
     dir_handle  handle;
     dir_info    info;
+    string256	path;
 }
 directory_t;
 
@@ -55,6 +56,7 @@ CRAP_INLINE bool openDirectory( directory_t* dir, const char* path )
     dir->handle = FindFirstFile( path, &(dir->info) );
 #endif
 
+    dir->path = path;
     return dir->handle != DIR_HANDLE_INIT;
 }
 
@@ -115,15 +117,37 @@ CRAP_INLINE const char* directoryName( directory_t* dir )
 #endif
 }
 
-CRAP_INLINE bool isDirectory( const char* path, directory_t* dir )
+
+CRAP_INLINE void getAbsolutePath( directory_t* dir, string256* absolute )
+{
+	char buffer[256];
+
+#ifdef CRAP_COMPILER_GCC
+
+	realpath( dir->path.c_str(), buffer );
+	*absolute = buffer;
+	absolute->concat('/');
+	absolute->concat( dir->info->d_name );
+
+#else
+
+    char** lppPart;
+    GetFullPathName( dir->info.cFileName, 256, buffer, lppPart);
+    *absolute = buffer;
+
+#endif
+
+
+}
+
+
+CRAP_INLINE bool isDirectory( directory_t* dir )
 {
 #ifdef CRAP_COMPILER_GCC
 
-    string512 full_path( path );
-    if( full_path[ full_path.size()-1 ] != '/' )
-        full_path += '/';
+    string256 full_path;
+    crap::getAbsolutePath( dir, &full_path );
 
-    full_path += directoryName( dir );
     struct stat _s;
     stat( full_path.c_str(), &_s );
 
@@ -132,6 +156,23 @@ CRAP_INLINE bool isDirectory( const char* path, directory_t* dir )
 #else
 
     return !!(dir->info.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
+
+#endif
+}
+
+CRAP_INLINE uint64_t getLastWriteTime( directory_t* dir )
+{
+#ifdef CRAP_COMPILER_GCC
+
+	string256 full_path;
+	getAbsolutePath( dir, &full_path );
+    struct stat _s;
+    stat( full_path.c_str(), &_s );
+    return _s.st_mtim.tv_nsec;
+
+#else
+
+    return (uint64_t)dir->info.ftLastWriteTime;
 
 #endif
 }

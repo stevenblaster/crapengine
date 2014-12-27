@@ -6,35 +6,38 @@
 #include "file.h"
 #include "directory.h"
 #include "pluginmanager.h"
-//#include "squareworld.h"
+#include "logger.h"
+#include "memory.h"
+#include "directorylistener.h"
+
+void iDoSo( const char* str )
+{
+	std::cout << str << std::endl;
+}
 
 int main( void )
 {
-	crap::directory_t my_dir;
-    if( !crap::openDirectory( &my_dir, "../../../data/plugins" ) )
-    	if( !crap::openDirectory( &my_dir, "../../data/plugins" ) )
-    		if( !crap::openDirectory( &my_dir, "../data/plugins" ) )
-    		{
-    			CRAP_ASSERT( ASSERT_BREAK, false, "Woot?!");
-    		}
+	crap::logger< crap::log_time_time, crap::log_channel_core, crap::log_type_debug, crap::log_target_cout, 512 > unit_logger;
+	crap::PluginManager manager( 100, 1024*100 );
 
-    std::cout << "Dir is " << directoryName(&my_dir) << std::endl;
 #ifdef CRAP_COMPILER_MSVC
-	crap::PluginManager manager( 100, 1024*100, "../../../data/plugins" );
+	crap::string256 lala("../../../data/plugins");
 #else
-	crap::PluginManager manager( 100, 1024*100 , "../data/plugins" );
-#endif
-#ifdef CRAP_COMPILER_MSVC
-	uint32_t test = manager.load( "crap_plugins.dll" );
-#else
-	uint32_t test = manager.load( "libcrap_plugins.so" );
+	crap::string256 lala("../data/plugins");
 #endif
 
-	manager.init(test);
-	manager.deinit(test);
-	manager.unload(test);
+	crap::DirectoryListener listener( 10, 10, lala, false );
+	listener.addCallback<iDoSo>();
+	listener.addCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &manager);
+	listener.init();
 
-	std::cout << "lala\n";
+	uint32_t counter = 0;
+	while( counter < 20 )
+	{
+		listener.update(0);
+		crap::sleep_mil_sec(1000);
+		counter++;
+	}
 
-return 0;
+	return 0;
 }

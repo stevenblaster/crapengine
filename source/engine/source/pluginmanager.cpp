@@ -8,91 +8,108 @@
 namespace crap
 {
 
-PluginManager::PluginManager( uint32_t max_plugins, uint32_t memory_size, const char* resource_path ) :
-		_allocator( memory_size + PluginMap::size_of_elements( max_plugins ) + MemoryMap::size_of_elements( max_plugins) ),
+PluginManager::PluginManager( uint32_t max_plugins, uint32_t memory_size ) :
+		_allocator( memory_size + PluginMap::size_of_elements( max_plugins ) ),
 		_handles( _allocator.allocate( PluginMap::size_of_elements( max_plugins ), 8 ),
-    		PluginMap::size_of_elements( max_plugins ) ),
-		_memMap( _allocator.allocate( MemoryMap::size_of_elements( max_plugins ), 8 ),
-			MemoryMap::size_of_elements( max_plugins ) ),
-		_path(resource_path)
+    		PluginMap::size_of_elements( max_plugins ) )
 {
-    if( _path[ _path.size()-1 ] != '/')
-        _path.concat('/');
+	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "PluginManager with max. %u plugins and a memory size of %u created.", max_plugins, memory_size );
+
 }
 
 PluginManager::~PluginManager( void )
 {
     while( _handles.size() > 0 )
     {
-        deinit(0);
-        unload(0);
+    	uint32_t id = *_handles.get_key( _handles.size()-1 );
+        deinit(id);
+        unload(id);
+        _handles.erase(id);
     }
 
-    _allocator.deallocate( _memMap.memory().as_void );
     _allocator.deallocate( _handles.memory().as_void );
+}
+
+void PluginManager::callbackFunction( const char* filename )
+{
+	uint32_t id = load( filename );
+	if( id != PluginMap::INVALID )
+		init( id );
 }
 
 uint32_t PluginManager::load( const char* filename )
 {
 	libraryError();
-    string256 full_path = _path + filename;
-    dlhandle_t handle = loadLibrary( full_path.c_str() );
+    dlhandle_t handle = loadLibrary( filename );
     if( handle != 0 )
     {
     	sizeFunction sizeFunc = (sizeFunction)librarySymbol( handle, "pluginSize" );
     	createFunction createFunc = (createFunction)librarySymbol( handle, "createPlugin");
-    	if( sizeFunc != 0 && createFunc != 0 )
+    	idFunction idFunc = (idFunction)librarySymbol( handle, "pluginID" );
+    	if( sizeFunc != 0 && createFunc != 0 && idFunc != 0 )
     	{
+    		const uint32_t pluginID = idFunc();
     		const uint32_t pluginSize = sizeFunc();
-    		void* memory = _allocator.allocate( pluginSize, 8 );
-    		Plugin* ptr = createFunc( memory );
-    		_memMap.push_back( ptr, memory );
 
-    		return _handles.push_back( handle, ptr );
+    		const uint32_t index = _handles.find( pluginID );
+    		if( index != PluginMap::INVALID )
+    		{
+    			deinit( pluginID );
+    			unload( pluginID );
+    			_handles.erase( pluginID );
+    		}
+
+    		PluginInfo info;
+    		info.handle = handle;
+    		info.memory = _allocator.allocate( pluginSize, 8 );
+    		info.plugin = createFunc( info.memory );
+
+    		_handles.push_back( pluginID, info );
+    		crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Library %s loaded", filename );
+    		return pluginID;
     	}
     }
 
     crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
-    return array_map<void*, Plugin*>::INVALID;
+    return PluginMap::INVALID;
 }
 
-void PluginManager::init( uint32_t id )
+void PluginManager::init( uint32_t pluginID )
 {
-	if( id < _handles.size() )
+	const uint32_t index = _handles.find( pluginID );
+	if( index != PluginMap::INVALID )
 	{
-		Plugin* plugin = *(_handles.get_value( id ));
+		Plugin* plugin = _handles.get_value( index )->plugin;
 		plugin->init();
 	}
 }
 
-void PluginManager::deinit( uint32_t id )
+void PluginManager::deinit( uint32_t pluginID )
 {
-	if( id < _handles.size() )
+	const uint32_t index = _handles.find( pluginID );
+	if( index != PluginMap::INVALID )
 	{
-		Plugin* plugin = *(_handles.get_value( id ));
+		Plugin* plugin = _handles.get_value( index )->plugin;
 		plugin->deinit();
 	}
 }
 
-void PluginManager::unload( uint32_t id )
+void PluginManager::unload( uint32_t pluginID )
 {
-	if( id < _handles.size() )
+	const uint32_t index = _handles.find( pluginID );
+	if( index != PluginMap::INVALID )
 	{
-    	destroyFunction destroyFunc = (destroyFunction)librarySymbol( *(_handles.get_key(id)), "destroyPlugin");
+    	destroyFunction destroyFunc = (destroyFunction)librarySymbol( _handles.get_value(index)->handle, "destroyPlugin");
     	if( destroyFunc != 0 )
     	{
-    		Plugin* ptr = *(_handles.get_value(id));
-    		destroyFunc(ptr);
-    		uint32_t idx = _memMap.find( ptr );
+    		Plugin* plugin = _handles.get_value(index)->plugin;
+    		destroyFunc(plugin);
 
-    		if( idx != MemoryMap::INVALID )
-    		{
-    			_allocator.deallocate( *(_memMap.get_value(idx)) );
-    			_memMap.erase_at( idx );
-    		}
+    		_allocator.deallocate( _handles.get_value(index)->memory );
 
-    		closeLibrary( *(_handles.get_key(id)) );
-    		_handles.erase_at(id);
+
+    		closeLibrary( _handles.get_value(index)->handle );
+    		_handles.erase_at(index);
 
     		return;
     	}

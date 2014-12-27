@@ -11,16 +11,12 @@
 
 set(HEADERS
    ${HEADERS}
-   ${CMAKE_CURRENT_SOURCE_DIR}/test.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/configuration.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/resourcefilter.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/audioimport.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/squareworld.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/system.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/converter.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/convertfilter.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/directorylistener.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/test.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/configuration.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/audioimport.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/squareworld.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/system.h
    PARENT_SCOPE
 )
