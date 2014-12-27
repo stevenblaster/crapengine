@@ -5,3 +5,5 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/resourcesplugin.h
    PARENT_SCOPE
 )
+
+message(WARNING, ${CMAKE_CURRENT_SOURCE_DIR} )
