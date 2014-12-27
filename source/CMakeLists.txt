@@ -41,6 +41,10 @@ if(USE_CLANG)
   SET (CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT "-O2 -g")
 endif(USE_CLANG)
 
+if(NOT WIN32)
+	SET ( CMAKE_C_FLAGS ${CMAKE_C_FLAGS} "-fPIC")
+	SET ( CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-fPIC")
+endif(NOT WIN32)
 
 
 ###################################
