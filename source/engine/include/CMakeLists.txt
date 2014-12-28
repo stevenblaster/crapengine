@@ -11,7 +11,7 @@
 
 set(HEADERS
    ${HEADERS}
-   ${CMAKE_CURRENT_SOURCE_DIR}/test.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/componentfactory.h
    ${CMAKE_CURRENT_SOURCE_DIR}/configuration.h
    ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.h
    ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.h
@@ -22,5 +22,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/converter.h
    ${CMAKE_CURRENT_SOURCE_DIR}/convertfilter.h
    ${CMAKE_CURRENT_SOURCE_DIR}/directorylistener.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/component.h
    PARENT_SCOPE
 )
