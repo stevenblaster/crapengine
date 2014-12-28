@@ -60,4 +60,28 @@ void setAudioDopplerEffects(float32_t factor, float32_t velocity)
     alDopplerVelocity(velocity);
 }
 
+bool getAudioPlaying( AudioSource* CRAP_RESTRICT source )
+{
+	int32_t state;
+	alGetSourcei( *source,AL_SOURCE_STATE,&state);
+
+	return ( state == AL_PLAYING );
+}
+
+bool getAudioPaused( AudioSource* CRAP_RESTRICT source )
+{
+	int32_t state;
+	alGetSourcei( *source,AL_SOURCE_STATE,&state);
+
+	return ( state == AL_PAUSED );
+}
+
+bool getAudioStopped( AudioSource* CRAP_RESTRICT source )
+{
+	int32_t state;
+	alGetSourcei( *source,AL_SOURCE_STATE,&state);
+
+	return ( state == AL_STOPPED );
+}
+
 } //namespace

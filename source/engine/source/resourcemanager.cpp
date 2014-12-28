@@ -132,7 +132,6 @@ void ResourceManager::loadResource( string_hash resourceId )
 	CRAP_ASSERT( ASSERT_BREAK, index != ResourceMap::INVALID, "Resource not known" );
 
 	const string_hash typeId = _resources.get_value( index )->typeId;
-	const string_hash name(_resources.get_value( index )->filename.c_str());
 
 	intrusive_node<ResourceFilter>* node = ResourceFilterList.begin();
     for( ; node != ResourceFilterList.end(); node = node->next() )
@@ -150,7 +149,7 @@ void ResourceManager::loadResource( string_hash resourceId )
         	pointer_t<void> memory = _allocator.allocate( resourceSize, 4 );
 
         	readFromFile( resourceFile, memory, resourceSize );
-        	node->parent()->import( name, memory, resourceSize );
+        	node->parent()->import( resourceId, memory, resourceSize );
 
         	_allocator.deallocate( memory.as_void );
         	closeFile( resourceFile );

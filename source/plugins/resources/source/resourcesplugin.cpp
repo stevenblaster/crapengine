@@ -13,7 +13,6 @@
 
 #define CRAP_DL_EXPORT
 
-#include "logger.h"
 #include "wavefilefilter.h"
 #include "audiofilter.h"
 #include "plugin.h"
@@ -26,22 +25,18 @@ CRAP_DECLARE_PLUGIN( ResourcesPlugin )
 public:
 	ResourcesPlugin( void )
 	{
-		crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Library ResourcesPlugin created" );
 	}
 
 	~ResourcesPlugin( void )
 	{
-		crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Library ResourcesPlugin destroyed" );
 	}
 
     void init( void )
     {
-    	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Library ResourcesPlugin initialized" );
     }
 
     void deinit( void )
     {
-    	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Library ResourcesPlugin deinitialized" );
     }
 
     uint32_t id( void )

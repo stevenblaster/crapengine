@@ -29,6 +29,13 @@ void pauseAudioSource( AudioSource* CRAP_RESTRICT source );
 void stopAudioSource( AudioSource* CRAP_RESTRICT source );
 
 void setAudioDopplerEffects(float32_t factor, float32_t velocity );
+
+bool getAudioPlaying( AudioSource* CRAP_RESTRICT source );
+
+bool getAudioPaused( AudioSource* CRAP_RESTRICT source );
+
+bool getAudioStopped( AudioSource* CRAP_RESTRICT source );
+
 }
 
 #endif //CRAP_AUDIO_AUDIOCONTROL

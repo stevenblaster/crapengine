@@ -65,15 +65,18 @@ void AudioManager::removeBuffer( const string_hash& name )
 uint32_t AudioManager::leaseSource( const string_hash& name )
 {
     uint32_t index = _buffers.find( name );
-    AudioBuffer buffer = *(_buffers.get_value(index));
-    for( uint32_t i=0; i< _sources.size(); ++i )
+    if( index != array_map<string_hash, AudioBuffer>::INVALID )
     {
-        if( *(_sources.get_value(i)) == InvalidAudioBuffer )
-        {
-            *(_sources.get_value(i)) = buffer;
-            setAudioSourceBuffer( _sources.get_value(i), _sources.get_key(i) );
-            return i;
-        }
+		AudioBuffer buffer = *(_buffers.get_value(index));
+		for( uint32_t i=0; i< _sources.size(); ++i )
+		{
+			if( *(_sources.get_value(i)) == InvalidAudioBuffer )
+			{
+				*(_sources.get_value(i)) = buffer;
+				setAudioSourceBuffer( _sources.get_value(i), _sources.get_key(i) );
+				return i;
+			}
+    }
     }
     return UINT32_MAX;
 }
@@ -81,12 +84,15 @@ uint32_t AudioManager::leaseSource( const string_hash& name )
 void AudioManager::playSource( uint32_t leased_source )
 {
     AudioSource* source = _sources.get_key(leased_source);
-    playAudioSource(source);
+    if( source != 0 )
+    	playAudioSource(source);
 }
 
 void AudioManager::releaseSource( uint32_t leased_source )
 {
-    *(_sources.get_value(leased_source)) = InvalidAudioBuffer;
+	AudioSource* source = _sources.get_key(leased_source);
+	if( source != 0 )
+		*(_sources.get_value(leased_source)) = InvalidAudioBuffer;
 }
 
 void AudioManager::setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop)
@@ -102,6 +108,33 @@ void AudioManager::setListenerData( float32_t* CRAP_RESTRICT position, float32_t
 void AudioManager::setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease )
 {
     setAudioSource3DInfo( position, velocity,_sources.get_key(source_lease));
+}
+
+bool AudioManager::getIsPlaying( uint32_t leased_source )
+{
+	AudioSource* source = _sources.get_key(leased_source);
+	if( source != 0 )
+		return getAudioPlaying( source );
+
+	return false;
+}
+
+bool AudioManager::getIsPaused( uint32_t leased_source )
+{
+	AudioSource* source = _sources.get_key(leased_source);
+	if( source != 0 )
+		return getAudioPaused( source );
+
+	return false;
+}
+
+bool AudioManager::getIsStopped( uint32_t leased_source )
+{
+	AudioSource* source = _sources.get_key(leased_source);
+	if( source != 0 )
+		return getAudioStopped( source );
+
+	return false;
 }
 
 } //namespace

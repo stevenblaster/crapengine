@@ -7,6 +7,7 @@
 #include "audiomanager.h"
 #include "pluginmanager.h"
 #include "directorylistener.h"
+#include "resourcefilter.h"
 
 int main( void )
 {
@@ -63,7 +64,7 @@ int main( void )
 	//set Directory listener
 	const uint32_t pluginFunctionNumber = config.getValue<uint32_t>("PLUGIN_FUNCTION_NUM");
 	const uint32_t pluginFileNumber = config.getValue<uint32_t>("PLUGIN_FILES_NUM");
-	const crap::string256 pluginDir = data_path + config.getValue<crap::string64>("PLUGIN_SUBDIRECTORY") + "/";
+	const crap::string256 pluginDir = data_path + config.getValue<crap::string64>("PLUGIN_SUBDIRECTORY");
 	crap::DirectoryListener pluginDirectoryListener( pluginFunctionNumber, pluginFileNumber, pluginDir, false );
 	pluginDirectoryListener.addCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
 
@@ -76,6 +77,20 @@ int main( void )
 		std::cout << "I've worked! " << testconf->getValue<crap::string64>("SOUND_VOLUME") << std::endl;
 	}
 
+	float32_t zero[3] = {0.f, 0.f, 0.f};
+	float32_t one[3] = {1.f, 1.f, 1.f};
+	float32_t dir[6] = {0.f, 0.f, 1.f, 0.f, 1.f, 0.f };
 
-return 0;
+	crap::AudioManager* am = crap::CrapSystem.getSubSystem<crap::AudioManager>( "AudioManager" );
+
+	resourceManager.loadResource( "Nagut" );
+	uint32_t sid = am->leaseSource( "Nagut" );
+
+	am->setListenerData( zero, zero, dir );
+	am->playSource( sid );
+
+	while( am->getIsPlaying(sid) )
+		crap::sleep_mil_sec(100);
+
+	return 0;
 }

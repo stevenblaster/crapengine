@@ -54,7 +54,7 @@ void DirectoryListener::scanDirectory( const string256& path )
     	crap::getAbsolutePath( &dir, &filePath );
     	string256 fileName = crap::directoryName( &dir );
 
-    	if( fileName.size() < 3 )
+    	if( fileName.size() < 3 || fileName[0] == '.' )
     		continue;
 
     	if( isDirectory( &dir ) )

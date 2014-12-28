@@ -25,13 +25,10 @@ class AudioManager
 {
 public:
 
-
     AudioManager( uint32_t buffer_num, uint32_t source_num );
     ~AudioManager( void );
 
-
     void setListenerData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT direction);
-
 
     uint32_t leaseSource( const string_hash& name );
     void setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop);
@@ -41,6 +38,10 @@ public:
 
     uint32_t addBuffer( const string_hash& name, const AudioFile& data );
     void removeBuffer( const string_hash& name );
+
+    bool getIsPlaying( uint32_t leased_source );
+    bool getIsPaused( uint32_t leased_source );
+    bool getIsStopped( uint32_t leased_source );
 
 private:
 

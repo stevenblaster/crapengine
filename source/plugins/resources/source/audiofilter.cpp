@@ -11,8 +11,8 @@
  * @date 	Dec 27, 2014
  */
 
-#include "audiomanager.h"
 #include "system.h"
+#include "audiomanager.h"
 #include "audiofile.h"
 #include "audiofilter.h"
 

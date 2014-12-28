@@ -70,7 +70,7 @@ uint32_t PluginManager::load( const char* filename )
     	}
     }
 
-    crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
+    crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Error: %s", libraryError() );
     return PluginMap::INVALID;
 }
 
