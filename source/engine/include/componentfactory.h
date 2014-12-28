@@ -31,7 +31,10 @@ class ComponentFactory
 
 public:
 
-	ComponentFactory( crap::string_hash name ) : _name( name ) {}
+	ComponentFactory( crap::string_hash name ) :
+		_node( this, &ComponentFactoryList ), _name( name )
+	{}
+
 	virtual ~ComponentFactory( void ) {}
 
 	virtual Component* createComponent( void );
@@ -49,5 +52,7 @@ private:
 };
 
 } /* namespace crap */
+
+
 
 #endif /* ENGINE_INCLUDE_COMPONENTFACTORY_H_ */
