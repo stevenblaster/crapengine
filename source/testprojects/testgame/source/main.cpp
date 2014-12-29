@@ -92,5 +92,10 @@ int main( void )
 	while( am->getIsPlaying(sid) )
 		crap::sleep_mil_sec(100);
 
+#ifdef CRAP_COMPILER_MSVC
+    std::cout << "Press a button" << std::endl;
+	getchar();
+#endif
+
 	return 0;
 }

@@ -40,6 +40,11 @@ void PluginManager::callbackFunction( const char* filename )
 uint32_t PluginManager::load( const char* filename )
 {
 	libraryError();
+#ifdef CRAP_COMPILER_MSVC
+	string256 buffer(filename);
+	if( buffer[buffer.size()-1] != 'l' || buffer[buffer.size()-2] != 'l' || buffer[buffer.size()-3] != 'd' )
+		return PluginMap::INVALID;
+#endif
     dlhandle_t handle = loadLibrary( filename );
     if( handle != 0 )
     {

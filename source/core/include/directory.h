@@ -52,8 +52,10 @@ CRAP_INLINE bool openDirectory( directory_t* dir, const char* path )
     if( dir->handle != DIR_HANDLE_INIT )
     	dir->info = readdir( dir->handle );
 #else
+	crap::string256 buffer(path);
+	buffer += PATH_END;
     dir->info.nFileSizeHigh = 0;
-    dir->handle = FindFirstFile( path, &(dir->info) );
+    dir->handle = FindFirstFile( buffer.c_str(), &(dir->info) );
 #endif
 
     dir->path = path;
@@ -134,8 +136,8 @@ CRAP_INLINE void getAbsolutePath( directory_t* dir, string256* absolute )
 	char** lppPart = {0};
 	GetFullPathName( dir->path.c_str(), 256, buffer, lppPart);
 	*absolute = buffer;
-//	absolute->concat('\\');
-//	absolute->concat( dir->info.cFileName );
+	absolute->concat('\\');
+	absolute->concat( dir->info.cFileName );
 //    GetFullPathName( dir->info.cFileName, 256, buffer, lppPart);
 //    *absolute = buffer;
 
