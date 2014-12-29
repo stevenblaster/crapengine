@@ -11,10 +11,10 @@
  * @date 	Dec 27, 2014
  */
 
-#define CRAP_DL_EXPORT
-
 #include "wavefilefilter.h"
 #include "audiofilter.h"
+
+#define CRAP_DL_EXPORT
 #include "plugin.h"
 
 namespace crap

@@ -264,7 +264,13 @@ private:
 
 class base_logger;
 
-extern intrusive_list<base_logger> logger_list;
+#ifndef CRAP_DL_EXPORT
+extern intrusive_list<base_logger> CRAP_API_IMPORT logger_list;
+#else
+extern intrusive_list<base_logger> CRAP_API_EXPORT logger_list;
+#endif
+
+
 
 class base_logger
 {

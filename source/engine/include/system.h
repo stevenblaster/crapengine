@@ -61,7 +61,12 @@ private:
 /**
  * external system
  */
-extern System CrapSystem;
+#ifndef CRAP_DL_EXPORT
+extern System CRAP_API_IMPORT CrapSystem;
+#else
+extern System CRAP_API_EXPORT CrapSystem;
+#endif
+
 
 
 /**

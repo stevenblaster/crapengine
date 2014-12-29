@@ -13,9 +13,9 @@
 #include "strings.h"
 
 #ifndef CRAP_DL_EXPORT
-#define CRAP_DL_API CRAP_API_IMPORT
+#define CRAP_DL_API CRAP_API_IMPORT;
 #else
-#define CRAP_DL_API CRAP_API_EXPORT
+#define CRAP_DL_API CRAP_API_EXPORT;
 #endif
 
 namespace crap
