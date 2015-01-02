@@ -10,8 +10,15 @@
  * @author  steffen
  * @date 	Dec 27, 2014
  */
+#define CRAP_DL 1
 
+#include "config/crap_platform.h"
+
+#ifdef CRAP_PLATFORM_WINDOWS
+#include "system.cpp"
+#else
 #include "system.h"
+#endif
 #include "audiomanager.h"
 #include "audiofile.h"
 #include "audiofilter.h"

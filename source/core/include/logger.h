@@ -7,6 +7,7 @@
 #include <cstdio>
 
 #include "config/crap_platform.h"
+#include "config/crap_compiler.h"
 #include "strings.h"
 #include "file.h"
 #include "container/intrusivelist.h"
@@ -264,11 +265,7 @@ private:
 
 class base_logger;
 
-#ifndef CRAP_DL_EXPORT
-extern intrusive_list<base_logger> CRAP_API_IMPORT logger_list;
-#else
-extern intrusive_list<base_logger> CRAP_API_EXPORT logger_list;
-#endif
+extern CRAP_EXE_TO_DLL intrusive_list<base_logger> logger_list;
 
 
 

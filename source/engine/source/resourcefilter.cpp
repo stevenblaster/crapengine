@@ -16,6 +16,6 @@
 namespace crap
 {
 
-intrusive_list<ResourceFilter> ResourceFilterList;
+CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
 
 } /* namespace crap */

@@ -15,6 +15,7 @@
 #ifndef ENGINE_INCLUDE_RESOURCEFILTER_H_
 #define ENGINE_INCLUDE_RESOURCEFILTER_H_
 
+#include "config/crap_compiler.h"
 #include "container/intrusivelist.h"
 #include "strings.h"
 #include "file.h"
@@ -24,7 +25,7 @@ namespace crap
 
 class ResourceFilter;
 
-extern intrusive_list<ResourceFilter> ResourceFilterList;
+extern CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
 
 class ResourceFilter
 {

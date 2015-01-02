@@ -15,6 +15,7 @@
 #ifndef ENGINE_INCLUDE_SYSTEM_H_
 #define ENGINE_INCLUDE_SYSTEM_H_
 
+#include "config/crap_compiler.h"
 #include "strings.h"
 #include "container/intrusivelist.h"
 
@@ -61,12 +62,7 @@ private:
 /**
  * external system
  */
-#ifndef CRAP_DL_EXPORT
-extern System CRAP_API_IMPORT CrapSystem;
-#else
-extern System CRAP_API_EXPORT CrapSystem;
-#endif
-
+extern CRAP_EXE_TO_DLL System CrapSystem;
 
 
 /**

@@ -15,6 +15,7 @@
 #ifndef ENGINE_INCLUDE_COMPONENTFACTORY_H_
 #define ENGINE_INCLUDE_COMPONENTFACTORY_H_
 
+#include "config/crap_compiler.h"
 #include "strings.h"
 #include "utilities.h"
 
@@ -24,7 +25,7 @@ namespace crap
 class Component;
 class ComponentFactory;
 
-extern intrusive_list<ComponentFactory> ComponentFactoryList;
+extern CRAP_EXE_TO_DLL intrusive_list<ComponentFactory> ComponentFactoryList;
 
 class ComponentFactory
 {
