@@ -23,20 +23,20 @@
 namespace crap
 {
 
-class ResourceFilter;
+class System;
+class ResourceManager;
 
-extern "C" CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
+//extern "C" CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
 
 class ResourceFilter
 {
 public:
 
-    CRAP_INLINE
-	ResourceFilter( string_hash name ) : _node( this, &ResourceFilterList ), _id(name.hash()) {}
+	ResourceFilter( string_hash name, ResourceManager* manager );
 
     virtual ~ResourceFilter( void ) {}
 
-    virtual void import( string_hash name, pointer_t<void> memory, uint32_t memSize ) = 0;
+    virtual void import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system ) = 0;
 
     CRAP_INLINE
 	bool operator==( const string_hash& name )

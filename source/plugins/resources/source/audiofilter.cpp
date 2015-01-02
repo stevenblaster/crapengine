@@ -18,11 +18,13 @@
 #include "audiomanager.h"
 #include "audiofile.h"
 #include "audiofilter.h"
+#include "resourcemanager.h"
+#include "system.h"
 
 namespace crap
 {
 
-AudioFilter::AudioFilter( void ) : ResourceFilter( "Audio" )
+AudioFilter::AudioFilter( ResourceManager* manager ) : ResourceFilter( "Audio", manager )
 {
 
 }
@@ -31,7 +33,7 @@ AudioFilter::~AudioFilter( void )
 {
 }
 
-void AudioFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize )
+void AudioFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system )
 {
     AudioFile file;
 
@@ -45,7 +47,7 @@ void AudioFilter::import( string_hash name, pointer_t<void> memory, uint32_t mem
     ptr.as_type += 1;
     file.data = ptr.as_void;
 
-    AudioManager* am = crap::CrapSystem.getSubSystem<crap::AudioManager>( "AudioManager" );
+    AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
     if( am != 0 )
     	am->addBuffer( name, file );
 }

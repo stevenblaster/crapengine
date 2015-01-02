@@ -24,6 +24,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/thread.h
    ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/container.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/plugin.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/plugin.h
    PARENT_SCOPE
 )

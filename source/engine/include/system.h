@@ -25,13 +25,14 @@ namespace crap
 /**
  * Declarations
  */
+class System;
 
 class SubSystem
 {
 public:
 
 	CRAP_INLINE
-	SubSystem( string_hash id, pointer_t<void> instance );
+	SubSystem( string_hash id, pointer_t<void> instance, System* system );
 
 	CRAP_INLINE uint32_t id( void ) const;
 
@@ -62,7 +63,7 @@ private:
 /**
  * external system
  */
-extern "C" CRAP_EXE_TO_DLL System CrapSystem;
+//extern "C" CRAP_EXE_TO_DLL System CrapSystem;
 
 
 /**
@@ -81,8 +82,8 @@ T* System::getSubSystem( string_hash name )
 }
 
 
-SubSystem::SubSystem( string_hash id, pointer_t<void> instance ) :
-		_id(id), _instance(instance), _node( this, &CrapSystem.subsystems )
+SubSystem::SubSystem( string_hash id, pointer_t<void> instance, System* system ) :
+		_id(id), _instance(instance), _node( this, &(system->subsystems) )
 {
 
 }

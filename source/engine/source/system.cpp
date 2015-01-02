@@ -15,6 +15,6 @@
 namespace crap
 {
 
-CRAP_EXE_TO_DLL System CrapSystem;
+//CRAP_EXE_TO_DLL System CrapSystem;
 
 }

@@ -19,11 +19,13 @@
 #include "audiomanager.h"
 #include "audiofile.h"
 #include "wavefilefilter.h"
+#include "resourcemanager.h"
+#include "system.h"
 
 namespace crap
 {
 
-WaveFileFilter::WaveFileFilter( void ) : ResourceFilter( "WaveFile" )
+WaveFileFilter::WaveFileFilter( ResourceManager* manager ) : ResourceFilter( "WaveFile", manager )
 {
 
 }
@@ -33,11 +35,11 @@ WaveFileFilter::~WaveFileFilter( void )
 
 }
 
-void WaveFileFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize )
+void WaveFileFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system )
 {
     WaveFile file( memory );
 
-    AudioManager* am = crap::CrapSystem.getSubSystem<crap::AudioManager>( "AudioManager" );
+    AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
     if( am != 0 )
     	am->addBuffer( name, file );
 }

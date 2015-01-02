@@ -17,13 +17,14 @@
 
 namespace crap
 {
+class System;
 
 class ResourceManager
 {
 
 public:
 
-    ResourceManager( uint32_t bufferMemory, uint32_t resourceNumber, const string256& path );
+    ResourceManager( uint32_t bufferMemory, uint32_t resourceNumber, const string256& path, System* system );
     ~ResourceManager( void );
 
     void addContent( string_hash typeId, const string64& filename, uint32_t offset, uint32_t size );
@@ -54,6 +55,8 @@ public:
         uint32_t size;
     };
 
+    CRAP_INLINE intrusive_list<ResourceFilter>* filters( void ) { return &_filters; }
+
 private:
 
     typedef crap::sorted_array_map<uint32_t, ResourceInfo> ResourceMap;
@@ -62,6 +65,8 @@ private:
 
     ResourceMap                                         _resources;
     crap::string256                                     _path;
+    intrusive_list<ResourceFilter> 						_filters;
+    System*												_system;
 };
 
 }

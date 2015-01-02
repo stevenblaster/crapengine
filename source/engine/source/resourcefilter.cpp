@@ -11,11 +11,13 @@
  * @date 	Dec 25, 2014
  */
 
+#include "resourcemanager.h"
 #include "resourcefilter.h"
 
 namespace crap
 {
 
-CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
+ResourceFilter::ResourceFilter( string_hash name, ResourceManager* manager ) :
+	_node( this, manager->filters() ), _id(name.hash()) {}
 
 } /* namespace crap */

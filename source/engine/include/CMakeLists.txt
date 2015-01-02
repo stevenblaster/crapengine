@@ -16,7 +16,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/pluginmanager.h
    ${CMAKE_CURRENT_SOURCE_DIR}/resourcemanager.h
    ${CMAKE_CURRENT_SOURCE_DIR}/resourcefilter.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/audioimport.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/plugin.h
    ${CMAKE_CURRENT_SOURCE_DIR}/squareworld.h
    ${CMAKE_CURRENT_SOURCE_DIR}/system.h
    ${CMAKE_CURRENT_SOURCE_DIR}/converter.h

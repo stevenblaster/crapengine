@@ -11,6 +11,7 @@
 namespace crap
 {
 
+#ifdef CRAP_PLATFORM_WINDOWS
 
 typedef CRITICAL_SECTION mutex_t;
 
@@ -43,6 +44,7 @@ CRAP_INLINE int32_t mutex_unlock( mutex_t* mutex )
     return 0;
 }
 
+#endif //CRAP_PLATFORM_WINDOWS
 
 } //namspace crap
 

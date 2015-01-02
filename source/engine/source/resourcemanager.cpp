@@ -3,17 +3,19 @@
 #include "file.h"
 #include "logger.h"
 #include "xml/tinyxml2.h"
+#include "system.h"
 
 namespace crap
 {
 
-intrusive_list<ResourceFilter> ResourceFilterList;
+//intrusive_list<ResourceFilter> ResourceFilterList;
 
-ResourceManager::ResourceManager( uint32_t bufferMemory, uint32_t resourceNumber, const string256& path ) :
+ResourceManager::ResourceManager( uint32_t bufferMemory, uint32_t resourceNumber, const string256& path, System* system ) :
     _allocator( bufferMemory + ResourceMap::size_of_elements( resourceNumber ) ),
     _resources( _allocator.allocate( ResourceMap::size_of_elements(resourceNumber), 4 ),
     		ResourceMap::size_of_elements(resourceNumber) ),
-    _path( path )
+    _path( path ),
+	_system(system)
 {
 	if( _path[ _path.size()-1 ] != '/')
 	        _path.concat('/');
@@ -133,8 +135,8 @@ void ResourceManager::loadResource( string_hash resourceId )
 
 	const string_hash typeId = _resources.get_value( index )->typeId;
 
-	intrusive_node<ResourceFilter>* node = ResourceFilterList.begin();
-    for( ; node != ResourceFilterList.end(); node = node->next() )
+	intrusive_node<ResourceFilter>* node = _filters.begin();
+    for( ; node != _filters.end(); node = node->next() )
     {
         if( *(node->parent()) == typeId )
         {
@@ -149,7 +151,7 @@ void ResourceManager::loadResource( string_hash resourceId )
         	pointer_t<void> memory = _allocator.allocate( resourceSize, 4 );
 
         	readFromFile( resourceFile, memory, resourceSize );
-        	node->parent()->import( resourceId, memory, resourceSize );
+        	node->parent()->import( resourceId, memory, resourceSize, _system );
 
         	_allocator.deallocate( memory.as_void );
         	closeFile( resourceFile );

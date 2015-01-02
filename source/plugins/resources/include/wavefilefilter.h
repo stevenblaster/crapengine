@@ -19,15 +19,17 @@
 
 namespace crap
 {
+class System;
+class ResourceManager;
 
 class WaveFileFilter : public ResourceFilter
 {
 public:
 
-	WaveFileFilter( void );
+	WaveFileFilter( ResourceManager* manager );
     virtual ~WaveFileFilter( void );
 
-    virtual void import( string_hash name, pointer_t<void> memory, uint32_t memSize );
+    virtual void import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system );
 };
 
 } /* namespace crap */

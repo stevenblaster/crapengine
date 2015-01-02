@@ -21,6 +21,8 @@ int main( void )
 	//logger
     crap::logger< crap::log_time_time, crap::log_channel_core, crap::log_type_debug, crap::log_target_cout, 512 > unit_logger;
 
+    //system
+    crap::System system;
 	//lets config
 	crap::string256 ini_path = data_path + "configuration.ini";
 	crap::Configuration config( 1024*10, 100 );
@@ -28,7 +30,7 @@ int main( void )
 	config.load( ini_path.c_str() );
 
 	//set config as subsystem
-	crap::SubSystem config_sys( "Configuration", &config );
+	crap::SubSystem config_sys( "Configuration", &config, &system );
 
 	//resourcemanager
 	const uint32_t resoureMemory = config.getValue<uint32_t>("RESOURCE_MEMORY");
@@ -36,14 +38,14 @@ int main( void )
 	const crap::string64 resourceFile = config.getValue<crap::string64>("RESOURCE_FILE");
 	const bool resourceXML = config.getValue<uint32_t>("RESOURCE_XML") == 1;
 
-	crap::ResourceManager resourceManager( resoureMemory, resoureNumber, data_path );
+	crap::ResourceManager resourceManager( resoureMemory, resoureNumber, data_path, &system );
 	if( resourceXML )
 		resourceManager.loadXML( resourceFile );
 	else
 		resourceManager.loadPackage( resourceFile );
 
 	// set resourcemanager as subsystem
-	crap::SubSystem resource_sys( "ResourceManager", &resourceManager );
+	crap::SubSystem resource_sys( "ResourceManager", &resourceManager, &system );
 
 	//audiomanager
 	const uint32_t audioBufferNumber = config.getValue<uint32_t>("AUDIO_BUFFER_NUM");
@@ -51,15 +53,15 @@ int main( void )
 	crap::AudioManager audioManager(audioBufferNumber, audioSourceNumber);
 
 	//set audiomanager as subsystem
-	crap::SubSystem audio_sys( "AudioManager", &audioManager );
+	crap::SubSystem audio_sys( "AudioManager", &audioManager, &system );
 
 	//pluginmanager
 	const uint32_t pluginNumber = config.getValue<uint32_t>("PLUGIN_NUMBER");
 	const uint32_t pluginMemory = config.getValue<uint32_t>("PLUGIN_MEMORY");
-	crap::PluginManager pluginManager(pluginNumber, pluginMemory);
+	crap::PluginManager pluginManager(pluginNumber, pluginMemory, &system );
 
 	//set pluginmanager as subsystem
-	crap::SubSystem plugin_sys( "PluginManager", &pluginManager );
+	crap::SubSystem plugin_sys( "PluginManager", &pluginManager, &system );
 
 	//set Directory listener
 	const uint32_t pluginFunctionNumber = config.getValue<uint32_t>("PLUGIN_FUNCTION_NUM");
@@ -71,7 +73,7 @@ int main( void )
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();
 
-	crap::Configuration* testconf = crap::CrapSystem.getSubSystem<crap::Configuration>( "Configuration" );
+	crap::Configuration* testconf = system.getSubSystem<crap::Configuration>( "Configuration" );
 	if( testconf != 0 )
 	{
 		std::cout << "I've worked! " << testconf->getValue<crap::string64>("SOUND_VOLUME") << std::endl;
@@ -81,7 +83,7 @@ int main( void )
 	float32_t one[3] = {1.f, 1.f, 1.f};
 	float32_t dir[6] = {0.f, 0.f, 1.f, 0.f, 1.f, 0.f };
 
-	crap::AudioManager* am = crap::CrapSystem.getSubSystem<crap::AudioManager>( "AudioManager" );
+	crap::AudioManager* am = system.getSubSystem<crap::AudioManager>( "AudioManager" );
 
 	resourceManager.loadResource( "Nagut" );
 	uint32_t sid = am->leaseSource( "Nagut" );

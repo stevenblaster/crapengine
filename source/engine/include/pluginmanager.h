@@ -18,6 +18,7 @@
 
 namespace crap
 {
+class System;
 
 class PluginManager
 {
@@ -33,14 +34,14 @@ public:
 
 	typedef array_map< uint32_t, PluginInfo> 	PluginMap;
 
-	typedef Plugin* (*createFunction)( void* mem );
+	typedef Plugin* (*createFunction)( void* mem, System* system );
     typedef void (*initFunction)( void );
     typedef void (*deinitFunction)( void );
     typedef uint32_t (*sizeFunction)( void );
     typedef void (*destroyFunction)(Plugin* plugin );
     typedef uint32_t (*idFunction)( void);
 
-    PluginManager( uint32_t max_plugins, uint32_t memory_size );
+    PluginManager( uint32_t max_plugins, uint32_t memory_size, System* system );
     ~PluginManager( void );
 
     void callbackFunction( const char* filename );
@@ -54,6 +55,7 @@ private:
 
     PLUGIN_MEMORY 				_allocator;
     PluginMap   				_handles;
+    System*						_system;
 };
 
 } //namespace crap

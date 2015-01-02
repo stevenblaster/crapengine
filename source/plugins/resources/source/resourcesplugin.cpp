@@ -17,7 +17,8 @@
 
 #include "wavefilefilter.h"
 #include "audiofilter.h"
-
+#include "resourcemanager.h"
+#include "system.h"
 #include "plugin.h"
 
 namespace crap
@@ -26,7 +27,9 @@ namespace crap
 CRAP_DECLARE_PLUGIN( ResourcesPlugin )
 {
 public:
-	ResourcesPlugin( void )
+	ResourcesPlugin( System* system ) :
+		_waveFilter(system->getSubSystem<ResourceManager>("ResourceManager")),
+		_audioFilter(system->getSubSystem<ResourceManager>("ResourceManager"))
 	{
 	}
 

@@ -15,6 +15,8 @@
 namespace crap
 {
 
+class System;
+
 class Plugin
 {
 public:
@@ -28,7 +30,7 @@ public:
     virtual uint32_t id( void ) = 0;
 };
 
-#define CRAP_PLUGIN_CONSTRUCT( type ) CRAP_DLL_TO_EXE Plugin* createPlugin( void* memory ) { return new (memory) type(); }
+#define CRAP_PLUGIN_CONSTRUCT( type ) CRAP_DLL_TO_EXE Plugin* createPlugin( void* memory, crap::System* system ) { return new (memory) type(system); }
 #define CRAP_PLUGIN_DESTRUCT( type ) CRAP_DLL_TO_EXE void destroyPlugin( type* instance ) { instance->~type(); }
 #define CRAP_PLUGIN_SIZE( type )  CRAP_DLL_TO_EXE uint32_t pluginSize( void ) { return sizeof(type); }
 #define CRAP_PLUGIN_ID( type ) CRAP_DLL_TO_EXE uint32_t pluginID( void ) { return string_hash( #type ).hash(); }

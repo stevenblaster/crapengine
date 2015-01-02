@@ -74,8 +74,8 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_resources_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
-     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_audio ${CMAKE_DL_LIBS})
+     TARGET_LINK_LIBRARIES(crap_resources_plugin crap_audio crap_engine )
 ELSE()
-	TARGET_LINK_LIBRARIES(crap_resources_plugin crap_audio ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+	TARGET_LINK_LIBRARIES(crap_resources_plugin crap_audio crap_engine ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 

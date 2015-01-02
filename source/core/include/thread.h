@@ -138,7 +138,7 @@ struct scope_lock<atomic_mutex>
     atomic_mutex* _mutex;
 };
 
-
+/*
 //thread shared values, generally fully locked
 template< typename T, uint32_t S >
 struct thread_shared_value
@@ -249,7 +249,7 @@ protected:
     {
         uint32_t buffer;
         pointer_t<T> ptr( &buffer );
-        ptr.as_uint32_t = load_32_relaxed( &_data );
+        buffer = load_32_relaxed( &_data );
         value = *ptr.as_type;
     }
 
@@ -322,7 +322,7 @@ protected:
     {
         uint32_t buffer;
         pointer_t<T> ptr( &buffer );
-        ptr.as_uint32_t = load_32_relaxed( &_data );
+        buffer = load_32_relaxed( &_data );
         value = *ptr.as_type;
     }
 
@@ -394,7 +394,7 @@ protected:
     {
         uint32_t buffer;
         pointer_t<T> ptr( &buffer );
-        ptr.as_uint32_t = load_32_relaxed( &_data );
+        buffer = load_32_relaxed( &_data );
         value = *ptr.as_type;
     }
 
@@ -737,7 +737,7 @@ struct thread_shared : public thread_shared_value<T, sizeof(T)>
     CRAP_INLINE bool is_atomic( void ) const { return this->atomic(); }
     CRAP_INLINE T get_value( void ) const { return this->get(); }
 };
-
+*/
 } //namespace crqap
 
 #endif //CRAP_THREAD_H
