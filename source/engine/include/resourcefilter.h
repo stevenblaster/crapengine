@@ -25,7 +25,7 @@ namespace crap
 
 class ResourceFilter;
 
-extern CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
+extern "C" CRAP_EXE_TO_DLL intrusive_list<ResourceFilter> ResourceFilterList;
 
 class ResourceFilter
 {

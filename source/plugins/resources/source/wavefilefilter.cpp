@@ -13,12 +13,9 @@
 #define CRAP_DL 1
 
 #include "config/crap_platform.h"
+#include "config/crap_compiler.h"
 
-#ifdef CRAP_PLATFORM_WINDOWS
-#include "system.cpp"
-#else
 #include "system.h"
-#endif
 #include "audiomanager.h"
 #include "audiofile.h"
 #include "wavefilefilter.h"

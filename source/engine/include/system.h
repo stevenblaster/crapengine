@@ -62,7 +62,7 @@ private:
 /**
  * external system
  */
-extern CRAP_EXE_TO_DLL System CrapSystem;
+extern "C" CRAP_EXE_TO_DLL System CrapSystem;
 
 
 /**

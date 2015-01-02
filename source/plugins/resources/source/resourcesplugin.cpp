@@ -12,6 +12,9 @@
  */
 #define CRAP_DL 1
 
+#include "config/crap_platform.h"
+#include "config/crap_compiler.h"
+
 #include "wavefilefilter.h"
 #include "audiofilter.h"
 
