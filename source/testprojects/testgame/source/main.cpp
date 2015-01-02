@@ -85,14 +85,16 @@ int main( void )
 
 	crap::AudioManager* am = system.getSubSystem<crap::AudioManager>( "AudioManager" );
 
-	resourceManager.loadResource( "Nagut" );
-	uint32_t sid = am->leaseSource( "Nagut" );
+	resourceManager.loadResource( "Yes" );
+	uint32_t sid = am->leaseSource( "Yes" );
 
 	am->setListenerData( zero, zero, dir );
 	am->playSource( sid );
 
 	while( am->getIsPlaying(sid) )
 		crap::sleep_mil_sec(100);
+
+	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
 #ifdef CRAP_COMPILER_MSVC
     std::cout << "Press a button" << std::endl;

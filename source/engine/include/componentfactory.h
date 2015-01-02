@@ -23,28 +23,29 @@ namespace crap
 {
 
 class Component;
-class ComponentFactory;
-
-extern CRAP_EXE_TO_DLL intrusive_list<ComponentFactory> ComponentFactoryList;
+class ComponentSystem;
+class System;
 
 class ComponentFactory
 {
 
 public:
 
-	ComponentFactory( crap::string_hash name ) :
-		_node( this, &ComponentFactoryList ), _name( name )
-	{}
+	ComponentFactory( crap::string_hash name, ComponentSystem* system );
 
 	virtual ~ComponentFactory( void ) {}
 
-	virtual Component* createComponent( void );
+	virtual Component* createComponent( void ) { return 0; }
+	virtual void destroyComponent( Component* component ) {}
 
 	CRAP_INLINE
 	bool operator==( const string_hash& name )
 	{
 	    return _name == name;
 	}
+
+	CRAP_INLINE
+	uint32_t id( void ) const { return _name.hash(); }
 
 private:
 

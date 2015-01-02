@@ -23,5 +23,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/convertfilter.h
    ${CMAKE_CURRENT_SOURCE_DIR}/directorylistener.h
    ${CMAKE_CURRENT_SOURCE_DIR}/component.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/componentsystem.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/componenttype.h
    PARENT_SCOPE
 )

@@ -19,19 +19,25 @@
 
 namespace crap
 {
+class System;
 
 class Component
 {
 public:
 
-	CRAP_INLINE Component( uint64_t global ) : _globalID(global) {}
+	CRAP_INLINE Component( uint32_t type ) : _typeID(type) {}
 	virtual ~Component( void ) {}
 
 	uint64_t getGlobalID( void ) const { return _globalID; }
 	uint32_t getTypeID( void ) const { return _typeID; }
 	uint32_t getComponentID( void ) const { return _componentID; }
 
-private:
+	virtual void init( System* system ) {}
+	virtual void deinit( System* system ) {}
+
+protected:
+
+	void setComponentID( uint64_t cid ) { _componentID = cid; }
 
 	union
 	{
