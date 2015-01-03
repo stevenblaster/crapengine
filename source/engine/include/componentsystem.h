@@ -16,23 +16,36 @@
 #define ENGINE_INCLUDE_COMPONENTSYSTEM_H_
 
 #include "utilities.h"
+#include "strings.h"
 #include "container/intrusivelist.h"
+#include "memory.h"
+
+#ifdef CRAP_NO_DEBUG
+#define COMPONENT_MEMORY SimpleGeneralMemory
+#else
+#define COMPONENT_MEMORY BoundGeneralMemory
+#endif
 
 namespace crap
 {
+class Component;
 class ComponentFactory;
 
 class ComponentSystem
 {
 public:
-	ComponentSystem( void );
+	ComponentSystem( uint32_t memory_size );
 	~ComponentSystem( void );
 
-	intrusive_list<ComponentFactory>* factoryList( void ) { return &_factoryList; }
+	Component* createComponent( string_hash name );
+
+	CRAP_INLINE intrusive_list<ComponentFactory>* factoryList( void ) { return &_factoryList; }
+	CRAP_INLINE COMPONENT_MEMORY* allocator( void ) { return &_allocator; }
 
 private:
 
-	intrusive_list<ComponentFactory> _factoryList;
+	COMPONENT_MEMORY					_allocator;
+	intrusive_list<ComponentFactory> 	_factoryList;
 };
 
 } /* namespace crap */

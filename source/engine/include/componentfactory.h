@@ -18,6 +18,7 @@
 #include "config/crap_compiler.h"
 #include "strings.h"
 #include "utilities.h"
+#include "container/intrusivelist.h"
 
 namespace crap
 {

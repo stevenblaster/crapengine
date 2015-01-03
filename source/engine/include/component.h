@@ -25,6 +25,8 @@ class Component
 {
 public:
 
+	friend class ComponentFactory;
+
 	CRAP_INLINE Component( uint32_t type ) : _typeID(type) {}
 	virtual ~Component( void ) {}
 
@@ -35,9 +37,9 @@ public:
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}
 
-protected:
-
 	void setComponentID( uint64_t cid ) { _componentID = cid; }
+
+protected:
 
 	union
 	{

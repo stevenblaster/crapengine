@@ -8,6 +8,8 @@
 #include "pluginmanager.h"
 #include "directorylistener.h"
 #include "resourcefilter.h"
+#include "componentsystem.h"
+#include "component.h"
 
 int main( void )
 {
@@ -70,8 +72,15 @@ int main( void )
 	crap::DirectoryListener pluginDirectoryListener( pluginFunctionNumber, pluginFileNumber, pluginDir, false );
 	pluginDirectoryListener.addCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
 
+	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");
+	crap::ComponentSystem componentSystem( componentMemory );
+	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
+
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();
+
+	crap::Component* comp = componentSystem.createComponent("TestComponent");
+	comp->init( &system );
 
 	crap::Configuration* testconf = system.getSubSystem<crap::Configuration>( "Configuration" );
 	if( testconf != 0 )
@@ -100,6 +109,9 @@ int main( void )
     std::cout << "Press a button" << std::endl;
 	getchar();
 #endif
+
+	pluginDirectoryListener.removeCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
+	pluginManager.unloadAll();
 
 	return 0;
 }

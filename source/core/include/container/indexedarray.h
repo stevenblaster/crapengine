@@ -529,6 +529,11 @@ void indexed_array<T>::erase_at( uint32_t id )
         //update data_to_index
         _data_to_indices.as_type[ array_index ] = old_index;
     }
+    else
+    {
+        //destroy data
+        destruct_object( _data.as_type + array_index );
+    }
 }
 
 template<typename T>

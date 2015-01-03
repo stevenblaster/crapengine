@@ -20,13 +20,7 @@ PluginManager::PluginManager( uint32_t max_plugins, uint32_t memory_size, System
 
 PluginManager::~PluginManager( void )
 {
-    while( _handles.size() > 0 )
-    {
-    	uint32_t id = *_handles.get_key( _handles.size()-1 );
-        deinit(id);
-        unload(id);
-        _handles.erase(id);
-    }
+    unloadAll();
 
     _allocator.deallocate( _handles.memory().as_void );
 }
@@ -44,6 +38,10 @@ uint32_t PluginManager::load( const char* filename )
 #ifdef CRAP_COMPILER_MSVC
 	string256 buffer(filename);
 	if( buffer[buffer.size()-1] != 'l' || buffer[buffer.size()-2] != 'l' || buffer[buffer.size()-3] != 'd' )
+		return PluginMap::INVALID;
+#else
+	string256 buffer(filename);
+	if( buffer[buffer.size()-1] != 'o' || buffer[buffer.size()-2] != 's' )
 		return PluginMap::INVALID;
 #endif
     dlhandle_t handle = loadLibrary( filename );
@@ -121,6 +119,17 @@ void PluginManager::unload( uint32_t pluginID )
     	}
 	}
 	crap::log( LOG_CHANNEL_CORE | LOG_TARGET_CERR | LOG_TYPE_ERROR, "Error: %s", libraryError() );
+}
+
+void PluginManager::unloadAll( void )
+{
+    while( _handles.size() > 0 )
+    {
+    	uint32_t id = *_handles.get_key( _handles.size()-1 );
+        deinit(id);
+        unload(id);
+        _handles.erase(id);
+    }
 }
 
 }

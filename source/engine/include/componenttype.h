@@ -18,6 +18,8 @@
 #include "utilities.h"
 #include "container/indexedarray.h"
 #include "componentfactory.h"
+#include "component.h"
+#include "componentsystem.h"
 
 namespace crap
 {
@@ -28,9 +30,13 @@ class ComponentType : public ComponentFactory
 public:
 	
 	CRAP_INLINE
-	ComponentType( crap::string_hash name, ComponentSystem* system ) : ComponentFactory( name, system ) {}
+	ComponentType( crap::string_hash name, ComponentSystem* system, uint32_t max_components ) :
+		ComponentFactory( name, system ),
+		_components( system->allocator()->allocate( indexed_array<T>::size_of_elements(max_components), 4),
+				indexed_array<T>::size_of_elements(max_components))
+	{}
 
-	virtual Component* createComponent( System* system ) 
+	virtual Component* createComponent( void )
 	{
 		uint32_t cid = _components.push_back( T( id() ) );
 		T* var = _components.get(cid);
@@ -39,11 +45,15 @@ public:
 		return var;
 	}
 
-	virtual void destroyComponent( Component* component, System* system ) {}
+	virtual void destroyComponent( Component* component )
+	{
+		_components.erase_at( component->getComponentID() );
+	}
 
 private:
 	indexed_array<T>	_components;
 };
+
 
 } /* namespace crap */
 

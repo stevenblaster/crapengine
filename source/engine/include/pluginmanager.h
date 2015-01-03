@@ -51,6 +51,8 @@ public:
     void deinit( uint32_t id );
     void unload( uint32_t id );
 
+    void unloadAll( void );
+
 private:
 
     PLUGIN_MEMORY 				_allocator;

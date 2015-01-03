@@ -11,7 +11,7 @@
 
 set(HEADERS
    ${HEADERS}
-   ${CMAKE_CURRENT_SOURCE_DIR}/testplugin.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/testcomponent.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/packetinformation.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpconnection.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpreliability.h

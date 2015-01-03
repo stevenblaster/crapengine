@@ -9,8 +9,8 @@
 
 set(SOURCES
    ${SOURCES}
-   ${CMAKE_CURRENT_SOURCE_DIR}/testplugin.cpp
-#   ${CMAKE_CURRENT_SOURCE_DIR}/networkcommandqueue.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/testcomponent.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/componentsplugin.cpp
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpconnection.cpp
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpreliability.cpp
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpnetwork.cpp
