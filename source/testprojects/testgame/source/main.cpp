@@ -81,6 +81,8 @@ int main( void )
 
 	crap::Component* comp = componentSystem.createComponent("TestComponent");
 	comp->init( &system );
+	comp->deinit( &system );
+	componentSystem.destroyComponent( comp );
 
 	crap::Configuration* testconf = system.getSubSystem<crap::Configuration>( "Configuration" );
 	if( testconf != 0 )

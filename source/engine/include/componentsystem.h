@@ -38,6 +38,7 @@ public:
 	~ComponentSystem( void );
 
 	Component* createComponent( string_hash name );
+	void destroyComponent( Component* component );
 
 	CRAP_INLINE intrusive_list<ComponentFactory>* factoryList( void ) { return &_factoryList; }
 	CRAP_INLINE COMPONENT_MEMORY* allocator( void ) { return &_allocator; }

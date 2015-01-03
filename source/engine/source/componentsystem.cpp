@@ -26,4 +26,18 @@ Component* ComponentSystem::createComponent( string_hash name )
 	return 0;
 }
 
+
+void ComponentSystem::destroyComponent( Component* component )
+{
+	for( intrusive_node<ComponentFactory>* node = _factoryList.begin(); node != _factoryList.end(); node = _factoryList.next(node))
+	{
+		if( *node->parent() == component->getTypeID() )
+		{
+			node->parent()->destroyComponent( component );
+			return;
+		}
+	}
+
+}
+
 } /* namespace crap */

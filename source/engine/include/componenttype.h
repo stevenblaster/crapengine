@@ -33,8 +33,14 @@ public:
 	ComponentType( crap::string_hash name, ComponentSystem* system, uint32_t max_components ) :
 		ComponentFactory( name, system ),
 		_components( system->allocator()->allocate( indexed_array<T>::size_of_elements(max_components), 4),
-				indexed_array<T>::size_of_elements(max_components))
+				indexed_array<T>::size_of_elements(max_components)),
+		_system(system)
 	{}
+
+	~ComponentType( void )
+	{
+		_system->allocator()->deallocate( _components.memory().as_type );
+	}
 
 	virtual Component* createComponent( void )
 	{
@@ -52,6 +58,7 @@ public:
 
 private:
 	indexed_array<T>	_components;
+	ComponentSystem*	_system;
 };
 
 
