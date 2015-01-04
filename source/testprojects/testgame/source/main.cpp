@@ -10,6 +10,7 @@
 #include "resourcefilter.h"
 #include "componentsystem.h"
 #include "component.h"
+#include "taskmanager.h"
 
 int main( void )
 {
@@ -57,6 +58,20 @@ int main( void )
 	//set audiomanager as subsystem
 	crap::SubSystem audio_sys( "AudioManager", &audioManager, &system );
 
+	//componentsystem
+	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");
+	crap::ComponentSystem componentSystem( componentMemory );
+
+	//set componentsystem as subsystem
+	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
+
+	//taskmanager
+	const uint32_t tasksMaxNumber = config.getValue<uint32_t>("TASKS_MAX_NUM");
+	crap::TaskManager taskManager( tasksMaxNumber );
+
+	//set TaskManager as Subsystem
+	crap::SubSystem tasks_sys( "TaskManager", &taskManager, &system );
+
 	//pluginmanager
 	const uint32_t pluginNumber = config.getValue<uint32_t>("PLUGIN_NUMBER");
 	const uint32_t pluginMemory = config.getValue<uint32_t>("PLUGIN_MEMORY");
@@ -71,10 +86,6 @@ int main( void )
 	const crap::string256 pluginDir = data_path + config.getValue<crap::string64>("PLUGIN_SUBDIRECTORY");
 	crap::DirectoryListener pluginDirectoryListener( pluginFunctionNumber, pluginFileNumber, pluginDir, false );
 	pluginDirectoryListener.addCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
-
-	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");
-	crap::ComponentSystem componentSystem( componentMemory );
-	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
 
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();

@@ -21,5 +21,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/directorylistener.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/componentsystem.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/componenttype.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/taskmanager.cpp
    PARENT_SCOPE
 )

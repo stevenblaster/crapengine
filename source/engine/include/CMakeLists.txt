@@ -25,5 +25,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/component.h
    ${CMAKE_CURRENT_SOURCE_DIR}/componentsystem.h
    ${CMAKE_CURRENT_SOURCE_DIR}/componenttype.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/taskmanager.h
    PARENT_SCOPE
 )

@@ -64,7 +64,7 @@ namespace crap
 struct no_mutex
 {
     CRAP_INLINE void lock( void ) const { }
-    CRAP_INLINE bool try_lock( void ) const { }
+    CRAP_INLINE bool try_lock( void ) const { return false; }
     CRAP_INLINE bool is_locked( void ) const { return false; }
     CRAP_INLINE void unlock( void ) const { }
 };
@@ -77,7 +77,7 @@ struct atomic_mutex
 
     CRAP_INLINE void lock( void ) { while( !try_lock() ) float64_t tmp = 0.0; }
     CRAP_INLINE bool try_lock( void ) { return compare_exchange_strong_32_relaxed( &_flag, 0, 1 ) == 0 ; }
-    CRAP_INLINE bool is_locked( void ) const { load_32_relaxed(&_flag) == 1; }
+    CRAP_INLINE bool is_locked( void ) const { return load_32_relaxed(&_flag) == 1; }
     CRAP_INLINE void unlock( void ) { store_32_relaxed( &_flag, 0 ); }
 
 private:
