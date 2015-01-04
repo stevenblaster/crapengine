@@ -67,7 +67,8 @@ int main( void )
 
 	//taskmanager
 	const uint32_t tasksMaxNumber = config.getValue<uint32_t>("TASKS_MAX_NUM");
-	crap::TaskManager taskManager( tasksMaxNumber );
+	const uint32_t tasksDeattachedMaxNumber = config.getValue<uint32_t>("TASKS_DEATTACHED_MAX_NUM");
+	crap::TaskManager taskManager( tasksMaxNumber, tasksDeattachedMaxNumber );
 
 	//set TaskManager as Subsystem
 	crap::SubSystem tasks_sys( "TaskManager", &taskManager, &system );

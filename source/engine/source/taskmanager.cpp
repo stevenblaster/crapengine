@@ -17,9 +17,10 @@
 namespace crap
 {
 
-TaskManager::TaskManager( uint32_t max_tasks ) :
-		_allocator( array<TaskInfo>::size_of_elements(max_tasks) *2 ),
+TaskManager::TaskManager( uint32_t max_tasks, uint32_t max_deattached_tasks ) :
+		_allocator( array<TaskInfo>::size_of_elements(max_tasks+2) + array<DeattachedTaskInfo>::size_of_elements(max_tasks+2) ),
 		_tasks( _allocator.allocate(array<TaskInfo>::size_of_elements(max_tasks), 4), array<TaskInfo>::size_of_elements(max_tasks)),
+		_deattached( _allocator.allocate(array<DeattachedTaskInfo>::size_of_elements(max_tasks), 4), array<DeattachedTaskInfo>::size_of_elements(max_tasks)),
 		_last_tick(0)
 {
 	crap::timer_get_tick( &_last_tick );
@@ -28,6 +29,7 @@ TaskManager::TaskManager( uint32_t max_tasks ) :
 TaskManager::~TaskManager( void )
 {
 	_allocator.deallocate( _tasks.memory().as_void );
+	_allocator.deallocate( _deattached.memory().as_void );
 }
 
 void TaskManager::update( void )
@@ -78,7 +80,30 @@ bool TaskManager::removeTask( string_hash name )
 			return true;
 		}
 	}
+	for(uint32_t i=0; i<_deattached.size(); ++i )
+	{
+		DeattachedTaskInfo* info = _deattached.get( i );
+		if( info->info == name )
+		{
+			crap::thread_kill( info->thread );
+			_deattached.erase_at(i);
+			return true;
+		}
+	}
 	return false;
+}
+
+void* runTask( void* data )
+{
+	TaskManager::DeattachedTaskInfo* task = (TaskManager::DeattachedTaskInfo*)data;
+	crap::sleep_mil_sec( task->info.callDelay );
+	task->info.function.invoke( task->info.callDelay );
+	if( task->info.repeat )
+		crap::thread_create( &task->thread, &runTask, data, 0, 0 );
+	else
+		task->manager->removeTask( task->info.id );
+
+	return data;
 }
 
 } /* namespace crap */

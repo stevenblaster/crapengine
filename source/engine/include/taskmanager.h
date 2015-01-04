@@ -30,6 +30,8 @@
 namespace crap
 {
 
+void* runTask( void* data );
+
 class TaskManager
 {
 public:
@@ -49,33 +51,51 @@ public:
 	}
 	TaskInfo;
 
-	TaskManager( uint32_t max_tasks );
+	typedef struct s_DeattachedTaskInfo
+	{
+		TaskManager* manager;
+		TaskInfo info;
+		crap::thread_t thread;
+	}
+	DeattachedTaskInfo;
+
+	TaskManager( uint32_t max_tasks, uint32_t max_deattached_tasks );
 	~TaskManager( void );
 
 	void update( void );
 
 	template< class C, bool (C::*F)( uint32_t ) >
-	bool addTask( string_hash name, C* instance, uint32_t delay, bool repeat );
+	bool addTask( string_hash name, C* instance, uint32_t delay, bool repeat, bool deattach = false );
 
 	template< void (*F)( uint32_t ) >
-	bool addTask( string_hash name, uint32_t delay, bool repeat );
+	bool addTask( string_hash name, uint32_t delay, bool repeat, bool deattach = false  );
 
 	bool removeTask( string_hash name );
 
 private:
 
-	TASK_MEMORY			_allocator;
-	array<TaskInfo>		_tasks;
-	tick_t 				_last_tick;
+	TASK_MEMORY					_allocator;
+	array<TaskInfo>				_tasks;
+	array<DeattachedTaskInfo>	_deattached;
+	tick_t 						_last_tick;
 };
 
 template< class C, bool (C::*F)( uint32_t ) >
-bool TaskManager::addTask( string_hash name, C* instance, uint32_t delay, bool repeat )
+bool TaskManager::addTask( string_hash name, C* instance, uint32_t delay, bool repeat, bool deattach/* = false*/ )
 {
 	for(uint32_t i=0; i<_tasks.size(); ++i )
 	{
 		TaskInfo* info = _tasks.get(i);
 		if( *info == name )
+		{
+			return false;
+		}
+	}
+
+	for(uint32_t i=0; i<_deattached.size(); ++i )
+	{
+		DeattachedTaskInfo* info = _deattached.get(i);
+		if( info->info == name )
 		{
 			return false;
 		}
@@ -88,12 +108,23 @@ bool TaskManager::addTask( string_hash name, C* instance, uint32_t delay, bool r
 	info.repeat = repeat;
 	info.function.bind<C, F>( instance );
 
+	if( deattach )
+	{
+		DeattachedTaskInfo deattachedInfo;
+		deattachedInfo.info = info;
+		deattachedInfo.manager = this;
+		const uint32_t index = _deattached.push_back( deattachedInfo );
+		DeattachedTaskInfo* newInfo = _deattached.get( index );
+		crap::thread_create( &(newInfo->thread), &runTask, newInfo, 0, 0 );
+		return true;
+	}
+
 	_tasks.push_back( info );
 	return true;
 }
 
 template< void (*F)( uint32_t ) >
-bool TaskManager::addTask( string_hash name, uint32_t delay, bool repeat )
+bool TaskManager::addTask( string_hash name, uint32_t delay, bool repeat, bool deattach/* = false */  )
 {
 	for(uint32_t i=0; i<_tasks.size(); ++i )
 	{
@@ -110,6 +141,17 @@ bool TaskManager::addTask( string_hash name, uint32_t delay, bool repeat )
 	info.passedTime = 0;
 	info.repeat = repeat;
 	info.function.bind<F>();
+
+	if( deattach )
+	{
+		DeattachedTaskInfo deattachedInfo;
+		deattachedInfo.info = info;
+		deattachedInfo.manager = this;
+		const uint32_t index = _deattached.push_back( deattachedInfo );
+		DeattachedTaskInfo* newInfo = _deattached.get( index );
+		crap::thread_create( &(newInfo->thread), &runTask, newInfo, 0, 0 );
+		return true;
+	}
 
 	_tasks.push_back( info );
 	return true;
