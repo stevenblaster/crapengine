@@ -11,6 +11,8 @@
 #include "componentsystem.h"
 #include "component.h"
 #include "taskmanager.h"
+#include "inputmanager.h"
+#include "keyboardinput.h"
 
 int main( void )
 {
@@ -26,6 +28,7 @@ int main( void )
 
     //system
     crap::System system;
+
 	//lets config
 	crap::string256 ini_path = data_path + "configuration.ini";
 	crap::Configuration config( 1024*10, 100 );
@@ -34,6 +37,14 @@ int main( void )
 
 	//set config as subsystem
 	crap::SubSystem config_sys( "Configuration", &config, &system );
+
+	//taskmanager
+	const uint32_t tasksMaxNumber = config.getValue<uint32_t>("TASKS_MAX_NUM");
+	const uint32_t tasksDeattachedMaxNumber = config.getValue<uint32_t>("TASKS_DEATTACHED_MAX_NUM");
+	crap::TaskManager taskManager( tasksMaxNumber, tasksDeattachedMaxNumber );
+
+	//set TaskManager as Subsystem
+	crap::SubSystem tasks_sys( "TaskManager", &taskManager, &system );
 
 	//resourcemanager
 	const uint32_t resoureMemory = config.getValue<uint32_t>("RESOURCE_MEMORY");
@@ -55,6 +66,10 @@ int main( void )
 	const uint32_t audioSourceNumber = config.getValue<uint32_t>("AUDIO_SOURCE_NUM");
 	crap::AudioManager audioManager(audioBufferNumber, audioSourceNumber);
 
+	/*
+	 * TODO: audio update-> attach to taskmanager
+	 */
+
 	//set audiomanager as subsystem
 	crap::SubSystem audio_sys( "AudioManager", &audioManager, &system );
 
@@ -65,13 +80,11 @@ int main( void )
 	//set componentsystem as subsystem
 	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
 
-	//taskmanager
-	const uint32_t tasksMaxNumber = config.getValue<uint32_t>("TASKS_MAX_NUM");
-	const uint32_t tasksDeattachedMaxNumber = config.getValue<uint32_t>("TASKS_DEATTACHED_MAX_NUM");
-	crap::TaskManager taskManager( tasksMaxNumber, tasksDeattachedMaxNumber );
-
-	//set TaskManager as Subsystem
-	crap::SubSystem tasks_sys( "TaskManager", &taskManager, &system );
+	//inputmanager
+	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
+	crap::InputManager inputManager( inputMemory );
+	//add keyboard
+	crap::KeyboardInput keyboardInput("Keyboard", 20, &inputManager );
 
 	//pluginmanager
 	const uint32_t pluginNumber = config.getValue<uint32_t>("PLUGIN_NUMBER");
@@ -87,6 +100,10 @@ int main( void )
 	const crap::string256 pluginDir = data_path + config.getValue<crap::string64>("PLUGIN_SUBDIRECTORY");
 	crap::DirectoryListener pluginDirectoryListener( pluginFunctionNumber, pluginFileNumber, pluginDir, false );
 	pluginDirectoryListener.addCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
+
+	/*
+	 * TODO: add directory update to taskmanager
+	 */
 
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();

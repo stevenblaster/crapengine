@@ -14,8 +14,10 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/test.h
    ${CMAKE_CURRENT_SOURCE_DIR}/font.h
    ${CMAKE_CURRENT_SOURCE_DIR}/rendercontext.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/logger.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/strings.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/input.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/keyboardinput.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/mouseinput.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controllerinput.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/inputmanager.h
    PARENT_SCOPE
 )

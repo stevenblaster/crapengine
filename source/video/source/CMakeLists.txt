@@ -9,6 +9,11 @@ ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/3d)
 
 set(SOURCES
    ${SOURCES}
+   ${CMAKE_CURRENT_SOURCE_DIR}/input.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/mouseinput.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/keyboardinput.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controllerinput.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/inputmanager.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/font.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/rendercontext.cpp
