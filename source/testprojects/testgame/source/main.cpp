@@ -157,7 +157,7 @@ int main( void )
 	{
 		renderWindow.swap();
 		taskManager.update();
-		crap::sleep_mil_sec(500);
+		//crap::sleep_mil_sec(500);
 	}
 
 	renderWindow.destroy();

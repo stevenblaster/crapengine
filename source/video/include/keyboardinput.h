@@ -30,7 +30,7 @@ class KeyboardInput : public BaseInput
 {
 public:
 
-	typedef delegate< void (uint32_t state )> keyFunction;
+	typedef delegate< void ( uint32_t state )> keyFunction;
 	typedef struct s_keyBinding
 	{
 		uint32_t mapped_key;
