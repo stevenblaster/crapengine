@@ -12,7 +12,7 @@
  */
 
 #include "GLFW/glfw3.h"
-#include "input.h"
+#include "baseinput.h"
 #include "inputmanager.h"
 
 namespace crap
@@ -45,16 +45,16 @@ bool InputManager::update( uint32_t deltatime )
 	if(_window != 0 )
 		glfwPollEvents();
 
-	for( intrusive_node<Input>* node = _list.begin(); node != _list.end(); node = _list.next(node) )
+	for( intrusive_node<BaseInput>* node = _list.begin(); node != _list.end(); node = _list.next(node) )
 	{
 		node->parent()->receiveInput();
 	}
 	return true;
 }
 
-Input* InputManager::getInputHandle( string_hash name )
+BaseInput* InputManager::getInputHandle( string_hash name )
 {
-	for( intrusive_node<Input>* node = _list.begin(); node != _list.end(); node = _list.next(node) )
+	for( intrusive_node<BaseInput>* node = _list.begin(); node != _list.end(); node = _list.next(node) )
 	{
 		if( *node->parent() == name)
 			return node->parent();

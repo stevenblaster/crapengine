@@ -1,5 +1,5 @@
 /*!
- * @file input.cpp
+ * @file baseinput.cpp
  *
  * @brief Short description...
  *
@@ -12,18 +12,18 @@
  */
 
 #include "inputmanager.h"
-#include "input.h"
+#include "baseinput.h"
 
 namespace crap
 {
 
-Input::Input( string_hash name, InputManager* manager ) :
+BaseInput::BaseInput( string_hash name, InputManager* manager ) :
 		_name(name), _node( this, manager->getHandlerList() ), _manager(manager)
 {
 
 }
 
-Input::~Input( void )
+BaseInput::~BaseInput( void )
 {
 
 }

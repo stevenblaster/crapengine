@@ -15,7 +15,7 @@
 #ifndef VIDEO_INCLUDE_KEYBOARDINPUT_H_
 #define VIDEO_INCLUDE_KEYBOARDINPUT_H_
 
-#include "input.h"
+#include "baseinput.h"
 #include "delegates.h"
 #include "container/array.h"
 
@@ -26,7 +26,7 @@ namespace crap
 
 typedef GLFWwindow window_t;
 
-class KeyboardInput : public Input
+class KeyboardInput : public BaseInput
 {
 public:
 

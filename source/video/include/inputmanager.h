@@ -30,7 +30,7 @@ struct GLFWwindow;
 namespace crap
 {
 
-class Input;
+class BaseInput;
 typedef GLFWwindow window_t;
 
 class InputManager
@@ -45,17 +45,17 @@ public:
 
 	bool update( uint32_t deltatime );
 
-	Input* getInputHandle( string_hash name );
+	BaseInput* getInputHandle( string_hash name );
 
 	CRAP_INLINE
-	intrusive_list<Input>* getHandlerList( void ) { return &_list; }
+	intrusive_list<BaseInput>* getHandlerList( void ) { return &_list; }
 
 	CRAP_INLINE
 	INPUT_MEMORY*	getAllocator( void ){ return &_allocator; }
 
 private:
 	INPUT_MEMORY			_allocator;
-	intrusive_list<Input>	_list;
+	intrusive_list<BaseInput>	_list;
 	window_t*				_window;
 };
 

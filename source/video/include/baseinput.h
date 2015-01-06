@@ -12,8 +12,8 @@
  */
 #pragma once
 
-#ifndef VIDEO_INCLUDE_INPUT_H_
-#define VIDEO_INCLUDE_INPUT_H_
+#ifndef VIDEO_INCLUDE_BASEINPUT_H_
+#define VIDEO_INCLUDE_BASEINPUT_H_
 
 #include "container/intrusivelist.h"
 #include "strings.h"
@@ -22,12 +22,12 @@ namespace crap
 {
 class InputManager;
 
-class Input
+class BaseInput
 {
 public:
 
-	Input( string_hash name, InputManager* manager );
-	virtual ~Input( void );
+	BaseInput( string_hash name, InputManager* manager );
+	virtual ~BaseInput( void );
 
 	CRAP_INLINE
 	bool operator==( string_hash other )
@@ -39,14 +39,14 @@ public:
 
 protected:
 
-	InputManager* 				_manager;
+	InputManager* 					_manager;
 
 private:
 
-	intrusive_node<Input>		_node;
-	string_hash					_name;
+	intrusive_node<BaseInput>		_node;
+	string_hash						_name;
 };
 
 } /* namespace crap */
 
-#endif /* VIDEO_INCLUDE_INPUT_H_ */
+#endif /* VIDEO_INCLUDE_BASEINPUT_H_ */

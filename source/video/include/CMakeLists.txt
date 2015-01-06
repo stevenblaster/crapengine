@@ -14,7 +14,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/test.h
    ${CMAKE_CURRENT_SOURCE_DIR}/font.h
    ${CMAKE_CURRENT_SOURCE_DIR}/rendercontext.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/input.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/baseinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/keyboardinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/mouseinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controllerinput.h

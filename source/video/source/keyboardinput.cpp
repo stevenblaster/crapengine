@@ -41,7 +41,7 @@ void KeyboardInput::callBackFunction( window_t* window, int32_t key, int32_t sca
 }
 
 KeyboardInput::KeyboardInput( string_hash name, uint32_t max_listener, InputManager* manager ) :
-		Input(name, manager),
+		BaseInput(name, manager),
 		_bindings( manager->getAllocator()->allocate( array<KeyBinding>::size_of_elements(max_listener), 4),
 				array<KeyBinding>::size_of_elements(max_listener))
 {
