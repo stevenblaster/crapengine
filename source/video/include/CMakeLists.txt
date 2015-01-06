@@ -19,5 +19,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/mouseinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controllerinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/inputmanager.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/renderwindow.h
    PARENT_SCOPE
 )

@@ -18,9 +18,9 @@
 namespace crap
 {
 
-InputManager::InputManager( uint32_t memory ) :
+InputManager::InputManager( uint32_t memory, window_t* window ) :
 		_allocator( memory ),
-		_window(0)
+		_window(window)
 {
 
 }

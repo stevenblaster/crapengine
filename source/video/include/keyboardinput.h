@@ -19,10 +19,12 @@
 #include "delegates.h"
 #include "container/array.h"
 
+struct GLFWwindow;
+
 namespace crap
 {
 
-typedef struct GLFWwindow window_t;
+typedef GLFWwindow window_t;
 
 class KeyboardInput : public Input
 {
@@ -57,11 +59,11 @@ public:
 	template< void (*F)( uint32_t ) >
 	void removeListener( void );
 
+	static void callBackFunction( window_t*, int32_t, int32_t, int32_t, int32_t );
+
 private:
 
 	static KeyboardInput* _instance;
-	static void callBackFunction(window_t*, int, int, int, int);
-
 	array<KeyBinding>	_bindings;
 
 };

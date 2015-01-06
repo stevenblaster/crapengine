@@ -17,5 +17,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/font.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/rendercontext.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/renderwindow.cpp
    PARENT_SCOPE
 )

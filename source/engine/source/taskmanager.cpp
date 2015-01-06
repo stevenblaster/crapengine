@@ -37,7 +37,7 @@ void TaskManager::update( void )
 	crap::tick_t tick, freq;
 	crap::timer_get_tick( &tick );
 	crap::timer_frequency( &freq );
-	freq /= 1000;
+	freq /= 1000000;
 	const uint32_t delta = (tick - _last_tick) / freq;
 
 	for(uint32_t i=0; i<_tasks.size(); ++i )
@@ -45,6 +45,9 @@ void TaskManager::update( void )
 		TaskInfo* info = _tasks.get( i );
 
 		info->passedTime += delta;
+
+		//std::cout << "PASSED: " << info->passedTime << std::endl;
+
 		if( info->passedTime >= info->callDelay )
 		{
 			info->function.invoke( delta );

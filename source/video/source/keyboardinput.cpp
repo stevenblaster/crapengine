@@ -20,7 +20,7 @@ namespace crap
 
 KeyboardInput* KeyboardInput::_instance = 0;
 
-void KeyboardInput::callBackFunction(window_t* window, int key, int scancode, int action, int modifier)
+void KeyboardInput::callBackFunction( window_t* window, int32_t key, int32_t scancode, int32_t action, int32_t modifier )
 {
 	if( _instance != 0 && _instance->_manager->getWindow() == window )
 	{
@@ -52,7 +52,7 @@ KeyboardInput::KeyboardInput( string_hash name, uint32_t max_listener, InputMana
 KeyboardInput::~KeyboardInput( void )
 {
 	KeyboardInput::_instance = 0;
-	glfwSetKeyCallback( 0, 0 );
+	//glfwSetKeyCallback( NULL, NULL );
 	_manager->getAllocator()->deallocate( _bindings.memory().as_void );
 }
 

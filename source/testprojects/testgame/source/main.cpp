@@ -13,6 +13,15 @@
 #include "taskmanager.h"
 #include "inputmanager.h"
 #include "keyboardinput.h"
+#include "renderwindow.h"
+
+bool running = true; /* set to true */
+uint32_t thekey = 256;
+void exitFunc( uint32_t state )
+{
+	if( state == 0 )
+		running = false;
+}
 
 int main( void )
 {
@@ -66,10 +75,6 @@ int main( void )
 	const uint32_t audioSourceNumber = config.getValue<uint32_t>("AUDIO_SOURCE_NUM");
 	crap::AudioManager audioManager(audioBufferNumber, audioSourceNumber);
 
-	/*
-	 * TODO: audio update-> attach to taskmanager
-	 */
-
 	//set audiomanager as subsystem
 	crap::SubSystem audio_sys( "AudioManager", &audioManager, &system );
 
@@ -80,11 +85,24 @@ int main( void )
 	//set componentsystem as subsystem
 	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
 
+	//renderwindow
+	const crap::string64 windowName = config.getValue<crap::string64>("RENDER_WINDOW_NAME");
+	const uint32_t windowWidth = config.getValue<uint32_t>("RENDER_WINDOW_WIDTH");
+	const uint32_t windowHeight = config.getValue<uint32_t>("RENDER_WINDOW_HEIGHT");
+	const bool windowFullscreen = config.getValue<uint32_t>("RENDER_WINDOW_FULLSCREEN") == 1;
+	crap::RenderWindow renderWindow;
+	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
+
 	//inputmanager
 	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
-	crap::InputManager inputManager( inputMemory );
+	crap::InputManager inputManager( inputMemory, renderWindow.getHandle() );
+
 	//add keyboard
 	crap::KeyboardInput keyboardInput("Keyboard", 20, &inputManager );
+	keyboardInput.addListener<&exitFunc>( thekey, 0, true );
+
+	/* Add directory update to taskmanager */
+	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
 
 	//pluginmanager
 	const uint32_t pluginNumber = config.getValue<uint32_t>("PLUGIN_NUMBER");
@@ -101,9 +119,8 @@ int main( void )
 	crap::DirectoryListener pluginDirectoryListener( pluginFunctionNumber, pluginFileNumber, pluginDir, false );
 	pluginDirectoryListener.addCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
 
-	/*
-	 * TODO: add directory update to taskmanager
-	 */
+	/* Add directory update to taskmanager */
+	taskManager.addTask<crap::DirectoryListener, &crap::DirectoryListener::update>("PluginPath", &pluginDirectoryListener, 1000, true, false );
 
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();
@@ -135,6 +152,15 @@ int main( void )
 		crap::sleep_mil_sec(100);
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
+
+	while( running )
+	{
+		renderWindow.swap();
+		taskManager.update();
+		crap::sleep_mil_sec(500);
+	}
+
+	renderWindow.destroy();
 
 #ifdef CRAP_COMPILER_MSVC
     std::cout << "Press a button" << std::endl;

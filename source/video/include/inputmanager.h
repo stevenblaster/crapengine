@@ -25,18 +25,19 @@
 #define INPUT_MEMORY BoundGeneralMemory
 #endif
 
+struct GLFWwindow;
+
 namespace crap
 {
 
-typedef struct GLFWwindow window_t;
-
 class Input;
+typedef GLFWwindow window_t;
 
 class InputManager
 {
 public:
 
-	InputManager( uint32_t memory );
+	InputManager( uint32_t memory, window_t* window );
 	~InputManager( void );
 
 	void setWindow( window_t* window );
