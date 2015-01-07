@@ -33,27 +33,61 @@ void MouseInput::buttonCallBackFunction( window_t* window, int32_t button, int32
 				if( action != binding->current_state )
 				{
 					binding->stateChanged = true;
+					binding->current_state = action;
 				}
-
-				binding->current_state = action;
 			}
 		}
 	}
 }
 
-void MouseInput::positionCallBackFunction( window_t*, float64_t x, float64_t y )
+void MouseInput::positionCallBackFunction( window_t* window, float64_t x, float64_t y )
 {
-
+	if( _instance != 0 && _instance->_manager->getWindow() == window )
+	{
+		for( uint32_t i=0; i<_instance->_positionBindings.size(); ++i )
+		{
+			PositionBinding* binding = _instance->_positionBindings.get(i);
+			if( binding->pos_x != x || binding->pos_y != y )
+			{
+				binding->stateChanged = true;
+				binding->pos_x = x;
+				binding->pos_y = y;
+			}
+		}
+	}
 }
 
-void MouseInput::scrollCallBackFunction( window_t*, float64_t offset_x, float64_t offset_y )
+void MouseInput::scrollCallBackFunction( window_t* window, float64_t offset_x, float64_t offset_y )
 {
-
+	if( _instance != 0 && _instance->_manager->getWindow() == window )
+	{
+		for( uint32_t i=0; i<_instance->_scrollBindings.size(); ++i )
+		{
+			ScrollBinding* binding = _instance->_scrollBindings.get(i);
+			if( binding->pos_x != offset_x || binding->pos_y != offset_y )
+			{
+				binding->stateChanged = true;
+				binding->pos_x = offset_x;
+				binding->pos_y = offset_y;
+			}
+		}
+	}
 }
 
-void MouseInput::enterCursorCallBackFunction( window_t*, int32_t value )
+void MouseInput::enterCursorCallBackFunction( window_t* window, int32_t value )
 {
-
+	if( _instance != 0 && _instance->_manager->getWindow() == window )
+	{
+		for( uint32_t i=0; i<_instance->_enterBindings.size(); ++i )
+		{
+			EnterBinding* binding = _instance->_enterBindings.get(i);
+			if( binding->inside != value )
+			{
+				binding->stateChanged = true;
+				binding->inside = value;
+			}
+		}
+	}
 }
 
 MouseInput::MouseInput( string_hash name,
@@ -96,6 +130,36 @@ void MouseInput::receiveInput( void )
 		if( (binding->onStateChangeOnly && binding->stateChanged) || !binding->onStateChangeOnly )
 		{
 			binding->function.invoke( binding->current_state );
+			binding->stateChanged = false;
+		}
+	}
+
+	for( uint32_t i=0; i<_positionBindings.size(); ++i )
+	{
+		PositionBinding* binding = _positionBindings.get(i);
+		if( (binding->onStateChangeOnly && binding->stateChanged) || !binding->onStateChangeOnly )
+		{
+			binding->function.invoke( binding->pos_x, binding->pos_y );
+			binding->stateChanged = false;
+		}
+	}
+
+	for( uint32_t i=0; i<_scrollBindings.size(); ++i )
+	{
+		ScrollBinding* binding = _scrollBindings.get(i);
+		if( (binding->onStateChangeOnly && binding->stateChanged) || !binding->onStateChangeOnly )
+		{
+			binding->function.invoke( binding->pos_x, binding->pos_y );
+			binding->stateChanged = false;
+		}
+	}
+
+	for( uint32_t i=0; i<_enterBindings.size(); ++i )
+	{
+		EnterBinding* binding = _enterBindings.get(i);
+		if( (binding->onStateChangeOnly && binding->stateChanged) || !binding->onStateChangeOnly )
+		{
+			binding->function.invoke( binding->inside );
 			binding->stateChanged = false;
 		}
 	}

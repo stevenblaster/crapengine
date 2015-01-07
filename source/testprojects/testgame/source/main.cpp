@@ -13,6 +13,7 @@
 #include "taskmanager.h"
 #include "inputmanager.h"
 #include "keyboardinput.h"
+#include "mouseinput.h"
 #include "renderwindow.h"
 
 bool running = true; /* set to true */
@@ -21,6 +22,16 @@ void exitFunc( uint32_t state )
 {
 	if( state == 0 )
 		running = false;
+}
+
+void clickFunc( uint32_t state )
+{
+	std::cout << "CLICK: 0" << std::endl;
+}
+
+void posFunc( float64_t x, float64_t y )
+{
+	std::cout << "PosX:" << x << " PosY:" << y << std::endl;
 }
 
 int main( void )
@@ -100,6 +111,11 @@ int main( void )
 	//add keyboard
 	crap::KeyboardInput keyboardInput("Keyboard", 20, &inputManager );
 	keyboardInput.addListener<&exitFunc>( thekey, 0, true );
+
+	//ad mouse
+	crap::MouseInput mouseInput("Mouse", 20, 20, 20, 20, &inputManager );
+	mouseInput.addButtonListener<&clickFunc>( 0, 0, true );
+	mouseInput.addPositionListener<&posFunc>( true );
 
 	/* Add directory update to taskmanager */
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );

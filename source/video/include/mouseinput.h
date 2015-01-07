@@ -28,6 +28,7 @@ typedef GLFWwindow window_t;
 
 class MouseInput : public BaseInput
 {
+public:
 
 	typedef delegate< void ( uint32_t state )> buttonFunction;
 	typedef delegate< void ( float64_t x, float64_t y )> positionFunction;
