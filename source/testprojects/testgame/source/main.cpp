@@ -34,6 +34,16 @@ void posFunc( float64_t x, float64_t y )
 	std::cout << "PosX:" << x << " PosY:" << y << std::endl;
 }
 
+void scrollFunc( float64_t x, float64_t y )
+{
+	std::cout << "ScrollX:" << x << " ScrollY:" << y << std::endl;
+}
+
+void enterFunc( bool var )
+{
+	std::cout << ((var) ? "INSIDE" : "OUTSIDE") << std::endl;
+}
+
 int main( void )
 {
 	//debug:: lets find the path
@@ -116,6 +126,8 @@ int main( void )
 	crap::MouseInput mouseInput("Mouse", 20, 20, 20, 20, &inputManager );
 	mouseInput.addButtonListener<&clickFunc>( 0, 0, true );
 	mouseInput.addPositionListener<&posFunc>( true );
+	mouseInput.addScrollListener<&scrollFunc>( true );
+	mouseInput.addEnterListener<&enterFunc>( true );
 
 	/* Add directory update to taskmanager */
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
