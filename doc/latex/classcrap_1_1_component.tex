@@ -1,0 +1,199 @@
+\hypertarget{classcrap_1_1_component}{}\section{crap\+:\+:Component Class Reference}
+\label{classcrap_1_1_component}\index{crap\+::\+Component@{crap\+::\+Component}}
+
+
+{\ttfamily \#include $<$component.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_component}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_component_a6cae4d7d57817d0b6c95e4cb174722ca}{Component} (uint32\+\_\+t type)
+\item 
+virtual \hyperlink{classcrap_1_1_component_a068c59cb0b693ecb20c202be1e13cfc0}{$\sim$\+Component} (void)
+\item 
+uint64\+\_\+t \hyperlink{classcrap_1_1_component_af4b373a3414de937ded0873db86d6dab}{get\+Global\+I\+D} (void) const 
+\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1_component_aa48a066035f00a6f437d07a41350e7a7}{get\+Type\+I\+D} (void) const 
+\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1_component_a573c62acbb360a1ece0ac7939fda072d}{get\+Component\+I\+D} (void) const 
+\item 
+virtual void \hyperlink{classcrap_1_1_component_a340d8982ca72efa1829503579781dcfe}{init} (\hyperlink{classcrap_1_1_system}{System} $\ast$system)
+\item 
+virtual void \hyperlink{classcrap_1_1_component_a3707330c1f62f960f0663bb67ad601bf}{deinit} (\hyperlink{classcrap_1_1_system}{System} $\ast$system)
+\item 
+void \hyperlink{classcrap_1_1_component_aff766785d59c81b6314b697aed19579d}{set\+Component\+I\+D} (uint64\+\_\+t cid)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint64\_t \hyperlink{classcrap_1_1_component_ad08e115338661f499c91b24291a6718c}{\_globalID}\\
+\>struct \{\\
+\>\>uint32\_t \hyperlink{classcrap_1_1_component_a8fd160472eca3e534bb003a92a6e73ee}{\_typeID}\\
+\>\>uint32\_t \hyperlink{classcrap_1_1_component_a6d9419b08a4f067e499e1519b1adb114}{\_componentID}\\
+\>\} \\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcrap_1_1_component_aecda75df4b9adea3627b9a501b3600a3}{Component\+Factory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file component.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_component_a6cae4d7d57817d0b6c95e4cb174722ca}{}\index{crap\+::\+Component@{crap\+::\+Component}!Component@{Component}}
+\index{Component@{Component}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{Component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} crap\+::\+Component\+::\+Component (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_a6cae4d7d57817d0b6c95e4cb174722ca}
+
+
+Definition at line 30 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_a068c59cb0b693ecb20c202be1e13cfc0}{}\index{crap\+::\+Component@{crap\+::\+Component}!````~Component@{$\sim$\+Component}}
+\index{````~Component@{$\sim$\+Component}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{$\sim$\+Component}]{\setlength{\rightskip}{0pt plus 5cm}virtual crap\+::\+Component\+::$\sim$\+Component (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_component_a068c59cb0b693ecb20c202be1e13cfc0}
+
+
+Definition at line 31 of file component.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_component_a3707330c1f62f960f0663bb67ad601bf}{}\index{crap\+::\+Component@{crap\+::\+Component}!deinit@{deinit}}
+\index{deinit@{deinit}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{deinit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void crap\+::\+Component\+::deinit (
+\begin{DoxyParamCaption}
+\item[{{\bf System} $\ast$}]{system}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_component_a3707330c1f62f960f0663bb67ad601bf}
+
+
+Reimplemented in \hyperlink{classcrap_1_1_test_component_acf4c0fa2f9082188eb45a9c62672f2a5}{crap\+::\+Test\+Component}.
+
+
+
+Definition at line 38 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_a573c62acbb360a1ece0ac7939fda072d}{}\index{crap\+::\+Component@{crap\+::\+Component}!get\+Component\+I\+D@{get\+Component\+I\+D}}
+\index{get\+Component\+I\+D@{get\+Component\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{get\+Component\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Component\+::get\+Component\+I\+D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_a573c62acbb360a1ece0ac7939fda072d}
+
+
+Definition at line 35 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_af4b373a3414de937ded0873db86d6dab}{}\index{crap\+::\+Component@{crap\+::\+Component}!get\+Global\+I\+D@{get\+Global\+I\+D}}
+\index{get\+Global\+I\+D@{get\+Global\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{get\+Global\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t crap\+::\+Component\+::get\+Global\+I\+D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_af4b373a3414de937ded0873db86d6dab}
+
+
+Definition at line 33 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_aa48a066035f00a6f437d07a41350e7a7}{}\index{crap\+::\+Component@{crap\+::\+Component}!get\+Type\+I\+D@{get\+Type\+I\+D}}
+\index{get\+Type\+I\+D@{get\+Type\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{get\+Type\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Component\+::get\+Type\+I\+D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_aa48a066035f00a6f437d07a41350e7a7}
+
+
+Definition at line 34 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_a340d8982ca72efa1829503579781dcfe}{}\index{crap\+::\+Component@{crap\+::\+Component}!init@{init}}
+\index{init@{init}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void crap\+::\+Component\+::init (
+\begin{DoxyParamCaption}
+\item[{{\bf System} $\ast$}]{system}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_component_a340d8982ca72efa1829503579781dcfe}
+
+
+Reimplemented in \hyperlink{classcrap_1_1_test_component_a5a3de2b12286abb75938a25be41fabec}{crap\+::\+Test\+Component}.
+
+
+
+Definition at line 37 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_aff766785d59c81b6314b697aed19579d}{}\index{crap\+::\+Component@{crap\+::\+Component}!set\+Component\+I\+D@{set\+Component\+I\+D}}
+\index{set\+Component\+I\+D@{set\+Component\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{set\+Component\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Component\+::set\+Component\+I\+D (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{cid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_aff766785d59c81b6314b697aed19579d}
+
+
+Definition at line 40 of file component.\+h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classcrap_1_1_component_aecda75df4b9adea3627b9a501b3600a3}{}\index{crap\+::\+Component@{crap\+::\+Component}!Component\+Factory@{Component\+Factory}}
+\index{Component\+Factory@{Component\+Factory}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{Component\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Component\+Factory}\hspace{0.3cm}{\ttfamily [friend]}}\label{classcrap_1_1_component_aecda75df4b9adea3627b9a501b3600a3}
+
+
+Definition at line 28 of file component.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1_component_aee0ea03b2a281b5bf5b73ea53cecbdac}{}\subsubsection[{"@25}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} \hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1_component_aee0ea03b2a281b5bf5b73ea53cecbdac}
+\hypertarget{classcrap_1_1_component_a6d9419b08a4f067e499e1519b1adb114}{}\index{crap\+::\+Component@{crap\+::\+Component}!\+\_\+component\+I\+D@{\+\_\+component\+I\+D}}
+\index{\+\_\+component\+I\+D@{\+\_\+component\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{\+\_\+component\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Component\+::\+\_\+component\+I\+D}\label{classcrap_1_1_component_a6d9419b08a4f067e499e1519b1adb114}
+
+
+Definition at line 50 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_ad08e115338661f499c91b24291a6718c}{}\index{crap\+::\+Component@{crap\+::\+Component}!\+\_\+global\+I\+D@{\+\_\+global\+I\+D}}
+\index{\+\_\+global\+I\+D@{\+\_\+global\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{\+\_\+global\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t crap\+::\+Component\+::\+\_\+global\+I\+D}\label{classcrap_1_1_component_ad08e115338661f499c91b24291a6718c}
+
+
+Definition at line 46 of file component.\+h.
+
+\hypertarget{classcrap_1_1_component_a8fd160472eca3e534bb003a92a6e73ee}{}\index{crap\+::\+Component@{crap\+::\+Component}!\+\_\+type\+I\+D@{\+\_\+type\+I\+D}}
+\index{\+\_\+type\+I\+D@{\+\_\+type\+I\+D}!crap\+::\+Component@{crap\+::\+Component}}
+\subsubsection[{\+\_\+type\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Component\+::\+\_\+type\+I\+D}\label{classcrap_1_1_component_a8fd160472eca3e534bb003a92a6e73ee}
+
+
+Definition at line 49 of file component.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{component_8h}{component.\+h}\end{DoxyCompactItemize}

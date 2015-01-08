@@ -1,6 +1,5 @@
-\hypertarget{classcrap_1_1_audio_manager}{\section{crap\+:\+:Audio\+Manager Class Reference}
+\hypertarget{classcrap_1_1_audio_manager}{}\section{crap\+:\+:Audio\+Manager Class Reference}
 \label{classcrap_1_1_audio_manager}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
-}
 
 
 {\ttfamily \#include $<$audiomanager.\+h$>$}
@@ -27,6 +26,12 @@ void \hyperlink{classcrap_1_1_audio_manager_ace415ffd7bc4f109cfb8c84e4597f02e}{r
 uint32\+\_\+t \hyperlink{classcrap_1_1_audio_manager_aa2f4af2c225ddcd3e470d19f954082a0}{add\+Buffer} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name, const \hyperlink{structcrap_1_1_audio_file}{Audio\+File} \&data)
 \item 
 void \hyperlink{classcrap_1_1_audio_manager_a2feee765ccbb9162c2fd949a19b4be20}{remove\+Buffer} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name)
+\item 
+bool \hyperlink{classcrap_1_1_audio_manager_ae8c637e55af50337237666d0fa99070a}{get\+Is\+Playing} (uint32\+\_\+t leased\+\_\+source)
+\item 
+bool \hyperlink{classcrap_1_1_audio_manager_a81707711673427951065a8ae2db63d4c}{get\+Is\+Paused} (uint32\+\_\+t leased\+\_\+source)
+\item 
+bool \hyperlink{classcrap_1_1_audio_manager_a479b9af4b843b9d05082508db3613c01}{get\+Is\+Stopped} (uint32\+\_\+t leased\+\_\+source)
 \end{DoxyCompactItemize}
 
 
@@ -38,89 +43,122 @@ Definition at line 24 of file audiomanager.\+h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classcrap_1_1_audio_manager_a446edb9c92c70f7667dad30d62cf74ac}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!Audio\+Manager@{Audio\+Manager}}
+\hypertarget{classcrap_1_1_audio_manager_a446edb9c92c70f7667dad30d62cf74ac}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!Audio\+Manager@{Audio\+Manager}}
 \index{Audio\+Manager@{Audio\+Manager}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{Audio\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Audio\+Manager\+::\+Audio\+Manager (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{buffer\+\_\+num, }
 \item[{uint32\+\_\+t}]{source\+\_\+num}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_a446edb9c92c70f7667dad30d62cf74ac}
+)}\label{classcrap_1_1_audio_manager_a446edb9c92c70f7667dad30d62cf74ac}
 
 
-Definition at line 8 of file audiomanager.\+cpp.
+Definition at line 9 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_a354d10d8577a6f3c9d8d121ef2c551dc}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!````~Audio\+Manager@{$\sim$\+Audio\+Manager}}
+\hypertarget{classcrap_1_1_audio_manager_a354d10d8577a6f3c9d8d121ef2c551dc}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!````~Audio\+Manager@{$\sim$\+Audio\+Manager}}
 \index{````~Audio\+Manager@{$\sim$\+Audio\+Manager}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{$\sim$\+Audio\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Audio\+Manager\+::$\sim$\+Audio\+Manager (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_a354d10d8577a6f3c9d8d121ef2c551dc}
+)}\label{classcrap_1_1_audio_manager_a354d10d8577a6f3c9d8d121ef2c551dc}
 
 
-Definition at line 28 of file audiomanager.\+cpp.
+Definition at line 31 of file audiomanager.\+cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classcrap_1_1_audio_manager_aa2f4af2c225ddcd3e470d19f954082a0}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!add\+Buffer@{add\+Buffer}}
+\hypertarget{classcrap_1_1_audio_manager_aa2f4af2c225ddcd3e470d19f954082a0}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!add\+Buffer@{add\+Buffer}}
 \index{add\+Buffer@{add\+Buffer}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{add\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Audio\+Manager\+::add\+Buffer (
 \begin{DoxyParamCaption}
 \item[{const {\bf string\+\_\+hash} \&}]{name, }
 \item[{const {\bf Audio\+File} \&}]{data}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_aa2f4af2c225ddcd3e470d19f954082a0}
+)}\label{classcrap_1_1_audio_manager_aa2f4af2c225ddcd3e470d19f954082a0}
 
 
-Definition at line 47 of file audiomanager.\+cpp.
+Definition at line 50 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_ac32b44b00640c4afaca9b77622889086}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!lease\+Source@{lease\+Source}}
+\hypertarget{classcrap_1_1_audio_manager_a81707711673427951065a8ae2db63d4c}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!get\+Is\+Paused@{get\+Is\+Paused}}
+\index{get\+Is\+Paused@{get\+Is\+Paused}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
+\subsubsection[{get\+Is\+Paused}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Audio\+Manager\+::get\+Is\+Paused (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{leased\+\_\+source}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_audio_manager_a81707711673427951065a8ae2db63d4c}
+
+
+Definition at line 122 of file audiomanager.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_manager_ae8c637e55af50337237666d0fa99070a}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!get\+Is\+Playing@{get\+Is\+Playing}}
+\index{get\+Is\+Playing@{get\+Is\+Playing}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
+\subsubsection[{get\+Is\+Playing}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Audio\+Manager\+::get\+Is\+Playing (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{leased\+\_\+source}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_audio_manager_ae8c637e55af50337237666d0fa99070a}
+
+
+Definition at line 113 of file audiomanager.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_manager_a479b9af4b843b9d05082508db3613c01}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!get\+Is\+Stopped@{get\+Is\+Stopped}}
+\index{get\+Is\+Stopped@{get\+Is\+Stopped}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
+\subsubsection[{get\+Is\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Audio\+Manager\+::get\+Is\+Stopped (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{leased\+\_\+source}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_audio_manager_a479b9af4b843b9d05082508db3613c01}
+
+
+Definition at line 131 of file audiomanager.\+cpp.
+
+\hypertarget{classcrap_1_1_audio_manager_ac32b44b00640c4afaca9b77622889086}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!lease\+Source@{lease\+Source}}
 \index{lease\+Source@{lease\+Source}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{lease\+Source}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Audio\+Manager\+::lease\+Source (
 \begin{DoxyParamCaption}
 \item[{const {\bf string\+\_\+hash} \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_ac32b44b00640c4afaca9b77622889086}
+)}\label{classcrap_1_1_audio_manager_ac32b44b00640c4afaca9b77622889086}
 
 
-Definition at line 62 of file audiomanager.\+cpp.
+Definition at line 65 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_a608671f0257d1db9204356ca25b69d76}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!play\+Source@{play\+Source}}
+\hypertarget{classcrap_1_1_audio_manager_a608671f0257d1db9204356ca25b69d76}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!play\+Source@{play\+Source}}
 \index{play\+Source@{play\+Source}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{play\+Source}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+Manager\+::play\+Source (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{leased\+\_\+source}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_a608671f0257d1db9204356ca25b69d76}
+)}\label{classcrap_1_1_audio_manager_a608671f0257d1db9204356ca25b69d76}
 
 
-Definition at line 78 of file audiomanager.\+cpp.
+Definition at line 84 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_ace415ffd7bc4f109cfb8c84e4597f02e}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!release\+Source@{release\+Source}}
+\hypertarget{classcrap_1_1_audio_manager_ace415ffd7bc4f109cfb8c84e4597f02e}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!release\+Source@{release\+Source}}
 \index{release\+Source@{release\+Source}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{release\+Source}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+Manager\+::release\+Source (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{leased\+\_\+source}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_ace415ffd7bc4f109cfb8c84e4597f02e}
+)}\label{classcrap_1_1_audio_manager_ace415ffd7bc4f109cfb8c84e4597f02e}
 
 
-Definition at line 84 of file audiomanager.\+cpp.
+Definition at line 91 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_a2feee765ccbb9162c2fd949a19b4be20}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!remove\+Buffer@{remove\+Buffer}}
+\hypertarget{classcrap_1_1_audio_manager_a2feee765ccbb9162c2fd949a19b4be20}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!remove\+Buffer@{remove\+Buffer}}
 \index{remove\+Buffer@{remove\+Buffer}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{remove\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+Manager\+::remove\+Buffer (
 \begin{DoxyParamCaption}
 \item[{const {\bf string\+\_\+hash} \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_a2feee765ccbb9162c2fd949a19b4be20}
+)}\label{classcrap_1_1_audio_manager_a2feee765ccbb9162c2fd949a19b4be20}
 
 
-Definition at line 55 of file audiomanager.\+cpp.
+Definition at line 58 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_aaf4319fda2c8003de56fd7947b8a1363}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!set\+Listener\+Data@{set\+Listener\+Data}}
+\hypertarget{classcrap_1_1_audio_manager_aaf4319fda2c8003de56fd7947b8a1363}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!set\+Listener\+Data@{set\+Listener\+Data}}
 \index{set\+Listener\+Data@{set\+Listener\+Data}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{set\+Listener\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+Manager\+::set\+Listener\+Data (
 \begin{DoxyParamCaption}
@@ -128,12 +166,12 @@ Definition at line 55 of file audiomanager.\+cpp.
 \item[{{\bf float32\+\_\+t} $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T}]{velocity, }
 \item[{{\bf float32\+\_\+t} $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T}]{direction}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_aaf4319fda2c8003de56fd7947b8a1363}
+)}\label{classcrap_1_1_audio_manager_aaf4319fda2c8003de56fd7947b8a1363}
 
 
-Definition at line 94 of file audiomanager.\+cpp.
+Definition at line 103 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_ab4449ff51444a2f9ece308fa44fe8fbc}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!set\+Source\+Data@{set\+Source\+Data}}
+\hypertarget{classcrap_1_1_audio_manager_ab4449ff51444a2f9ece308fa44fe8fbc}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!set\+Source\+Data@{set\+Source\+Data}}
 \index{set\+Source\+Data@{set\+Source\+Data}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{set\+Source\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+Manager\+::set\+Source\+Data (
 \begin{DoxyParamCaption}
@@ -141,12 +179,12 @@ Definition at line 94 of file audiomanager.\+cpp.
 \item[{{\bf float32\+\_\+t} $\ast$C\+R\+A\+P\+\_\+\+R\+E\+S\+T\+R\+I\+C\+T}]{velocity, }
 \item[{uint32\+\_\+t}]{source\+\_\+lease}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_ab4449ff51444a2f9ece308fa44fe8fbc}
+)}\label{classcrap_1_1_audio_manager_ab4449ff51444a2f9ece308fa44fe8fbc}
 
 
-Definition at line 99 of file audiomanager.\+cpp.
+Definition at line 108 of file audiomanager.\+cpp.
 
-\hypertarget{classcrap_1_1_audio_manager_a7f3ed79426556097ce33c3ca10ba2f65}{\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!set\+Source\+Volumes@{set\+Source\+Volumes}}
+\hypertarget{classcrap_1_1_audio_manager_a7f3ed79426556097ce33c3ca10ba2f65}{}\index{crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}!set\+Source\+Volumes@{set\+Source\+Volumes}}
 \index{set\+Source\+Volumes@{set\+Source\+Volumes}!crap\+::\+Audio\+Manager@{crap\+::\+Audio\+Manager}}
 \subsubsection[{set\+Source\+Volumes}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Audio\+Manager\+::set\+Source\+Volumes (
 \begin{DoxyParamCaption}
@@ -155,10 +193,10 @@ Definition at line 99 of file audiomanager.\+cpp.
 \item[{{\bf float32\+\_\+t}}]{gain, }
 \item[{bool}]{loop}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_audio_manager_a7f3ed79426556097ce33c3ca10ba2f65}
+)}\label{classcrap_1_1_audio_manager_a7f3ed79426556097ce33c3ca10ba2f65}
 
 
-Definition at line 89 of file audiomanager.\+cpp.
+Definition at line 98 of file audiomanager.\+cpp.
 
 
 

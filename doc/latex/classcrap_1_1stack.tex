@@ -1,0 +1,592 @@
+\hypertarget{classcrap_1_1stack}{}\section{crap\+:\+:stack$<$ T $>$ Class Template Reference}
+\label{classcrap_1_1stack}\index{crap\+::stack$<$ T $>$@{crap\+::stack$<$ T $>$}}
+
+
+Simple stack class.  
+
+
+
+
+{\ttfamily \#include $<$stack.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1stack_a56633f269df5ad10dc5f6ea116542314}{stack} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1stack_a33a2c5df7c66176cdc22ac80baf297cd}{size})
+\begin{DoxyCompactList}\small\item\em Constructor of stack class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1stack}{stack} \& \hyperlink{classcrap_1_1stack_a8bdd58bac586291be26985fa7be30e95}{operator=} (const \hyperlink{classcrap_1_1stack}{stack} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator of stack class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1stack_a6af72d9de89e82502613418321cbb233}{$\sim$stack} (void)
+\begin{DoxyCompactList}\small\item\em Destructor of stack class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_a33a2c5df7c66176cdc22ac80baf297cd}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_ad0bb30c1014b7b4a7bbf1841d1481c18}{max\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em Returning the maximum size of the stack. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_a9c2f7303839f88c80c1f0ed6a2991b0a}{begin} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns first element of the stack. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_a2a380ae9fc3cc77cba66c57b262f222a}{end} (void) const 
+\begin{DoxyCompactList}\small\item\em returns first invalid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_a370528e5830a0d5a65736148a631399b}{last} (void) const 
+\begin{DoxyCompactList}\small\item\em returns last valid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_a7621682c6286562ded33719e7dc901e2}{next} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns next element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_ad93bfb77e5c2d78ab5115e759172ed80}{previous} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns previous index \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \& \hyperlink{classcrap_1_1stack_a3ea42e1bdd99a598df2f7b6912fc7841}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Index operator returning a member reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1stack_a26ada541c71a2cf331c7ad2e2314d805}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Index operator returning a constant member reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1stack_a3e83f883fedd114b5af82cc584ab595c}{get} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Returns the pointer to a certain member. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T $\ast$ \hyperlink{classcrap_1_1stack_a8a2d2d68dc9b4b70d875bb4a3eb45668}{get} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Returns the constant pointer to a certain member. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_ac4942fe577eccbdc05e19caa8d65b33f}{push\+\_\+back} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Inserts a new element at the end of the stack. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1stack_a65dd43f3f03dbf398b10f0c3c0f9d410}{pop\+\_\+back} (void)
+\begin{DoxyCompactList}\small\item\em Removes last element of the stack. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1stack_ab7388d3934a8743deb757d6940f2ab5e}{erase\+\_\+at} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes the element at a certain position. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1stack_ad5fd9e4983eeec2ef8b195e572adc449}{erase} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Removes an element equal to given reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_ad2ae8ccc70e59dc037a3a10575ad2618}{find} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Searches for an element and returns the index. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1stack_aa2c7c543590722855e78060cafdcd545}{memory} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the memory. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1stack_ac1b3e2b0d9261871c07ca916efa38644}{sort} (void)
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the stack using quicksort. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1stack_ae00be9fb97a381c4763c24917262b051}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Calculates necessary memory for a certain number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{classcrap_1_1stack_a35cffde292cd6f37a07a5dc5fceed1bf}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\begin{DoxyCompactList}\small\item\em Defines an invalid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1stack_affcc0c25120a3269346eb6aa153884dd}{stack} (const \hyperlink{classcrap_1_1stack}{stack} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Constructor kept private (do not use) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ T $>$ \hyperlink{classcrap_1_1stack_a17d0a7ca9c3ad25e5b88a8db05a012c1}{\+\_\+memory}
+\begin{DoxyCompactList}\small\item\em Pointer type to memory. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1stack_abe6a488b2ad11080547b96edb5991e15}{\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Current number of elements. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1stack_a8b25592c44ee432f58fb257486e6a9ed}{\+\_\+max\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Maximum number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class crap\+::stack$<$ T $>$}
+
+Simple stack class. 
+
+The data is kept packed 
+
+Definition at line 36 of file stack.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1stack_a56633f269df5ad10dc5f6ea116542314}{}\index{crap\+::stack@{crap\+::stack}!stack@{stack}}
+\index{stack@{stack}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::stack}$<$ T $>$\+::{\bf stack} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classcrap_1_1stack_a56633f269df5ad10dc5f6ea116542314}
+
+
+Constructor of stack class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & A pointer to the memory for the container \\
+\hline
+{\em size} & The size of the provided memory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a6af72d9de89e82502613418321cbb233}{}\index{crap\+::stack@{crap\+::stack}!````~stack@{$\sim$stack}}
+\index{````~stack@{$\sim$stack}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{$\sim$stack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::stack}$<$ T $>$\+::$\sim${\bf stack} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_a6af72d9de89e82502613418321cbb233}
+
+
+Destructor of stack class. 
+
+
+
+Definition at line 245 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_affcc0c25120a3269346eb6aa153884dd}{}\index{crap\+::stack@{crap\+::stack}!stack@{stack}}
+\index{stack@{stack}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::stack}$<$ T $>$\+::{\bf stack} (
+\begin{DoxyParamCaption}
+\item[{const {\bf stack}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1stack_affcc0c25120a3269346eb6aa153884dd}
+
+
+Copy Constructor kept private (do not use) 
+
+
+
+Definition at line 252 of file stack.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1stack_a9c2f7303839f88c80c1f0ed6a2991b0a}{}\index{crap\+::stack@{crap\+::stack}!begin@{begin}}
+\index{begin@{begin}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a9c2f7303839f88c80c1f0ed6a2991b0a}
+
+
+Returns first element of the stack. 
+
+\begin{DoxyReturn}{Returns}
+First valid index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 270 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a2a380ae9fc3cc77cba66c57b262f222a}{}\index{crap\+::stack@{crap\+::stack}!end@{end}}
+\index{end@{end}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a2a380ae9fc3cc77cba66c57b262f222a}
+
+
+returns first invalid element 
+
+\begin{DoxyReturn}{Returns}
+I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 279 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ad5fd9e4983eeec2ef8b195e572adc449}{}\index{crap\+::stack@{crap\+::stack}!erase@{erase}}
+\index{erase@{erase}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::stack}$<$ T $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_ad5fd9e4983eeec2ef8b195e572adc449}
+
+
+Removes an element equal to given reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 382 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ab7388d3934a8743deb757d6940f2ab5e}{}\index{crap\+::stack@{crap\+::stack}!erase\+\_\+at@{erase\+\_\+at}}
+\index{erase\+\_\+at@{erase\+\_\+at}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::stack}$<$ T $>$\+::erase\+\_\+at (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_ab7388d3934a8743deb757d6940f2ab5e}
+
+
+Removes the element at a certain position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of element to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 364 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ad2ae8ccc70e59dc037a3a10575ad2618}{}\index{crap\+::stack@{crap\+::stack}!find@{find}}
+\index{find@{find}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_ad2ae8ccc70e59dc037a3a10575ad2618}
+
+
+Searches for an element and returns the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to look for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element or \char`\"{}invalid\char`\"{} if not found 
+\end{DoxyReturn}
+
+
+Definition at line 391 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a3e83f883fedd114b5af82cc584ab595c}{}\index{crap\+::stack@{crap\+::stack}!get@{get}}
+\index{get@{get}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::stack}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_a3e83f883fedd114b5af82cc584ab595c}
+
+
+Returns the pointer to a certain member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to member or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 324 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a8a2d2d68dc9b4b70d875bb4a3eb45668}{}\index{crap\+::stack@{crap\+::stack}!get@{get}}
+\index{get@{get}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T $\ast$ {\bf crap\+::stack}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a8a2d2d68dc9b4b70d875bb4a3eb45668}
+
+
+Returns the constant pointer to a certain member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant pointer to member or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 333 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a370528e5830a0d5a65736148a631399b}{}\index{crap\+::stack@{crap\+::stack}!last@{last}}
+\index{last@{last}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a370528e5830a0d5a65736148a631399b}
+
+
+returns last valid element 
+
+\begin{DoxyReturn}{Returns}
+last valid element or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ad0bb30c1014b7b4a7bbf1841d1481c18}{}\index{crap\+::stack@{crap\+::stack}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_ad0bb30c1014b7b4a7bbf1841d1481c18}
+
+
+Returning the maximum size of the stack. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 264 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_aa2c7c543590722855e78060cafdcd545}{}\index{crap\+::stack@{crap\+::stack}!memory@{memory}}
+\index{memory@{memory}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::stack}$<$ T $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_aa2c7c543590722855e78060cafdcd545}
+
+
+Returns the pointer to the memory. 
+
+\begin{DoxyReturn}{Returns}
+Pointer type of stack memory 
+\end{DoxyReturn}
+
+
+Definition at line 404 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a7621682c6286562ded33719e7dc901e2}{}\index{crap\+::stack@{crap\+::stack}!next@{next}}
+\index{next@{next}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::next (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a7621682c6286562ded33719e7dc901e2}
+
+
+returns next element 
+
+\begin{DoxyReturn}{Returns}
+next index or invlid 
+\end{DoxyReturn}
+
+
+Definition at line 294 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a8bdd58bac586291be26985fa7be30e95}{}\index{crap\+::stack@{crap\+::stack}!operator=@{operator=}}
+\index{operator=@{operator=}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf stack}$<$ T $>$ \& {\bf crap\+::stack}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf stack}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_a8bdd58bac586291be26985fa7be30e95}
+
+
+Assignment operator of stack class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A constant reference to a other stack \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a3ea42e1bdd99a598df2f7b6912fc7841}{}\index{crap\+::stack@{crap\+::stack}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf crap\+::stack}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_a3ea42e1bdd99a598df2f7b6912fc7841}
+
+
+Index operator returning a member reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to member 
+\end{DoxyReturn}
+
+
+Definition at line 312 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a26ada541c71a2cf331c7ad2e2314d805}{}\index{crap\+::stack@{crap\+::stack}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf crap\+::stack}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a26ada541c71a2cf331c7ad2e2314d805}
+
+
+Index operator returning a constant member reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant reference to member 
+\end{DoxyReturn}
+
+
+Definition at line 318 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a65dd43f3f03dbf398b10f0c3c0f9d410}{}\index{crap\+::stack@{crap\+::stack}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{pop\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::stack}$<$ T $>$\+::pop\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_a65dd43f3f03dbf398b10f0c3c0f9d410}
+
+
+Removes last element of the stack. 
+
+
+
+Definition at line 353 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ad93bfb77e5c2d78ab5115e759172ed80}{}\index{crap\+::stack@{crap\+::stack}!previous@{previous}}
+\index{previous@{previous}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::previous (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_ad93bfb77e5c2d78ab5115e759172ed80}
+
+
+returns previous index 
+
+\begin{DoxyReturn}{Returns}
+previous index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ac4942fe577eccbdc05e19caa8d65b33f}{}\index{crap\+::stack@{crap\+::stack}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_ac4942fe577eccbdc05e19caa8d65b33f}
+
+
+Inserts a new element at the end of the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a33a2c5df7c66176cdc22ac80baf297cd}{}\index{crap\+::stack@{crap\+::stack}!size@{size}}
+\index{size@{size}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1stack_a33a2c5df7c66176cdc22ac80baf297cd}
+Returning the size of the stack \begin{DoxyReturn}{Returns}
+The current number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ae00be9fb97a381c4763c24917262b051}{}\index{crap\+::stack@{crap\+::stack}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1stack_ae00be9fb97a381c4763c24917262b051}
+
+
+Calculates necessary memory for a certain number of elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of necessary memory 
+\end{DoxyReturn}
+
+
+Definition at line 410 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_ac1b3e2b0d9261871c07ca916efa38644}{}\index{crap\+::stack@{crap\+::stack}!sort@{sort}}
+\index{sort@{sort}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void {\bf crap\+::stack}$<$ T $>$\+::sort (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1stack_ac1b3e2b0d9261871c07ca916efa38644}
+
+
+Sorts the elements of the stack using quicksort. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1stack_a8b25592c44ee432f58fb257486e6a9ed}{}\index{crap\+::stack@{crap\+::stack}!\+\_\+max\+\_\+size@{\+\_\+max\+\_\+size}}
+\index{\+\_\+max\+\_\+size@{\+\_\+max\+\_\+size}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{\+\_\+max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::\+\_\+max\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1stack_a8b25592c44ee432f58fb257486e6a9ed}
+
+
+Maximum number of elements. 
+
+
+
+Definition at line 218 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a17d0a7ca9c3ad25e5b88a8db05a012c1}{}\index{crap\+::stack@{crap\+::stack}!\+\_\+memory@{\+\_\+memory}}
+\index{\+\_\+memory@{\+\_\+memory}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf pointer\+\_\+t}$<$T$>$ {\bf crap\+::stack}$<$ T $>$\+::\+\_\+memory\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1stack_a17d0a7ca9c3ad25e5b88a8db05a012c1}
+
+
+Pointer type to memory. 
+
+
+
+Definition at line 212 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_abe6a488b2ad11080547b96edb5991e15}{}\index{crap\+::stack@{crap\+::stack}!\+\_\+size@{\+\_\+size}}
+\index{\+\_\+size@{\+\_\+size}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1stack_abe6a488b2ad11080547b96edb5991e15}
+
+
+Current number of elements. 
+
+
+
+Definition at line 215 of file stack.\+h.
+
+\hypertarget{classcrap_1_1stack_a35cffde292cd6f37a07a5dc5fceed1bf}{}\index{crap\+::stack@{crap\+::stack}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::stack@{crap\+::stack}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const uint32\+\_\+t {\bf crap\+::stack}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1stack_a35cffde292cd6f37a07a5dc5fceed1bf}
+
+
+Defines an invalid index. 
+
+
+
+Definition at line 42 of file stack.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{stack_8h}{stack.\+h}\end{DoxyCompactItemize}

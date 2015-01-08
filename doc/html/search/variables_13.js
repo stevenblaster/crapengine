@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['v',['v',['../struct_n_v_gvertex.html#a545d3a48f8be2f17850542c4214e7489',1,'NVGvertex']]],
-  ['value',['value',['../structtinyxml2_1_1_entity.html#a7334e81e33b4615655a403711b24f3ed',1,'tinyxml2::Entity']]],
-  ['version',['version',['../structcrap_1_1_wave_file_1_1_wave_header.html#ac2091625d4920909edeee79423f884b1',1,'crap::WaveFile::WaveHeader']]],
-  ['verts',['verts',['../struct_n_v_gpath_cache.html#a2f6986b4b0e13acbd9f98b67d34a8d16',1,'NVGpathCache']]]
+  ['user_5fid',['user_id',['../structcrap_1_1_connection_header.html#a034507ceab327eb570a50ae9ccc86924',1,'crap::ConnectionHeader::user_id()'],['../structcrap_1_1_reliability_outgoing.html#ab8d8d70315c7997f72bd8472c6ba1344',1,'crap::ReliabilityOutgoing::user_id()'],['../structcrap_1_1_reliability_incoming.html#a7854c79cee5bc4df71d0681b4f4707d8',1,'crap::ReliabilityIncoming::user_id()']]],
+  ['user_5fip',['user_ip',['../structcrap_1_1_connection_information.html#ae7bae78f65e73afb728128b18325e3e8',1,'crap::ConnectionInformation']]],
+  ['user_5fport',['user_port',['../structcrap_1_1_connection_information.html#a48470bcb4879d69d481d3c7f00e66daa',1,'crap::ConnectionInformation']]],
+  ['user_5ftime',['user_time',['../structcrap_1_1_connection_information.html#af361c0986431eeec02ea4149de72496c',1,'crap::ConnectionInformation']]],
+  ['userid',['userID',['../structcrap_1_1_network_command_data.html#a91ac863907f7ea4beb9f4584b71909ba',1,'crap::NetworkCommandData']]]
 ];

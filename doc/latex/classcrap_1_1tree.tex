@@ -1,6 +1,5 @@
-\hypertarget{classcrap_1_1tree}{\section{crap\+:\+:tree$<$ T $>$ Class Template Reference}
+\hypertarget{classcrap_1_1tree}{}\section{crap\+:\+:tree$<$ T $>$ Class Template Reference}
 \label{classcrap_1_1tree}\index{crap\+::tree$<$ T $>$@{crap\+::tree$<$ T $>$}}
-}
 
 
 A red-\/black tree indexed based implementation.  
@@ -17,13 +16,15 @@ A red-\/black tree indexed based implementation.
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1tree_a1982fa6e379d412f25df826017838b7a}{$\sim$tree} (void)
 \begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1tree}{tree} \& \hyperlink{classcrap_1_1tree_a08f4cfb30183e023e833796866c79df8}{operator=} (const \hyperlink{classcrap_1_1tree}{tree} \&other)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree_acc6aa000cc88ac9ecdf88ea3a815520e}{find} (const T \&key) const 
 \begin{DoxyCompactList}\small\item\em Finds key and returns index. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree_a77e77b440e851db51154b6226f4a5f6a}{insert} (const T \&key)
 \begin{DoxyCompactList}\small\item\em Inserting key if unique and returns index. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1tree_abfb24a2b155fa5e2715bc73abc1cc295}{erase\+\_\+at} (uint32\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Removes key at given index. \end{DoxyCompactList}\item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1tree_ac0171b4666da775fb5325b82d3eccc24}{remove} (const T \&key)
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1tree_ab670fe7f278039a408cbe5d54cbeaaa6}{erase} (const T \&key)
 \begin{DoxyCompactList}\small\item\em Find key and remove element. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree_aaa6d5af3d6d87bf8be050d33898c6ee4}{begin} (void) const 
 \begin{DoxyCompactList}\small\item\em Finds the smalles element and returns index. \end{DoxyCompactList}\item 
@@ -43,6 +44,8 @@ A red-\/black tree indexed based implementation.
 \begin{DoxyCompactList}\small\item\em index operator \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1tree_ad1df504f38a87fc16b9d74ed871f699e}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index) const 
 \begin{DoxyCompactList}\small\item\em index operator \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} int32\+\_\+t \hyperlink{classcrap_1_1tree_a19ad6ba585b2c718ac1384c4fb6a054f}{weight} (void) const 
+\begin{DoxyCompactList}\small\item\em Current weight of the tree. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree_aeb959132fdf029c341d17b4caf21ba43}{size} (void) const 
 \begin{DoxyCompactList}\small\item\em Tree number of stored nodes. \end{DoxyCompactList}\item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1tree_a325ba8dd1d5a510ce50116817583b605}{max\+\_\+size} (void) const 
@@ -73,14 +76,14 @@ Definition at line 39 of file tree.\+h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classcrap_1_1tree_abc5b5f148562a70cdc7701e756357943}{\index{crap\+::tree@{crap\+::tree}!tree@{tree}}
+\hypertarget{classcrap_1_1tree_abc5b5f148562a70cdc7701e756357943}{}\index{crap\+::tree@{crap\+::tree}!tree@{tree}}
 \index{tree@{tree}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf crap\+::tree}$<$ T $>$\+::{\bf tree} (
+\subsubsection[{tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::tree}$<$ T $>$\+::{\bf tree} (
 \begin{DoxyParamCaption}
 \item[{void $\ast$}]{memory, }
 \item[{uint32\+\_\+t}]{size}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classcrap_1_1tree_abc5b5f148562a70cdc7701e756357943}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classcrap_1_1tree_abc5b5f148562a70cdc7701e756357943}
 
 
 Constructor. 
@@ -94,33 +97,33 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 311 of file tree.\+h.
+Definition at line 432 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a1982fa6e379d412f25df826017838b7a}{\index{crap\+::tree@{crap\+::tree}!````~tree@{$\sim$tree}}
+\hypertarget{classcrap_1_1tree_a1982fa6e379d412f25df826017838b7a}{}\index{crap\+::tree@{crap\+::tree}!````~tree@{$\sim$tree}}
 \index{````~tree@{$\sim$tree}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{$\sim$tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf crap\+::tree}$<$ T $>$\+::$\sim${\bf tree} (
+\subsubsection[{$\sim$tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::tree}$<$ T $>$\+::$\sim${\bf tree} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1tree_a1982fa6e379d412f25df826017838b7a}
+)}\label{classcrap_1_1tree_a1982fa6e379d412f25df826017838b7a}
 
 
 destructor 
 
 
 
-Definition at line 319 of file tree.\+h.
+Definition at line 440 of file tree.\+h.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classcrap_1_1tree_aaa6d5af3d6d87bf8be050d33898c6ee4}{\index{crap\+::tree@{crap\+::tree}!begin@{begin}}
+\hypertarget{classcrap_1_1tree_aaa6d5af3d6d87bf8be050d33898c6ee4}{}\index{crap\+::tree@{crap\+::tree}!begin@{begin}}
 \index{begin@{begin}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::begin (
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::begin (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_aaa6d5af3d6d87bf8be050d33898c6ee4}
+) const}\label{classcrap_1_1tree_aaa6d5af3d6d87bf8be050d33898c6ee4}
 
 
 Finds the smalles element and returns index. 
@@ -130,15 +133,15 @@ index to smalles node
 \end{DoxyReturn}
 
 
-Definition at line 476 of file tree.\+h.
+Definition at line 673 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a9e18d90e547fe2c07a4625ccfb8cbd4d}{\index{crap\+::tree@{crap\+::tree}!end@{end}}
+\hypertarget{classcrap_1_1tree_a9e18d90e547fe2c07a4625ccfb8cbd4d}{}\index{crap\+::tree@{crap\+::tree}!end@{end}}
 \index{end@{end}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::end (
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::end (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_a9e18d90e547fe2c07a4625ccfb8cbd4d}
+) const}\label{classcrap_1_1tree_a9e18d90e547fe2c07a4625ccfb8cbd4d}
 
 
 Returns invalid element. 
@@ -148,15 +151,35 @@ constant I\+N\+V\+A\+L\+I\+D
 \end{DoxyReturn}
 
 
-Definition at line 502 of file tree.\+h.
+Definition at line 699 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_abfb24a2b155fa5e2715bc73abc1cc295}{\index{crap\+::tree@{crap\+::tree}!erase\+\_\+at@{erase\+\_\+at}}
+\hypertarget{classcrap_1_1tree_ab670fe7f278039a408cbe5d54cbeaaa6}{}\index{crap\+::tree@{crap\+::tree}!erase@{erase}}
+\index{erase@{erase}!crap\+::tree@{crap\+::tree}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::tree}$<$ T $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1tree_ab670fe7f278039a408cbe5d54cbeaaa6}
+
+
+Find key and remove element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key value to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 659 of file tree.\+h.
+
+\hypertarget{classcrap_1_1tree_abfb24a2b155fa5e2715bc73abc1cc295}{}\index{crap\+::tree@{crap\+::tree}!erase\+\_\+at@{erase\+\_\+at}}
 \index{erase\+\_\+at@{erase\+\_\+at}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf crap\+::tree}$<$ T $>$\+::erase\+\_\+at (
+\subsubsection[{erase\+\_\+at}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::tree}$<$ T $>$\+::erase\+\_\+at (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1tree_abfb24a2b155fa5e2715bc73abc1cc295}
+)}\label{classcrap_1_1tree_abfb24a2b155fa5e2715bc73abc1cc295}
 
 
 Removes key at given index. 
@@ -168,15 +191,15 @@ Removes key at given index.
 \end{DoxyParams}
 
 
-Definition at line 376 of file tree.\+h.
+Definition at line 528 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_acc6aa000cc88ac9ecdf88ea3a815520e}{\index{crap\+::tree@{crap\+::tree}!find@{find}}
+\hypertarget{classcrap_1_1tree_acc6aa000cc88ac9ecdf88ea3a815520e}{}\index{crap\+::tree@{crap\+::tree}!find@{find}}
 \index{find@{find}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::find (
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::find (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{key}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_acc6aa000cc88ac9ecdf88ea3a815520e}
+) const}\label{classcrap_1_1tree_acc6aa000cc88ac9ecdf88ea3a815520e}
 
 
 Finds key and returns index. 
@@ -191,15 +214,15 @@ index of key or I\+N\+V\+A\+L\+I\+D
 \end{DoxyReturn}
 
 
-Definition at line 325 of file tree.\+h.
+Definition at line 464 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_af82cf9d34ce86a6bdc091e0f1c8e7cdc}{\index{crap\+::tree@{crap\+::tree}!get@{get}}
+\hypertarget{classcrap_1_1tree_af82cf9d34ce86a6bdc091e0f1c8e7cdc}{}\index{crap\+::tree@{crap\+::tree}!get@{get}}
 \index{get@{get}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$ {\bf crap\+::tree}$<$ T $>$\+::get (
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::tree}$<$ T $>$\+::get (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1tree_af82cf9d34ce86a6bdc091e0f1c8e7cdc}
+)}\label{classcrap_1_1tree_af82cf9d34ce86a6bdc091e0f1c8e7cdc}
 
 
 returns pointer of given index 
@@ -214,15 +237,15 @@ pointer to element or 0
 \end{DoxyReturn}
 
 
-Definition at line 580 of file tree.\+h.
+Definition at line 783 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_aeb4f71991ee540cfe0bdb26e2f2d6a48}{\index{crap\+::tree@{crap\+::tree}!get@{get}}
+\hypertarget{classcrap_1_1tree_aeb4f71991ee540cfe0bdb26e2f2d6a48}{}\index{crap\+::tree@{crap\+::tree}!get@{get}}
 \index{get@{get}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T $\ast$ {\bf crap\+::tree}$<$ T $>$\+::get (
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T $\ast$ {\bf crap\+::tree}$<$ T $>$\+::get (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_aeb4f71991ee540cfe0bdb26e2f2d6a48}
+) const}\label{classcrap_1_1tree_aeb4f71991ee540cfe0bdb26e2f2d6a48}
 
 
 returns pointer of given index 
@@ -237,15 +260,15 @@ pointer to element or 0
 \end{DoxyReturn}
 
 
-Definition at line 591 of file tree.\+h.
+Definition at line 794 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a77e77b440e851db51154b6226f4a5f6a}{\index{crap\+::tree@{crap\+::tree}!insert@{insert}}
+\hypertarget{classcrap_1_1tree_a77e77b440e851db51154b6226f4a5f6a}{}\index{crap\+::tree@{crap\+::tree}!insert@{insert}}
 \index{insert@{insert}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::insert (
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::insert (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{key}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1tree_a77e77b440e851db51154b6226f4a5f6a}
+)}\label{classcrap_1_1tree_a77e77b440e851db51154b6226f4a5f6a}
 
 
 Inserting key if unique and returns index. 
@@ -260,15 +283,15 @@ index of key or I\+N\+V\+A\+L\+I\+D
 \end{DoxyReturn}
 
 
-Definition at line 348 of file tree.\+h.
+Definition at line 492 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_aa6874d39e991dfb43c095daa5937a2e4}{\index{crap\+::tree@{crap\+::tree}!last@{last}}
+\hypertarget{classcrap_1_1tree_aa6874d39e991dfb43c095daa5937a2e4}{}\index{crap\+::tree@{crap\+::tree}!last@{last}}
 \index{last@{last}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::last (
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::last (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_aa6874d39e991dfb43c095daa5937a2e4}
+) const}\label{classcrap_1_1tree_aa6874d39e991dfb43c095daa5937a2e4}
 
 
 Finds the biggest element and returns index. 
@@ -278,15 +301,15 @@ index to biggest node
 \end{DoxyReturn}
 
 
-Definition at line 489 of file tree.\+h.
+Definition at line 686 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a325ba8dd1d5a510ce50116817583b605}{\index{crap\+::tree@{crap\+::tree}!max\+\_\+size@{max\+\_\+size}}
+\hypertarget{classcrap_1_1tree_a325ba8dd1d5a510ce50116817583b605}{}\index{crap\+::tree@{crap\+::tree}!max\+\_\+size@{max\+\_\+size}}
 \index{max\+\_\+size@{max\+\_\+size}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::max\+\_\+size (
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::max\+\_\+size (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_a325ba8dd1d5a510ce50116817583b605}
+) const}\label{classcrap_1_1tree_a325ba8dd1d5a510ce50116817583b605}
 
 
 Tree number of max stored nodes. 
@@ -296,15 +319,15 @@ maximum size
 \end{DoxyReturn}
 
 
-Definition at line 574 of file tree.\+h.
+Definition at line 777 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a64f079b15a1560ee59595e23a550d1d3}{\index{crap\+::tree@{crap\+::tree}!memory@{memory}}
+\hypertarget{classcrap_1_1tree_a64f079b15a1560ee59595e23a550d1d3}{}\index{crap\+::tree@{crap\+::tree}!memory@{memory}}
 \index{memory@{memory}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::tree}$<$ T $>$\+::memory (
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::tree}$<$ T $>$\+::memory (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_a64f079b15a1560ee59595e23a550d1d3}
+) const}\label{classcrap_1_1tree_a64f079b15a1560ee59595e23a550d1d3}
 
 
 returns pointer to memory 
@@ -314,15 +337,15 @@ pointer to memory
 \end{DoxyReturn}
 
 
-Definition at line 614 of file tree.\+h.
+Definition at line 817 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a252cf850824ac3347b6d5ae78095f3ce}{\index{crap\+::tree@{crap\+::tree}!next@{next}}
+\hypertarget{classcrap_1_1tree_a252cf850824ac3347b6d5ae78095f3ce}{}\index{crap\+::tree@{crap\+::tree}!next@{next}}
 \index{next@{next}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::next (
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::next (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_a252cf850824ac3347b6d5ae78095f3ce}
+) const}\label{classcrap_1_1tree_a252cf850824ac3347b6d5ae78095f3ce}
 
 
 get following index 
@@ -337,15 +360,38 @@ next index
 \end{DoxyReturn}
 
 
-Definition at line 508 of file tree.\+h.
+Definition at line 705 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a7a9fe0ff4d09686681d108ad1809f928}{\index{crap\+::tree@{crap\+::tree}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\hypertarget{classcrap_1_1tree_a08f4cfb30183e023e833796866c79df8}{}\index{crap\+::tree@{crap\+::tree}!operator=@{operator=}}
+\index{operator=@{operator=}!crap\+::tree@{crap\+::tree}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf tree}$<$ T $>$ \& {\bf crap\+::tree}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf tree}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1tree_a08f4cfb30183e023e833796866c79df8}
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em othter} & Reference to other tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 446 of file tree.\+h.
+
+\hypertarget{classcrap_1_1tree_a7a9fe0ff4d09686681d108ad1809f928}{}\index{crap\+::tree@{crap\+::tree}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf crap\+::tree}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf crap\+::tree}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1tree_a7a9fe0ff4d09686681d108ad1809f928}
+)}\label{classcrap_1_1tree_a7a9fe0ff4d09686681d108ad1809f928}
 
 
 index operator 
@@ -360,15 +406,15 @@ refernce to element
 \end{DoxyReturn}
 
 
-Definition at line 602 of file tree.\+h.
+Definition at line 805 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_ad1df504f38a87fc16b9d74ed871f699e}{\index{crap\+::tree@{crap\+::tree}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\hypertarget{classcrap_1_1tree_ad1df504f38a87fc16b9d74ed871f699e}{}\index{crap\+::tree@{crap\+::tree}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf crap\+::tree}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf crap\+::tree}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_ad1df504f38a87fc16b9d74ed871f699e}
+) const}\label{classcrap_1_1tree_ad1df504f38a87fc16b9d74ed871f699e}
 
 
 index operator 
@@ -383,15 +429,15 @@ refernce to element
 \end{DoxyReturn}
 
 
-Definition at line 608 of file tree.\+h.
+Definition at line 811 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a465307512e44daba7b36516e6ea59ffd}{\index{crap\+::tree@{crap\+::tree}!previous@{previous}}
+\hypertarget{classcrap_1_1tree_a465307512e44daba7b36516e6ea59ffd}{}\index{crap\+::tree@{crap\+::tree}!previous@{previous}}
 \index{previous@{previous}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::previous (
+\subsubsection[{previous}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::previous (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{index}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_a465307512e44daba7b36516e6ea59ffd}
+) const}\label{classcrap_1_1tree_a465307512e44daba7b36516e6ea59ffd}
 
 
 get previous index 
@@ -406,35 +452,15 @@ previous index
 \end{DoxyReturn}
 
 
-Definition at line 538 of file tree.\+h.
+Definition at line 735 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_ac0171b4666da775fb5325b82d3eccc24}{\index{crap\+::tree@{crap\+::tree}!remove@{remove}}
-\index{remove@{remove}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf crap\+::tree}$<$ T $>$\+::remove (
-\begin{DoxyParamCaption}
-\item[{const T \&}]{key}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1tree_ac0171b4666da775fb5325b82d3eccc24}
-
-
-Find key and remove element. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em key} & The key value to remove \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 462 of file tree.\+h.
-
-\hypertarget{classcrap_1_1tree_aeb959132fdf029c341d17b4caf21ba43}{\index{crap\+::tree@{crap\+::tree}!size@{size}}
+\hypertarget{classcrap_1_1tree_aeb959132fdf029c341d17b4caf21ba43}{}\index{crap\+::tree@{crap\+::tree}!size@{size}}
 \index{size@{size}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::size (
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::size (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const}}\label{classcrap_1_1tree_aeb959132fdf029c341d17b4caf21ba43}
+) const}\label{classcrap_1_1tree_aeb959132fdf029c341d17b4caf21ba43}
 
 
 Tree number of stored nodes. 
@@ -444,15 +470,15 @@ current size
 \end{DoxyReturn}
 
 
-Definition at line 568 of file tree.\+h.
+Definition at line 771 of file tree.\+h.
 
-\hypertarget{classcrap_1_1tree_a5822b8d9f7be9a4ddd0cabe2f953449f}{\index{crap\+::tree@{crap\+::tree}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\hypertarget{classcrap_1_1tree_a5822b8d9f7be9a4ddd0cabe2f953449f}{}\index{crap\+::tree@{crap\+::tree}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
 \index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{number}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1tree_a5822b8d9f7be9a4ddd0cabe2f953449f}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1tree_a5822b8d9f7be9a4ddd0cabe2f953449f}
 
 
 returns necessary memory for given number of elements 
@@ -467,21 +493,39 @@ amount of memory
 \end{DoxyReturn}
 
 
-Definition at line 620 of file tree.\+h.
+Definition at line 823 of file tree.\+h.
+
+\hypertarget{classcrap_1_1tree_a19ad6ba585b2c718ac1384c4fb6a054f}{}\index{crap\+::tree@{crap\+::tree}!weight@{weight}}
+\index{weight@{weight}!crap\+::tree@{crap\+::tree}}
+\subsubsection[{weight}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::weight (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1tree_a19ad6ba585b2c718ac1384c4fb6a054f}
+
+
+Current weight of the tree. 
+
+\begin{DoxyReturn}{Returns}
+negative number for left, positive for right and zero for balanced 
+\end{DoxyReturn}
+
+
+Definition at line 765 of file tree.\+h.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classcrap_1_1tree_a798699e5ef5bc72a80797f8ca2d4a5fe}{\index{crap\+::tree@{crap\+::tree}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\hypertarget{classcrap_1_1tree_a798699e5ef5bc72a80797f8ca2d4a5fe}{}\index{crap\+::tree@{crap\+::tree}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
 \index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::tree@{crap\+::tree}}
-\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcrap_1_1tree_a798699e5ef5bc72a80797f8ca2d4a5fe}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::tree}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1tree_a798699e5ef5bc72a80797f8ca2d4a5fe}
 
 
 an invalid key 
 
 
 
-Definition at line 120 of file tree.\+h.
+Definition at line 171 of file tree.\+h.
 
 
 

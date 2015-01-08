@@ -31,6 +31,8 @@ public:
 
 	virtual void init( System* system );
 	virtual void deinit( System* system );
+
+	DECLARE_COMPONENT_MEMBER( TestComponent, neZahl, uint32_t )
 };
 
 

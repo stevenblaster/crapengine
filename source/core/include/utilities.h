@@ -301,6 +301,12 @@ struct align_of
   };
 };
 
+template<typename T, typename U>
+CRAP_INLINE uint32_t offset_of( U T::*member )
+{
+    return (uint8_t*)&((T*)NULL->*member) - (uint8_t*)NULL;
+}
+
 //LIMITS
 template<typename T>
 struct limits

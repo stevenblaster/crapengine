@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['a',['a',['../struct_n_v_gcolor.html#a3cc22c161da763b5fa7ffa3ec7e68433',1,'NVGcolor']]],
-  ['advance_5fx',['advance_x',['../struct_glyph_info.html#ac7542ec73906552cf31d9b4ce0749d0c',1,'GlyphInfo']]],
-  ['advance_5fy',['advance_y',['../struct_glyph_info.html#a30498d3b9435d104130fcfd2829d2817',1,'GlyphInfo']]],
+  ['acknowledge_5fflag',['acknowledge_flag',['../structcrap_1_1_reliability_header.html#a89ee7e532195d21fa94b9320ffc12578',1,'crap::ReliabilityHeader']]],
+  ['address',['address',['../structcrap_1_1s__interface_addr.html#af622d9eb076c2d84dcf8a3c3387b1ee9',1,'crap::s_interfaceAddr']]],
+  ['age',['age',['../structcrap_1_1_reliability_outgoing.html#a2b27b75e5751a41c2047022627596c8e',1,'crap::ReliabilityOutgoing::age()'],['../structcrap_1_1_reliability_incoming.html#a06a4e1b5acb48747a356c5d0443f298c',1,'crap::ReliabilityIncoming::age()']]],
   ['alignment',['alignment',['../structcrap_1_1memory__manager_1_1configuration.html#a4e2eb1caa57526730fc6aed395b9d13d',1,'crap::memory_manager::configuration']]],
-  ['alphablend',['alphaBlend',['../struct_n_v_gcontext.html#a7ce148f8962205ce5ef67f7a0f6d6ac6',1,'NVGcontext']]],
   ['as_5fchar',['as_char',['../structcrap_1_1pointer__t.html#adc5e76f4d3e2f3242b0e0c128e3a018e',1,'crap::pointer_t']]],
   ['as_5fconst_5fchar',['as_const_char',['../structcrap_1_1pointer__t.html#ad90d5ba7cd8c0996aaa5d6ac8e59197d',1,'crap::pointer_t']]],
   ['as_5fconst_5ffloat32_5ft',['as_const_float32_t',['../structcrap_1_1pointer__t.html#afa325f26f6fb096a38c8215d5cfecdb4',1,'crap::pointer_t']]],
@@ -32,8 +31,6 @@ var searchData=
   ['as_5fuint64_5ft',['as_uint64_t',['../structcrap_1_1pointer__t.html#a7e0460a4477f27ab4fc4279e8ed360ce',1,'crap::pointer_t']]],
   ['as_5fuint8_5ft',['as_uint8_t',['../structcrap_1_1pointer__t.html#abc75378cf1e3c1cb65e93c1a765a5c0b',1,'crap::pointer_t']]],
   ['as_5fvoid',['as_void',['../structcrap_1_1pointer__t.html#a60272c75c04aaafaf6a4339f10d81b32',1,'crap::pointer_t']]],
-  ['ascender',['ascender',['../struct_font_info.html#a6425ef6a67acb7b423d630576d22241e',1,'FontInfo']]],
   ['assert_5flogger',['assert_logger',['../namespacecrap.html#a31dfc9e83068ad8e122d05579a3322a9',1,'crap']]],
-  ['atlasheight',['atlasHeight',['../struct_n_v_gparams.html#a835232ed4e66c1cdbd8ed74ff822dde1',1,'NVGparams']]],
-  ['atlaswidth',['atlasWidth',['../struct_n_v_gparams.html#a6a77310845f0d6ca24955582625fc2f3',1,'NVGparams']]]
+  ['axis',['axis',['../structcrap_1_1_controller_input_1_1s__joystick_info.html#a4206a16af18f3f81d6ebeade4850ed1d',1,'crap::ControllerInput::s_joystickInfo']]]
 ];

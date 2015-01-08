@@ -16,13 +16,16 @@
 #include <cstdio>
 #include "testcomponent.h"
 #include "plugin.h"
+#include "componenttype.h"
 
 namespace crap
 {
 
 TestComponent::TestComponent( uint32_t typeID ) : Component( typeID )
 {
-
+	REGISTER_COMPONENT_MEMBER( TestComponent, neZahl, uint32_t );
+	//static ComponentType<TestComponent>::ComponentMember varname( "neZahl", TestComponent::setneZahl );
+	uint32_t la;
 }
 
 TestComponent::~TestComponent( void )
@@ -38,7 +41,10 @@ void TestComponent::init( System* system )
 void TestComponent::deinit( System* system )
 {
 	std::cout << "DEINIT ME" << std::endl;
+
 }
+
+//DEFINE_COMPONENT_MEMBER( TestComponent, neZahl, uint32_t )
 
 } /* namespace crap */
 

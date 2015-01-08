@@ -1,0 +1,249 @@
+\hypertarget{classcrap_1_1_controller_input}{}\section{crap\+:\+:Controller\+Input Class Reference}
+\label{classcrap_1_1_controller_input}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+
+
+{\ttfamily \#include $<$controllerinput.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Controller\+Input\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_controller_input}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1_controller_input_1_1s__joystick_info}{s\+\_\+joystick\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(const uint8\+\_\+t $\ast$state, int32\+\_\+t state\+\_\+num)$>$ \hyperlink{classcrap_1_1_controller_input_aeacf05e7418322e48e62ce5dd179c7a8}{button\+Function}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(const \hyperlink{crap__types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t} $\ast$state, int32\+\_\+t state\+\_\+num)$>$ \hyperlink{classcrap_1_1_controller_input_aea9c7f407b4c8fb0cea63aa69acccbe1}{axis\+Function}
+\item 
+typedef struct \hyperlink{structcrap_1_1_controller_input_1_1s__joystick_info}{crap\+::\+Controller\+Input\+::s\+\_\+joystick\+Info} \hyperlink{classcrap_1_1_controller_input_abf7203aadb8392423425653d935afdf4}{Controller\+Binding}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_controller_input_af34426e64eac9f9a4125e355009d478a}{Controller\+Input} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, uint32\+\_\+t num\+\_\+controller, \hyperlink{classcrap_1_1_input_manager}{Input\+Manager} $\ast$manager)
+\item 
+virtual \hyperlink{classcrap_1_1_controller_input_a6873e43ba5c70aba109880a5857248da}{$\sim$\+Controller\+Input} (void)
+\item 
+virtual void \hyperlink{classcrap_1_1_controller_input_a1bc99bce625553885a1b7ad221289b7a}{receive\+Input} (void)
+\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1_controller_input_ab7cc1802c47296476ab44b12ca2460c4}{lease\+Joystick\+I\+D} (void)
+\item 
+void \hyperlink{classcrap_1_1_controller_input_a1d19ac50e2cf5feba32cc394508cd900}{release\+Joystick\+I\+D} (uint32\+\_\+t)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_af3394f5ba021545f55fcdc1ae4f3a6f4}{add\+Button\+Listener} (C $\ast$instance, uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$void($\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_afb768eb9f127d55c7a85a42cd82b9529}{add\+Button\+Listener} (uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_a52d14324d3d71969c726b2ebcf0e9e03}{remove\+Button\+Listener} (C $\ast$instance, uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$void($\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_a27bdbd9fa874df597d845fd2a8352f3f}{remove\+Button\+Listener} (uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_a649af2b9bb33ff950b452e8342135041}{add\+Axis\+Listener} (C $\ast$instance, uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$void($\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_af7f97ae163de5d532072c82c81ed085f}{add\+Axis\+Listener} (uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_a7051e4c13a6851f73294fbd95bbf3b75}{remove\+Axis\+Listener} (C $\ast$instance, uint32\+\_\+t joystick\+Id)
+\item 
+{\footnotesize template$<$void($\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_controller_input_ad0370837e1f78ce0bde40a1848272ec7}{remove\+Axis\+Listener} (uint32\+\_\+t joystick\+Id)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file controllerinput.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_controller_input_aea9c7f407b4c8fb0cea63aa69acccbe1}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!axis\+Function@{axis\+Function}}
+\index{axis\+Function@{axis\+Function}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{axis\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( const {\bf float32\+\_\+t}$\ast$ state, int32\+\_\+t state\+\_\+num )$>$ {\bf crap\+::\+Controller\+Input\+::axis\+Function}}\label{classcrap_1_1_controller_input_aea9c7f407b4c8fb0cea63aa69acccbe1}
+
+
+Definition at line 33 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_aeacf05e7418322e48e62ce5dd179c7a8}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!button\+Function@{button\+Function}}
+\index{button\+Function@{button\+Function}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{button\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( const uint8\+\_\+t$\ast$ state, int32\+\_\+t state\+\_\+num )$>$ {\bf crap\+::\+Controller\+Input\+::button\+Function}}\label{classcrap_1_1_controller_input_aeacf05e7418322e48e62ce5dd179c7a8}
+
+
+Definition at line 32 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_abf7203aadb8392423425653d935afdf4}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!Controller\+Binding@{Controller\+Binding}}
+\index{Controller\+Binding@{Controller\+Binding}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{Controller\+Binding}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Controller\+Input\+::s\+\_\+joystick\+Info}
+	 {\bf crap\+::\+Controller\+Input\+::\+Controller\+Binding}}\label{classcrap_1_1_controller_input_abf7203aadb8392423425653d935afdf4}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_controller_input_af34426e64eac9f9a4125e355009d478a}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!Controller\+Input@{Controller\+Input}}
+\index{Controller\+Input@{Controller\+Input}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{Controller\+Input}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Controller\+Input\+::\+Controller\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{uint32\+\_\+t}]{num\+\_\+controller, }
+\item[{{\bf Input\+Manager} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_af34426e64eac9f9a4125e355009d478a}
+
+
+Definition at line 22 of file controllerinput.\+cpp.
+
+\hypertarget{classcrap_1_1_controller_input_a6873e43ba5c70aba109880a5857248da}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!````~Controller\+Input@{$\sim$\+Controller\+Input}}
+\index{````~Controller\+Input@{$\sim$\+Controller\+Input}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{$\sim$\+Controller\+Input}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Controller\+Input\+::$\sim$\+Controller\+Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcrap_1_1_controller_input_a6873e43ba5c70aba109880a5857248da}
+
+
+Definition at line 30 of file controllerinput.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_controller_input_a649af2b9bb33ff950b452e8342135041}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!add\+Axis\+Listener@{add\+Axis\+Listener}}
+\index{add\+Axis\+Listener@{add\+Axis\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{add\+Axis\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::add\+Axis\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_a649af2b9bb33ff950b452e8342135041}
+
+
+Definition at line 123 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_af7f97ae163de5d532072c82c81ed085f}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!add\+Axis\+Listener@{add\+Axis\+Listener}}
+\index{add\+Axis\+Listener@{add\+Axis\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{add\+Axis\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::add\+Axis\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_af7f97ae163de5d532072c82c81ed085f}
+
+
+Definition at line 133 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_af3394f5ba021545f55fcdc1ae4f3a6f4}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!add\+Button\+Listener@{add\+Button\+Listener}}
+\index{add\+Button\+Listener@{add\+Button\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{add\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::add\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_af3394f5ba021545f55fcdc1ae4f3a6f4}
+
+
+Definition at line 83 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_afb768eb9f127d55c7a85a42cd82b9529}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!add\+Button\+Listener@{add\+Button\+Listener}}
+\index{add\+Button\+Listener@{add\+Button\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{add\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::add\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_afb768eb9f127d55c7a85a42cd82b9529}
+
+
+Definition at line 93 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_ab7cc1802c47296476ab44b12ca2460c4}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!lease\+Joystick\+I\+D@{lease\+Joystick\+I\+D}}
+\index{lease\+Joystick\+I\+D@{lease\+Joystick\+I\+D}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{lease\+Joystick\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Controller\+Input\+::lease\+Joystick\+I\+D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_ab7cc1802c47296476ab44b12ca2460c4}
+
+
+Definition at line 62 of file controllerinput.\+cpp.
+
+\hypertarget{classcrap_1_1_controller_input_a1bc99bce625553885a1b7ad221289b7a}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!receive\+Input@{receive\+Input}}
+\index{receive\+Input@{receive\+Input}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{receive\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Controller\+Input\+::receive\+Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcrap_1_1_controller_input_a1bc99bce625553885a1b7ad221289b7a}
+
+
+Reimplemented from \hyperlink{classcrap_1_1_base_input_afa79d7fec307c444c0cf1463a9bd479a}{crap\+::\+Base\+Input}.
+
+
+
+Definition at line 35 of file controllerinput.\+cpp.
+
+\hypertarget{classcrap_1_1_controller_input_a1d19ac50e2cf5feba32cc394508cd900}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!release\+Joystick\+I\+D@{release\+Joystick\+I\+D}}
+\index{release\+Joystick\+I\+D@{release\+Joystick\+I\+D}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{release\+Joystick\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Controller\+Input\+::release\+Joystick\+I\+D (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_a1d19ac50e2cf5feba32cc394508cd900}
+
+
+Definition at line 76 of file controllerinput.\+cpp.
+
+\hypertarget{classcrap_1_1_controller_input_a7051e4c13a6851f73294fbd95bbf3b75}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!remove\+Axis\+Listener@{remove\+Axis\+Listener}}
+\index{remove\+Axis\+Listener@{remove\+Axis\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{remove\+Axis\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::remove\+Axis\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_a7051e4c13a6851f73294fbd95bbf3b75}
+
+
+Definition at line 143 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_ad0370837e1f78ce0bde40a1848272ec7}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!remove\+Axis\+Listener@{remove\+Axis\+Listener}}
+\index{remove\+Axis\+Listener@{remove\+Axis\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{remove\+Axis\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(const float32\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::remove\+Axis\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_ad0370837e1f78ce0bde40a1848272ec7}
+
+
+Definition at line 153 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_a52d14324d3d71969c726b2ebcf0e9e03}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!remove\+Button\+Listener@{remove\+Button\+Listener}}
+\index{remove\+Button\+Listener@{remove\+Button\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{remove\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::remove\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_a52d14324d3d71969c726b2ebcf0e9e03}
+
+
+Definition at line 103 of file controllerinput.\+h.
+
+\hypertarget{classcrap_1_1_controller_input_a27bdbd9fa874df597d845fd2a8352f3f}{}\index{crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}!remove\+Button\+Listener@{remove\+Button\+Listener}}
+\index{remove\+Button\+Listener@{remove\+Button\+Listener}!crap\+::\+Controller\+Input@{crap\+::\+Controller\+Input}}
+\subsubsection[{remove\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(const uint8\+\_\+t $\ast$, int32\+\_\+t) F$>$ void crap\+::\+Controller\+Input\+::remove\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{joystick\+Id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_controller_input_a27bdbd9fa874df597d845fd2a8352f3f}
+
+
+Definition at line 113 of file controllerinput.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/\hyperlink{controllerinput_8h}{controllerinput.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/source/\hyperlink{controllerinput_8cpp}{controllerinput.\+cpp}\end{DoxyCompactItemize}

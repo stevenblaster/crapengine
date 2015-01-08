@@ -14,6 +14,7 @@
 #include "inputmanager.h"
 #include "keyboardinput.h"
 #include "mouseinput.h"
+#include "controllerinput.h"
 #include "renderwindow.h"
 
 bool running = true; /* set to true */
@@ -42,6 +43,30 @@ void scrollFunc( float64_t x, float64_t y )
 void enterFunc( bool var )
 {
 	std::cout << ((var) ? "INSIDE" : "OUTSIDE") << std::endl;
+}
+
+void joyAxis( const float32_t* data, int32_t data_size )
+{
+	if( data_size == 0 )
+		return;
+
+	std::cout << "JOYAXIS ";
+	for( uint32_t i=0; i<data_size; ++i )
+		std::cout << data[i] << " ";
+
+	std::cout << std::endl;
+}
+
+void joyButton( const uint8_t* data, int32_t data_size )
+{
+	if( data_size == 0 )
+		return;
+
+	std::cout << "JOYBUTTON ";
+	for( uint32_t i=0; i<data_size; ++i )
+		std::cout << data[i] << " ";
+
+	std::cout << std::endl;
 }
 
 int main( void )
@@ -122,12 +147,18 @@ int main( void )
 	crap::KeyboardInput keyboardInput("Keyboard", 20, &inputManager );
 	keyboardInput.addListener<&exitFunc>( thekey, 0, true );
 
-	//ad mouse
+	//add mouse
 	crap::MouseInput mouseInput("Mouse", 20, 20, 20, 20, &inputManager );
 	mouseInput.addButtonListener<&clickFunc>( 0, 0, true );
 	mouseInput.addPositionListener<&posFunc>( true );
 	mouseInput.addScrollListener<&scrollFunc>( true );
 	mouseInput.addEnterListener<&enterFunc>( true );
+
+	//controller
+	crap::ControllerInput controllerInput("Controller", 8, &inputManager );
+	uint32_t joyID = controllerInput.leaseJoystickID();
+	controllerInput.addAxisListener<&joyAxis>( joyID );
+	controllerInput.addButtonListener<&joyButton>( joyID );
 
 	/* Add directory update to taskmanager */
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
@@ -154,6 +185,10 @@ int main( void )
 	pluginDirectoryListener.init();
 
 	crap::Component* comp = componentSystem.createComponent("TestComponent");
+
+	uint32_t testNumber = 567;
+	componentSystem.setComponentMember( comp, "neZahl", &testNumber );
+
 	comp->init( &system );
 	comp->deinit( &system );
 	componentSystem.destroyComponent( comp );
@@ -181,11 +216,10 @@ int main( void )
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
-	while( running )
+	while( running && !renderWindow.shouldClose() )
 	{
 		renderWindow.swap();
 		taskManager.update();
-		//crap::sleep_mil_sec(500);
 	}
 
 	renderWindow.destroy();

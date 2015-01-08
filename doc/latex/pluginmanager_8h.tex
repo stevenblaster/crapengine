@@ -1,11 +1,15 @@
-\hypertarget{pluginmanager_8h}{\section{/mnt/windows/data/programming/crapengine2/source/engine/include/pluginmanager.h File Reference}
+\hypertarget{pluginmanager_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/engine/include/pluginmanager.h File Reference}
 \label{pluginmanager_8h}\index{/mnt/windows/data/programming/crapengine2/source/engine/include/pluginmanager.\+h@{/mnt/windows/data/programming/crapengine2/source/engine/include/pluginmanager.\+h}}
-}
-{\ttfamily \#include \char`\"{}container/array.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container/arraymap.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plugin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dynamiclibrary.\+h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classcrap_1_1_plugin_manager}{crap\+::\+Plugin\+Manager}
+\item 
+struct \hyperlink{structcrap_1_1_plugin_manager_1_1s__plugin_info}{crap\+::\+Plugin\+Manager\+::s\+\_\+plugin\+Info}
 \end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -16,14 +20,23 @@ class \hyperlink{classcrap_1_1_plugin_manager}{crap\+::\+Plugin\+Manager}
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{pluginmanager_8h_ab5edb549e41e2e7bc2b06a8561eca698}{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}
+\item 
+\#define \hyperlink{pluginmanager_8h_a5e281e96379a2579515812556d7df45a}{P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y}~Bound\+General\+Memory
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{pluginmanager_8h_ab5edb549e41e2e7bc2b06a8561eca698}{\index{pluginmanager.\+h@{pluginmanager.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}}
+\hypertarget{pluginmanager_8h_ab5edb549e41e2e7bc2b06a8561eca698}{}\index{pluginmanager.\+h@{pluginmanager.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}}
 \index{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}!pluginmanager.\+h@{pluginmanager.\+h}}
-\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}}\label{pluginmanager_8h_ab5edb549e41e2e7bc2b06a8561eca698}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N\+M\+A\+N\+A\+G\+E\+R}\label{pluginmanager_8h_ab5edb549e41e2e7bc2b06a8561eca698}
 
 
 Definition at line 5 of file pluginmanager.\+h.
+
+\hypertarget{pluginmanager_8h_a5e281e96379a2579515812556d7df45a}{}\index{pluginmanager.\+h@{pluginmanager.\+h}!P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y@{P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y}}
+\index{P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y@{P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y}!pluginmanager.\+h@{pluginmanager.\+h}}
+\subsubsection[{P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+U\+G\+I\+N\+\_\+\+M\+E\+M\+O\+R\+Y~Bound\+General\+Memory}\label{pluginmanager_8h_a5e281e96379a2579515812556d7df45a}
+
+
+Definition at line 15 of file pluginmanager.\+h.
 

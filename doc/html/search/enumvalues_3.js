@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['down',['Down',['../structentry_1_1_key.html#a2c04c2d92f79b961243e4244603ca633a17ab32c74e65022e4f25fb53e1465466',1,'entry::Key']]],
-  ['dynamic',['Dynamic',['../struct_buffer_type.html#af6eec2447862f2bd9c1f36408176dddaad50474e8a51b3de3400081a38a970528',1,'BufferType']]]
+  ['data',['DATA',['../structcrap_1_1_udp_connection_1_1_event.html#adcb4025fc6cb1f099dd37b511c96bb15ad32c0c0d1232eb3fa5f62bbd2bbd1e7f',1,'crap::UdpConnection::Event']]],
+  ['datagram',['datagram',['../namespacecrap_1_1socket.html#af7718da996e5427024d9ab56b67f12e9a492303093661f9f7a4d75d963e857394',1,'crap::socket']]]
 ];

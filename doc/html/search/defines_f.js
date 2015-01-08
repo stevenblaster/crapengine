@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['uint16_5fmax',['UINT16_MAX',['../crap__types_8h.html#a3ea490c9b3617d4479bd80ef93cd5602',1,'crap_types.h']]],
-  ['uint16_5fmin',['UINT16_MIN',['../crap__types_8h.html#a4037c1ce09065675d4ac6928f9992412',1,'crap_types.h']]],
-  ['uint32_5fmax',['UINT32_MAX',['../crap__types_8h.html#ab5eb23180f7cc12b7d6c04a8ec067fdd',1,'crap_types.h']]],
-  ['uint32_5fmin',['UINT32_MIN',['../crap__types_8h.html#af2a8408fbb6decd71eb49bd3e4a1649f',1,'crap_types.h']]],
-  ['uint64_5fmax',['UINT64_MAX',['../crap__types_8h.html#a30654b4b67d97c42ca3f9b6052dda916',1,'crap_types.h']]],
-  ['uint64_5fmin',['UINT64_MIN',['../crap__types_8h.html#a49201bdfc59cccf6f337a171f8ab4e91',1,'crap_types.h']]],
-  ['uint8_5fmax',['UINT8_MAX',['../crap__types_8h.html#aeb4e270a084ee26fe73e799861bd0252',1,'crap_types.h']]],
-  ['uint8_5fmin',['UINT8_MIN',['../crap__types_8h.html#a9e34d054333a86f8c7f4d6ea4b0105ed',1,'crap_types.h']]],
-  ['use_5fedtaa3',['USE_EDTAA3',['../font__manager_8cpp.html#a6dc17657b3881707fc498d46497bcf3a',1,'font_manager.cpp']]],
-  ['use_5fnanovg_5ffont',['USE_NANOVG_FONT',['../imgui_8cpp.html#a24b412fe57bb9b3bc5f2bc0c562f4db9',1,'imgui.cpp']]],
-  ['utf8_5faccept',['UTF8_ACCEPT',['../utf8_8h.html#a82b09bd7c24e408c73e16db56b8db6cf',1,'utf8.h']]],
-  ['utf8_5freject',['UTF8_REJECT',['../utf8_8h.html#a2e385a04dd7c4529414ab34a75a4f9ef',1,'utf8.h']]]
+  ['task_5fmemory',['TASK_MEMORY',['../taskmanager_8h.html#afb0dda7d617e2076f8ea7d0fc28984e2',1,'taskmanager.h']]],
+  ['thread_5ffence_5facquire',['thread_fence_acquire',['../atomic__linux_8h.html#a053e10f232e167c506a5fc675c7b28ac',1,'thread_fence_acquire():&#160;atomic_linux.h'],['../atomic__mac_8h.html#a053e10f232e167c506a5fc675c7b28ac',1,'thread_fence_acquire():&#160;atomic_mac.h'],['../atomic__ps3_8h.html#a053e10f232e167c506a5fc675c7b28ac',1,'thread_fence_acquire():&#160;atomic_ps3.h'],['../atomic__windows_8h.html#a053e10f232e167c506a5fc675c7b28ac',1,'thread_fence_acquire():&#160;atomic_windows.h'],['../atomic__xbox_8h.html#a053e10f232e167c506a5fc675c7b28ac',1,'thread_fence_acquire():&#160;atomic_xbox.h']]],
+  ['thread_5ffence_5fconsume',['thread_fence_consume',['../atomic__android_8h.html#aa871254e7cdd08175ffa7f06232d5ea7',1,'thread_fence_consume():&#160;atomic_android.h'],['../atomic__linux_8h.html#aa871254e7cdd08175ffa7f06232d5ea7',1,'thread_fence_consume():&#160;atomic_linux.h'],['../atomic__mac_8h.html#aa871254e7cdd08175ffa7f06232d5ea7',1,'thread_fence_consume():&#160;atomic_mac.h'],['../atomic__ps3_8h.html#aa871254e7cdd08175ffa7f06232d5ea7',1,'thread_fence_consume():&#160;atomic_ps3.h'],['../atomic__windows_8h.html#aa871254e7cdd08175ffa7f06232d5ea7',1,'thread_fence_consume():&#160;atomic_windows.h'],['../atomic__xbox_8h.html#aa871254e7cdd08175ffa7f06232d5ea7',1,'thread_fence_consume():&#160;atomic_xbox.h']]],
+  ['thread_5ffence_5frelease',['thread_fence_release',['../atomic__linux_8h.html#a3dbb0061899d9bd4d46d0b40ec1dc4f0',1,'thread_fence_release():&#160;atomic_linux.h'],['../atomic__mac_8h.html#a3dbb0061899d9bd4d46d0b40ec1dc4f0',1,'thread_fence_release():&#160;atomic_mac.h'],['../atomic__ps3_8h.html#a3dbb0061899d9bd4d46d0b40ec1dc4f0',1,'thread_fence_release():&#160;atomic_ps3.h'],['../atomic__windows_8h.html#a3dbb0061899d9bd4d46d0b40ec1dc4f0',1,'thread_fence_release():&#160;atomic_windows.h'],['../atomic__xbox_8h.html#a3dbb0061899d9bd4d46d0b40ec1dc4f0',1,'thread_fence_release():&#160;atomic_xbox.h']]],
+  ['thread_5ffence_5fseq_5fcst',['thread_fence_seq_cst',['../atomic__linux_8h.html#a81da151ac996b1a4ad5a5bddfec9e1eb',1,'thread_fence_seq_cst():&#160;atomic_linux.h'],['../atomic__mac_8h.html#a81da151ac996b1a4ad5a5bddfec9e1eb',1,'thread_fence_seq_cst():&#160;atomic_mac.h'],['../atomic__ps3_8h.html#a81da151ac996b1a4ad5a5bddfec9e1eb',1,'thread_fence_seq_cst():&#160;atomic_ps3.h'],['../atomic__windows_8h.html#a81da151ac996b1a4ad5a5bddfec9e1eb',1,'thread_fence_seq_cst():&#160;atomic_windows.h'],['../atomic__xbox_8h.html#a81da151ac996b1a4ad5a5bddfec9e1eb',1,'thread_fence_seq_cst():&#160;atomic_xbox.h']]],
+  ['tinyxml2_5flib',['TINYXML2_LIB',['../tinyxml2_8h.html#a8953517b8490d756ad0bfef40fe5811f',1,'tinyxml2.h']]],
+  ['tixml_5fsnprintf',['TIXML_SNPRINTF',['../tinyxml2_8h.html#afc6433f9b56e4f18833089b1df629e0a',1,'tinyxml2.h']]],
+  ['tixml_5fsscanf',['TIXML_SSCANF',['../tinyxml2_8h.html#a96f54d7c855ad92e705510904a040393',1,'tinyxml2.h']]],
+  ['tixmlassert',['TIXMLASSERT',['../tinyxml2_8h.html#a029877acb3c6fd71698561044953bd14',1,'tinyxml2.h']]]
 ];

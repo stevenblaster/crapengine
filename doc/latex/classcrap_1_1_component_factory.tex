@@ -1,0 +1,121 @@
+\hypertarget{classcrap_1_1_component_factory}{}\section{crap\+:\+:Component\+Factory Class Reference}
+\label{classcrap_1_1_component_factory}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+
+
+{\ttfamily \#include $<$componentfactory.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Component\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_component_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_component_factory_a2067106296c050f902e4c4b648765888}{Component\+Factory} (\hyperlink{classcrap_1_1string__hash}{crap\+::string\+\_\+hash} name, \hyperlink{classcrap_1_1_component_system}{Component\+System} $\ast$system)
+\item 
+virtual \hyperlink{classcrap_1_1_component_factory_ad607d3f850eaaca2e70cbd1e8a46e661}{$\sim$\+Component\+Factory} (void)
+\item 
+virtual \hyperlink{classcrap_1_1_component}{Component} $\ast$ \hyperlink{classcrap_1_1_component_factory_ae81a2c74b72879a43fc715365d3c8d09}{create\+Component} (void)
+\item 
+virtual void \hyperlink{classcrap_1_1_component_factory_ad8b34d3eed2f0330ad49ea918bd56ba8}{destroy\+Component} (\hyperlink{classcrap_1_1_component}{Component} $\ast$component)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{classcrap_1_1_component_factory_ad96e0d69f3b7f916c5167483adbb00ca}{operator==} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1_component_factory_af6852d2c1b96fe0026291a405bf8f24d}{id} (void) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file componentfactory.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_component_factory_a2067106296c050f902e4c4b648765888}{}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}!Component\+Factory@{Component\+Factory}}
+\index{Component\+Factory@{Component\+Factory}!crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+\subsubsection[{Component\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Component\+Factory\+::\+Component\+Factory (
+\begin{DoxyParamCaption}
+\item[{{\bf crap\+::string\+\_\+hash}}]{name, }
+\item[{{\bf Component\+System} $\ast$}]{system}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_component_factory_a2067106296c050f902e4c4b648765888}
+
+
+Definition at line 10 of file componentfactory.\+cpp.
+
+\hypertarget{classcrap_1_1_component_factory_ad607d3f850eaaca2e70cbd1e8a46e661}{}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}!````~Component\+Factory@{$\sim$\+Component\+Factory}}
+\index{````~Component\+Factory@{$\sim$\+Component\+Factory}!crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+\subsubsection[{$\sim$\+Component\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}virtual crap\+::\+Component\+Factory\+::$\sim$\+Component\+Factory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_component_factory_ad607d3f850eaaca2e70cbd1e8a46e661}
+
+
+Definition at line 37 of file componentfactory.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_component_factory_ae81a2c74b72879a43fc715365d3c8d09}{}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}!create\+Component@{create\+Component}}
+\index{create\+Component@{create\+Component}!crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+\subsubsection[{create\+Component}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Component}$\ast$ crap\+::\+Component\+Factory\+::create\+Component (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_component_factory_ae81a2c74b72879a43fc715365d3c8d09}
+
+
+Reimplemented in \hyperlink{classcrap_1_1_component_type_ae6eec7a4d025c5083645f84e36dc5bba}{crap\+::\+Component\+Type$<$ T $>$}.
+
+
+
+Definition at line 39 of file componentfactory.\+h.
+
+\hypertarget{classcrap_1_1_component_factory_ad8b34d3eed2f0330ad49ea918bd56ba8}{}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}!destroy\+Component@{destroy\+Component}}
+\index{destroy\+Component@{destroy\+Component}!crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+\subsubsection[{destroy\+Component}]{\setlength{\rightskip}{0pt plus 5cm}virtual void crap\+::\+Component\+Factory\+::destroy\+Component (
+\begin{DoxyParamCaption}
+\item[{{\bf Component} $\ast$}]{component}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_component_factory_ad8b34d3eed2f0330ad49ea918bd56ba8}
+
+
+Reimplemented in \hyperlink{classcrap_1_1_component_type_af9a5da189315613847499c107c1a3916}{crap\+::\+Component\+Type$<$ T $>$}.
+
+
+
+Definition at line 40 of file componentfactory.\+h.
+
+\hypertarget{classcrap_1_1_component_factory_af6852d2c1b96fe0026291a405bf8f24d}{}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}!id@{id}}
+\index{id@{id}!crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::\+Component\+Factory\+::id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_factory_af6852d2c1b96fe0026291a405bf8f24d}
+
+
+Definition at line 49 of file componentfactory.\+h.
+
+\hypertarget{classcrap_1_1_component_factory_ad96e0d69f3b7f916c5167483adbb00ca}{}\index{crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}!operator==@{operator==}}
+\index{operator==@{operator==}!crap\+::\+Component\+Factory@{crap\+::\+Component\+Factory}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool crap\+::\+Component\+Factory\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf string\+\_\+hash} \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_factory_ad96e0d69f3b7f916c5167483adbb00ca}
+
+
+Definition at line 43 of file componentfactory.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{componentfactory_8h}{componentfactory.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{componentfactory_8cpp}{componentfactory.\+cpp}\end{DoxyCompactItemize}

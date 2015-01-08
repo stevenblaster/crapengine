@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['resourcename',['ResourceName',['../classcrap_1_1_resource_manager.html#a1aa9ba8213544040ec264aa4b1651f78',1,'crap::ResourceManager']]],
-  ['resourcepath',['ResourcePath',['../classcrap_1_1_resource_manager.html#a65958e1fcdda3a97f5ef9e006e30fad8',1,'crap::ResourceManager']]],
-  ['resourcetype',['ResourceType',['../classcrap_1_1_resource_manager.html#a68532afc0951e49f936b71bbf9bdf804',1,'crap::ResourceManager']]]
+  ['outgoingmap',['OutgoingMap',['../classcrap_1_1_udp_reliability.html#a8dde825107f0bdc30042114a16cb9dfe',1,'crap::UdpReliability']]],
+  ['outgoingqueue',['OutgoingQueue',['../classcrap_1_1_network_command_queue.html#a1e9973cba21e86ff5e49981e4d45c527',1,'crap::NetworkCommandQueue']]]
 ];

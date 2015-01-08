@@ -7,5 +7,6 @@ var searchData=
   ['audiodevice',['AudioDevice',['../namespacecrap.html#a0554191481198902f832204ecc2db4c0',1,'crap']]],
   ['audiodevice_5f',['AudioDevice_',['../audiodevice_8h.html#a13d8d739d6146ae8460383745ad22318',1,'audiodevice.h']]],
   ['audiolistener',['AudioListener',['../namespacecrap.html#a73b9ecbfa0198e8a702c3569958e1653',1,'crap']]],
-  ['audiosource',['AudioSource',['../namespacecrap.html#a462d678db37c6a434145136ab6d59720',1,'crap']]]
+  ['audiosource',['AudioSource',['../namespacecrap.html#a462d678db37c6a434145136ab6d59720',1,'crap']]],
+  ['axisfunction',['axisFunction',['../classcrap_1_1_controller_input.html#aea9c7f407b4c8fb0cea63aa69acccbe1',1,'crap::ControllerInput']]]
 ];

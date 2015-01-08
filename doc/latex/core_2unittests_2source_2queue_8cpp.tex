@@ -1,0 +1,147 @@
+\hypertarget{core_2unittests_2source_2queue_8cpp}{}\section{/mnt/windows/data/programming/crapengine2/source/core/unittests/source/queue.cpp File Reference}
+\label{core_2unittests_2source_2queue_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/core/unittests/source/queue.\+cpp@{/mnt/windows/data/programming/crapengine2/source/core/unittests/source/queue.\+cpp}}
+{\ttfamily \#include \char`\"{}container/queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Unit\+Test++.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{core_2unittests_2source_2queue_8cpp_af3d5d6c0598154230b1f18269a8ab1c4}{Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E}~10000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{core_2unittests_2source_2queue_8cpp_a0b7878eb24760257a98390e035f0dcdc}{T\+E\+S\+T} (Announce\+Test\+Queue)
+\item 
+\hyperlink{core_2unittests_2source_2queue_8cpp_a1570304def04869c4f05c1f9af4295a7}{T\+E\+S\+T} (Crap\+Create\+Array)
+\item 
+\hyperlink{core_2unittests_2source_2queue_8cpp_a0036b218586afa6be6dd0eb21f9a3692}{T\+E\+S\+T} (Crap\+Queue\+Push\+Back)
+\item 
+\hyperlink{core_2unittests_2source_2queue_8cpp_a50b213e6f0521b5918260647f030e6ab}{T\+E\+S\+T} (Crap\+Queue\+Push\+Back\+Overflow)
+\item 
+\hyperlink{core_2unittests_2source_2queue_8cpp_a126abefb8b9ab0850bbf747f6a7eaeef}{T\+E\+S\+T} (Crap\+Queue\+Pop\+All)
+\item 
+\hyperlink{core_2unittests_2source_2queue_8cpp_a5e711bfff0c2b0952e44a7b797e503f6}{T\+E\+S\+T} (Crap\+Queue\+Delete)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacecrap_aaff1250c80e3631796871d2e94b4d187}{crap\+::\+Bound\+General\+Memory} $\ast$ \hyperlink{core_2unittests_2source_2queue_8cpp_af386192b248499d25274f4a23884c390}{gbm\+\_\+q}
+\item 
+void $\ast$ \hyperlink{core_2unittests_2source_2queue_8cpp_a5f00e9b1b039412bb144bae39e66b97a}{mem}
+\item 
+\hyperlink{classcrap_1_1queue}{crap\+::queue}$<$ \hyperlink{crap__types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t} $>$ $\ast$ \hyperlink{core_2unittests_2source_2queue_8cpp_aeea1f3e51565a35ee682f6375504e31d}{queue\+\_\+ptr}
+\item 
+uint32\+\_\+t \hyperlink{core_2unittests_2source_2queue_8cpp_abf8c9b90868e344213ac62433c511055}{handles} \mbox{[}\hyperlink{core_2unittests_2source_2queue_8cpp_af3d5d6c0598154230b1f18269a8ab1c4}{Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{core_2unittests_2source_2queue_8cpp_af3d5d6c0598154230b1f18269a8ab1c4}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E@{Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E}}
+\index{Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E@{Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E~10000}\label{core_2unittests_2source_2queue_8cpp_af3d5d6c0598154230b1f18269a8ab1c4}
+
+
+Definition at line 21 of file queue.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{core_2unittests_2source_2queue_8cpp_a0b7878eb24760257a98390e035f0dcdc}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!T\+E\+S\+T@{T\+E\+S\+T}}
+\index{T\+E\+S\+T@{T\+E\+S\+T}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Announce\+Test\+Queue}]{}
+\end{DoxyParamCaption}
+)}\label{core_2unittests_2source_2queue_8cpp_a0b7878eb24760257a98390e035f0dcdc}
+
+
+Definition at line 28 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_a1570304def04869c4f05c1f9af4295a7}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!T\+E\+S\+T@{T\+E\+S\+T}}
+\index{T\+E\+S\+T@{T\+E\+S\+T}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Crap\+Create\+Array}]{}
+\end{DoxyParamCaption}
+)}\label{core_2unittests_2source_2queue_8cpp_a1570304def04869c4f05c1f9af4295a7}
+
+
+Definition at line 33 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_a0036b218586afa6be6dd0eb21f9a3692}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!T\+E\+S\+T@{T\+E\+S\+T}}
+\index{T\+E\+S\+T@{T\+E\+S\+T}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Crap\+Queue\+Push\+Back}]{}
+\end{DoxyParamCaption}
+)}\label{core_2unittests_2source_2queue_8cpp_a0036b218586afa6be6dd0eb21f9a3692}
+
+
+Definition at line 45 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_a50b213e6f0521b5918260647f030e6ab}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!T\+E\+S\+T@{T\+E\+S\+T}}
+\index{T\+E\+S\+T@{T\+E\+S\+T}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Crap\+Queue\+Push\+Back\+Overflow}]{}
+\end{DoxyParamCaption}
+)}\label{core_2unittests_2source_2queue_8cpp_a50b213e6f0521b5918260647f030e6ab}
+
+
+Definition at line 60 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_a126abefb8b9ab0850bbf747f6a7eaeef}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!T\+E\+S\+T@{T\+E\+S\+T}}
+\index{T\+E\+S\+T@{T\+E\+S\+T}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Crap\+Queue\+Pop\+All}]{}
+\end{DoxyParamCaption}
+)}\label{core_2unittests_2source_2queue_8cpp_a126abefb8b9ab0850bbf747f6a7eaeef}
+
+
+Definition at line 69 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_a5e711bfff0c2b0952e44a7b797e503f6}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!T\+E\+S\+T@{T\+E\+S\+T}}
+\index{T\+E\+S\+T@{T\+E\+S\+T}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{Crap\+Queue\+Delete}]{}
+\end{DoxyParamCaption}
+)}\label{core_2unittests_2source_2queue_8cpp_a5e711bfff0c2b0952e44a7b797e503f6}
+
+
+Definition at line 80 of file queue.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{core_2unittests_2source_2queue_8cpp_af386192b248499d25274f4a23884c390}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!gbm\+\_\+q@{gbm\+\_\+q}}
+\index{gbm\+\_\+q@{gbm\+\_\+q}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{gbm\+\_\+q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf crap\+::\+Bound\+General\+Memory}$\ast$ gbm\+\_\+q}\label{core_2unittests_2source_2queue_8cpp_af386192b248499d25274f4a23884c390}
+
+
+Definition at line 23 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_abf8c9b90868e344213ac62433c511055}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!handles@{handles}}
+\index{handles@{handles}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{handles}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t handles\mbox{[}{\bf Q\+U\+E\+U\+E\+\_\+\+S\+P\+A\+C\+E}\mbox{]}}\label{core_2unittests_2source_2queue_8cpp_abf8c9b90868e344213ac62433c511055}
+
+
+Definition at line 26 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_a5f00e9b1b039412bb144bae39e66b97a}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!mem@{mem}}
+\index{mem@{mem}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{mem}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem}\label{core_2unittests_2source_2queue_8cpp_a5f00e9b1b039412bb144bae39e66b97a}
+
+
+Definition at line 24 of file queue.\+cpp.
+
+\hypertarget{core_2unittests_2source_2queue_8cpp_aeea1f3e51565a35ee682f6375504e31d}{}\index{core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}!queue\+\_\+ptr@{queue\+\_\+ptr}}
+\index{queue\+\_\+ptr@{queue\+\_\+ptr}!core/unittests/source/queue.\+cpp@{core/unittests/source/queue.\+cpp}}
+\subsubsection[{queue\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf crap\+::queue}$<${\bf float32\+\_\+t}$>$$\ast$ queue\+\_\+ptr}\label{core_2unittests_2source_2queue_8cpp_aeea1f3e51565a35ee682f6375504e31d}
+
+
+Definition at line 25 of file queue.\+cpp.
+

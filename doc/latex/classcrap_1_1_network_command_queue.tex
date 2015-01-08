@@ -1,0 +1,240 @@
+\hypertarget{classcrap_1_1_network_command_queue}{}\section{crap\+:\+:Network\+Command\+Queue Class Reference}
+\label{classcrap_1_1_network_command_queue}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+
+
+{\ttfamily \#include $<$networkcommandqueue.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcrap_1_1queue}{queue}$<$ \hyperlink{structcrap_1_1_network_command_data}{Network\+Command\+Data} $>$ \hyperlink{classcrap_1_1_network_command_queue_af70b69ccb9dc80c2eb26ab25d7c3e6bc}{Incoming\+Queue}
+\item 
+typedef \hyperlink{classcrap_1_1queue}{queue}$<$ \hyperlink{structcrap_1_1_network_command_data}{Network\+Command\+Data} $>$ \hyperlink{classcrap_1_1_network_command_queue_a1e9973cba21e86ff5e49981e4d45c527}{Outgoing\+Queue}
+\item 
+typedef \hyperlink{classcrap_1_1array__map}{array\+\_\+map}$<$ uint32\+\_\+t, \hyperlink{classcrap_1_1_network_command}{Network\+Command} $\ast$ $>$ \hyperlink{classcrap_1_1_network_command_queue_a95baa8d1062378159d610e09d8eb8d09}{Command\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_network_command_queue_af46119ec3b158606befedce4c9492fa1}{Network\+Command\+Queue} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ incoming\+Mem, uint32\+\_\+t incoming\+Size, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ outgoing\+Mem, uint32\+\_\+t outgoing\+Size, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ command\+Mem, uint32\+\_\+t command\+Size)
+\item 
+\hyperlink{classcrap_1_1_network_command_queue_a0a6131ea7e61bc7936b19bfa97164877}{$\sim$\+Network\+Command\+Queue} (void)
+\item 
+bool \hyperlink{classcrap_1_1_network_command_queue_a8ce0e6c1b9e8d288ebe17b96272acd2d}{enqueue\+Incoming} (uint32\+\_\+t user\+\_\+id, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ pointer, uint32\+\_\+t size)
+\item 
+bool \hyperlink{classcrap_1_1_network_command_queue_afc36772c3a64cef5092e75a30052030b}{enqueue\+Outgoing} (uint32\+\_\+t user\+\_\+id, \hyperlink{classcrap_1_1_network_command}{Network\+Command} $\ast$command, bool fire\+And\+Forget=false)
+\item 
+bool \hyperlink{classcrap_1_1_network_command_queue_aa8f160e7566f395502ac1b4ab5878e26}{process\+Incoming} (uint32\+\_\+t deltatime)
+\item 
+bool \hyperlink{classcrap_1_1_network_command_queue_ac7346d76c2a5c78edfbe1dcb74f5934f}{process\+Outgoing} (uint32\+\_\+t deltatime)
+\item 
+void \hyperlink{classcrap_1_1_network_command_queue_aaaa0f5fd0353226feecd946146a0fa05}{register\+Command} (uint32\+\_\+t id, \hyperlink{classcrap_1_1_network_command}{Network\+Command} $\ast$command)
+\item 
+void \hyperlink{classcrap_1_1_network_command_queue_a24f8c08337b976139692fdf5ebfb29e3}{unregister\+Command} (uint32\+\_\+t id)
+\item 
+{\footnotesize template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t, bool) F$>$ }\\bool \hyperlink{classcrap_1_1_network_command_queue_a6cf955a33a605f26c6eb1079f545172a}{set\+Out\+Function} (C $\ast$instance)
+\item 
+{\footnotesize template$<$bool($\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t, bool) F$>$ }\\bool \hyperlink{classcrap_1_1_network_command_queue_adbb95d4ee555106c5a5c80d627ca86d4}{set\+Out\+Function} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_network_command_queue_af70b69ccb9dc80c2eb26ab25d7c3e6bc}{Incoming\+Queue} $\ast$ \hyperlink{classcrap_1_1_network_command_queue_ad344b1c5f3262d0c9f69c5adc903d964}{incoming\+Queue} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_network_command_queue_a1e9973cba21e86ff5e49981e4d45c527}{Outgoing\+Queue} $\ast$ \hyperlink{classcrap_1_1_network_command_queue_a35815c321d253caf1d3c4af39b37d0bf}{outgoing\+Queue} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_network_command_queue_a95baa8d1062378159d610e09d8eb8d09}{Command\+Map} $\ast$ \hyperlink{classcrap_1_1_network_command_queue_a6681ea1a54a0b924ed27b0795432c446}{command\+Map} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file networkcommandqueue.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_network_command_queue_a95baa8d1062378159d610e09d8eb8d09}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!Command\+Map@{Command\+Map}}
+\index{Command\+Map@{Command\+Map}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{Command\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array\+\_\+map}$<$ uint32\+\_\+t, {\bf Network\+Command}$\ast$$>$ {\bf crap\+::\+Network\+Command\+Queue\+::\+Command\+Map}}\label{classcrap_1_1_network_command_queue_a95baa8d1062378159d610e09d8eb8d09}
+
+
+Definition at line 36 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_af70b69ccb9dc80c2eb26ab25d7c3e6bc}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!Incoming\+Queue@{Incoming\+Queue}}
+\index{Incoming\+Queue@{Incoming\+Queue}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{Incoming\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf queue}$<${\bf Network\+Command\+Data}$>$ {\bf crap\+::\+Network\+Command\+Queue\+::\+Incoming\+Queue}}\label{classcrap_1_1_network_command_queue_af70b69ccb9dc80c2eb26ab25d7c3e6bc}
+
+
+Definition at line 34 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_a1e9973cba21e86ff5e49981e4d45c527}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!Outgoing\+Queue@{Outgoing\+Queue}}
+\index{Outgoing\+Queue@{Outgoing\+Queue}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{Outgoing\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf queue}$<${\bf Network\+Command\+Data}$>$ {\bf crap\+::\+Network\+Command\+Queue\+::\+Outgoing\+Queue}}\label{classcrap_1_1_network_command_queue_a1e9973cba21e86ff5e49981e4d45c527}
+
+
+Definition at line 35 of file networkcommandqueue.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_network_command_queue_af46119ec3b158606befedce4c9492fa1}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!Network\+Command\+Queue@{Network\+Command\+Queue}}
+\index{Network\+Command\+Queue@{Network\+Command\+Queue}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{Network\+Command\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Network\+Command\+Queue\+::\+Network\+Command\+Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{incoming\+Mem, }
+\item[{uint32\+\_\+t}]{incoming\+Size, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{outgoing\+Mem, }
+\item[{uint32\+\_\+t}]{outgoing\+Size, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{command\+Mem, }
+\item[{uint32\+\_\+t}]{command\+Size}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_af46119ec3b158606befedce4c9492fa1}
+
+
+Definition at line 20 of file networkcommandqueue.\+cpp.
+
+\hypertarget{classcrap_1_1_network_command_queue_a0a6131ea7e61bc7936b19bfa97164877}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!````~Network\+Command\+Queue@{$\sim$\+Network\+Command\+Queue}}
+\index{````~Network\+Command\+Queue@{$\sim$\+Network\+Command\+Queue}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{$\sim$\+Network\+Command\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Network\+Command\+Queue\+::$\sim$\+Network\+Command\+Queue (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_a0a6131ea7e61bc7936b19bfa97164877}
+
+
+Definition at line 30 of file networkcommandqueue.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_network_command_queue_a6681ea1a54a0b924ed27b0795432c446}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!command\+Map@{command\+Map}}
+\index{command\+Map@{command\+Map}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{command\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Command\+Map}$\ast$ crap\+::\+Network\+Command\+Queue\+::command\+Map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_network_command_queue_a6681ea1a54a0b924ed27b0795432c446}
+
+
+Definition at line 66 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_a8ce0e6c1b9e8d288ebe17b96272acd2d}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!enqueue\+Incoming@{enqueue\+Incoming}}
+\index{enqueue\+Incoming@{enqueue\+Incoming}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{enqueue\+Incoming}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Network\+Command\+Queue\+::enqueue\+Incoming (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{user\+\_\+id, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_a8ce0e6c1b9e8d288ebe17b96272acd2d}
+
+
+Definition at line 35 of file networkcommandqueue.\+cpp.
+
+\hypertarget{classcrap_1_1_network_command_queue_afc36772c3a64cef5092e75a30052030b}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!enqueue\+Outgoing@{enqueue\+Outgoing}}
+\index{enqueue\+Outgoing@{enqueue\+Outgoing}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{enqueue\+Outgoing}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Network\+Command\+Queue\+::enqueue\+Outgoing (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{user\+\_\+id, }
+\item[{{\bf Network\+Command} $\ast$}]{command, }
+\item[{bool}]{fire\+And\+Forget = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_afc36772c3a64cef5092e75a30052030b}
+
+
+Definition at line 47 of file networkcommandqueue.\+cpp.
+
+\hypertarget{classcrap_1_1_network_command_queue_ad344b1c5f3262d0c9f69c5adc903d964}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!incoming\+Queue@{incoming\+Queue}}
+\index{incoming\+Queue@{incoming\+Queue}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{incoming\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Incoming\+Queue}$\ast$ crap\+::\+Network\+Command\+Queue\+::incoming\+Queue (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_network_command_queue_ad344b1c5f3262d0c9f69c5adc903d964}
+
+
+Definition at line 60 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_a35815c321d253caf1d3c4af39b37d0bf}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!outgoing\+Queue@{outgoing\+Queue}}
+\index{outgoing\+Queue@{outgoing\+Queue}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{outgoing\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Outgoing\+Queue}$\ast$ crap\+::\+Network\+Command\+Queue\+::outgoing\+Queue (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_network_command_queue_a35815c321d253caf1d3c4af39b37d0bf}
+
+
+Definition at line 63 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_aa8f160e7566f395502ac1b4ab5878e26}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!process\+Incoming@{process\+Incoming}}
+\index{process\+Incoming@{process\+Incoming}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{process\+Incoming}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Network\+Command\+Queue\+::process\+Incoming (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{deltatime}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_aa8f160e7566f395502ac1b4ab5878e26}
+
+
+Definition at line 59 of file networkcommandqueue.\+cpp.
+
+\hypertarget{classcrap_1_1_network_command_queue_ac7346d76c2a5c78edfbe1dcb74f5934f}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!process\+Outgoing@{process\+Outgoing}}
+\index{process\+Outgoing@{process\+Outgoing}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{process\+Outgoing}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Network\+Command\+Queue\+::process\+Outgoing (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{deltatime}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_ac7346d76c2a5c78edfbe1dcb74f5934f}
+
+
+Definition at line 84 of file networkcommandqueue.\+cpp.
+
+\hypertarget{classcrap_1_1_network_command_queue_aaaa0f5fd0353226feecd946146a0fa05}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!register\+Command@{register\+Command}}
+\index{register\+Command@{register\+Command}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{register\+Command}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Network\+Command\+Queue\+::register\+Command (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id, }
+\item[{{\bf Network\+Command} $\ast$}]{command}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_aaaa0f5fd0353226feecd946146a0fa05}
+
+
+Definition at line 112 of file networkcommandqueue.\+cpp.
+
+\hypertarget{classcrap_1_1_network_command_queue_a6cf955a33a605f26c6eb1079f545172a}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!set\+Out\+Function@{set\+Out\+Function}}
+\index{set\+Out\+Function@{set\+Out\+Function}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{set\+Out\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t, bool) F$>$ bool crap\+::\+Network\+Command\+Queue\+::set\+Out\+Function (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_a6cf955a33a605f26c6eb1079f545172a}
+
+
+Definition at line 80 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_adbb95d4ee555106c5a5c80d627ca86d4}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!set\+Out\+Function@{set\+Out\+Function}}
+\index{set\+Out\+Function@{set\+Out\+Function}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{set\+Out\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool($\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t, bool) F$>$ bool crap\+::\+Network\+Command\+Queue\+::set\+Out\+Function (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_adbb95d4ee555106c5a5c80d627ca86d4}
+
+
+Definition at line 87 of file networkcommandqueue.\+h.
+
+\hypertarget{classcrap_1_1_network_command_queue_a24f8c08337b976139692fdf5ebfb29e3}{}\index{crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}!unregister\+Command@{unregister\+Command}}
+\index{unregister\+Command@{unregister\+Command}!crap\+::\+Network\+Command\+Queue@{crap\+::\+Network\+Command\+Queue}}
+\subsubsection[{unregister\+Command}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Network\+Command\+Queue\+::unregister\+Command (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{id}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_network_command_queue_a24f8c08337b976139692fdf5ebfb29e3}
+
+
+Definition at line 117 of file networkcommandqueue.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/network/include/\hyperlink{networkcommandqueue_8h}{networkcommandqueue.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/network/source/\hyperlink{networkcommandqueue_8cpp}{networkcommandqueue.\+cpp}\end{DoxyCompactItemize}

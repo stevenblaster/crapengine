@@ -1,0 +1,133 @@
+\hypertarget{classcrap_1_1_input_manager}{}\section{crap\+:\+:Input\+Manager Class Reference}
+\label{classcrap_1_1_input_manager}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+
+
+{\ttfamily \#include $<$inputmanager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_input_manager_a6dd61476f36b0b93e99dc7ecfbfe60ec}{Input\+Manager} (uint32\+\_\+t memory, \hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$window)
+\item 
+\hyperlink{classcrap_1_1_input_manager_ae243494c32500ea9dc9e55e14ce3d02e}{$\sim$\+Input\+Manager} (void)
+\item 
+void \hyperlink{classcrap_1_1_input_manager_a87d573eef5165a51c0fbec247aeb7c2b}{set\+Window} (\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$window)
+\item 
+\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$ \hyperlink{classcrap_1_1_input_manager_afd01a81a1f05ab1a1efa6c4373a68251}{get\+Window} (void)
+\item 
+bool \hyperlink{classcrap_1_1_input_manager_a5aa76f41add8212ba22bb7c88d3a28e8}{update} (uint32\+\_\+t deltatime)
+\item 
+\hyperlink{classcrap_1_1_base_input}{Base\+Input} $\ast$ \hyperlink{classcrap_1_1_input_manager_a9404546f2798f264429f77993e4e30e0}{get\+Input\+Handle} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1intrusive__list}{intrusive\+\_\+list}$<$ \hyperlink{classcrap_1_1_base_input}{Base\+Input} $>$ $\ast$ \hyperlink{classcrap_1_1_input_manager_af3e361e7d6e01fdf9c02280d15820a55}{get\+Handler\+List} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{inputmanager_8h_a50dc0ae1528660c54a99d738ab327b9f}{I\+N\+P\+U\+T\+\_\+\+M\+E\+M\+O\+R\+Y} $\ast$ \hyperlink{classcrap_1_1_input_manager_a3d3f6e7bcadd7f01bff8baf4fd95d987}{get\+Allocator} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file inputmanager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_input_manager_a6dd61476f36b0b93e99dc7ecfbfe60ec}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!Input\+Manager@{Input\+Manager}}
+\index{Input\+Manager@{Input\+Manager}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{Input\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Input\+Manager\+::\+Input\+Manager (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{memory, }
+\item[{{\bf window\+\_\+t} $\ast$}]{window}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_input_manager_a6dd61476f36b0b93e99dc7ecfbfe60ec}
+
+
+Definition at line 21 of file inputmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_input_manager_ae243494c32500ea9dc9e55e14ce3d02e}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!````~Input\+Manager@{$\sim$\+Input\+Manager}}
+\index{````~Input\+Manager@{$\sim$\+Input\+Manager}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{$\sim$\+Input\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Input\+Manager\+::$\sim$\+Input\+Manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_input_manager_ae243494c32500ea9dc9e55e14ce3d02e}
+
+
+Definition at line 28 of file inputmanager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_input_manager_a3d3f6e7bcadd7f01bff8baf4fd95d987}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!get\+Allocator@{get\+Allocator}}
+\index{get\+Allocator@{get\+Allocator}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{get\+Allocator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf I\+N\+P\+U\+T\+\_\+\+M\+E\+M\+O\+R\+Y}$\ast$ crap\+::\+Input\+Manager\+::get\+Allocator (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_input_manager_a3d3f6e7bcadd7f01bff8baf4fd95d987}
+
+
+Definition at line 54 of file inputmanager.\+h.
+
+\hypertarget{classcrap_1_1_input_manager_af3e361e7d6e01fdf9c02280d15820a55}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!get\+Handler\+List@{get\+Handler\+List}}
+\index{get\+Handler\+List@{get\+Handler\+List}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{get\+Handler\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf intrusive\+\_\+list}$<${\bf Base\+Input}$>$$\ast$ crap\+::\+Input\+Manager\+::get\+Handler\+List (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_input_manager_af3e361e7d6e01fdf9c02280d15820a55}
+
+
+Definition at line 51 of file inputmanager.\+h.
+
+\hypertarget{classcrap_1_1_input_manager_a9404546f2798f264429f77993e4e30e0}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!get\+Input\+Handle@{get\+Input\+Handle}}
+\index{get\+Input\+Handle@{get\+Input\+Handle}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{get\+Input\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+Input} $\ast$ crap\+::\+Input\+Manager\+::get\+Input\+Handle (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_input_manager_a9404546f2798f264429f77993e4e30e0}
+
+
+Definition at line 55 of file inputmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_input_manager_afd01a81a1f05ab1a1efa6c4373a68251}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{get\+Window}]{\setlength{\rightskip}{0pt plus 5cm}{\bf window\+\_\+t} $\ast$ crap\+::\+Input\+Manager\+::get\+Window (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_input_manager_afd01a81a1f05ab1a1efa6c4373a68251}
+
+
+Definition at line 38 of file inputmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_input_manager_a87d573eef5165a51c0fbec247aeb7c2b}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!set\+Window@{set\+Window}}
+\index{set\+Window@{set\+Window}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{set\+Window}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Input\+Manager\+::set\+Window (
+\begin{DoxyParamCaption}
+\item[{{\bf window\+\_\+t} $\ast$}]{window}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_input_manager_a87d573eef5165a51c0fbec247aeb7c2b}
+
+
+Definition at line 33 of file inputmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_input_manager_a5aa76f41add8212ba22bb7c88d3a28e8}{}\index{crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}!update@{update}}
+\index{update@{update}!crap\+::\+Input\+Manager@{crap\+::\+Input\+Manager}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Input\+Manager\+::update (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{deltatime}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_input_manager_a5aa76f41add8212ba22bb7c88d3a28e8}
+
+
+Definition at line 43 of file inputmanager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/\hyperlink{inputmanager_8h}{inputmanager.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/source/\hyperlink{inputmanager_8cpp}{inputmanager.\+cpp}\end{DoxyCompactItemize}

@@ -74,4 +74,9 @@ void RenderWindow::swap( void )
 	glfwSwapBuffers( _handle );
 }
 
+bool RenderWindow::shouldClose( void )
+{
+	return glfwWindowShouldClose( _handle );
+}
+
 } /* namespace crap */

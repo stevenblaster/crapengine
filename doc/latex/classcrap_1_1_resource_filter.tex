@@ -1,9 +1,8 @@
-\hypertarget{classcrap_1_1_resource_filter}{\section{crap\+:\+:Resource\+Filter Class Reference}
+\hypertarget{classcrap_1_1_resource_filter}{}\section{crap\+:\+:Resource\+Filter Class Reference}
 \label{classcrap_1_1_resource_filter}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-}
 
 
-{\ttfamily \#include $<$resourcemanager.\+h$>$}
+{\ttfamily \#include $<$resourcefilter.\+h$>$}
 
 Inheritance diagram for crap\+:\+:Resource\+Filter\+:\begin{figure}[H]
 \begin{center}
@@ -14,19 +13,11 @@ Inheritance diagram for crap\+:\+:Resource\+Filter\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_resource_filter_af16fde84f2eb9ddec468b45cf9913bea}{Resource\+Filter} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name)
+\hyperlink{classcrap_1_1_resource_filter_a351592e6aad1c7c8980b28d2c98971ac}{Resource\+Filter} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, \hyperlink{classcrap_1_1_resource_manager}{Resource\+Manager} $\ast$manager)
 \item 
 virtual \hyperlink{classcrap_1_1_resource_filter_aa3549608f0f033aa79230669e33b9637}{$\sim$\+Resource\+Filter} (void)
 \item 
-virtual void \hyperlink{classcrap_1_1_resource_filter_a1f5cc743b14021977727db2564082c72}{use} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ data)=0
-\item 
-virtual void \hyperlink{classcrap_1_1_resource_filter_ad17609fc71bb6d2825b99812d1d6eef4}{import} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ input\+\_\+data, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ output\+\_\+data, uint32\+\_\+t size)=0
-\item 
-virtual uint32\+\_\+t \hyperlink{classcrap_1_1_resource_filter_ac02efd4c496384cda5a906a9168925c6}{calculate\+Memory} (\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ input\+\_\+data, uint32\+\_\+t size)=0
-\item 
-virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \hyperlink{classcrap_1_1_resource_filter_a2d264df875e440015fd05de4c5b96aa8}{export\+File\+Name} (\hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} import\+\_\+name)=0
-\item 
-virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \hyperlink{classcrap_1_1_resource_filter_a453f47cae8bc4024fb4de89a2924a1aa}{export\+Type\+Name} (void)=0
+virtual void \hyperlink{classcrap_1_1_resource_filter_a6e2233cffaf44988fb651eb21f5d7824}{import} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ memory, uint32\+\_\+t mem\+Size, \hyperlink{classcrap_1_1_system}{System} $\ast$system)=0
 \item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{classcrap_1_1_resource_filter_a7e89a3e7e7ac7497eb679657def798c8}{operator==} (const \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \&name)
 \end{DoxyCompactItemize}
@@ -35,128 +26,89 @@ virtual \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \h
 \item 
 \hyperlink{classcrap_1_1intrusive__node}{intrusive\+\_\+node}$<$ \hyperlink{classcrap_1_1_resource_filter}{Resource\+Filter} $>$ \hyperlink{classcrap_1_1_resource_filter_ae5724fd4f42bcd4ebe9e84ac1c9caf1c}{\+\_\+node}
 \item 
-\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} \hyperlink{classcrap_1_1_resource_filter_a53a73f6d9c295c74e36d62a51e106b54}{\+\_\+name}
+uint32\+\_\+t \hyperlink{classcrap_1_1_resource_filter_a6991e27ddd701e769e6218fe34c333a6}{\+\_\+id}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 27 of file resourcemanager.\+h.
+Definition at line 31 of file resourcefilter.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classcrap_1_1_resource_filter_af16fde84f2eb9ddec468b45cf9913bea}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!Resource\+Filter@{Resource\+Filter}}
+\hypertarget{classcrap_1_1_resource_filter_a351592e6aad1c7c8980b28d2c98971ac}{}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!Resource\+Filter@{Resource\+Filter}}
 \index{Resource\+Filter@{Resource\+Filter}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{Resource\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} crap\+::\+Resource\+Filter\+::\+Resource\+Filter (
+\subsubsection[{Resource\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Resource\+Filter\+::\+Resource\+Filter (
 \begin{DoxyParamCaption}
-\item[{const {\bf string\+\_\+hash} \&}]{name}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{{\bf Resource\+Manager} $\ast$}]{manager}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1_resource_filter_af16fde84f2eb9ddec468b45cf9913bea}
+)}\label{classcrap_1_1_resource_filter_a351592e6aad1c7c8980b28d2c98971ac}
 
 
-Definition at line 30 of file resourcemanager.\+h.
+Definition at line 20 of file resourcefilter.\+cpp.
 
-\hypertarget{classcrap_1_1_resource_filter_aa3549608f0f033aa79230669e33b9637}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!````~Resource\+Filter@{$\sim$\+Resource\+Filter}}
+\hypertarget{classcrap_1_1_resource_filter_aa3549608f0f033aa79230669e33b9637}{}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!````~Resource\+Filter@{$\sim$\+Resource\+Filter}}
 \index{````~Resource\+Filter@{$\sim$\+Resource\+Filter}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
 \subsubsection[{$\sim$\+Resource\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}virtual crap\+::\+Resource\+Filter\+::$\sim$\+Resource\+Filter (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classcrap_1_1_resource_filter_aa3549608f0f033aa79230669e33b9637}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcrap_1_1_resource_filter_aa3549608f0f033aa79230669e33b9637}
 
 
-Definition at line 31 of file resourcemanager.\+h.
+Definition at line 37 of file resourcefilter.\+h.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classcrap_1_1_resource_filter_ac02efd4c496384cda5a906a9168925c6}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!calculate\+Memory@{calculate\+Memory}}
-\index{calculate\+Memory@{calculate\+Memory}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{calculate\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\+\_\+t crap\+::\+Resource\+Filter\+::calculate\+Memory (
-\begin{DoxyParamCaption}
-\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{input\+\_\+data, }
-\item[{uint32\+\_\+t}]{size}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1_resource_filter_ac02efd4c496384cda5a906a9168925c6}
-
-
-Implemented in \hyperlink{classcrap_1_1_audio_file_filter_aa72252d9d5d4712c1e9a7118d35978b1}{crap\+::\+Audio\+File\+Filter}, and \hyperlink{classcrap_1_1_wave_file_filter_a5c4b819107aa837000c9671c2da0070f}{crap\+::\+Wave\+File\+Filter}.
-
-\hypertarget{classcrap_1_1_resource_filter_a2d264df875e440015fd05de4c5b96aa8}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!export\+File\+Name@{export\+File\+Name}}
-\index{export\+File\+Name@{export\+File\+Name}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{export\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf string64} crap\+::\+Resource\+Filter\+::export\+File\+Name (
-\begin{DoxyParamCaption}
-\item[{{\bf string64}}]{import\+\_\+name}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1_resource_filter_a2d264df875e440015fd05de4c5b96aa8}
-\hypertarget{classcrap_1_1_resource_filter_a453f47cae8bc4024fb4de89a2924a1aa}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!export\+Type\+Name@{export\+Type\+Name}}
-\index{export\+Type\+Name@{export\+Type\+Name}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{export\+Type\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf string64} crap\+::\+Resource\+Filter\+::export\+Type\+Name (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1_resource_filter_a453f47cae8bc4024fb4de89a2924a1aa}
-
-
-Implemented in \hyperlink{classcrap_1_1_audio_file_filter_ad33c23c9538347df97c9de4828bf9465}{crap\+::\+Audio\+File\+Filter}, and \hyperlink{classcrap_1_1_wave_file_filter_a35bb2b0ffeaf82af4b222f47b8d2317c}{crap\+::\+Wave\+File\+Filter}.
-
-\hypertarget{classcrap_1_1_resource_filter_ad17609fc71bb6d2825b99812d1d6eef4}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!import@{import}}
+\hypertarget{classcrap_1_1_resource_filter_a6e2233cffaf44988fb651eb21f5d7824}{}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!import@{import}}
 \index{import@{import}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
 \subsubsection[{import}]{\setlength{\rightskip}{0pt plus 5cm}virtual void crap\+::\+Resource\+Filter\+::import (
 \begin{DoxyParamCaption}
-\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{input\+\_\+data, }
-\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{output\+\_\+data, }
-\item[{uint32\+\_\+t}]{size}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{memory, }
+\item[{uint32\+\_\+t}]{mem\+Size, }
+\item[{{\bf System} $\ast$}]{system}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1_resource_filter_ad17609fc71bb6d2825b99812d1d6eef4}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcrap_1_1_resource_filter_a6e2233cffaf44988fb651eb21f5d7824}
 
 
-Implemented in \hyperlink{classcrap_1_1_audio_file_filter_a3d908e1de624fa11b50579aec91f9390}{crap\+::\+Audio\+File\+Filter}, and \hyperlink{classcrap_1_1_wave_file_filter_a4270065dc8e272901b3744eb64d03020}{crap\+::\+Wave\+File\+Filter}.
+Implemented in \hyperlink{classcrap_1_1_audio_filter_ac3895c47bf2d6ac8f15237fe7a72807b}{crap\+::\+Audio\+Filter}, and \hyperlink{classcrap_1_1_wave_file_filter_a74553a7c3abfebd09edb2c386879f4a3}{crap\+::\+Wave\+File\+Filter}.
 
-\hypertarget{classcrap_1_1_resource_filter_a7e89a3e7e7ac7497eb679657def798c8}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!operator==@{operator==}}
+\hypertarget{classcrap_1_1_resource_filter_a7e89a3e7e7ac7497eb679657def798c8}{}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!operator==@{operator==}}
 \index{operator==@{operator==}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
 \subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool crap\+::\+Resource\+Filter\+::operator== (
 \begin{DoxyParamCaption}
 \item[{const {\bf string\+\_\+hash} \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcrap_1_1_resource_filter_a7e89a3e7e7ac7497eb679657def798c8}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_resource_filter_a7e89a3e7e7ac7497eb679657def798c8}
 
 
-Definition at line 39 of file resourcemanager.\+h.
-
-\hypertarget{classcrap_1_1_resource_filter_a1f5cc743b14021977727db2564082c72}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!use@{use}}
-\index{use@{use}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}virtual void crap\+::\+Resource\+Filter\+::use (
-\begin{DoxyParamCaption}
-\item[{const {\bf string\+\_\+hash} \&}]{name, }
-\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{data}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classcrap_1_1_resource_filter_a1f5cc743b14021977727db2564082c72}
-
-
-Implemented in \hyperlink{classcrap_1_1_audio_file_filter_aba3859aed6fe298b9b9f3355d55e4681}{crap\+::\+Audio\+File\+Filter}, and \hyperlink{classcrap_1_1_wave_file_filter_a610555d9d31cceddb55efa0a1c5723f9}{crap\+::\+Wave\+File\+Filter}.
+Definition at line 42 of file resourcefilter.\+h.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classcrap_1_1_resource_filter_a53a73f6d9c295c74e36d62a51e106b54}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!\+\_\+name@{\+\_\+name}}
-\index{\+\_\+name@{\+\_\+name}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string\+\_\+hash} crap\+::\+Resource\+Filter\+::\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1_resource_filter_a53a73f6d9c295c74e36d62a51e106b54}
+\hypertarget{classcrap_1_1_resource_filter_a6991e27ddd701e769e6218fe34c333a6}{}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!\+\_\+id@{\+\_\+id}}
+\index{\+\_\+id@{\+\_\+id}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
+\subsubsection[{\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crap\+::\+Resource\+Filter\+::\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1_resource_filter_a6991e27ddd701e769e6218fe34c333a6}
 
 
-Definition at line 46 of file resourcemanager.\+h.
+Definition at line 50 of file resourcefilter.\+h.
 
-\hypertarget{classcrap_1_1_resource_filter_ae5724fd4f42bcd4ebe9e84ac1c9caf1c}{\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!\+\_\+node@{\+\_\+node}}
+\hypertarget{classcrap_1_1_resource_filter_ae5724fd4f42bcd4ebe9e84ac1c9caf1c}{}\index{crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}!\+\_\+node@{\+\_\+node}}
 \index{\+\_\+node@{\+\_\+node}!crap\+::\+Resource\+Filter@{crap\+::\+Resource\+Filter}}
-\subsubsection[{\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf intrusive\+\_\+node}$<${\bf Resource\+Filter}$>$ crap\+::\+Resource\+Filter\+::\+\_\+node\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcrap_1_1_resource_filter_ae5724fd4f42bcd4ebe9e84ac1c9caf1c}
+\subsubsection[{\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf intrusive\+\_\+node}$<${\bf Resource\+Filter}$>$ crap\+::\+Resource\+Filter\+::\+\_\+node\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1_resource_filter_ae5724fd4f42bcd4ebe9e84ac1c9caf1c}
 
 
-Definition at line 45 of file resourcemanager.\+h.
+Definition at line 49 of file resourcefilter.\+h.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{resourcemanager_8h}{resourcemanager.\+h}\end{DoxyCompactItemize}
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{resourcefilter_8h}{resourcefilter.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{resourcefilter_8cpp}{resourcefilter.\+cpp}\end{DoxyCompactItemize}

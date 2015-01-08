@@ -1,0 +1,48 @@
+\hypertarget{packetinformation_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/network/include/packetinformation.h File Reference}
+\label{packetinformation_8h}\index{/mnt/windows/data/programming/crapengine2/source/network/include/packetinformation.\+h@{/mnt/windows/data/programming/crapengine2/source/network/include/packetinformation.\+h}}
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sockets.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1_connection_header}{crap\+::\+Connection\+Header}
+\item 
+struct \hyperlink{structcrap_1_1_connection_information}{crap\+::\+Connection\+Information}
+\item 
+struct \hyperlink{structcrap_1_1_reliability_header}{crap\+::\+Reliability\+Header}
+\item 
+struct \hyperlink{structcrap_1_1_reliability_outgoing}{crap\+::\+Reliability\+Outgoing}
+\item 
+struct \hyperlink{structcrap_1_1_reliability_incoming}{crap\+::\+Reliability\+Incoming}
+\item 
+struct \hyperlink{structcrap_1_1_network_command_data}{crap\+::\+Network\+Command\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{packetinformation_8h_a61a44fc1b98ef354541083dbae62be76}{N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+}
+\item 
+\#define \hyperlink{packetinformation_8h_a0811d6d7f9c275bf8f3af82d61a31e0f}{C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}~(sizeof(\hyperlink{structcrap_1_1_connection_header}{crap\+::\+Connection\+Header}) + sizeof(\hyperlink{structcrap_1_1_reliability_header}{crap\+::\+Reliability\+Header}) + 4$\ast$16)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{packetinformation_8h_a0811d6d7f9c275bf8f3af82d61a31e0f}{}\index{packetinformation.\+h@{packetinformation.\+h}!C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E@{C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}}
+\index{C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E@{C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}!packetinformation.\+h@{packetinformation.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E~(sizeof({\bf crap\+::\+Connection\+Header}) + sizeof({\bf crap\+::\+Reliability\+Header}) + 4$\ast$16)}\label{packetinformation_8h_a0811d6d7f9c275bf8f3af82d61a31e0f}
+
+
+Definition at line 21 of file packetinformation.\+h.
+
+\hypertarget{packetinformation_8h_a61a44fc1b98ef354541083dbae62be76}{}\index{packetinformation.\+h@{packetinformation.\+h}!N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+@{N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+}}
+\index{N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+@{N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+}!packetinformation.\+h@{packetinformation.\+h}}
+\subsubsection[{N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+P\+A\+C\+K\+E\+T\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N\+\_\+\+H\+\_\+}\label{packetinformation_8h_a61a44fc1b98ef354541083dbae62be76}
+
+
+Definition at line 16 of file packetinformation.\+h.
+

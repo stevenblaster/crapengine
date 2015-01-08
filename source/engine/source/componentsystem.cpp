@@ -37,7 +37,18 @@ void ComponentSystem::destroyComponent( Component* component )
 			return;
 		}
 	}
+}
 
+void ComponentSystem::setComponentMember( Component* component, string_hash name, pointer_t<void> data )
+{
+	for( intrusive_node<ComponentFactory>* node = _factoryList.begin(); node != _factoryList.end(); node = _factoryList.next(node))
+	{
+		if( *node->parent() == component->getTypeID() )
+		{
+			node->parent()->setComponentMember( component, name, data );
+			return;
+		}
+	}
 }
 
 } /* namespace crap */

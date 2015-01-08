@@ -1,0 +1,183 @@
+\hypertarget{classcrap_1_1_keyboard_input}{}\section{crap\+:\+:Keyboard\+Input Class Reference}
+\label{classcrap_1_1_keyboard_input}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+
+
+{\ttfamily \#include $<$keyboardinput.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Keyboard\+Input\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_keyboard_input}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1_keyboard_input_1_1s__key_binding}{s\+\_\+key\+Binding}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(uint32\+\_\+t state)$>$ \hyperlink{classcrap_1_1_keyboard_input_a65627167afa075a37fa85b21b5e9fb0b}{key\+Function}
+\item 
+typedef struct \hyperlink{structcrap_1_1_keyboard_input_1_1s__key_binding}{crap\+::\+Keyboard\+Input\+::s\+\_\+key\+Binding} \hyperlink{classcrap_1_1_keyboard_input_aded4eebea0fea50b5244242f241c384c}{Key\+Binding}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_keyboard_input_aee4763d39526518f64d931c6c7a2fc7a}{Keyboard\+Input} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, uint32\+\_\+t max\+\_\+listener, \hyperlink{classcrap_1_1_input_manager}{Input\+Manager} $\ast$manager)
+\item 
+virtual \hyperlink{classcrap_1_1_keyboard_input_a76b3a8c053a5734674157632046ae3c6}{$\sim$\+Keyboard\+Input} (void)
+\item 
+virtual void \hyperlink{classcrap_1_1_keyboard_input_abe408b019f5ff2cd57478e6214e67e85}{receive\+Input} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_keyboard_input_ad11bcffc4ac9f11b1faeb0562eace9da}{add\+Listener} (C $\ast$instance, uint32\+\_\+t key, uint32\+\_\+t modifier, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$void($\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_keyboard_input_a3bbc9cc28c81a4307d5b512de41f38bf}{add\+Listener} (uint32\+\_\+t key, uint32\+\_\+t modifier, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_keyboard_input_af5e331fa0e56781f886166f74e40fccd}{remove\+Listener} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_keyboard_input_afd49b84acfdfd479e4e538811b191e1c}{remove\+Listener} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcrap_1_1_keyboard_input_aa2ec9098b93017ab5ff82a178c9dff3c}{call\+Back\+Function} (\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$, int32\+\_\+t, int32\+\_\+t, int32\+\_\+t, int32\+\_\+t)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file keyboardinput.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_keyboard_input_aded4eebea0fea50b5244242f241c384c}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!Key\+Binding@{Key\+Binding}}
+\index{Key\+Binding@{Key\+Binding}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{Key\+Binding}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Keyboard\+Input\+::s\+\_\+key\+Binding}
+	 {\bf crap\+::\+Keyboard\+Input\+::\+Key\+Binding}}\label{classcrap_1_1_keyboard_input_aded4eebea0fea50b5244242f241c384c}
+\hypertarget{classcrap_1_1_keyboard_input_a65627167afa075a37fa85b21b5e9fb0b}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!key\+Function@{key\+Function}}
+\index{key\+Function@{key\+Function}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{key\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( uint32\+\_\+t state )$>$ {\bf crap\+::\+Keyboard\+Input\+::key\+Function}}\label{classcrap_1_1_keyboard_input_a65627167afa075a37fa85b21b5e9fb0b}
+
+
+Definition at line 33 of file keyboardinput.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_keyboard_input_aee4763d39526518f64d931c6c7a2fc7a}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!Keyboard\+Input@{Keyboard\+Input}}
+\index{Keyboard\+Input@{Keyboard\+Input}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{Keyboard\+Input}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Keyboard\+Input\+::\+Keyboard\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{uint32\+\_\+t}]{max\+\_\+listener, }
+\item[{{\bf Input\+Manager} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_keyboard_input_aee4763d39526518f64d931c6c7a2fc7a}
+
+
+Definition at line 43 of file keyboardinput.\+cpp.
+
+\hypertarget{classcrap_1_1_keyboard_input_a76b3a8c053a5734674157632046ae3c6}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!````~Keyboard\+Input@{$\sim$\+Keyboard\+Input}}
+\index{````~Keyboard\+Input@{$\sim$\+Keyboard\+Input}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{$\sim$\+Keyboard\+Input}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Keyboard\+Input\+::$\sim$\+Keyboard\+Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcrap_1_1_keyboard_input_a76b3a8c053a5734674157632046ae3c6}
+
+
+Definition at line 52 of file keyboardinput.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_keyboard_input_ad11bcffc4ac9f11b1faeb0562eace9da}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Keyboard\+Input\+::add\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{key, }
+\item[{uint32\+\_\+t}]{modifier, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_keyboard_input_ad11bcffc4ac9f11b1faeb0562eace9da}
+
+
+Definition at line 72 of file keyboardinput.\+h.
+
+\hypertarget{classcrap_1_1_keyboard_input_a3bbc9cc28c81a4307d5b512de41f38bf}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Keyboard\+Input\+::add\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{key, }
+\item[{uint32\+\_\+t}]{modifier, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_keyboard_input_a3bbc9cc28c81a4307d5b512de41f38bf}
+
+
+Definition at line 86 of file keyboardinput.\+h.
+
+\hypertarget{classcrap_1_1_keyboard_input_aa2ec9098b93017ab5ff82a178c9dff3c}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!call\+Back\+Function@{call\+Back\+Function}}
+\index{call\+Back\+Function@{call\+Back\+Function}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{call\+Back\+Function}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Keyboard\+Input\+::call\+Back\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf window\+\_\+t} $\ast$}]{window, }
+\item[{int32\+\_\+t}]{key, }
+\item[{int32\+\_\+t}]{scancode, }
+\item[{int32\+\_\+t}]{action, }
+\item[{int32\+\_\+t}]{modifier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1_keyboard_input_aa2ec9098b93017ab5ff82a178c9dff3c}
+
+
+Definition at line 23 of file keyboardinput.\+cpp.
+
+\hypertarget{classcrap_1_1_keyboard_input_abe408b019f5ff2cd57478e6214e67e85}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!receive\+Input@{receive\+Input}}
+\index{receive\+Input@{receive\+Input}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{receive\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Keyboard\+Input\+::receive\+Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcrap_1_1_keyboard_input_abe408b019f5ff2cd57478e6214e67e85}
+
+
+Reimplemented from \hyperlink{classcrap_1_1_base_input_afa79d7fec307c444c0cf1463a9bd479a}{crap\+::\+Base\+Input}.
+
+
+
+Definition at line 59 of file keyboardinput.\+cpp.
+
+\hypertarget{classcrap_1_1_keyboard_input_af5e331fa0e56781f886166f74e40fccd}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Keyboard\+Input\+::remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_keyboard_input_af5e331fa0e56781f886166f74e40fccd}
+
+
+Definition at line 100 of file keyboardinput.\+h.
+
+\hypertarget{classcrap_1_1_keyboard_input_afd49b84acfdfd479e4e538811b191e1c}{}\index{crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!crap\+::\+Keyboard\+Input@{crap\+::\+Keyboard\+Input}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Keyboard\+Input\+::remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_keyboard_input_afd49b84acfdfd479e4e538811b191e1c}
+
+
+Definition at line 114 of file keyboardinput.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/\hyperlink{keyboardinput_8h}{keyboardinput.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/source/\hyperlink{keyboardinput_8cpp}{keyboardinput.\+cpp}\end{DoxyCompactItemize}

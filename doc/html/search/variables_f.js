@@ -1,27 +1,4 @@
 var searchData=
 [
-  ['r',['r',['../struct_n_v_gcolor.html#a5fbafce12dbdd10bdd886aae9157588d',1,'NVGcolor']]],
-  ['radius',['radius',['../struct_n_v_gpaint.html#a796f17e83ffd2f59d7a48a5c0e062c55',1,'NVGpaint']]],
-  ['regionindex',['regionIndex',['../struct_glyph_info.html#a82c347997a66291d8d4aaa7db764d4e2',1,'GlyphInfo']]],
-  ['rendercreate',['renderCreate',['../struct_f_o_n_sparams.html#a92d9a5443b3694c2a698e12a41720616',1,'FONSparams::renderCreate()'],['../struct_n_v_gparams.html#ae62f4124bb147d342edfcbc8c233c782',1,'NVGparams::renderCreate()']]],
-  ['rendercreatetexture',['renderCreateTexture',['../struct_n_v_gparams.html#a5c15e9da1c7021d104ac0915ddf8bcdf',1,'NVGparams']]],
-  ['renderdelete',['renderDelete',['../struct_f_o_n_sparams.html#ac375908ec6a8963c5893c0066df4d157',1,'FONSparams::renderDelete()'],['../struct_n_v_gparams.html#a92fc1339d100af7cc4b5fdeb7b36e63c',1,'NVGparams::renderDelete()']]],
-  ['renderdeletetexture',['renderDeleteTexture',['../struct_n_v_gparams.html#a165c064c1c1a454a45e2848feedd5fdd',1,'NVGparams']]],
-  ['renderdraw',['renderDraw',['../struct_f_o_n_sparams.html#ade57583dd6f18eada98763a4f1817bf9',1,'FONSparams']]],
-  ['renderfill',['renderFill',['../struct_n_v_gparams.html#ac484f24518e2653dea0739b7f35a8614',1,'NVGparams']]],
-  ['renderflush',['renderFlush',['../struct_n_v_gparams.html#a5c2b79e8bf66c15b1f265c39cb4f277c',1,'NVGparams']]],
-  ['rendergettexturesize',['renderGetTextureSize',['../struct_n_v_gparams.html#a2ecbd50cea119eb702cfbab7538596b8',1,'NVGparams']]],
-  ['renderresize',['renderResize',['../struct_f_o_n_sparams.html#ad3fc02cf5846a215e7b23f583681e06a',1,'FONSparams']]],
-  ['renderstroke',['renderStroke',['../struct_n_v_gparams.html#a9b56486a8c43791466312e5b886539e0',1,'NVGparams']]],
-  ['rendertriangles',['renderTriangles',['../struct_n_v_gparams.html#ac8410294c4712cda7b1754f123a9c4d5',1,'NVGparams']]],
-  ['renderupdate',['renderUpdate',['../struct_f_o_n_sparams.html#aceb5385a77ddcfb142909967a0d120e7',1,'FONSparams']]],
-  ['renderupdatetexture',['renderUpdateTexture',['../struct_n_v_gparams.html#ab9ece91b2fa9528d2fde0a134086f3a5',1,'NVGparams']]],
-  ['renderviewport',['renderViewport',['../struct_n_v_gparams.html#aa58560027660da6375360427ad5271e2',1,'NVGparams']]],
-  ['repeat',['repeat',['../struct_n_v_gpaint.html#a7f46b3d46ef04390791bdf1b032ef594',1,'NVGpaint']]],
-  ['resourcefilterlist',['ResourceFilterList',['../namespacecrap.html#afebe7139a7ca8c9be1349914a6f2acc6',1,'crap']]],
-  ['result',['RESULT',['../structcrap_1_1has__vtable.html#a020726388c42488ee23dc65f8e1b4b83',1,'crap::has_vtable']]],
-  ['rgba',['rgba',['../struct_n_v_gcolor.html#aa1091c72571ef92c4915c1efb6fd1a36',1,'NVGcolor']]],
-  ['riff',['riff',['../structcrap_1_1_wave_file_1_1_wave_header.html#abf32e05680132afe847f29671bd0b039',1,'crap::WaveFile::WaveHeader']]],
-  ['rm',['rm',['../unittests_2source_2resourcemanager_8cpp.html#a0214c07333e287335da0dffe88c928e5',1,'resourcemanager.cpp']]],
-  ['rmm',['rmm',['../unittests_2source_2resourcemanager_8cpp.html#a88e2b31265ae68d043d9824cf33fef71',1,'resourcemanager.cpp']]]
+  ['queue_5fptr',['queue_ptr',['../core_2unittests_2source_2queue_8cpp.html#aeea1f3e51565a35ee682f6375504e31d',1,'queue.cpp']]]
 ];

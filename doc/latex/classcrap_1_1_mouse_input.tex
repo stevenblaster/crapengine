@@ -1,0 +1,439 @@
+\hypertarget{classcrap_1_1_mouse_input}{}\section{crap\+:\+:Mouse\+Input Class Reference}
+\label{classcrap_1_1_mouse_input}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+
+
+{\ttfamily \#include $<$mouseinput.\+h$>$}
+
+Inheritance diagram for crap\+:\+:Mouse\+Input\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcrap_1_1_mouse_input}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1_mouse_input_1_1s__button_binding}{s\+\_\+button\+Binding}
+\item 
+struct \hyperlink{structcrap_1_1_mouse_input_1_1s__enter_binding}{s\+\_\+enter\+Binding}
+\item 
+struct \hyperlink{structcrap_1_1_mouse_input_1_1s__position_binding}{s\+\_\+position\+Binding}
+\item 
+struct \hyperlink{structcrap_1_1_mouse_input_1_1s__scroll_binding}{s\+\_\+scroll\+Binding}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(uint32\+\_\+t state)$>$ \hyperlink{classcrap_1_1_mouse_input_ae29f008887cdeda02cb0a8bbac759f52}{button\+Function}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(\hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} x, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} y)$>$ \hyperlink{classcrap_1_1_mouse_input_aa2d296ac0bf7bf9f29c13377534bf919}{position\+Function}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(\hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} x, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} y)$>$ \hyperlink{classcrap_1_1_mouse_input_a76d83afa5ade8d873bc0866b37e36f37}{scroll\+Function}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{delegate}$<$ void(bool)$>$ \hyperlink{classcrap_1_1_mouse_input_a1fb324bddbf07f2a44cb0f98c7bc11e4}{enter\+Function}
+\item 
+typedef struct \hyperlink{structcrap_1_1_mouse_input_1_1s__button_binding}{crap\+::\+Mouse\+Input\+::s\+\_\+button\+Binding} \hyperlink{classcrap_1_1_mouse_input_a4aef04436121adc836ded20bfe36d967}{Button\+Binding}
+\item 
+typedef struct \hyperlink{structcrap_1_1_mouse_input_1_1s__position_binding}{crap\+::\+Mouse\+Input\+::s\+\_\+position\+Binding} \hyperlink{classcrap_1_1_mouse_input_a104e87f3c70805567977acc81cc15f38}{Position\+Binding}
+\item 
+typedef struct \hyperlink{structcrap_1_1_mouse_input_1_1s__scroll_binding}{crap\+::\+Mouse\+Input\+::s\+\_\+scroll\+Binding} \hyperlink{classcrap_1_1_mouse_input_aa5c6a3bcfba809e9784dbd3aa3c46b65}{Scroll\+Binding}
+\item 
+typedef struct \hyperlink{structcrap_1_1_mouse_input_1_1s__enter_binding}{crap\+::\+Mouse\+Input\+::s\+\_\+enter\+Binding} \hyperlink{classcrap_1_1_mouse_input_a3616aed9af2333779cc502d22764f540}{Enter\+Binding}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_mouse_input_a51f0633d6dbcc0ad9f262ef339b8542a}{Mouse\+Input} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, uint32\+\_\+t max\+\_\+button\+\_\+listener, uint32\+\_\+t max\+\_\+position\+\_\+listener, uint32\+\_\+t max\+\_\+scroll\+\_\+listener, uint32\+\_\+t max\+\_\+enter\+\_\+listener, \hyperlink{classcrap_1_1_input_manager}{Input\+Manager} $\ast$manager)
+\item 
+virtual \hyperlink{classcrap_1_1_mouse_input_a24df7fb1be6649376e9cd019eadf8ed2}{$\sim$\+Mouse\+Input} (void)
+\item 
+virtual void \hyperlink{classcrap_1_1_mouse_input_afc16f0005b50c8724aedc99ab1168177}{receive\+Input} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_af83e4a3bbbaeb93ab14d36b8f902c652}{add\+Button\+Listener} (C $\ast$instance, uint32\+\_\+t button, uint32\+\_\+t modifier, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$void($\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_ad58891beb8fb0e55656745f7db150054}{add\+Button\+Listener} (uint32\+\_\+t button, uint32\+\_\+t modifier, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a5439590747a7b264d6fc20a1a4f48e44}{remove\+Button\+Listener} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(uint32\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a84e6ddac695af74ccf045ec07a972dbc}{remove\+Button\+Listener} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_af25d8c7e87a6b9b43bb3f518e28a2119}{add\+Position\+Listener} (C $\ast$instance, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_ab789735065df4ee876e69182e01e6e6b}{add\+Position\+Listener} (bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_aa36e5678fac0904d769155fbe19e4ef7}{remove\+Position\+Listener} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a60f9de71eb39b01d448ec2daf72d0830}{remove\+Position\+Listener} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a17b73180ec641b18037285641bca5e49}{add\+Scroll\+Listener} (C $\ast$instance, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a4733e227b5c76a7d7b3a96bbd78d1d9f}{add\+Scroll\+Listener} (bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a61b03a187d63fc67fd75e35e4887a12d}{remove\+Scroll\+Listener} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_afd9dad5daf30f80c19d741ec4f852a84}{remove\+Scroll\+Listener} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(bool) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a92312eeaaef50547610bab5c6b2f8d21}{add\+Enter\+Listener} (C $\ast$instance, bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$void($\ast$)(bool) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_ab8530e1ed07245bd1741ed36b9a2cdca}{add\+Enter\+Listener} (bool on\+State\+Change=true)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(bool) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_a1ec64719bdb5c2111d1dc3099cd16745}{remove\+Enter\+Listener} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(bool) F$>$ }\\void \hyperlink{classcrap_1_1_mouse_input_ab940e9c365f6a3f304ce2315d259488b}{remove\+Enter\+Listener} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcrap_1_1_mouse_input_a302231a6c37a332b2b26a504c4945856}{button\+Call\+Back\+Function} (\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$, int32\+\_\+t button, int32\+\_\+t action, int32\+\_\+t modifier)
+\item 
+static void \hyperlink{classcrap_1_1_mouse_input_a4910d11a022223e4916eb4f0223e95df}{position\+Call\+Back\+Function} (\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} x, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} y)
+\item 
+static void \hyperlink{classcrap_1_1_mouse_input_a4267d6d2e388dd49f4b01a59912e0599}{scroll\+Call\+Back\+Function} (\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} offset\+\_\+x, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} offset\+\_\+y)
+\item 
+static void \hyperlink{classcrap_1_1_mouse_input_a5ee160f889ea1bb525b8ed744309f4d2}{enter\+Cursor\+Call\+Back\+Function} (\hyperlink{namespacecrap_a3917356677c911215fe8f50465f335bf}{window\+\_\+t} $\ast$, int32\+\_\+t value)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file mouseinput.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_mouse_input_a4aef04436121adc836ded20bfe36d967}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!Button\+Binding@{Button\+Binding}}
+\index{Button\+Binding@{Button\+Binding}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{Button\+Binding}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Mouse\+Input\+::s\+\_\+button\+Binding}
+	 {\bf crap\+::\+Mouse\+Input\+::\+Button\+Binding}}\label{classcrap_1_1_mouse_input_a4aef04436121adc836ded20bfe36d967}
+\hypertarget{classcrap_1_1_mouse_input_ae29f008887cdeda02cb0a8bbac759f52}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!button\+Function@{button\+Function}}
+\index{button\+Function@{button\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{button\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( uint32\+\_\+t state )$>$ {\bf crap\+::\+Mouse\+Input\+::button\+Function}}\label{classcrap_1_1_mouse_input_ae29f008887cdeda02cb0a8bbac759f52}
+
+
+Definition at line 33 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a3616aed9af2333779cc502d22764f540}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!Enter\+Binding@{Enter\+Binding}}
+\index{Enter\+Binding@{Enter\+Binding}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{Enter\+Binding}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Mouse\+Input\+::s\+\_\+enter\+Binding}
+	 {\bf crap\+::\+Mouse\+Input\+::\+Enter\+Binding}}\label{classcrap_1_1_mouse_input_a3616aed9af2333779cc502d22764f540}
+\hypertarget{classcrap_1_1_mouse_input_a1fb324bddbf07f2a44cb0f98c7bc11e4}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!enter\+Function@{enter\+Function}}
+\index{enter\+Function@{enter\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{enter\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( bool )$>$ {\bf crap\+::\+Mouse\+Input\+::enter\+Function}}\label{classcrap_1_1_mouse_input_a1fb324bddbf07f2a44cb0f98c7bc11e4}
+
+
+Definition at line 36 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a104e87f3c70805567977acc81cc15f38}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!Position\+Binding@{Position\+Binding}}
+\index{Position\+Binding@{Position\+Binding}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{Position\+Binding}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Mouse\+Input\+::s\+\_\+position\+Binding}
+	 {\bf crap\+::\+Mouse\+Input\+::\+Position\+Binding}}\label{classcrap_1_1_mouse_input_a104e87f3c70805567977acc81cc15f38}
+\hypertarget{classcrap_1_1_mouse_input_aa2d296ac0bf7bf9f29c13377534bf919}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!position\+Function@{position\+Function}}
+\index{position\+Function@{position\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{position\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( {\bf float64\+\_\+t} x, {\bf float64\+\_\+t} y )$>$ {\bf crap\+::\+Mouse\+Input\+::position\+Function}}\label{classcrap_1_1_mouse_input_aa2d296ac0bf7bf9f29c13377534bf919}
+
+
+Definition at line 34 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_aa5c6a3bcfba809e9784dbd3aa3c46b65}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!Scroll\+Binding@{Scroll\+Binding}}
+\index{Scroll\+Binding@{Scroll\+Binding}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{Scroll\+Binding}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Mouse\+Input\+::s\+\_\+scroll\+Binding}
+	 {\bf crap\+::\+Mouse\+Input\+::\+Scroll\+Binding}}\label{classcrap_1_1_mouse_input_aa5c6a3bcfba809e9784dbd3aa3c46b65}
+\hypertarget{classcrap_1_1_mouse_input_a76d83afa5ade8d873bc0866b37e36f37}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!scroll\+Function@{scroll\+Function}}
+\index{scroll\+Function@{scroll\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{scroll\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf delegate}$<$ void ( {\bf float64\+\_\+t} x, {\bf float64\+\_\+t} y )$>$ {\bf crap\+::\+Mouse\+Input\+::scroll\+Function}}\label{classcrap_1_1_mouse_input_a76d83afa5ade8d873bc0866b37e36f37}
+
+
+Definition at line 35 of file mouseinput.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_mouse_input_a51f0633d6dbcc0ad9f262ef339b8542a}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!Mouse\+Input@{Mouse\+Input}}
+\index{Mouse\+Input@{Mouse\+Input}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{Mouse\+Input}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Mouse\+Input\+::\+Mouse\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{uint32\+\_\+t}]{max\+\_\+button\+\_\+listener, }
+\item[{uint32\+\_\+t}]{max\+\_\+position\+\_\+listener, }
+\item[{uint32\+\_\+t}]{max\+\_\+scroll\+\_\+listener, }
+\item[{uint32\+\_\+t}]{max\+\_\+enter\+\_\+listener, }
+\item[{{\bf Input\+Manager} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a51f0633d6dbcc0ad9f262ef339b8542a}
+
+
+Definition at line 93 of file mouseinput.\+cpp.
+
+\hypertarget{classcrap_1_1_mouse_input_a24df7fb1be6649376e9cd019eadf8ed2}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!````~Mouse\+Input@{$\sim$\+Mouse\+Input}}
+\index{````~Mouse\+Input@{$\sim$\+Mouse\+Input}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{$\sim$\+Mouse\+Input}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Mouse\+Input\+::$\sim$\+Mouse\+Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcrap_1_1_mouse_input_a24df7fb1be6649376e9cd019eadf8ed2}
+
+
+Definition at line 116 of file mouseinput.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_mouse_input_af83e4a3bbbaeb93ab14d36b8f902c652}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Button\+Listener@{add\+Button\+Listener}}
+\index{add\+Button\+Listener@{add\+Button\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::add\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{button, }
+\item[{uint32\+\_\+t}]{modifier, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_af83e4a3bbbaeb93ab14d36b8f902c652}
+
+
+Definition at line 152 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_ad58891beb8fb0e55656745f7db150054}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Button\+Listener@{add\+Button\+Listener}}
+\index{add\+Button\+Listener@{add\+Button\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::add\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{button, }
+\item[{uint32\+\_\+t}]{modifier, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_ad58891beb8fb0e55656745f7db150054}
+
+
+Definition at line 166 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a92312eeaaef50547610bab5c6b2f8d21}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Enter\+Listener@{add\+Enter\+Listener}}
+\index{add\+Enter\+Listener@{add\+Enter\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Enter\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(bool) F$>$ void crap\+::\+Mouse\+Input\+::add\+Enter\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a92312eeaaef50547610bab5c6b2f8d21}
+
+
+Definition at line 316 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_ab8530e1ed07245bd1741ed36b9a2cdca}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Enter\+Listener@{add\+Enter\+Listener}}
+\index{add\+Enter\+Listener@{add\+Enter\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Enter\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(bool) F$>$ void crap\+::\+Mouse\+Input\+::add\+Enter\+Listener (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_ab8530e1ed07245bd1741ed36b9a2cdca}
+
+
+Definition at line 328 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_af25d8c7e87a6b9b43bb3f518e28a2119}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Position\+Listener@{add\+Position\+Listener}}
+\index{add\+Position\+Listener@{add\+Position\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Position\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::add\+Position\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_af25d8c7e87a6b9b43bb3f518e28a2119}
+
+
+Definition at line 208 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_ab789735065df4ee876e69182e01e6e6b}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Position\+Listener@{add\+Position\+Listener}}
+\index{add\+Position\+Listener@{add\+Position\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Position\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::add\+Position\+Listener (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_ab789735065df4ee876e69182e01e6e6b}
+
+
+Definition at line 221 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a17b73180ec641b18037285641bca5e49}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Scroll\+Listener@{add\+Scroll\+Listener}}
+\index{add\+Scroll\+Listener@{add\+Scroll\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Scroll\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::add\+Scroll\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance, }
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a17b73180ec641b18037285641bca5e49}
+
+
+Definition at line 262 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a4733e227b5c76a7d7b3a96bbd78d1d9f}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!add\+Scroll\+Listener@{add\+Scroll\+Listener}}
+\index{add\+Scroll\+Listener@{add\+Scroll\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{add\+Scroll\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::add\+Scroll\+Listener (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\+State\+Change = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a4733e227b5c76a7d7b3a96bbd78d1d9f}
+
+
+Definition at line 275 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a302231a6c37a332b2b26a504c4945856}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!button\+Call\+Back\+Function@{button\+Call\+Back\+Function}}
+\index{button\+Call\+Back\+Function@{button\+Call\+Back\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{button\+Call\+Back\+Function}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Mouse\+Input\+::button\+Call\+Back\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf window\+\_\+t} $\ast$}]{window, }
+\item[{int32\+\_\+t}]{button, }
+\item[{int32\+\_\+t}]{action, }
+\item[{int32\+\_\+t}]{modifier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1_mouse_input_a302231a6c37a332b2b26a504c4945856}
+
+
+Definition at line 24 of file mouseinput.\+cpp.
+
+\hypertarget{classcrap_1_1_mouse_input_a5ee160f889ea1bb525b8ed744309f4d2}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!enter\+Cursor\+Call\+Back\+Function@{enter\+Cursor\+Call\+Back\+Function}}
+\index{enter\+Cursor\+Call\+Back\+Function@{enter\+Cursor\+Call\+Back\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{enter\+Cursor\+Call\+Back\+Function}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Mouse\+Input\+::enter\+Cursor\+Call\+Back\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf window\+\_\+t} $\ast$}]{window, }
+\item[{int32\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1_mouse_input_a5ee160f889ea1bb525b8ed744309f4d2}
+
+
+Definition at line 77 of file mouseinput.\+cpp.
+
+\hypertarget{classcrap_1_1_mouse_input_a4910d11a022223e4916eb4f0223e95df}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!position\+Call\+Back\+Function@{position\+Call\+Back\+Function}}
+\index{position\+Call\+Back\+Function@{position\+Call\+Back\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{position\+Call\+Back\+Function}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Mouse\+Input\+::position\+Call\+Back\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf window\+\_\+t} $\ast$}]{window, }
+\item[{{\bf float64\+\_\+t}}]{x, }
+\item[{{\bf float64\+\_\+t}}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1_mouse_input_a4910d11a022223e4916eb4f0223e95df}
+
+
+Definition at line 43 of file mouseinput.\+cpp.
+
+\hypertarget{classcrap_1_1_mouse_input_afc16f0005b50c8724aedc99ab1168177}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!receive\+Input@{receive\+Input}}
+\index{receive\+Input@{receive\+Input}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{receive\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Mouse\+Input\+::receive\+Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcrap_1_1_mouse_input_afc16f0005b50c8724aedc99ab1168177}
+
+
+Reimplemented from \hyperlink{classcrap_1_1_base_input_afa79d7fec307c444c0cf1463a9bd479a}{crap\+::\+Base\+Input}.
+
+
+
+Definition at line 125 of file mouseinput.\+cpp.
+
+\hypertarget{classcrap_1_1_mouse_input_a5439590747a7b264d6fc20a1a4f48e44}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Button\+Listener@{remove\+Button\+Listener}}
+\index{remove\+Button\+Listener@{remove\+Button\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a5439590747a7b264d6fc20a1a4f48e44}
+
+
+Definition at line 180 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a84e6ddac695af74ccf045ec07a972dbc}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Button\+Listener@{remove\+Button\+Listener}}
+\index{remove\+Button\+Listener@{remove\+Button\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Button\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(uint32\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Button\+Listener (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a84e6ddac695af74ccf045ec07a972dbc}
+
+
+Definition at line 194 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a1ec64719bdb5c2111d1dc3099cd16745}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Enter\+Listener@{remove\+Enter\+Listener}}
+\index{remove\+Enter\+Listener@{remove\+Enter\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Enter\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(bool) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Enter\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a1ec64719bdb5c2111d1dc3099cd16745}
+
+
+Definition at line 340 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_ab940e9c365f6a3f304ce2315d259488b}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Enter\+Listener@{remove\+Enter\+Listener}}
+\index{remove\+Enter\+Listener@{remove\+Enter\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Enter\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(bool) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Enter\+Listener (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_ab940e9c365f6a3f304ce2315d259488b}
+
+
+Definition at line 354 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_aa36e5678fac0904d769155fbe19e4ef7}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Position\+Listener@{remove\+Position\+Listener}}
+\index{remove\+Position\+Listener@{remove\+Position\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Position\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Position\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_aa36e5678fac0904d769155fbe19e4ef7}
+
+
+Definition at line 234 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a60f9de71eb39b01d448ec2daf72d0830}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Position\+Listener@{remove\+Position\+Listener}}
+\index{remove\+Position\+Listener@{remove\+Position\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Position\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Position\+Listener (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a60f9de71eb39b01d448ec2daf72d0830}
+
+
+Definition at line 248 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a61b03a187d63fc67fd75e35e4887a12d}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Scroll\+Listener@{remove\+Scroll\+Listener}}
+\index{remove\+Scroll\+Listener@{remove\+Scroll\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Scroll\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Scroll\+Listener (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_a61b03a187d63fc67fd75e35e4887a12d}
+
+
+Definition at line 288 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_afd9dad5daf30f80c19d741ec4f852a84}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!remove\+Scroll\+Listener@{remove\+Scroll\+Listener}}
+\index{remove\+Scroll\+Listener@{remove\+Scroll\+Listener}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{remove\+Scroll\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(float64\+\_\+t, float64\+\_\+t) F$>$ void crap\+::\+Mouse\+Input\+::remove\+Scroll\+Listener (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_mouse_input_afd9dad5daf30f80c19d741ec4f852a84}
+
+
+Definition at line 302 of file mouseinput.\+h.
+
+\hypertarget{classcrap_1_1_mouse_input_a4267d6d2e388dd49f4b01a59912e0599}{}\index{crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}!scroll\+Call\+Back\+Function@{scroll\+Call\+Back\+Function}}
+\index{scroll\+Call\+Back\+Function@{scroll\+Call\+Back\+Function}!crap\+::\+Mouse\+Input@{crap\+::\+Mouse\+Input}}
+\subsubsection[{scroll\+Call\+Back\+Function}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Mouse\+Input\+::scroll\+Call\+Back\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf window\+\_\+t} $\ast$}]{window, }
+\item[{{\bf float64\+\_\+t}}]{offset\+\_\+x, }
+\item[{{\bf float64\+\_\+t}}]{offset\+\_\+y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1_mouse_input_a4267d6d2e388dd49f4b01a59912e0599}
+
+
+Definition at line 60 of file mouseinput.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/video/include/\hyperlink{mouseinput_8h}{mouseinput.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/video/source/\hyperlink{mouseinput_8cpp}{mouseinput.\+cpp}\end{DoxyCompactItemize}

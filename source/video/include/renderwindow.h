@@ -35,6 +35,8 @@ public:
 	void destroy( void );
 	void swap( void );
 
+	bool shouldClose( void );
+
 	CRAP_INLINE window_t* getHandle( void ) { return _handle; }
 
 private:

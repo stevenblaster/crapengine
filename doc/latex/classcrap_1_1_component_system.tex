@@ -1,0 +1,106 @@
+\hypertarget{classcrap_1_1_component_system}{}\section{crap\+:\+:Component\+System Class Reference}
+\label{classcrap_1_1_component_system}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+
+
+{\ttfamily \#include $<$componentsystem.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_component_system_a9f5375dbdcadc882f9e0a350cf60eaca}{Component\+System} (uint32\+\_\+t memory\+\_\+size)
+\item 
+\hyperlink{classcrap_1_1_component_system_a99babf981d46a846ed1ae42b59a96113}{$\sim$\+Component\+System} (void)
+\item 
+\hyperlink{classcrap_1_1_component}{Component} $\ast$ \hyperlink{classcrap_1_1_component_system_ad8fba4ba6a8e2b17b60df7af4e0188eb}{create\+Component} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name)
+\item 
+void \hyperlink{classcrap_1_1_component_system_a4a136955ec8d1e780c8e635b4d6fb638}{destroy\+Component} (\hyperlink{classcrap_1_1_component}{Component} $\ast$component)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1intrusive__list}{intrusive\+\_\+list}$<$ \hyperlink{classcrap_1_1_component_factory}{Component\+Factory} $>$ $\ast$ \hyperlink{classcrap_1_1_component_system_ac9e3b94d0b2e8dbacdf3ed513c6d39cc}{factory\+List} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{componentsystem_8h_af52a1646c306aa465b339d57fae55d6d}{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+M\+E\+M\+O\+R\+Y} $\ast$ \hyperlink{classcrap_1_1_component_system_af88ed0eb8039401750054e42566ab855}{allocator} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file componentsystem.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_component_system_a9f5375dbdcadc882f9e0a350cf60eaca}{}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}!Component\+System@{Component\+System}}
+\index{Component\+System@{Component\+System}!crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+\subsubsection[{Component\+System}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Component\+System\+::\+Component\+System (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{memory\+\_\+size}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_component_system_a9f5375dbdcadc882f9e0a350cf60eaca}
+
+
+Definition at line 8 of file componentsystem.\+cpp.
+
+\hypertarget{classcrap_1_1_component_system_a99babf981d46a846ed1ae42b59a96113}{}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}!````~Component\+System@{$\sim$\+Component\+System}}
+\index{````~Component\+System@{$\sim$\+Component\+System}!crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+\subsubsection[{$\sim$\+Component\+System}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Component\+System\+::$\sim$\+Component\+System (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_component_system_a99babf981d46a846ed1ae42b59a96113}
+
+
+Definition at line 13 of file componentsystem.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_component_system_af88ed0eb8039401750054e42566ab855}{}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}!allocator@{allocator}}
+\index{allocator@{allocator}!crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+\subsubsection[{allocator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+M\+E\+M\+O\+R\+Y}$\ast$ crap\+::\+Component\+System\+::allocator (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_system_af88ed0eb8039401750054e42566ab855}
+
+
+Definition at line 44 of file componentsystem.\+h.
+
+\hypertarget{classcrap_1_1_component_system_ad8fba4ba6a8e2b17b60df7af4e0188eb}{}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}!create\+Component@{create\+Component}}
+\index{create\+Component@{create\+Component}!crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+\subsubsection[{create\+Component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Component} $\ast$ crap\+::\+Component\+System\+::create\+Component (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_component_system_ad8fba4ba6a8e2b17b60df7af4e0188eb}
+
+
+Definition at line 18 of file componentsystem.\+cpp.
+
+\hypertarget{classcrap_1_1_component_system_a4a136955ec8d1e780c8e635b4d6fb638}{}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}!destroy\+Component@{destroy\+Component}}
+\index{destroy\+Component@{destroy\+Component}!crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+\subsubsection[{destroy\+Component}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Component\+System\+::destroy\+Component (
+\begin{DoxyParamCaption}
+\item[{{\bf Component} $\ast$}]{component}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_component_system_a4a136955ec8d1e780c8e635b4d6fb638}
+
+
+Definition at line 30 of file componentsystem.\+cpp.
+
+\hypertarget{classcrap_1_1_component_system_ac9e3b94d0b2e8dbacdf3ed513c6d39cc}{}\index{crap\+::\+Component\+System@{crap\+::\+Component\+System}!factory\+List@{factory\+List}}
+\index{factory\+List@{factory\+List}!crap\+::\+Component\+System@{crap\+::\+Component\+System}}
+\subsubsection[{factory\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf intrusive\+\_\+list}$<${\bf Component\+Factory}$>$$\ast$ crap\+::\+Component\+System\+::factory\+List (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_component_system_ac9e3b94d0b2e8dbacdf3ed513c6d39cc}
+
+
+Definition at line 43 of file componentsystem.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{componentsystem_8h}{componentsystem.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{componentsystem_8cpp}{componentsystem.\+cpp}\end{DoxyCompactItemize}

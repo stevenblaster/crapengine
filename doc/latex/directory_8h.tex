@@ -1,6 +1,5 @@
-\hypertarget{directory_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/directory.h File Reference}
+\hypertarget{directory_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/core/include/directory.h File Reference}
 \label{directory_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/directory.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/directory.\+h}}
-}
 {\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$errno.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
@@ -46,28 +45,32 @@ typedef struct \hyperlink{structcrap_1_1s__directory__t}{crap\+::s\+\_\+director
 \item 
 \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const char $\ast$ \hyperlink{namespacecrap_adb591d0a2e2f6adc6526bfb4e5ae3d31}{crap\+::directory\+Name} (directory\+\_\+t $\ast$dir)
 \item 
-\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{namespacecrap_acd59c91fb08cbfd185081e18e650b404}{crap\+::is\+Directory} (const char $\ast$path, directory\+\_\+t $\ast$dir)
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{namespacecrap_a42f443e872ef5659236a59ebf5ae8a8e}{crap\+::get\+Absolute\+Path} (directory\+\_\+t $\ast$dir, string256 $\ast$absolute)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} bool \hyperlink{namespacecrap_a2fa760b103e7fc9e06340fd046a57778}{crap\+::is\+Directory} (directory\+\_\+t $\ast$dir)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint64\+\_\+t \hyperlink{namespacecrap_a7bd2dbe20ec67408904dbc70844e7860}{crap\+::get\+Last\+Write\+Time} (directory\+\_\+t $\ast$dir)
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{directory_8h_ad5d89cf8e039983f8fc1034f4052d3e4}{\index{directory.\+h@{directory.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}}
+\hypertarget{directory_8h_ad5d89cf8e039983f8fc1034f4052d3e4}{}\index{directory.\+h@{directory.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}}
 \index{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}!directory.\+h@{directory.\+h}}
-\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}}\label{directory_8h_ad5d89cf8e039983f8fc1034f4052d3e4}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+D\+I\+R\+E\+C\+T\+O\+R\+Y}\label{directory_8h_ad5d89cf8e039983f8fc1034f4052d3e4}
 
 
 Definition at line 4 of file directory.\+h.
 
-\hypertarget{directory_8h_a52f3ce553da73c5df4674f5f5c263363}{\index{directory.\+h@{directory.\+h}!D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T@{D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T}}
+\hypertarget{directory_8h_a52f3ce553da73c5df4674f5f5c263363}{}\index{directory.\+h@{directory.\+h}!D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T@{D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T}}
 \index{D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T@{D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T}!directory.\+h@{directory.\+h}}
-\subsubsection[{D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T~0}}\label{directory_8h_a52f3ce553da73c5df4674f5f5c263363}
+\subsubsection[{D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+I\+R\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+I\+N\+I\+T~0}\label{directory_8h_a52f3ce553da73c5df4674f5f5c263363}
 
 
 Definition at line 28 of file directory.\+h.
 
-\hypertarget{directory_8h_af196ec2477a3e687557d63692374dd6f}{\index{directory.\+h@{directory.\+h}!P\+A\+T\+H\+\_\+\+E\+N\+D@{P\+A\+T\+H\+\_\+\+E\+N\+D}}
+\hypertarget{directory_8h_af196ec2477a3e687557d63692374dd6f}{}\index{directory.\+h@{directory.\+h}!P\+A\+T\+H\+\_\+\+E\+N\+D@{P\+A\+T\+H\+\_\+\+E\+N\+D}}
 \index{P\+A\+T\+H\+\_\+\+E\+N\+D@{P\+A\+T\+H\+\_\+\+E\+N\+D}!directory.\+h@{directory.\+h}}
-\subsubsection[{P\+A\+T\+H\+\_\+\+E\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+T\+H\+\_\+\+E\+N\+D~\char`\"{}\char`\"{}}}\label{directory_8h_af196ec2477a3e687557d63692374dd6f}
+\subsubsection[{P\+A\+T\+H\+\_\+\+E\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+T\+H\+\_\+\+E\+N\+D~\char`\"{}\char`\"{}}\label{directory_8h_af196ec2477a3e687557d63692374dd6f}
 
 
 Definition at line 29 of file directory.\+h.
@@ -75,16 +78,16 @@ Definition at line 29 of file directory.\+h.
 
 
 \subsection{Typedef Documentation}
-\hypertarget{directory_8h_a6903c6a823657529f2da5d6f05332329}{\index{directory.\+h@{directory.\+h}!dir\+\_\+handle@{dir\+\_\+handle}}
+\hypertarget{directory_8h_a6903c6a823657529f2da5d6f05332329}{}\index{directory.\+h@{directory.\+h}!dir\+\_\+handle@{dir\+\_\+handle}}
 \index{dir\+\_\+handle@{dir\+\_\+handle}!directory.\+h@{directory.\+h}}
-\subsubsection[{dir\+\_\+handle}]{\setlength{\rightskip}{0pt plus 5cm}typedef D\+I\+R$\ast$ {\bf dir\+\_\+handle}}}\label{directory_8h_a6903c6a823657529f2da5d6f05332329}
+\subsubsection[{dir\+\_\+handle}]{\setlength{\rightskip}{0pt plus 5cm}typedef D\+I\+R$\ast$ {\bf dir\+\_\+handle}}\label{directory_8h_a6903c6a823657529f2da5d6f05332329}
 
 
 Definition at line 26 of file directory.\+h.
 
-\hypertarget{directory_8h_a807975fd00b38b5fd8ce43bad2b4825a}{\index{directory.\+h@{directory.\+h}!dir\+\_\+info@{dir\+\_\+info}}
+\hypertarget{directory_8h_a807975fd00b38b5fd8ce43bad2b4825a}{}\index{directory.\+h@{directory.\+h}!dir\+\_\+info@{dir\+\_\+info}}
 \index{dir\+\_\+info@{dir\+\_\+info}!directory.\+h@{directory.\+h}}
-\subsubsection[{dir\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct dirent$\ast$ {\bf dir\+\_\+info}}}\label{directory_8h_a807975fd00b38b5fd8ce43bad2b4825a}
+\subsubsection[{dir\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct dirent$\ast$ {\bf dir\+\_\+info}}\label{directory_8h_a807975fd00b38b5fd8ce43bad2b4825a}
 
 
 Definition at line 27 of file directory.\+h.

@@ -1,11 +1,9 @@
 
 
 
-//#include "componentsystem.h"
-//#include "componentfactory.h"
+#include "componenttype.h"
 
 namespace crap
 {
-
 
 }

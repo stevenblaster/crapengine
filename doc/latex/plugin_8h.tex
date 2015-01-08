@@ -1,7 +1,11 @@
-\hypertarget{plugin_8h}{\section{/mnt/windows/data/programming/crapengine2/source/engine/include/plugin.h File Reference}
+\hypertarget{plugin_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/engine/include/plugin.h File Reference}
 \label{plugin_8h}\index{/mnt/windows/data/programming/crapengine2/source/engine/include/plugin.\+h@{/mnt/windows/data/programming/crapengine2/source/engine/include/plugin.\+h}}
-}
+{\ttfamily \#include $<$new$>$}\\*
 {\ttfamily \#include \char`\"{}config/crap\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+platform.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}strings.\+h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,14 +20,92 @@ class \hyperlink{classcrap_1_1_plugin}{crap\+::\+Plugin}
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{plugin_8h_a0e8557783b5762d9bc55efd7d2fdfe6c}{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}
+\item 
+\#define \hyperlink{plugin_8h_a6b89ed8254d9faf220f8edbd7cfe6c1d}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T}(type)~\hyperlink{crap__compiler_8h_a2b5455816936c853fa71e351527796ba}{C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} Plugin$\ast$ create\+Plugin( void$\ast$ memory, \hyperlink{classcrap_1_1_system}{crap\+::\+System}$\ast$ system ) \{ return new (memory) type(system); \}
+\item 
+\#define \hyperlink{plugin_8h_a2a3e8ce4053a8191a7490fbe46a6bfa1}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T}(type)~\hyperlink{crap__compiler_8h_a2b5455816936c853fa71e351527796ba}{C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} void destroy\+Plugin( type$\ast$ instance ) \{ instance-\/$>$$\sim$type(); \}
+\item 
+\#define \hyperlink{plugin_8h_abecd434da1ec407d4e5a9d4c85861b9d}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E}(type)~\hyperlink{crap__compiler_8h_a2b5455816936c853fa71e351527796ba}{C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} uint32\+\_\+t plugin\+Size( void ) \{ return sizeof(type); \}
+\item 
+\#define \hyperlink{plugin_8h_a3d5648e7ecfa8540a5209b8be49605ff}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D}(type)~\hyperlink{crap__compiler_8h_a2b5455816936c853fa71e351527796ba}{C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} uint32\+\_\+t plugin\+I\+D( void ) \{ return string\+\_\+hash( \#type ).hash(); \}
+\item 
+\#define \hyperlink{plugin_8h_a62617711eb753ccf6c72e611be557c9e}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y}(type)~extern \char`\"{}C\char`\"{} \{ C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T(type) \hyperlink{plugin_8h_a2a3e8ce4053a8191a7490fbe46a6bfa1}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T}( type ) \hyperlink{plugin_8h_a3d5648e7ecfa8540a5209b8be49605ff}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D}( type ) \hyperlink{plugin_8h_abecd434da1ec407d4e5a9d4c85861b9d}{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E}( type ) \}
+\item 
+\#define \hyperlink{plugin_8h_aa40f4725a728a510c90e60bcbe24d948}{C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}(type)~class type \+: public \hyperlink{classcrap_1_1_plugin}{crap\+::\+Plugin}
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{plugin_8h_a0e8557783b5762d9bc55efd7d2fdfe6c}{\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}}
+\hypertarget{plugin_8h_a0e8557783b5762d9bc55efd7d2fdfe6c}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}}
 \index{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}!plugin.\+h@{plugin.\+h}}
-\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}}\label{plugin_8h_a0e8557783b5762d9bc55efd7d2fdfe6c}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}\label{plugin_8h_a0e8557783b5762d9bc55efd7d2fdfe6c}
 
 
 Definition at line 5 of file plugin.\+h.
+
+\hypertarget{plugin_8h_aa40f4725a728a510c90e60bcbe24d948}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N@{C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}}
+\index{C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N@{C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}!plugin.\+h@{plugin.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+L\+U\+G\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~class type \+: public {\bf crap\+::\+Plugin}}\label{plugin_8h_aa40f4725a728a510c90e60bcbe24d948}
+
+
+Definition at line 39 of file plugin.\+h.
+
+\hypertarget{plugin_8h_a6b89ed8254d9faf220f8edbd7cfe6c1d}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T}}
+\index{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T}!plugin.\+h@{plugin.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} Plugin$\ast$ create\+Plugin( void$\ast$ memory, {\bf crap\+::\+System}$\ast$ system ) \{ return new (memory) type(system); \}}\label{plugin_8h_a6b89ed8254d9faf220f8edbd7cfe6c1d}
+
+
+Definition at line 33 of file plugin.\+h.
+
+\hypertarget{plugin_8h_a2a3e8ce4053a8191a7490fbe46a6bfa1}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T}}
+\index{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T}!plugin.\+h@{plugin.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} void destroy\+Plugin( type$\ast$ instance ) \{ instance-\/$>$$\sim$type(); \}}\label{plugin_8h_a2a3e8ce4053a8191a7490fbe46a6bfa1}
+
+
+Definition at line 34 of file plugin.\+h.
+
+\hypertarget{plugin_8h_a62617711eb753ccf6c72e611be557c9e}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y}}
+\index{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y}!plugin.\+h@{plugin.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~extern \char`\"{}C\char`\"{} \{ C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T(type) {\bf C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+S\+T\+R\+U\+C\+T}( type ) {\bf C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D}( type ) {\bf C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E}( type ) \}}\label{plugin_8h_a62617711eb753ccf6c72e611be557c9e}
+
+
+Definition at line 37 of file plugin.\+h.
+
+\hypertarget{plugin_8h_a3d5648e7ecfa8540a5209b8be49605ff}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D}}
+\index{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D}!plugin.\+h@{plugin.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+I\+D(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} uint32\+\_\+t plugin\+I\+D( void ) \{ return string\+\_\+hash( \#type ).hash(); \}}\label{plugin_8h_a3d5648e7ecfa8540a5209b8be49605ff}
+
+
+Definition at line 36 of file plugin.\+h.
+
+\hypertarget{plugin_8h_abecd434da1ec407d4e5a9d4c85861b9d}{}\index{plugin.\+h@{plugin.\+h}!C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E}}
+\index{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E@{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E}!plugin.\+h@{plugin.\+h}}
+\subsubsection[{C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+S\+I\+Z\+E(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+A\+P\+\_\+\+D\+L\+L\+\_\+\+T\+O\+\_\+\+E\+X\+E} uint32\+\_\+t plugin\+Size( void ) \{ return sizeof(type); \}}\label{plugin_8h_abecd434da1ec407d4e5a9d4c85861b9d}
+
+
+Definition at line 35 of file plugin.\+h.
 

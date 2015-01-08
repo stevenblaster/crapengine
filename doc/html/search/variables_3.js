@@ -1,21 +1,12 @@
 var searchData=
 [
-  ['cache',['cache',['../struct_n_v_gcontext.html#aaac08d9a828908e7ec66c7ebed1b5c08',1,'NVGcontext']]],
-  ['cachedglyphs',['cachedGlyphs',['../struct_font_manager_1_1_cached_font.html#a859b833cb1fdedf9b9f9f3ea50d7cb6a',1,'FontManager::CachedFont']]],
-  ['ccommands',['ccommands',['../struct_n_v_gcontext.html#abdd400974a0e442333120fb98d5e49e7',1,'NVGcontext']]],
+  ['calldelay',['callDelay',['../structcrap_1_1_task_manager_1_1s___task_info.html#a8fe487170a9eccaffeed54ac7e80d800',1,'crap::TaskManager::s_TaskInfo']]],
   ['channels',['channels',['../structcrap_1_1_audio_header.html#acce2baa85f0c4f92b05f0c7c5c831835',1,'crap::AudioHeader::channels()'],['../structcrap_1_1_audio_file.html#a78b93f01a2e9b481371ef7c64b7fabb4',1,'crap::AudioFile::channels()'],['../structcrap_1_1_wave_file_1_1_wave_header.html#a8b7a99f75e7053e7de41704a531af9fb',1,'crap::WaveFile::WaveHeader::channels()']]],
+  ['checksum',['checksum',['../structcrap_1_1_connection_header.html#ac75670d52163a19d001a9477041210e6',1,'crap::ConnectionHeader::checksum()'],['../structcrap_1_1_reliability_header.html#ad29af3f17ea49d36bcc2c49fdefd4007',1,'crap::ReliabilityHeader::checksum()']]],
   ['children',['children',['../structcrap_1_1_square_world_cube.html#acf9b60edb49483c7b5e7cd80fb35668a',1,'crap::SquareWorldCube']]],
-  ['closed',['closed',['../struct_n_v_gpath.html#a9951e19e1e502d56e5b16acaa9348f14',1,'NVGpath']]],
-  ['codepoint',['codepoint',['../struct_f_o_n_stext_iter.html#aa5f74c11fa7741d0050e5a1840169ffd',1,'FONStextIter']]],
   ['color',['color',['../structcrap_1_1_square_world_cube.html#a40225fc4b5138dcb9b0fe58c882774c0',1,'crap::SquareWorldCube']]],
-  ['commands',['commands',['../struct_n_v_gcontext.html#a24bc3804b6b64c955e7318835f033f31',1,'NVGcontext']]],
-  ['commandx',['commandx',['../struct_n_v_gcontext.html#abe9bb2cd4ee241f6bf9d1dc5ca1b2d5c',1,'NVGcontext']]],
-  ['commandy',['commandy',['../struct_n_v_gcontext.html#a93da42b3cceca9295f2d61bd6291aba5',1,'NVGcontext']]],
+  ['commandid',['commandID',['../structcrap_1_1_network_command_data.html#a93c879cf1159768fa568e9c4a0364f44',1,'crap::NetworkCommandData']]],
   ['config',['config',['../unittests_2source_2configuration_8cpp.html#ab299729ec441e3eaf9b96a1eb763e02f',1,'configuration.cpp']]],
-  ['convex',['convex',['../struct_n_v_gpath.html#a85833dcd230251fdc7a3f75335c08e8f',1,'NVGpath']]],
-  ['count',['count',['../struct_n_v_gpath.html#a65bfb8db6e411e19a2dfc36336e5ed85',1,'NVGpath']]],
-  ['cpaths',['cpaths',['../struct_n_v_gpath_cache.html#abb81be8794e77f4f587d2e4052410c76',1,'NVGpathCache']]],
-  ['cpoints',['cpoints',['../struct_n_v_gpath_cache.html#aaa71429e6c6365908200a6736c31238d',1,'NVGpathCache']]],
   ['cpuid',['cpuid',['../crap__simd_8h.html#a4d863748a7f4475060f6c193265bca9a',1,'crap_simd.h']]],
-  ['cverts',['cverts',['../struct_n_v_gpath_cache.html#a645e22306364968e61dcb2b5b4c501de',1,'NVGpathCache']]]
+  ['current_5fstate',['current_state',['../structcrap_1_1_keyboard_input_1_1s__key_binding.html#a61b968c561b8c38e6f2d3915cdec8d9e',1,'crap::KeyboardInput::s_keyBinding::current_state()'],['../structcrap_1_1_mouse_input_1_1s__button_binding.html#ad9f9c39dfdf90b3d3481838ae318dbe7',1,'crap::MouseInput::s_buttonBinding::current_state()']]]
 ];

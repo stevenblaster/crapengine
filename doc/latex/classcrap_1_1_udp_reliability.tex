@@ -1,0 +1,193 @@
+\hypertarget{classcrap_1_1_udp_reliability}{}\section{crap\+:\+:Udp\+Reliability Class Reference}
+\label{classcrap_1_1_udp_reliability}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+
+
+{\ttfamily \#include $<$udpreliability.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcrap_1_1array__map}{array\+\_\+map}$<$ uint32\+\_\+t, \hyperlink{structcrap_1_1_reliability_outgoing}{Reliability\+Outgoing} $>$ \hyperlink{classcrap_1_1_udp_reliability_a8dde825107f0bdc30042114a16cb9dfe}{Outgoing\+Map}
+\item 
+typedef \hyperlink{classcrap_1_1array__map}{array\+\_\+map}$<$ uint32\+\_\+t, \hyperlink{structcrap_1_1_reliability_incoming}{Reliability\+Incoming} $>$ \hyperlink{classcrap_1_1_udp_reliability_aa39e31ccb6b2a80c031f959467e0c126}{Incoming\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_udp_reliability_aee71353a45b3fe47dca9a8ed738364c8}{Udp\+Reliability} (uint32\+\_\+t ttl\+\_\+incoming, uint32\+\_\+t ttl\+\_\+outgoing, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ out\+Mem, uint32\+\_\+t out\+Mem\+Size, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ in\+Mem, uint32\+\_\+t in\+Memsize, uint32\+\_\+t update\+\_\+frequency)
+\item 
+bool \hyperlink{classcrap_1_1_udp_reliability_aeb79c0f4b500c79d8eeb572a230fb19d}{receive} (uint32\+\_\+t user\+\_\+id, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ data, uint32\+\_\+t size)
+\item 
+bool \hyperlink{classcrap_1_1_udp_reliability_a6f3146082783aa6ceebe4b5e3982dec6}{send} (uint32\+\_\+t user\+\_\+id, \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ data, uint32\+\_\+t size, bool fire\+\_\+and\+\_\+forget=false)
+\item 
+bool \hyperlink{classcrap_1_1_udp_reliability_ae4004c16b0b1dc5dcfffeb8af065e485}{update} (uint32\+\_\+t deltatime)
+\item 
+{\footnotesize template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_reliability_a7ccf18df23d9e8c7d530d0c6f9068a48}{set\+Out\+Function} (C $\ast$instance)
+\item 
+{\footnotesize template$<$bool($\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_reliability_aa9fe79b988d87ffb514a10731e8b6fd9}{set\+Out\+Function} (void)
+\item 
+{\footnotesize template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_reliability_ab0f4508e8b041ddf72d0e27a4f2c8bac}{set\+In\+Function} (C $\ast$instance)
+\item 
+{\footnotesize template$<$bool($\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_reliability_aba3f02d1e01530f1aaa9d2a8899f9133}{set\+In\+Function} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_udp_reliability_a8dde825107f0bdc30042114a16cb9dfe}{Outgoing\+Map} $\ast$ \hyperlink{classcrap_1_1_udp_reliability_a26a0d173c1d592b1f088c38f91b39ff2}{outgoing\+Map} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_udp_reliability_aa39e31ccb6b2a80c031f959467e0c126}{Incoming\+Map} $\ast$ \hyperlink{classcrap_1_1_udp_reliability_a9f81728be31eca9cb5e60e6f0648d95d}{incoming\+Map} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file udpreliability.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_udp_reliability_aa39e31ccb6b2a80c031f959467e0c126}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!Incoming\+Map@{Incoming\+Map}}
+\index{Incoming\+Map@{Incoming\+Map}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{Incoming\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array\+\_\+map}$<$ uint32\+\_\+t, {\bf Reliability\+Incoming}$>$ {\bf crap\+::\+Udp\+Reliability\+::\+Incoming\+Map}}\label{classcrap_1_1_udp_reliability_aa39e31ccb6b2a80c031f959467e0c126}
+
+
+Definition at line 30 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_a8dde825107f0bdc30042114a16cb9dfe}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!Outgoing\+Map@{Outgoing\+Map}}
+\index{Outgoing\+Map@{Outgoing\+Map}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{Outgoing\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array\+\_\+map}$<$ uint32\+\_\+t, {\bf Reliability\+Outgoing}$>$ {\bf crap\+::\+Udp\+Reliability\+::\+Outgoing\+Map}}\label{classcrap_1_1_udp_reliability_a8dde825107f0bdc30042114a16cb9dfe}
+
+
+Definition at line 29 of file udpreliability.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_udp_reliability_aee71353a45b3fe47dca9a8ed738364c8}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!Udp\+Reliability@{Udp\+Reliability}}
+\index{Udp\+Reliability@{Udp\+Reliability}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{Udp\+Reliability}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Udp\+Reliability\+::\+Udp\+Reliability (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ttl\+\_\+incoming, }
+\item[{uint32\+\_\+t}]{ttl\+\_\+outgoing, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{out\+Mem, }
+\item[{uint32\+\_\+t}]{out\+Mem\+Size, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{in\+Mem, }
+\item[{uint32\+\_\+t}]{in\+Memsize, }
+\item[{uint32\+\_\+t}]{update\+\_\+frequency}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_aee71353a45b3fe47dca9a8ed738364c8}
+
+
+Definition at line 22 of file udpreliability.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_udp_reliability_a9f81728be31eca9cb5e60e6f0648d95d}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!incoming\+Map@{incoming\+Map}}
+\index{incoming\+Map@{incoming\+Map}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{incoming\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Incoming\+Map}$\ast$ crap\+::\+Udp\+Reliability\+::incoming\+Map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_udp_reliability_a9f81728be31eca9cb5e60e6f0648d95d}
+
+
+Definition at line 57 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_a26a0d173c1d592b1f088c38f91b39ff2}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!outgoing\+Map@{outgoing\+Map}}
+\index{outgoing\+Map@{outgoing\+Map}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{outgoing\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Outgoing\+Map}$\ast$ crap\+::\+Udp\+Reliability\+::outgoing\+Map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_udp_reliability_a26a0d173c1d592b1f088c38f91b39ff2}
+
+
+Definition at line 54 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_aeb79c0f4b500c79d8eeb572a230fb19d}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!receive@{receive}}
+\index{receive@{receive}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{receive}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Udp\+Reliability\+::receive (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{user\+\_\+id, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{data, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_aeb79c0f4b500c79d8eeb572a230fb19d}
+
+
+Definition at line 36 of file udpreliability.\+cpp.
+
+\hypertarget{classcrap_1_1_udp_reliability_a6f3146082783aa6ceebe4b5e3982dec6}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!send@{send}}
+\index{send@{send}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Udp\+Reliability\+::send (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{user\+\_\+id, }
+\item[{{\bf pointer\+\_\+t}$<$ void $>$}]{data, }
+\item[{uint32\+\_\+t}]{size, }
+\item[{bool}]{fire\+\_\+and\+\_\+forget = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_a6f3146082783aa6ceebe4b5e3982dec6}
+
+
+Definition at line 70 of file udpreliability.\+cpp.
+
+\hypertarget{classcrap_1_1_udp_reliability_ab0f4508e8b041ddf72d0e27a4f2c8bac}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!set\+In\+Function@{set\+In\+Function}}
+\index{set\+In\+Function@{set\+In\+Function}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{set\+In\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ bool crap\+::\+Udp\+Reliability\+::set\+In\+Function (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_ab0f4508e8b041ddf72d0e27a4f2c8bac}
+
+
+Definition at line 97 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_aba3f02d1e01530f1aaa9d2a8899f9133}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!set\+In\+Function@{set\+In\+Function}}
+\index{set\+In\+Function@{set\+In\+Function}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{set\+In\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool($\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ bool crap\+::\+Udp\+Reliability\+::set\+In\+Function (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_aba3f02d1e01530f1aaa9d2a8899f9133}
+
+
+Definition at line 104 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_a7ccf18df23d9e8c7d530d0c6f9068a48}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!set\+Out\+Function@{set\+Out\+Function}}
+\index{set\+Out\+Function@{set\+Out\+Function}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{set\+Out\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ bool crap\+::\+Udp\+Reliability\+::set\+Out\+Function (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_a7ccf18df23d9e8c7d530d0c6f9068a48}
+
+
+Definition at line 83 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_aa9fe79b988d87ffb514a10731e8b6fd9}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!set\+Out\+Function@{set\+Out\+Function}}
+\index{set\+Out\+Function@{set\+Out\+Function}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{set\+Out\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$bool($\ast$)(uint32\+\_\+t, pointer\+\_\+t$<$ void $>$, uint32\+\_\+t) F$>$ bool crap\+::\+Udp\+Reliability\+::set\+Out\+Function (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_aa9fe79b988d87ffb514a10731e8b6fd9}
+
+
+Definition at line 90 of file udpreliability.\+h.
+
+\hypertarget{classcrap_1_1_udp_reliability_ae4004c16b0b1dc5dcfffeb8af065e485}{}\index{crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}!update@{update}}
+\index{update@{update}!crap\+::\+Udp\+Reliability@{crap\+::\+Udp\+Reliability}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Udp\+Reliability\+::update (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{deltatime}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_reliability_ae4004c16b0b1dc5dcfffeb8af065e485}
+
+
+Definition at line 111 of file udpreliability.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/network/include/\hyperlink{udpreliability_8h}{udpreliability.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/network/source/\hyperlink{udpreliability_8cpp}{udpreliability.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,483 @@
+\hypertarget{classcrap_1_1queue}{}\section{crap\+:\+:queue$<$ T $>$ Class Template Reference}
+\label{classcrap_1_1queue}\index{crap\+::queue$<$ T $>$@{crap\+::queue$<$ T $>$}}
+
+
+Simple queue class.  
+
+
+
+
+{\ttfamily \#include $<$queue.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1queue_ad4e0b0eb26d52a375dd0d03c94c77521}{queue} (void $\ast$pointer, uint32\+\_\+t \hyperlink{classcrap_1_1queue_a73fca132c007c2090336b0ab077bfe82}{size})
+\begin{DoxyCompactList}\small\item\em Constructor of queue class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1queue}{queue} \& \hyperlink{classcrap_1_1queue_a4379fd9831fc06b89a8fdea7c790bc4c}{operator=} (const \hyperlink{classcrap_1_1queue}{queue} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator of queue class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1queue_a9289cb92cd6a64280ea848dc88b0a6f9}{$\sim$queue} (void)
+\begin{DoxyCompactList}\small\item\em Destructor of queue class. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_a73fca132c007c2090336b0ab077bfe82}{size} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_af097f79db1c3b3400f8b503debdef410}{max\+\_\+size} (void) const 
+\begin{DoxyCompactList}\small\item\em Returning the maximum size of the queue. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_a32a47bbe83b1547f42ea24df382a18cc}{begin} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns first element of the queue. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_a1aad1cf2d26f9da15d52417a5c3f65f7}{end} (void) const 
+\begin{DoxyCompactList}\small\item\em returns first invalid element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_a6219623400146bc09562109884f8328a}{next} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em returns next element \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T \& \hyperlink{classcrap_1_1queue_a20e2eaac1e0ff2cb4f6227fc4ae930c7}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Index operator returning a member reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T \& \hyperlink{classcrap_1_1queue_ab66f525bafecbd2e94170319c3471266}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Index operator returning a constant member reference. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} T $\ast$ \hyperlink{classcrap_1_1queue_a8eee8f0edc723a6dc7ba1e8be021e002}{get} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Returns the pointer to a certain member. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} const T $\ast$ \hyperlink{classcrap_1_1queue_a4133910c272a5d782b69e13b7d36eb95}{get} (uint32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Returns the constant pointer to a certain member. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_a87a4fc114cdda80b141479e7e79062c2}{push\+\_\+back} (const T \&object)
+\begin{DoxyCompactList}\small\item\em Inserts a new element at the end of the queue. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1queue_a756c0f0d8e0655c0c8a2e8967a7ebf8b}{pop} (void)
+\begin{DoxyCompactList}\small\item\em Removes first element of the queue. \end{DoxyCompactList}\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ void $>$ \hyperlink{classcrap_1_1queue_a38886e5433650f3cd48ca6c4ad05d7a1}{memory} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1queue_ad91ad0cfc447bbc6212af33c0505e5c6}{size\+\_\+of\+\_\+elements} (uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Calculates necessary memory for a certain number of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{classcrap_1_1queue_a0515fc038b1eb4d6af4fd1612de127c5}{I\+N\+V\+A\+L\+I\+D} = \hyperlink{crap__types_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{U\+I\+N\+T32\+\_\+\+M\+A\+X}
+\begin{DoxyCompactList}\small\item\em Defines an invalid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1queue_addabb985272064c0d3f2e028c830070a}{queue} (const \hyperlink{classcrap_1_1queue}{queue} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Constructor kept private (do not use) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcrap_1_1pointer__t}{pointer\+\_\+t}$<$ T $>$ \hyperlink{classcrap_1_1queue_aaa7768109ef5518469358b6963282c8d}{\+\_\+memory}
+\begin{DoxyCompactList}\small\item\em Pointer type to memory. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1queue_a6025cd210773605e1b78d9136c020409}{\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Current number of elements. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1queue_a01314cde8e1d28f2f8d5d347f3ce94a8}{\+\_\+max\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Maximum number of elements. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcrap_1_1queue_a754dd42464cea488ad629109dfd8933f}{\+\_\+begin}
+\begin{DoxyCompactList}\small\item\em first index \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class crap\+::queue$<$ T $>$}
+
+Simple queue class. 
+
+The data is kept packed. 
+
+Definition at line 36 of file queue.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1queue_ad4e0b0eb26d52a375dd0d03c94c77521}{}\index{crap\+::queue@{crap\+::queue}!queue@{queue}}
+\index{queue@{queue}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::queue}$<$ T $>$\+::{\bf queue} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pointer, }
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classcrap_1_1queue_ad4e0b0eb26d52a375dd0d03c94c77521}
+
+
+Constructor of queue class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & A pointer to the memory for the container \\
+\hline
+{\em size} & The size of the provided memory \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a9289cb92cd6a64280ea848dc88b0a6f9}{}\index{crap\+::queue@{crap\+::queue}!````~queue@{$\sim$queue}}
+\index{````~queue@{$\sim$queue}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{$\sim$queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::queue}$<$ T $>$\+::$\sim${\bf queue} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1queue_a9289cb92cd6a64280ea848dc88b0a6f9}
+
+
+Destructor of queue class. 
+
+
+
+Definition at line 208 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_addabb985272064c0d3f2e028c830070a}{}\index{crap\+::queue@{crap\+::queue}!queue@{queue}}
+\index{queue@{queue}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf crap\+::queue}$<$ T $>$\+::{\bf queue} (
+\begin{DoxyParamCaption}
+\item[{const {\bf queue}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1queue_addabb985272064c0d3f2e028c830070a}
+
+
+Copy Constructor kept private (do not use) 
+
+
+
+Definition at line 215 of file queue.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1queue_a32a47bbe83b1547f42ea24df382a18cc}{}\index{crap\+::queue@{crap\+::queue}!begin@{begin}}
+\index{begin@{begin}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_a32a47bbe83b1547f42ea24df382a18cc}
+
+
+Returns first element of the queue. 
+
+\begin{DoxyReturn}{Returns}
+First valid index or I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 233 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a1aad1cf2d26f9da15d52417a5c3f65f7}{}\index{crap\+::queue@{crap\+::queue}!end@{end}}
+\index{end@{end}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_a1aad1cf2d26f9da15d52417a5c3f65f7}
+
+
+returns first invalid element 
+
+\begin{DoxyReturn}{Returns}
+I\+N\+V\+A\+L\+I\+D 
+\end{DoxyReturn}
+
+
+Definition at line 239 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a8eee8f0edc723a6dc7ba1e8be021e002}{}\index{crap\+::queue@{crap\+::queue}!get@{get}}
+\index{get@{get}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf crap\+::queue}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1queue_a8eee8f0edc723a6dc7ba1e8be021e002}
+
+
+Returns the pointer to a certain member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to member or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a4133910c272a5d782b69e13b7d36eb95}{}\index{crap\+::queue@{crap\+::queue}!get@{get}}
+\index{get@{get}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T $\ast$ {\bf crap\+::queue}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_a4133910c272a5d782b69e13b7d36eb95}
+
+
+Returns the constant pointer to a certain member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant pointer to member or null if invalid 
+\end{DoxyReturn}
+
+
+Definition at line 278 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_af097f79db1c3b3400f8b503debdef410}{}\index{crap\+::queue@{crap\+::queue}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_af097f79db1c3b3400f8b503debdef410}
+
+
+Returning the maximum size of the queue. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 227 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a38886e5433650f3cd48ca6c4ad05d7a1}{}\index{crap\+::queue@{crap\+::queue}!memory@{memory}}
+\index{memory@{memory}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf pointer\+\_\+t}$<$ void $>$ {\bf crap\+::queue}$<$ T $>$\+::memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_a38886e5433650f3cd48ca6c4ad05d7a1}
+
+
+Returns the pointer to the memory. 
+
+\begin{DoxyReturn}{Returns}
+Pointer type of queue memory 
+\end{DoxyReturn}
+
+
+Definition at line 323 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a6219623400146bc09562109884f8328a}{}\index{crap\+::queue@{crap\+::queue}!next@{next}}
+\index{next@{next}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::next (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_a6219623400146bc09562109884f8328a}
+
+
+returns next element 
+
+\begin{DoxyReturn}{Returns}
+next index or invalid 
+\end{DoxyReturn}
+
+
+Definition at line 245 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a4379fd9831fc06b89a8fdea7c790bc4c}{}\index{crap\+::queue@{crap\+::queue}!operator=@{operator=}}
+\index{operator=@{operator=}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf queue}$<$ T $>$ \& {\bf crap\+::queue}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf queue}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1queue_a4379fd9831fc06b89a8fdea7c790bc4c}
+
+
+Assignment operator of queue class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A constant reference to a other queue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a20e2eaac1e0ff2cb4f6227fc4ae930c7}{}\index{crap\+::queue@{crap\+::queue}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf crap\+::queue}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1queue_a20e2eaac1e0ff2cb4f6227fc4ae930c7}
+
+
+Index operator returning a member reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to member 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_ab66f525bafecbd2e94170319c3471266}{}\index{crap\+::queue@{crap\+::queue}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf crap\+::queue}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_ab66f525bafecbd2e94170319c3471266}
+
+
+Index operator returning a constant member reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of a member variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant reference to member 
+\end{DoxyReturn}
+
+
+Definition at line 263 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a756c0f0d8e0655c0c8a2e8967a7ebf8b}{}\index{crap\+::queue@{crap\+::queue}!pop@{pop}}
+\index{pop@{pop}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf crap\+::queue}$<$ T $>$\+::pop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1queue_a756c0f0d8e0655c0c8a2e8967a7ebf8b}
+
+
+Removes first element of the queue. 
+
+
+
+Definition at line 307 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a87a4fc114cdda80b141479e7e79062c2}{}\index{crap\+::queue@{crap\+::queue}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{push\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{object}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1queue_a87a4fc114cdda80b141479e7e79062c2}
+
+
+Inserts a new element at the end of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Constant reference of element to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of inserted element 
+\end{DoxyReturn}
+
+
+Definition at line 287 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a73fca132c007c2090336b0ab077bfe82}{}\index{crap\+::queue@{crap\+::queue}!size@{size}}
+\index{size@{size}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{classcrap_1_1queue_a73fca132c007c2090336b0ab077bfe82}
+Returning the size of the queue \begin{DoxyReturn}{Returns}
+The current number of elements 
+\end{DoxyReturn}
+
+
+Definition at line 221 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_ad91ad0cfc447bbc6212af33c0505e5c6}{}\index{crap\+::queue@{crap\+::queue}!size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}}
+\index{size\+\_\+of\+\_\+elements@{size\+\_\+of\+\_\+elements}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{size\+\_\+of\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::size\+\_\+of\+\_\+elements (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1queue_ad91ad0cfc447bbc6212af33c0505e5c6}
+
+
+Calculates necessary memory for a certain number of elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of necessary memory 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file queue.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcrap_1_1queue_a754dd42464cea488ad629109dfd8933f}{}\index{crap\+::queue@{crap\+::queue}!\+\_\+begin@{\+\_\+begin}}
+\index{\+\_\+begin@{\+\_\+begin}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{\+\_\+begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::\+\_\+begin\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1queue_a754dd42464cea488ad629109dfd8933f}
+
+
+first index 
+
+
+
+Definition at line 179 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a01314cde8e1d28f2f8d5d347f3ce94a8}{}\index{crap\+::queue@{crap\+::queue}!\+\_\+max\+\_\+size@{\+\_\+max\+\_\+size}}
+\index{\+\_\+max\+\_\+size@{\+\_\+max\+\_\+size}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{\+\_\+max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::\+\_\+max\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1queue_a01314cde8e1d28f2f8d5d347f3ce94a8}
+
+
+Maximum number of elements. 
+
+
+
+Definition at line 176 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_aaa7768109ef5518469358b6963282c8d}{}\index{crap\+::queue@{crap\+::queue}!\+\_\+memory@{\+\_\+memory}}
+\index{\+\_\+memory@{\+\_\+memory}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf pointer\+\_\+t}$<$T$>$ {\bf crap\+::queue}$<$ T $>$\+::\+\_\+memory\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1queue_aaa7768109ef5518469358b6963282c8d}
+
+
+Pointer type to memory. 
+
+
+
+Definition at line 170 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a6025cd210773605e1b78d9136c020409}{}\index{crap\+::queue@{crap\+::queue}!\+\_\+size@{\+\_\+size}}
+\index{\+\_\+size@{\+\_\+size}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}\label{classcrap_1_1queue_a6025cd210773605e1b78d9136c020409}
+
+
+Current number of elements. 
+
+
+
+Definition at line 173 of file queue.\+h.
+
+\hypertarget{classcrap_1_1queue_a0515fc038b1eb4d6af4fd1612de127c5}{}\index{crap\+::queue@{crap\+::queue}!I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}}
+\index{I\+N\+V\+A\+L\+I\+D@{I\+N\+V\+A\+L\+I\+D}!crap\+::queue@{crap\+::queue}}
+\subsubsection[{I\+N\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const uint32\+\_\+t {\bf crap\+::queue}$<$ T $>$\+::I\+N\+V\+A\+L\+I\+D = {\bf U\+I\+N\+T32\+\_\+\+M\+A\+X}\hspace{0.3cm}{\ttfamily [static]}}\label{classcrap_1_1queue_a0515fc038b1eb4d6af4fd1612de127c5}
+
+
+Defines an invalid index. 
+
+
+
+Definition at line 42 of file queue.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/core/include/container/\hyperlink{queue_8h}{queue.\+h}\end{DoxyCompactItemize}

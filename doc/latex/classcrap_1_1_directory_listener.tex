@@ -1,0 +1,168 @@
+\hypertarget{classcrap_1_1_directory_listener}{}\section{crap\+:\+:Directory\+Listener Class Reference}
+\label{classcrap_1_1_directory_listener}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+
+
+{\ttfamily \#include $<$directorylistener.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcrap_1_1delegate}{crap\+::delegate}$<$ void(const char $\ast$) $>$ \hyperlink{classcrap_1_1_directory_listener_a9a91cdc5d0463096540cc63b5bd05263}{Directory\+Function}
+\item 
+typedef \hyperlink{classcrap_1_1array}{array}$<$ \hyperlink{classcrap_1_1_directory_listener_a9a91cdc5d0463096540cc63b5bd05263}{Directory\+Function} $>$ \hyperlink{classcrap_1_1_directory_listener_a8a9545bc47aa34933aaf0b18713bd47f}{Function\+Array}
+\item 
+typedef \hyperlink{classcrap_1_1array__map}{array\+\_\+map}$<$ \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash}, uint64\+\_\+t $>$ \hyperlink{classcrap_1_1_directory_listener_a6988f65f8f21698999b7ce9293f79c6d}{File\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_directory_listener_a7416eae69e009aa98153f2a2145eb876}{Directory\+Listener} (uint32\+\_\+t max\+\_\+functions, uint32\+\_\+t max\+\_\+files, const \hyperlink{namespacecrap_af674ac1cc38a09c563c68dfc3b15e554}{string256} \&path, bool recursive=false)
+\item 
+\hyperlink{classcrap_1_1_directory_listener_a36db341ecd19501b8ad5c4e27d898014}{$\sim$\+Directory\+Listener} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(const char $\ast$) F$>$ }\\void \hyperlink{classcrap_1_1_directory_listener_ab6fece5631a3d427e3a9a261baea2836}{add\+Callback} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(const char $\ast$) F$>$ }\\void \hyperlink{classcrap_1_1_directory_listener_a7e6b1ed2e4f0577ca3a25dab3a6be3ae}{add\+Callback} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(const char $\ast$) F$>$ }\\void \hyperlink{classcrap_1_1_directory_listener_ae9be484e605bbaa2baecd393f3eaff6f}{remove\+Callback} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(const char $\ast$) F$>$ }\\void \hyperlink{classcrap_1_1_directory_listener_a7dd77a5c85cee29b2c0ba6af2e7d56dc}{remove\+Callback} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void \hyperlink{classcrap_1_1_directory_listener_ae2e30afd430186402812c7288bb12808}{init} (void)
+\item 
+bool \hyperlink{classcrap_1_1_directory_listener_a03a5bf5dd2dbc0f1c910c6e7f20976b4}{update} (uint32\+\_\+t deltatime)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file directorylistener.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_directory_listener_a9a91cdc5d0463096540cc63b5bd05263}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!Directory\+Function@{Directory\+Function}}
+\index{Directory\+Function@{Directory\+Function}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{Directory\+Function}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf crap\+::delegate}$<$ void (const char$\ast$) $>$ {\bf crap\+::\+Directory\+Listener\+::\+Directory\+Function}}\label{classcrap_1_1_directory_listener_a9a91cdc5d0463096540cc63b5bd05263}
+
+
+Definition at line 40 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_a6988f65f8f21698999b7ce9293f79c6d}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!File\+Map@{File\+Map}}
+\index{File\+Map@{File\+Map}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{File\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array\+\_\+map}$<$ {\bf string\+\_\+hash}, uint64\+\_\+t $>$ {\bf crap\+::\+Directory\+Listener\+::\+File\+Map}}\label{classcrap_1_1_directory_listener_a6988f65f8f21698999b7ce9293f79c6d}
+
+
+Definition at line 42 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_a8a9545bc47aa34933aaf0b18713bd47f}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!Function\+Array@{Function\+Array}}
+\index{Function\+Array@{Function\+Array}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{Function\+Array}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array}$<${\bf Directory\+Function}$>$ {\bf crap\+::\+Directory\+Listener\+::\+Function\+Array}}\label{classcrap_1_1_directory_listener_a8a9545bc47aa34933aaf0b18713bd47f}
+
+
+Definition at line 41 of file directorylistener.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_directory_listener_a7416eae69e009aa98153f2a2145eb876}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!Directory\+Listener@{Directory\+Listener}}
+\index{Directory\+Listener@{Directory\+Listener}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{Directory\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Directory\+Listener\+::\+Directory\+Listener (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{max\+\_\+functions, }
+\item[{uint32\+\_\+t}]{max\+\_\+files, }
+\item[{const {\bf string256} \&}]{path, }
+\item[{bool}]{recursive = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_a7416eae69e009aa98153f2a2145eb876}
+
+
+Definition at line 19 of file directorylistener.\+cpp.
+
+\hypertarget{classcrap_1_1_directory_listener_a36db341ecd19501b8ad5c4e27d898014}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!````~Directory\+Listener@{$\sim$\+Directory\+Listener}}
+\index{````~Directory\+Listener@{$\sim$\+Directory\+Listener}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{$\sim$\+Directory\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Directory\+Listener\+::$\sim$\+Directory\+Listener (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_a36db341ecd19501b8ad5c4e27d898014}
+
+
+Definition at line 29 of file directorylistener.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_directory_listener_ab6fece5631a3d427e3a9a261baea2836}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!add\+Callback@{add\+Callback}}
+\index{add\+Callback@{add\+Callback}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{add\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(const char $\ast$) F$>$ void crap\+::\+Directory\+Listener\+::add\+Callback (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_ab6fece5631a3d427e3a9a261baea2836}
+
+
+Definition at line 77 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_a7e6b1ed2e4f0577ca3a25dab3a6be3ae}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!add\+Callback@{add\+Callback}}
+\index{add\+Callback@{add\+Callback}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{add\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(const char $\ast$) F$>$ void crap\+::\+Directory\+Listener\+::add\+Callback (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_a7e6b1ed2e4f0577ca3a25dab3a6be3ae}
+
+
+Definition at line 85 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_ae2e30afd430186402812c7288bb12808}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!init@{init}}
+\index{init@{init}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} void crap\+::\+Directory\+Listener\+::init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_directory_listener_ae2e30afd430186402812c7288bb12808}
+
+
+Definition at line 60 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_ae9be484e605bbaa2baecd393f3eaff6f}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!remove\+Callback@{remove\+Callback}}
+\index{remove\+Callback@{remove\+Callback}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{remove\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(const char $\ast$) F$>$ void crap\+::\+Directory\+Listener\+::remove\+Callback (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_ae9be484e605bbaa2baecd393f3eaff6f}
+
+
+Definition at line 93 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_a7dd77a5c85cee29b2c0ba6af2e7d56dc}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!remove\+Callback@{remove\+Callback}}
+\index{remove\+Callback@{remove\+Callback}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{remove\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(const char $\ast$) F$>$ void crap\+::\+Directory\+Listener\+::remove\+Callback (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_a7dd77a5c85cee29b2c0ba6af2e7d56dc}
+
+
+Definition at line 105 of file directorylistener.\+h.
+
+\hypertarget{classcrap_1_1_directory_listener_a03a5bf5dd2dbc0f1c910c6e7f20976b4}{}\index{crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}!update@{update}}
+\index{update@{update}!crap\+::\+Directory\+Listener@{crap\+::\+Directory\+Listener}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Directory\+Listener\+::update (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{deltatime}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_directory_listener_a03a5bf5dd2dbc0f1c910c6e7f20976b4}
+
+
+Definition at line 94 of file directorylistener.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{directorylistener_8h}{directorylistener.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{directorylistener_8cpp}{directorylistener.\+cpp}\end{DoxyCompactItemize}

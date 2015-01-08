@@ -1,0 +1,76 @@
+\hypertarget{rendercontext_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/video/include/rendercontext.h File Reference}
+\label{rendercontext_8h}\index{/mnt/windows/data/programming/crapengine2/source/video/include/rendercontext.\+h@{/mnt/windows/data/programming/crapengine2/source/video/include/rendercontext.\+h}}
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1_attribute}{crap\+::\+Attribute}
+\item 
+struct \hyperlink{structcrap_1_1_attribute_type}{crap\+::\+Attribute\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacebgfx}{bgfx}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rendercontext_8h_a812472acd02f58497bc4962731b40c32}{V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct bgfx\+::\+Vertex\+Decl \hyperlink{namespacecrap_a5054f00dc3a0c41f32137cf2233a72eb}{crap\+::\+Vertex\+Declaration}
+\item 
+typedef struct bgfx\+::\+Instance\+Data\+Buffer \hyperlink{namespacecrap_a1fd4f73d2fea6a3c7aa7624b9d7d68b8}{crap\+::\+Instance\+Buffer}
+\item 
+typedef uint16\+\_\+t \hyperlink{namespacecrap_abc80287e8f903e84b76fec4c44671533}{crap\+::\+Render\+Handle}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Render\+Handle \hyperlink{namespacecrap_a3e92a558c6c3de59058e5db1d1be058d}{crap\+::create\+Static\+Vertex\+Buffer} (pointer\+\_\+t$<$ void $>$ memory, uint32\+\_\+t size, Vertex\+Declaration $\ast$declaration)
+\item 
+void \hyperlink{namespacecrap_a93e30cfe9fea7498e6b335edc03f6384}{crap\+::destroy\+Static\+Vertex\+Buffer} (Render\+Handle static\+Buffer)
+\item 
+Render\+Handle \hyperlink{namespacecrap_a637405808a78b2663de3e1296d2d0bba}{crap\+::create\+Static\+Index\+Buffer} (pointer\+\_\+t$<$ void $>$ memory, uint32\+\_\+t size)
+\item 
+void \hyperlink{namespacecrap_ae3be9bac0e4f979211be2b660be8eb3a}{crap\+::destroy\+Static\+Index\+Buffer} (Render\+Handle static\+Buffer)
+\item 
+Render\+Handle \hyperlink{namespacecrap_ac4b0ec9cb784875beab685e857ffc463}{crap\+::create\+Shader} (pointer\+\_\+t$<$ void $>$ memory, uint32\+\_\+t size)
+\item 
+Render\+Handle \hyperlink{namespacecrap_a5958220e9edf208fd59c6230033defdb}{crap\+::create\+Program} (Render\+Handle vs, Render\+Handle fs)
+\item 
+Render\+Handle \hyperlink{namespacecrap_af6588cdc7866baadec945b2c3edd5ac8}{crap\+::create\+Program} (Render\+Handle gs, Render\+Handle vs, Render\+Handle fs)
+\item 
+void \hyperlink{namespacecrap_a3a96b94dba8c7dc99da775530a369248}{crap\+::destroy\+Shader} (Render\+Handle shader)
+\item 
+void \hyperlink{namespacecrap_a99a48fcaa77143e75014bec178c9f0f2}{crap\+::destroy\+Program} (Render\+Handle program)
+\item 
+Instance\+Buffer $\ast$ \hyperlink{namespacecrap_ac4279447fcb8f7ce653c8cf041318ff6}{crap\+::create\+Instance\+Buffer} (uint32\+\_\+t element\+Size, uint32\+\_\+t element\+Number)
+\item 
+void \hyperlink{namespacecrap_a876cbc7e4c67d809b137461b10049265}{crap\+::set\+Instance\+Buffer\+Data} (Instance\+Buffer $\ast$buffer, pointer\+\_\+t$<$ void $>$ data, uint32\+\_\+t size)
+\item 
+void \hyperlink{namespacecrap_a0b6896fe88a2d2ae11d8fa760e5a9aa0}{crap\+::set\+Instance\+Buffer} (Instance\+Buffer $\ast$buffer, uint16\+\_\+t number=\hyperlink{structcrap_1_1limits}{crap\+::limits}$<$ uint16\+\_\+t $>$\+::M\+A\+X)
+\item 
+Vertex\+Declaration \& \hyperlink{namespacecrap_a430364a405d6ce8c7fba8bc3ba3b9601}{crap\+::set\+Vertex\+Declaration\+Attribute} (Vertex\+Declaration \&declaration, Attribute\+::\+Enum attrib, uint8\+\_\+t num, Attribute\+Type\+::\+Enum type, bool norm=false, bool as\+Int=false)
+\item 
+void \hyperlink{namespacecrap_ae12454bce3765771c64a5e69c08f9256}{crap\+::set\+Program} (Render\+Handle handle)
+\item 
+void \hyperlink{namespacecrap_a414a1c31ef9fc082a7d04bac7721aa8a}{crap\+::set\+Vertex\+Buffer} (Render\+Handle handle)
+\item 
+void \hyperlink{namespacecrap_ae0ff7cd106b3b259364d07c5fc9a61b9}{crap\+::set\+Index\+Buffer} (Render\+Handle handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rendercontext_8h_a812472acd02f58497bc4962731b40c32}{}\index{rendercontext.\+h@{rendercontext.\+h}!V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+@{V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+}}
+\index{V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+@{V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+}!rendercontext.\+h@{rendercontext.\+h}}
+\subsubsection[{V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+I\+D\+E\+O\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+R\+E\+N\+D\+E\+R\+C\+O\+N\+T\+E\+X\+T\+\_\+\+H\+\_\+}\label{rendercontext_8h_a812472acd02f58497bc4962731b40c32}
+
+
+Definition at line 16 of file rendercontext.\+h.
+

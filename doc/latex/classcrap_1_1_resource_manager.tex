@@ -1,6 +1,5 @@
-\hypertarget{classcrap_1_1_resource_manager}{\section{crap\+:\+:Resource\+Manager Class Reference}
+\hypertarget{classcrap_1_1_resource_manager}{}\section{crap\+:\+:Resource\+Manager Class Reference}
 \label{classcrap_1_1_resource_manager}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-}
 
 
 {\ttfamily \#include $<$resourcemanager.\+h$>$}
@@ -12,162 +11,127 @@ struct \hyperlink{structcrap_1_1_resource_manager_1_1_package_content_info}{Pack
 \item 
 struct \hyperlink{structcrap_1_1_resource_manager_1_1_resource_info}{Resource\+Info}
 \end{DoxyCompactItemize}
-\subsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef \hyperlink{classcrap_1_1string__hash}{crap\+::string\+\_\+hash} \hyperlink{classcrap_1_1_resource_manager_a68532afc0951e49f936b71bbf9bdf804}{Resource\+Type}
-\item 
-typedef \hyperlink{classcrap_1_1string__hash}{crap\+::string\+\_\+hash} \hyperlink{classcrap_1_1_resource_manager_a1aa9ba8213544040ec264aa4b1651f78}{Resource\+Name}
-\item 
-typedef \hyperlink{namespacecrap_a52392ad28972b8b96725b2f7928d38fa}{crap\+::string512} \hyperlink{classcrap_1_1_resource_manager_a65958e1fcdda3a97f5ef9e006e30fad8}{Resource\+Path}
-\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classcrap_1_1_resource_manager_a7a3ae9eaae850f6bbf3a820089bbbd9a}{Resource\+Manager} (uint32\+\_\+t memory, uint32\+\_\+t num\+\_\+resources, const char $\ast$resource\+\_\+path)
+\hyperlink{classcrap_1_1_resource_manager_a2cda1eaa9c69060848b4c61afb69e5cf}{Resource\+Manager} (uint32\+\_\+t buffer\+Memory, uint32\+\_\+t resource\+Number, const \hyperlink{namespacecrap_af674ac1cc38a09c563c68dfc3b15e554}{string256} \&path, \hyperlink{classcrap_1_1_system}{System} $\ast$system)
 \item 
 \hyperlink{classcrap_1_1_resource_manager_a3767e6beaffac75e340a728fab19ce34}{$\sim$\+Resource\+Manager} (void)
 \item 
-void \hyperlink{classcrap_1_1_resource_manager_ab56cdf951b9653475d02817bf2016ec6}{load\+X\+M\+L} (const char $\ast$filename)
+void \hyperlink{classcrap_1_1_resource_manager_a8c3abdfffc6f71cf80cb279ea10c5952}{add\+Content} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} type\+Id, const \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \&filename, uint32\+\_\+t offset, uint32\+\_\+t size)
 \item 
-void \hyperlink{classcrap_1_1_resource_manager_a9c3faa7caa517c5b427fe741cddc0228}{save\+X\+M\+L} (const char $\ast$filename)
+void \hyperlink{classcrap_1_1_resource_manager_adcb82db8e4c9649c7a2ebb7f2e3f2e32}{load\+X\+M\+L} (const \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \&filename)
 \item 
-void \hyperlink{classcrap_1_1_resource_manager_a5ecd8f1ec2e4e500388c72143814b1d6}{import\+File} (const char $\ast$import\+\_\+path, const char $\ast$type, const char $\ast$name)
+void \hyperlink{classcrap_1_1_resource_manager_af0f9337b147ff6adaf4378e4258bb968}{load\+Package} (const \hyperlink{namespacecrap_a2b8a7358804e1a9c3c32f12d8cdcfdf8}{string64} \&filename)
 \item 
-void \hyperlink{classcrap_1_1_resource_manager_a67b9a7a308a8799f6f7e84c94dd52192}{load\+Package} (const char $\ast$filename)
+void \hyperlink{classcrap_1_1_resource_manager_ae2ce27f2b184d7700e9442f84f514dbc}{clear\+Info} (void)
 \item 
-void \hyperlink{classcrap_1_1_resource_manager_aa8d0f05c19bb1835e16bbb5ed4f6804d}{save\+Package} (const char $\ast$filename)
+void \hyperlink{classcrap_1_1_resource_manager_ac5c476360ad625aa3ef9f12e0de67140}{load\+Resource} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} resource\+Id)
 \item 
-void \hyperlink{classcrap_1_1_resource_manager_a6f8ed4c5e4d604c814162b44914555d2}{load\+Resources} (const \hyperlink{classcrap_1_1array}{crap\+::array}$<$ \hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} $>$ \&items)
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1intrusive__list}{intrusive\+\_\+list}$<$ \hyperlink{classcrap_1_1_resource_filter}{Resource\+Filter} $>$ $\ast$ \hyperlink{classcrap_1_1_resource_manager_a26ba997dd0f6e688ce154e63b6e33e57}{filters} (void)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 49 of file resourcemanager.\+h.
-
-
-
-\subsection{Member Typedef Documentation}
-\hypertarget{classcrap_1_1_resource_manager_a1aa9ba8213544040ec264aa4b1651f78}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!Resource\+Name@{Resource\+Name}}
-\index{Resource\+Name@{Resource\+Name}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{Resource\+Name}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf crap\+::string\+\_\+hash} {\bf crap\+::\+Resource\+Manager\+::\+Resource\+Name}}}\label{classcrap_1_1_resource_manager_a1aa9ba8213544040ec264aa4b1651f78}
-
-
-Definition at line 55 of file resourcemanager.\+h.
-
-\hypertarget{classcrap_1_1_resource_manager_a65958e1fcdda3a97f5ef9e006e30fad8}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!Resource\+Path@{Resource\+Path}}
-\index{Resource\+Path@{Resource\+Path}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{Resource\+Path}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf crap\+::string512} {\bf crap\+::\+Resource\+Manager\+::\+Resource\+Path}}}\label{classcrap_1_1_resource_manager_a65958e1fcdda3a97f5ef9e006e30fad8}
-
-
-Definition at line 56 of file resourcemanager.\+h.
-
-\hypertarget{classcrap_1_1_resource_manager_a68532afc0951e49f936b71bbf9bdf804}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!Resource\+Type@{Resource\+Type}}
-\index{Resource\+Type@{Resource\+Type}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{Resource\+Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf crap\+::string\+\_\+hash} {\bf crap\+::\+Resource\+Manager\+::\+Resource\+Type}}}\label{classcrap_1_1_resource_manager_a68532afc0951e49f936b71bbf9bdf804}
-
-
-Definition at line 54 of file resourcemanager.\+h.
+Definition at line 22 of file resourcemanager.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classcrap_1_1_resource_manager_a7a3ae9eaae850f6bbf3a820089bbbd9a}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\hypertarget{classcrap_1_1_resource_manager_a2cda1eaa9c69060848b4c61afb69e5cf}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
 \index{Resource\+Manager@{Resource\+Manager}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
 \subsubsection[{Resource\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Resource\+Manager\+::\+Resource\+Manager (
 \begin{DoxyParamCaption}
-\item[{uint32\+\_\+t}]{memory, }
-\item[{uint32\+\_\+t}]{num\+\_\+resources, }
-\item[{const char $\ast$}]{resource\+\_\+path}
+\item[{uint32\+\_\+t}]{buffer\+Memory, }
+\item[{uint32\+\_\+t}]{resource\+Number, }
+\item[{const {\bf string256} \&}]{path, }
+\item[{{\bf System} $\ast$}]{system}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_a7a3ae9eaae850f6bbf3a820089bbbd9a}
+)}\label{classcrap_1_1_resource_manager_a2cda1eaa9c69060848b4c61afb69e5cf}
 
 
-Definition at line 12 of file resourcemanager.\+cpp.
+Definition at line 13 of file resourcemanager.\+cpp.
 
-\hypertarget{classcrap_1_1_resource_manager_a3767e6beaffac75e340a728fab19ce34}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!````~Resource\+Manager@{$\sim$\+Resource\+Manager}}
+\hypertarget{classcrap_1_1_resource_manager_a3767e6beaffac75e340a728fab19ce34}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!````~Resource\+Manager@{$\sim$\+Resource\+Manager}}
 \index{````~Resource\+Manager@{$\sim$\+Resource\+Manager}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
 \subsubsection[{$\sim$\+Resource\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Resource\+Manager\+::$\sim$\+Resource\+Manager (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_a3767e6beaffac75e340a728fab19ce34}
+)}\label{classcrap_1_1_resource_manager_a3767e6beaffac75e340a728fab19ce34}
 
 
-Definition at line 25 of file resourcemanager.\+cpp.
+Definition at line 26 of file resourcemanager.\+cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classcrap_1_1_resource_manager_a5ecd8f1ec2e4e500388c72143814b1d6}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!import\+File@{import\+File}}
-\index{import\+File@{import\+File}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{import\+File}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::import\+File (
+\hypertarget{classcrap_1_1_resource_manager_a8c3abdfffc6f71cf80cb279ea10c5952}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!add\+Content@{add\+Content}}
+\index{add\+Content@{add\+Content}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
+\subsubsection[{add\+Content}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::add\+Content (
 \begin{DoxyParamCaption}
-\item[{const char $\ast$}]{import\+\_\+path, }
-\item[{const char $\ast$}]{type, }
-\item[{const char $\ast$}]{name}
+\item[{{\bf string\+\_\+hash}}]{type\+Id, }
+\item[{const {\bf string64} \&}]{filename, }
+\item[{uint32\+\_\+t}]{offset, }
+\item[{uint32\+\_\+t}]{size}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_a5ecd8f1ec2e4e500388c72143814b1d6}
+)}\label{classcrap_1_1_resource_manager_a8c3abdfffc6f71cf80cb279ea10c5952}
+\hypertarget{classcrap_1_1_resource_manager_ae2ce27f2b184d7700e9442f84f514dbc}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!clear\+Info@{clear\+Info}}
+\index{clear\+Info@{clear\+Info}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
+\subsubsection[{clear\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::clear\+Info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_resource_manager_ae2ce27f2b184d7700e9442f84f514dbc}
 
 
-Definition at line 224 of file resourcemanager.\+cpp.
+Definition at line 32 of file resourcemanager.\+cpp.
 
-\hypertarget{classcrap_1_1_resource_manager_a67b9a7a308a8799f6f7e84c94dd52192}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!load\+Package@{load\+Package}}
+\hypertarget{classcrap_1_1_resource_manager_a26ba997dd0f6e688ce154e63b6e33e57}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!filters@{filters}}
+\index{filters@{filters}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
+\subsubsection[{filters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf intrusive\+\_\+list}$<${\bf Resource\+Filter}$>$$\ast$ crap\+::\+Resource\+Manager\+::filters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_resource_manager_a26ba997dd0f6e688ce154e63b6e33e57}
+
+
+Definition at line 58 of file resourcemanager.\+h.
+
+\hypertarget{classcrap_1_1_resource_manager_af0f9337b147ff6adaf4378e4258bb968}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!load\+Package@{load\+Package}}
 \index{load\+Package@{load\+Package}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
 \subsubsection[{load\+Package}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::load\+Package (
 \begin{DoxyParamCaption}
-\item[{const char $\ast$}]{filename}
+\item[{const {\bf string64} \&}]{filename}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_a67b9a7a308a8799f6f7e84c94dd52192}
+)}\label{classcrap_1_1_resource_manager_af0f9337b147ff6adaf4378e4258bb968}
 
 
-Definition at line 112 of file resourcemanager.\+cpp.
+Definition at line 91 of file resourcemanager.\+cpp.
 
-\hypertarget{classcrap_1_1_resource_manager_a6f8ed4c5e4d604c814162b44914555d2}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!load\+Resources@{load\+Resources}}
-\index{load\+Resources@{load\+Resources}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{load\+Resources}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::load\+Resources (
+\hypertarget{classcrap_1_1_resource_manager_ac5c476360ad625aa3ef9f12e0de67140}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!load\+Resource@{load\+Resource}}
+\index{load\+Resource@{load\+Resource}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
+\subsubsection[{load\+Resource}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::load\+Resource (
 \begin{DoxyParamCaption}
-\item[{const {\bf crap\+::array}$<$ {\bf string\+\_\+hash} $>$ \&}]{items}
+\item[{{\bf string\+\_\+hash}}]{resource\+Id}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_a6f8ed4c5e4d604c814162b44914555d2}
+)}\label{classcrap_1_1_resource_manager_ac5c476360ad625aa3ef9f12e0de67140}
 
 
-Definition at line 176 of file resourcemanager.\+cpp.
+Definition at line 130 of file resourcemanager.\+cpp.
 
-\hypertarget{classcrap_1_1_resource_manager_ab56cdf951b9653475d02817bf2016ec6}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!load\+X\+M\+L@{load\+X\+M\+L}}
+\hypertarget{classcrap_1_1_resource_manager_adcb82db8e4c9649c7a2ebb7f2e3f2e32}{}\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!load\+X\+M\+L@{load\+X\+M\+L}}
 \index{load\+X\+M\+L@{load\+X\+M\+L}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
 \subsubsection[{load\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::load\+X\+M\+L (
 \begin{DoxyParamCaption}
-\item[{const char $\ast$}]{filename}
+\item[{const {\bf string64} \&}]{filename}
 \end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_ab56cdf951b9653475d02817bf2016ec6}
+)}\label{classcrap_1_1_resource_manager_adcb82db8e4c9649c7a2ebb7f2e3f2e32}
 
 
-Definition at line 35 of file resourcemanager.\+cpp.
-
-\hypertarget{classcrap_1_1_resource_manager_aa8d0f05c19bb1835e16bbb5ed4f6804d}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!save\+Package@{save\+Package}}
-\index{save\+Package@{save\+Package}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{save\+Package}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::save\+Package (
-\begin{DoxyParamCaption}
-\item[{const char $\ast$}]{filename}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_aa8d0f05c19bb1835e16bbb5ed4f6804d}
-
-
-Definition at line 148 of file resourcemanager.\+cpp.
-
-\hypertarget{classcrap_1_1_resource_manager_a9c3faa7caa517c5b427fe741cddc0228}{\index{crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}!save\+X\+M\+L@{save\+X\+M\+L}}
-\index{save\+X\+M\+L@{save\+X\+M\+L}!crap\+::\+Resource\+Manager@{crap\+::\+Resource\+Manager}}
-\subsubsection[{save\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Resource\+Manager\+::save\+X\+M\+L (
-\begin{DoxyParamCaption}
-\item[{const char $\ast$}]{filename}
-\end{DoxyParamCaption}
-)}}\label{classcrap_1_1_resource_manager_a9c3faa7caa517c5b427fe741cddc0228}
-
-
-Definition at line 81 of file resourcemanager.\+cpp.
+Definition at line 40 of file resourcemanager.\+cpp.
 
 
 

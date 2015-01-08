@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['fonsalign',['FONSalign',['../fontstash_8h.html#a8051f172064ca511594fad4c6b87d2e8',1,'fontstash.h']]],
-  ['fonserrorcode',['FONSerrorCode',['../fontstash_8h.html#a00fbab9e35fee54d35eb637328a2b40a',1,'fontstash.h']]],
-  ['fonsflags',['FONSflags',['../fontstash_8h.html#a1aaefaf41e2c2a299485878bcb264b17',1,'fontstash.h']]]
+  ['enum',['Enum',['../structcrap_1_1_udp_connection_1_1_event.html#adcb4025fc6cb1f099dd37b511c96bb15',1,'crap::UdpConnection::Event::Enum()'],['../structcrap_1_1_attribute.html#a744a08bda8d2274974104f1edf5e2d0d',1,'crap::Attribute::Enum()'],['../structcrap_1_1_attribute_type.html#a5f73679cb4743fa93308c733fcc45cc2',1,'crap::AttributeType::Enum()']]]
 ];

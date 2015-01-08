@@ -1,0 +1,157 @@
+\hypertarget{testprojects_2testgame_2source_2main_8cpp}{}\section{/mnt/windows/data/programming/crapengine2/source/testprojects/testgame/source/main.cpp File Reference}
+\label{testprojects_2testgame_2source_2main_8cpp}\index{/mnt/windows/data/programming/crapengine2/source/testprojects/testgame/source/main.\+cpp@{/mnt/windows/data/programming/crapengine2/source/testprojects/testgame/source/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}configuration.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}resourcemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}audiomanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pluginmanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}directorylistener.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}resourcefilter.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}componentsystem.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}component.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}taskmanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}inputmanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}keyboardinput.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mouseinput.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}controllerinput.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}renderwindow.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_a73c933a6efbed4c20f8c5066a3f029cc}{exit\+Func} (uint32\+\_\+t state)
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_a02f1241fa78045caf454ceb8b0cb1cb5}{click\+Func} (uint32\+\_\+t state)
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_aaa482d5566706d82971d7f3828d67a47}{pos\+Func} (\hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} x, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} y)
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_a1ee72999d51d9d6c987071fb2b4823d6}{scroll\+Func} (\hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} x, \hyperlink{crap__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}{float64\+\_\+t} y)
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_abb6f6570c7b1adf48c8a427f0a8ffa8e}{enter\+Func} (bool var)
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_a0ba88d464d80d6b81258ddfd142f774d}{joy\+Axis} (const \hyperlink{crap__types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t} $\ast$data, int32\+\_\+t data\+\_\+size)
+\item 
+void \hyperlink{testprojects_2testgame_2source_2main_8cpp_a0254ef8be98a9b3b20851aa26625945c}{joy\+Button} (const uint8\+\_\+t $\ast$data, int32\+\_\+t data\+\_\+size)
+\item 
+int \hyperlink{testprojects_2testgame_2source_2main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{testprojects_2testgame_2source_2main_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} = true
+\item 
+uint32\+\_\+t \hyperlink{testprojects_2testgame_2source_2main_8cpp_a5ed63a5768c4bd1d931bd0ae04d0d6ea}{thekey} = 256
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a02f1241fa78045caf454ceb8b0cb1cb5}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!click\+Func@{click\+Func}}
+\index{click\+Func@{click\+Func}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{click\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void click\+Func (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{state}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_a02f1241fa78045caf454ceb8b0cb1cb5}
+
+
+Definition at line 28 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_abb6f6570c7b1adf48c8a427f0a8ffa8e}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!enter\+Func@{enter\+Func}}
+\index{enter\+Func@{enter\+Func}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{enter\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void enter\+Func (
+\begin{DoxyParamCaption}
+\item[{bool}]{var}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_abb6f6570c7b1adf48c8a427f0a8ffa8e}
+
+
+Definition at line 43 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a73c933a6efbed4c20f8c5066a3f029cc}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!exit\+Func@{exit\+Func}}
+\index{exit\+Func@{exit\+Func}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{exit\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void exit\+Func (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{state}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_a73c933a6efbed4c20f8c5066a3f029cc}
+
+
+Definition at line 22 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a0ba88d464d80d6b81258ddfd142f774d}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!joy\+Axis@{joy\+Axis}}
+\index{joy\+Axis@{joy\+Axis}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{joy\+Axis}]{\setlength{\rightskip}{0pt plus 5cm}void joy\+Axis (
+\begin{DoxyParamCaption}
+\item[{const {\bf float32\+\_\+t} $\ast$}]{data, }
+\item[{int32\+\_\+t}]{data\+\_\+size}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_a0ba88d464d80d6b81258ddfd142f774d}
+
+
+Definition at line 48 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a0254ef8be98a9b3b20851aa26625945c}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!joy\+Button@{joy\+Button}}
+\index{joy\+Button@{joy\+Button}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{joy\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void joy\+Button (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int32\+\_\+t}]{data\+\_\+size}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_a0254ef8be98a9b3b20851aa26625945c}
+
+
+Definition at line 60 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!main@{main}}
+\index{main@{main}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Definition at line 72 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_aaa482d5566706d82971d7f3828d67a47}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!pos\+Func@{pos\+Func}}
+\index{pos\+Func@{pos\+Func}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{pos\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void pos\+Func (
+\begin{DoxyParamCaption}
+\item[{{\bf float64\+\_\+t}}]{x, }
+\item[{{\bf float64\+\_\+t}}]{y}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_aaa482d5566706d82971d7f3828d67a47}
+
+
+Definition at line 33 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a1ee72999d51d9d6c987071fb2b4823d6}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!scroll\+Func@{scroll\+Func}}
+\index{scroll\+Func@{scroll\+Func}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{scroll\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void scroll\+Func (
+\begin{DoxyParamCaption}
+\item[{{\bf float64\+\_\+t}}]{x, }
+\item[{{\bf float64\+\_\+t}}]{y}
+\end{DoxyParamCaption}
+)}\label{testprojects_2testgame_2source_2main_8cpp_a1ee72999d51d9d6c987071fb2b4823d6}
+
+
+Definition at line 38 of file main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a36f7b6be7108281af77939ceaec42fd6}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!running@{running}}
+\index{running@{running}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{running}]{\setlength{\rightskip}{0pt plus 5cm}bool running = true}\label{testprojects_2testgame_2source_2main_8cpp_a36f7b6be7108281af77939ceaec42fd6}
+
+
+Definition at line 20 of file main.\+cpp.
+
+\hypertarget{testprojects_2testgame_2source_2main_8cpp_a5ed63a5768c4bd1d931bd0ae04d0d6ea}{}\index{testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}!thekey@{thekey}}
+\index{thekey@{thekey}!testprojects/testgame/source/main.\+cpp@{testprojects/testgame/source/main.\+cpp}}
+\subsubsection[{thekey}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t thekey = 256}\label{testprojects_2testgame_2source_2main_8cpp_a5ed63a5768c4bd1d931bd0ae04d0d6ea}
+
+
+Definition at line 21 of file main.\+cpp.
+

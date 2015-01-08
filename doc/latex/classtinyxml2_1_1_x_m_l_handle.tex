@@ -1,6 +1,5 @@
-\hypertarget{classtinyxml2_1_1_x_m_l_handle}{\section{tinyxml2\+:\+:X\+M\+L\+Handle Class Reference}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle}{}\section{tinyxml2\+:\+:X\+M\+L\+Handle Class Reference}
 \label{classtinyxml2_1_1_x_m_l_handle}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
-}
 
 
 {\ttfamily \#include $<$tinyxml2.\+h$>$}
@@ -56,7 +55,7 @@ Take an example\+: \begin{DoxyVerb}<Document>
 \end{DoxyVerb}
 
 
-Assuming you want the value of \char`\"{}attribute\+B\char`\"{} in the 2nd \char`\"{}\+Child\char`\"{} element, it's very easy to write a {\itshape lot} of code that looks like\+:
+Assuming you want the value of \char`\"{}attribute\+B\char`\"{} in the 2nd \char`\"{}\+Child\char`\"{} element, it\textquotesingle{}s very easy to write a {\itshape lot} of code that looks like\+:
 
 \begin{DoxyVerb}XMLElement* root = document.FirstChildElement( "Document" );
 if ( root )
@@ -74,7 +73,7 @@ if ( root )
 \end{DoxyVerb}
 
 
-And that doesn't even cover \char`\"{}else\char`\"{} cases. \hyperlink{classtinyxml2_1_1_x_m_l_handle}{X\+M\+L\+Handle} addresses the verbosity of such code. A \hyperlink{classtinyxml2_1_1_x_m_l_handle}{X\+M\+L\+Handle} checks for null pointers so it is perfectly safe and correct to use\+:
+And that doesn\textquotesingle{}t even cover \char`\"{}else\char`\"{} cases. \hyperlink{classtinyxml2_1_1_x_m_l_handle}{X\+M\+L\+Handle} addresses the verbosity of such code. A \hyperlink{classtinyxml2_1_1_x_m_l_handle}{X\+M\+L\+Handle} checks for null pointers so it is perfectly safe and correct to use\+:
 
 \begin{DoxyVerb}XMLHandle docHandle( &document );
 XMLElement* child2 = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).FirstChild().NextSibling().ToElement();
@@ -97,13 +96,13 @@ Definition at line 1768 of file tinyxml2.\+h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a9c240a35c18f053509b4b97ddccd9793}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!X\+M\+L\+Handle@{X\+M\+L\+Handle}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a9c240a35c18f053509b4b97ddccd9793}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!X\+M\+L\+Handle@{X\+M\+L\+Handle}}
 \index{X\+M\+L\+Handle@{X\+M\+L\+Handle}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{X\+M\+L\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}tinyxml2\+::\+X\+M\+L\+Handle\+::\+X\+M\+L\+Handle (
 \begin{DoxyParamCaption}
 \item[{{\bf X\+M\+L\+Node} $\ast$}]{node}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a9c240a35c18f053509b4b97ddccd9793}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a9c240a35c18f053509b4b97ddccd9793}
 
 
 Create a handle from any node (at any depth of the tree.) This can be a null pointer. 
@@ -112,13 +111,13 @@ Create a handle from any node (at any depth of the tree.) This can be a null poi
 
 Definition at line 1772 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_aa2edbc1c0d3e3e8259bd98de7f1cf500}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!X\+M\+L\+Handle@{X\+M\+L\+Handle}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_aa2edbc1c0d3e3e8259bd98de7f1cf500}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!X\+M\+L\+Handle@{X\+M\+L\+Handle}}
 \index{X\+M\+L\+Handle@{X\+M\+L\+Handle}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{X\+M\+L\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}tinyxml2\+::\+X\+M\+L\+Handle\+::\+X\+M\+L\+Handle (
 \begin{DoxyParamCaption}
 \item[{{\bf X\+M\+L\+Node} \&}]{node}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_aa2edbc1c0d3e3e8259bd98de7f1cf500}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_aa2edbc1c0d3e3e8259bd98de7f1cf500}
 
 
 Create a handle from a node. 
@@ -127,13 +126,13 @@ Create a handle from a node.
 
 Definition at line 1776 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_afd8e01e6018c07347b8e6d80272466aa}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!X\+M\+L\+Handle@{X\+M\+L\+Handle}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_afd8e01e6018c07347b8e6d80272466aa}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!X\+M\+L\+Handle@{X\+M\+L\+Handle}}
 \index{X\+M\+L\+Handle@{X\+M\+L\+Handle}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{X\+M\+L\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}tinyxml2\+::\+X\+M\+L\+Handle\+::\+X\+M\+L\+Handle (
 \begin{DoxyParamCaption}
 \item[{const {\bf X\+M\+L\+Handle} \&}]{ref}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_afd8e01e6018c07347b8e6d80272466aa}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_afd8e01e6018c07347b8e6d80272466aa}
 
 
 Copy constructor. 
@@ -145,13 +144,13 @@ Definition at line 1780 of file tinyxml2.\+h.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a536447dc7f54c0cd11e031dad94795ae}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!First\+Child@{First\+Child}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a536447dc7f54c0cd11e031dad94795ae}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!First\+Child@{First\+Child}}
 \index{First\+Child@{First\+Child}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{First\+Child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+First\+Child (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a536447dc7f54c0cd11e031dad94795ae}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a536447dc7f54c0cd11e031dad94795ae}
 
 
 Get the first child of this handle. 
@@ -160,13 +159,13 @@ Get the first child of this handle.
 
 Definition at line 1790 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a99edff695a3cd3feff8a329189140a33}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!First\+Child\+Element@{First\+Child\+Element}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a99edff695a3cd3feff8a329189140a33}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!First\+Child\+Element@{First\+Child\+Element}}
 \index{First\+Child\+Element@{First\+Child\+Element}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{First\+Child\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+First\+Child\+Element (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{value = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a99edff695a3cd3feff8a329189140a33}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a99edff695a3cd3feff8a329189140a33}
 
 
 Get the first child element of this handle. 
@@ -175,13 +174,13 @@ Get the first child element of this handle.
 
 Definition at line 1794 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a9d09f04435f0f2f7d0816b0198d0517b}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Last\+Child@{Last\+Child}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a9d09f04435f0f2f7d0816b0198d0517b}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Last\+Child@{Last\+Child}}
 \index{Last\+Child@{Last\+Child}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{Last\+Child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+Last\+Child (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a9d09f04435f0f2f7d0816b0198d0517b}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a9d09f04435f0f2f7d0816b0198d0517b}
 
 
 Get the last child of this handle. 
@@ -190,13 +189,13 @@ Get the last child of this handle.
 
 Definition at line 1798 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a4073e768ebc434b2605343b709a9a554}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Last\+Child\+Element@{Last\+Child\+Element}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a4073e768ebc434b2605343b709a9a554}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Last\+Child\+Element@{Last\+Child\+Element}}
 \index{Last\+Child\+Element@{Last\+Child\+Element}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{Last\+Child\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+Last\+Child\+Element (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{\+\_\+value = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a4073e768ebc434b2605343b709a9a554}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a4073e768ebc434b2605343b709a9a554}
 
 
 Get the last child element of this handle. 
@@ -205,13 +204,13 @@ Get the last child element of this handle.
 
 Definition at line 1802 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_aad2eccc7c7c7b18145877c978c3850b5}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Next\+Sibling@{Next\+Sibling}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_aad2eccc7c7c7b18145877c978c3850b5}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Next\+Sibling@{Next\+Sibling}}
 \index{Next\+Sibling@{Next\+Sibling}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{Next\+Sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+Next\+Sibling (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_aad2eccc7c7c7b18145877c978c3850b5}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_aad2eccc7c7c7b18145877c978c3850b5}
 
 
 Get the next sibling of this handle. 
@@ -220,13 +219,13 @@ Get the next sibling of this handle.
 
 Definition at line 1814 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a447c9b284cfcd5518f9e320ba14b9c46}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Next\+Sibling\+Element@{Next\+Sibling\+Element}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a447c9b284cfcd5518f9e320ba14b9c46}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Next\+Sibling\+Element@{Next\+Sibling\+Element}}
 \index{Next\+Sibling\+Element@{Next\+Sibling\+Element}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{Next\+Sibling\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+Next\+Sibling\+Element (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{\+\_\+value = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a447c9b284cfcd5518f9e320ba14b9c46}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a447c9b284cfcd5518f9e320ba14b9c46}
 
 
 Get the next sibling element of this handle. 
@@ -235,13 +234,13 @@ Get the next sibling element of this handle.
 
 Definition at line 1818 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a75b908322bb4b83be3281b6845252b20}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!operator=@{operator=}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a75b908322bb4b83be3281b6845252b20}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!operator=@{operator=}}
 \index{operator=@{operator=}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle}\& tinyxml2\+::\+X\+M\+L\+Handle\+::operator= (
 \begin{DoxyParamCaption}
 \item[{const {\bf X\+M\+L\+Handle} \&}]{ref}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a75b908322bb4b83be3281b6845252b20}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a75b908322bb4b83be3281b6845252b20}
 
 
 Assignment. 
@@ -250,13 +249,13 @@ Assignment.
 
 Definition at line 1784 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a428374e756f4db4cbc287fec64eae02c}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Previous\+Sibling@{Previous\+Sibling}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a428374e756f4db4cbc287fec64eae02c}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Previous\+Sibling@{Previous\+Sibling}}
 \index{Previous\+Sibling@{Previous\+Sibling}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{Previous\+Sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+Previous\+Sibling (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a428374e756f4db4cbc287fec64eae02c}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a428374e756f4db4cbc287fec64eae02c}
 
 
 Get the previous sibling of this handle. 
@@ -265,13 +264,13 @@ Get the previous sibling of this handle.
 
 Definition at line 1806 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a31a0d5d060292bec5df2b2efe2eca228}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Previous\+Sibling\+Element@{Previous\+Sibling\+Element}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a31a0d5d060292bec5df2b2efe2eca228}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!Previous\+Sibling\+Element@{Previous\+Sibling\+Element}}
 \index{Previous\+Sibling\+Element@{Previous\+Sibling\+Element}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{Previous\+Sibling\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Handle} tinyxml2\+::\+X\+M\+L\+Handle\+::\+Previous\+Sibling\+Element (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{\+\_\+value = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a31a0d5d060292bec5df2b2efe2eca228}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a31a0d5d060292bec5df2b2efe2eca228}
 
 
 Get the previous sibling element of this handle. 
@@ -280,13 +279,13 @@ Get the previous sibling element of this handle.
 
 Definition at line 1810 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a108858be7ee3eb53f73b5194c1aa8ff0}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Declaration@{To\+Declaration}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a108858be7ee3eb53f73b5194c1aa8ff0}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Declaration@{To\+Declaration}}
 \index{To\+Declaration@{To\+Declaration}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{To\+Declaration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Declaration}$\ast$ tinyxml2\+::\+X\+M\+L\+Handle\+::\+To\+Declaration (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a108858be7ee3eb53f73b5194c1aa8ff0}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a108858be7ee3eb53f73b5194c1aa8ff0}
 
 
 Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_declaration}{X\+M\+L\+Declaration}. This can return null. 
@@ -295,13 +294,13 @@ Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_declaration}{X\+M\+L\+Declaratio
 
 Definition at line 1839 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a5e73ed8f3f6f9619d5a8bb1862c47d99}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Element@{To\+Element}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a5e73ed8f3f6f9619d5a8bb1862c47d99}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Element@{To\+Element}}
 \index{To\+Element@{To\+Element}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{To\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Element}$\ast$ tinyxml2\+::\+X\+M\+L\+Handle\+::\+To\+Element (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a5e73ed8f3f6f9619d5a8bb1862c47d99}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a5e73ed8f3f6f9619d5a8bb1862c47d99}
 
 
 Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_element}{X\+M\+L\+Element}. This can return null. 
@@ -310,13 +309,13 @@ Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_element}{X\+M\+L\+Element}. This
 
 Definition at line 1827 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a03ea6ec970a021b71bf1219a0f6717df}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Node@{To\+Node}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a03ea6ec970a021b71bf1219a0f6717df}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Node@{To\+Node}}
 \index{To\+Node@{To\+Node}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{To\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Node}$\ast$ tinyxml2\+::\+X\+M\+L\+Handle\+::\+To\+Node (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a03ea6ec970a021b71bf1219a0f6717df}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a03ea6ec970a021b71bf1219a0f6717df}
 
 
 Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}. This can return null. 
@@ -325,13 +324,13 @@ Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}. This can r
 
 Definition at line 1823 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_a6ab9e8cbfb41417246e5657e3842c62a}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Text@{To\+Text}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_a6ab9e8cbfb41417246e5657e3842c62a}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Text@{To\+Text}}
 \index{To\+Text@{To\+Text}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{To\+Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Text}$\ast$ tinyxml2\+::\+X\+M\+L\+Handle\+::\+To\+Text (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_a6ab9e8cbfb41417246e5657e3842c62a}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_a6ab9e8cbfb41417246e5657e3842c62a}
 
 
 Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_text}{X\+M\+L\+Text}. This can return null. 
@@ -340,13 +339,13 @@ Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_text}{X\+M\+L\+Text}. This can r
 
 Definition at line 1831 of file tinyxml2.\+h.
 
-\hypertarget{classtinyxml2_1_1_x_m_l_handle_aa387368a1ad8d843a9f12df863d298de}{\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Unknown@{To\+Unknown}}
+\hypertarget{classtinyxml2_1_1_x_m_l_handle_aa387368a1ad8d843a9f12df863d298de}{}\index{tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}!To\+Unknown@{To\+Unknown}}
 \index{To\+Unknown@{To\+Unknown}!tinyxml2\+::\+X\+M\+L\+Handle@{tinyxml2\+::\+X\+M\+L\+Handle}}
 \subsubsection[{To\+Unknown}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\+M\+L\+Unknown}$\ast$ tinyxml2\+::\+X\+M\+L\+Handle\+::\+To\+Unknown (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtinyxml2_1_1_x_m_l_handle_aa387368a1ad8d843a9f12df863d298de}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classtinyxml2_1_1_x_m_l_handle_aa387368a1ad8d843a9f12df863d298de}
 
 
 Safe cast to \hyperlink{classtinyxml2_1_1_x_m_l_unknown}{X\+M\+L\+Unknown}. This can return null. 

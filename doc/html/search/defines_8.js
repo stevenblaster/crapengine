@@ -1,21 +1,15 @@
 var searchData=
 [
-  ['linear_5fmap_5fspace',['LINEAR_MAP_SPACE',['../arraymap_8cpp.html#a924f6e50458f609a3fe7393a8a5250f0',1,'LINEAR_MAP_SPACE():&#160;arraymap.cpp'],['../listmap_8cpp.html#a924f6e50458f609a3fe7393a8a5250f0',1,'LINEAR_MAP_SPACE():&#160;listmap.cpp'],['../sortedarraymap_8cpp.html#a924f6e50458f609a3fe7393a8a5250f0',1,'LINEAR_MAP_SPACE():&#160;sortedarraymap.cpp'],['../treemap_8cpp.html#a924f6e50458f609a3fe7393a8a5250f0',1,'LINEAR_MAP_SPACE():&#160;treemap.cpp']]],
-  ['list_5fspace',['LIST_SPACE',['../list_8cpp.html#a23bdd32abe2fbfa55122142339be3c3e',1,'list.cpp']]],
-  ['log_5fchannel_5faudio',['LOG_CHANNEL_AUDIO',['../logger_8h.html#a14df61b1bef702b4e7b845577658561b',1,'logger.h']]],
-  ['log_5fchannel_5fcore',['LOG_CHANNEL_CORE',['../logger_8h.html#af8df519e0d93f01f0237a41a093e19f8',1,'logger.h']]],
-  ['log_5fchannel_5fnone',['LOG_CHANNEL_NONE',['../logger_8h.html#a174a79b60892db79419f17fa90b664ce',1,'logger.h']]],
-  ['log_5fchannel_5fphysic',['LOG_CHANNEL_PHYSIC',['../logger_8h.html#a68deb1abc6a9c11b2ec7553cf6d47bf0',1,'logger.h']]],
-  ['log_5fchannel_5fvideo',['LOG_CHANNEL_VIDEO',['../logger_8h.html#a6dc128b9cc34ce68ba48b4a78f0e2407',1,'logger.h']]],
-  ['log_5fmax_5fsize',['LOG_MAX_SIZE',['../logger_8h.html#ae890bbd431aa7d19fcbe247502ce3feb',1,'logger.h']]],
-  ['log_5ftarget_5fcerr',['LOG_TARGET_CERR',['../logger_8h.html#a6d43164e0467f6d395fa0e0773535439',1,'logger.h']]],
-  ['log_5ftarget_5fcout',['LOG_TARGET_COUT',['../logger_8h.html#ade1fdab2d4531d8bdf9b9bf22b96c44f',1,'logger.h']]],
-  ['log_5ftarget_5ffile',['LOG_TARGET_FILE',['../logger_8h.html#a15b53599af6891ab8add65cc94e2acb7',1,'logger.h']]],
-  ['log_5ftarget_5fnone',['LOG_TARGET_NONE',['../logger_8h.html#a9235b8d7801877c99589aab3edcf05fd',1,'logger.h']]],
-  ['log_5ftype_5fassert',['LOG_TYPE_ASSERT',['../logger_8h.html#a7471e00da55fd22f4789aa4989c4a482',1,'logger.h']]],
-  ['log_5ftype_5fdebug',['LOG_TYPE_DEBUG',['../logger_8h.html#a542529c1654a19379e8db5625bc7801e',1,'logger.h']]],
-  ['log_5ftype_5ferror',['LOG_TYPE_ERROR',['../logger_8h.html#a7c5fd30f5e43b34be24326642d1a4c6d',1,'logger.h']]],
-  ['log_5ftype_5finfo',['LOG_TYPE_INFO',['../logger_8h.html#a8b181b7eaaab11e988e2c6b7cdc0d80a',1,'logger.h']]],
-  ['log_5ftype_5fnone',['LOG_TYPE_NONE',['../logger_8h.html#af309299eede8f70fa53dbabc13c2ad0b',1,'logger.h']]],
-  ['log_5ftype_5fwarning',['LOG_TYPE_WARNING',['../logger_8h.html#a5781a92890ba75559c17d6c7f613ab29',1,'logger.h']]]
+  ['iface_5fspace',['IFACE_SPACE',['../unittests_2source_2sockets_8cpp.html#a3130da68d8f2ec3f7f3ecf85e5d309eb',1,'sockets.cpp']]],
+  ['indexedarray_5fspace',['INDEXEDARRAY_SPACE',['../indexedarray_8cpp.html#a8d87f407fa51b6cd22797b764dc44909',1,'indexedarray.cpp']]],
+  ['input_5fmemory',['INPUT_MEMORY',['../inputmanager_8h.html#a50dc0ae1528660c54a99d738ab327b9f',1,'inputmanager.h']]],
+  ['int16_5fmax',['INT16_MAX',['../crap__types_8h.html#ac58f2c111cc9989c86db2a7dc4fd84ca',1,'crap_types.h']]],
+  ['int16_5fmin',['INT16_MIN',['../crap__types_8h.html#ad4e9955955b27624963643eac448118a',1,'crap_types.h']]],
+  ['int32_5fmax',['INT32_MAX',['../crap__types_8h.html#a181807730d4a375f848ba139813ce04f',1,'crap_types.h']]],
+  ['int32_5fmin',['INT32_MIN',['../crap__types_8h.html#a688eb21a22db27c2b2bd5836943cdcbe',1,'crap_types.h']]],
+  ['int64_5fmax',['INT64_MAX',['../crap__types_8h.html#ad0d744f05898e32d01f73f8af3cd2071',1,'crap_types.h']]],
+  ['int64_5fmin',['INT64_MIN',['../crap__types_8h.html#ab21f12f372f67b8ff0aa3432336ede67',1,'crap_types.h']]],
+  ['int8_5fmax',['INT8_MAX',['../crap__types_8h.html#aaf7f29f45f1a513b4748a4e5014ddf6a',1,'crap_types.h']]],
+  ['int8_5fmin',['INT8_MIN',['../crap__types_8h.html#aadcf2a81af243df333b31efa6461ab8e',1,'crap_types.h']]],
+  ['intrusive_5fsize',['INTRUSIVE_SIZE',['../intrusivelist_8cpp.html#a28d1d1b555e7f153b96b6a64ee6529ed',1,'intrusivelist.cpp']]]
 ];

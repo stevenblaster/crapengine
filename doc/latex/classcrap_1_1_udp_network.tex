@@ -1,0 +1,224 @@
+\hypertarget{classcrap_1_1_udp_network}{}\section{crap\+:\+:Udp\+Network Class Reference}
+\label{classcrap_1_1_udp_network}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+
+
+{\ttfamily \#include $<$udpnetwork.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_udp_network_adcb731ce23b46c95ba91a7acb42614dc}{Udp\+Network} (\hyperlink{namespacecrap_a21d8c14ae6ca715c519ff369042149dd}{port\+\_\+t} listen\+\_\+port, uint32\+\_\+t max\+\_\+connections, uint32\+\_\+t event\+\_\+size, uint32\+\_\+t connection\+\_\+idle\+\_\+time, uint32\+\_\+t max\+\_\+out\+\_\+packets, uint32\+\_\+t max\+\_\+in\+\_\+packets, uint32\+\_\+t lifetime\+\_\+out\+\_\+packets, uint32\+\_\+t lifetime\+\_\+in\+\_\+packets, uint32\+\_\+t max\+\_\+commands\+\_\+out, uint32\+\_\+t max\+\_\+commands\+\_\+in, uint32\+\_\+t max\+\_\+command\+\_\+types, uint32\+\_\+t update\+\_\+freq)
+\item 
+\hyperlink{classcrap_1_1_udp_network_a7e8fc66a65c4d4ce10d51fa1e89e2c5e}{$\sim$\+Udp\+Network} (void)
+\item 
+void \hyperlink{classcrap_1_1_udp_network_a3c9a6fb8007975eed2bca6d154474f33}{broadcast\+Connection} (int32\+\_\+t device\+\_\+index=-\/1)
+\item 
+void \hyperlink{classcrap_1_1_udp_network_af5b7f4e1171d05a772fd13a81aee27cb}{connect\+To} (\hyperlink{namespacecrap_a9ef32279067e77955c9f269926a331ee}{ipv4\+\_\+t} ip, \hyperlink{namespacecrap_a21d8c14ae6ca715c519ff369042149dd}{port\+\_\+t} port)
+\item 
+void \hyperlink{classcrap_1_1_udp_network_aed2e9796b0498a662d1656c2486ec1ba}{enqueue} (uint32\+\_\+t user\+\_\+id, \hyperlink{classcrap_1_1_network_command}{Network\+Command} $\ast$command, bool fire\+And\+Forget=false)
+\item 
+bool \hyperlink{classcrap_1_1_udp_network_a2da693f836a8ae12aa0d2a21ab4b25e2}{update} (uint32\+\_\+t deltatime)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_network_a061a04afa4c168e4ddbfbb395583adf4}{register\+For\+Events} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_network_a6511b5c7f871cceca81c827aeb75abdd}{register\+For\+Events} (void)
+\item 
+{\footnotesize template$<$class C , void(\+C\+::$\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_network_a0c5c0732d1ec608c9347ad4393179d36}{unregister\+From\+Events} (C $\ast$instance)
+\item 
+{\footnotesize template$<$void($\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ }\\bool \hyperlink{classcrap_1_1_udp_network_af5129d1be9ba7226136d0e92472c1c69}{unregister\+From\+Events} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t \hyperlink{classcrap_1_1_udp_network_a074201156d578bccc65960e3213c052e}{connection\+I\+D} (void) const 
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_udp_connection}{Udp\+Connection} $\ast$ \hyperlink{classcrap_1_1_udp_network_a648d383e15d72f4b5c530dbe013c6488}{connection} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_udp_reliability}{Udp\+Reliability} $\ast$ \hyperlink{classcrap_1_1_udp_network_a02b2e8dcf7f59e09abf45812d19d748a}{reliability} (void)
+\item 
+\hyperlink{config__x86_8h_a5a40526b8d842e7ff731509998bb0f1c}{C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} \hyperlink{classcrap_1_1_network_command_queue}{Network\+Command\+Queue} $\ast$ \hyperlink{classcrap_1_1_udp_network_a9853fe5cfc3fef264dc172d3916a7e68}{queue} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file udpnetwork.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_udp_network_adcb731ce23b46c95ba91a7acb42614dc}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!Udp\+Network@{Udp\+Network}}
+\index{Udp\+Network@{Udp\+Network}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{Udp\+Network}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Udp\+Network\+::\+Udp\+Network (
+\begin{DoxyParamCaption}
+\item[{{\bf port\+\_\+t}}]{listen\+\_\+port, }
+\item[{uint32\+\_\+t}]{max\+\_\+connections, }
+\item[{uint32\+\_\+t}]{event\+\_\+size, }
+\item[{uint32\+\_\+t}]{connection\+\_\+idle\+\_\+time, }
+\item[{uint32\+\_\+t}]{max\+\_\+out\+\_\+packets, }
+\item[{uint32\+\_\+t}]{max\+\_\+in\+\_\+packets, }
+\item[{uint32\+\_\+t}]{lifetime\+\_\+out\+\_\+packets, }
+\item[{uint32\+\_\+t}]{lifetime\+\_\+in\+\_\+packets, }
+\item[{uint32\+\_\+t}]{max\+\_\+commands\+\_\+out, }
+\item[{uint32\+\_\+t}]{max\+\_\+commands\+\_\+in, }
+\item[{uint32\+\_\+t}]{max\+\_\+command\+\_\+types, }
+\item[{uint32\+\_\+t}]{update\+\_\+freq}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_adcb731ce23b46c95ba91a7acb42614dc}
+
+
+Definition at line 19 of file udpnetwork.\+cpp.
+
+\hypertarget{classcrap_1_1_udp_network_a7e8fc66a65c4d4ce10d51fa1e89e2c5e}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!````~Udp\+Network@{$\sim$\+Udp\+Network}}
+\index{````~Udp\+Network@{$\sim$\+Udp\+Network}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{$\sim$\+Udp\+Network}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Udp\+Network\+::$\sim$\+Udp\+Network (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_a7e8fc66a65c4d4ce10d51fa1e89e2c5e}
+
+
+Definition at line 69 of file udpnetwork.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_udp_network_a3c9a6fb8007975eed2bca6d154474f33}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!broadcast\+Connection@{broadcast\+Connection}}
+\index{broadcast\+Connection@{broadcast\+Connection}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{broadcast\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Udp\+Network\+::broadcast\+Connection (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{device\+\_\+index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_a3c9a6fb8007975eed2bca6d154474f33}
+
+
+Definition at line 82 of file udpnetwork.\+cpp.
+
+\hypertarget{classcrap_1_1_udp_network_a648d383e15d72f4b5c530dbe013c6488}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!connection@{connection}}
+\index{connection@{connection}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Udp\+Connection}$\ast$ crap\+::\+Udp\+Network\+::connection (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_udp_network_a648d383e15d72f4b5c530dbe013c6488}
+
+
+Definition at line 79 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_a074201156d578bccc65960e3213c052e}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!connection\+I\+D@{connection\+I\+D}}
+\index{connection\+I\+D@{connection\+I\+D}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{connection\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} uint32\+\_\+t crap\+::\+Udp\+Network\+::connection\+I\+D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_udp_network_a074201156d578bccc65960e3213c052e}
+
+
+Definition at line 76 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_af5b7f4e1171d05a772fd13a81aee27cb}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!connect\+To@{connect\+To}}
+\index{connect\+To@{connect\+To}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{connect\+To}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Udp\+Network\+::connect\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf ipv4\+\_\+t}}]{ip, }
+\item[{{\bf port\+\_\+t}}]{port}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_af5b7f4e1171d05a772fd13a81aee27cb}
+
+
+Definition at line 96 of file udpnetwork.\+cpp.
+
+\hypertarget{classcrap_1_1_udp_network_aed2e9796b0498a662d1656c2486ec1ba}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{enqueue}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Udp\+Network\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{user\+\_\+id, }
+\item[{{\bf Network\+Command} $\ast$}]{command, }
+\item[{bool}]{fire\+And\+Forget = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_aed2e9796b0498a662d1656c2486ec1ba}
+
+
+Definition at line 101 of file udpnetwork.\+cpp.
+
+\hypertarget{classcrap_1_1_udp_network_a9853fe5cfc3fef264dc172d3916a7e68}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!queue@{queue}}
+\index{queue@{queue}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Network\+Command\+Queue}$\ast$ crap\+::\+Udp\+Network\+::queue (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_udp_network_a9853fe5cfc3fef264dc172d3916a7e68}
+
+
+Definition at line 85 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_a061a04afa4c168e4ddbfbb395583adf4}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!register\+For\+Events@{register\+For\+Events}}
+\index{register\+For\+Events@{register\+For\+Events}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{register\+For\+Events}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ bool crap\+::\+Udp\+Network\+::register\+For\+Events (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_a061a04afa4c168e4ddbfbb395583adf4}
+
+
+Definition at line 97 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_a6511b5c7f871cceca81c827aeb75abdd}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!register\+For\+Events@{register\+For\+Events}}
+\index{register\+For\+Events@{register\+For\+Events}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{register\+For\+Events}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ bool crap\+::\+Udp\+Network\+::register\+For\+Events (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_a6511b5c7f871cceca81c827aeb75abdd}
+
+
+Definition at line 109 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_a02b2e8dcf7f59e09abf45812d19d748a}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!reliability@{reliability}}
+\index{reliability@{reliability}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{reliability}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+A\+P\+\_\+\+I\+N\+L\+I\+N\+E} {\bf Udp\+Reliability}$\ast$ crap\+::\+Udp\+Network\+::reliability (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcrap_1_1_udp_network_a02b2e8dcf7f59e09abf45812d19d748a}
+
+
+Definition at line 82 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_a0c5c0732d1ec608c9347ad4393179d36}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!unregister\+From\+Events@{unregister\+From\+Events}}
+\index{unregister\+From\+Events@{unregister\+From\+Events}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{unregister\+From\+Events}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , void(\+C\+::$\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ bool crap\+::\+Udp\+Network\+::unregister\+From\+Events (
+\begin{DoxyParamCaption}
+\item[{C $\ast$}]{instance}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_a0c5c0732d1ec608c9347ad4393179d36}
+
+
+Definition at line 103 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_af5129d1be9ba7226136d0e92472c1c69}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!unregister\+From\+Events@{unregister\+From\+Events}}
+\index{unregister\+From\+Events@{unregister\+From\+Events}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{unregister\+From\+Events}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(\+Udp\+Connection\+::\+Event\+::\+Enum, uint32\+\_\+t, Connection\+Information $\ast$) F$>$ bool crap\+::\+Udp\+Network\+::unregister\+From\+Events (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_af5129d1be9ba7226136d0e92472c1c69}
+
+
+Definition at line 115 of file udpnetwork.\+h.
+
+\hypertarget{classcrap_1_1_udp_network_a2da693f836a8ae12aa0d2a21ab4b25e2}{}\index{crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}!update@{update}}
+\index{update@{update}!crap\+::\+Udp\+Network@{crap\+::\+Udp\+Network}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Udp\+Network\+::update (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{deltatime}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_udp_network_a2da693f836a8ae12aa0d2a21ab4b25e2}
+
+
+Definition at line 106 of file udpnetwork.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/network/include/\hyperlink{udpnetwork_8h}{udpnetwork.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/network/source/\hyperlink{udpnetwork_8cpp}{udpnetwork.\+cpp}\end{DoxyCompactItemize}

@@ -1,9 +1,9 @@
-\hypertarget{logger_8h}{\section{/mnt/windows/data/programming/crapengine2/source/core/include/logger.h File Reference}
+\hypertarget{logger_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/core/include/logger.h File Reference}
 \label{logger_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/logger.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/logger.\+h}}
-}
 {\ttfamily \#include $<$cstdarg$>$}\\*
 {\ttfamily \#include $<$cstdio$>$}\\*
 {\ttfamily \#include \char`\"{}config/crap\+\_\+platform.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config/crap\+\_\+compiler.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}strings.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}file.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}container/intrusivelist.\+h\char`\"{}}\\*
@@ -28,6 +28,8 @@ struct \hyperlink{structcrap_1_1log__channel__audio}{crap\+::log\+\_\+channel\+\
 \item 
 struct \hyperlink{structcrap_1_1log__channel__physic}{crap\+::log\+\_\+channel\+\_\+physic}
 \item 
+struct \hyperlink{structcrap_1_1log__channel__network}{crap\+::log\+\_\+channel\+\_\+network}
+\item 
 struct \hyperlink{structcrap_1_1log__type__none}{crap\+::log\+\_\+type\+\_\+none}
 \item 
 struct \hyperlink{structcrap_1_1log__type__info}{crap\+::log\+\_\+type\+\_\+info}
@@ -50,7 +52,7 @@ struct \hyperlink{structcrap_1_1log__target__file}{crap\+::log\+\_\+target\+\_\+
 \item 
 class \hyperlink{classcrap_1_1base__logger}{crap\+::base\+\_\+logger}
 \item 
-class \hyperlink{singletoncrap_1_1logger}{crap\+::logger$<$ T\+I\+M\+E, C\+H\+A\+N\+N\+E\+L, T\+Y\+P\+E, T\+A\+R\+G\+E\+T, L\+O\+G\+S\+I\+Z\+E $>$}
+class \hyperlink{classcrap_1_1logger}{crap\+::logger$<$ T\+I\+M\+E, C\+H\+A\+N\+N\+E\+L, T\+Y\+P\+E, T\+A\+R\+G\+E\+T, L\+O\+G\+S\+I\+Z\+E $>$}
 \end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -74,6 +76,8 @@ class \hyperlink{singletoncrap_1_1logger}{crap\+::logger$<$ T\+I\+M\+E, C\+H\+A\
 \item 
 \#define \hyperlink{logger_8h_a68deb1abc6a9c11b2ec7553cf6d47bf0}{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}~\hyperlink{crap__types_8h_a95e26a8231c5c09d4baf6eaf1f28a7fc}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}
 \item 
+\#define \hyperlink{logger_8h_a2202dc835c428ec70a73ee0892e99017}{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K}~\hyperlink{crap__types_8h_ade4fec2dd5fc0c3a5027941990115186}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05}
+\item 
 \#define \hyperlink{logger_8h_af309299eede8f70fa53dbabc13c2ad0b}{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}~\hyperlink{crap__types_8h_a9b07aa05ba98fbdb1435388c2464385c}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}
 \item 
 \#define \hyperlink{logger_8h_a8b181b7eaaab11e988e2c6b7cdc0d80a}{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}~\hyperlink{crap__types_8h_a8bec309c7b137484be3c31789fa00608}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}
@@ -94,7 +98,7 @@ class \hyperlink{singletoncrap_1_1logger}{crap\+::logger$<$ T\+I\+M\+E, C\+H\+A\
 \item 
 \#define \hyperlink{logger_8h_a15b53599af6891ab8add65cc94e2acb7}{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}~\hyperlink{crap__types_8h_a62d98e291f8a32d55309830079c837a3}{C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}
 \item 
-\#define \hyperlink{logger_8h_a5d190da52c095994643201b8cc965f72}{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G}(flags, message,...)~\hyperlink{namespacecrap_a8259cc46db12f668a9e94f654143415f}{crap\+::log}( flags, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ )
+\#define \hyperlink{logger_8h_a5d190da52c095994643201b8cc965f72}{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G}(flags,  message, ...)~\hyperlink{namespacecrap_a8259cc46db12f668a9e94f654143415f}{crap\+::log}( flags, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ )
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -104,12 +108,12 @@ class \hyperlink{singletoncrap_1_1logger}{crap\+::logger$<$ T\+I\+M\+E, C\+H\+A\
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-intrusive\+\_\+list$<$ base\+\_\+logger $>$ \hyperlink{namespacecrap_a7eddbc265d59efb9cfb0e3d97853f9f4}{crap\+::logger\+\_\+list}
+\hyperlink{crap__compiler_8h_a22f1e589532ca1fcdf4d58c8efd81c9f}{C\+R\+A\+P\+\_\+\+E\+X\+E\+\_\+\+T\+O\+\_\+\+D\+L\+L} intrusive\+\_\+list$<$ base\+\_\+logger $>$ \hyperlink{namespacecrap_a17294cf82d452e8620bc69961147966c}{crap\+::logger\+\_\+list}
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{logger_8h_a5d190da52c095994643201b8cc965f72}{\index{logger.\+h@{logger.\+h}!C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G@{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G}}
+\hypertarget{logger_8h_a5d190da52c095994643201b8cc965f72}{}\index{logger.\+h@{logger.\+h}!C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G@{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G}}
 \index{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G@{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G}!logger.\+h@{logger.\+h}}
 \subsubsection[{C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+G(
 \begin{DoxyParamCaption}
@@ -117,127 +121,134 @@ intrusive\+\_\+list$<$ base\+\_\+logger $>$ \hyperlink{namespacecrap_a7eddbc265d
 \item[{}]{message, }
 \item[{}]{...}
 \end{DoxyParamCaption}
-)~{\bf crap\+::log}( flags, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ )}}\label{logger_8h_a5d190da52c095994643201b8cc965f72}
+)~{\bf crap\+::log}( flags, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ )}\label{logger_8h_a5d190da52c095994643201b8cc965f72}
 
 
-Definition at line 330 of file logger.\+h.
+Definition at line 343 of file logger.\+h.
 
-\hypertarget{logger_8h_a03b3b0716605508ef8151f7a8e7228e2}{\index{logger.\+h@{logger.\+h}!C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H@{C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}}
+\hypertarget{logger_8h_a03b3b0716605508ef8151f7a8e7228e2}{}\index{logger.\+h@{logger.\+h}!C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H@{C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}}
 \index{C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H@{C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}!logger.\+h@{logger.\+h}}
-\subsubsection[{C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}}\label{logger_8h_a03b3b0716605508ef8151f7a8e7228e2}
+\subsubsection[{C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+H}\label{logger_8h_a03b3b0716605508ef8151f7a8e7228e2}
 
 
 Definition at line 4 of file logger.\+h.
 
-\hypertarget{logger_8h_a14df61b1bef702b4e7b845577658561b}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O}}
+\hypertarget{logger_8h_a14df61b1bef702b4e7b845577658561b}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O}}
 \index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03}}}\label{logger_8h_a14df61b1bef702b4e7b845577658561b}
-
-
-Definition at line 19 of file logger.\+h.
-
-\hypertarget{logger_8h_af8df519e0d93f01f0237a41a093e19f8}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E}}
-\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01}}}\label{logger_8h_af8df519e0d93f01f0237a41a093e19f8}
-
-
-Definition at line 17 of file logger.\+h.
-
-\hypertarget{logger_8h_a174a79b60892db79419f17fa90b664ce}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E}}
-\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00}}}\label{logger_8h_a174a79b60892db79419f17fa90b664ce}
-
-
-Definition at line 16 of file logger.\+h.
-
-\hypertarget{logger_8h_a68deb1abc6a9c11b2ec7553cf6d47bf0}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}}
-\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}}}\label{logger_8h_a68deb1abc6a9c11b2ec7553cf6d47bf0}
+\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+U\+D\+I\+O~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+03}}\label{logger_8h_a14df61b1bef702b4e7b845577658561b}
 
 
 Definition at line 20 of file logger.\+h.
 
-\hypertarget{logger_8h_a6dc128b9cc34ce68ba48b4a78f0e2407}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O}}
-\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02}}}\label{logger_8h_a6dc128b9cc34ce68ba48b4a78f0e2407}
+\hypertarget{logger_8h_af8df519e0d93f01f0237a41a093e19f8}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E}}
+\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+R\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+01}}\label{logger_8h_af8df519e0d93f01f0237a41a093e19f8}
 
 
 Definition at line 18 of file logger.\+h.
 
-\hypertarget{logger_8h_ae890bbd431aa7d19fcbe247502ce3feb}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E@{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E}}
-\index{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E@{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E~1024}}\label{logger_8h_ae890bbd431aa7d19fcbe247502ce3feb}
-
-
-Definition at line 14 of file logger.\+h.
-
-\hypertarget{logger_8h_a6d43164e0467f6d395fa0e0773535439}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R}}
-\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22}}}\label{logger_8h_a6d43164e0467f6d395fa0e0773535439}
-
-
-Definition at line 31 of file logger.\+h.
-
-\hypertarget{logger_8h_ade1fdab2d4531d8bdf9b9bf22b96c44f}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T}}
-\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21}}}\label{logger_8h_ade1fdab2d4531d8bdf9b9bf22b96c44f}
-
-
-Definition at line 30 of file logger.\+h.
-
-\hypertarget{logger_8h_a15b53599af6891ab8add65cc94e2acb7}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}}
-\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}}}\label{logger_8h_a15b53599af6891ab8add65cc94e2acb7}
-
-
-Definition at line 32 of file logger.\+h.
-
-\hypertarget{logger_8h_a9235b8d7801877c99589aab3edcf05fd}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E}}
-\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20}}}\label{logger_8h_a9235b8d7801877c99589aab3edcf05fd}
-
-
-Definition at line 29 of file logger.\+h.
-
-\hypertarget{logger_8h_a7471e00da55fd22f4789aa4989c4a482}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}}
-\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14}}}\label{logger_8h_a7471e00da55fd22f4789aa4989c4a482}
-
-
-Definition at line 26 of file logger.\+h.
-
-\hypertarget{logger_8h_a542529c1654a19379e8db5625bc7801e}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G}}
-\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O} $\vert$ {\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G} $\vert$ {\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R} $\vert$ {\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}}}\label{logger_8h_a542529c1654a19379e8db5625bc7801e}
-
-
-Definition at line 27 of file logger.\+h.
-
-\hypertarget{logger_8h_a7c5fd30f5e43b34be24326642d1a4c6d}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R}}
-\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13}}}\label{logger_8h_a7c5fd30f5e43b34be24326642d1a4c6d}
-
-
-Definition at line 25 of file logger.\+h.
-
-\hypertarget{logger_8h_a8b181b7eaaab11e988e2c6b7cdc0d80a}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}}
-\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}}}\label{logger_8h_a8b181b7eaaab11e988e2c6b7cdc0d80a}
-
-
-Definition at line 23 of file logger.\+h.
-
-\hypertarget{logger_8h_af309299eede8f70fa53dbabc13c2ad0b}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}}
-\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}}}\label{logger_8h_af309299eede8f70fa53dbabc13c2ad0b}
+\hypertarget{logger_8h_a2202dc835c428ec70a73ee0892e99017}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K}}
+\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+E\+T\+W\+O\+R\+K~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+05}}\label{logger_8h_a2202dc835c428ec70a73ee0892e99017}
 
 
 Definition at line 22 of file logger.\+h.
 
-\hypertarget{logger_8h_a5781a92890ba75559c17d6c7f613ab29}{\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G}}
-\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G}!logger.\+h@{logger.\+h}}
-\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12}}}\label{logger_8h_a5781a92890ba75559c17d6c7f613ab29}
+\hypertarget{logger_8h_a174a79b60892db79419f17fa90b664ce}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E}}
+\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+N\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+00}}\label{logger_8h_a174a79b60892db79419f17fa90b664ce}
+
+
+Definition at line 17 of file logger.\+h.
+
+\hypertarget{logger_8h_a68deb1abc6a9c11b2ec7553cf6d47bf0}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}}
+\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+P\+H\+Y\+S\+I\+C~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+04}}\label{logger_8h_a68deb1abc6a9c11b2ec7553cf6d47bf0}
+
+
+Definition at line 21 of file logger.\+h.
+
+\hypertarget{logger_8h_a6dc128b9cc34ce68ba48b4a78f0e2407}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O}}
+\index{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O@{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+V\+I\+D\+E\+O~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+02}}\label{logger_8h_a6dc128b9cc34ce68ba48b4a78f0e2407}
+
+
+Definition at line 19 of file logger.\+h.
+
+\hypertarget{logger_8h_ae890bbd431aa7d19fcbe247502ce3feb}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E@{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E}}
+\index{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E@{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E~1024}\label{logger_8h_ae890bbd431aa7d19fcbe247502ce3feb}
+
+
+Definition at line 15 of file logger.\+h.
+
+\hypertarget{logger_8h_a6d43164e0467f6d395fa0e0773535439}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R}}
+\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+E\+R\+R~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+22}}\label{logger_8h_a6d43164e0467f6d395fa0e0773535439}
+
+
+Definition at line 33 of file logger.\+h.
+
+\hypertarget{logger_8h_ade1fdab2d4531d8bdf9b9bf22b96c44f}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T}}
+\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+O\+U\+T~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+21}}\label{logger_8h_ade1fdab2d4531d8bdf9b9bf22b96c44f}
+
+
+Definition at line 32 of file logger.\+h.
+
+\hypertarget{logger_8h_a15b53599af6891ab8add65cc94e2acb7}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}}
+\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+23}}\label{logger_8h_a15b53599af6891ab8add65cc94e2acb7}
+
+
+Definition at line 34 of file logger.\+h.
+
+\hypertarget{logger_8h_a9235b8d7801877c99589aab3edcf05fd}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E}}
+\index{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+N\+O\+N\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+20}}\label{logger_8h_a9235b8d7801877c99589aab3edcf05fd}
+
+
+Definition at line 31 of file logger.\+h.
+
+\hypertarget{logger_8h_a7471e00da55fd22f4789aa4989c4a482}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}}
+\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+14}}\label{logger_8h_a7471e00da55fd22f4789aa4989c4a482}
+
+
+Definition at line 28 of file logger.\+h.
+
+\hypertarget{logger_8h_a542529c1654a19379e8db5625bc7801e}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G}}
+\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O} $\vert$ {\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G} $\vert$ {\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R} $\vert$ {\bf L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+S\+S\+E\+R\+T}}\label{logger_8h_a542529c1654a19379e8db5625bc7801e}
+
+
+Definition at line 29 of file logger.\+h.
+
+\hypertarget{logger_8h_a7c5fd30f5e43b34be24326642d1a4c6d}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R}}
+\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+R\+R\+O\+R~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+13}}\label{logger_8h_a7c5fd30f5e43b34be24326642d1a4c6d}
+
+
+Definition at line 27 of file logger.\+h.
+
+\hypertarget{logger_8h_a8b181b7eaaab11e988e2c6b7cdc0d80a}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}}
+\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+F\+O~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+11}}\label{logger_8h_a8b181b7eaaab11e988e2c6b7cdc0d80a}
+
+
+Definition at line 25 of file logger.\+h.
+
+\hypertarget{logger_8h_af309299eede8f70fa53dbabc13c2ad0b}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}}
+\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+10}}\label{logger_8h_af309299eede8f70fa53dbabc13c2ad0b}
 
 
 Definition at line 24 of file logger.\+h.
+
+\hypertarget{logger_8h_a5781a92890ba75559c17d6c7f613ab29}{}\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G}}
+\index{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G}!logger.\+h@{logger.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+W\+A\+R\+N\+I\+N\+G~{\bf C\+R\+A\+P\+\_\+\+B\+I\+T\+\_\+12}}\label{logger_8h_a5781a92890ba75559c17d6c7f613ab29}
+
+
+Definition at line 26 of file logger.\+h.
 

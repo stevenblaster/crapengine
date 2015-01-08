@@ -1,14 +1,10 @@
-\hypertarget{resourcemanager_8h}{\section{/mnt/windows/data/programming/crapengine2/source/engine/include/resourcemanager.h File Reference}
+\hypertarget{resourcemanager_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/engine/include/resourcemanager.h File Reference}
 \label{resourcemanager_8h}\index{/mnt/windows/data/programming/crapengine2/source/engine/include/resourcemanager.\+h@{/mnt/windows/data/programming/crapengine2/source/engine/include/resourcemanager.\+h}}
-}
-{\ttfamily \#include $<$container/sortedarraymap.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}container/intrusivelist.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}memory.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}strings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container/sortedarraymap.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}resourcefilter.\+h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
-\item 
-class \hyperlink{classcrap_1_1_resource_filter}{crap\+::\+Resource\+Filter}
 \item 
 class \hyperlink{classcrap_1_1_resource_manager}{crap\+::\+Resource\+Manager}
 \item 
@@ -28,25 +24,20 @@ struct \hyperlink{structcrap_1_1_resource_manager_1_1_package_content_info}{crap
 \item 
 \#define \hyperlink{resourcemanager_8h_a2466f8dbbda30ebebb188a4647819cb6}{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y}~\hyperlink{namespacecrap_aaff1250c80e3631796871d2e94b4d187}{crap\+::\+Bound\+General\+Memory}
 \end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-intrusive\+\_\+list$<$ Resource\+Filter $>$ \hyperlink{namespacecrap_afebe7139a7ca8c9be1349914a6f2acc6}{crap\+::\+Resource\+Filter\+List}
-\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{resourcemanager_8h_adf27fa46d18870904050d7badfa43cb9}{\index{resourcemanager.\+h@{resourcemanager.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}}
+\hypertarget{resourcemanager_8h_adf27fa46d18870904050d7badfa43cb9}{}\index{resourcemanager.\+h@{resourcemanager.\+h}!C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}}
 \index{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R@{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}!resourcemanager.\+h@{resourcemanager.\+h}}
-\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}}\label{resourcemanager_8h_adf27fa46d18870904050d7badfa43cb9}
+\subsubsection[{C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+A\+P\+\_\+\+C\+O\+R\+E\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+M\+A\+N\+A\+G\+E\+R}\label{resourcemanager_8h_adf27fa46d18870904050d7badfa43cb9}
 
 
 Definition at line 4 of file resourcemanager.\+h.
 
-\hypertarget{resourcemanager_8h_a2466f8dbbda30ebebb188a4647819cb6}{\index{resourcemanager.\+h@{resourcemanager.\+h}!R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y@{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y}}
+\hypertarget{resourcemanager_8h_a2466f8dbbda30ebebb188a4647819cb6}{}\index{resourcemanager.\+h@{resourcemanager.\+h}!R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y@{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y}}
 \index{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y@{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y}!resourcemanager.\+h@{resourcemanager.\+h}}
-\subsubsection[{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y~{\bf crap\+::\+Bound\+General\+Memory}}}\label{resourcemanager_8h_a2466f8dbbda30ebebb188a4647819cb6}
+\subsubsection[{R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+M\+E\+M\+O\+R\+Y~{\bf crap\+::\+Bound\+General\+Memory}}\label{resourcemanager_8h_a2466f8dbbda30ebebb188a4647819cb6}
 
 
-Definition at line 13 of file resourcemanager.\+h.
+Definition at line 11 of file resourcemanager.\+h.
 

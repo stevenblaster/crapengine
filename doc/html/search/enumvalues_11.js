@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['tab',['Tab',['../structentry_1_1_key.html#a2c04c2d92f79b961243e4244603ca633aa65dd356be40b8ce9ae37c1c8ec323ec',1,'entry::Key']]],
-  ['text_5felement',['TEXT_ELEMENT',['../classtinyxml2_1_1_str_pair.html#a2e4488cffb19d79203afb76b7f14de9aaae519eb5a639858591763aa5fc6cc953',1,'tinyxml2::StrPair']]],
-  ['text_5felement_5fleave_5fentities',['TEXT_ELEMENT_LEAVE_ENTITIES',['../classtinyxml2_1_1_str_pair.html#a2e4488cffb19d79203afb76b7f14de9aa96be48cf899bfeea0aa227f984f1fa63',1,'tinyxml2::StrPair']]],
-  ['transient',['Transient',['../struct_buffer_type.html#af6eec2447862f2bd9c1f36408176dddaab874d27e854827e1a311b9cc412f9037',1,'BufferType']]],
-  ['type_5fbgra8',['TYPE_BGRA8',['../struct_atlas_region.html#a51d027756a617938bf45be832663e2c2a3010705c5f10ae5b40dee6de2fb1bb63',1,'AtlasRegion']]],
-  ['type_5fgray',['TYPE_GRAY',['../struct_atlas_region.html#a51d027756a617938bf45be832663e2c2aec663ca56a7d66e0b922d88131dc9798',1,'AtlasRegion']]]
+  ['value',['value',['../structcrap_1_1align__of.html#ae6e1e0ba0f4e74c10d92aa8849e230e5a681bb33919188c1863cff58c23b72e69',1,'crap::align_of']]],
+  ['vc',['vc',['../namespacecrap.html#a1118686d0b1bada904e097ebb2799067a78c36762f3b9c3455946cf3e3021879d',1,'crap']]]
 ];

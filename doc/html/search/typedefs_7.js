@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mutex_5ft',['mutex_t',['../namespacecrap.html#a8800d1b9942594aef7c29a82865908b5',1,'crap']]]
+  ['keybinding',['KeyBinding',['../classcrap_1_1_keyboard_input.html#aded4eebea0fea50b5244242f241c384c',1,'crap::KeyboardInput']]],
+  ['keyfunction',['keyFunction',['../classcrap_1_1_keyboard_input.html#a65627167afa075a37fa85b21b5e9fb0b',1,'crap::KeyboardInput']]]
 ];

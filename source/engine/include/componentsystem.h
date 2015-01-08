@@ -39,6 +39,7 @@ public:
 
 	Component* createComponent( string_hash name );
 	void destroyComponent( Component* component );
+	void setComponentMember( Component* component, string_hash name, pointer_t<void> data );
 
 	CRAP_INLINE intrusive_list<ComponentFactory>* factoryList( void ) { return &_factoryList; }
 	CRAP_INLINE COMPONENT_MEMORY* allocator( void ) { return &_allocator; }

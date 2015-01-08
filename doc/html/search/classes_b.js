@@ -16,11 +16,5 @@ var searchData=
   ['mempoolt_3c_20sizeof_28tinyxml2_3a_3axmlcomment_29_20_3e',['MemPoolT&lt; sizeof(tinyxml2::XMLComment) &gt;',['../classtinyxml2_1_1_mem_pool_t.html',1,'tinyxml2']]],
   ['mempoolt_3c_20sizeof_28tinyxml2_3a_3axmlelement_29_20_3e',['MemPoolT&lt; sizeof(tinyxml2::XMLElement) &gt;',['../classtinyxml2_1_1_mem_pool_t.html',1,'tinyxml2']]],
   ['mempoolt_3c_20sizeof_28tinyxml2_3a_3axmltext_29_20_3e',['MemPoolT&lt; sizeof(tinyxml2::XMLText) &gt;',['../classtinyxml2_1_1_mem_pool_t.html',1,'tinyxml2']]],
-  ['mesh',['Mesh',['../struct_mesh.html',1,'']]],
-  ['modifier',['Modifier',['../structentry_1_1_modifier.html',1,'entry']]],
-  ['mouse',['Mouse',['../struct_mouse.html',1,'']]],
-  ['mousebutton',['MouseButton',['../structentry_1_1_mouse_button.html',1,'entry']]],
-  ['mousecoords',['MouseCoords',['../struct_camera_1_1_mouse_coords.html',1,'Camera']]],
-  ['mouseevent',['MouseEvent',['../structentry_1_1_mouse_event.html',1,'entry']]],
-  ['mousestate',['MouseState',['../structentry_1_1_mouse_state.html',1,'entry']]]
+  ['mouseinput',['MouseInput',['../classcrap_1_1_mouse_input.html',1,'crap']]]
 ];

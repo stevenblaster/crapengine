@@ -1,0 +1,136 @@
+\hypertarget{sockets_8h}{}\section{/mnt/windows/data/programming/crapengine2/source/core/include/sockets.h File Reference}
+\label{sockets_8h}\index{/mnt/windows/data/programming/crapengine2/source/core/include/sockets.\+h@{/mnt/windows/data/programming/crapengine2/source/core/include/sockets.\+h}}
+
+
+Short description...  
+
+
+{\ttfamily \#include \char`\"{}config/crap\+\_\+platform.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in\+\_\+systm.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$net/if.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}strings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container/array.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1s__ipv6}{crap\+::s\+\_\+ipv6}
+\item 
+struct \hyperlink{structcrap_1_1s__interface_addr}{crap\+::s\+\_\+interface\+Addr}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecrap}{crap}
+\begin{DoxyCompactList}\small\item\em Libraries namespace. \end{DoxyCompactList}\item 
+ \hyperlink{namespacecrap_1_1socket}{crap\+::socket}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sockets_8h_a22dca11105925f208ef7966e84a90863}{C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t \hyperlink{namespacecrap_af06d7d92e9405fc0750f74417541c2be}{crap\+::socket\+\_\+t}
+\item 
+typedef uint32\+\_\+t \hyperlink{namespacecrap_a9ef32279067e77955c9f269926a331ee}{crap\+::ipv4\+\_\+t}
+\item 
+typedef struct \hyperlink{structcrap_1_1s__ipv6}{crap\+::s\+\_\+ipv6} \hyperlink{namespacecrap_a73628169b6e7ba09cff516478c11b401}{crap\+::ipv6\+\_\+t}
+\item 
+typedef uint16\+\_\+t \hyperlink{namespacecrap_a21d8c14ae6ca715c519ff369042149dd}{crap\+::port\+\_\+t}
+\item 
+typedef struct \hyperlink{structcrap_1_1s__interface_addr}{crap\+::s\+\_\+interface\+Addr} \hyperlink{namespacecrap_af1dd6ce1461839e2d0d0b792fbd52e8a}{crap\+::interface\+\_\+adresses}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacecrap_1_1socket_a88607c55f3a2a4df16826f314bda4653}{crap\+::socket\+::family} \{ \hyperlink{namespacecrap_1_1socket_a88607c55f3a2a4df16826f314bda4653a896d0f8984ba4d573d5561cc99026704}{crap\+::socket\+::ip\+\_\+v4} = 2, 
+\hyperlink{namespacecrap_1_1socket_a88607c55f3a2a4df16826f314bda4653afd266048c3fceea589b52d0f529e4684}{crap\+::socket\+::ipx} = 4, 
+\hyperlink{namespacecrap_1_1socket_a88607c55f3a2a4df16826f314bda4653a240fcc2112d832d60fab616a0ca8e6fb}{crap\+::socket\+::appletalk} = 5, 
+\hyperlink{namespacecrap_1_1socket_a88607c55f3a2a4df16826f314bda4653a83e8e3261da38e42a4c92ad04f0e3d25}{crap\+::socket\+::ip\+\_\+v6} = 10
+ \}
+\item 
+enum \hyperlink{namespacecrap_1_1socket_af7718da996e5427024d9ab56b67f12e9}{crap\+::socket\+::datatype} \{ \hyperlink{namespacecrap_1_1socket_af7718da996e5427024d9ab56b67f12e9a3d8d85a21a42db854e8717c33738917b}{crap\+::socket\+::stream} = 1, 
+\hyperlink{namespacecrap_1_1socket_af7718da996e5427024d9ab56b67f12e9a492303093661f9f7a4d75d963e857394}{crap\+::socket\+::datagram} = 2, 
+\hyperlink{namespacecrap_1_1socket_af7718da996e5427024d9ab56b67f12e9ad39cd6bf6908f9f33476d9638b56ad4a}{crap\+::socket\+::raw} = 3
+ \}
+\item 
+enum \hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193}{crap\+::socket\+::protocol} \{ \\*
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193ad5c774f0aa2718ea8a89c4d7f3e36c2d}{crap\+::socket\+::ip} = 0, 
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193ad812984e9efca19f0a4ecf31a8a0d639}{crap\+::socket\+::icmp} = 1, 
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193a8d45be343344f3053497050888e67e82}{crap\+::socket\+::tcp} = 6, 
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193a33d9b395d3f0954c34084887e8c2094c}{crap\+::socket\+::udp} = 17, 
+\\*
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193ac2012f94046851e55c3b34a287cb7d60}{crap\+::socket\+::icmpv6} = 58, 
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193adf5973403995f732667befbebeb9cdc8}{crap\+::socket\+::sctp} = 132, 
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193a285371802bf7b5439d3f9cfaac4b8053}{crap\+::socket\+::udp\+\_\+lite} = 136, 
+\hyperlink{namespacecrap_1_1socket_ad72da11fb547a5bd0e18fadda8100193a25a56f0076c03ee4f57914a3d7ddb70d}{crap\+::socket\+::raw\+\_\+data} = 255
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+socket\+\_\+t \hyperlink{namespacecrap_a44d1fb3cd2b407f4526aa9a5f1a85477}{crap\+::create\+Socket} (socket\+::family fam, socket\+::datatype type, socket\+::protocol prot)
+\item 
+bool \hyperlink{namespacecrap_aa0b64d27506e00b57319bf50d6f9db07}{crap\+::open\+Socket} (socket\+\_\+t socket, port\+\_\+t port)
+\item 
+bool \hyperlink{namespacecrap_a1c0d503c312ea5243948176f291a7466}{crap\+::set\+Blocking} (socket\+\_\+t socket, bool blocking)
+\item 
+void \hyperlink{namespacecrap_ad38921fa78c05ee48e6d84f215e94942}{crap\+::close\+Socket} (socket\+\_\+t socket)
+\item 
+bool \hyperlink{namespacecrap_aa11b8c210e18da6c0872a7729819872c}{crap\+::send\+Datagram} (socket\+\_\+t socket, pointer\+\_\+t$<$ void $>$ data, uint32\+\_\+t size, uint16\+\_\+t port, ipv4\+\_\+t addr=I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T)
+\item 
+int32\+\_\+t \hyperlink{namespacecrap_ae04c23b5233e0419d4e96580719b1d7a}{crap\+::receive\+Datagram} (socket\+\_\+t socket, pointer\+\_\+t$<$ void $>$ buffer, uint32\+\_\+t size, uint16\+\_\+t $\ast$port, ipv4\+\_\+t $\ast$addr)
+\item 
+bool \hyperlink{namespacecrap_a5e0bc58d8b29215b6ac485631d1713bf}{crap\+::connect\+Stream} (socket\+\_\+t socket, uint16\+\_\+t port, ipv4\+\_\+t address=I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T)
+\item 
+bool \hyperlink{namespacecrap_a581e0c516a6931787ca4e76aa05507d2}{crap\+::listen\+Stream} (socket\+\_\+t socket, uint32\+\_\+t max\+\_\+pending)
+\item 
+socket\+\_\+t \hyperlink{namespacecrap_a0f305300198a9d6dfe53a811ec0b15e7}{crap\+::accept\+Stream} (socket\+\_\+t socket, uint16\+\_\+t port, ipv4\+\_\+t address=I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T)
+\item 
+bool \hyperlink{namespacecrap_a56b8d5e7a161ffb6278e62c70101ec24}{crap\+::send\+Stream} (socket\+\_\+t socket, pointer\+\_\+t$<$ void $>$ data, uint32\+\_\+t size, uint16\+\_\+t port, ipv4\+\_\+t addr=I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T)
+\item 
+bool \hyperlink{namespacecrap_a7461eb6fe54091937c8e3baa1537aa01}{crap\+::receive\+Stream} (socket\+\_\+t socket, pointer\+\_\+t$<$ void $>$ buffer, uint32\+\_\+t size, uint16\+\_\+t port, ipv4\+\_\+t addr=I\+P\+V4\+\_\+\+A\+N\+Y)
+\item 
+ipv4\+\_\+t \hyperlink{namespacecrap_a53ce898b9a337508a0f471133173f64e}{crap\+::create\+I\+Pv4} (uint8\+\_\+t first, uint8\+\_\+t second, uint8\+\_\+t third, uint8\+\_\+t fourth)
+\item 
+ipv4\+\_\+t \hyperlink{namespacecrap_a860138fe14ba38000fda323c4cf127cc}{crap\+::create\+I\+Pv4} (const \hyperlink{namespacecrap_a6cff91a13d8be23072b3a0754c947caa}{crap\+::string16} \&str)
+\item 
+string16 \hyperlink{namespacecrap_ae2b9113b9b7bb42e02d89a8304a0e55b}{crap\+::create\+I\+Pv4\+String} (ipv4\+\_\+t address)
+\item 
+uint32\+\_\+t \hyperlink{namespacecrap_a0744060a6e6957ebd6831e2d55a4816a}{crap\+::get\+Interface\+Addresses} (socket\+\_\+t socket, interface\+\_\+adresses $\ast$arr, uint32\+\_\+t array\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Short description... 
+
+Long description...
+
+\begin{DoxyCopyright}{Copyright}
+Crap\+Games 2014
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+steffen 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Nov 28, 2014 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{sockets_8h_a22dca11105925f208ef7966e84a90863}{}\index{sockets.\+h@{sockets.\+h}!C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+@{C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+}}
+\index{C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+@{C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+}!sockets.\+h@{sockets.\+h}}
+\subsubsection[{C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+R\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+S\+O\+C\+K\+E\+T\+S\+\_\+\+H\+\_\+}\label{sockets_8h_a22dca11105925f208ef7966e84a90863}
+
+
+Definition at line 16 of file sockets.\+h.
+

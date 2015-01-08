@@ -17,18 +17,36 @@
 
 #include "utilities.h"
 #include "container/indexedarray.h"
+#include "container/intrusivelist.h"
 #include "componentfactory.h"
 #include "component.h"
 #include "componentsystem.h"
+#include "strings.h"
+#include "delegates.h"
 
 namespace crap
 {
 
 template<typename T>
+struct ComponentMember
+{
+	ComponentMember( string_hash nam, void(*func)(T*, pointer_t<void>) ) :
+		name(nam),
+		setFunction(func),
+		node( this, &list )
+	{}
+	string_hash										name;
+	void(*setFunction)(T*, pointer_t<void>);
+	intrusive_node<ComponentMember> 				node;
+
+	static intrusive_list< ComponentMember<T> >	list;
+};
+
+template<typename T>
 class ComponentType : public ComponentFactory
 {
 public:
-	
+
 	CRAP_INLINE
 	ComponentType( crap::string_hash name, ComponentSystem* system, uint32_t max_components ) :
 		ComponentFactory( name, system ),
@@ -56,11 +74,31 @@ public:
 		_components.erase_at( component->getComponentID() );
 	}
 
+	virtual void setComponentMember( Component* component, string_hash name, pointer_t<void> data )
+	{
+		intrusive_node< ComponentMember<T> >* node = ComponentMember<T>::list.begin();
+		for( ; node != ComponentMember<T>::list.end(); node = ComponentMember<T>::list.next( node ) )
+		{
+			if( node->parent()->name == name )
+			{
+				node->parent()->setFunction( (T*)component, data );
+			}
+		}
+	}
+
+
+
 private:
 	indexed_array<T>	_components;
 	ComponentSystem*	_system;
+
 };
 
+template<typename T>
+intrusive_list<ComponentMember<T> > ComponentMember<T>::list;
+
+#define REGISTER_COMPONENT_MEMBER( classname, varname, type )	\
+	static ComponentMember<classname> varname( #varname, &classname::set##varname );
 
 } /* namespace crap */
 

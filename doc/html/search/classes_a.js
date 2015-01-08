@@ -20,6 +20,7 @@ var searchData=
   ['list_5fmap_5findex',['list_map_index',['../structcrap_1_1list__map_1_1list__map__index.html',1,'crap::list_map']]],
   ['log_5fchannel_5faudio',['log_channel_audio',['../structcrap_1_1log__channel__audio.html',1,'crap']]],
   ['log_5fchannel_5fcore',['log_channel_core',['../structcrap_1_1log__channel__core.html',1,'crap']]],
+  ['log_5fchannel_5fnetwork',['log_channel_network',['../structcrap_1_1log__channel__network.html',1,'crap']]],
   ['log_5fchannel_5fnone',['log_channel_none',['../structcrap_1_1log__channel__none.html',1,'crap']]],
   ['log_5fchannel_5fphysic',['log_channel_physic',['../structcrap_1_1log__channel__physic.html',1,'crap']]],
   ['log_5fchannel_5fvideo',['log_channel_video',['../structcrap_1_1log__channel__video.html',1,'crap']]],
@@ -37,5 +38,5 @@ var searchData=
   ['log_5ftype_5finfo',['log_type_info',['../structcrap_1_1log__type__info.html',1,'crap']]],
   ['log_5ftype_5fnone',['log_type_none',['../structcrap_1_1log__type__none.html',1,'crap']]],
   ['log_5ftype_5fwarning',['log_type_warning',['../structcrap_1_1log__type__warning.html',1,'crap']]],
-  ['logger',['logger',['../singletoncrap_1_1logger.html',1,'crap']]]
+  ['logger',['logger',['../classcrap_1_1logger.html',1,'crap']]]
 ];

@@ -1,0 +1,139 @@
+\hypertarget{classcrap_1_1_task_manager}{}\section{crap\+:\+:Task\+Manager Class Reference}
+\label{classcrap_1_1_task_manager}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+
+
+{\ttfamily \#include $<$taskmanager.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrap_1_1_task_manager_1_1s___deattached_task_info}{s\+\_\+\+Deattached\+Task\+Info}
+\item 
+struct \hyperlink{structcrap_1_1_task_manager_1_1s___task_info}{s\+\_\+\+Task\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structcrap_1_1_task_manager_1_1s___task_info}{crap\+::\+Task\+Manager\+::s\+\_\+\+Task\+Info} \hyperlink{classcrap_1_1_task_manager_a298a79f168fc914a5a8a98f87bb193ad}{Task\+Info}
+\item 
+typedef struct \hyperlink{structcrap_1_1_task_manager_1_1s___deattached_task_info}{crap\+::\+Task\+Manager\+::s\+\_\+\+Deattached\+Task\+Info} \hyperlink{classcrap_1_1_task_manager_a4be4696ce3c01594fb82cc142de21e4c}{Deattached\+Task\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcrap_1_1_task_manager_a99693401a50332a865ae99d2c4248fa1}{Task\+Manager} (uint32\+\_\+t max\+\_\+tasks, uint32\+\_\+t max\+\_\+deattached\+\_\+tasks)
+\item 
+\hyperlink{classcrap_1_1_task_manager_a396840106dda201d2e2d07b273805411}{$\sim$\+Task\+Manager} (void)
+\item 
+void \hyperlink{classcrap_1_1_task_manager_a60e539f23acdd395d15fad88e0f77d14}{update} (void)
+\item 
+{\footnotesize template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ }\\bool \hyperlink{classcrap_1_1_task_manager_ac9b51bf76611cea112705785f85bf154}{add\+Task} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, C $\ast$instance, uint32\+\_\+t delay, bool repeat, bool deattach=false)
+\item 
+{\footnotesize template$<$void($\ast$)(uint32\+\_\+t) F$>$ }\\bool \hyperlink{classcrap_1_1_task_manager_aa700349fc95e298a4a994215e055014a}{add\+Task} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name, uint32\+\_\+t delay, bool repeat, bool deattach=false)
+\item 
+bool \hyperlink{classcrap_1_1_task_manager_acde7c35ca2b64bf1bc1ef400232c2306}{remove\+Task} (\hyperlink{classcrap_1_1string__hash}{string\+\_\+hash} name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file taskmanager.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcrap_1_1_task_manager_a4be4696ce3c01594fb82cc142de21e4c}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!Deattached\+Task\+Info@{Deattached\+Task\+Info}}
+\index{Deattached\+Task\+Info@{Deattached\+Task\+Info}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{Deattached\+Task\+Info}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Task\+Manager\+::s\+\_\+\+Deattached\+Task\+Info}
+	 {\bf crap\+::\+Task\+Manager\+::\+Deattached\+Task\+Info}}\label{classcrap_1_1_task_manager_a4be4696ce3c01594fb82cc142de21e4c}
+\hypertarget{classcrap_1_1_task_manager_a298a79f168fc914a5a8a98f87bb193ad}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!Task\+Info@{Task\+Info}}
+\index{Task\+Info@{Task\+Info}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{Task\+Info}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crap\+::\+Task\+Manager\+::s\+\_\+\+Task\+Info}
+	 {\bf crap\+::\+Task\+Manager\+::\+Task\+Info}}\label{classcrap_1_1_task_manager_a298a79f168fc914a5a8a98f87bb193ad}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcrap_1_1_task_manager_a99693401a50332a865ae99d2c4248fa1}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!Task\+Manager@{Task\+Manager}}
+\index{Task\+Manager@{Task\+Manager}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{Task\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Task\+Manager\+::\+Task\+Manager (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{max\+\_\+tasks, }
+\item[{uint32\+\_\+t}]{max\+\_\+deattached\+\_\+tasks}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_task_manager_a99693401a50332a865ae99d2c4248fa1}
+
+
+Definition at line 20 of file taskmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_task_manager_a396840106dda201d2e2d07b273805411}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!````~Task\+Manager@{$\sim$\+Task\+Manager}}
+\index{````~Task\+Manager@{$\sim$\+Task\+Manager}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{$\sim$\+Task\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}crap\+::\+Task\+Manager\+::$\sim$\+Task\+Manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_task_manager_a396840106dda201d2e2d07b273805411}
+
+
+Definition at line 29 of file taskmanager.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcrap_1_1_task_manager_ac9b51bf76611cea112705785f85bf154}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!add\+Task@{add\+Task}}
+\index{add\+Task@{add\+Task}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{add\+Task}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C , bool(\+C\+::$\ast$)(uint32\+\_\+t) F$>$ bool crap\+::\+Task\+Manager\+::add\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{C $\ast$}]{instance, }
+\item[{uint32\+\_\+t}]{delay, }
+\item[{bool}]{repeat, }
+\item[{bool}]{deattach = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_task_manager_ac9b51bf76611cea112705785f85bf154}
+
+
+Definition at line 84 of file taskmanager.\+h.
+
+\hypertarget{classcrap_1_1_task_manager_aa700349fc95e298a4a994215e055014a}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!add\+Task@{add\+Task}}
+\index{add\+Task@{add\+Task}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{add\+Task}]{\setlength{\rightskip}{0pt plus 5cm}template$<$void($\ast$)(uint32\+\_\+t) F$>$ bool crap\+::\+Task\+Manager\+::add\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name, }
+\item[{uint32\+\_\+t}]{delay, }
+\item[{bool}]{repeat, }
+\item[{bool}]{deattach = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_task_manager_aa700349fc95e298a4a994215e055014a}
+
+
+Definition at line 127 of file taskmanager.\+h.
+
+\hypertarget{classcrap_1_1_task_manager_acde7c35ca2b64bf1bc1ef400232c2306}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!remove\+Task@{remove\+Task}}
+\index{remove\+Task@{remove\+Task}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{remove\+Task}]{\setlength{\rightskip}{0pt plus 5cm}bool crap\+::\+Task\+Manager\+::remove\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf string\+\_\+hash}}]{name}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_task_manager_acde7c35ca2b64bf1bc1ef400232c2306}
+
+
+Definition at line 75 of file taskmanager.\+cpp.
+
+\hypertarget{classcrap_1_1_task_manager_a60e539f23acdd395d15fad88e0f77d14}{}\index{crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}!update@{update}}
+\index{update@{update}!crap\+::\+Task\+Manager@{crap\+::\+Task\+Manager}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void crap\+::\+Task\+Manager\+::update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classcrap_1_1_task_manager_a60e539f23acdd395d15fad88e0f77d14}
+
+
+Definition at line 35 of file taskmanager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/windows/data/programming/crapengine2/source/engine/include/\hyperlink{taskmanager_8h}{taskmanager.\+h}\item 
+/mnt/windows/data/programming/crapengine2/source/engine/source/\hyperlink{taskmanager_8cpp}{taskmanager.\+cpp}\end{DoxyCompactItemize}

@@ -52,6 +52,12 @@ protected:
 	};
 };
 
+#define DECLARE_COMPONENT_MEMBER( classname, varname, vartype )					\
+	private: vartype _##varname;										\
+	public:	CRAP_INLINE vartype* get##varname( void ) { return &_##varname; }	\
+	public: static void set##varname( classname* instance, pointer_t<void> data )	{}
+	//{ pointer_t<vartype> v=data; instance->_##varname = *v.as_type; }
+
 } /* namespace crap */
 
 #endif /* ENGINE_INCLUDE_COMPONENT_H_ */
