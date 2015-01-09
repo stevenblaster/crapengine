@@ -30,13 +30,14 @@ namespace crap
 template<typename T>
 struct ComponentMember
 {
-	ComponentMember( string_hash nam, void(*func)(T*, pointer_t<void>) ) :
+	ComponentMember( string_hash nam, void(*func)(T*, const string64&) ) :
 		name(nam),
 		setFunction(func),
 		node( this, &list )
-	{}
+	{
+	}
 	string_hash										name;
-	void(*setFunction)(T*, pointer_t<void>);
+	void(*setFunction)(T*, const string64&);
 	intrusive_node<ComponentMember> 				node;
 
 	static intrusive_list< ComponentMember<T> >	list;
@@ -74,7 +75,7 @@ public:
 		_components.erase_at( component->getComponentID() );
 	}
 
-	virtual void setComponentMember( Component* component, string_hash name, pointer_t<void> data )
+	virtual void setComponentMember( Component* component, string_hash name, const string64& data )
 	{
 		intrusive_node< ComponentMember<T> >* node = ComponentMember<T>::list.begin();
 		for( ; node != ComponentMember<T>::list.end(); node = ComponentMember<T>::list.next( node ) )

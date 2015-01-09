@@ -16,6 +16,7 @@
 #include "mouseinput.h"
 #include "controllerinput.h"
 #include "renderwindow.h"
+#include "eventsystem.h"
 
 bool running = true; /* set to true */
 uint32_t thekey = 256;
@@ -27,7 +28,7 @@ void exitFunc( uint32_t state )
 
 void clickFunc( uint32_t state )
 {
-	std::cout << "CLICK: 0" << std::endl;
+	std::cout << "CLICK: " << state << std::endl;
 }
 
 void posFunc( float64_t x, float64_t y )
@@ -100,6 +101,13 @@ int main( void )
 
 	//set TaskManager as Subsystem
 	crap::SubSystem tasks_sys( "TaskManager", &taskManager, &system );
+
+	//eventsystem
+	const uint32_t eventMaxNumber = config.getValue<uint32_t>("EVENTS_MAX_NUM");
+	crap::EventSystem eventSystem( eventMaxNumber );
+
+	//set EventSystem as SubSystem
+	crap::SubSystem events_sys( "EventSystem", &eventSystem, &system );
 
 	//resourcemanager
 	const uint32_t resoureMemory = config.getValue<uint32_t>("RESOURCE_MEMORY");
@@ -186,9 +194,7 @@ int main( void )
 
 	crap::Component* comp = componentSystem.createComponent("TestComponent");
 
-	uint32_t testNumber = 567;
-	componentSystem.setComponentMember( comp, "neZahl", &testNumber );
-
+	componentSystem.setComponentMember( comp, "neZahl", "567" );
 	comp->init( &system );
 	comp->deinit( &system );
 	componentSystem.destroyComponent( comp );

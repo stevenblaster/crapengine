@@ -39,7 +39,7 @@ public:
 	virtual Component* createComponent( void ) { return 0; }
 	virtual void destroyComponent( Component* component ) {}
 
-	virtual void setComponentMember( Component* component, string_hash name, pointer_t<void> data ) {}
+	virtual void setComponentMember( Component* component, string_hash name, const string64& data ) {}
 
 	CRAP_INLINE
 	bool operator==( const string_hash& name )

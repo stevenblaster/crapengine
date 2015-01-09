@@ -39,7 +39,7 @@ void ComponentSystem::destroyComponent( Component* component )
 	}
 }
 
-void ComponentSystem::setComponentMember( Component* component, string_hash name, pointer_t<void> data )
+void ComponentSystem::setComponentMember( Component* component, string_hash name, const string64& data )
 {
 	for( intrusive_node<ComponentFactory>* node = _factoryList.begin(); node != _factoryList.end(); node = _factoryList.next(node))
 	{
