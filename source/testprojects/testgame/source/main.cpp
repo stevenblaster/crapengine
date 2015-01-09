@@ -231,8 +231,8 @@ int main( void )
 	renderWindow.destroy();
 
 #ifdef CRAP_COMPILER_MSVC
-    std::cout << "Press a button" << std::endl;
-	getchar();
+//    std::cout << "Press a button" << std::endl;
+//	getchar();
 #endif
 
 	pluginDirectoryListener.removeCallback<crap::PluginManager, &crap::PluginManager::callbackFunction>( &pluginManager );
