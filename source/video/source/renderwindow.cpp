@@ -36,7 +36,7 @@
 namespace crap
 {
 
-RenderWindow::RenderWindow() : _handle(0)
+RenderWindow::RenderWindow() : _handle(0), _height(0), _width(0)
 {
 	glfwInit();
 	glfwSetErrorCallback( &RenderWindow::errorCallback );
@@ -61,6 +61,8 @@ void RenderWindow::create( const char* name, uint32_t width, uint32_t height, bo
 	_handle = glfwCreateWindow( width, height, name, monitor, NULL);
 	CRAP_ASSERT( ASSERT_BREAK, _handle != 0, "Could not create window" );
 	glfwMakeContextCurrent(_handle);
+	_width = width;
+	_height = height;
 }
 
 void RenderWindow::destroy( void )
@@ -72,6 +74,31 @@ void RenderWindow::destroy( void )
 void RenderWindow::swap( void )
 {
 	glfwSwapBuffers( _handle );
+}
+
+void RenderWindow::setWindowCloseFunction( void(*windowCloseFunction)(window_t*) )
+{
+	glfwSetWindowCloseCallback( _handle, windowCloseFunction );
+}
+
+void RenderWindow::setWindowFocusFunction( void(*windowFocusFunction)(window_t*, int32_t) )
+{
+	glfwSetWindowFocusCallback( _handle, windowFocusFunction );
+}
+
+void RenderWindow::setWindowIconifyFunction( void(*windowIconifyFunction)(window_t*, int32_t) )
+{
+	glfwSetWindowIconifyCallback( _handle, windowIconifyFunction );
+}
+
+void RenderWindow::setWindowPositionFunction( void(*windowPositionFunction)(window_t*, int32_t, int32_t) )
+{
+	glfwSetWindowPosCallback( _handle, windowPositionFunction );
+}
+
+void RenderWindow::setWindowSizeFunction( void(*windowSizeFunction)(window_t*, int32_t, int32_t) )
+{
+	glfwSetWindowSizeCallback( _handle, windowSizeFunction );
 }
 
 bool RenderWindow::shouldClose( void )

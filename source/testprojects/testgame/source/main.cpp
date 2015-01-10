@@ -17,6 +17,8 @@
 #include "controllerinput.h"
 #include "renderwindow.h"
 #include "eventsystem.h"
+//#include "gui/guiobject.h"
+#include "renderer.h"
 
 bool running = true; /* set to true */
 uint32_t thekey = 256;
@@ -147,6 +149,10 @@ int main( void )
 	crap::RenderWindow renderWindow;
 	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
 
+	//renderer
+	crap::Renderer renderer( &renderWindow );
+	renderer.init();
+
 	//inputmanager
 	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
 	crap::InputManager inputManager( inputMemory, renderWindow.getHandle() );
@@ -191,6 +197,12 @@ int main( void )
 
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();
+
+//	crap::GuiObject::getRoot()->setWidth(800);
+//	crap::GuiObject::getRoot()->setHeight(600);
+//
+//	crap::GuiObject chil( "", crap::GuiObject::getRoot(), 0.33f, 0.33f, 0.33f, 0.33f );
+//	crap::GuiObject chil2( "", &chil, 0.33f, 0.33f, 0.33f, 0.33f );
 
 	crap::Component* comp = componentSystem.createComponent("TestComponent");
 

@@ -67,6 +67,9 @@ struct AttributeType
 	};
 };
 
+class RenderWindow;
+void initContext( RenderWindow* window );
+
 RenderHandle createStaticVertexBuffer(pointer_t<void> memory, uint32_t size, VertexDeclaration* declaration );
 
 void destroyStaticVertexBuffer( RenderHandle staticBuffer );

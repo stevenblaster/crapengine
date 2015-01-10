@@ -13,10 +13,30 @@
 
 #include <bgfx.h>
 #include <bgfx_utils.h>
+#include "renderwindow.h"
 #include "rendercontext.h"
 
 namespace crap
 {
+
+void initContext( RenderWindow* window )
+{
+//    //bgfx::glfwSetWindow( window->getHandle() );
+//
+//    bgfx::init();
+//    bgfx::reset( window->getWidth(), window->getHeight(), BGFX_RESET_VSYNC );
+//
+//    // Enable debug text.
+//    bgfx::setDebug(debug);
+//
+//    // Set view 0 clear state.
+//    bgfx::setViewClear(0
+//        , BGFX_CLEAR_COLOR_BIT|BGFX_CLEAR_DEPTH_BIT
+//        , 0x303030ff
+//        , 1.0f
+//        , 0
+//        );
+}
 
 RenderHandle createStaticVertexBuffer(pointer_t<void> memory, uint32_t size, VertexDeclaration* declaration )
 {
