@@ -225,8 +225,8 @@ int main( void )
 
 	crap::AudioManager* am = system.getSubSystem<crap::AudioManager>( "AudioManager" );
 
-	resourceManager.loadResource( "Yes" );
-	uint32_t sid = am->leaseSource( "Yes" );
+	resourceManager.loadResource( "Nagut" );
+	uint32_t sid = am->leaseSource( "Nagut" );
 
 	am->setListenerData( zero, zero, dir );
 	am->playSource( sid );
@@ -238,10 +238,16 @@ int main( void )
 
 	crap::GuiContext* gc = crap::createGuiConext( 1,0 );
 
+	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
 	{
 		renderer.drawBegin();
-		crap::drawColoredRectangle( gc, 100, 100, 100, 100 );
+		crap::drawGuiBegin( gc, renderWindow.getWidth(), renderWindow.getHeight(), 1.f );
+		crap::drawColoredRectangle( gc, 100.f, 100.f, 100.f, 100.f, -rot*0.1, 255, 0, 255, 255 );
+		crap::drawColoredCircle( gc, 500.f, (int32_t)(rot*100) % renderWindow.getHeight(), 50.f, 255, 0, 0, 255 );
+		rot += 0.1f;
+		crap::drawColoredRoundedRectangle( gc, 150.f, 150.f, 200.f, 200.f, rot, 0, 0, 255, 128, 20.f );
+		crap::drawGuiEnd( gc );
 		renderer.drawEnd();
 		//renderWindow.swap();
 		taskManager.update();
