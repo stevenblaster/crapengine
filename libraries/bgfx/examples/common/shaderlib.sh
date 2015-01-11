@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
@@ -183,9 +183,14 @@ vec4 toLinear(vec4 _rgba)
 	return vec4(toLinear(_rgba.xyz), _rgba.w);
 }
 
+float toGamma(float _r)
+{
+	return pow(abs(_r), 1.0/2.2);
+}
+
 vec3 toGamma(vec3 _rgb)
 {
-	return pow(_rgb, vec3_splat(1.0/2.2) );
+	return pow(abs(_rgb), vec3_splat(1.0/2.2) );
 }
 
 vec4 toGamma(vec4 _rgba)

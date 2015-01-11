@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
@@ -83,6 +83,11 @@ static const uint16_t s_cubeIndices[36] =
 static float s_texelHalf = 0.0f;
 static bool s_flipV = false;
 
+inline void mtxProj(float* _result, float _fovy, float _aspect, float _near, float _far)
+{
+	bx::mtxProj(_result, _fovy, _aspect, _near, _far, s_flipV);
+}
+
 void screenSpaceQuad(float _textureWidth, float _textureHeight, bool _originBottomLeft = false, float _width = 1.0f, float _height = 1.0f)
 {
 	if (bgfx::checkAvailTransientVertexBuffer(3, PosColorTexCoord0Vertex::ms_decl) )
@@ -143,10 +148,6 @@ void screenSpaceQuad(float _textureWidth, float _textureHeight, bool _originBott
 
 int _main_(int /*_argc*/, char** /*_argv*/)
 {
-	// Create vertex stream declaration.
-	PosColorVertex::init();
-	PosColorTexCoord0Vertex::init();
-
 	uint32_t width = 1280;
 	uint32_t height = 720;
 	uint32_t debug = BGFX_DEBUG_TEXT;
@@ -154,6 +155,10 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 
 	bgfx::init();
 	bgfx::reset(width, height, reset);
+
+	// Create vertex stream declaration.
+	PosColorVertex::init();
+	PosColorTexCoord0Vertex::init();
 
 	// Enable debug text.
 	bgfx::setDebug(debug);
@@ -273,7 +278,8 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 		imguiEndFrame();
 
 		// Set view 0 default viewport.
-		bgfx::setViewRectMask(0x3, 0, 0, width, height);
+		bgfx::setViewRect(0, 0, 0, width, height);
+		bgfx::setViewRect(1, 0, 0, width, height);
 
 		int64_t now = bx::getHPCounter();
 		static int64_t last = now;
@@ -302,15 +308,29 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 
 		// Set view and projection matrix for view 0.
 		bx::mtxLookAt(view, eye, at);
-		bx::mtxProj(proj, 60.0f, float(width)/float(height), 0.1f, 100.0f);
+		mtxProj(proj, 60.0f, float(width)/float(height), 0.1f, 100.0f);
 
 		bgfx::setViewTransform(0, view, proj);
 
-		bgfx::setViewClearMask(0x3
-			, BGFX_CLEAR_COLOR_BIT|BGFX_CLEAR_DEPTH_BIT
-			, 0x00000000
-			, 1.0f
-			, 0
+		// Set clear color palette for index 0
+		bgfx::setClearColor(0, 0.0f, 0.0f, 0.0f, 0.0f);
+
+		// Set clear color palette for index 1
+		bgfx::setClearColor(1, 1.0f, 1.0f, 1.0f, 1.0f);
+
+		bgfx::setViewClear(0
+			, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH
+			, 1.0f // Depth
+			, 0    // Stencil
+			, 0    // FB texture 0, color palette 0
+			, 1 == mode ? 1 : 0 // FB texture 1, color palette 1
+			);
+
+		bgfx::setViewClear(1
+			, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH
+			, 1.0f // Depth
+			, 0    // Stencil
+			, 0    // Color palette 0
 			);
 
 		bgfx::FrameBufferHandle invalid = BGFX_INVALID_HANDLE;
@@ -345,7 +365,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 					//mtxIdentity(mtx);
 					mtx[12] = -2.5f + float(xx)*2.5f;
 					mtx[13] = -2.5f + float(yy)*2.5f;
-					mtx[14] = -2.5f + float(zz)*2.5f; //0.0f; // sinf(time + ( (xx+1)*(yy+1)/9.0f)*float(M_PI) )*50.0f+50.0f; //90.0f - (xx+1)*(yy+1)*10.0f;
+					mtx[14] = -2.5f + float(zz)*2.5f;
 
 					// Set transform for draw call.
 					bgfx::setTransform(mtx);

@@ -37,26 +37,6 @@
 #define RENDERVIEW_DRAWDEPTH_2_ID 18
 #define RENDERVIEW_DRAWDEPTH_3_ID 19
 
-#define RENDERVIEW_SHADOWMAP_0_BIT (1<<RENDERVIEW_SHADOWMAP_0_ID)
-#define RENDERVIEW_SHADOWMAP_1_BIT (1<<RENDERVIEW_SHADOWMAP_1_ID)
-#define RENDERVIEW_SHADOWMAP_2_BIT (1<<RENDERVIEW_SHADOWMAP_2_ID)
-#define RENDERVIEW_SHADOWMAP_3_BIT (1<<RENDERVIEW_SHADOWMAP_3_ID)
-#define RENDERVIEW_SHADOWMAP_4_BIT (1<<RENDERVIEW_SHADOWMAP_4_ID)
-#define RENDERVIEW_VBLUR_0_BIT     (1<<RENDERVIEW_VBLUR_0_ID)
-#define RENDERVIEW_HBLUR_0_BIT     (1<<RENDERVIEW_HBLUR_0_ID)
-#define RENDERVIEW_VBLUR_1_BIT     (1<<RENDERVIEW_VBLUR_1_ID)
-#define RENDERVIEW_HBLUR_1_BIT     (1<<RENDERVIEW_HBLUR_1_ID)
-#define RENDERVIEW_VBLUR_2_BIT     (1<<RENDERVIEW_VBLUR_2_ID)
-#define RENDERVIEW_HBLUR_2_BIT     (1<<RENDERVIEW_HBLUR_2_ID)
-#define RENDERVIEW_VBLUR_3_BIT     (1<<RENDERVIEW_VBLUR_3_ID)
-#define RENDERVIEW_HBLUR_3_BIT     (1<<RENDERVIEW_HBLUR_3_ID)
-#define RENDERVIEW_DRAWSCENE_0_BIT (1<<RENDERVIEW_DRAWSCENE_0_ID)
-#define RENDERVIEW_DRAWSCENE_1_BIT (1<<RENDERVIEW_DRAWSCENE_1_ID)
-#define RENDERVIEW_DRAWDEPTH_0_BIT (1<<RENDERVIEW_DRAWDEPTH_0_ID)
-#define RENDERVIEW_DRAWDEPTH_1_BIT (1<<RENDERVIEW_DRAWDEPTH_1_ID)
-#define RENDERVIEW_DRAWDEPTH_2_BIT (1<<RENDERVIEW_DRAWDEPTH_2_ID)
-#define RENDERVIEW_DRAWDEPTH_3_BIT (1<<RENDERVIEW_DRAWDEPTH_3_ID)
-
 uint32_t packUint32(uint8_t _x, uint8_t _y, uint8_t _z, uint8_t _w)
 {
 	union
@@ -217,8 +197,7 @@ struct PosNormalTexcoordVertex
 };
 
 static const float s_texcoord = 5.0f;
-static const uint32_t s_numHPlaneVertices = 4;
-static PosNormalTexcoordVertex s_hplaneVertices[s_numHPlaneVertices] =
+static PosNormalTexcoordVertex s_hplaneVertices[] =
 {
 	{ -1.0f, 0.0f,  1.0f, packF4u(0.0f, 1.0f, 0.0f), s_texcoord, s_texcoord },
 	{  1.0f, 0.0f,  1.0f, packF4u(0.0f, 1.0f, 0.0f), s_texcoord, 0.0f       },
@@ -226,8 +205,7 @@ static PosNormalTexcoordVertex s_hplaneVertices[s_numHPlaneVertices] =
 	{  1.0f, 0.0f, -1.0f, packF4u(0.0f, 1.0f, 0.0f), 0.0f,       0.0f       },
 };
 
-static const uint32_t s_numVPlaneVertices = 4;
-static PosNormalTexcoordVertex s_vplaneVertices[s_numVPlaneVertices] =
+static PosNormalTexcoordVertex s_vplaneVertices[] =
 {
 	{ -1.0f,  1.0f, 0.0f, packF4u(0.0f, 0.0f, -1.0f), 1.0f, 1.0f },
 	{  1.0f,  1.0f, 0.0f, packF4u(0.0f, 0.0f, -1.0f), 1.0f, 0.0f },
@@ -235,8 +213,7 @@ static PosNormalTexcoordVertex s_vplaneVertices[s_numVPlaneVertices] =
 	{  1.0f, -1.0f, 0.0f, packF4u(0.0f, 0.0f, -1.0f), 0.0f, 0.0f },
 };
 
-static const uint32_t s_numPlaneIndices = 6;
-static const uint16_t s_planeIndices[s_numPlaneIndices] =
+static const uint16_t s_planeIndices[] =
 {
 	0, 1, 2,
 	1, 3, 2,
@@ -941,6 +918,11 @@ struct Group
 	PrimitiveArray m_prims;
 };
 
+namespace bgfx
+{
+	int32_t read(bx::ReaderI* _reader, bgfx::VertexDecl& _decl);
+}
+
 struct Mesh
 {
 	void load(const void* _vertices, uint32_t _numVertices, const bgfx::VertexDecl _decl, const uint16_t* _indices, uint32_t _numIndices)
@@ -968,8 +950,8 @@ struct Mesh
 
 	void load(const char* _filePath)
 	{
-#define BGFX_CHUNK_MAGIC_VB BX_MAKEFOURCC('V', 'B', ' ', 0x0)
-#define BGFX_CHUNK_MAGIC_IB BX_MAKEFOURCC('I', 'B', ' ', 0x0)
+#define BGFX_CHUNK_MAGIC_VB  BX_MAKEFOURCC('V', 'B', ' ', 0x1)
+#define BGFX_CHUNK_MAGIC_IB  BX_MAKEFOURCC('I', 'B', ' ', 0x0)
 #define BGFX_CHUNK_MAGIC_PRI BX_MAKEFOURCC('P', 'R', 'I', 0x0)
 
 		bx::CrtFileReader reader;
@@ -988,7 +970,7 @@ struct Mesh
 					bx::read(&reader, group.m_aabb);
 					bx::read(&reader, group.m_obb);
 
-					bx::read(&reader, m_decl);
+					bgfx::read(&reader, m_decl);
 					uint16_t stride = m_decl.getStride();
 
 					uint16_t numVertices;
@@ -1496,8 +1478,8 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 	treeMesh.load("meshes/tree.bin");
 	cubeMesh.load("meshes/cube.bin");
 	hollowcubeMesh.load("meshes/hollowcube.bin");
-	hplaneMesh.load(s_hplaneVertices, s_numHPlaneVertices, PosNormalTexcoordDecl, s_planeIndices, s_numPlaneIndices);
-	vplaneMesh.load(s_vplaneVertices, s_numVPlaneVertices, PosNormalTexcoordDecl, s_planeIndices, s_numPlaneIndices);
+	hplaneMesh.load(s_hplaneVertices, BX_COUNTOF(s_hplaneVertices), PosNormalTexcoordDecl, s_planeIndices, BX_COUNTOF(s_planeIndices) );
+	vplaneMesh.load(s_vplaneVertices, BX_COUNTOF(s_vplaneVertices), PosNormalTexcoordDecl, s_planeIndices, BX_COUNTOF(s_planeIndices) );
 
 	// Materials.
 	Material defaultMaterial =
@@ -2064,7 +2046,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 	const float camAspect  = float(int32_t(viewState.m_width) ) / float(int32_t(viewState.m_height) );
 	const float camNear    = 0.1f;
 	const float camFar     = 2000.0f;
-	const float projHeight = 1.0f/tanf(camFovy*( (float)M_PI/180.0f)*0.5f);
+	const float projHeight = 1.0f/tanf(bx::toRad(camFovy)*0.5f);
 	const float projWidth  = projHeight * 1.0f/camAspect;
 	bx::mtxProj(viewState.m_proj, camFovy, camAspect, camNear, camFar);
 	cameraGetViewMtx(viewState.m_view);
@@ -2257,7 +2239,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 		bgfx::dbgTextPrintf(0, 3, 0x0f, "Frame: % 7.3f[ms]", double(frameTime)*toMs);
 
 		// Update camera.
-		cameraUpdate(deltaTime, mouseState.m_mx, mouseState.m_my, !!mouseState.m_buttons[entry::MouseButton::Right]);
+		cameraUpdate(deltaTime, mouseState);
 
 		// Update view mtx.
 		cameraGetViewMtx(viewState.m_view);
@@ -2347,9 +2329,9 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 				, 0.0f
 				, float(ii)
 				, 0.0f
-				, sinf(float(ii)*2.0f*float(M_PI)/float(numTrees) ) * 60.0f
+				, sinf(float(ii)*2.0f*bx::pi/float(numTrees) ) * 60.0f
 				, 0.0f
-				, cosf(float(ii)*2.0f*float(M_PI)/float(numTrees) ) * 60.0f
+				, cosf(float(ii)*2.0f*bx::pi/float(numTrees) ) * 60.0f
 				);
 		}
 
@@ -2551,9 +2533,11 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 		}
 
 		// Reset render targets.
-		const uint32_t viewMask = (uint32_t(1) << (RENDERVIEW_DRAWDEPTH_3_ID+1) ) - 1;
 		const bgfx::FrameBufferHandle invalidRt = BGFX_INVALID_HANDLE;
-		bgfx::setViewFrameBufferMask(viewMask, invalidRt);
+		for (uint32_t ii = 0; ii < RENDERVIEW_DRAWDEPTH_3_ID+1; ++ii)
+		{
+			bgfx::setViewFrameBuffer(ii, invalidRt);
+		}
 
 		// Determine on-screen rectangle size where depth buffer will be drawn.
 		const uint16_t depthRectHeight = uint16_t(float(viewState.m_height) / 2.5f);
@@ -2746,8 +2730,8 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 
 		// Clear backbuffer at beginning.
 		bgfx::setViewClear(0
-				, BGFX_CLEAR_COLOR_BIT
-				| BGFX_CLEAR_DEPTH_BIT
+				, BGFX_CLEAR_COLOR
+				| BGFX_CLEAR_DEPTH
 				, clearValues.m_clearRgba
 				, clearValues.m_clearDepth
 				, clearValues.m_clearStencil
@@ -2757,7 +2741,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 		// Clear shadowmap rendertarget at beginning.
 		const uint8_t flags0 = (LightType::DirectionalLight == settings.m_lightType)
 							 ? 0
-							 : BGFX_CLEAR_COLOR_BIT | BGFX_CLEAR_DEPTH_BIT | BGFX_CLEAR_STENCIL_BIT
+							 : BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH | BGFX_CLEAR_STENCIL
 							 ;
 
 		bgfx::setViewClear(RENDERVIEW_SHADOWMAP_0_ID
@@ -2769,7 +2753,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 		bgfx::submit(RENDERVIEW_SHADOWMAP_0_ID);
 
 		const uint8_t flags1 = (LightType::DirectionalLight == settings.m_lightType)
-							 ? BGFX_CLEAR_COLOR_BIT | BGFX_CLEAR_DEPTH_BIT
+							 ? BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH
 							 : 0
 							 ;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
@@ -30,6 +30,8 @@
 
 #include <bgfx.h>
 
+#include <bx/bx.h>
+
 namespace
 {
 #include "vs_nanovg_fill.bin.h"
@@ -45,11 +47,17 @@ namespace
 		NSVG_SHADER_IMG
 	};
 
+	// These are additional flags on top of NVGimageFlags.
+	enum NVGimageFlagsGL {
+		NVG_IMAGE_NODELETE = 1<<16, // Do not delete GL texture handle.
+	};
+
 	struct GLNVGtexture
 	{
 		bgfx::TextureHandle id;
 		int width, height;
 		int type;
+		int flags;
 	};
 
 	enum GLNVGcallType
@@ -176,7 +184,7 @@ namespace
 			}
 			tex = &gl->textures[gl->ntextures++];
 		}
-		
+
 		memset(tex, 0, sizeof(*tex));
 
 		return tex;
@@ -198,20 +206,21 @@ namespace
 
 	static int glnvg__deleteTexture(struct GLNVGcontext* gl, int id)
 	{
-		int i;
-		for (i = 0; i < gl->ntextures; i++)
+		for (int ii = 0; ii < gl->ntextures; ii++)
 		{
-			if (gl->textures[i].id.idx == id)
+			if (gl->textures[ii].id.idx == id)
 			{
-				if (bgfx::isValid(gl->textures[i].id) )
+				if (bgfx::isValid(gl->textures[ii].id)
+				&& (gl->textures[ii].flags & NVG_IMAGE_NODELETE) == 0)
 				{
-					bgfx::destroyTexture(gl->textures[i].id);
+					bgfx::destroyTexture(gl->textures[ii].id);
 				}
-				memset(&gl->textures[i], 0, sizeof(gl->textures[i]));
-				gl->textures[i].id.idx = bgfx::invalidHandle;
+				memset(&gl->textures[ii], 0, sizeof(gl->textures[ii]));
+				gl->textures[ii].id.idx = bgfx::invalidHandle;
 				return 1;
 			}
 		}
+
 		return 0;
 	}
 
@@ -271,13 +280,13 @@ namespace
 			.add(bgfx::Attrib::TexCoord0, 2, bgfx::AttribType::Float)
 			.end();
 
-		int align = 1;
+		int align = 16;
 		gl->fragSize = sizeof(struct GLNVGfragUniforms) + align - sizeof(struct GLNVGfragUniforms) % align;
 
 		return 1;
 	}
 
-	static int nvgRenderCreateTexture(void* _userPtr, int _type, int _width, int _height, const unsigned char* _rgba)
+	static int nvgRenderCreateTexture(void* _userPtr, int _type, int _width, int _height, int _flags, const unsigned char* _rgba)
 	{
 		struct GLNVGcontext* gl = (struct GLNVGcontext*)_userPtr;
 		struct GLNVGtexture* tex = glnvg__allocTexture(gl);
@@ -290,6 +299,7 @@ namespace
 		tex->width  = _width;
 		tex->height = _height;
 		tex->type   = _type;
+		tex->flags  = _flags;
 
 		uint32_t bytesPerPixel = NVG_TEXTURE_RGBA == tex->type ? 4 : 1;
 		uint32_t pitch = tex->width * bytesPerPixel;
@@ -486,7 +496,7 @@ namespace
 		bgfx::setUniform(gl->u_params,          &frag->feather);
 
 		bgfx::TextureHandle handle = BGFX_INVALID_HANDLE;
- 
+
 		if (image != 0)
 		{
 			struct GLNVGtexture* tex = glnvg__findTexture(gl, image);
@@ -505,10 +515,9 @@ namespace
 		gl->th = handle;
 	}
 
-	static void nvgRenderViewport(void* _userPtr, int width, int height, int alphaBlend)
+	static void nvgRenderViewport(void* _userPtr, int width, int height)
 	{
 		struct GLNVGcontext* gl = (struct GLNVGcontext*)_userPtr;
-		NVG_NOTUSED(alphaBlend);
 		gl->view[0] = (float)width;
 		gl->view[1] = (float)height;
 		bgfx::setViewRect(gl->viewid, 0, 0, width, height);
@@ -613,6 +622,7 @@ namespace
 
 		for (i = 0; i < npaths; i++)
 		{
+			if (paths[i].fillCount == 0) continue;
 			bgfx::setProgram(gl->prog);
 			bgfx::setState(gl->state);
 			bgfx::setVertexBuffer(&gl->tvb);
@@ -672,13 +682,21 @@ namespace
 		}
 	}
 
-	static void nvgRenderFlush(void* _userPtr, int alphaBlend)
+	static void nvgRenderFlush(void* _userPtr)
 	{
 		struct GLNVGcontext* gl = (struct GLNVGcontext*)_userPtr;
 
 		if (gl->ncalls > 0)
 		{
 			bgfx::allocTransientVertexBuffer(&gl->tvb, gl->nverts, s_nvgDecl);
+
+			int allocated = gl->tvb.size/gl->tvb.stride;
+
+			if (allocated < gl->nverts) {
+				gl->nverts = allocated;
+				BX_WARN(true, "Vertex number truncated due to transient vertex buffer overflow");
+			}
+
 
 			memcpy(gl->tvb.data, gl->verts, gl->nverts * sizeof(struct NVGvertex) );
 
@@ -687,14 +705,14 @@ namespace
 				| BGFX_STATE_ALPHA_WRITE
 				;
 
-			if (alphaBlend == NVG_PREMULTIPLIED_ALPHA)
-			{
-				gl->state |= BGFX_STATE_BLEND_FUNC_SEPARATE(
-								  BGFX_STATE_BLEND_SRC_ALPHA, BGFX_STATE_BLEND_INV_SRC_ALPHA
-								, BGFX_STATE_BLEND_ONE,       BGFX_STATE_BLEND_INV_SRC_ALPHA
-								);
-			}
-			else
+// 			if (alphaBlend == NVG_PREMULTIPLIED_ALPHA)
+// 			{
+// 				gl->state |= BGFX_STATE_BLEND_FUNC_SEPARATE(
+// 								  BGFX_STATE_BLEND_SRC_ALPHA, BGFX_STATE_BLEND_INV_SRC_ALPHA
+// 								, BGFX_STATE_BLEND_ONE,       BGFX_STATE_BLEND_INV_SRC_ALPHA
+// 								);
+// 			}
+// 			else
 			{
 				gl->state |= BGFX_STATE_BLEND_FUNC(
 								BGFX_STATE_BLEND_SRC_ALPHA, BGFX_STATE_BLEND_INV_SRC_ALPHA
@@ -763,23 +781,30 @@ namespace
 	static int glnvg__allocPaths(struct GLNVGcontext* gl, int n)
 	{
 		int ret = 0;
-		if (gl->npaths+n > gl->cpaths)
-		{
-			gl->cpaths = gl->cpaths == 0 ? glnvg__maxi(n, 32) : gl->cpaths * 2;
-			gl->paths = (struct GLNVGpath*)realloc(gl->paths, sizeof(struct GLNVGpath) * gl->cpaths);
+		if (gl->npaths + n > gl->cpaths) {
+			GLNVGpath* paths;
+			int cpaths = glnvg__maxi(gl->npaths + n, 128) + gl->cpaths / 2; // 1.5x Overallocate
+			paths = (GLNVGpath*)realloc(gl->paths, sizeof(GLNVGpath) * cpaths);
+			if (paths == NULL) return -1;
+			gl->paths = paths;
+			gl->cpaths = cpaths;
 		}
 		ret = gl->npaths;
 		gl->npaths += n;
 		return ret;
 	}
 
-	static int glnvg__allocVerts(struct GLNVGcontext* gl, int n)
+	static int glnvg__allocVerts(GLNVGcontext* gl, int n)
 	{
 		int ret = 0;
 		if (gl->nverts+n > gl->cverts)
 		{
-			gl->cverts = gl->cverts == 0 ? glnvg__maxi(n, 256) : gl->cverts * 2;
-			gl->verts = (struct NVGvertex*)realloc(gl->verts, sizeof(struct NVGvertex) * gl->cverts);
+			NVGvertex* verts;
+			int cverts = glnvg__maxi(gl->nverts + n, 4096) + gl->cverts/2; // 1.5x Overallocate
+			verts = (NVGvertex*)realloc(gl->verts, sizeof(NVGvertex) * cverts);
+			if (verts == NULL) return -1;
+			gl->verts = verts;
+			gl->cverts = cverts;
 		}
 		ret = gl->nverts;
 		gl->nverts += n;
@@ -963,9 +988,15 @@ namespace
 		bgfx::destroyUniform(gl->u_params);
 		bgfx::destroyUniform(gl->s_tex);
 
+		if (bgfx::isValid(gl->u_halfTexel) )
+		{
+			bgfx::destroyUniform(gl->u_halfTexel);
+		}
+
 		for (uint32_t ii = 0, num = gl->ntextures; ii < num; ++ii)
 		{
-			if (bgfx::isValid(gl->textures[ii].id) )
+			if (bgfx::isValid(gl->textures[ii].id)
+			&& (gl->textures[ii].flags & NVG_IMAGE_NODELETE) == 0)
 			{
 				bgfx::destroyTexture(gl->textures[ii].id);
 			}
@@ -978,7 +1009,7 @@ namespace
 
 } // namespace
 
-struct NVGcontext* nvgCreate(int atlasw, int atlash, int edgeaa, unsigned char viewid)
+NVGcontext* nvgCreate(int edgeaa, unsigned char viewid)
 {
 	struct NVGparams params;
 	struct NVGcontext* ctx = NULL;
@@ -999,8 +1030,6 @@ struct NVGcontext* nvgCreate(int atlasw, int atlash, int edgeaa, unsigned char v
 	params.renderTriangles      = nvgRenderTriangles;
 	params.renderDelete         = nvgRenderDelete;
 	params.userPtr = gl;
-	params.atlasWidth = atlasw;
-	params.atlasHeight = atlash;
 	params.edgeAntiAlias = edgeaa;
 
 	gl->edgeAntiAlias = edgeaa;

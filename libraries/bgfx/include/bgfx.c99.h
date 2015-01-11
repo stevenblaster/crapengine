@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: https://github.com/bkaradzic/bgfx/blob/master/LICENSE
  *
  * vim: set tabstop=4 expandtab:
@@ -19,7 +19,7 @@ typedef enum bgfx_renderer_type
     BGFX_RENDERER_TYPE_NULL,
     BGFX_RENDERER_TYPE_DIRECT3D9,
     BGFX_RENDERER_TYPE_DIRECT3D11,
-    BGFX_RENDERER_TYPE_OPENGLES,
+    BGFX_RENDERER_TYPE_OPENGLES = 4,
     BGFX_RENDERER_TYPE_OPENGL,
 
     BGFX_RENDERER_TYPE_COUNT
@@ -28,11 +28,11 @@ typedef enum bgfx_renderer_type
 
 typedef enum bgfx_access
 {
-	BGFX_ACCESS_READ,
-	BGFX_ACCESS_WRITE,
-	BGFX_ACCESS_READWRITE,
+    BGFX_ACCESS_READ,
+    BGFX_ACCESS_WRITE,
+    BGFX_ACCESS_READWRITE,
 
-	BGFX_ACCESS_COUNT
+    BGFX_ACCESS_COUNT
 
 } bgfx_access_t;
 
@@ -41,6 +41,7 @@ typedef enum bgfx_attrib
     BGFX_ATTRIB_POSITION,
     BGFX_ATTRIB_NORMAL,
     BGFX_ATTRIB_TANGENT,
+    BGFX_ATTRIB_BITANGENT,
     BGFX_ATTRIB_COLOR0,
     BGFX_ATTRIB_COLOR1,
     BGFX_ATTRIB_INDICES,
@@ -76,6 +77,8 @@ typedef enum bgfx_texture_format
     BGFX_TEXTURE_FORMAT_BC3,
     BGFX_TEXTURE_FORMAT_BC4,
     BGFX_TEXTURE_FORMAT_BC5,
+    BGFX_TEXTURE_FORMAT_BC6H,
+    BGFX_TEXTURE_FORMAT_BC7,
     BGFX_TEXTURE_FORMAT_ETC1,
     BGFX_TEXTURE_FORMAT_ETC2,
     BGFX_TEXTURE_FORMAT_ETC2A,
@@ -89,6 +92,7 @@ typedef enum bgfx_texture_format
 
     BGFX_TEXTURE_FORMAT_UNKNOWN,
 
+    BGFX_TEXTURE_FORMAT_R1,
     BGFX_TEXTURE_FORMAT_R8,
     BGFX_TEXTURE_FORMAT_R16,
     BGFX_TEXTURE_FORMAT_R16F,
@@ -108,6 +112,7 @@ typedef enum bgfx_texture_format
     BGFX_TEXTURE_FORMAT_RGBA4,
     BGFX_TEXTURE_FORMAT_RGB5A1,
     BGFX_TEXTURE_FORMAT_RGB10A2,
+    BGFX_TEXTURE_FORMAT_R11G11B10F,
 
     BGFX_TEXTURE_FORMAT_UNKNOWN_DEPTH,
 
@@ -168,6 +173,39 @@ typedef struct bgfx_memory
 } bgfx_memory_t;
 
 /**
+ */
+typedef struct bgfx_transform
+{
+    float* data;
+    uint16_t num;
+
+} bgfx_transform_t;
+
+/**
+ * Eye
+ */
+typedef struct bgfx_hmd_eye
+{
+    float rotation[4];
+    float translation[3];
+    float fov[4];
+    float adjust[3];
+    float pixelsPerTanAngle[2];
+
+} bgfx_hmd_eye_t;
+
+/**
+ * HMD
+ */
+typedef struct bgfx_hmd
+{
+    bgfx_hmd_eye_t eye[2];
+    uint16_t width;
+    uint16_t height;
+
+} bgfx_hmd_t;
+
+/**
  * Vertex declaration.
  */
 typedef struct bgfx_vertex_decl
@@ -210,8 +248,8 @@ typedef struct bgfx_instance_data_buffer
     uint8_t* data;
     uint32_t size;
     uint32_t offset;
+    uint32_t num;
     uint16_t stride;
-    uint16_t num;
     bgfx_vertex_buffer_handle_t handle;
 
 } bgfx_instance_data_buffer_t;
@@ -247,13 +285,6 @@ typedef struct bgfx_caps
      */
     uint64_t supported;
 
-    /**
-     *  Emulated functionality. For example some texture compression
-     *  modes are not natively supported by all renderers. The library
-     *  internally decompresses texture into supported format.
-     */
-    uint64_t emulated;
-
     uint16_t maxTextureSize;    /* < Maximum texture size.             */
     uint16_t maxDrawCalls;      /* < Maximum draw calls.               */
     uint8_t  maxFBAttachments;  /* < Maximum frame buffer attachments. */
@@ -277,6 +308,9 @@ typedef enum bgfx_fatal
     BGFX_FATAL_INVALID_SHADER,
     BGFX_FATAL_UNABLE_TO_INITIALIZE,
     BGFX_FATAL_UNABLE_TO_CREATE_TEXTURE,
+    BGFX_FATAL_DEVICE_LOST,
+
+    BGFX_FATAL_COUNT
 
 } bgfx_fatal_t;
 
@@ -556,7 +590,12 @@ BGFX_C_API bgfx_renderer_type_t bgfx_get_renderer_type();
  *  NOTE:
  *    Library must be initialized.
  */
-BGFX_C_API bgfx_caps_t* bgfx_get_caps();
+BGFX_C_API const bgfx_caps_t* bgfx_get_caps();
+
+/**
+ * Returns HMD info.
+ */
+BGFX_C_API const bgfx_hmd_t* bgfx_get_hmd();
 
 /**
  *  Allocate buffer to pass to bgfx calls. Data will be freed inside bgfx.
@@ -604,6 +643,18 @@ BGFX_C_API void bgfx_dbg_text_clear(uint8_t _attr, bool _small);
 BGFX_C_API void bgfx_dbg_text_printf(uint16_t _x, uint16_t _y, uint8_t _attr, const char* _format, ...);
 
 /**
+ *  Draw image into internal debug text buffer.
+ *
+ *  @param _x      X position from top-left.
+ *  @param _y      Y position from top-left.
+ *  @param _width  Image width.
+ *  @param _height Image height.
+ *  @param _data   Raw image data (character/attribute raw encoding).
+ *  @param _pitch  Image pitch in bytes.
+ */
+BGFX_C_API void bgfx_dbg_text_image(uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height, const void* _data, uint16_t _pitch);
+
+/**
  *  Create static index buffer.
  *
  *  NOTE:
@@ -623,7 +674,7 @@ BGFX_C_API void bgfx_destroy_index_buffer(bgfx_index_buffer_handle_t _handle);
  *  @param _decl Vertex declaration.
  *  @returns Static vertex buffer handle.
  */
-BGFX_C_API bgfx_vertex_buffer_handle_t bgfx_create_vertex_buffer(const bgfx_memory_t* _mem, const bgfx_vertex_decl_t* _decl);
+BGFX_C_API bgfx_vertex_buffer_handle_t bgfx_create_vertex_buffer(const bgfx_memory_t* _mem, const bgfx_vertex_decl_t* _decl, uint8_t _flags);
 
 /**
  *  Destroy static vertex buffer.
@@ -673,7 +724,7 @@ BGFX_C_API void bgfx_destroy_dynamic_index_buffer(bgfx_dynamic_index_buffer_hand
  *  @param _num Number of vertices.
  *  @param _decl Vertex declaration.
  */
-BGFX_C_API bgfx_dynamic_vertex_buffer_handle_t bgfx_create_dynamic_vertex_buffer(uint16_t _num, const bgfx_vertex_decl_t* _decl);
+BGFX_C_API bgfx_dynamic_vertex_buffer_handle_t bgfx_create_dynamic_vertex_buffer(uint16_t _num, const bgfx_vertex_decl_t* _decl, uint8_t _flags);
 
 /**
  *  Create dynamic vertex buffer and initialize it.
@@ -967,6 +1018,19 @@ BGFX_C_API bgfx_frame_buffer_handle_t bgfx_create_frame_buffer(uint16_t _width, 
 BGFX_C_API bgfx_frame_buffer_handle_t bgfx_create_frame_buffer_from_handles(uint8_t _num, bgfx_texture_handle_t* _handles, bool _destroyTextures);
 
 /**
+ *  Create frame buffer for multiple window rendering.
+ *
+ *  @param _nwh OS' target native window handle.
+ *  @param _width Window back buffer width.
+ *  @param _height Window back buffer height.
+ *  @param _depthFormat Window back buffer depth format.
+ *
+ *  NOTE:
+ *    Frame buffer cannnot be used for sampling.
+ */
+BGFX_C_API bgfx_frame_buffer_handle_t bgfx_create_frame_buffer_from_nwh(void* _nwh, uint16_t _width, uint16_t _height, bgfx_texture_format_t _depthFormat);
+
+/**
  *  Destroy frame buffer.
  */
 BGFX_C_API void bgfx_destroy_frame_buffer(bgfx_frame_buffer_handle_t _handle);
@@ -1015,6 +1079,14 @@ BGFX_C_API bgfx_uniform_handle_t bgfx_create_uniform(const char* _name, bgfx_uni
 BGFX_C_API void bgfx_destroy_uniform(bgfx_uniform_handle_t _handle);
 
 /**
+ *  Set clear color palette value.
+ *
+ *  @param _index Index into palette.
+ *  @param _rgba RGBA floating point value.
+ */
+BGFX_C_API void bgfx_set_clear_color(uint8_t _index, const float _rgba[4]);
+
+/**
  *  Set view name.
  *
  *  @param _id View id.
@@ -1037,17 +1109,6 @@ BGFX_C_API void bgfx_set_view_name(uint8_t _id, const char* _name);
 BGFX_C_API void bgfx_set_view_rect(uint8_t _id, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
 
 /**
- *  Set view rectangle for multiple views.
- *
- *  @param _viewMask Bit mask representing affected views.
- *  @param _x Position x from the left corner of the window.
- *  @param _y Position y from the top corner of the window.
- *  @param _width Width of view port region.
- *  @param _height Height of view port region.
- */
-BGFX_C_API void bgfx_set_view_rect_mask(uint32_t _viewMask, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
-
-/**
  *  Set view scissor. Draw primitive outside view will be clipped. When
  *  _x, _y, _width and _height are set to 0, scissor will be disabled.
  *
@@ -1057,19 +1118,6 @@ BGFX_C_API void bgfx_set_view_rect_mask(uint32_t _viewMask, uint16_t _x, uint16_
  *  @param _height Height of scissor region.
  */
 BGFX_C_API void bgfx_set_view_scissor(uint8_t _id, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
-
-/**
- *  Set view scissor for multiple views. When _x, _y, _width and _height
- *  are set to 0, scissor will be disabled.
- *
- *  @param _id View id.
- *  @param _viewMask Bit mask representing affected views.
- *  @param _x Position x from the left corner of the window.
- *  @param _y Position y from the top corner of the window.
- *  @param _width Width of scissor region.
- *  @param _height Height of scissor region.
- */
-BGFX_C_API void bgfx_set_view_scissor_mask(uint32_t _viewMask, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
 
 /**
  *  Set view clear flags.
@@ -1084,20 +1132,23 @@ BGFX_C_API void bgfx_set_view_scissor_mask(uint32_t _viewMask, uint16_t _x, uint
 BGFX_C_API void bgfx_set_view_clear(uint8_t _id, uint8_t _flags, uint32_t _rgba, float _depth, uint8_t _stencil);
 
 /**
- *  Set view clear flags for multiple views.
+ *  Set view clear flags with different clear color for each
+ *  frame buffer texture. Must use setClearColor to setup clear color
+ *  palette.
+
+ *  @param _id View id.
+ *  @param _flags Clear flags. Use BGFX_CLEAR_NONE to remove any clear
+ *  operation. See: BGFX_CLEAR_*.
+ *  @param _depth Depth clear value.
+ *  @param _stencil Stencil clear value.
  */
-BGFX_C_API void bgfx_set_view_clear_mask(uint32_t _viewMask, uint8_t _flags, uint32_t _rgba, float _depth, uint8_t _stencil);
+BGFX_C_API void bgfx_set_view_clear_mrt(uint8_t _id, uint8_t _flags, float _depth, uint8_t _stencil, uint8_t _0, uint8_t _1, uint8_t _2, uint8_t _3, uint8_t _4, uint8_t _5, uint8_t _6, uint8_t _7);
 
 /**
  *  Set view into sequential mode. Draw calls will be sorted in the same
  *  order in which submit calls were called.
  */
 BGFX_C_API void bgfx_set_view_seq(uint8_t _id, bool _enabled);
-
-/**
- *  Set multiple views into sequential mode.
- */
-BGFX_C_API void bgfx_set_view_seq_mask(uint32_t _viewMask, bool _enabled);
 
 /**
  *  Set view frame buffer.
@@ -1110,25 +1161,16 @@ BGFX_C_API void bgfx_set_view_seq_mask(uint32_t _viewMask, bool _enabled);
 BGFX_C_API void bgfx_set_view_frame_buffer(uint8_t _id, bgfx_frame_buffer_handle_t _handle);
 
 /**
- *  Set view frame buffer for multiple views.
- *
- *  @param _viewMask View mask.
- *  @param _handle Frame buffer handle. Passing BGFX_INVALID_HANDLE as
- *    frame buffer handle will draw primitives from this view into
- *    default back buffer.
- */
-BGFX_C_API void bgfx_set_view_frame_buffer_mask(uint32_t _viewMask, bgfx_frame_buffer_handle_t _handle);
-
-/**
  *  Set view view and projection matrices, all draw primitives in this
  *  view will use these matrices.
  */
 BGFX_C_API void bgfx_set_view_transform(uint8_t _id, const void* _view, const void* _proj);
 
 /**
- *  Set view view and projection matrices for multiple views.
+ *  Set view view and projection matrices, all draw primitives in this
+ *  view will use these matrices.
  */
-BGFX_C_API void bgfx_set_view_transform_mask(uint32_t _viewMask, const void* _view, const void* _proj);
+BGFX_C_API void bgfx_set_view_transform_stereo(uint8_t _id, const void* _view, const void* _projL, uint8_t _flags, const void* _projR);
 
 /**
  *  Sets debug marker.
@@ -1203,6 +1245,16 @@ BGFX_C_API void bgfx_set_scissor_cached(uint16_t _cache);
 BGFX_C_API uint32_t bgfx_set_transform(const void* _mtx, uint16_t _num);
 
 /**
+ *  Reserve `_num` matrices in internal matrix cache. Pointer returned
+ *  can be modifed until `bgfx::frame` is called.
+ *
+ *  @param _transform Pointer to `Transform` structure.
+ *  @param _num Number of matrices.
+ *  @returns index into matrix cache.
+ */
+BGFX_C_API uint32_t bgfx_alloc_transform(bgfx_transform_t* _transform, uint16_t _num);
+
+/**
  *  Set model matrix from matrix cache for draw primitive.
  *
  *  @param _cache Index in matrix cache.
@@ -1248,7 +1300,7 @@ BGFX_C_API void bgfx_set_transient_vertex_buffer(const bgfx_transient_vertex_buf
 /**
  *  Set instance data buffer for draw primitive.
  */
-BGFX_C_API void bgfx_set_instance_data_buffer(const bgfx_instance_data_buffer_t* _idb, uint16_t _num);
+BGFX_C_API void bgfx_set_instance_data_buffer(const bgfx_instance_data_buffer_t* _idb, uint32_t _num);
 
 /**
  *  Set program for draw primitive.
@@ -1303,15 +1355,6 @@ BGFX_C_API void bgfx_set_texture_from_frame_buffer(uint8_t _stage, bgfx_uniform_
 BGFX_C_API uint32_t bgfx_submit(uint8_t _id, int32_t _depth);
 
 /**
- *  Submit primitive for rendering into multiple views.
- *
- *  @param _viewMask Mask to which views to submit draw primitive calls.
- *  @param _depth Depth for sorting.
- *  @returns Number of draw calls.
- */
-BGFX_C_API uint32_t bgfx_submit_mask(uint32_t _viewMask, int32_t _depth);
-
-/**
  *
  */
 BGFX_C_API void bgfx_set_image(uint8_t _stage, bgfx_uniform_handle_t _sampler, bgfx_texture_handle_t _handle, uint8_t _mip, bgfx_texture_format_t _format, bgfx_access_t _access);
@@ -1324,7 +1367,7 @@ BGFX_C_API void bgfx_set_image_from_frame_buffer(uint8_t _stage, bgfx_uniform_ha
 /**
  * Dispatch compute.
  */
-BGFX_C_API void bgfx_dispatch(uint8_t _id, bgfx_program_handle_t _handle, uint16_t _numX, uint16_t _numY, uint16_t _numZ);
+BGFX_C_API void bgfx_dispatch(uint8_t _id, bgfx_program_handle_t _handle, uint16_t _numX, uint16_t _numY, uint16_t _numZ, uint8_t _flags);
 
 /**
  *  Discard all previously set state for draw call.

@@ -481,8 +481,8 @@ char *savestring(struct Global *global, char *text)
   /*
    * Store a string into free memory.
    */
-
   char *result;
+  (void)global; // BK - not used but causes warning.
   result = malloc(strlen(text) + 1);
   strcpy(result, text);
   return (result);

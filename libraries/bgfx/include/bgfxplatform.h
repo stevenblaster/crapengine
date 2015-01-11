@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: https://github.com/bkaradzic/bgfx/blob/master/LICENSE
  */
 
@@ -50,7 +50,7 @@ namespace bgfx
 
 } // namespace bgfx
 
-#elif BX_PLATFORM_LINUX
+#elif BX_PLATFORM_FREEBSD || BX_PLATFORM_LINUX || BX_PLATFORM_RPI
 #	include <X11/Xlib.h>
 
 namespace bgfx
@@ -91,6 +91,16 @@ namespace bgfx
 
 } // namespace bgfx
 
+#elif BX_PLATFORM_WINRT
+#   include <Unknwn.h>
+
+namespace bgfx
+{
+	///
+	void winrtSetWindow(IUnknown* _window);
+
+} // namespace bgfx
+
 #endif // BX_PLATFORM_
 
 #if defined(_SDL_H)
@@ -111,7 +121,7 @@ namespace bgfx
 			return false;
 		}
 
-#	if BX_PLATFORM_LINUX
+#	if BX_PLATFORM_LINUX || BX_PLATFORM_FREEBSD
 		x11SetDisplayWindow(wmi.info.x11.display, wmi.info.x11.window);
 #	elif BX_PLATFORM_OSX
 		osxSetNSWindow(wmi.info.cocoa.window);
@@ -128,7 +138,7 @@ namespace bgfx
 // If GLFW/glfw3.h is included before bgfxplatform.h we can enable GLFW3
 // window interop convenience code.
 
-#	if BX_PLATFORM_LINUX
+#	if BX_PLATFORM_LINUX || BX_PLATFORM_FREEBSD
 #		define GLFW_EXPOSE_NATIVE_X11
 #		define GLFW_EXPOSE_NATIVE_GLX
 #	elif BX_PLATFORM_OSX
@@ -144,7 +154,7 @@ namespace bgfx
 {
 	inline void glfwSetWindow(GLFWwindow* _window)
 	{
-#	if BX_PLATFORM_LINUX
+#	if BX_PLATFORM_LINUX || BX_PLATFORM_FREEBSD
 		::Display* display = glfwGetX11Display();
 		::Window window = glfwGetX11Window(_window);
 		x11SetDisplayWindow(display, window);
@@ -154,7 +164,7 @@ namespace bgfx
 #	elif BX_PLATFORM_WINDOWS
 		HWND hwnd = glfwGetWin32Window(_window);
 		winSetHwnd(hwnd);
-#	endif //BX_PLATFORM_WINDOWS
+#	endif BX_PLATFORM_WINDOWS
 	}
 
 } // namespace bgfx

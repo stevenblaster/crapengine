@@ -15,6 +15,8 @@
 #ifndef VIDEO_INCLUDE_2D_GUIELEMENTS_H_
 #define VIDEO_INCLUDE_2D_GUIELEMENTS_H_
 
+#include "utilities.h"
+
 typedef struct NVGcontext;
 
 namespace crap

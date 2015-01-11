@@ -1,12 +1,12 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
 #ifndef BGFX_RENDERER_GL_H_HEADER_GUARD
 #define BGFX_RENDERER_GL_H_HEADER_GUARD
 
-#define BGFX_USE_EGL (BGFX_CONFIG_RENDERER_OPENGLES && (BX_PLATFORM_ANDROID || BX_PLATFORM_EMSCRIPTEN || BX_PLATFORM_QNX || BX_PLATFORM_WINDOWS) )
+#define BGFX_USE_EGL (BGFX_CONFIG_RENDERER_OPENGLES && (BX_PLATFORM_ANDROID || BX_PLATFORM_EMSCRIPTEN || BX_PLATFORM_QNX || BX_PLATFORM_RPI || BX_PLATFORM_WINDOWS) )
 #define BGFX_USE_WGL (BGFX_CONFIG_RENDERER_OPENGL && BX_PLATFORM_WINDOWS)
 #define BGFX_USE_GL_DYNAMIC_LIB (BX_PLATFORM_LINUX || BX_PLATFORM_OSX || BX_PLATFORM_WINDOWS)
 
@@ -84,12 +84,11 @@ typedef uint64_t GLuint64;
 #	if BX_PLATFORM_EMSCRIPTEN
 #		include <emscripten/emscripten.h>
 #	endif // BX_PLATFORM_EMSCRIPTEN
-
 #endif // BGFX_CONFIG_RENDERER_OPENGL
 
-#ifndef GL_LUMINANCE
-#	define GL_LUMINANCE 0x1909
-#endif // GL_LUMINANCE
+#include "renderer.h"
+#include "ovr.h"
+#include "renderdoc.h"
 
 #ifndef GL_BGRA
 #	define GL_BGRA 0x80E1
@@ -191,6 +190,14 @@ typedef uint64_t GLuint64;
 #	define GL_RGBA16UI 0x8D76
 #endif // GL_RGBA16UI
 
+#ifndef GL_R11F_G11F_B10F
+#	define GL_R11F_G11F_B10F 0x8C3A
+#endif // GL_R11F_G11F_B10F
+
+#ifndef GL_UNSIGNED_INT_10F_11F_11F_REV
+#	define GL_UNSIGNED_INT_10F_11F_11F_REV 0x8C3B
+#endif // GL_UNSIGNED_INT_10F_11F_11F_REV
+
 #ifndef GL_COMPRESSED_RGB_S3TC_DXT1_EXT
 #	define GL_COMPRESSED_RGB_S3TC_DXT1_EXT 0x83F0
 #endif // GL_COMPRESSED_RGB_S3TC_DXT1_EXT
@@ -262,6 +269,22 @@ typedef uint64_t GLuint64;
 #ifndef GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG
 #	define GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG 0x9138
 #endif // GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG
+
+#ifndef GL_COMPRESSED_RGBA_BPTC_UNORM_ARB
+#	define GL_COMPRESSED_RGBA_BPTC_UNORM_ARB 0x8E8C
+#endif // GL_COMPRESSED_RGBA_BPTC_UNORM_ARB
+
+#ifndef GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB
+#	define GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB 0x8E8D
+#endif // GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB
+
+#ifndef GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB
+#	define GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB 0x8E8E
+#endif // GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB
+
+#ifndef GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB
+#	define GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB 0x8E8F
+#endif // GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB
 
 #ifndef GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE
 #	define GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE 0x93A0
@@ -485,11 +508,11 @@ typedef uint64_t GLuint64;
 #endif // BGFX_USE_WGL
 
 #ifndef GL_APIENTRY
-#   define GL_APIENTRY APIENTRY
+#	define GL_APIENTRY APIENTRY
 #endif // GL_APIENTRY
 
 #ifndef GL_APIENTRYP
-#   define GL_APIENTRYP GL_APIENTRY*
+#	define GL_APIENTRYP GL_APIENTRY*
 #endif // GL_APIENTRYP
 
 #if !BGFX_CONFIG_RENDERER_OPENGL
@@ -575,6 +598,11 @@ namespace bgfx
 			m_hashMap.clear();
 		}
 
+		uint32_t getCount() const
+		{
+			return uint32_t(m_hashMap.size() );
+		}
+
 	private:
 		typedef stl::unordered_map<uint32_t, GLuint> HashMap;
 		HashMap m_hashMap;
@@ -645,6 +673,11 @@ namespace bgfx
 				GL_CHECK(glDeleteSamplers(1, &it->second) );
 			}
 			m_hashMap.clear();
+		}
+
+		uint32_t getCount() const
+		{
+			return uint32_t(m_hashMap.size() );
 		}
 
 	private:
@@ -791,19 +824,24 @@ namespace bgfx
 	struct FrameBufferGL
 	{
 		FrameBufferGL()
-			: m_num(0)
+			: m_swapChain(NULL)
+			, m_denseIdx(UINT16_MAX)
+			, m_num(0)
 		{
 			memset(m_fbo, 0, sizeof(m_fbo) );
 		}
 
 		void create(uint8_t _num, const TextureHandle* _handles);
-		void destroy();
+		void create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _depthFormat);
+		uint16_t destroy();
 		void resolve();
 
-		uint8_t m_num;
+		SwapChainGL* m_swapChain;
 		GLuint m_fbo[2];
 		uint32_t m_width;
 		uint32_t m_height;
+		uint16_t m_denseIdx;
+		uint8_t m_num;
 	};
 
 	struct ProgramGL

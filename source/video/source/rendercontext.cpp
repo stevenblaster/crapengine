@@ -21,26 +21,26 @@ namespace crap
 
 void initContext( RenderWindow* window )
 {
-//    //bgfx::glfwSetWindow( window->getHandle() );
-//
-//    bgfx::init();
-//    bgfx::reset( window->getWidth(), window->getHeight(), BGFX_RESET_VSYNC );
-//
-//    // Enable debug text.
-//    bgfx::setDebug(debug);
-//
-//    // Set view 0 clear state.
-//    bgfx::setViewClear(0
-//        , BGFX_CLEAR_COLOR_BIT|BGFX_CLEAR_DEPTH_BIT
-//        , 0x303030ff
-//        , 1.0f
-//        , 0
-//        );
+    //bgfx::glfwSetWindow( window->getHandle() );
+
+    bgfx::init();
+    bgfx::reset( window->getWidth(), window->getHeight(), BGFX_RESET_VSYNC );
+
+    // Enable debug text.
+    //bgfx::setDebug(debug);
+
+    // Set view 0 clear state.
+    bgfx::setViewClear(0
+        , UINT8_C(0x01) |UINT8_C(0x08)
+        , 0x303030ff
+        , 1.0f
+        , 0
+        );
 }
 
 RenderHandle createStaticVertexBuffer(pointer_t<void> memory, uint32_t size, VertexDeclaration* declaration )
 {
-    bgfx::VertexDecl* decl = (bgfx::VertexDecl*) declaration;
+    const bgfx::VertexDecl* decl = (const bgfx::VertexDecl*) declaration;
 	return  bgfx::createVertexBuffer( bgfx::makeRef( memory.as_void, size ), *decl ).idx;
 }
 

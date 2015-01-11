@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
@@ -127,7 +127,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 
 	// Set view 0 clear state.
 	bgfx::setViewClear(0
-		, BGFX_CLEAR_COLOR_BIT|BGFX_CLEAR_DEPTH_BIT
+		, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH
 		, 0x303030ff
 		, 1.0f
 		, 0
@@ -196,7 +196,8 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 	while (!entry::processEvents(width, height, debug, reset) )
 	{
 		// Set view 0 and 1 viewport.
-		bgfx::setViewRectMask(0x3, 0, 0, width, height);
+		bgfx::setViewRect(0, 0, 0, width, height);
+		bgfx::setViewRect(1, 0, 0, width, height);
 
 		// This dummy draw call is here to make sure that view 0 is cleared
 		// if no other draw calls are submitted to view 0.
@@ -341,7 +342,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 		// Set render states.
 		bgfx::setState(BGFX_STATE_DEFAULT);
 
-		// Submit primitive for rendering to view 0.
+		// Submit primitive for rendering to view 1.
 		bgfx::submit(1);
 
 
@@ -365,7 +366,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 			// Set render states.
 			bgfx::setState(BGFX_STATE_DEFAULT);
 
-			// Submit primitive for rendering to view 0.
+			// Submit primitive for rendering to view 1.
 			bgfx::submit(1);
 		}
 
@@ -389,7 +390,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 			// Set render states.
 			bgfx::setState(BGFX_STATE_DEFAULT);
 
-			// Submit primitive for rendering to view 0.
+			// Submit primitive for rendering to view 1.
 			bgfx::submit(1);
 		}
 

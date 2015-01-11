@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
@@ -13,11 +13,6 @@
 #		define D3D_DISABLE_9EX
 #	endif // !BGFX_CONFIG_RENDERER_DIRECT3D9EX
 #	include <d3d9.h>
-
-#	if BGFX_CONFIG_RENDERER_DIRECT3D9EX
-typedef HRESULT (WINAPI *Direct3DCreate9ExFn)(UINT SDKVersion, IDirect3D9Ex**);
-#	endif // BGFX_CONFIG_RENDERER_DIRECT3D9EX
-typedef IDirect3D9* (WINAPI *Direct3DCreate9Fn)(UINT SDKVersion);
 
 #elif BX_PLATFORM_XBOX360
 #	include <xgraphics.h>
@@ -43,10 +38,16 @@ typedef IDirect3D9* (WINAPI *Direct3DCreate9Fn)(UINT SDKVersion);
 #	define D3DSTREAMSOURCE_INSTANCEDATA (2<<30)
 #endif // D3DSTREAMSOURCE_INSTANCEDATA
 
+#include "renderer.h"
 #include "renderer_d3d.h"
 
 namespace bgfx
 {
+#	if defined(D3D_DISABLE_9EX)
+#		define D3DFMT_S8_LOCKABLE D3DFORMAT( 85)
+#		define D3DFMT_A1          D3DFORMAT(118)
+#	endif // defined(D3D_DISABLE_9EX)
+
 #	ifndef D3DFMT_ATI1
 #		define D3DFMT_ATI1 ( (D3DFORMAT)BX_MAKEFOURCC('A', 'T', 'I', '1') )
 #	endif // D3DFMT_ATI1
@@ -86,6 +87,14 @@ namespace bgfx
 #	ifndef D3DFMT_RAWZ
 #		define D3DFMT_RAWZ ( (D3DFORMAT)BX_MAKEFOURCC('R', 'A', 'W', 'Z') )
 #	endif // D3DFMT_RAWZ
+
+#	ifndef D3DFMT_S8_LOCKABLE
+#		define D3DFMT_S8_LOCKABLE ( (D3DFORMAT)85)
+#	endif // D3DFMT_S8_LOCKABLE
+
+#	ifndef D3DFMT_A1
+#		define D3DFMT_A1 ( (D3DFORMAT)118)
+#	endif // D3DFMT_A1
 
 	struct ExtendedFormat
 	{
@@ -197,9 +206,9 @@ namespace bgfx
 		bool m_dynamic;
 	};
 
-	struct VertexDeclaration
+	struct VertexDeclD3D9
 	{
-		VertexDeclaration()
+		VertexDeclD3D9()
 			: m_ptr(NULL)
 		{
 		}
@@ -326,7 +335,7 @@ namespace bgfx
 
 		void preReset();
 		void postReset();
-	
+
 		union
 		{
 			IDirect3DBaseTexture9*   m_ptr;
@@ -348,14 +357,18 @@ namespace bgfx
 	struct FrameBufferD3D9
 	{
 		FrameBufferD3D9()
-			: m_num(0)
+			: m_hwnd(NULL)
+			, m_denseIdx(UINT16_MAX)
+			, m_num(0)
 			, m_needResolve(0)
 		{
 			m_depthHandle.idx = invalidHandle;
 		}
 
 		void create(uint8_t _num, const TextureHandle* _handles);
-		void destroy();
+		void create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _depthFormat);
+		uint16_t destroy();
+		HRESULT present();
 		void resolve() const;
 		void preReset();
 		void postReset();
@@ -363,8 +376,12 @@ namespace bgfx
 
 		IDirect3DSurface9* m_color[BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS-1];
 		IDirect3DSurface9* m_depthStencil;
+		IDirect3DSwapChain9* m_swapChain;
+		HWND m_hwnd;
+
 		TextureHandle m_colorHandle[BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS-1];
 		TextureHandle m_depthHandle;
+		uint16_t m_denseIdx;
 		uint8_t m_num;
 		bool m_needResolve;
 	};

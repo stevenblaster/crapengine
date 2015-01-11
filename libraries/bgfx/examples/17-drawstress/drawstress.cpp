@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 Branimir Karadzic. All rights reserved.
+ * Copyright 2011-2015 Branimir Karadzic. All rights reserved.
  * License: http://www.opensource.org/licenses/BSD-2-Clause
  */
 
@@ -99,7 +99,7 @@ bgfx::ProgramHandle program;
 bgfx::VertexBufferHandle vbh;
 bgfx::IndexBufferHandle ibh;
 
-bool mainloop()
+BX_NO_INLINE bool mainloop()
 {
 	if (!entry::processEvents(width, height, debug, reset, &mouseState) )
 	{
@@ -115,7 +115,7 @@ bool mainloop()
 
 		if (deltaTimeNs > 1000000)
 		{
-			deltaTimeAvgNs = deltaTimeNs / numFrames;
+			deltaTimeAvgNs = deltaTimeNs / bx::int64_max(1, numFrames);
 
 			if (autoAdjust)
 			{
@@ -263,7 +263,7 @@ int _main_(int /*_argc*/, char** /*_argv*/)
 
 	// Set view 0 clear state.
 	bgfx::setViewClear(0
-			, BGFX_CLEAR_COLOR_BIT|BGFX_CLEAR_DEPTH_BIT
+			, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH
 			, 0x303030ff
 			, 1.0f
 			, 0

@@ -26,7 +26,7 @@ SET(SOURCES
     ${UNITTEST_SOURCEFILES}
 )
 
-message( ${DirectX_DXERR_LIBRARY} )
+#message( ${DirectX_DXERR_LIBRARY} )
 
 ADD_EXECUTABLE(crap_video_unittest ${SOURCES})
 IF(WIN32)
