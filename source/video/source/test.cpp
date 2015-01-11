@@ -95,14 +95,14 @@ void video_test::start( void )
         crap::RenderHandle vb_buffer = crap::createStaticVertexBuffer( s_cubeVertices, sizeof(s_cubeVertices), &vb_decl );
         crap::RenderHandle ib_buffer = crap::createStaticIndexBuffer( s_cubeIndices, sizeof(s_cubeIndices) );
 
-        crap::file_t* vs_file = crap::openFile( "../data/vs_instancing.bin", CRAP_FILE_READBINARY );
-        uint32_t vs_size = crap::fileSize("../data/vs_instancing.bin");
+        crap::file_t* vs_file = crap::openFile( "../../../data/vs_instancing.bin", CRAP_FILE_READBINARY );
+        uint32_t vs_size = crap::fileSize("../../../data/vs_instancing.bin");
         char* vs_memory = (char*)alloca(vs_size);
         crap::readFromFile( vs_file, vs_memory, vs_size );
         crap::RenderHandle vs_handle = crap::createShader( vs_memory, vs_size );
 
-        crap::file_t* fs_file = crap::openFile( "../data/fs_instancing.bin", CRAP_FILE_READBINARY );
-        uint32_t fs_size = crap::fileSize("../data/fs_instancing.bin");
+        crap::file_t* fs_file = crap::openFile( "../../../data/fs_instancing.bin", CRAP_FILE_READBINARY );
+        uint32_t fs_size = crap::fileSize("../../../data/fs_instancing.bin");
         char* fs_memory = (char*)alloca(fs_size);
         crap::readFromFile( fs_file, fs_memory, fs_size );
         crap::RenderHandle fs_handle = crap::createShader( fs_memory, fs_size );

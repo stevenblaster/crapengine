@@ -49,6 +49,10 @@ IF(NOT APPLE)
 ENDIF(NOT APPLE)
 ENDIF(NOT WIN32)
 
+IF(WIN32)
+	FIND_PACKAGE(DirectX)
+ENDIF(WIN32)
+
 
 #####################################
 #       Building source tree        #
@@ -67,4 +71,4 @@ SET(HEADERS
 )
 
 ADD_EXECUTABLE(crap_testprojects_testgame ${SOURCES})
-TARGET_LINK_LIBRARIES(crap_testprojects_testgame crap_core crap_audio crap_video crap_physic crap_scripting crap_engine)
+TARGET_LINK_LIBRARIES(crap_testprojects_testgame crap_core crap_audio crap_video crap_physic crap_scripting crap_engine ${DirectX_DXERR_LIBRARY})

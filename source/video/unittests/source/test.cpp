@@ -3,6 +3,8 @@
 #include "test.h"
 #include "rendercontext.h"
 
+#pragma comment(lib, "dxerr.lib")
+
 int main( void )
 {
     //crap::createStaticVertexBuffer(0,0,0);
