@@ -18,7 +18,7 @@
 #include "renderwindow.h"
 #include "eventsystem.h"
 //#include "gui/guiobject.h"
-#include "renderer.h"
+//#include "renderer.h"
 
 bool running = true; /* set to true */
 uint32_t thekey = 256;
@@ -150,8 +150,8 @@ int main( void )
 	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
 
 	//renderer
-	crap::Renderer renderer( &renderWindow );
-	renderer.init();
+//	crap::Renderer renderer( &renderWindow );
+//	renderer.init();
 
 	//inputmanager
 	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
