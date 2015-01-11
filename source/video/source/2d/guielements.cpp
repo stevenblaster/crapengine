@@ -17,15 +17,14 @@
 namespace crap
 {
 
-GuiContext* createConext( void )
+GuiContext* createGuiConext( uint32_t anitAliasing, uint32_t viewId )
 {
 	return nvgCreate(1,0);
 }
 
-void drawRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height )
+void drawColoredRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height )
 {
 	nvgBeginFrame( context, 1024, 768, 1.0f);
-	nvgBeginPath((NVGcontext*)context);
 	nvgBeginPath( context );
 	nvgRect( context, pos_x, pos_y, width, height );
 	nvgFillColor( context, nvgRGBA(255,192,0,255) );

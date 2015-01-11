@@ -236,12 +236,12 @@ int main( void )
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
-	crap::GuiContext* gc = crap::createConext();
+	crap::GuiContext* gc = crap::createGuiConext( 1,0 );
 
 	while( running && !renderWindow.shouldClose() )
 	{
 		renderer.drawBegin();
-		crap::drawRectangle( gc, 100, 100, 100, 100 );
+		crap::drawColoredRectangle( gc, 100, 100, 100, 100 );
 		renderer.drawEnd();
 		//renderWindow.swap();
 		taskManager.update();

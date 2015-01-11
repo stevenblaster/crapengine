@@ -55,13 +55,8 @@ void Renderer::init( uint32_t debugmode /* = 0 */ )
 }
 void Renderer::drawBegin( void )
 {
-	// Set view 0 default viewport.
 	bgfx::setViewRect(0, 0, 0, _window->getWidth(), _window->getHeight());
-	// This dummy draw call is here to make sure that view 0 is cleared
-	// if no other draw calls are submitted to view 0.
 	bgfx::submit(0);
-
-
 }
 
 void Renderer::drawEnd( void )

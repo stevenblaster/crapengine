@@ -24,8 +24,9 @@ namespace crap
 
 typedef NVGcontext GuiContext;
 
-GuiContext* createConext( void );
-void drawRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height );
+GuiContext* createGuiConext( uint32_t anitAliasing, uint32_t viewId );
+
+void drawColoredRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height );
 
 } /* namespace crap */
 
