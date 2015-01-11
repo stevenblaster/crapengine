@@ -34,6 +34,9 @@ public:
 
 	void init( uint32_t debugmode = 0 );
 
+	void drawBegin( void );
+	void drawEnd( void );
+
 private:
 	RenderWindow*			_window;
 };
