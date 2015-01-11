@@ -18,6 +18,8 @@
 #include "renderwindow.h"
 #include "renderer.h"
 
+#pragma comment( lib, "Psapi.lib" )
+
 namespace crap
 {
 

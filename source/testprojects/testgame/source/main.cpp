@@ -20,6 +20,8 @@
 #include "2d/guielements.h"
 #include "renderer.h"
 
+
+
 bool running = true; /* set to true */
 uint32_t thekey = 256;
 void exitFunc( uint32_t state )
