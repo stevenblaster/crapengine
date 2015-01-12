@@ -11,7 +11,7 @@
 
 set(SOURCES
    ${SOURCES}
-   ${CMAKE_CURRENT_SOURCE_DIR}/2delements.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/guimanager.cpp
+#   ${CMAKE_CURRENT_SOURCE_DIR}/guielements.cpp
+#   ${CMAKE_CURRENT_SOURCE_DIR}/guimanager.cpp
    PARENT_SCOPE
 )

@@ -13,8 +13,8 @@ set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/guiobject.h
    ${CMAKE_CURRENT_SOURCE_DIR}/interactiveguiobject.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/dynamicguiobject.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/logger.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/guielements.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/guimanager.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/strings.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h
    PARENT_SCOPE

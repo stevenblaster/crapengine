@@ -16,16 +16,17 @@
 #include "config/crap_platform.h"
 #include "config/crap_compiler.h"
 #include "system.h"
-
-#include "guiimagefilter.h"
 #include "resourcemanager.h"
-#include "system.h"
+#include "gui/guimanager.h"
+#include "gui/guielements.h"
+#include "guiimagefilter.h"
 
 namespace crap
 {
 
-GuiImageFilter::GuiImageFilter( ResourceManager* manager ) : ResourceFilter( "GuiImageFilter", manager )
+GuiImageFilter::GuiImageFilter( ResourceManager* manager ) : ResourceFilter( "GuiImage", manager )
 {
+
 
 }
 
@@ -35,6 +36,9 @@ GuiImageFilter::~GuiImageFilter( void )
 
 void GuiImageFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system )
 {
+	GuiManager* manager = system->getSubSystem<crap::GuiManager>("GuiManager");
+	GuiImage image = crap::createGuiImage( manager->getContext(), memory, memSize , 0 );
+	manager->addGuiImage( name, image );
 //    AudioFile file;
 //
 //    pointer_t<AudioHeader> ptr = memory.as_void;

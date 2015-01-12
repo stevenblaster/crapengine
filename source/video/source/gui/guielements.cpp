@@ -12,27 +12,32 @@
  */
 
 #include "nanovg/nanovg.h"
-#include "2d/2delements.h"
+#include "gui/guielements.h"
 
 namespace crap
 {
 
-2DContext* create2DConext( uint32_t anitAliasing, uint32_t viewId )
+GuiContext* createGuiContext( uint32_t anitAliasing, uint32_t viewId )
 {
 	return nvgCreate(1,0);
 }
 
-void draw2DBegin( 2DContext* context, uint32_t width, uint32_t height, float32_t bufferRatio )
+void destroyGuiContext( GuiContext* context )
+{
+	nvgDelete( context);
+}
+
+void drawGuiBegin( GuiContext* context, uint32_t width, uint32_t height, float32_t bufferRatio )
 {
 	nvgBeginFrame( context, width, height, bufferRatio );
 }
 
-void draw2DEnd( 2DContext* context )
+void drawGuiEnd( GuiContext* context )
 {
 	nvgEndFrame(context);
 }
 
-void drawColoredRectangleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+void drawColoredRectangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -53,13 +58,13 @@ void drawColoredRectangleBorder( 2DContext* context, float32_t pos_x, float32_t 
 	nvgRestore( context );
 }
 
-void drawColoredRectangle( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+void drawColoredRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a)
 {
 	drawColoredRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0 );
 }
 
-void drawColoredRoundedRectangleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+void drawColoredRoundedRectangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, float32_t corner )
 {
@@ -81,13 +86,13 @@ void drawColoredRoundedRectangleBorder( 2DContext* context, float32_t pos_x, flo
 	nvgRestore( context );
 }
 
-void drawColoredRoundedRectangle( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+void drawColoredRoundedRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t corner )
 {
 	drawColoredRoundedRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0, corner );
 }
 
-void drawColoredCircleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawColoredCircleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
 		uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -102,13 +107,13 @@ void drawColoredCircleBorder( 2DContext* context, float32_t pos_x, float32_t pos
 	nvgRestore( context );
 }
 
-void drawColoredCircle( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawColoredCircle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
 		uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a )
 {
 	drawColoredCircleBorder( context, pos_x, pos_y, radius, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0 );
 }
 
-void drawColorPathBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
+void drawColorPathBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -151,13 +156,13 @@ void drawColorPathBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, 
 	nvgRestore( context );
 }
 
-void drawColorPath( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
+void drawColorPath( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a)
 {
 	drawColorPathBorder( context, pos_x, pos_y, path, path_size, rotation, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0 );
 }
 
-void drawColorTriangleBorder(2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+void drawColorTriangleBorder(GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -174,7 +179,7 @@ void drawColorTriangleBorder(2DContext* context, float32_t pos_x, float32_t pos_
 			stroke_g, stroke_b, stroke_a );
 }
 
-void drawColorTriangle(2DContext* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
+void drawColorTriangle(GuiContext* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a )
 {
 	drawColorTriangleBorder( context, pos_x, pos_y, width, height, rotation, fill_r, fill_g, fill_b, fill_a, 0.f,0,0,0,0 );
@@ -182,18 +187,18 @@ void drawColorTriangle(2DContext* context, float32_t pos_x, float32_t pos_y, uin
 
 //IMAGES
 
-2DImage create2DImage( 2DContext* context, pointer_t<void> memory, uint32_t size, uint32_t flags )
+GuiImage createGuiImage( GuiContext* context, pointer_t<void> memory, uint32_t size, uint32_t flags )
 {
 	return nvgCreateImageMem( context, flags, memory.as_uint8_t, size );
 }
 
-void destroy2DImage( 2DContext* context, 2DImage image )
+void destroyGuiImage( GuiContext* context, GuiImage image )
 {
 	nvgDeleteImage( context, image );
 }
 
-void drawImageRectangleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageRectangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a  )
 {
@@ -214,16 +219,16 @@ void drawImageRectangleBorder( 2DContext* context, float32_t pos_x, float32_t po
 	nvgRestore( context );
 }
 
-void drawImageRectangle( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
-		float32_t rotation,  2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+		float32_t rotation,  GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
 	drawImageRectangleBorder(context, pos_x, pos_y,width,height,rotation,image,img_alpha,img_rotation,ipos_x,ipos_y,iwidth,iheight,
 			 0.f, 0,0,0,0 );
 }
 
-void drawImageRoundedRectangleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageRoundedRectangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, float32_t corner )
 {
@@ -244,16 +249,16 @@ void drawImageRoundedRectangleBorder( 2DContext* context, float32_t pos_x, float
 	nvgRestore( context );
 }
 
-void drawImageRoundedRectangle( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageRoundedRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight,  float32_t corner )
 {
 	drawImageRoundedRectangleBorder( context, pos_x, pos_y, width, height, rotation, image, img_alpha,
 			img_rotation, ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0, corner );
 }
 
-void drawImageCircleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
-		2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageCircleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+		GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -268,15 +273,15 @@ void drawImageCircleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y
 	nvgRestore( context );
 }
 
-void drawImageCircle( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
-		2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageCircle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+		GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
 	drawImageCircleBorder( context, pos_x, pos_y, radius, image, img_alpha, img_rotation, ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0);
 }
 
-void drawImagePathBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImagePathBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -319,15 +324,15 @@ void drawImagePathBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, 
 	nvgRestore( context );
 }
 
-void drawImagePath( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImagePath( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
 	drawImagePathBorder(context,pos_x,pos_y,path,path_size,rotation,image,img_alpha,img_rotation,ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0 );
 }
 
-void drawImageTriangleBorder( 2DContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageTriangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
@@ -344,8 +349,8 @@ void drawImageTriangleBorder( 2DContext* context, float32_t pos_x, float32_t pos
 			stroke_g, stroke_b, stroke_a );
 }
 
-void drawImageTriangle(2DContext* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
-		float32_t rotation, 2DImage image, float32_t img_alpha, float32_t img_rotation,
+void drawImageTriangle(GuiContext* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
+		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
 	drawImageTriangleBorder( context, pos_x, pos_y, width, height, rotation,  image,img_alpha,img_rotation,ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0 );
