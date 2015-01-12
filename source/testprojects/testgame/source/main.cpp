@@ -17,7 +17,7 @@
 #include "controllerinput.h"
 #include "renderwindow.h"
 #include "eventsystem.h"
-#include "2d/guielements.h"
+#include "2d/2delements.h"
 #include "renderer.h"
 
 
@@ -236,18 +236,21 @@ int main( void )
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
-	crap::GuiContext* gc = crap::createGuiConext( 1,0 );
+	crap::2DContext* gc = crap::create2DConext( 1,0 );
 
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
 	{
 		renderer.drawBegin();
-		crap::drawGuiBegin( gc, renderWindow.getWidth(), renderWindow.getHeight(), 1.f );
+		crap::draw2DBegin( gc, renderWindow.getWidth(), renderWindow.getHeight(), 1.f );
 		crap::drawColoredRectangle( gc, 100.f, 100.f, 100.f, 100.f, -rot*0.1, 255, 0, 255, 255 );
 		crap::drawColoredCircle( gc, 500.f, (int32_t)(rot*100) % renderWindow.getHeight(), 50.f, 255, 0, 0, 255 );
 		rot += 0.1f;
 		crap::drawColoredRoundedRectangle( gc, 150.f, 150.f, 200.f, 200.f, rot, 0, 0, 255, 128, 20.f );
-		crap::drawGuiEnd( gc );
+
+		crap::drawColorTriangle( gc, 400, 400, 140, 100, 0.f, 0, 255, 0, 255 );
+
+		crap::draw2DEnd( gc );
 		renderer.drawEnd();
 		//renderWindow.swap();
 		taskManager.update();
