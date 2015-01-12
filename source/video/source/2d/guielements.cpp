@@ -38,13 +38,18 @@ void drawColoredRectangleBorder( GuiContext* context, float32_t pos_x, float32_t
 {
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgRotate( context, rotation*NVG_PI*2 );
-	nvgRect( context, pos_x, pos_y, width, height );
+	nvgTranslate( context, width/2 + pos_x, height/2 + pos_y);
+
+	nvgSave( context );
+	nvgRotate( context, rotation );
+	nvgRect( context, -width/2, -height/2, width, height );
 	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );
 	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );
+	nvgRestore( context );
+	
 	nvgRestore( context );
 }
 
@@ -58,15 +63,21 @@ void drawColoredRoundedRectangleBorder( GuiContext* context, float32_t pos_x, fl
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, float32_t corner )
 {
+
 	nvgSave( context );
 	nvgBeginPath( context );
+	nvgTranslate( context, width/2 + pos_x, height/2 + pos_y);
+
+	nvgSave( context );
 	nvgRotate( context, rotation );
-	nvgRoundedRect( context, pos_x, pos_y, width, height, corner );
+	nvgRoundedRect( context, -width/2, -height/2, width, height, corner );
 	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );
 	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );
+	nvgRestore( context );
+	
 	nvgRestore( context );
 }
 
