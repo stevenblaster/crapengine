@@ -240,7 +240,9 @@ int main( void )
 	crap::GuiManager guiManager(10);
 	crap::SubSystem gui_sys( "GuiManager", &guiManager, &system );
 
-	crap::GuiContext* gc = crap::createGuiContext( 1,0 );
+	crap::GuiContext* gc = guiManager.getContext();
+	resourceManager.loadResource( "Hasi" );
+	uint32_t guiImage = guiManager.getGuiImage("Hasi");
 
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
@@ -253,6 +255,8 @@ int main( void )
 		crap::drawColoredRoundedRectangle( gc, 150.f, 150.f, 200.f, 200.f, rot, 0, 0, 255, 128, 20.f );
 
 		crap::drawColorTriangle( gc, 400, 400, 140, 100, 0.f, 0, 255, 0, 255 );
+
+		crap::drawImageRectangle( gc, (int32_t)(rot*100) % renderWindow.getWidth(), 400, 100, 100, rot, guiImage, 1.f, 0.f, 58.f, 50.f, 116.f, 100.f );
 
 		crap::drawGuiEnd( gc );
 		renderer.drawEnd();

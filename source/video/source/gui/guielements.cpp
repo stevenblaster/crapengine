@@ -211,6 +211,7 @@ void drawImageRectangleBorder( GuiContext* context, float32_t pos_x, float32_t p
 	nvgRect( context, -width/2, -height/2, width, height );
 	NVGpaint paint = nvgImagePattern( context, ipos_x, ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
+	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );

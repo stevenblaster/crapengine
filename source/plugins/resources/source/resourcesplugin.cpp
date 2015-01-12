@@ -17,6 +17,8 @@
 
 #include "wavefilefilter.h"
 #include "audiofilter.h"
+#include "guiimagefilter.h"
+
 #include "resourcemanager.h"
 #include "system.h"
 #include "plugin.h"
@@ -29,7 +31,8 @@ CRAP_DECLARE_PLUGIN( ResourcesPlugin )
 public:
 	ResourcesPlugin( System* system ) :
 		_waveFilter(system->getSubSystem<ResourceManager>("ResourceManager")),
-		_audioFilter(system->getSubSystem<ResourceManager>("ResourceManager"))
+		_audioFilter(system->getSubSystem<ResourceManager>("ResourceManager")),
+		_guiImageFilter(system->getSubSystem<ResourceManager>("ResourceManager"))
 	{
 	}
 
@@ -53,6 +56,7 @@ public:
 private:
     crap::WaveFileFilter _waveFilter;
     crap::AudioFilter	_audioFilter;
+    crap::GuiImageFilter _guiImageFilter;
 };
 
 CRAP_PLUGIN_FACTORY( ResourcesPlugin )
