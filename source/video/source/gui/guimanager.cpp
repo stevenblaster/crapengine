@@ -51,6 +51,7 @@ void GuiManager::removeGuiImage( string_hash name )
 	const uint32_t index = _images.find( name );
 	if( index != GuiImageMap::INVALID )
 	{
+		destroyGuiImage( _guiContext, *_images.get_value(index) );
 		_images.erase_at(index);
 	}
 }

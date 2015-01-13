@@ -242,7 +242,9 @@ int main( void )
 
 	crap::GuiContext* gc = guiManager.getContext();
 	resourceManager.loadResource( "Hasi" );
+	resourceManager.loadResource( "Mieze" );
 	uint32_t guiImage = guiManager.getGuiImage("Hasi");
+	uint32_t guiImage2 = guiManager.getGuiImage("Mieze");
 
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
@@ -256,13 +258,18 @@ int main( void )
 
 		crap::drawColorTriangle( gc, 400, 400, 140, 100, 0.f, 0, 255, 0, 255 );
 
-		crap::drawImageRectangle( gc, (int32_t)(rot*100) % renderWindow.getWidth(), 400, 100, 100, rot, guiImage, 1.f, 0.f, 58.f, 50.f, 116.f, 100.f );
+		crap::drawImageRectangle( gc, (int32_t)(rot*10) % renderWindow.getWidth(), 400, 100, 100, rot*0.1, guiImage, 1.f, 0.f, 0.f, 0.f, 100.f, 100.f );
+
+		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, 0,0,100,100);
 
 		crap::drawGuiEnd( gc );
 		renderer.drawEnd();
 		//renderWindow.swap();
 		taskManager.update();
 	}
+
+	guiManager.removeGuiImage( "Mieze" );
+	guiManager.removeGuiImage( "Hasi" );
 
 	renderWindow.destroy();
 

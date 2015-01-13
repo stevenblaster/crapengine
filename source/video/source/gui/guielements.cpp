@@ -14,6 +14,8 @@
 #include "nanovg/nanovg.h"
 #include "gui/guielements.h"
 
+#pragma comment( lib, "Psapi.lib" )
+
 namespace crap
 {
 
@@ -209,7 +211,7 @@ void drawImageRectangleBorder( GuiContext* context, float32_t pos_x, float32_t p
 	nvgSave( context );
 	nvgRotate( context, rotation );
 	nvgRect( context, -width/2, -height/2, width, height );
-	NVGpaint paint = nvgImagePattern( context, ipos_x, ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
+	NVGpaint paint = nvgImagePattern( context, ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
 	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
@@ -240,8 +242,9 @@ void drawImageRoundedRectangleBorder( GuiContext* context, float32_t pos_x, floa
 	nvgSave( context );
 	nvgRotate( context, rotation );
 	nvgRoundedRect( context, -width/2, -height/2, width, height, corner );
-	NVGpaint paint = nvgImagePattern( context, ipos_x, ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
+	NVGpaint paint = nvgImagePattern( context,ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
+	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );
@@ -266,8 +269,9 @@ void drawImageCircleBorder( GuiContext* context, float32_t pos_x, float32_t pos_
 	nvgSave( context );
 	nvgBeginPath( context );
 	nvgCircle( context, pos_x, pos_y, radius );
-	NVGpaint paint = nvgImagePattern( context, ipos_x, ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
+	NVGpaint paint = nvgImagePattern( context, ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
+	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );
@@ -315,8 +319,9 @@ void drawImagePathBorder( GuiContext* context, float32_t pos_x, float32_t pos_y,
 		nvgLineTo( context, path[i], path[i+1]);
 	}
 	nvgClosePath( context );
-	NVGpaint paint = nvgImagePattern( context, ipos_x, ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
+	NVGpaint paint = nvgImagePattern( context, ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
+	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );
