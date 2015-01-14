@@ -56,5 +56,8 @@ void GuiManager::removeGuiImage( string_hash name )
 	}
 }
 
+GuiObject* GuiManager::getRoot( void ) { return &_root; }
+GuiObject GuiManager::_root( "ROOT", &GuiManager::_root, 0, 0, 800, 600, true, true, GuiObject::top, GuiObject::left );
+
 
 } /* namespace crap */

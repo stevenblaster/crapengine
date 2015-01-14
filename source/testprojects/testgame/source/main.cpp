@@ -232,8 +232,8 @@ int main( void )
 	am->setListenerData( zero, zero, dir );
 	am->playSource( sid );
 
-	while( am->getIsPlaying(sid) )
-		crap::sleep_mil_sec(100);
+//	while( am->getIsPlaying(sid) )
+//		crap::sleep_mil_sec(100);
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
@@ -258,9 +258,9 @@ int main( void )
 
 		crap::drawColorTriangle( gc, 400, 400, 140, 100, 0.f, 0, 255, 0, 255 );
 
-		crap::drawImageRectangle( gc, (int32_t)(rot*10) % renderWindow.getWidth(), 400, 100, 100, rot*0.1, guiImage, 1.f, 0.f, 0.f, 0.f, 100.f, 100.f );
+		crap::drawImageRectangle( gc, (int32_t)(rot*10) % renderWindow.getWidth(), 400, 100, 100, rot*0.1, guiImage, 1.f, 0.f, 0.f, 0.f, 1.f );
 
-		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, 0,0,100,100);
+		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, -10,10-rot*2, 0.3f);
 
 		crap::drawGuiEnd( gc );
 		renderer.drawEnd();

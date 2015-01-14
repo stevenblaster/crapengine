@@ -26,10 +26,26 @@ class GuiObject
 
 public:
 
+	friend class GuiManager;
+
+	enum Valign
+	{
+		top,
+		bottom
+	};
+
+	enum Halign
+	{
+		left,
+		right
+	};
+
 	typedef intrusive_list<GuiObject> GuiObjectList;
 	typedef intrusive_node<GuiObject> GuiObjectNode;
 
-	GuiObject( string_hash type, GuiObject* parent, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height );
+	GuiObject( string_hash type, GuiObject* parent, float32_t pos_x, float32_t pos_y,
+			float32_t width, float32_t height, bool pos_abs, bool size_abs, Valign val, Halign hal );
+
 	virtual ~GuiObject( void );
 
 	CRAP_INLINE uint32_t getTypeID( void ) const { return _typeid.hash(); }
@@ -49,22 +65,41 @@ public:
 	CRAP_INLINE float32_t getHeight( void ) const { return _height; }
 	CRAP_INLINE void setHeight( float32_t h ) { _height = h; }
 
-	CRAP_INLINE uint32_t getAbsPosX( void ) const { return _abs_pos_x; }
-	CRAP_INLINE uint32_t getAbsPosY( void ) const { return _abs_pos_y; }
-	CRAP_INLINE uint32_t getAbsWidth( void ) const { return _abs_width; }
-	CRAP_INLINE uint32_t getAbsHeight( void ) const { return _abs_height; }
+	CRAP_INLINE uint32_t getPixelPosX( void ) const { return _abs_pos_x; }
+	CRAP_INLINE uint32_t getPixelPosY( void ) const { return _abs_pos_y; }
+	CRAP_INLINE uint32_t getPixelWidth( void ) const { return _abs_width; }
+	CRAP_INLINE uint32_t getPixelHeight( void ) const { return _abs_height; }
+
+	CRAP_INLINE bool hasAbsPosition( void ) const { return _pos_abs; }
+	CRAP_INLINE bool hasAbsSize( void ) const { return _pos_abs; }
+
+	CRAP_INLINE Halign getHAlign( void ) const { return _halign; }
+	CRAP_INLINE void setHAlign( Halign halign ) { _halign = halign; }
+
+	CRAP_INLINE Valign getVAlign( void ) const { return _valign; }
+	CRAP_INLINE void setVAlign( Valign valign ) { _valign = valign; }
 
 	virtual void draw( void ) {}
 
 	CRAP_INLINE bool isInside( uint32_t x, uint32_t y ) const
 	{ return x > _abs_pos_x && x < (_abs_pos_x + _abs_width) && y > _abs_pos_y && y < (_abs_pos_y + _abs_height); }
 
-	static GuiObject* getRoot( void );
 
 protected:
 
-	void updateAbsPosition( void );
-	void updateAbsSize( void );
+	virtual void updatePixelPosition( void );
+	virtual void updatePixelSize( void );
+
+	CRAP_INLINE void setParent( GuiObject* parent )
+	{
+		if( _parent != 0 )
+		{
+			_parent->_children.erase( &_node );
+		}
+
+		parent->_children.push_back( &_node );
+		_parent = parent;
+	}
 
 	GuiObject*					_parent;
 	GuiObjectNode				_node;
@@ -80,9 +115,12 @@ protected:
 	uint32_t					_abs_width;
 	uint32_t					_abs_height;
 
-	string_hash					_typeid;
+	bool						_pos_abs;
+	bool						_size_abs;
+	Valign						_valign;
+	Halign						_halign;
 
-	static GuiObject			_root;
+	string_hash					_typeid;
 };
 
 } /* namespace crap */

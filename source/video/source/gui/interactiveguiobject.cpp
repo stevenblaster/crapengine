@@ -17,7 +17,7 @@ namespace crap
 {
 
 InteractiveGuiObject::InteractiveGuiObject(GuiObject* parent, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height) :
-		GuiObject( "InteractiveGuiObject", parent, pos_x, pos_y, width, height ), _hover(false)
+		GuiObject( "InteractiveGuiObject", parent, pos_x, pos_y, width, height, true, true, GuiObject::top, GuiObject::left  ), _hover(false)
 {
 
 }

@@ -19,6 +19,7 @@
 #include "container/arraymap.h"
 #include "memory.h"
 #include "strings.h"
+#include "gui/guiobject.h"
 
 #ifdef CRAP_NO_DEBUG
 #define GUI_MEMORY SimpleGeneralMemory
@@ -49,10 +50,13 @@ public:
 
 	CRAP_INLINE GuiContext* getContext( void ) { return _guiContext; }
 
+	static GuiObject* getRoot( void );
 private:
 	GUI_MEMORY						_allocator;
 	GuiImageMap			 			_images;
 	GuiContext*						_guiContext;
+
+	static GuiObject				_root;
 };
 
 }

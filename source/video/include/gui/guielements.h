@@ -80,48 +80,48 @@ void destroyGuiImage( GuiContext* context, GuiImage );
 
 void drawImageRectangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth_x, float32_t iheight_x, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImageRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation,  GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
 
 void drawImageRoundedRectangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, float32_t corner );
 
 void drawImageRoundedRectangle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t corner );
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t corner );
 
 void drawImageCircleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
 		GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImageCircle( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t radius,
 		GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
 
 void drawImagePathBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImagePath( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
 
 void drawImageTriangleBorder( GuiContext* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImageTriangle(GuiContext* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
 		float32_t rotation, GuiImage image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
+		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
 
 } /* namespace crap */
 
