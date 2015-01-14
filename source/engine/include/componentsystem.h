@@ -17,6 +17,7 @@
 
 #include "utilities.h"
 #include "strings.h"
+#include "container/indexedarray.h"
 #include "container/intrusivelist.h"
 #include "memory.h"
 
@@ -30,14 +31,18 @@ namespace crap
 {
 class Component;
 class ComponentFactory;
+class Node;
 
 class ComponentSystem
 {
 public:
-	ComponentSystem( uint32_t memory_size );
+	ComponentSystem( uint32_t memory_size, uint32_t max_nodes );
 	~ComponentSystem( void );
 
-	Component* createComponent( string_hash name );
+	Node* createNode( void );
+	void destroyNode( Node* node );
+
+	Component* createComponent( string_hash name, Node* node );
 	void destroyComponent( Component* component );
 	void setComponentMember( Component* component, string_hash name, const string64& data );
 
@@ -47,6 +52,7 @@ public:
 private:
 
 	COMPONENT_MEMORY					_allocator;
+	indexed_array<Node>					_nodes;
 	intrusive_list<ComponentFactory> 	_factoryList;
 };
 

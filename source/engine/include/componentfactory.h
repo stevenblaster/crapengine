@@ -22,7 +22,7 @@
 
 namespace crap
 {
-
+class Node;
 class Component;
 class ComponentSystem;
 class System;
@@ -36,7 +36,7 @@ public:
 
 	virtual ~ComponentFactory( void ) {}
 
-	virtual Component* createComponent( void ) { return 0; }
+	virtual Component* createComponent( Node* node ) { return 0; }
 	virtual void destroyComponent( Component* component ) {}
 
 	virtual void setComponentMember( Component* component, string_hash name, const string64& data ) {}

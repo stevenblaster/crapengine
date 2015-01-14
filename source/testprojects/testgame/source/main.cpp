@@ -20,7 +20,7 @@
 #include "gui/guielements.h"
 #include "gui/guimanager.h"
 #include "renderer.h"
-
+#include "node.h"
 
 
 bool running = true; /* set to true */
@@ -139,7 +139,8 @@ int main( void )
 
 	//componentsystem
 	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");
-	crap::ComponentSystem componentSystem( componentMemory );
+	const uint32_t componentMaxNodes = config.getValue<uint32_t>("COMPONENT_MAX_NODES");
+	crap::ComponentSystem componentSystem( componentMemory, componentMaxNodes );
 
 	//set componentsystem as subsystem
 	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
@@ -207,7 +208,8 @@ int main( void )
 //	crap::GuiObject chil( "", crap::GuiObject::getRoot(), 0.33f, 0.33f, 0.33f, 0.33f );
 //	crap::GuiObject chil2( "", &chil, 0.33f, 0.33f, 0.33f, 0.33f );
 
-	crap::Component* comp = componentSystem.createComponent("TestComponent");
+	crap::Node* cnode = componentSystem.createNode();
+	crap::Component* comp = componentSystem.createComponent("TestComponent", cnode );
 
 	componentSystem.setComponentMember( comp, "neZahl", "567" );
 	comp->init( &system );

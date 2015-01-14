@@ -15,11 +15,13 @@
 #ifndef ENGINE_INCLUDE_COMPONENT_H_
 #define ENGINE_INCLUDE_COMPONENT_H_
 
+#include "container/intrusivelist.h"
 #include "utilities.h"
 #include "convert.h"
 
 namespace crap
 {
+class Node;
 class System;
 
 class Component
@@ -28,17 +30,19 @@ public:
 
 	friend class ComponentFactory;
 
-	CRAP_INLINE Component( uint32_t type ) : _typeID(type) {}
+	Component( uint32_t type, Node* node );
 	virtual ~Component( void ) {}
 
-	uint64_t getGlobalID( void ) const { return _globalID; }
-	uint32_t getTypeID( void ) const { return _typeID; }
-	uint32_t getComponentID( void ) const { return _componentID; }
+	CRAP_INLINE uint64_t getGlobalID( void ) const { return _globalID; }
+	CRAP_INLINE uint32_t getTypeID( void ) const { return _typeID; }
+	CRAP_INLINE uint32_t getComponentID( void ) const { return _componentID; }
+
+	Component* getNeighbour( uint32_t typeId );
 
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}
 
-	void setComponentID( uint64_t cid ) { _componentID = cid; }
+	CRAP_INLINE void setComponentID( uint64_t cid ) { _componentID = cid; }
 
 protected:
 
@@ -51,6 +55,9 @@ protected:
 			uint32_t _componentID;
 		};
 	};
+
+	Node*		_parent;
+	intrusive_node<Component> _node;
 };
 
 #define DECLARE_COMPONENT_MEMBER( classname, varname, vartype )					\

@@ -23,6 +23,7 @@
 #include "componentsystem.h"
 #include "strings.h"
 #include "delegates.h"
+#include "node.h"
 
 namespace crap
 {
@@ -61,9 +62,9 @@ public:
 		_system->allocator()->deallocate( _components.memory().as_type );
 	}
 
-	virtual Component* createComponent( void )
+	virtual Component* createComponent( Node* node )
 	{
-		uint32_t cid = _components.push_back( T( id() ) );
+		uint32_t cid = _components.push_back( T( id(), node ) );
 		T* var = _components.get(cid);
 		var->setComponentID(cid);
 

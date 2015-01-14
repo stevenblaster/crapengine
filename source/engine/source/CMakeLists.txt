@@ -23,5 +23,7 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/componenttype.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/taskmanager.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/eventsystem.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/node.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/component.cpp
    PARENT_SCOPE
 )

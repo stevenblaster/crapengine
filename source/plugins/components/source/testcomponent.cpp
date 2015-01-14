@@ -16,12 +16,13 @@
 #include <cstdio>
 #include "testcomponent.h"
 #include "plugin.h"
+#include "node.h"
 #include "componenttype.h"
 
 namespace crap
 {
 
-TestComponent::TestComponent( uint32_t typeID ) : Component( typeID )
+TestComponent::TestComponent( uint32_t typeID, Node* node ) : Component( typeID, node ), _neZahl(0)
 {
 	REGISTER_COMPONENT_MEMBER( TestComponent, neZahl, uint32_t );
 }

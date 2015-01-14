@@ -1,9 +1,10 @@
 
-#include "resourcemanager.h"
+
 #include "file.h"
 #include "logger.h"
 #include "xml/tinyxml2.h"
 #include "system.h"
+#include "resourcemanager.h"
 
 namespace crap
 {
