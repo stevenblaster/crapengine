@@ -76,27 +76,27 @@ void RenderWindow::swap( void )
 	glfwSwapBuffers( _handle );
 }
 
-void RenderWindow::setWindowCloseFunction( void(*windowCloseFunction)(window_t*) )
+void RenderWindow::setWindowCloseFunction( void(*windowCloseFunction)(GLFWwindow*) )
 {
 	glfwSetWindowCloseCallback( _handle, windowCloseFunction );
 }
 
-void RenderWindow::setWindowFocusFunction( void(*windowFocusFunction)(window_t*, int32_t) )
+void RenderWindow::setWindowFocusFunction( void(*windowFocusFunction)(GLFWwindow*, int32_t) )
 {
 	glfwSetWindowFocusCallback( _handle, windowFocusFunction );
 }
 
-void RenderWindow::setWindowIconifyFunction( void(*windowIconifyFunction)(window_t*, int32_t) )
+void RenderWindow::setWindowIconifyFunction( void(*windowIconifyFunction)(GLFWwindow*, int32_t) )
 {
 	glfwSetWindowIconifyCallback( _handle, windowIconifyFunction );
 }
 
-void RenderWindow::setWindowPositionFunction( void(*windowPositionFunction)(window_t*, int32_t, int32_t) )
+void RenderWindow::setWindowPositionFunction( void(*windowPositionFunction)(GLFWwindow*, int32_t, int32_t) )
 {
 	glfwSetWindowPosCallback( _handle, windowPositionFunction );
 }
 
-void RenderWindow::setWindowSizeFunction( void(*windowSizeFunction)(window_t*, int32_t, int32_t) )
+void RenderWindow::setWindowSizeFunction( void(*windowSizeFunction)(GLFWwindow*, int32_t, int32_t) )
 {
 	glfwSetWindowSizeCallback( _handle, windowSizeFunction );
 }

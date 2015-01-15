@@ -15,5 +15,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/interactiveguiobject.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/guielements.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/guimanager.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/guisystem.cpp
    PARENT_SCOPE
 )

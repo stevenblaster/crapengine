@@ -154,7 +154,7 @@ int main( void )
 	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
 
 	//renderer
-	crap::Renderer renderer( &renderWindow );
+	crap::Renderer renderer( &renderWindow, 10 );
 	renderer.init();
 
 	//inputmanager
