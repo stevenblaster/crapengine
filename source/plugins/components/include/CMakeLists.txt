@@ -12,10 +12,10 @@
 set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/testcomponent.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/packetinformation.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/udpconnection.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/udpreliability.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/udperrorgenerator.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/transformation2d.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/rectangle.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/roundedrectangle.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/circle.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/networkcommandqueue.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpnetwork.h
    PARENT_SCOPE

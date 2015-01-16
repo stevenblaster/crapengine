@@ -17,8 +17,8 @@
 #include "controllerinput.h"
 #include "renderwindow.h"
 #include "eventsystem.h"
-#include "gui/guielements.h"
-#include "gui/guimanager.h"
+#include "elements2d.h"
+#include "renderer2d.h"
 #include "renderer.h"
 #include "node.h"
 
@@ -208,13 +208,13 @@ int main( void )
 //	crap::GuiObject chil( "", crap::GuiObject::getRoot(), 0.33f, 0.33f, 0.33f, 0.33f );
 //	crap::GuiObject chil2( "", &chil, 0.33f, 0.33f, 0.33f, 0.33f );
 
-	crap::Node* cnode = componentSystem.createNode();
-	crap::Component* comp = componentSystem.createComponent("TestComponent", cnode );
-
-	componentSystem.setComponentMember( comp, "neZahl", "567" );
-	comp->init( &system );
-	comp->deinit( &system );
-	componentSystem.destroyComponent( comp );
+//	crap::Node* cnode = componentSystem.createNode();
+//	crap::Component* comp = componentSystem.createComponent("TestComponent", cnode );
+//
+//	componentSystem.setComponentMember( comp, "neZahl", "567" );
+//	comp->init( &system );
+//	comp->deinit( &system );
+//	componentSystem.destroyComponent( comp );
 
 	crap::Configuration* testconf = system.getSubSystem<crap::Configuration>( "Configuration" );
 	if( testconf != 0 )
@@ -239,20 +239,26 @@ int main( void )
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
-	crap::GuiManager guiManager(10);
-	crap::SubSystem gui_sys( "GuiManager", &guiManager, &system );
+	crap::Renderer2D renderer2D( &renderer, 10, 100 );
+	crap::SubSystem renderer2d_sys( "Renderer2D", &renderer2D, &system );
 
-	crap::GuiContext* gc = guiManager.getContext();
+	crap::Context2D* gc = renderer2D.getContext();
 	resourceManager.loadResource( "Hasi" );
 	resourceManager.loadResource( "Mieze" );
-	uint32_t guiImage = guiManager.getGuiImage("Hasi");
-	uint32_t guiImage2 = guiManager.getGuiImage("Mieze");
+	uint32_t guiImage = renderer2D.getImage2D("Hasi");
+	uint32_t guiImage2 = renderer2D.getImage2D("Mieze");
+
+	crap::Node* cnode = componentSystem.createNode();
+	crap::Component* trans2d = componentSystem.createComponent("Transformation2D", cnode );
+	trans2d->init( &system );
+	crap::Component* circle2d = componentSystem.createComponent("Circle", cnode );
+	circle2d->init(&system);
 
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
 	{
 		renderer.drawBegin();
-		crap::drawGuiBegin( gc, renderWindow.getWidth(), renderWindow.getHeight(), 1.f );
+		crap::draw2DBegin( gc, renderWindow.getWidth(), renderWindow.getHeight(), 1.f );
 		crap::drawColoredRectangle( gc, 100.f, 100.f, 100.f, 100.f, -rot*0.1, 255, 0, 255, 255 );
 		crap::drawColoredCircle( gc, 500.f, (int32_t)(rot*100) % renderWindow.getHeight(), 50.f, 255, 0, 0, 255 );
 		rot += 0.1f;
@@ -264,14 +270,16 @@ int main( void )
 
 		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, -10,10-rot*2, 0.3f);
 
-		crap::drawGuiEnd( gc );
+		renderer2D.render();
+
+		crap::draw2DEnd( gc );
 		renderer.drawEnd();
 		//renderWindow.swap();
 		taskManager.update();
 	}
 
-	guiManager.removeGuiImage( "Mieze" );
-	guiManager.removeGuiImage( "Hasi" );
+	renderer2D.removeImage2D( "Mieze" );
+	renderer2D.removeImage2D( "Hasi" );
 
 	renderWindow.destroy();
 

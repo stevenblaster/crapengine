@@ -17,6 +17,7 @@
 
 #include "container/intrusivelist.h"
 #include "utilities.h"
+#include "strings.h"
 #include "convert.h"
 
 namespace crap
@@ -38,7 +39,7 @@ public:
 	CRAP_INLINE uint32_t getComponentID( void ) const { return _componentID; }
 
 	Node*	getNode( void );
-	Component* getNeighbour( uint32_t typeId );
+	Component* getNeighbour( string_hash type );
 
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}

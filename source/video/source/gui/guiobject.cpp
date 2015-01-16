@@ -12,7 +12,7 @@
  */
 
 #include "convert.h"
-#include "gui/guimanager.h"
+//#include "gui/guimanager.h"
 #include "gui/guiobject.h"
 
 namespace crap
@@ -47,7 +47,7 @@ void GuiObject::updatePixelPosition( void )
 		float32_t rel_pos_y=_pos_y;
 
 		GuiObject* parent = getParent();
-		while( parent != GuiManager::getRoot() )
+		while( parent != 0 )//GuiManager::getRoot() )
 		{
 			rel_pos_x *= parent->_pos_x;
 			rel_pos_y *= parent->_pos_y;
@@ -76,7 +76,7 @@ void GuiObject::updatePixelSize( void )
 		float32_t rel_height = _height;
 
 		GuiObject* parent = getParent();
-		while( parent != GuiManager::getRoot() )
+		while( parent != 0) //GuiManager::getRoot() )
 		{
 			rel_width *= parent->_width;
 			rel_height *= parent->_height;

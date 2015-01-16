@@ -52,7 +52,7 @@ public:
     explicit intrusive_node( T* parent, intrusive_list<T>* list ) :
 		_parent(parent), _next(0), _previous(0), _list(list)
     {
-		if( parent != 0 )
+		if( list != 0 )
 			list->push_back( this );
     }
 

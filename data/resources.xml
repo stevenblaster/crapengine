@@ -1,6 +1,6 @@
 <RESOURCES>
 	<WaveFile name="Yes">yes.wav</WaveFile>
 	<WaveFile name="Nagut">nagut.wav</WaveFile>
-	<GuiImage name="Mieze">mieze.tga</GuiImage>
-  <GuiImage name="Hasi">image4.tga</GuiImage>
+	<Image2D name="Mieze">mieze.tga</Image2D>
+  	<Image2D name="Hasi">image4.tga</Image2D>
 </RESOURCES>

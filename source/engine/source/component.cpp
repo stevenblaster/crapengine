@@ -19,13 +19,15 @@ namespace crap
 Component::Component( uint32_t type, Node* node ) :
 			_typeID(type), _parent(node), _node( this, node->getComponents() ) {}
 
-Component* Component::getNeighbour( uint32_t typeId )
+Component* Component::getNeighbour( string_hash type )
 {
 	intrusive_node<Component>* node = _parent->getComponents()->begin();
 	while( node != _parent->getComponents()->end() )
 	{
-		if( node->parent()->_typeID == typeId )
+		if( node->parent()->_typeID == type.hash() )
 			return node->parent();
+
+		node = _parent->getComponents()->next(node);
 	}
 
 	return 0;

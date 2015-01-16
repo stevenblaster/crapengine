@@ -1,3 +1,4 @@
+
 /*!
  * @file audioplugin.cpp
  *
@@ -17,7 +18,7 @@
 
 #include "wavefilefilter.h"
 #include "audiofilter.h"
-#include "guiimagefilter.h"
+#include "image2dfilter.h"
 
 #include "resourcemanager.h"
 #include "system.h"
@@ -32,7 +33,7 @@ public:
 	ResourcesPlugin( System* system ) :
 		_waveFilter(system->getSubSystem<ResourceManager>("ResourceManager")),
 		_audioFilter(system->getSubSystem<ResourceManager>("ResourceManager")),
-		_guiImageFilter(system->getSubSystem<ResourceManager>("ResourceManager"))
+		_image2dFilter(system->getSubSystem<ResourceManager>("ResourceManager"))
 	{
 	}
 
@@ -56,7 +57,7 @@ public:
 private:
     crap::WaveFileFilter _waveFilter;
     crap::AudioFilter	_audioFilter;
-    crap::GuiImageFilter _guiImageFilter;
+    crap::Image2DFilter _image2dFilter;
 };
 
 CRAP_PLUGIN_FACTORY( ResourcesPlugin )

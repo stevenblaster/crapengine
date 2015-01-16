@@ -17,6 +17,8 @@
 
 #include "componenttype.h"
 #include "testcomponent.h"
+#include "transformation2d.h"
+#include "circle.h"
 #include "system.h"
 #include "plugin.h"
 
@@ -27,7 +29,9 @@ CRAP_DECLARE_PLUGIN( ComponentsPlugin )
 {
 public:
 	ComponentsPlugin( System* system ) :
-		_factory("TestComponent", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_test("TestComponent", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_trans2d("Transformation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_circle2d("Circle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -50,7 +54,9 @@ public:
 
 private:
 
-    crap::ComponentType<TestComponent>	_factory;
+    crap::ComponentType<TestComponent>	_test;
+    crap::ComponentType<Transformation2D>	_trans2d;
+    crap::ComponentType<Circle>	_circle2d;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )
