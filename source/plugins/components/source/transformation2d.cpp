@@ -22,7 +22,7 @@
 namespace crap
 {
 
-Transformation2D::Transformation2D( uint32_t typeID, Node* node ) : Component( typeID, node ),
+Transformation2D::Transformation2D( void) : 
 		_posX(0), _posY(0), _width(0), _height(0), _rotation(0)
 {
 	REGISTER_COMPONENT_MEMBER( Transformation2D, posX, float32_t )

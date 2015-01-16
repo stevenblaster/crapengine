@@ -22,7 +22,7 @@
 namespace crap
 {
 
-TestComponent::TestComponent( uint32_t typeID, Node* node ) : Component( typeID, node ), _neZahl(0)
+TestComponent::TestComponent( void ) : _neZahl(0)
 {
 	REGISTER_COMPONENT_MEMBER( TestComponent, neZahl, uint32_t );
 }

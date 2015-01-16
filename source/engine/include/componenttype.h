@@ -64,10 +64,11 @@ public:
 
 	virtual Component* createComponent( Node* node )
 	{
-		uint32_t cid = _components.push_back( T( id(), 0 ) );
+		const uint32_t cid = _components.create();
 		T* var = _components.get(cid);
-		var->setComponentID(cid);
 
+		var->setComponentID(cid);
+		var->setTypeID( id() );
 		var->setNode(node);
 
 		return var;

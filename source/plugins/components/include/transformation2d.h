@@ -26,7 +26,7 @@ namespace crap
 class Transformation2D : public Component
 {
 public:
-	Transformation2D( uint32_t typeID, Node* node );
+	Transformation2D( void );
 	virtual ~Transformation2D( void );
 
 	virtual void init( System* system );

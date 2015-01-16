@@ -30,6 +30,7 @@ class Component
 public:
 
 	friend class ComponentFactory;
+	template<typename t> friend class ComponentType;
 
 	Component( uint32_t type, Node* node );
 	virtual ~Component( void ) {}
@@ -44,10 +45,15 @@ public:
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}
 
-	//CRAP_INLINE void setComponentID( uint64_t cid ) { _componentID = cid; }
 	void setNode( Node* node );
 
 protected:
+
+	Component( void );
+
+	CRAP_INLINE void setGlobalID( uint64_t id ) { _globalID = id; }
+	CRAP_INLINE void setTypeID( uint32_t id ) { _typeID = id; }
+	CRAP_INLINE void setComponentID( uint32_t id ) { _componentID = id; }
 
 	union
 	{

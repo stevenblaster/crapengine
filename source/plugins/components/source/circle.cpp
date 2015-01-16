@@ -26,7 +26,7 @@
 namespace crap
 {
 
-Circle::Circle( uint32_t typeID, Node* node ) : Component( typeID, node ),
+Circle::Circle( void ) :
 		_radius(0.f), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _transformation(0)
 {
 	REGISTER_COMPONENT_MEMBER( Circle, radius, float32_t )
@@ -51,7 +51,7 @@ void Circle::init( System* system )
 void Circle::deinit( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	_renderID = renderer->addRencerCall<Circle, &Circle::renderCall>(this);
+	renderer->removeRenderCall(_renderID);
 }
 
 void Circle::renderCall( Context2D* context )

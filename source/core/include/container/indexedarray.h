@@ -19,6 +19,7 @@
 #ifndef CRAP_CORE_INDEXEDARRAY_H
 #define CRAP_CORE_INDEXEDARRAY_H
 
+#include <cstring>
 #include "utilities.h"
 
 /**
@@ -155,6 +156,13 @@ public:
      */
     CRAP_INLINE
     const T& operator[]( uint32_t id ) const;
+
+	 /**
+     * @brief Creates new element in array array
+     * @return id of new element
+     */
+    CRAP_INLINE
+    uint32_t create( void );
 
     /**
      * @brief Adds new element to array
@@ -440,6 +448,43 @@ template<typename T>
 const T& indexed_array<T>::operator[]( uint32_t id ) const
 {
 	return *( get(id) );
+}
+
+template<typename T>
+uint32_t indexed_array<T>::create( void )
+{
+    if( _size >= _size_max )
+        return INVALID;
+
+    //get free index spot
+    const uint32_t indices_index	= _freelist;
+
+    //get free data spot
+    const uint32_t data_index		= _size;
+
+    //store
+    construct_object( _data.as_type + _size );
+
+    //map new datafield to index
+    _data_to_indices.as_type[ data_index ] = indices_index;
+
+    //map index to data
+    _indices.as_type[ indices_index ].data_index = data_index;
+
+    //set used flag
+    //_indices[ indices_index ].set_flag( crap::packed_index::is_used );
+
+    //increment generation
+    ++_indices.as_type[ indices_index ].index_generation;
+
+    //set freelist to next index
+    _freelist = _indices.as_type[ indices_index ].next;
+
+    //increase size
+    ++_size;
+
+    //return extern index
+    return indices_index + ( BASE_VALUE * _indices.as_type[ indices_index ].index_generation );
 }
 
 template<typename T>

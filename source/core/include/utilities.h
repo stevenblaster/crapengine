@@ -178,7 +178,7 @@ CRAP_INLINE void copy_object( const T* source, T* destination )
 }
 
 template<typename T>
-CRAP_INLINE void construct_object( T* source )
+CRAP_INLINE void construct_object( T* source)
 {
     new (source) T();
 }

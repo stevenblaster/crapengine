@@ -66,9 +66,9 @@ public:
 
 	CRAP_INLINE void render( void )
 	{
-		for( uint32_t i=_renderCalls.begin(); i != _renderCalls.end(); i = _renderCalls.next(i) )
+		for( uint32_t i=0; i <_renderCalls.size(); ++i )
 		{
-			_renderCalls.get(i)->invoke( _context2D );
+			_renderCalls.data()[i].invoke( _context2D );
 		}
 	}
 

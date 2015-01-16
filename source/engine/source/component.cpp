@@ -17,7 +17,10 @@ namespace crap
 {
 
 Component::Component( uint32_t type, Node* node ) :
-			_typeID(type), _node(node), _listnode( this, (node == 0) ? 0 : node->getComponents() ) {}
+			_typeID(type), _node(node), _listnode( this, node->getComponents() ) {}
+
+Component::Component( void ) :
+			_typeID(0), _node(0), _listnode( this, 0 ) {}
 
 Component* Component::getNeighbour( string_hash type )
 {

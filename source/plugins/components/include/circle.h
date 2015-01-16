@@ -31,7 +31,7 @@ class Transformation2D;
 class Circle : public Component
 {
 public:
-	Circle( uint32_t typeID, Node* node );
+	Circle( void );
 	virtual ~Circle( void );
 
 	virtual void init( System* system );

@@ -26,7 +26,7 @@ namespace crap
 class TestComponent : public Component
 {
 public:
-	TestComponent( uint32_t typeID, Node* node );
+	TestComponent( void );
 	virtual ~TestComponent( void );
 
 	virtual void init( System* system );
