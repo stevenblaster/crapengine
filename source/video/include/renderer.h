@@ -75,7 +75,7 @@ public:
 	void addCloseListener( void );
 
 	template< class C, void (C::*F)( void ) >
-	void removeButtonListener( C* instance );
+	void removeCloseListener( C* instance );
 
 	template< void (*F)( void ) >
 	void removeCloseListener( void );
@@ -153,7 +153,7 @@ template< class C, void (C::*F)( void ) >
 void Renderer::addCloseListener( C* instance  )
 {
 	WindowCloseFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_closeFunctions.push_back( func );
 }
@@ -168,10 +168,10 @@ void Renderer::addCloseListener( void )
 }
 
 template< class C, void (C::*F)( void ) >
-void Renderer::removeButtonListener( C* instance )
+void Renderer::removeCloseListener( C* instance )
 {
 	WindowCloseFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_closeFunctions.erase( func );
 }
@@ -189,7 +189,7 @@ template< class C, void (C::*F)(  bool ) >
 void Renderer::addFocusListener( C* instance  )
 {
 	WindowFocusFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_focusFunctions.push_back( func );
 }
@@ -207,7 +207,7 @@ template< class C, void (C::*F)(  bool ) >
 void Renderer::removeFocusListener( C* instance )
 {
 	WindowFocusFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_focusFunctions.erase( func );
 }
@@ -225,7 +225,7 @@ template< class C, void (C::*F)(  bool ) >
 void Renderer::addIconifyListener( C* instance )
 {
 	WindowIconifyFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_iconifyFunctions.push_back( func );
 }
@@ -243,7 +243,7 @@ template< class C, void (C::*F)(  bool ) >
 void Renderer::removeIconifyListener( C* instance )
 {
 	WindowIconifyFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_iconifyFunctions.erase( func );
 }
@@ -261,7 +261,7 @@ template< class C, void (C::*F)(  int32_t, int32_t ) >
 void Renderer::addPositionListener( C* instance  )
 {
 	WindowPositionFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_positionFunctions.push_back( func );
 }
@@ -279,7 +279,7 @@ template< class C, void (C::*F)(  int32_t, int32_t ) >
 void Renderer::removePositionListener( C* instance )
 {
 	WindowPositionFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_positionFunctions.erase( func );
 }
@@ -297,7 +297,7 @@ template< class C, void (C::*F)(  int32_t, int32_t ) >
 void Renderer::addSizeListener( C* instance  )
 {
 	WindowSizeFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_sizeFunctions.push_back( func );
 }
@@ -315,7 +315,7 @@ template< class C, void (C::*F)(  int32_t, int32_t ) >
 void Renderer::removeSizeListener( C* instance )
 {
 	WindowSizeFunction func;
-	func.bind<F,C>( instance );
+	func.bind<C,F>( instance );
 
 	_sizeFunctions.erase( func );
 }

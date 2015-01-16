@@ -37,12 +37,14 @@ public:
 	CRAP_INLINE uint32_t getTypeID( void ) const { return _typeID; }
 	CRAP_INLINE uint32_t getComponentID( void ) const { return _componentID; }
 
+	Node*	getNode( void );
 	Component* getNeighbour( uint32_t typeId );
 
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}
 
 	CRAP_INLINE void setComponentID( uint64_t cid ) { _componentID = cid; }
+	void setNode( Node* node );
 
 protected:
 

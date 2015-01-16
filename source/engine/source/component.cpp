@@ -31,4 +31,12 @@ Component* Component::getNeighbour( uint32_t typeId )
 	return 0;
 }
 
+Node* Component::getNode( void ) { return _parent; }
+
+void Component::setNode( Node* node )
+{
+	_node.set_list( node->getComponents() );
+	_parent = node;
+}
+
 } /* namespace crap */

@@ -115,6 +115,19 @@ public:
     }
 
     /**
+     * @brief switch list of node
+     * @param list new list
+     */
+    void set_list( intrusive_list<T>* list )
+    {
+    	_list->erase( this );
+        _next = 0;
+        _previous = 0;
+        _list = list;
+        list->push_back( this );
+    }
+
+    /**
      * @brief compare operator
      * @param other reference to compared node
      * @return result of comparsion

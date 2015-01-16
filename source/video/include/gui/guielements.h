@@ -17,7 +17,7 @@
 
 #include "utilities.h"
 
-typedef struct NVGcontext;
+struct NVGcontext;
 
 namespace crap
 {

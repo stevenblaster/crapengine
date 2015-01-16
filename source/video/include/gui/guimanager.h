@@ -27,7 +27,7 @@
 #define GUI_MEMORY BoundGeneralMemory
 #endif
 
-typedef struct NVGcontext;
+struct NVGcontext;
 
 namespace crap
 {

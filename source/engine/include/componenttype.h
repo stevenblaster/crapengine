@@ -67,6 +67,7 @@ public:
 		uint32_t cid = _components.push_back( T( id(), node ) );
 		T* var = _components.get(cid);
 		var->setComponentID(cid);
+		var->setNode(node);
 
 		return var;
 	}

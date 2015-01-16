@@ -18,7 +18,7 @@
 namespace crap
 {
 class Renderer;
-class window_t;
+class InputManager;
 
 class GuiSystem
 {
@@ -27,7 +27,7 @@ public:
 	GuiSystem( Renderer* renderer, uint32_t max_guielements );
 	~GuiSystem( void );
 
-	void sizeListener(window_t*, int32_t, int32_t);
+	void sizeListener( int32_t, int32_t);
 
 private:
 
