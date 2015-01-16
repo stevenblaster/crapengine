@@ -62,7 +62,9 @@ public:
 	CRAP_INLINE
     ~intrusive_node( void )
     {
-        _list->erase( this );
+		if( _list != 0 )
+			_list->erase( this );
+
         _parent = 0;
         _next = 0;
         _previous = 0;
@@ -120,7 +122,9 @@ public:
      */
     void set_list( intrusive_list<T>* list )
     {
-    	_list->erase( this );
+		if( _list != 0 )
+    		_list->erase( this );
+
         _next = 0;
         _previous = 0;
         _list = list;

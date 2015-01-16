@@ -25,10 +25,10 @@ namespace crap
 {
 
 Renderer::Renderer( RenderWindow* window, uint32_t max_functions ) : _window(window),
-		_allocator( CloseArray::size_of_elements( max_functions ) +
-					FocusArray::size_of_elements( max_functions ) +
-					IconifyArray::size_of_elements( max_functions ) +
-					PositionArray::size_of_elements( max_functions ) +
+		_allocator( CloseArray::size_of_elements( max_functions )*2 +
+					FocusArray::size_of_elements( max_functions )*2 +
+					IconifyArray::size_of_elements( max_functions )*2 +
+					PositionArray::size_of_elements( max_functions )*2 +
 					SizeArray::size_of_elements( max_functions ) *2 ),
 		_closeFunctions( _allocator.allocate( CloseArray::size_of_elements(max_functions), 4 ), CloseArray::size_of_elements(max_functions) ),
 		_focusFunctions( _allocator.allocate( FocusArray::size_of_elements(max_functions), 4 ), FocusArray::size_of_elements(max_functions) ),

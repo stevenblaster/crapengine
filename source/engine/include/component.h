@@ -44,7 +44,7 @@ public:
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}
 
-	CRAP_INLINE void setComponentID( uint64_t cid ) { _componentID = cid; }
+	//CRAP_INLINE void setComponentID( uint64_t cid ) { _componentID = cid; }
 	void setNode( Node* node );
 
 protected:
@@ -59,8 +59,8 @@ protected:
 		};
 	};
 
-	Node*		_parent;
-	intrusive_node<Component> _node;
+	Node*					_node;
+	intrusive_node<Component> _listnode;
 };
 
 #define DECLARE_COMPONENT_MEMBER( classname, varname, vartype )					\

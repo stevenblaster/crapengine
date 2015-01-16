@@ -17,28 +17,28 @@ namespace crap
 {
 
 Component::Component( uint32_t type, Node* node ) :
-			_typeID(type), _parent(node), _node( this, node->getComponents() ) {}
+			_typeID(type), _node(node), _listnode( this, (node == 0) ? 0 : node->getComponents() ) {}
 
 Component* Component::getNeighbour( string_hash type )
 {
-	intrusive_node<Component>* node = _parent->getComponents()->begin();
-	while( node != _parent->getComponents()->end() )
+	intrusive_node<Component>* children = _node->getComponents()->begin();
+	while( children != _node->getComponents()->end() )
 	{
-		if( node->parent()->_typeID == type.hash() )
-			return node->parent();
+		if( children->parent()->getTypeID() == type.hash() )
+			return children->parent();
 
-		node = _parent->getComponents()->next(node);
+		children = _node->getComponents()->next(children);
 	}
 
 	return 0;
 }
 
-Node* Component::getNode( void ) { return _parent; }
+Node* Component::getNode( void ) { return _node; }
 
 void Component::setNode( Node* node )
 {
-	_node.set_list( node->getComponents() );
-	_parent = node;
+	node->getComponents()->push_back( &_listnode );
+	_node = node;
 }
 
 } /* namespace crap */

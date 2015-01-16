@@ -32,9 +32,6 @@ public:
 	Node( uint32_t id = 0 );
 	~Node( void );
 
-	CRAP_INLINE void addComponent( const Component& component ) {}
-	CRAP_INLINE void removeComponent(const Component& component ) {}
-
 	CRAP_INLINE intrusive_list<Component>* getComponents( void ) { return &_components; }
 
 	CRAP_INLINE uint32_t getID( void ) const { return _id; }
