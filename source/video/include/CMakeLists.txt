@@ -23,5 +23,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/renderer.h
    ${CMAKE_CURRENT_SOURCE_DIR}/elements2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/renderer2d.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/color.h
    PARENT_SCOPE
 )

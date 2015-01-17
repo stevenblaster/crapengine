@@ -2,6 +2,7 @@
 #include <iostream>
 #include "system.h"
 #include "logger.h"
+#include "convert.h"
 #include "configuration.h"
 #include "resourcemanager.h"
 #include "audiomanager.h"
@@ -21,6 +22,7 @@
 #include "renderer2d.h"
 #include "renderer.h"
 #include "node.h"
+#include "color.h"
 
 
 bool running = true; /* set to true */
@@ -250,9 +252,39 @@ int main( void )
 
 	crap::Node* cnode = componentSystem.createNode();
 	crap::Component* trans2d = componentSystem.createComponent("Transformation2D", cnode );
+	componentSystem.setComponentMember( trans2d, "posX", "600" );
+	componentSystem.setComponentMember( trans2d, "posY", "600" );
+	componentSystem.setComponentMember( trans2d, "width", "150" );
+	componentSystem.setComponentMember( trans2d, "height", "200" );
+	componentSystem.setComponentMember( trans2d, "rotation", "20" );
 	trans2d->init( &system );
-	crap::Component* circle2d = componentSystem.createComponent("Circle", cnode );
+
+
+	crap::ColorARGB colorf;
+	colorf.red = 0;
+	colorf.blue = 0;
+	colorf.green = 255;
+	colorf.alpha = 128;
+
+	crap::ColorARGB colorb;
+	colorb.red = 255;
+	colorb.blue = 0;
+	colorb.green = 0;
+	colorb.alpha = 255;
+
+
+	crap::string64 buff = crap::convert<crap::ColorARGB, crap::string64>(colorf);
+	crap::string64 bufb = crap::convert<crap::ColorARGB, crap::string64>(colorb);
+
+	crap::Component* circle2d = componentSystem.createComponent("RoundedRectangle", cnode );
+	componentSystem.setComponentMember( circle2d, "corner", "20" );
+	componentSystem.setComponentMember( circle2d, "color", buff );
+	componentSystem.setComponentMember( circle2d, "border", "5" );
+	componentSystem.setComponentMember( circle2d, "borderColor", bufb );
+
 	circle2d->init(&system);
+
+
 
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )

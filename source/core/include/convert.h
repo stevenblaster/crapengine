@@ -1253,7 +1253,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     CRAP_INLINE string_type convert<uint32_t, string_type >( const uint32_t& variable )     \
     {                                                                                       \
         string_type string;                                                                 \
-        sprintf( string.c_str(), "%" PRIu32, variable );                                    \
+        sprintf( string.pointer().as_char, "%" PRIu32, variable );                          \
         string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
@@ -1268,7 +1268,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     CRAP_INLINE string_type convert<int64_t, string_type >( const int64_t& variable )       \
     {                                                                                       \
         string_type string;                                                                 \
-        sprintf( string.c_str(), "%" PRIi64, variable );                                    \
+        sprintf( string.pointer().as_char, "%" PRIi64, variable );                          \
         string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
@@ -1283,7 +1283,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     CRAP_INLINE string_type convert<uint64_t, string_type >( const uint64_t& variable )     \
     {                                                                                       \
         string_type string;                                                                 \
-        sprintf( string.c_str(), "%" PRIu64, variable );                                    \
+        sprintf( string.pointer().as_char, "%" PRIu64, variable );                          \
         string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
@@ -1333,88 +1333,6 @@ STRING_CONVERTER( string128 )
 STRING_CONVERTER( string256 )
 STRING_CONVERTER( string512 )
 STRING_CONVERTER( string1024 )
-
-///STRING TO VAR
-
-//template<>
-//CRAP_INLINE int8_t convert< pointer_t<char>, int8_t >( const pointer_t<char>& variable )
-//{
-//    int8_t buffer;
-//    sscanf(variable.as_char, "%" SCNi8, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE uint8_t convert< pointer_t<char>, uint8_t >( const pointer_t<char>& variable )
-//{
-//    uint8_t buffer;
-//    sscanf(variable.as_char, "%"SCNu8, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE int16_t convert< pointer_t<char>, int16_t >( const pointer_t<char>& variable )
-//{
-//    int16_t buffer;
-//    sscanf(variable.as_char, "%" SCNi16, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE uint16_t convert< pointer_t<char>, uint16_t >( const pointer_t<char>& variable )
-//{
-//    uint16_t buffer;
-//    sscanf(variable.as_char, "%" SCNu16, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE int32_t convert< pointer_t<char>, int32_t >( const pointer_t<char>& variable )
-//{
-//    int32_t buffer;
-//    sscanf(variable.as_char, "%" SCNi32, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE uint32_t convert< pointer_t<char>, uint32_t >( const pointer_t<char>& variable )
-//{
-//    uint32_t buffer;
-//    sscanf(variable.as_char, "%" SCNu32, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE int64_t convert< pointer_t<char>, int64_t >( const pointer_t<char>& variable )
-//{
-//    int64_t buffer;
-//    sscanf(variable.as_char, "%" SCNi64, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE uint64_t convert< pointer_t<char>, uint64_t >( const pointer_t<char>& variable )
-//{
-//    uint64_t buffer;
-//    sscanf(variable.as_char, "%" SCNu64, &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE float32_t convert< pointer_t<char>, float32_t >( const pointer_t<char>& variable )
-//{
-//    float32_t buffer;
-//    sscanf(variable.as_char, "%f", &buffer);
-//    return buffer;
-//}
-
-//template<>
-//CRAP_INLINE float64_t convert< pointer_t<char>, float64_t >( const pointer_t<char>& variable )
-//{
-//    float64_t buffer;
-//    sscanf(variable.as_char, "%lf", &buffer);
-//    return buffer;
-//}
 
 }	// namespace crap
 
