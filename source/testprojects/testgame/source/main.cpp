@@ -285,7 +285,8 @@ int main( void )
 	circle2d->init(&system);
 
 
-
+	crap::ColorARGB bord;
+	bord.value = 0;
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
 	{
@@ -302,6 +303,9 @@ int main( void )
 
 		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, -10,10-rot*2, 0.3f);
 
+		bord.value++;
+		bord.value %= 100;
+		componentSystem.setComponentMember( circle2d, "corner", crap::convert<crap::ColorARGB, crap::string64>(bord) );
 		renderer2D.render();
 
 		crap::draw2DEnd( gc );
