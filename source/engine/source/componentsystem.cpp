@@ -16,7 +16,7 @@ ComponentSystem::ComponentSystem( uint32_t memory_size, uint32_t max_nodes ) :
 
 ComponentSystem::~ComponentSystem( void )
 {
-
+	_allocator.deallocate( _nodes.memory().as_void );
 }
 
 Node* ComponentSystem::createNode( void )

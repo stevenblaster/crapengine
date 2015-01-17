@@ -48,7 +48,11 @@ Renderer::Renderer( RenderWindow* window, uint32_t max_functions ) : _window(win
 
 Renderer::~Renderer( void )
 {
-	// Shutdown bgfx.
+	_allocator.deallocate( _sizeFunctions.memory().as_void );
+	_allocator.deallocate( _positionFunctions.memory().as_void );
+	_allocator.deallocate( _iconifyFunctions.memory().as_void );
+	_allocator.deallocate( _focusFunctions.memory().as_void );
+	_allocator.deallocate( _closeFunctions.memory().as_void );
 	bgfx::shutdown();
 }
 
