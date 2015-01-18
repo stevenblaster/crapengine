@@ -12,6 +12,8 @@
  */
 
 #include "nanovg/nanovg.h"
+#include "strings.h"
+#include "convert.h"
 #include "elements2d.h"
 
 #pragma comment( lib, "Psapi.lib" )
@@ -375,6 +377,17 @@ void drawImageTriangle(Context2D* context, float32_t pos_x, float32_t pos_y, uin
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale )
 {
 	drawImageTriangleBorder( context, pos_x, pos_y, width, height, rotation,  image,img_alpha,img_rotation,ipos_x, ipos_y, iscale, 0.f,0,0,0,0 );
+}
+
+Font2D createFont2D( Context2D* context, string_hash name, pointer_t<void> memory, uint32_t size )
+{
+	string64 hashedName = convert<uint32_t, string64>(name.hash());
+	return nvgCreateFontMem( context, hashedName.c_str(), memory.as_uint8_t, size, 0);
+}
+
+void destroyFont2D( Context2D* context, Font2D )
+{
+	// not destroyable? wtf??
 }
 
 } /* namespace crap */

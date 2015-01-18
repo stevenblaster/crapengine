@@ -2,5 +2,6 @@
 	<WaveFile name="Yes">yes.wav</WaveFile>
 	<WaveFile name="Nagut">nagut.wav</WaveFile>
 	<Image2D name="Mieze">mieze.tga</Image2D>
-  	<Image2D name="Hasi">image4.tga</Image2D>
+  <Image2D name="Hasi">image4.tga</Image2D>
+  <Font2D name="CalcFont">NI7seg.ttf</Font2D>
 </RESOURCES>

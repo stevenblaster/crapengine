@@ -36,23 +36,29 @@ namespace crap
 
 typedef NVGcontext 	Context2D;
 typedef uint32_t	Image2D;
+typedef uint32_t	Font2D;
 
-class Renderer;
+class RenderWindow;
 
 class Renderer2D
 {
 public:
 
 	typedef array_map<string_hash,Image2D > Image2DMap;
+	typedef array_map<string_hash,Font2D >	Font2DMap;
 	typedef delegate< void(Context2D*)>		RenderCall;
 	typedef indexed_array<RenderCall>		RenderArray;
 
-	Renderer2D( Renderer* renderer, uint32_t max_images, uint32_t max_elements );
+	Renderer2D( RenderWindow* window, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements );
 	~Renderer2D( void );
 
 	void addImage2D( string_hash, Image2D );
 	Image2D getImage2D( string_hash );
 	void removeImage2D( string_hash );
+
+	void addFont2D( string_hash, Font2D );
+	Image2D getFont2D( string_hash );
+	void removeFont2D( string_hash );
 
 	template< class C, void (C::*F)( Context2D* ) >
 	uint32_t addRencerCall( C* instance  );
@@ -75,9 +81,10 @@ public:
 private:
 	RENDERER2D_MEMORY				_allocator;
 	Image2DMap			 			_images;
+	Font2DMap						_fonts;
 	RenderArray						_renderCalls;
 	Context2D*						_context2D;
-	Renderer*						_renderer;
+	RenderWindow*					_window;
 };
 
 template< class C, void (C::*F)( Context2D* ) >

@@ -242,7 +242,7 @@ int main( void )
 
 	crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "We're done!" );
 
-	crap::Renderer2D renderer2D( &renderer, 10, 100 );
+	crap::Renderer2D renderer2D( &renderWindow, 10, 10, 100 );
 	crap::SubSystem renderer2d_sys( "Renderer2D", &renderer2D, &system );
 
 	crap::Context2D* gc = renderer2D.getContext();

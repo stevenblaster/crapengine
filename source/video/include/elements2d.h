@@ -16,6 +16,7 @@
 #define VIDEO_INCLUDE_2D_ELEMENTS2D_H_
 
 #include "utilities.h"
+#include "strings.h"
 
 struct NVGcontext;
 
@@ -24,6 +25,7 @@ namespace crap
 
 typedef NVGcontext 	Context2D;
 typedef uint32_t	Image2D;
+typedef uint32_t	Font2D;
 
 Context2D* createContext2D( uint32_t anitAliasing, uint32_t viewId );
 void destroyContext2D( Context2D* context );
@@ -122,6 +124,11 @@ void drawImageTriangleBorder( Context2D* context, float32_t pos_x, float32_t pos
 void drawImageTriangle(Context2D* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
+
+//FONT
+
+Font2D createFont2D(Context2D* context, string_hash name, pointer_t<void> memory, uint32_t size);
+void destroyFont2D( Context2D* context, Font2D );
 
 } /* namespace crap */
 

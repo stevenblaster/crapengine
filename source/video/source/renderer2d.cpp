@@ -11,20 +11,22 @@
  * @date 	Jan 12, 2015
  */
 
-#include "renderer.h"
+#include "renderwindow.h"
 #include "elements2d.h"
 #include "renderer2d.h"
 
 namespace crap
 {
 
-Renderer2D::Renderer2D( Renderer* renderer, uint32_t max_images, uint32_t max_elements ) :
-		_allocator( Image2DMap::size_of_elements(max_images ) + RenderArray::size_of_elements(max_elements) *2 ),
+Renderer2D::Renderer2D( RenderWindow* window, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements ) :
+	_allocator( Image2DMap::size_of_elements(max_images ) + Font2DMap::size_of_elements(max_fonts) + RenderArray::size_of_elements(max_elements) *2 ),
 		_images( _allocator.allocate(Image2DMap::size_of_elements(max_images),4),
 				Image2DMap::size_of_elements(max_images) ),
+		_fonts( _allocator.allocate(Font2DMap::size_of_elements(max_fonts),4),
+				Image2DMap::size_of_elements(max_fonts) ),
 		_renderCalls( _allocator.allocate( RenderArray::size_of_elements(max_elements), 4 ),
 				RenderArray::size_of_elements(max_elements) ),
-		_renderer(renderer)
+		_window(window)
 {
 	_context2D = createContext2D(1, 0);
 }
@@ -33,6 +35,7 @@ Renderer2D::~Renderer2D( void )
 {
 	destroyContext2D( _context2D );
 	_allocator.deallocate(_renderCalls.memory().as_void);
+	_allocator.deallocate(_fonts.memory().as_void);
 	_allocator.deallocate(_images.memory().as_void );
 }
 
@@ -61,5 +64,29 @@ void Renderer2D::removeImage2D( string_hash name )
 	}
 }
 
+void Renderer2D::addFont2D( string_hash name, Font2D id )
+{
+	_fonts.push_back( name, id );
+}
+
+Image2D Renderer2D::getFont2D( string_hash name )
+{
+	const uint32_t index = _fonts.find( name );
+	if( index != Font2DMap::INVALID )
+	{
+		return *_fonts.get_value(index);
+	}
+	return Font2DMap::INVALID;
+}
+
+void Renderer2D::removeFont2D( string_hash name )
+{
+	const uint32_t index = _fonts.find( name );
+	if( index != Font2DMap::INVALID )
+	{
+		destroyFont2D( _context2D, *_fonts.get_value(index) );
+		_fonts.erase_at(index);
+	}
+}
 
 } /* namespace crap */
