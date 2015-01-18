@@ -381,13 +381,40 @@ void drawImageTriangle(Context2D* context, float32_t pos_x, float32_t pos_y, uin
 
 Font2D createFont2D( Context2D* context, string_hash name, pointer_t<void> memory, uint32_t size )
 {
-	string64 hashedName = convert<uint32_t, string64>(name.hash());
-	return nvgCreateFontMem( context, hashedName.c_str(), memory.as_uint8_t, size, 0);
+	char buf[64];
+	sprintf(buf,"%u",name.hash());
+	//string64 hashedName = convert<uint32_t, string64>(name.hash());
+	return nvgCreateFontMem( context, buf, memory.as_uint8_t, size, 0);
 }
 
 void destroyFont2D( Context2D* context, Font2D )
 {
 	// not destroyable? wtf??
+}
+
+void drawText(Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font, const char* text, float32_t fontSize,
+		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
+		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, 
+		float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment, float32_t breakWidth )
+{
+	nvgSave( context );
+
+	//nvgRotate( context, rotation );
+
+	nvgFontSize( context, fontSize);
+	nvgFontBlur( context, blur );
+	nvgTextLetterSpacing(context, spacing);
+	nvgTextLineHeight(context, lineHeight);
+	nvgTextAlign(context, alignment);
+	nvgFontFaceId(context, font);
+	nvgTextBox(context, pos_x, pos_y, breakWidth, text, 0);
+//	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );
+//	nvgFill(context);
+//	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
+//	nvgStrokeWidth( context, stroke );
+//	nvgStroke( context );
+	
+	nvgRestore( context );
 }
 
 } /* namespace crap */

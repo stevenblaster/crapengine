@@ -83,21 +83,21 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
 IF(MSVC)
 ### SET VISUAL STUDIO FILTERS
 SOURCE_GROUP("source" REGULAR_EXPRESSION ".*/source/[^/]*([.]c|[.]cpp|[.]txt)$")
-SOURCE_GROUP("source\\atomic" REGULAR_EXPRESSION ".*/source/audio/[^/]*([.]c|[.]cpp|[.]txt)$")
+SOURCE_GROUP("source\\atomic" REGULAR_EXPRESSION ".*/source/atomic/[^/]*([.]c|[.]cpp|[.]txt)$")
 SOURCE_GROUP("source\\config" REGULAR_EXPRESSION ".*/source/config/[^/]*([.]c|[.]cpp|[.]txt)$")
 SOURCE_GROUP("source\\container" REGULAR_EXPRESSION ".*/source/container/[^/]*([.]c|[.]cpp|[.]txt)$")
 SOURCE_GROUP("source\\memory" REGULAR_EXPRESSION ".*/source/memory/[^/]*([.]c|[.]cpp|[.]txt)$")
-SOURCE_GROUP("source\\thread" REGULAR_EXPRESSION ".*//sourcethreading/[^/]*([.]c|[.]cpp|[.]txt)$")
-SOURCE_GROUP("source\\xml" REGULAR_EXPRESSION ".*//sourcethreading/[^/]*([.]c|[.]cpp|[.]txt)$")
+SOURCE_GROUP("source\\thread" REGULAR_EXPRESSION ".*/source/threads/[^/]*([.]c|[.]cpp|[.]txt)$")
+SOURCE_GROUP("source\\xml" REGULAR_EXPRESSION ".*/source/xml/[^/]*([.]c|[.]cpp|[.]txt)$")
 
 ###  FILES ${HEADERS}
 SOURCE_GROUP("include" REGULAR_EXPRESSION ".*/include/[^/]*([.]h|[.]hpp|[.]txt)$")
-SOURCE_GROUP("include\\atomic" REGULAR_EXPRESSION ".*/include/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("include\\atomic" REGULAR_EXPRESSION ".*/include/atomic/[^/]*([.]h|[.]hpp|[.]txt)$")
 SOURCE_GROUP("include\\config" REGULAR_EXPRESSION ".*/include/config/[^/]*([.]h|[.]hpp|[.]txt)$")
 SOURCE_GROUP("include\\container" REGULAR_EXPRESSION ".*/include/container/[^/]*([.]h|[.]hpp|[.]txt)$")
 SOURCE_GROUP("include\\memory" REGULAR_EXPRESSION ".*/include/memory/[^/]*([.]h|[.]hpp|[.]txt)$")
-SOURCE_GROUP("include\\thread" REGULAR_EXPRESSION ".*/include/network/[^/]*([.]h|[.]hpp|[.]txt)$")
-SOURCE_GROUP("include\\xml" REGULAR_EXPRESSION ".*/include/opengl/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("include\\thread" REGULAR_EXPRESSION ".*/include/thread/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("include\\xml" REGULAR_EXPRESSION ".*/include/xml/[^/]*([.]h|[.]hpp|[.]txt)$")
 ENDIF(MSVC)
 
 SET(SOURCES

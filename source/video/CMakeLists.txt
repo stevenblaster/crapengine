@@ -99,11 +99,11 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
 IF(MSVC)
 ### SET VISUAL STUDIO FILTERS
 SOURCE_GROUP("source" REGULAR_EXPRESSION ".*/source/[^/]*([.]c|[.]cpp|[.]txt)$")
-SOURCE_GROUP("source\\gui" REGULAR_EXPRESSION ".*/source/config/[^/]*([.]c|[.]cpp|[.]txt)$")
+SOURCE_GROUP("source\\gui" REGULAR_EXPRESSION ".*/source/gui/[^/]*([.]c|[.]cpp|[.]txt)$")
 
 ###  FILES ${HEADERS}
 SOURCE_GROUP("include" REGULAR_EXPRESSION ".*/include/[^/]*([.]h|[.]hpp|[.]txt)$")
-SOURCE_GROUP("include\\gui" REGULAR_EXPRESSION ".*/include/config/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("include\\gui" REGULAR_EXPRESSION ".*/include/gui/[^/]*([.]h|[.]hpp|[.]txt)$")
 ENDIF(MSVC)
 
 SET(SOURCES
