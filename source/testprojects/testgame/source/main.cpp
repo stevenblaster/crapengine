@@ -152,11 +152,12 @@ int main( void )
 	const uint32_t windowWidth = config.getValue<uint32_t>("RENDER_WINDOW_WIDTH");
 	const uint32_t windowHeight = config.getValue<uint32_t>("RENDER_WINDOW_HEIGHT");
 	const bool windowFullscreen = config.getValue<uint32_t>("RENDER_WINDOW_FULLSCREEN") == 1;
-	crap::RenderWindow renderWindow;
+	const uint32_t windowMaxCallbacks = config.getValue<uint32_t>("RENDER_WINDOW_MAX_CALLBACKS");
+	crap::RenderWindow renderWindow( windowMaxCallbacks );
 	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
 
 	//renderer
-	crap::Renderer renderer( &renderWindow, 10 );
+	crap::Renderer renderer( &renderWindow );
 	renderer.init();
 
 	//inputmanager

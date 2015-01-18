@@ -11,7 +11,6 @@
  * @date 	Jan 10, 2015
  */
 
-#include <new>
 #include <bgfx.h>
 #include <GLFW/glfw3.h>
 #include <bgfxplatform.h>
@@ -24,35 +23,13 @@
 namespace crap
 {
 
-Renderer::Renderer( RenderWindow* window, uint32_t max_functions ) : _window(window),
-		_allocator( CloseArray::size_of_elements( max_functions )*2 +
-					FocusArray::size_of_elements( max_functions )*2 +
-					IconifyArray::size_of_elements( max_functions )*2 +
-					PositionArray::size_of_elements( max_functions )*2 +
-					SizeArray::size_of_elements( max_functions ) *2 ),
-		_closeFunctions( _allocator.allocate( CloseArray::size_of_elements(max_functions), 4 ), CloseArray::size_of_elements(max_functions) ),
-		_focusFunctions( _allocator.allocate( FocusArray::size_of_elements(max_functions), 4 ), FocusArray::size_of_elements(max_functions) ),
-		_iconifyFunctions( _allocator.allocate( IconifyArray::size_of_elements(max_functions), 4 ), IconifyArray::size_of_elements(max_functions) ),
-		_positionFunctions( _allocator.allocate( PositionArray::size_of_elements(max_functions), 4 ), PositionArray::size_of_elements(max_functions) ),
-		_sizeFunctions( _allocator.allocate( SizeArray::size_of_elements(max_functions), 4 ), SizeArray::size_of_elements(max_functions) )
+Renderer::Renderer( RenderWindow* window ) : _window(window)
 {
 	bgfx::glfwSetWindow( window->getHandle() );
-	_instance = this;
-
-	glfwSetWindowCloseCallback( window->getHandle(), &Renderer::windowCloseFunction );
-	glfwSetWindowFocusCallback( window->getHandle(), &Renderer::windowFocusFunction );
-	glfwSetWindowIconifyCallback( window->getHandle(), &Renderer::windowIconifyFunction );
-	glfwSetWindowPosCallback( window->getHandle(), &Renderer::windowPositionFunction );
-	glfwSetWindowSizeCallback( window->getHandle(), &Renderer::windowPositionFunction );
 }
 
 Renderer::~Renderer( void )
 {
-	_allocator.deallocate( _sizeFunctions.memory().as_void );
-	_allocator.deallocate( _positionFunctions.memory().as_void );
-	_allocator.deallocate( _iconifyFunctions.memory().as_void );
-	_allocator.deallocate( _focusFunctions.memory().as_void );
-	_allocator.deallocate( _closeFunctions.memory().as_void );
 	bgfx::shutdown();
 }
 
@@ -85,47 +62,5 @@ void Renderer::drawEnd( void )
 	// process submitted rendering primitives.
 	bgfx::frame();
 }
-
-void Renderer::windowCloseFunction( window_t* window )
-{
-	for( uint32_t i=0; i< _instance->_closeFunctions.size(); ++i )
-	{
-		_instance->_closeFunctions.get(i)->invoke();
-	}
-}
-
-void Renderer::windowFocusFunction(window_t* window, int32_t value)
-{
-	for( uint32_t i=0; i<_instance->_focusFunctions.size(); ++i )
-	{
-		_instance->_focusFunctions.get(i)->invoke( value == 1 );
-	}
-}
-
-void Renderer::windowIconifyFunction(window_t* window, int32_t value)
-{
-	for( uint32_t i=0; i<_instance->_iconifyFunctions.size(); ++i )
-	{
-		_instance->_iconifyFunctions.get(i)->invoke( value == 1 );
-	}
-}
-
-void Renderer::windowPositionFunction(window_t* window, int32_t x, int32_t y)
-{
-	for( uint32_t i=0; i<_instance->_positionFunctions.size(); ++i )
-	{
-		_instance->_positionFunctions.get(i)->invoke( x, y );
-	}
-}
-
-void Renderer::windowSizeFunction(window_t* window, int32_t x, int32_t y)
-{
-	for( uint32_t i=0; i<_instance->_sizeFunctions.size(); ++i )
-	{
-		_instance->_sizeFunctions.get(i)->invoke( x, y );
-	}
-}
-
-Renderer* Renderer::_instance=0;
 
 } /* namespace crap */

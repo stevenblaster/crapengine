@@ -33,7 +33,7 @@ void EventSystem::clearEvent( string_hash name )
 {
 	for( uint32_t i=0; i<_events.size(); ++i )
 	{
-		if( _events.get(i)->name == name )
+		if( *_events.get_key(i) == name )
 			_events.erase_at(i--);
 	}
 }
@@ -42,8 +42,8 @@ void EventSystem::fireEvent( string_hash name, pointer_t<void> data /* = 0 */ )
 {
 	for( uint32_t i=0; i<_events.size(); ++i )
 	{
-		if( _events.get(i)->name == name )
-			_events.get(i)->function.invoke(data);
+		if( *_events.get_key(i) == name )
+			_events.get_value(i)->invoke(data);
 	}
 }
 

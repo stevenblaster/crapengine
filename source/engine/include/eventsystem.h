@@ -17,7 +17,7 @@
 
 #include "delegates.h"
 #include "strings.h"
-#include "container/array.h"
+#include "container/arraymap.h"
 
 #include "memory.h"
 
@@ -35,18 +35,7 @@ class EventSystem
 public:
 
 	typedef crap::delegate< void (pointer_t<void>) > EventFunction;
-	typedef struct s_event
-	{
-		string_hash		name;
-		EventFunction 	function;
-
-		bool operator==( string_hash other ) const
-		{
-			return name == other;
-		}
-	}
-	Event;
-	typedef array<Event> EventArray;
+	typedef array_map<string_hash, EventFunction> EventArray;
 
 	EventSystem( uint32_t max_events );
 	~EventSystem( void );
@@ -76,21 +65,19 @@ private:
 template< class C, void (C::*F)( pointer_t<void> ) >
 void EventSystem::registerEvent( string_hash name, C* instance )
 {
-	Event newEvent;
-	newEvent.name = name;
-	newEvent.function.bind<C,F>(instance);
+	EventFunction newEvent;
+	newEvent.bind<C,F>(instance);
 
-	_events.push_back( newEvent );
+	_events.push_back( name, newEvent );
 }
 
 template< void (*F)( pointer_t<void> ) >
 void EventSystem::registerEvent( string_hash name )
 {
-	Event newEvent;
-	newEvent.name = name;
-	newEvent.function.bind<F>();
+	EventFunction newEvent;
+	newEvent.bind<F>();
 
-	_events.push_back( newEvent );
+	_events.push_back( name, newEvent );
 }
 
 template< class C, void (C::*F)( pointer_t<void> ) >
@@ -101,8 +88,7 @@ void EventSystem::unregisterEvent( string_hash name, C* instance )
 
 	for( uint32_t i=0; i<_events.size(); ++i )
 	{
-		Event* ev = _events.get(i);
-		if( ev->name == name && ev->function == func )
+		if( *_events.get_key(i) == name && *_events.get_value(i) == func )
 		{
 			_events.erase_at(i--);
 		}
@@ -117,8 +103,7 @@ void EventSystem::unregisterEvent( string_hash name )
 
 	for( uint32_t i=0; i<_events.size(); ++i )
 	{
-		Event* ev = _events.get(i);
-		if( ev->name == name && ev->function == func )
+		if( *_events.get_key(i) == name && *_events.get_value(i) == func )
 		{
 			_events.erase_at(i--);
 		}

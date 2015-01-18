@@ -21,12 +21,12 @@ namespace crap
 
 GuiSystem::GuiSystem( Renderer* renderer, uint32_t max_guielements ) : _renderer(renderer)
 {
-	renderer->addSizeListener<GuiSystem, &GuiSystem::sizeListener>(this);
+	//renderer->addSizeListener<GuiSystem, &GuiSystem::sizeListener>(this);
 }
 
 GuiSystem::~GuiSystem( void )
 {
-	_renderer->removeSizeListener<GuiSystem, &GuiSystem::sizeListener>(this);
+	//_renderer->removeSizeListener<GuiSystem, &GuiSystem::sizeListener>(this);
 }
 
 void GuiSystem::sizeListener( int32_t x, int32_t y )
