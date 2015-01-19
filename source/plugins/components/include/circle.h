@@ -15,7 +15,6 @@
 #ifndef PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
 #define PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
 
-#include "attributes.h"
 #include "component.h"
 
 /**
@@ -39,9 +38,9 @@ public:
 	virtual void deinit( System* system );
 
 	DECLARE_COMPONENT_MEMBER( Circle, radius, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle, color, ColorARGB )
+	DECLARE_COMPONENT_MEMBER( Circle, color, uint32_t )
 	DECLARE_COMPONENT_MEMBER( Circle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle, borderColor, ColorARGB )
+	DECLARE_COMPONENT_MEMBER( Circle, borderColor, uint32_t )
 
 	void renderCall( Context2D* );
 

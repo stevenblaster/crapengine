@@ -15,7 +15,6 @@
 #ifndef PLUGINS_COMPONENTS_INCLUDE_TEXT2D_H_
 #define PLUGINS_COMPONENTS_INCLUDE_TEXT2D_H_
 
-#include "attributes.h"
 #include "component.h"
 
 /**
@@ -41,7 +40,7 @@ public:
 	DECLARE_COMPONENT_MEMBER( Text2D, fontName, string_hash )
 	DECLARE_COMPONENT_MEMBER( Text2D, text, string64 )
 	DECLARE_COMPONENT_MEMBER( Text2D, fontSize, float32_t )
-	DECLARE_COMPONENT_MEMBER( Text2D, color, ColorARGB )
+	DECLARE_COMPONENT_MEMBER( Text2D, color, uint32_t )
 	DECLARE_COMPONENT_MEMBER( Text2D, blur, float32_t )
 	DECLARE_COMPONENT_MEMBER( Text2D, spacing, float32_t )
 	DECLARE_COMPONENT_MEMBER( Text2D, lineHeight, float32_t )

@@ -73,32 +73,6 @@ CRAP_INLINE string64 convert<ColorRGBA, string64>( const ColorRGBA& variable )
     return buf;
 }
 
-template<>
-CRAP_INLINE ColorARGB convert<string64, ColorARGB>( const string64& variable )
-{
-	ColorARGB buf;
-	uint8_t r=0,g=0,b=0,a=0;
-	sscanf( variable.c_str(), SCNu8 "," SCNu8 "," SCNu8 "," SCNu8, &r, &g, &b, &a );
-	buf.red = r;
-	buf.green = g;
-	buf.blue = b;
-	buf.alpha = a;
-    return buf;
-}
-
-template<>
-CRAP_INLINE ColorRGBA convert<string64, ColorRGBA>( const string64& variable )
-{
-	ColorRGBA buf;
-	uint8_t r=0,g=0,b=0,a=0;
-	sscanf( variable.c_str(), SCNu8 "," SCNu8 "," SCNu8 "," SCNu8, &r, &g, &b, &a );
-	buf.red = r;
-	buf.green = g;
-	buf.blue = b;
-	buf.alpha = a;
-    return buf;
-}
-
 
 namespace align
 {
@@ -161,7 +135,23 @@ namespace align
 	};
 }
 
+struct TextAlignment
+{
+	uint32_t value;
+	CRAP_INLINE TextAlignment( uint32_t v=0 ) : value(v) {}
+};
 
+template<>
+CRAP_INLINE TextAlignment convert<string64, TextAlignment>( const string64& variable )
+{
+    string_hash hash( variable.c_str());
+    for( uint32_t i=0; i< 16; ++i )
+    {
+    	if( align::IDS[i] == hash.hash() )
+    		return TextAlignment(align::VALUES[i]);
+    }
+    return TextAlignment();
+}
 
 } /* namespace crap */
 
