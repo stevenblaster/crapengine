@@ -15,7 +15,7 @@
 #ifndef PLUGINS_COMPONENTS_INCLUDE_TEXT2D_H_
 #define PLUGINS_COMPONENTS_INCLUDE_TEXT2D_H_
 
-#include <attributes.h>
+#include "attributes.h"
 #include "component.h"
 
 /**
@@ -45,10 +45,7 @@ public:
 	DECLARE_COMPONENT_MEMBER( Text2D, blur, float32_t )
 	DECLARE_COMPONENT_MEMBER( Text2D, spacing, float32_t )
 	DECLARE_COMPONENT_MEMBER( Text2D, lineHeight, float32_t )
-
-	Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font, const char* text, float32_t fontSize,
-			float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a,
-			float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment )
+//alignment...
 
 	void renderCall( Context2D* );
 

@@ -15,6 +15,7 @@
 #ifndef PLUGINS_COMPONENTS_INCLUDE_ROUNDEDRECTANGLE_H_
 #define PLUGINS_COMPONENTS_INCLUDE_ROUNDEDRECTANGLE_H_
 
+#include "attributes.h"
 #include "component.h"
 
 /**
@@ -38,9 +39,9 @@ public:
 	virtual void deinit( System* system );
 
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle, corner, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle, color, uint32_t )
+	DECLARE_COMPONENT_MEMBER( RoundedRectangle, color, ColorARGB )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle, borderColor, uint32_t )
+	DECLARE_COMPONENT_MEMBER( RoundedRectangle, borderColor, ColorARGB )
 
 	void renderCall( Context2D* );
 

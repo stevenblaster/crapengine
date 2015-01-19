@@ -282,9 +282,9 @@ int main( void )
 
 	crap::Component* circle2d = componentSystem.createComponent("RoundedRectangle", cnode );
 	componentSystem.setComponentMember( circle2d, "corner", "20" );
-	componentSystem.setComponentMember( circle2d, "color", buff );
+	componentSystem.setComponentMember( circle2d, "color", "0,0,255,255" );
 	componentSystem.setComponentMember( circle2d, "border", "5" );
-	componentSystem.setComponentMember( circle2d, "borderColor", bufb );
+	componentSystem.setComponentMember( circle2d, "borderColor", "0,255,0,255" );
 
 	circle2d->init(&system);
 

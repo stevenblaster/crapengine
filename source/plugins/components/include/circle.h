@@ -15,7 +15,7 @@
 #ifndef PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
 #define PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
 
-#include <attributes.h>
+#include "attributes.h"
 #include "component.h"
 
 /**

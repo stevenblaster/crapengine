@@ -16,6 +16,7 @@
 #define PLUGINS_COMPONENTS_INCLUDE_RECTANGLE_H_
 
 #include "component.h"
+#include "attributes.h"
 
 /**
  * @namespace crap
@@ -37,9 +38,9 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Rectangle, color, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Rectangle, color, ColorARGB )
 	DECLARE_COMPONENT_MEMBER( Rectangle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle, borderColor, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Rectangle, borderColor, ColorARGB )
 
 	void renderCall( Context2D* );
 

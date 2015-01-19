@@ -23,7 +23,7 @@
 #include "renderer2d.h"
 #include "transformation2d.h"
 #include "system.h"
-#include <attributes.h>
+#include "attributes.h"
 
 namespace crap
 {
@@ -32,9 +32,9 @@ RoundedRectangle::RoundedRectangle( void ) :
 		_corner(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _transformation(0)
 {
 	REGISTER_COMPONENT_MEMBER( RoundedRectangle, corner, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, color, uint32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle, color, ColorARGB )
 	REGISTER_COMPONENT_MEMBER( RoundedRectangle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, borderColor, uint32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle, borderColor, ColorARGB )
 }
 
 RoundedRectangle::~RoundedRectangle( void )
@@ -58,11 +58,8 @@ void RoundedRectangle::deinit( System* system )
 
 void RoundedRectangle::renderCall( Context2D* context )
 {
-	ColorARGB fill;
-	fill.value = _color;
-
-	ColorARGB bfill;
-	bfill.value = _borderColor;
+	const ColorARGB fill(_color.value);
+	const ColorARGB bfill( _borderColor.value );
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
