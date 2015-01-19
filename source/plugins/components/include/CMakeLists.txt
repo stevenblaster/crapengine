@@ -16,7 +16,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/rectangle.h
    ${CMAKE_CURRENT_SOURCE_DIR}/roundedrectangle.h
    ${CMAKE_CURRENT_SOURCE_DIR}/circle.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/networkcommandqueue.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/text2d.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/udpnetwork.h
    PARENT_SCOPE
 )

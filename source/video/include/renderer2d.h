@@ -52,6 +52,9 @@ public:
 	Renderer2D( RenderWindow* window, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements );
 	~Renderer2D( void );
 
+	void drawBegin( void );
+	void drawEnd( void );
+
 	void addImage2D( string_hash, Image2D );
 	Image2D getImage2D( string_hash );
 	void removeImage2D( string_hash );

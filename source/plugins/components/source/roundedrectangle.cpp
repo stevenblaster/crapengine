@@ -23,7 +23,7 @@
 #include "renderer2d.h"
 #include "transformation2d.h"
 #include "system.h"
-#include "color.h"
+#include <attributes.h>
 
 namespace crap
 {

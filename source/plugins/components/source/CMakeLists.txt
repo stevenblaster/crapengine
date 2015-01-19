@@ -15,5 +15,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/circle.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/rectangle.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/roundedrectangle.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/text2d.cpp
    PARENT_SCOPE
 )

@@ -1,4 +1,5 @@
 
+#include <attributes.h>
 #include <iostream>
 #include "system.h"
 #include "logger.h"
@@ -22,7 +23,6 @@
 #include "renderer2d.h"
 #include "renderer.h"
 #include "node.h"
-#include "color.h"
 
 
 bool running = true; /* set to true */
@@ -307,7 +307,7 @@ int main( void )
 
 		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, -10,10-rot*2, 0.3f);
 
-		crap::drawText(gc, 400, 400, font2d, "Hallo, du Welt.", 30.f ,0.f , 0, 255, 0, 255, 1.f, 0, 0, 255, 255, 0, 1, 10.f, crap::align::left);
+		crap::drawText(gc, 400, 400, font2d, "Hallo, du Welt.", 30.f ,0.f , 0, 255, 0, 255, 0, 1, 10.f, crap::align::left);
 
 		bord.value++;
 		bord.value %= 100;

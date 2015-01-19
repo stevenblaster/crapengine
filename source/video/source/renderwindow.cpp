@@ -140,6 +140,8 @@ void RenderWindow::windowPositionFunction(window_t* window, int32_t x, int32_t y
 
 void RenderWindow::windowSizeFunction(window_t* window, int32_t x, int32_t y)
 {
+	_instance->_width = x;
+	_instance->_height = y;
 	for( uint32_t i=0; i<_instance->_sizeFunctions.size(); ++i )
 	{
 		_instance->_sizeFunctions.get(i)->invoke( x, y );

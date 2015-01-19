@@ -39,6 +39,16 @@ Renderer2D::~Renderer2D( void )
 	_allocator.deallocate(_images.memory().as_void );
 }
 
+void Renderer2D::drawBegin( void )
+{
+	draw2DBegin( _context2D, _window->getWidth(), _window->getHeight(), 1.f );
+}
+
+void Renderer2D::drawEnd( void )
+{
+	draw2DEnd( _context2D );
+}
+
 void Renderer2D::addImage2D( string_hash name, Image2D id )
 {
 	_images.push_back( name, id );

@@ -1334,6 +1334,62 @@ STRING_CONVERTER( string256 )
 STRING_CONVERTER( string512 )
 STRING_CONVERTER( string1024 )
 
+template<>
+CRAP_INLINE string_hash convert<string8, string_hash>( const string8& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string16, string_hash>( const string16& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string32, string_hash>( const string32& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string64, string_hash>( const string64& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string128, string_hash>( const string128& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string256, string_hash>( const string256& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string512, string_hash>( const string512& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
+template<>
+CRAP_INLINE string_hash convert<string1024, string_hash>( const string1024& variable )
+{
+	string_hash hash(variable.c_str());
+    return hash;
+}
+
 }	// namespace crap
 
 #endif // CRAP_CONTROL_CONVERTER_H
