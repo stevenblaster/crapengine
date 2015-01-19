@@ -143,7 +143,7 @@ int main( void )
 	//componentsystem
 	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");
 	const uint32_t componentMaxNodes = config.getValue<uint32_t>("COMPONENT_MAX_NODES");
-	crap::ComponentSystem componentSystem( componentMemory, componentMaxNodes );
+	crap::ComponentSystem componentSystem( componentMemory, componentMaxNodes , &system );
 
 	//set componentsystem as subsystem
 	crap::SubSystem component_sys( "ComponentSystem", &componentSystem, &system );
@@ -289,6 +289,25 @@ int main( void )
 
 	circle2d->init(&system);
 
+	crap::Node* tnode = componentSystem.createNode();
+
+	crap::Component* trans2dt = componentSystem.createComponent("Transformation2D", tnode );
+	componentSystem.setComponentMember( trans2dt, "posX", "200" );
+	componentSystem.setComponentMember( trans2dt, "posY", "600" );
+	componentSystem.setComponentMember( trans2dt, "width", "150" );
+	componentSystem.setComponentMember( trans2dt, "height", "200" );
+	componentSystem.setComponentMember( trans2dt, "rotation", "0.1" );
+	trans2d->init( &system );
+
+	crap::Component* text2d = componentSystem.createComponent("Text2D", tnode );
+	componentSystem.setComponentMember( text2d, "fontName", "CalcFont" );
+	componentSystem.setComponentMember( text2d, "text", "Hallo ich bin ein Test" );
+	componentSystem.setComponentMember( text2d, "fontSize", "50" );
+	componentSystem.setComponentMember( text2d, "color", bufb );
+	componentSystem.setComponentMember( text2d, "blur", "1" );
+
+	text2d->init(&system);
+
 
 	crap::ColorARGB bord;
 	bord.value = 0;
@@ -313,6 +332,8 @@ int main( void )
 		bord.value++;
 		bord.value %= 100;
 		componentSystem.setComponentMember( circle2d, "corner", crap::convert<crap::ColorARGB, crap::string64>(bord) );
+		componentSystem.setComponentMember( text2d, "fontSize", "100" );
+
 		renderer2D.render();
 
 		renderer2D.drawEnd();

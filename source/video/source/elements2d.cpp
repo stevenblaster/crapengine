@@ -395,7 +395,7 @@ void destroyFont2D( Context2D* context, Font2D )
 
 void drawText(Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font, const char* text, float32_t fontSize,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a,
-		float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment )
+		float32_t blur, float32_t spacing, float32_t lineHeight, TextAlignment alignment )
 {
 	nvgSave( context );
 	nvgBeginPath( context );
@@ -406,7 +406,7 @@ void drawText(Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font,
 	nvgFontBlur( context, blur );
 	nvgTextLetterSpacing(context, spacing);
 	nvgTextLineHeight(context, lineHeight);
-	nvgTextAlign(context, alignment );
+	nvgTextAlign(context, alignment.value );
 	nvgFontFaceId(context, font);
 
 	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );

@@ -17,7 +17,7 @@
 namespace crap
 {
 
-Node::Node( uint32_t id ) : _id(id)
+Node::Node( ComponentSystem* system, uint32_t id ) : _system(system),_id(id)
 {
 
 }
@@ -28,7 +28,8 @@ Node::~Node( void )
 	while( cnode != _components.end() )
 	{
 		_components.erase( cnode );
-		crap::destruct_object( cnode->parent() );
+		_system->deinitComponent( cnode->parent() );
+		_system->destroyComponent( cnode->parent() );
 		cnode = _components.begin();
 	}
 }

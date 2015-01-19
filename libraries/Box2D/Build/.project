@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Box2D@Build</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.makeBuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.command</key>
+					<value>/usr/bin/make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.inc</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.arguments</key>
+					<value>-j8</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Build</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.environment</key>
+					<value>VERBOSE=1|CMAKE_NO_VERBOSE=1|</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.auto</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.clean</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.location</key>
+					<value>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Build</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.core.errorOutputParser</key>
+					<value>org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.ScannerConfigBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.make.core.makeNature</nature>
+		<nature>org.eclipse.cdt.make.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[Subprojects]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2BroadPhase.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2BroadPhase.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2CollideCircle.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2CollideCircle.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2CollideEdge.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2CollideEdge.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2CollidePolygon.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2CollidePolygon.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2Collision.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2Collision.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2Distance.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2Distance.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2DynamicTree.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2DynamicTree.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2TimeOfImpact.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2TimeOfImpact.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2BroadPhase.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2BroadPhase.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2Collision.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2Collision.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2Distance.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2Distance.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2DynamicTree.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2DynamicTree.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Collision/b2TimeOfImpact.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Collision/b2TimeOfImpact.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2BlockAllocator.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2BlockAllocator.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Draw.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Draw.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Math.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Math.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Settings.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Settings.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2StackAllocator.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2StackAllocator.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Timer.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Timer.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2BlockAllocator.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2BlockAllocator.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Draw.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Draw.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2GrowableStack.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2GrowableStack.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Math.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Math.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Settings.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Settings.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2StackAllocator.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2StackAllocator.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Common/b2Timer.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Common/b2Timer.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2Body.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2Body.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2ContactManager.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2ContactManager.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2Fixture.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2Fixture.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2Island.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2Island.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2World.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2World.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2WorldCallbacks.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2Body.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2Body.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2ContactManager.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2ContactManager.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2Fixture.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2Fixture.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2Island.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2Island.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2TimeStep.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2TimeStep.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2World.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2World.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Dynamics/b2WorldCallbacks.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Dynamics/b2WorldCallbacks.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Include</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Include/Box2D.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Box2D.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Rope</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Rope/b2Rope.cpp</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Rope/b2Rope.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] Box2D/Rope/b2Rope.h</name>
+			<type>1</type>
+			<location>/mnt/windows/data/programming/crapengine2/libraries/Box2D/Box2D/Rope/b2Rope.h</location>
+		</link>
+	</linkedResources>
+</projectDescription>

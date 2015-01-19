@@ -6,10 +6,11 @@
 
 namespace crap
 {
-ComponentSystem::ComponentSystem( uint32_t memory_size, uint32_t max_nodes ) :
+ComponentSystem::ComponentSystem( uint32_t memory_size, uint32_t max_nodes, System* system ) :
 		_allocator( memory_size ),
 		_nodes( _allocator.allocate(  indexed_array<Node>::size_of_elements(max_nodes), 4  ),
-				indexed_array<Node>::size_of_elements(max_nodes) )
+				indexed_array<Node>::size_of_elements(max_nodes) ),
+				_system(system)
 {
 
 }
@@ -21,7 +22,7 @@ ComponentSystem::~ComponentSystem( void )
 
 Node* ComponentSystem::createNode( void )
 {
-	uint32_t id = _nodes.push_back( Node(0) );
+	uint32_t id = _nodes.push_back( Node(this,0) );
 	Node* node = _nodes.get(id);
 	node->setId(id);
 	return node;
@@ -42,6 +43,16 @@ Component* ComponentSystem::createComponent( string_hash name, Node* cnode )
 	}
 
 	return 0;
+}
+
+void ComponentSystem::initComponent( Component* component )
+{
+	component->init( _system );
+}
+
+void ComponentSystem::deinitComponent( Component* component )
+{
+	component->deinit( _system );
 }
 
 

@@ -21,6 +21,7 @@
 #include "circle.h"
 #include "rectangle.h"
 #include "roundedrectangle.h"
+#include "text2d.h"
 #include "system.h"
 #include "plugin.h"
 
@@ -35,7 +36,8 @@ public:
 		_trans2d("Transformation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_circle2d("Circle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_rectangle2d("Rectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_roundedRectangle2d("RoundedRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_roundedRectangle2d("RoundedRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_text2d("Text2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -63,6 +65,7 @@ private:
     crap::ComponentType<Circle>	_circle2d;
     crap::ComponentType<Rectangle>	_rectangle2d;
     crap::ComponentType<RoundedRectangle> _roundedRectangle2d;
+    crap::ComponentType<Text2D> _text2d;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )

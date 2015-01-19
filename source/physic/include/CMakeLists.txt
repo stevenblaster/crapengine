@@ -12,7 +12,7 @@
 set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/test.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/thread.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/physicsystem2d.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/asserts.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/logger.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/strings.h

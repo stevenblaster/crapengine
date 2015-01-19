@@ -32,17 +32,20 @@ namespace crap
 class Component;
 class ComponentFactory;
 class Node;
+class System;
 
 class ComponentSystem
 {
 public:
-	ComponentSystem( uint32_t memory_size, uint32_t max_nodes );
+	ComponentSystem( uint32_t memory_size, uint32_t max_nodes, System* system );
 	~ComponentSystem( void );
 
 	Node* createNode( void );
 	void destroyNode( Node* node );
 
 	Component* createComponent( string_hash name, Node* node );
+	void initComponent( Component* component );
+	void deinitComponent( Component* component );
 	void destroyComponent( Component* component );
 	void setComponentMember( Component* component, string_hash name, const string64& data );
 
@@ -54,6 +57,7 @@ private:
 	COMPONENT_MEMORY					_allocator;
 	indexed_array<Node>					_nodes;
 	intrusive_list<ComponentFactory> 	_factoryList;
+	System*								_system;
 };
 
 } /* namespace crap */

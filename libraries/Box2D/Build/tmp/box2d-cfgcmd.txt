@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DBOX2D_BUILD_EXAMPLES=OFF;-DBOX2D_BUILD_SHARED=OFF;-DBOX2D_BUILD_STATIC=ON;-DBOX2D_INSTALL=OFF;-DBOX2D_INSTALL_DOC=OFF;-GEclipse CDT4 - Unix Makefiles;/mnt/windows/data/programming/crapengine2/source/../libraries/Box2D'

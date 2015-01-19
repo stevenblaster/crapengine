@@ -67,6 +67,24 @@ endif()
 
 INCLUDE_DIRECTORIES(${BULLET_INCLUDE_DIR})
 
+find_package(Box2D REQUIRED)
+if(NOT BOX2D_FOUND)
+	INCLUDE(${CMAKE_SOURCE_DIR}/../CMake/box2d_precompile.cmake)
+    IF(NOT WIN32)
+        SET(BOX2D_LIBRARY ${CRAP_LIBRARIES_PATH}/Box2D/Build/Box2D/libBox2D.a)
+        SET(BOX2D_LIBRARY_DLL ${CRAP_LIBRARIES_PATH}/Box2D/Build/Box2D/libBox2D.so)
+    ELSE()
+        SET(BOX2D_LIBRARY ${CRAP_LIBRARIES_PATH}/Box2D/Build/Box2D/$<CONFIGURATION>/Box2D.lib)
+		SET(BOX2D_LIBRARY_DLL ${CRAP_LIBRARIES_PATH}/Box2D/Build/Box2D/$<CONFIGURATION>/Box2D.dll)
+    ENDIF(NOT WIN32)
+    SET(BOX2D_INCLUDE_DIR ${BOX2D_INCLUDE_DIR})
+else()
+    SET(BOX2D_LIBRARY_DLL ${BOX2D_LIBRARY})
+endif()
+
+INCLUDE_DIRECTORIES(${BOX2D_INCLUDE_DIR})
+
+
 #####################################
 #        Adding GLFW sources        #
 #####################################
@@ -130,13 +148,7 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_physic ${SOURCES} ${HEADERS})
 
-TARGET_LINK_LIBRARIES(crap_physic crap_core ${BULLET_LIBRARIES})
-
-#add_dependencies(craplib glfw_lib)
-#add_dependencies(crap_audio crap_core)
-if(NOT ${BULLET_FOUND})
-#    ADD_DEPENDENCIES(crap_audio crap_core)
-ENDIF()
+TARGET_LINK_LIBRARIES(crap_physic crap_core ${BULLET_LIBRARIES} ${BOX2D_LIBRARY})
 
 
 OPTION(CRAP_BUILD_PHYSIC_UNITTEST "Build crap physic unittests" OFF)

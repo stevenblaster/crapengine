@@ -1,3 +1,7 @@
 build/
 libraries/bgfx/.build/
+libraries/Box2D/Build/Box2D/
+libraries/Box2D/Build/tmp/
+libraries/Box2D/CMakeFiles/
+libraries/Box2D/vs2013/
 .fuse*

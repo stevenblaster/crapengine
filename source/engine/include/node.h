@@ -29,7 +29,7 @@ public:
 
 	friend class ComponentSystem;
 
-	Node( uint32_t id = 0 );
+	Node( ComponentSystem* system, uint32_t id = 0 );
 	~Node( void );
 
 	CRAP_INLINE intrusive_list<Component>* getComponents( void ) { return &_components; }
@@ -50,6 +50,7 @@ private:
 
 	CRAP_INLINE void setId( uint32_t id ) { _id = id; }
 
+	ComponentSystem*			_system;
 	intrusive_list<Component>	_components;
 	uint32_t					_id;
 };

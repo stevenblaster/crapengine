@@ -1,6 +1,6 @@
 FIND_PATH(BGFX_INCLUDE_DIR bgfx.h
   PATHS
-  $ENV{OPENALDIR}
+  $ENV{BGFXDIR}
   NO_DEFAULT_PATH
   PATH_SUFFIXES include/bgfx include/bgfx include
 )
