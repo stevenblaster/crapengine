@@ -23,6 +23,7 @@
 #include "renderer2d.h"
 #include "renderer.h"
 #include "node.h"
+#include "attributes.h"
 
 
 bool running = true; /* set to true */
@@ -295,7 +296,7 @@ int main( void )
 	while( running && !renderWindow.shouldClose() )
 	{
 		renderer.drawBegin();
-		crap::draw2DBegin( gc, renderWindow.getWidth(), renderWindow.getHeight(), 1.f );
+		renderer2D.drawBegin();
 		crap::drawColoredRectangle( gc, 100.f, 100.f, 100.f, 100.f, -rot*0.1, 255, 0, 255, 255 );
 		crap::drawColoredCircle( gc, 500.f, (int32_t)(rot*100) % renderWindow.getHeight(), 50.f, 255, 0, 0, 255 );
 		rot += 0.1f;
@@ -314,7 +315,7 @@ int main( void )
 		componentSystem.setComponentMember( circle2d, "corner", crap::convert<crap::ColorARGB, crap::string64>(bord) );
 		renderer2D.render();
 
-		crap::draw2DEnd( gc );
+		renderer2D.drawEnd();
 		renderer.drawEnd();
 		//renderWindow.swap();
 		taskManager.update();

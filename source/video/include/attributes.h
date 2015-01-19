@@ -61,7 +61,7 @@ template<>
 CRAP_INLINE string64 convert<ColorARGB, string64>( const ColorARGB& variable )
 {
     string64 buf;
-    sprintf( buf.pointer().as_char, PRIu8 "," PRIu8 "," PRIu8 "," PRIu8, variable.red, variable.green, variable.blue, variable.alpha );
+    sprintf( buf.pointer().as_char, "%u" , variable.value );
     return buf;
 }
 
@@ -69,7 +69,7 @@ template<>
 CRAP_INLINE string64 convert<ColorRGBA, string64>( const ColorRGBA& variable )
 {
     string64 buf;
-    sprintf( buf.pointer().as_char, PRIu8 "," PRIu8 "," PRIu8 "," PRIu8, variable.red, variable.green, variable.blue, variable.alpha );
+    sprintf( buf.pointer().as_char, "%u" , variable.value );
     return buf;
 }
 
