@@ -3,7 +3,7 @@
 #ifndef CRAP_TOOLS_H
 #define CRAP_TOOLS_H
 
-//#include <new>
+#include <new>
 #include "config/crap_compiler.h"
 #include "config/crap_types.h"
 #include "asserts.h"

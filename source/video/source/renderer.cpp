@@ -30,6 +30,7 @@ Renderer::Renderer( RenderWindow* window ) : _window(window)
 
 Renderer::~Renderer( void )
 {
+	_window->removeSizeListener<Renderer, &Renderer::resizeCallback>(this);
 	bgfx::shutdown();
 }
 
@@ -48,7 +49,15 @@ void Renderer::init( uint32_t debugmode /* = 0 */ )
 	        , 1.0f
 	        , 0
 	        );
+
+	_window->addSizeListener<Renderer, &Renderer::resizeCallback>(this);
 }
+
+void Renderer::resizeCallback( int32_t x, int32_t y )
+{
+	bgfx::reset( x, y, BGFX_RESET_VSYNC );
+}
+
 
 void Renderer::drawBegin( void )
 {

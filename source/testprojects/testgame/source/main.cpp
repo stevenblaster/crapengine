@@ -251,8 +251,8 @@ int main( void )
 	uint32_t guiImage = renderer2D.getImage2D("Hasi");
 	uint32_t guiImage2 = renderer2D.getImage2D("Mieze");
 
-	//resourceManager.loadResource("CalcFont");
-	//crap::Font2D font2d = renderer2D.getFont2D("CalcFont");
+	resourceManager.loadResource("CalcFont");
+	crap::Font2D font2d = renderer2D.getFont2D("CalcFont");
 
 	crap::Node* cnode = componentSystem.createNode();
 	crap::Component* trans2d = componentSystem.createComponent("Transformation2D", cnode );
@@ -307,7 +307,7 @@ int main( void )
 
 		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 0.f, -10,10-rot*2, 0.3f);
 
-		//crap::drawText(gc, 400, 400, font2d, "Hallo, du Welt.", 30.f ,0.f , 0, 255, 0, 255, 1.f, 0, 0, 255, 255, 0, 1, 10.f, crap::align::left, 2000.f);
+		crap::drawText(gc, 400, 400, font2d, "Hallo, du Welt.", 30.f ,0.f , 0, 255, 0, 255, 1.f, 0, 0, 255, 255, 0, 1, 10.f, crap::align::left);
 
 		bord.value++;
 		bord.value %= 100;

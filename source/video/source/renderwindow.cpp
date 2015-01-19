@@ -87,7 +87,7 @@ void RenderWindow::create( const char* name, uint32_t width, uint32_t height, bo
 	glfwSetWindowFocusCallback( _handle, &RenderWindow::windowFocusFunction );
 	glfwSetWindowIconifyCallback( _handle, &RenderWindow::windowIconifyFunction );
 	glfwSetWindowPosCallback( _handle, &RenderWindow::windowPositionFunction );
-	glfwSetWindowSizeCallback( _handle, &RenderWindow::windowPositionFunction );
+	glfwSetWindowSizeCallback( _handle, &RenderWindow::windowSizeFunction );
 }
 
 void RenderWindow::destroy( void )

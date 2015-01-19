@@ -142,7 +142,7 @@ void destroyFont2D( Context2D* context, Font2D font );
 void drawText(Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font, const char* text, float32_t fontSize,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, 
-		float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment, float32_t breakWidth);
+		float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment );
 
 } /* namespace crap */
 

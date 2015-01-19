@@ -41,6 +41,7 @@ public:
 	void drawBegin( void );
 	void drawEnd( void );
 
+	void resizeCallback( int32_t x, int32_t y );
 
 private:
 

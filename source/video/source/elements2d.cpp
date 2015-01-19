@@ -395,24 +395,28 @@ void destroyFont2D( Context2D* context, Font2D )
 void drawText(Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font, const char* text, float32_t fontSize,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, 
-		float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment, float32_t breakWidth )
+		float32_t blur, float32_t spacing, float32_t lineHeight, align::value alignment )
 {
 	nvgSave( context );
+	nvgBeginPath( context );
 
-	//nvgRotate( context, rotation );
+	nvgRotate( context, rotation );
 
 	nvgFontSize( context, fontSize);
 	nvgFontBlur( context, blur );
-	nvgTextLetterSpacing(context, spacing);
-	nvgTextLineHeight(context, lineHeight);
-	nvgTextAlign(context, alignment);
+	nvgTextLetterSpacing(context, spacing);	nvgTextLineHeight(context, lineHeight);
+	nvgTextAlign(context, 0 );
 	nvgFontFaceId(context, font);
-	nvgTextBox(context, pos_x, pos_y, breakWidth, text, 0);
-//	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );
-//	nvgFill(context);
-//	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
-//	nvgStrokeWidth( context, stroke );
-//	nvgStroke( context );
+
+
+	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );
+	nvgFill(context);
+
+	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
+	nvgStrokeWidth( context, stroke );
+	nvgStroke( context );
+	nvgText(context, pos_x,pos_y, text, NULL);
+	//nvgTextBox(context, pos_x, pos_y, breakWidth, text, NULL);
 	
 	nvgRestore( context );
 }

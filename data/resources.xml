@@ -3,5 +3,5 @@
 	<WaveFile name="Nagut">nagut.wav</WaveFile>
 	<Image2D name="Mieze">mieze.tga</Image2D>
   <Image2D name="Hasi">image4.tga</Image2D>
-  <Font2D name="CalcFont">arial.ttf</Font2D>
+  <Font2D name="CalcFont">calculatorfont.ttf</Font2D>
 </RESOURCES>
