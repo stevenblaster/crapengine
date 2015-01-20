@@ -11,21 +11,21 @@
  * @date 	Jan 19, 2015
  */
 
-#include <Box2D/Box2D.h>
+#include "Box2D/Box2D.h"
 #include "physicsystem2d.h"
 
 namespace crap
 {
 
-PhysicSystem2D::PhysicSystem2D( void )
+PhysicSystem2D::PhysicSystem2D(  float32_t gravity_x, float32_t gravity_y ) : 
+	_allocator( sizeof(b2World) * 2 )
 {
-	b2Vec2 gravity(0.0f, -10.0f);
-	b2World world(gravity);
-
+	_world = (b2World*)_allocator.allocate( sizeof(b2World), 4 );
+	new (_world) b2World( b2Vec2( gravity_x, gravity_y ) );
 	b2BodyDef groundBodyDef;
 	groundBodyDef.position.Set(0.0f, -10.0f);
 
-	b2Body* groundBody = world.CreateBody(&groundBodyDef);
+	b2Body* groundBody = _world->CreateBody(&groundBodyDef);
 
 
 

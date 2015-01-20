@@ -24,6 +24,7 @@
 #include "renderer.h"
 #include "node.h"
 #include "attributes.h"
+#include "physicsystem2d.h"
 
 
 bool running = true; /* set to true */
@@ -219,6 +220,8 @@ int main( void )
 //	comp->init( &system );
 //	comp->deinit( &system );
 //	componentSystem.destroyComponent( comp );
+
+	crap::PhysicSystem2D ps( 0.f, 0.1f );
 
 	crap::Configuration* testconf = system.getSubSystem<crap::Configuration>( "Configuration" );
 	if( testconf != 0 )
