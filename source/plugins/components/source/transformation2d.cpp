@@ -22,14 +22,16 @@
 namespace crap
 {
 
-Transformation2D::Transformation2D( void) : 
-		_posX(0), _posY(0), _width(0), _height(0), _rotation(0)
+Transformation2D::Transformation2D( void)
 {
+	_data.pos_x = 0.f;
+	_data.pos_y = 0.f;
+	_data.rotation = 0.f;
+	_data.scale = 1.f;
 	REGISTER_COMPONENT_MEMBER( Transformation2D, posX, float32_t )
 	REGISTER_COMPONENT_MEMBER( Transformation2D, posY, float32_t )
-	REGISTER_COMPONENT_MEMBER( Transformation2D, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( Transformation2D, height, float32_t )
 	REGISTER_COMPONENT_MEMBER( Transformation2D, rotation, float32_t )
+	REGISTER_COMPONENT_MEMBER( Transformation2D, scale, float32_t )
 }
 
 Transformation2D::~Transformation2D( void )
@@ -45,6 +47,11 @@ void Transformation2D::init( System* system )
 void Transformation2D::deinit( System* system )
 {
 
+}
+
+Transformation2Ddata* Transformation2D::getData( void )
+{
+	return &_data;
 }
 
 } /* namespace crap */

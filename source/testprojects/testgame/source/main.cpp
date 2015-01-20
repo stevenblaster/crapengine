@@ -186,6 +186,12 @@ int main( void )
 	/* Add directory update to taskmanager */
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
 
+	/* Physic system 2D */
+	crap::PhysicSystem2D physicSystem2D( 0.f, 10000.f, 8, 2 );
+	crap::SubSystem physic_sys2d( "PhysicSystem2D", &physicSystem2D, &system );
+
+	taskManager.addTask< crap::PhysicSystem2D, &crap::PhysicSystem2D::update>( "Physic2DUpdate", &physicSystem2D, 50, true, false );
+
 	//pluginmanager
 	const uint32_t pluginNumber = config.getValue<uint32_t>("PLUGIN_NUMBER");
 	const uint32_t pluginMemory = config.getValue<uint32_t>("PLUGIN_MEMORY");
@@ -206,22 +212,6 @@ int main( void )
 
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();
-
-//	crap::GuiObject::getRoot()->setWidth(800);
-//	crap::GuiObject::getRoot()->setHeight(600);
-//
-//	crap::GuiObject chil( "", crap::GuiObject::getRoot(), 0.33f, 0.33f, 0.33f, 0.33f );
-//	crap::GuiObject chil2( "", &chil, 0.33f, 0.33f, 0.33f, 0.33f );
-
-//	crap::Node* cnode = componentSystem.createNode();
-//	crap::Component* comp = componentSystem.createComponent("TestComponent", cnode );
-//
-//	componentSystem.setComponentMember( comp, "neZahl", "567" );
-//	comp->init( &system );
-//	comp->deinit( &system );
-//	componentSystem.destroyComponent( comp );
-
-	crap::PhysicSystem2D ps( 0.f, 0.1f );
 
 	crap::Configuration* testconf = system.getSubSystem<crap::Configuration>( "Configuration" );
 	if( testconf != 0 )
@@ -262,9 +252,8 @@ int main( void )
 	crap::Component* trans2d = componentSystem.createComponent("Transformation2D", cnode );
 	componentSystem.setComponentMember( trans2d, "posX", "600" );
 	componentSystem.setComponentMember( trans2d, "posY", "600" );
-	componentSystem.setComponentMember( trans2d, "width", "150" );
-	componentSystem.setComponentMember( trans2d, "height", "200" );
 	componentSystem.setComponentMember( trans2d, "rotation", "20" );
+	componentSystem.setComponentMember( trans2d, "scale", "1.f" );
 	trans2d->init( &system );
 
 
@@ -285,6 +274,9 @@ int main( void )
 	crap::string64 bufb = crap::convert<crap::ColorARGB, crap::string64>(colorb);
 
 	crap::Component* circle2d = componentSystem.createComponent("RoundedRectangle", cnode );
+
+	componentSystem.setComponentMember( circle2d, "width", "150" );
+	componentSystem.setComponentMember( circle2d, "height", "200" );
 	componentSystem.setComponentMember( circle2d, "corner", "20" );
 	componentSystem.setComponentMember( circle2d, "color", buff );
 	componentSystem.setComponentMember( circle2d, "border", "5" );
@@ -294,12 +286,12 @@ int main( void )
 
 	crap::Node* tnode = componentSystem.createNode();
 
+
 	crap::Component* trans2dt = componentSystem.createComponent("Transformation2D", tnode );
 	componentSystem.setComponentMember( trans2dt, "posX", "200" );
 	componentSystem.setComponentMember( trans2dt, "posY", "600" );
-	componentSystem.setComponentMember( trans2dt, "width", "150" );
-	componentSystem.setComponentMember( trans2dt, "height", "200" );
-	componentSystem.setComponentMember( trans2dt, "rotation", "0.1" );
+	componentSystem.setComponentMember( trans2dt, "rotation", "0" );
+	componentSystem.setComponentMember( trans2dt, "scale", "1.f" );
 	trans2d->init( &system );
 
 	crap::Component* text2d = componentSystem.createComponent("Text2D", tnode );
@@ -311,6 +303,56 @@ int main( void )
 
 	text2d->init(&system);
 
+	//physic test
+	crap::Node* pnode = componentSystem.createNode();
+	crap::Component* ptrans2d = componentSystem.createComponent("Transformation2D", pnode );
+	componentSystem.setComponentMember( ptrans2d, "posX", "600" );
+	componentSystem.setComponentMember( ptrans2d, "posY", "100" );
+	componentSystem.setComponentMember( ptrans2d, "rotation", "0" );
+	componentSystem.setComponentMember( ptrans2d, "scale", "1.f" );
+
+	crap::Component* rect2d = componentSystem.createComponent("Rectangle", pnode );
+	componentSystem.setComponentMember( rect2d, "width", "50" );
+	componentSystem.setComponentMember( rect2d, "height", "50" );
+	componentSystem.setComponentMember( rect2d, "color", buff );
+	componentSystem.setComponentMember( rect2d, "border", "0" );
+	componentSystem.setComponentMember( rect2d, "borderColor", bufb );
+
+	crap::Component* phys2d = componentSystem.createComponent("Physic2DRectangle", pnode );
+	componentSystem.setComponentMember( phys2d, "width", "50" );
+	componentSystem.setComponentMember( phys2d, "height", "50" );
+	componentSystem.setComponentMember( phys2d, "density", "1.f" );
+	componentSystem.setComponentMember( phys2d, "friction", "1.f" );
+	componentSystem.setComponentMember( phys2d, "dynamic", "1" );
+
+	ptrans2d->init(&system);
+	rect2d->init(&system);
+	phys2d->init(&system);
+
+	crap::Node* pnode2 = componentSystem.createNode();
+	crap::Component* ptrans2d2 = componentSystem.createComponent("Transformation2D", pnode2 );
+	componentSystem.setComponentMember( ptrans2d2, "posX", "550" );
+	componentSystem.setComponentMember( ptrans2d2, "posY", "400" );
+	componentSystem.setComponentMember( ptrans2d2, "rotation", "0.1" );
+	componentSystem.setComponentMember( ptrans2d2, "scale", "1.f" );
+
+	crap::Component* rect2d2 = componentSystem.createComponent("Rectangle", pnode2 );
+	componentSystem.setComponentMember( rect2d2, "width", "100" );
+	componentSystem.setComponentMember( rect2d2, "height", "50" );
+	componentSystem.setComponentMember( rect2d2, "color", bufb );
+	componentSystem.setComponentMember( rect2d2, "border", "0" );
+	componentSystem.setComponentMember( rect2d2, "borderColor", bufb );
+
+	crap::Component* phys2d2 = componentSystem.createComponent("Physic2DRectangle", pnode2 );
+	componentSystem.setComponentMember( phys2d2, "width", "100" );
+	componentSystem.setComponentMember( phys2d2, "height", "50" );
+	componentSystem.setComponentMember( phys2d2, "density", "1.f" );
+	componentSystem.setComponentMember( phys2d2, "friction", "1.f" );
+	componentSystem.setComponentMember( phys2d2, "dynamic", "0" );
+
+	ptrans2d2->init(&system);
+	rect2d2->init(&system);
+	phys2d2->init(&system);
 
 	crap::ColorARGB bord;
 	bord.value = 0;

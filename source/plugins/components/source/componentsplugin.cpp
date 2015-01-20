@@ -24,6 +24,7 @@
 #include "text2d.h"
 #include "system.h"
 #include "plugin.h"
+#include "physic2drectangle.h"
 
 namespace crap
 {
@@ -37,7 +38,8 @@ public:
 		_circle2d("Circle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_rectangle2d("Rectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_roundedRectangle2d("RoundedRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_text2d("Text2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_text2d("Text2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_physic2drectangle("Physic2DRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -66,6 +68,7 @@ private:
     crap::ComponentType<Rectangle>	_rectangle2d;
     crap::ComponentType<RoundedRectangle> _roundedRectangle2d;
     crap::ComponentType<Text2D> _text2d;
+    crap::ComponentType<Physic2DRectangle> _physic2drectangle;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )

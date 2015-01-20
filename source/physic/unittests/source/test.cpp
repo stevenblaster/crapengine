@@ -6,7 +6,7 @@ int main( void )
 {
    physictest test;
 
-   crap::PhysicSystem2D system;
+   crap::PhysicSystem2D system(0.f, 0.f, 8, 2);
 
 return 0;
 }

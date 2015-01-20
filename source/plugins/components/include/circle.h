@@ -10,7 +10,7 @@
  * @author  steffen
  * @date 	Jan 16, 2015
  */
-
+#pragma once
 
 #ifndef PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
 #define PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_

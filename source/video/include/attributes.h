@@ -153,6 +153,14 @@ CRAP_INLINE TextAlignment convert<string64, TextAlignment>( const string64& vari
     return TextAlignment();
 }
 
+struct Transformation2Ddata
+{
+	float32_t		pos_x;
+	float32_t		pos_y;
+	float32_t		rotation;
+	float32_t		scale;
+};
+
 } /* namespace crap */
 
 

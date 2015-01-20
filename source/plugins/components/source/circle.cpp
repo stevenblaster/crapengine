@@ -62,7 +62,8 @@ void Circle::renderCall( Context2D* context )
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
-	const float32_t radius = _radius;
+	const float32_t scale = *_transformation->getscale();
+	const float32_t radius = _radius * scale;
 	const float32_t border = _border;
 
 	drawColoredCircleBorder( context, pos_x, pos_y, radius, fill.red, fill.green, fill.blue, fill.alpha,

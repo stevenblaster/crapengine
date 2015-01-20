@@ -72,7 +72,8 @@ void Text2D::renderCall( Context2D* context )
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
 	const float32_t rotation = *_transformation->getrotation();
-	const float32_t fontSize = _fontSize;
+	const float32_t scale	= *_transformation->getscale();
+	const float32_t fontSize = _fontSize * scale;
 	const float32_t blur = _blur;
 	const float32_t spacing = _spacing;
 	const float32_t lineHeight = _lineHeight;

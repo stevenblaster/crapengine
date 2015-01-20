@@ -37,6 +37,8 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
+	DECLARE_COMPONENT_MEMBER( Rectangle, width, float32_t )
+	DECLARE_COMPONENT_MEMBER( Rectangle, height, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle, color, uint32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle, border, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle, borderColor, uint32_t )

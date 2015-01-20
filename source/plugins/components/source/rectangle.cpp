@@ -29,8 +29,10 @@ namespace crap
 {
 
 Rectangle::Rectangle( void ) :
-		_color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _transformation(0)
+		_width(0), _height(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _transformation(0)
 {
+	REGISTER_COMPONENT_MEMBER( Rectangle, width, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle, height, float32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle, color, uint32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle, border, float32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle, borderColor, uint32_t )
@@ -62,8 +64,9 @@ void Rectangle::renderCall( Context2D* context )
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
-	const float32_t width = *_transformation->getwidth();
-	const float32_t height = *_transformation->getheight();
+	const float32_t scale = *_transformation->getscale();
+	const float32_t width = _width * scale;
+	const float32_t height = _height * scale;
 	const float32_t rotation = *_transformation->getrotation();
 	const float32_t border = _border;
 
