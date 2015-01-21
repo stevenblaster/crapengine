@@ -6,6 +6,7 @@ git add source/engine/*
 git add source/network/
 git add source/plugins/*
 git add source/video/*
+git add source/physic/*
 git add source/testprojects/*
 git add data/plugins/*
 git add data/configuration.ini

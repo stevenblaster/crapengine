@@ -17,6 +17,39 @@
 namespace crap
 {
 
+uint32_t sizeWorld2D( void )
+{
+	return sizeof(b2World);
+}
+
+World2D* createWorld2D( void* memory, float32_t grav_x, float32_t grav_y )
+{
+	return new(memory) b2World( b2Vec2(grav_x, grav_y) );
+}
+
+void destroyWorld2D( World2D* world )
+{
+	destruct_object( world );
+}
+
+void worldStep( World2D* world, float32_t delta, uint32_t velIt, uint32_t posIt )
+{
+	world->Step( delta, velIt, posIt );
+}
+void updateBodies( World2D* world )
+{
+	for (Body2D* b = world->GetBodyList(); b!= 0; b = b->GetNext())
+	{
+		if( b->GetType() == b2_dynamicBody )
+		{
+			float32_t* data = (float32_t*)b->GetUserData();
+			data[0] = b->GetPosition().x;
+			data[1] = b->GetPosition().y;
+			data[2] = b->GetAngle();
+		}
+	}
+}
+
 Body2D* createRectangle2D( World2D* world, float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
 		float32_t density, float32_t friction, bool dynamic)
 {
@@ -79,6 +112,11 @@ Body2D* createPolygon2D( World2D* world, float32_t pos_x, float32_t pos_y, float
 	body->CreateFixture( &bodyFixture );
 
 	return body;
+}
+
+void setBody2DUserdata( Body2D* body, void* data )
+{
+	body->SetUserData(data);
 }
 
 void destroyBody2D( World2D* world, Body2D* body )

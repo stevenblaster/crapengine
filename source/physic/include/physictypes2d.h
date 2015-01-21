@@ -15,6 +15,8 @@
 #ifndef PHYSIC_INCLUDE_PHYSICTYPES2D_H_
 #define PHYSIC_INCLUDE_PHYSICTYPES2D_H_
 
+#include "utilities.h"
+
 class b2World;
 class b2Body;
 
@@ -24,6 +26,16 @@ namespace crap
 typedef b2World World2D;
 typedef b2Body Body2D;
 
+uint32_t sizeWorld2D( void );
+
+World2D* createWorld2D( void* memory, float32_t grav_x, float32_t grav_y );
+
+void destroyWorld2D( World2D* world );
+
+void worldStep( World2D* world, float32_t delta, uint32_t velIt, uint32_t posIt );
+
+void updateBodies( World2D* world );
+
 Body2D* createRectangle2D( World2D* world, float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
 		float32_t density, float32_t friction, bool dynamic );
 
@@ -32,6 +44,8 @@ Body2D* createCircle2D( World2D* world, float32_t pos_x, float32_t pos_y, float3
 
 Body2D* createPolygon2D( World2D* world, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
 		float32_t density, float32_t friction, bool dynamic );
+
+void setBody2DUserdata( Body2D* body, void* data );
 
 void destroyBody2D( World2D* world, Body2D* body );
 

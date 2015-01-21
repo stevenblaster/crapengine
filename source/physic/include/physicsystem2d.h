@@ -48,6 +48,7 @@ public:
 	Body2D* createPolygon( float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
 			float32_t density, float32_t friction, bool dynamic );
 
+	void setBodyUserdata( Body2D* body, void* data );
 	void destroyBody( Body2D* body );
 
 	bool update( uint32_t deltatime );
@@ -64,6 +65,7 @@ private:
 
 	PHYSIC2D_MEMORY			_allocator;
 	b2World*				_world;
+	void*					_memory;
 	uint32_t 				_velocityIterations;
 	uint32_t 				_positionIterations;
 };

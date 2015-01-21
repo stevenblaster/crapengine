@@ -14,14 +14,13 @@
 #define CRAP_DL 1
 
 #include <cstdio>
-#include "Box2D/Box2D.h"
 #include "convert.h"
-#include "physic2drectangle.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
 #include "physicsystem2d.h"
 #include "transformation2d.h"
+#include "physic2drectangle.h"
 #include "system.h"
 
 namespace crap
@@ -56,7 +55,7 @@ void Physic2DRectangle::init( System* system )
 	const bool dynamic = _dynamic != 0;
 
 	_body = system2d->createRectangle( pos_x, pos_y, rotation, width, height, _density, _friction, dynamic );
-	_body->SetUserData( _transformation->getData() );
+	system2d->setBodyUserdata( _body, _transformation->getData() );
 }
 
 void Physic2DRectangle::deinit( System* system )

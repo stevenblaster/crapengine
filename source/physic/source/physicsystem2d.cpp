@@ -20,11 +20,11 @@ namespace crap
 
 PhysicSystem2D::PhysicSystem2D(  float32_t gravity_x, float32_t gravity_y,
 		uint32_t velocityIterations, uint32_t positionIterations ) :
-	_allocator( sizeof(b2World) * 2 ), _velocityIterations(velocityIterations),
+	_allocator( sizeWorld2D() * 2 ), _velocityIterations(velocityIterations),
 	_positionIterations(positionIterations)
 {
-	_world = (b2World*)_allocator.allocate( sizeof(b2World), 4 );
-	new (_world) b2World( b2Vec2( gravity_x, gravity_y ) );
+	_memory = _allocator.allocate( sizeWorld2D(), 4 );
+	_world = createWorld2D( _memory, gravity_x, gravity_y );
 }
 
 PhysicSystem2D::~PhysicSystem2D( void )
@@ -51,6 +51,11 @@ Body2D* PhysicSystem2D::createPolygon( float32_t pos_x, float32_t pos_y, float32
 	return createPolygon2D( _world, pos_x, pos_y, path, pathSize, density, friction, dynamic );
 }
 
+void PhysicSystem2D::setBodyUserdata( Body2D* body, void* data )
+{
+	setBody2DUserdata( body, data );
+}
+
 void PhysicSystem2D::destroyBody( Body2D* body )
 {
 	destroyBody2D( _world, body );
@@ -60,19 +65,8 @@ bool PhysicSystem2D::update( uint32_t deltatime )
 {
 	float32_t delta = ((float32_t) deltatime) / 1.f;
 
-	_world->Step( delta, _velocityIterations, _positionIterations );
-
-	for (Body2D* b = _world->GetBodyList(); b!= 0; b = b->GetNext())
-	{
-		if( b->GetType() == b2_dynamicBody )
-		{
-			b->SetActive(true);
-			Transformation2Ddata* data = (Transformation2Ddata*)b->GetUserData();
-			data->pos_x = b->GetPosition().x;
-			data->pos_y = b->GetPosition().y;
-			data->rotation = b->GetAngle();
-		}
-	}
+	worldStep( _world, delta, _velocityIterations, _positionIterations );
+	updateBodies( _world );
 
 	return true;
 }
