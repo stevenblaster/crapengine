@@ -187,7 +187,7 @@ int main( void )
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
 
 	/* Physic system 2D */
-	crap::PhysicSystem2D physicSystem2D( 0.f, 10000.f, 8, 2 );
+	crap::PhysicSystem2D physicSystem2D( 0.f, 1000.f, 8, 2 );
 	crap::SubSystem physic_sys2d( "PhysicSystem2D", &physicSystem2D, &system );
 
 	taskManager.addTask< crap::PhysicSystem2D, &crap::PhysicSystem2D::update>( "Physic2DUpdate", &physicSystem2D, 50, true, false );
@@ -333,7 +333,7 @@ int main( void )
 	crap::Component* ptrans2d2 = componentSystem.createComponent("Transformation2D", pnode2 );
 	componentSystem.setComponentMember( ptrans2d2, "posX", "550" );
 	componentSystem.setComponentMember( ptrans2d2, "posY", "400" );
-	componentSystem.setComponentMember( ptrans2d2, "rotation", "0.1" );
+	componentSystem.setComponentMember( ptrans2d2, "rotation", "0.7" );
 	componentSystem.setComponentMember( ptrans2d2, "scale", "1.f" );
 
 	crap::Component* rect2d2 = componentSystem.createComponent("Rectangle", pnode2 );

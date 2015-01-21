@@ -63,7 +63,7 @@ void PhysicSystem2D::destroyBody( Body2D* body )
 
 bool PhysicSystem2D::update( uint32_t deltatime )
 {
-	float32_t delta = ((float32_t) deltatime) / 1.f;
+	float32_t delta = ((float32_t) deltatime) / 1000.f;
 
 	worldStep( _world, delta, _velocityIterations, _positionIterations );
 	updateBodies( _world );
