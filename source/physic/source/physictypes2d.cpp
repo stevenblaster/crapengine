@@ -43,8 +43,8 @@ void updateBodies( World2D* world )
 		if( b->GetType() == b2_dynamicBody )
 		{
 			float32_t* data = (float32_t*)b->GetUserData();
-			data[0] = b->GetPosition().x;
-			data[1] = b->GetPosition().y;
+			data[0] = b->GetPosition().x*100;
+			data[1] = b->GetPosition().y*100;
 			data[2] = b->GetAngle();
 		}
 	}

@@ -1,0 +1,74 @@
+/*!
+ * @file physic2dcircle.cpp
+ *
+ * @brief Short description...
+ *
+ * Long description...
+ *
+ * @copyright CrapGames 2015
+ *
+ * @author  steffen
+ * @date 	Jan 21, 2015
+ */
+
+
+
+#define CRAP_DL 1
+
+#include <cstdio>
+#include "convert.h"
+#include "plugin.h"
+#include "node.h"
+#include "componenttype.h"
+#include "physicsystem2d.h"
+#include "transformation2d.h"
+#include "physic2dcircle.h"
+#include "system.h"
+
+namespace crap
+{
+
+Physic2DCircle::Physic2DCircle( void ) :
+		_radius(0.f), _density(0), _friction(0), _dynamic(0), _body(0), _transformation(0)
+{
+	REGISTER_COMPONENT_MEMBER( Physic2DCircle, radius, float32_t )
+	REGISTER_COMPONENT_MEMBER( Physic2DCircle, density, float32_t )
+	REGISTER_COMPONENT_MEMBER( Physic2DCircle, friction, float32_t )
+	REGISTER_COMPONENT_MEMBER( Physic2DCircle, dynamic, uint32_t )
+}
+
+Physic2DCircle::~Physic2DCircle( void )
+{
+
+}
+
+void Physic2DCircle::init( System* system )
+{
+	PhysicSystem2D* system2d = system->getSubSystem<PhysicSystem2D>("PhysicSystem2D");
+	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
+
+	const float32_t pos_x = *_transformation->getposX();
+	const float32_t pos_y = *_transformation->getposY();
+	const float32_t scale = *_transformation->getscale();
+	const float32_t radius = _radius * scale;
+	const bool dynamic = _dynamic != 0;
+
+	const float32_t p_radius = radius/100.f;
+	const float32_t p_pos_x = (pos_x / 100) + p_radius;
+	const float32_t p_pos_y = (pos_y / 100) + p_radius;
+
+	_body = system2d->createCircle( p_pos_x, p_pos_y, p_radius, _density, _friction, dynamic );
+	system2d->setBodyUserdata( _body, _transformation->getData() );
+}
+
+void Physic2DCircle::deinit( System* system )
+{
+	PhysicSystem2D* system2d = system->getSubSystem<PhysicSystem2D>("PhysicSystem2D");
+	system2d->destroyBody( _body );
+}
+
+
+} /* namespace crap */
+
+
+

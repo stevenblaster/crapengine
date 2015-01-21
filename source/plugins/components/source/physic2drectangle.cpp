@@ -27,10 +27,10 @@ namespace crap
 {
 
 Physic2DRectangle::Physic2DRectangle( void ) :
-		_width(0.f), _height(0), _density(0), _friction(0), _dynamic(0), _body(0), _transformation(0)
+		_width(0.f), _height(0.f), _density(0), _friction(0), _dynamic(0), _body(0), _transformation(0)
 {
 	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, height, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, height, float32_t )
 	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, density, float32_t )
 	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, friction, float32_t )
 	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, dynamic, uint32_t )
@@ -54,7 +54,12 @@ void Physic2DRectangle::init( System* system )
 	const float32_t rotation = *_transformation->getrotation();
 	const bool dynamic = _dynamic != 0;
 
-	_body = system2d->createRectangle( pos_x, pos_y, rotation, width, height, _density, _friction, dynamic );
+	const float32_t p_width = width/200.f;
+	const float32_t p_height = height/200.f;
+	const float32_t p_pos_x = (pos_x / 100) + p_width;
+	const float32_t p_pos_y = (pos_y / 100) + p_height;
+
+	_body = system2d->createRectangle( p_pos_x, p_pos_y, rotation, p_width, p_height, _density, _friction, dynamic );
 	system2d->setBodyUserdata( _body, _transformation->getData() );
 }
 

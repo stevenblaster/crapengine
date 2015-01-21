@@ -9,5 +9,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/roundedrectangle.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/text2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/physic2drectangle.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/physic2dcircle.cpp
    PARENT_SCOPE
 )

@@ -39,7 +39,7 @@ public:
 	virtual void deinit( System* system );
 
 	DECLARE_COMPONENT_MEMBER( Physic2DRectangle, width, float32_t )
-	DECLARE_COMPONENT_MEMBER( Physic2DRectangle, height, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Physic2DRectangle, height, float32_t )
 	DECLARE_COMPONENT_MEMBER( Physic2DRectangle, density, float32_t )
 	DECLARE_COMPONENT_MEMBER( Physic2DRectangle, friction, float32_t )
 	DECLARE_COMPONENT_MEMBER( Physic2DRectangle, dynamic, uint32_t )

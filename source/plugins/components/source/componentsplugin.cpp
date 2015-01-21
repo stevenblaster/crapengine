@@ -25,6 +25,7 @@
 #include "system.h"
 #include "plugin.h"
 #include "physic2drectangle.h"
+#include "physic2dcircle.h"
 
 namespace crap
 {
@@ -33,13 +34,13 @@ CRAP_DECLARE_PLUGIN( ComponentsPlugin )
 {
 public:
 	ComponentsPlugin( System* system ) :
-		_test("TestComponent", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_trans2d("Transformation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_circle2d("Circle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_rectangle2d("Rectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_roundedRectangle2d("RoundedRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_text2d("Text2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_physic2drectangle("Physic2DRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_physic2drectangle("Physic2DRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_physic2dcircle("Physic2DCircle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -62,13 +63,13 @@ public:
 
 private:
 
-    crap::ComponentType<TestComponent>	_test;
     crap::ComponentType<Transformation2D>	_trans2d;
     crap::ComponentType<Circle>	_circle2d;
     crap::ComponentType<Rectangle>	_rectangle2d;
     crap::ComponentType<RoundedRectangle> _roundedRectangle2d;
     crap::ComponentType<Text2D> _text2d;
     crap::ComponentType<Physic2DRectangle> _physic2drectangle;
+    crap::ComponentType<Physic2DCircle>  _physic2dcircle;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )
