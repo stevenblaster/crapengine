@@ -14,7 +14,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/test.h
    ${CMAKE_CURRENT_SOURCE_DIR}/physicsystem2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/physictypes2d.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/logger.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/physicsystem2dbase.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/strings.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h
    PARENT_SCOPE

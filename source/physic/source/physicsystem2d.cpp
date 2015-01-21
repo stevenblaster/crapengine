@@ -18,9 +18,11 @@
 namespace crap
 {
 
-PhysicSystem2D::PhysicSystem2D(  float32_t gravity_x, float32_t gravity_y,
+PhysicSystem2D::PhysicSystem2D( uint32_t max_bodies, float32_t gravity_x, float32_t gravity_y,
 		uint32_t velocityIterations, uint32_t positionIterations ) :
-	_allocator( sizeWorld2D() * 2 ), _velocityIterations(velocityIterations),
+	_allocator( sizeWorld2D() * 2  + BodyArray::size_of_elements(max_bodies)),
+	_bodies( _allocator.allocate( BodyArray::size_of_elements(max_bodies), 4), BodyArray::size_of_elements(max_bodies)),
+	_velocityIterations(velocityIterations),
 	_positionIterations(positionIterations)
 {
 	_memory = _allocator.allocate( sizeWorld2D(), 4 );
@@ -31,34 +33,42 @@ PhysicSystem2D::~PhysicSystem2D( void )
 {
 	destruct_object( _world );
 	_allocator.deallocate(_world);
+	_allocator.deallocate( _bodies.memory().as_void );
 }
 
-Body2D* PhysicSystem2D::createRectangle( float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
+uint32_t PhysicSystem2D::createRectangle( float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
 		float32_t density, float32_t friction, bool dynamic )
 {
-	return createRectangle2D( _world, pos_x, pos_y, rotation, width, height, density, friction, dynamic );
+	Body2D* body = createRectangle2D( _world, pos_x, pos_y, rotation, width, height, density, friction, dynamic );
+	return _bodies.push_back(body);
 }
 
-Body2D* PhysicSystem2D::createCircle( float32_t pos_x, float32_t pos_y, float32_t radius,
+uint32_t PhysicSystem2D::createCircle( float32_t pos_x, float32_t pos_y, float32_t radius,
 		float32_t density, float32_t friction, bool dynamic )
 {
-	return createCircle2D( _world, pos_x, pos_y, radius, density, friction, dynamic );
+	Body2D* body = createCircle2D( _world, pos_x, pos_y, radius, density, friction, dynamic );
+	return _bodies.push_back(body);
 }
 
-Body2D* PhysicSystem2D::createPolygon( float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
+uint32_t PhysicSystem2D::createPolygon( float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
 		float32_t density, float32_t friction, bool dynamic )
 {
-	return createPolygon2D( _world, pos_x, pos_y, path, pathSize, density, friction, dynamic );
+	Body2D* body = createPolygon2D( _world, pos_x, pos_y, path, pathSize, density, friction, dynamic );
+	return _bodies.push_back(body);
 }
 
-void PhysicSystem2D::setBodyUserdata( Body2D* body, void* data )
+void PhysicSystem2D::setBodyUserdata( uint32_t bodyid, void* data )
 {
-	setBody2DUserdata( body, data );
+	Body2D** body = _bodies.get(bodyid);
+	if( body != 0)
+		setBody2DUserdata( *body, data );
 }
 
-void PhysicSystem2D::destroyBody( Body2D* body )
+void PhysicSystem2D::destroyBody( uint32_t bodyid )
 {
-	destroyBody2D( _world, body );
+	Body2D** body = _bodies.get(bodyid);
+	if( body != 0)
+		destroyBody2D( _world, *body );
 }
 
 bool PhysicSystem2D::update( uint32_t deltatime )

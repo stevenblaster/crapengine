@@ -15,8 +15,10 @@
 #ifndef PHYSIC_INCLUDE_PHYSICSYSTEM2D_H_
 #define PHYSIC_INCLUDE_PHYSICSYSTEM2D_H_
 
+#include "container/indexedarray.h"
 #include "utilities.h"
 #include "memory.h"
+#include "physicsystem2dbase.h"
 
 #ifdef CRAP_NO_DEBUG
 #define PHYSIC2D_MEMORY SimpleGeneralMemory
@@ -32,26 +34,28 @@ namespace crap
 typedef b2World World2D;
 typedef b2Body Body2D;
 
-class PhysicSystem2D
+class PhysicSystem2D : public PhysicSystem2DBase
 {
 public:
-	PhysicSystem2D( float32_t gravity_x, float32_t gravity_y,
+	typedef indexed_array<Body2D*> BodyArray;
+
+	PhysicSystem2D( uint32_t max_bodies, float32_t gravity_x, float32_t gravity_y,
 			uint32_t velocityIterations, uint32_t positionIterations );
 	~PhysicSystem2D( void );
 
-	Body2D* createRectangle( float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
+	virtual uint32_t createRectangle( float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
 			float32_t density, float32_t friction, bool dynamic );
 
-	Body2D* createCircle( float32_t pos_x, float32_t pos_y, float32_t radius,
+	virtual uint32_t createCircle( float32_t pos_x, float32_t pos_y, float32_t radius,
 			float32_t density, float32_t friction, bool dynamic );
 
-	Body2D* createPolygon( float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
+	virtual uint32_t createPolygon( float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
 			float32_t density, float32_t friction, bool dynamic );
 
-	void setBodyUserdata( Body2D* body, void* data );
-	void destroyBody( Body2D* body );
+	virtual void setBodyUserdata( uint32_t bodyid, void* data );
+	virtual void destroyBody( uint32_t bodyid );
 
-	bool update( uint32_t deltatime );
+	virtual bool update( uint32_t deltatime );
 
 private:
 
@@ -64,6 +68,7 @@ private:
 	};
 
 	PHYSIC2D_MEMORY			_allocator;
+	BodyArray				_bodies;
 	b2World*				_world;
 	void*					_memory;
 	uint32_t 				_velocityIterations;

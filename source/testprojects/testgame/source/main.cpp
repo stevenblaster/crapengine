@@ -187,7 +187,7 @@ int main( void )
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
 
 	/* Physic system 2D */
-	crap::PhysicSystem2D physicSystem2D( 0.f, 10.f, 8, 2 );
+	crap::PhysicSystem2D physicSystem2D( 1000, 0.f, 10.f, 8, 2 );
 	crap::SubSystem physic_sys2d( "PhysicSystem2D", &physicSystem2D, &system );
 
 	taskManager.addTask< crap::PhysicSystem2D, &crap::PhysicSystem2D::update>( "Physic2DUpdate", &physicSystem2D, 20, true, false );

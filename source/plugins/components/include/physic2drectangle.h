@@ -26,7 +26,6 @@ struct b2Body;
 namespace crap
 {
 
-typedef b2Body Body2D;
 class Transformation2D;
 
 class Physic2DRectangle : public Component
@@ -46,7 +45,7 @@ public:
 
 private:
 
-	Body2D* 				_body;
+	uint32_t				_bodyID;
 	Transformation2D*		_transformation;
 };
 
