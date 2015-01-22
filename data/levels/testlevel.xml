@@ -4,7 +4,7 @@
 	<NODE>
 		<COMPONENT type="Transformation2D">
 			<MEMBER name="posX">400</MEMBER>
-			<MEMBER name="posY">50</MEMBER>
+			<MEMBER name="posY">-50</MEMBER>
 			<MEMBER name="rotation">0.f</MEMBER>
 			<MEMBER name="scale">1.f</MEMBER>
 		</COMPONENT>
@@ -24,7 +24,7 @@
 	<NODE>
 		<COMPONENT type="Transformation2D">
 			<MEMBER name="posX">300</MEMBER>
-			<MEMBER name="posY">400</MEMBER>
+			<MEMBER name="posY">600</MEMBER>
 			<MEMBER name="rotation">0.2f</MEMBER>
 			<MEMBER name="scale">1.f</MEMBER>
 		</COMPONENT>
