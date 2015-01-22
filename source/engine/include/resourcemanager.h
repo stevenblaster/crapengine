@@ -33,6 +33,9 @@ public:
     void clearInfo( void );
 
     void loadResource( string_hash resourceId );
+    void unloadResource( string_hash resourceId );
+
+    void unloadAll( void );
 
     struct ResourceInfo
     {

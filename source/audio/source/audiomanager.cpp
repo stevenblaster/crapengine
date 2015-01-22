@@ -58,8 +58,11 @@ uint32_t AudioManager::addBuffer( const string_hash& name, const AudioFile& data
 void AudioManager::removeBuffer( const string_hash& name )
 {
     uint32_t index = _buffers.find( name );
-    destroyAudioBuffers( _buffers.get_value(index), 1 );
-    _buffers.erase_at( index );
+    if( index !=  array_map<string_hash, AudioBuffer>::INVALID )
+    {
+		destroyAudioBuffers( _buffers.get_value(index), 1 );
+		_buffers.erase_at( index );
+    }
 }
 
 uint32_t AudioManager::leaseSource( const string_hash& name )

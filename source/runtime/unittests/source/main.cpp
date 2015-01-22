@@ -22,6 +22,21 @@
 #include "physicsystem2d.h"
 #include "world.h"
 
+
+class stopMe
+{
+public:
+	stopMe( crap::EventSystem* es ) : _es(es) {}
+
+	crap::EventSystem* _es;
+
+	void exitFunc( uint32_t state )
+	{
+		if( state == 0 )
+			_es->fireEvent("StopWorld");
+	}
+};
+
 int main( void )
 {
 	//debug:: lets find the path
@@ -114,7 +129,8 @@ int main( void )
 
 	//add keyboard
 	crap::KeyboardInput keyboardInput("Keyboard", 20, &inputManager );
-	//keyboardInput.addListener<&exitFunc>( thekey, 0, true );
+	stopMe stopper( &eventSystem );
+	keyboardInput.addListener<stopMe, &stopMe::exitFunc>( &stopper, 256, 0 );
 
 	//add mouse
 	crap::MouseInput mouseInput("Mouse", 20, 20, 20, 20, &inputManager );

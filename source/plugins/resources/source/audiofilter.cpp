@@ -52,4 +52,13 @@ void AudioFilter::import( string_hash name, pointer_t<void> memory, uint32_t mem
     	am->addBuffer( name, file );
 }
 
+void AudioFilter::unload( string_hash name, System* system )
+{
+	AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
+	if( am != 0 )
+	{
+		am->removeBuffer(name);
+	}
+}
+
 } /* namespace crap */

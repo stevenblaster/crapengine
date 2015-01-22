@@ -8,6 +8,7 @@ git add source/plugins/*
 git add source/video/*
 git add source/physic/*
 git add source/testprojects/*
+git add source/runtime/*
 git add data/plugins/*
 git add data/configuration.ini
 git add data/resources.xml

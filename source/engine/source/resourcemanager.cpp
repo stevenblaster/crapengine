@@ -161,4 +161,32 @@ void ResourceManager::loadResource( string_hash resourceId )
     }
 }
 
+void ResourceManager::unloadResource( string_hash resourceId )
+{
+	const uint32_t index = _resources.find( resourceId.hash() );
+
+	if( index == ResourceMap::INVALID )
+		return;
+
+	const string_hash typeId = _resources.get_value( index )->typeId;
+
+	intrusive_node<ResourceFilter>* node = _filters.begin();
+    for( ; node != _filters.end(); node = node->next() )
+    {
+        if( *(node->parent()) == typeId )
+        {
+        	node->parent()->unload( resourceId, _system );
+        }
+    }
+}
+
+void ResourceManager::unloadAll( void )
+{
+	for( uint32_t i = 0; i < _resources.size(); ++i )
+	{
+		string_hash resourceId = *_resources.get_key( i );
+		unloadResource( resourceId );
+	}
+}
+
 } //namespace crap

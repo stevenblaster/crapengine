@@ -148,6 +148,7 @@ void World::startXML( void )
     }
 
     componentSystem->destroyAll();
+    resourceManager->unloadAll();
     eventSystem->unregisterEvent<World, &World::stop>("StopWorld", this );
 }
 

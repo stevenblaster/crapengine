@@ -37,8 +37,22 @@ Image2DFilter::~Image2DFilter( void )
 void Image2DFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
-	Image2D image = crap::createImage2D( renderer->getContext(), memory, memSize , 0 );
-	renderer->addImage2D( name, image );
+	if( renderer != 0 )
+	{
+		Image2D image = crap::createImage2D( renderer->getContext(), memory, memSize , 0 );
+		renderer->addImage2D( name, image );
+	}
+}
+
+void Image2DFilter::unload( string_hash name, System* system )
+{
+	Renderer2D* renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
+	if( renderer != 0 )
+	{
+		Image2D image = renderer->getImage2D(name);
+		renderer->removeImage2D( name );
+		crap::destroyImage2D( renderer->getContext(), image );
+	}
 }
 
 } /* namespace crap */

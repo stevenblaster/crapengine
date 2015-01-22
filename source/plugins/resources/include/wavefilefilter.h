@@ -30,6 +30,8 @@ public:
     virtual ~WaveFileFilter( void );
 
     virtual void import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system );
+
+    virtual void unload( string_hash name, System* system );
 };
 
 } /* namespace crap */

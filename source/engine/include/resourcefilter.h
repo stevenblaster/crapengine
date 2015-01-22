@@ -38,6 +38,8 @@ public:
 
     virtual void import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system ) = 0;
 
+    virtual void unload( string_hash name, System* system ) = 0;
+
     CRAP_INLINE
 	bool operator==( const string_hash& name )
     {
