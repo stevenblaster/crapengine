@@ -184,7 +184,11 @@ int main( void )
 	const crap::string512 worldPath = data_path + crap::string256("levels/testlevel.xml");
 	crap::World testWorld(&system, worldPath, crap::World::xml );
 
+	const crap::string512 worldPath2 = data_path + crap::string256("levels/testlevel2.xml");
+	crap::World testWorld2(&system, worldPath2, crap::World::xml );
+
 	crap::World::start( &testWorld );
+	crap::World::start( &testWorld2 );
 
 	return 0;
 }
