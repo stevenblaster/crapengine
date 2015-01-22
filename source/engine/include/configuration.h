@@ -33,6 +33,18 @@ public:
         _memory.deallocate( _config.memory().as_void );
     }
 
+    CRAP_INLINE void addSetting( string_hash hash, string64 value )
+    {
+    	uint32_t index = _config.find( hash );
+
+    	if( index != ConfigMap::INVALID )
+    	{
+    		*_config.get_value( index ) = value;
+    		return;
+    	}
+
+    	_config.push_back( hash, value );
+    }
     void load( const char* filename );
 
     template<typename T>

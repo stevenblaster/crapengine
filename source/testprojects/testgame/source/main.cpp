@@ -162,6 +162,9 @@ int main( void )
 	crap::Renderer renderer( &renderWindow );
 	renderer.init();
 
+	//set renderer as subsystem
+	crap::SubSystem renderer_sys("Renderer", &renderer, &system );
+
 	//inputmanager
 	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
 	crap::InputManager inputManager( inputMemory, renderWindow.getHandle() );
@@ -187,7 +190,7 @@ int main( void )
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
 
 	/* Physic system 2D */
-	crap::PhysicSystem2D physicSystem2D( 1000, 0.f, 10.f, 8, 2 );
+	crap::PhysicSystem2D physicSystem2D( 1000, 0.f, 10.f, 8, 2, 1.f/200.f );
 	crap::SubSystem physic_sys2d( "PhysicSystem2D", &physicSystem2D, &system );
 
 	taskManager.addTask< crap::PhysicSystem2D, &crap::PhysicSystem2D::update>( "Physic2DUpdate", &physicSystem2D, 20, true, false );

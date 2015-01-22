@@ -34,6 +34,24 @@ void ComponentSystem::destroyNode( Node* node )
 	node = 0;
 }
 
+void ComponentSystem::initAll( void )
+{
+	for( uint32_t i=0; i< _nodes.size(); ++i )
+	{
+		_nodes.data()[i].initChildren();
+	}
+}
+
+void ComponentSystem::destroyAll( void )
+{
+	while( _nodes.size() > 0 )
+	{
+		uint32_t index = _nodes.size()-1;
+		Node* node = _nodes.data()+index;
+		_nodes.erase( *node );
+	}
+}
+
 Component* ComponentSystem::createComponent( string_hash name, Node* cnode )
 {
 	for( intrusive_node<ComponentFactory>* node = _factoryList.begin(); node != _factoryList.end(); node = _factoryList.next(node))

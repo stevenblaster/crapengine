@@ -19,11 +19,12 @@ namespace crap
 {
 
 PhysicSystem2D::PhysicSystem2D( uint32_t max_bodies, float32_t gravity_x, float32_t gravity_y,
-		uint32_t velocityIterations, uint32_t positionIterations ) :
+		uint32_t velocityIterations, uint32_t positionIterations, float32_t pixelToMeters ) :
 	_allocator( sizeWorld2D() * 2  + BodyArray::size_of_elements(max_bodies)),
 	_bodies( _allocator.allocate( BodyArray::size_of_elements(max_bodies), 4), BodyArray::size_of_elements(max_bodies)),
 	_velocityIterations(velocityIterations),
-	_positionIterations(positionIterations)
+	_positionIterations(positionIterations),
+	_pixelToMeters(pixelToMeters)
 {
 	_memory = _allocator.allocate( sizeWorld2D(), 4 );
 	_world = createWorld2D( _memory, gravity_x, gravity_y );
@@ -71,12 +72,17 @@ void PhysicSystem2D::destroyBody( uint32_t bodyid )
 		destroyBody2D( _world, *body );
 }
 
+float32_t PhysicSystem2D::pixelToMeters( void )
+{
+	return _pixelToMeters;
+}
+
 bool PhysicSystem2D::update( uint32_t deltatime )
 {
 	float32_t delta = ((float32_t) deltatime) / 1000.f;
 
 	worldStep( _world, delta, _velocityIterations, _positionIterations );
-	updateBodies( _world );
+	updateBodies( _world, _pixelToMeters );
 
 	return true;
 }

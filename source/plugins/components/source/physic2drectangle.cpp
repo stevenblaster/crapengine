@@ -46,6 +46,7 @@ void Physic2DRectangle::init( System* system )
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
 	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
 
+	const float32_t pixToMeter = system2d->pixelToMeters();
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
 	const float32_t scale = *_transformation->getscale();
@@ -54,10 +55,10 @@ void Physic2DRectangle::init( System* system )
 	const float32_t rotation = *_transformation->getrotation();
 	const bool dynamic = _dynamic != 0;
 
-	const float32_t p_width = width/200.f;
-	const float32_t p_height = height/200.f;
-	const float32_t p_pos_x = (pos_x / 100) + p_width;
-	const float32_t p_pos_y = (pos_y / 100) + p_height;
+	const float32_t p_width = (width/2.f) * pixToMeter;
+	const float32_t p_height = (height/2.f) * pixToMeter;
+	const float32_t p_pos_x = (pos_x * pixToMeter) + p_width;
+	const float32_t p_pos_y = (pos_y * pixToMeter) + p_height;
 
 	_bodyID = system2d->createRectangle( p_pos_x, p_pos_y, rotation, p_width, p_height, _density, _friction, dynamic );
 	system2d->setBodyUserdata( _bodyID, _transformation->getData() );

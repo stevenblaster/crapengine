@@ -40,7 +40,7 @@ public:
 	typedef indexed_array<Body2D*> BodyArray;
 
 	PhysicSystem2D( uint32_t max_bodies, float32_t gravity_x, float32_t gravity_y,
-			uint32_t velocityIterations, uint32_t positionIterations );
+			uint32_t velocityIterations, uint32_t positionIterations, float32_t pixelToMeters );
 	~PhysicSystem2D( void );
 
 	virtual uint32_t createRectangle( float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
@@ -54,6 +54,8 @@ public:
 
 	virtual void setBodyUserdata( uint32_t bodyid, void* data );
 	virtual void destroyBody( uint32_t bodyid );
+
+	virtual float32_t pixelToMeters( void );
 
 	virtual bool update( uint32_t deltatime );
 
@@ -73,6 +75,7 @@ private:
 	void*					_memory;
 	uint32_t 				_velocityIterations;
 	uint32_t 				_positionIterations;
+	float32_t				_pixelToMeters;
 };
 
 } /* namespace crap */

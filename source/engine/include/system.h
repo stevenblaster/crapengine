@@ -34,6 +34,9 @@ public:
 	CRAP_INLINE
 	SubSystem( string_hash id, pointer_t<void> instance, System* system );
 
+	CRAP_INLINE
+	~SubSystem( void );
+
 	CRAP_INLINE uint32_t id( void ) const;
 
 	template<typename T>
@@ -85,6 +88,12 @@ T* System::getSubSystem( string_hash name )
 SubSystem::SubSystem( string_hash id, pointer_t<void> instance, System* system ) :
 		_id(id), _instance(instance), _node( this, &(system->subsystems) )
 {
+
+}
+
+SubSystem::~SubSystem( void )
+{
+
 
 }
 

@@ -36,15 +36,15 @@ void worldStep( World2D* world, float32_t delta, uint32_t velIt, uint32_t posIt 
 {
 	world->Step( delta, velIt, posIt );
 }
-void updateBodies( World2D* world )
+void updateBodies( World2D* world, float32_t pixToMeter )
 {
 	for (Body2D* b = world->GetBodyList(); b!= 0; b = b->GetNext())
 	{
 		if( b->GetType() == b2_dynamicBody )
 		{
 			float32_t* data = (float32_t*)b->GetUserData();
-			data[0] = b->GetPosition().x*100;
-			data[1] = b->GetPosition().y*100;
+			data[0] = b->GetPosition().x / pixToMeter;
+			data[1] = b->GetPosition().y / pixToMeter;
 			data[2] = b->GetAngle();
 		}
 	}

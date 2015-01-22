@@ -34,7 +34,7 @@ void destroyWorld2D( World2D* world );
 
 void worldStep( World2D* world, float32_t delta, uint32_t velIt, uint32_t posIt );
 
-void updateBodies( World2D* world );
+void updateBodies( World2D* world, float32_t pixToMeter );
 
 Body2D* createRectangle2D( World2D* world, float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
 		float32_t density, float32_t friction, bool dynamic );

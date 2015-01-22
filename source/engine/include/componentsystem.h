@@ -43,6 +43,9 @@ public:
 	Node* createNode( void );
 	void destroyNode( Node* node );
 
+	void initAll( void );
+	void destroyAll( void );
+
 	Component* createComponent( string_hash name, Node* node );
 	void initComponent( Component* component );
 	void deinitComponent( Component* component );

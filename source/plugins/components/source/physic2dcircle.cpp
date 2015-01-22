@@ -47,15 +47,16 @@ void Physic2DCircle::init( System* system )
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
 	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
 
+	const float32_t pixToMeter = system2d->pixelToMeters();
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
 	const float32_t scale = *_transformation->getscale();
 	const float32_t radius = _radius * scale;
 	const bool dynamic = _dynamic != 0;
 
-	const float32_t p_radius = radius/100.f;
-	const float32_t p_pos_x = (pos_x / 100) + p_radius;
-	const float32_t p_pos_y = (pos_y / 100) + p_radius;
+	const float32_t p_radius = radius * pixToMeter;
+	const float32_t p_pos_x = (pos_x * pixToMeter) + p_radius;
+	const float32_t p_pos_y = (pos_y * pixToMeter) + p_radius;
 
 	_bodyId = system2d->createCircle( p_pos_x, p_pos_y, p_radius, _density, _friction, dynamic );
 	system2d->setBodyUserdata( _bodyId, _transformation->getData() );

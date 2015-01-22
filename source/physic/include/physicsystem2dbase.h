@@ -50,6 +50,11 @@ public:
 	{
 
 	}
+
+	virtual float32_t pixelToMeters( void )
+	{
+		return 0;
+	}
 };
 
 

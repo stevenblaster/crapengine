@@ -34,4 +34,14 @@ Node::~Node( void )
 	}
 }
 
+void Node::initChildren( void )
+{
+	intrusive_node<Component>* cnode = _components.begin();
+	while( cnode != _components.end() )
+	{
+		_system->initComponent( cnode->parent() );
+		cnode = _components.next( cnode );
+	}
+}
+
 } /* namespace crap */

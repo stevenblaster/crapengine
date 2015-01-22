@@ -132,7 +132,8 @@ void ResourceManager::loadResource( string_hash resourceId )
 {
 	const uint32_t index = _resources.find( resourceId.hash() );
 
-	CRAP_ASSERT( ASSERT_BREAK, index != ResourceMap::INVALID, "Resource not known" );
+	if( index == ResourceMap::INVALID )
+		return;
 
 	const string_hash typeId = _resources.get_value( index )->typeId;
 

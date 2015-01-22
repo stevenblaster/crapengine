@@ -94,7 +94,7 @@ public:
 
     CRAP_INLINE void lock( void ) { mutex_lock( &_mutex ); store_32_relaxed( &_flag, 1 ); }
     CRAP_INLINE bool try_lock( void ) { if(mutex_trylock( &_mutex)) {store_32_relaxed( &_flag, 1 ); return true; } return false; }
-    CRAP_INLINE bool is_locked( void ) const { (load_32_relaxed(&_flag) == 1); }
+    CRAP_INLINE bool is_locked( void ) const { return (load_32_relaxed(&_flag) == 1); }
     CRAP_INLINE void unlock( void ) { mutex_unlock( &_mutex ); store_32_relaxed( &_flag, 0 ); }
 
 private:

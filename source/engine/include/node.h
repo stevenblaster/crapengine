@@ -32,6 +32,8 @@ public:
 	Node( ComponentSystem* system, uint32_t id = 0 );
 	~Node( void );
 
+	void initChildren( void );
+
 	CRAP_INLINE intrusive_list<Component>* getComponents( void ) { return &_components; }
 
 	CRAP_INLINE uint32_t getID( void ) const { return _id; }
