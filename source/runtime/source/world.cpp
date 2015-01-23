@@ -20,7 +20,7 @@ namespace crap
 
 World::World( Game* game, System* system, string512 path, FileType type ) :
 		_type(type), _running(false), _system(system),
-		_game(game), _listnode( this, game->getList() )
+		_game(game), _listnode( this, game->getList() ), _path(path)
 {
     tinyxml2::XMLDocument doc;
     uint32_t errorId = doc.LoadFile(path.c_str());
