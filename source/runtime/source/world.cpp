@@ -12,15 +12,27 @@
 #include "strings.h"
 #include "renderer.h"
 #include "renderer2d.h"
+#include "game.h"
 #include "world.h"
 
 namespace crap
 {
 
-World::World( System* system, string512 path, FileType type ) :
-		_allocator(fileSize(path.c_str())*2 ), _path( path ), _type(type), _running(false), _system(system)
+World::World( Game* game, System* system, string512 path, FileType type ) :
+		_type(type), _running(false), _system(system),
+		_game(game), _listnode( this, game->getList() )
 {
+    tinyxml2::XMLDocument doc;
+    uint32_t errorId = doc.LoadFile(path.c_str());
+    CRAP_ASSERT( ASSERT_BREAK, errorId == 0, doc.ErrorName() );
 
+    tinyxml2::XMLElement* ele = doc.FirstChildElement();
+    CRAP_ASSERT( ASSERT_BREAK, string64(ele->Value()) == string64("LEVEL"), "Wrong XML tag" );
+
+    const string_hash       levelName( ele->Attribute("name") );
+    _name = levelName;
+
+    doc.Clear();
 }
 
 World::~World( void )
@@ -50,21 +62,12 @@ void World::stop( pointer_t<void> )
 
 void World::startXML( void )
 {
-    file_t* handle = openFile( _path.c_str() , CRAP_FILE_READ );
-
-    CRAP_ASSERT( ASSERT_BREAK, handle != 0, "Could not open file %s", _path.c_str() );
-
-    const uint32_t buffer_size = fileSize( _path.c_str() );
-    pointer_t<void> buffer(_allocator.allocate(buffer_size, 4) );
-	memset( buffer.as_void, 0, buffer_size ); //windows fix...
-    readFromFile( handle, buffer, buffer_size );
-
     //get Settings
     crap::Configuration* config = _system->getSubSystem<Configuration>("Configuration");
     CRAP_ASSERT( ASSERT_BREAK, config != 0, "Configuration not found" );
 
     tinyxml2::XMLDocument doc;
-    uint32_t errorId = doc.Parse( buffer.as_const_char, buffer_size );
+    uint32_t errorId = doc.LoadFile( _path.c_str());
     CRAP_ASSERT( ASSERT_BREAK, errorId == 0, doc.ErrorName() );
 
     tinyxml2::XMLNode* xmlNode = doc.FirstChild();
@@ -119,8 +122,6 @@ void World::startXML( void )
     }
 
     doc.Clear();
-    _allocator.deallocate( buffer.as_void );
-    closeFile( handle );
 
     EventSystem* eventSystem = _system->getSubSystem<EventSystem>("EventSystem");
     eventSystem->registerEvent<World, &World::stop>("StopWorld", this );

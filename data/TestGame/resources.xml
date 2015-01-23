@@ -1,0 +1,7 @@
+<RESOURCES>
+	<WaveFile name="Yes">audio/yes.wav</WaveFile>
+	<WaveFile name="Nagut">audio/nagut.wav</WaveFile>
+	<Image2D name="Mieze">textures/mieze.tga</Image2D>
+  	<Image2D name="Hasi">textures/image4.tga</Image2D>
+  	<Font2D name="CalcFont">fonts/calculatorfont.ttf</Font2D>
+</RESOURCES>

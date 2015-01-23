@@ -2,5 +2,6 @@
 set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/world.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/game.h
    PARENT_SCOPE
 )

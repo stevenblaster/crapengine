@@ -17,18 +17,12 @@
 
 #include "utilities.h"
 #include "strings.h"
-#include "memory.h"
-#include "thread.h"
-
-#ifdef CRAP_NO_DEBUG
-#define WORLD_MEMORY SimpleGeneralMemory
-#else
-#define WORLD_MEMORY BoundGeneralMemory
-#endif
+#include "container/intrusivelist.h"
 
 namespace crap
 {
 class System;
+class Game;
 
 class World
 {
@@ -40,23 +34,32 @@ public:
 		package
 	};
 
-	World( System* system, string512 path, FileType type );
+	World( Game* game, System* system, string512 path, FileType type );
 	~World( void );
 
 	static void* start( void* data );
 
 	void stop( pointer_t<void> );
 
+	CRAP_INLINE bool operator==( string_hash hash ) const
+	{
+		return _name == hash;
+	}
+
 private:
 
 	void startXML( void );
 	void startPackage( void );
 
-	WORLD_MEMORY	_allocator;
 	string512		_path;
 	FileType		_type;
 	bool			_running;
-	System* 		_system;
+	Game* 			_game;
+	System*			_system;
+
+	string_hash		_name;
+
+	intrusive_node<World>	_listnode;
 };
 
 } /* namespace crap */
