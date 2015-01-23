@@ -43,5 +43,14 @@ void Node::initChildren( void )
 		cnode = _components.next( cnode );
 	}
 }
+void Node::sendChidren( string_hash name, pointer_t<void> data )
+{
+	intrusive_node<Component>* cnode = _components.begin();
+	while( cnode != _components.end() )
+	{
+		cnode->parent()->receiveMessage( name, data );
+		cnode = _components.next( cnode );
+	}
+}
 
 } /* namespace crap */

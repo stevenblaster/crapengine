@@ -11,7 +11,6 @@
  * @date 	Jan 23, 2015
  */
 
-#include "directorylistener.h"
 #include "logger.h"
 #include "system.h"
 #include "configuration.h"
@@ -25,6 +24,7 @@
 #include "mouseinput.h"
 #include "controllerinput.h"
 #include "renderwindow.h"
+#include "directorylistener.h"
 #include "eventsystem.h"
 #include "renderer2d.h"
 #include "renderer.h"
@@ -173,21 +173,37 @@ void Game::start( void )
 	pluginDirectoryListener.init();
 
 	const string64 firstLevel = config.getValue<string64>("FIRST_LEVEL");
-	setNextWorld( firstLevel.c_str() );
+	//setNextWorld( firstLevel.c_str() );
 
 	renderWindow.addCloseListener<Game, &Game::stop>(this);
+
+	eventSystem.registerEvent<Game, &Game::switchWorldCallback>( "SwitchWorld", this );
+	string_hash firstLevelName( firstLevel.c_str() );
+	eventSystem.fireEvent("SwitchWorld", &firstLevelName );
 
 	while( _running )
 	{
 		_currentLevel = _nextLevel;
 		World::start( _nextLevel );
 	}
+
+	eventSystem.unregisterEvent<Game, &Game::switchWorldCallback>( "SwitchWorld", this );
 }
 
 void Game::stop( void )
 {
-	_currentLevel->stop(0);
+	if( _currentLevel != 0 )
+		_currentLevel->stop(0);
+
 	_running = false;
+}
+
+void Game::switchWorldCallback( pointer_t<void> data )
+{
+	pointer_t<string_hash> name = data.as_void;
+	setNextWorld( *name.as_type );
+	if( _currentLevel != 0 )
+		_currentLevel->stop(0);
 }
 
 void Game::addLevel( const char* path )
@@ -204,6 +220,7 @@ void Game::setNextWorld( string_hash name )
 		if( *node->parent() == name )
 		{
 			_nextLevel = node->parent();
+			return;
 		}
 	}
 }

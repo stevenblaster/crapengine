@@ -45,6 +45,8 @@ public:
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}
 
+	virtual void receiveMessage( string_hash name, pointer_t<void> ) {}
+
 	void setNode( Node* node );
 
 protected:

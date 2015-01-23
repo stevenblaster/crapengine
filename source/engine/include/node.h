@@ -36,6 +36,8 @@ public:
 
 	CRAP_INLINE intrusive_list<Component>* getComponents( void ) { return &_components; }
 
+	void sendChidren( string_hash name, pointer_t<void> );
+
 	CRAP_INLINE uint32_t getID( void ) const { return _id; }
 
 	CRAP_INLINE bool operator==( const uint32_t id )

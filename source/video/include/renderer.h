@@ -43,6 +43,8 @@ public:
 
 	void resizeCallback( int32_t x, int32_t y );
 
+	CRAP_INLINE RenderWindow* getWindow( void ) { return _window; }
+
 private:
 
 	RenderWindow*			_window;
