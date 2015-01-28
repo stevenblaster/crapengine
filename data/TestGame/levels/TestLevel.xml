@@ -10,9 +10,9 @@
 		</COMPONENT>
 		<COMPONENT type="Circle">
 			<MEMBER name="radius">20</MEMBER>
-			<MEMBER name="color">2147548928</MEMBER>
-			<MEMBER name="border">0.f</MEMBER>
-			<MEMBER name="borderColor">4294901760</MEMBER>
+			<MEMBER name="color">FFFF0000</MEMBER>
+			<MEMBER name="border">1.f</MEMBER>
+			<MEMBER name="borderColor">FF00FF00</MEMBER>
 		</COMPONENT>
 		<COMPONENT type="Physic2DCircle">
 			<MEMBER name="radius">20</MEMBER>
@@ -31,9 +31,9 @@
 		<COMPONENT type="Rectangle">
 			<MEMBER name="width">300.f</MEMBER>
 			<MEMBER name="height">50.f</MEMBER>
-			<MEMBER name="color">4294901760</MEMBER>
+			<MEMBER name="color">FF0000FF</MEMBER>
 			<MEMBER name="border">0.f</MEMBER>
-			<MEMBER name="borderColor">2147548928</MEMBER>
+			<MEMBER name="borderColor">FFFF0000</MEMBER>
 		</COMPONENT>
 		<COMPONENT type="Physic2DRectangle">
 			<MEMBER name="width">300.f</MEMBER>

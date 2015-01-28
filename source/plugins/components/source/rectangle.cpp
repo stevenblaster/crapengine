@@ -33,9 +33,9 @@ Rectangle::Rectangle( void ) :
 {
 	REGISTER_COMPONENT_MEMBER( Rectangle, width, float32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle, color, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle, color, color_argb )
 	REGISTER_COMPONENT_MEMBER( Rectangle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle, borderColor, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle, borderColor, color_argb )
 }
 
 Rectangle::~Rectangle( void )
@@ -59,8 +59,8 @@ void Rectangle::deinit( System* system )
 
 void Rectangle::renderCall( Context2D* context )
 {
-	const ColorARGB fill(_color);
-	const ColorARGB bfill( _borderColor );
+	const color_argb fill(_color);
+	const color_argb bfill( _borderColor );
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
@@ -70,8 +70,8 @@ void Rectangle::renderCall( Context2D* context )
 	const float32_t rotation = *_transformation->getrotation();
 	const float32_t border = _border;
 
-	drawColoredRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill.red, fill.green, fill.blue, fill.alpha,
-			border, bfill.red, bfill.green, bfill.blue, bfill.alpha );
+	drawColoredRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill.r, fill.g, fill.b, fill.a,
+			border, bfill.r, bfill.g, bfill.b, bfill.a );
 }
 
 } /* namespace crap */

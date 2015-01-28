@@ -441,8 +441,6 @@ struct limits<uint64_t>
     };
 };
 
-//const uint64_t limits<uint64_t>::MIN = UINT64_MIN;
-//const uint64_t limits<uint64_t>::MAX = UINT64_MAX;
 
 template<>
 struct limits<float32_t>
@@ -456,8 +454,6 @@ struct limits<float32_t>
     };
 };
 
-//const float32_t limits<float32_t>::MIN = FLOAT32_MIN;
-//const float32_t limits<float32_t>::MAX = FLOAT32_MAX;
 
 template<>
 struct limits<float64_t>
@@ -471,8 +467,68 @@ struct limits<float64_t>
     };
 };
 
-//const float64_t limits<float64_t>::MIN = FLOAT64_MIN;
-//const float64_t limits<float64_t>::MAX = FLOAT64_MAX;
+
+struct color_argb
+{
+	union
+	{
+		uint32_t value;
+		struct
+		{
+			uint32_t b 	: 8;
+			uint32_t g	: 8;
+			uint32_t r	: 8;
+			uint32_t a	: 8;
+		};
+	};
+
+	CRAP_INLINE color_argb( uint32_t v=0 ) : value(v) {}
+
+};
+namespace argb
+{
+	static const color_argb black = 	color_argb(4278190080);
+	static const color_argb white = 	color_argb(4294967295);
+	static const color_argb grey = 		color_argb(4286611584);
+	static const color_argb red = 		color_argb(4294901760);
+	static const color_argb blue = 		color_argb(4278190335);
+	static const color_argb green = 	color_argb(4278255360);
+	static const color_argb yellow = 	color_argb(4294902015);
+	static const color_argb magenta = 	color_argb(4294967040);
+	static const color_argb cyan = 		color_argb(4278255615);
+	static const color_argb orange = 	color_argb(4294934528);
+}
+
+struct color_rgba
+{
+	union
+	{
+		uint32_t value;
+		struct
+		{
+			uint32_t a	: 8;
+			uint32_t b 	: 8;
+			uint32_t g	: 8;
+			uint32_t r	: 8;
+		};
+	};
+
+	CRAP_INLINE color_rgba( uint32_t v=0 ) : value(v) {}
+};
+
+namespace rgba
+{
+	static const color_rgba black = 	color_rgba(255);
+	static const color_rgba white = 	color_rgba(4294967295);
+	static const color_rgba grey = 		color_rgba(2155905279);
+	static const color_rgba red = 		color_rgba(4278190335);
+	static const color_rgba blue = 		color_rgba(65535);
+	static const color_rgba green = 	color_rgba(16711935);
+	static const color_rgba yellow = 	color_rgba(4294902015);
+	static const color_rgba magenta = 	color_rgba(4278255615);
+	static const color_rgba cyan = 		color_rgba(16777215);
+	static const color_rgba orange = 	color_rgba(4286578943);
+}
 
 } //namespace crap
 

@@ -21,59 +21,6 @@
 namespace crap
 {
 
-typedef struct s_argb
-{
-	union
-	{
-		uint32_t value;
-		struct
-		{
-			uint32_t blue 	: 8;
-			uint32_t green	: 8;
-			uint32_t red	: 8;
-			uint32_t alpha	: 8;
-		};
-	};
-
-	CRAP_INLINE s_argb( uint32_t v=0 ) : value(v) {}
-}
-ColorARGB;
-
-typedef struct s_rgba
-{
-	union
-	{
-		uint32_t value;
-		struct
-		{
-			uint32_t alpha	: 8;
-			uint32_t blue 	: 8;
-			uint32_t green	: 8;
-			uint32_t red	: 8;
-		};
-	};
-
-	CRAP_INLINE s_rgba( uint32_t v=0 ) : value(v) {}
-}
-ColorRGBA;
-
-template<>
-CRAP_INLINE string64 convert<ColorARGB, string64>( const ColorARGB& variable )
-{
-    string64 buf;
-    sprintf( buf.pointer().as_char, "%u" , variable.value );
-    return buf;
-}
-
-template<>
-CRAP_INLINE string64 convert<ColorRGBA, string64>( const ColorRGBA& variable )
-{
-    string64 buf;
-    sprintf( buf.pointer().as_char, "%u" , variable.value );
-    return buf;
-}
-
-
 namespace align
 {
 	enum value

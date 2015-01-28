@@ -35,7 +35,7 @@ Text2D::Text2D( void ) :
 	REGISTER_COMPONENT_MEMBER( Text2D, fontName, string_hash )
 	REGISTER_COMPONENT_MEMBER( Text2D, text, string64 )
 	REGISTER_COMPONENT_MEMBER( Text2D, fontSize, float32_t )
-	REGISTER_COMPONENT_MEMBER( Text2D, color, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Text2D, color, color_argb )
 	REGISTER_COMPONENT_MEMBER( Text2D, blur, float32_t )
 	REGISTER_COMPONENT_MEMBER( Text2D, spacing, float32_t )
 	REGISTER_COMPONENT_MEMBER( Text2D, lineHeight, float32_t )
@@ -67,7 +67,7 @@ void Text2D::renderCall( Context2D* context )
 
 	const crap::Font2D font = _font2d;
 	const char* text = _text.c_str();
-	const ColorARGB fill(_color);
+	const color_argb fill(_color);
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
@@ -78,7 +78,7 @@ void Text2D::renderCall( Context2D* context )
 	const float32_t spacing = _spacing;
 	const float32_t lineHeight = _lineHeight;
 
-	drawText( context, pos_x, pos_y, font, text, fontSize, rotation, fill.red, fill.green, fill.blue, fill.alpha,
+	drawText( context, pos_x, pos_y, font, text, fontSize, rotation, fill.r, fill.g, fill.b, fill.a,
 			blur, spacing, lineHeight, _alignment );
 
 }

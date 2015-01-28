@@ -38,9 +38,9 @@ public:
 	virtual void deinit( System* system );
 
 	DECLARE_COMPONENT_MEMBER( Circle, radius, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle, color, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Circle, color, color_argb )
 	DECLARE_COMPONENT_MEMBER( Circle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle, borderColor, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Circle, borderColor, color_argb )
 
 	void renderCall( Context2D* );
 

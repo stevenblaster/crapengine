@@ -33,9 +33,9 @@ RoundedRectangle::RoundedRectangle( void ) :
 	REGISTER_COMPONENT_MEMBER( RoundedRectangle, width, float32_t )
 	REGISTER_COMPONENT_MEMBER( RoundedRectangle, height, float32_t )
 	REGISTER_COMPONENT_MEMBER( RoundedRectangle, corner, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, color, uint32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle, color, color_argb )
 	REGISTER_COMPONENT_MEMBER( RoundedRectangle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, borderColor, uint32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle, borderColor, color_argb )
 }
 
 RoundedRectangle::~RoundedRectangle( void )
@@ -59,8 +59,8 @@ void RoundedRectangle::deinit( System* system )
 
 void RoundedRectangle::renderCall( Context2D* context )
 {
-	const ColorARGB fill(_color);
-	const ColorARGB bfill( _borderColor );
+	const color_argb fill(_color);
+	const color_argb bfill( _borderColor );
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
@@ -71,8 +71,8 @@ void RoundedRectangle::renderCall( Context2D* context )
 	const float32_t corner = _corner;
 	const float32_t border = _border;
 
-	drawColoredRoundedRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill.red, fill.green, fill.blue, fill.alpha,
-			border, bfill.red, bfill.green, bfill.blue, bfill.alpha, _corner );
+	drawColoredRoundedRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill.r, fill.g, fill.b, fill.a,
+			border, bfill.r, bfill.g, bfill.b, bfill.a, _corner );
 }
 
 } /* namespace crap */

@@ -260,21 +260,30 @@ int main( void )
 	trans2d->init( &system );
 
 
-	crap::ColorARGB colorf;
-	colorf.red = 0;
-	colorf.blue = 0;
-	colorf.green = 255;
-	colorf.alpha = 128;
+	crap::color_argb colorf;
+	colorf.r = 0;
+	colorf.b = 0;
+	colorf.g = 255;
+	colorf.a = 128;
 
-	crap::ColorARGB colorb;
-	colorb.red = 255;
-	colorb.blue = 0;
-	colorb.green = 0;
-	colorb.alpha = 255;
+	crap::color_argb colorb;
 
+	//black
+	colorb.r = 0;
+	colorb.b = 0;
+	colorb.g = 0;
+	colorb.a = 255;
 
-	crap::string64 buff = crap::convert<crap::ColorARGB, crap::string64>(colorf);
-	crap::string64 bufb = crap::convert<crap::ColorARGB, crap::string64>(colorb);
+	crap::color_argb col = crap::argb::black;
+
+	crap::string64 colstr("AABBCCDD");
+	uint32_t lolali = strtol("AABBCCDD", 0, 16 );
+	crap::color_argb colorino = crap::convert<crap::string64, crap::color_argb>( colstr );
+
+	crap::string64 popo = crap::convert<crap::color_argb, crap::string64>( crap::argb::orange );
+
+	crap::string64 buff = crap::convert<crap::color_argb, crap::string64>(colorf);
+	crap::string64 bufb = crap::convert<crap::color_argb, crap::string64>(colorb);
 
 	crap::Component* circle2d = componentSystem.createComponent("RoundedRectangle", cnode );
 
@@ -382,7 +391,7 @@ int main( void )
 	rect2d3->init(&system);
 	phys2d3->init(&system);
 
-	crap::ColorARGB bord;
+	crap::color_argb bord;
 	bord.value = 0;
 	float32_t rot = 0.f;
 	while( running && !renderWindow.shouldClose() )
@@ -404,7 +413,7 @@ int main( void )
 
 		bord.value++;
 		bord.value %= 100;
-		componentSystem.setComponentMember( circle2d, "corner", crap::convert<crap::ColorARGB, crap::string64>(bord) );
+		componentSystem.setComponentMember( circle2d, "corner", crap::convert<crap::color_argb, crap::string64>(bord) );
 		componentSystem.setComponentMember( text2d, "fontSize", "100" );
 
 		renderer2D.render();

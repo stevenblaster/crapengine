@@ -31,9 +31,9 @@ Circle::Circle( void ) :
 		_radius(0.f), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _transformation(0)
 {
 	REGISTER_COMPONENT_MEMBER( Circle, radius, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle, color, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Circle, color, color_argb )
 	REGISTER_COMPONENT_MEMBER( Circle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle, borderColor, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Circle, borderColor, color_argb )
 }
 
 Circle::~Circle( void )
@@ -57,8 +57,8 @@ void Circle::deinit( System* system )
 
 void Circle::renderCall( Context2D* context )
 {
-	const ColorARGB fill(_color);
-	const ColorARGB bfill( _borderColor );
+	const color_argb fill(_color);
+	const color_argb bfill( _borderColor );
 
 	const float32_t pos_x = *_transformation->getposX();
 	const float32_t pos_y = *_transformation->getposY();
@@ -66,8 +66,8 @@ void Circle::renderCall( Context2D* context )
 	const float32_t radius = _radius * scale;
 	const float32_t border = _border;
 
-	drawColoredCircleBorder( context, pos_x, pos_y, radius, fill.red, fill.green, fill.blue, fill.alpha,
-			border, bfill.red, bfill.green, bfill.blue, bfill.alpha );
+	drawColoredCircleBorder( context, pos_x, pos_y, radius, fill.r, fill.g, fill.b, fill.a,
+			border, bfill.r, bfill.g, bfill.b, bfill.a );
 }
 
 } /* namespace crap */

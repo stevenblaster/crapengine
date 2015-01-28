@@ -39,9 +39,9 @@ public:
 
 	DECLARE_COMPONENT_MEMBER( Rectangle, width, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle, height, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle, color, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Rectangle, color, color_argb )
 	DECLARE_COMPONENT_MEMBER( Rectangle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle, borderColor, uint32_t )
+	DECLARE_COMPONENT_MEMBER( Rectangle, borderColor, color_argb )
 
 	void renderCall( Context2D* );
 

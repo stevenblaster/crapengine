@@ -40,9 +40,9 @@ public:
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle, width, float32_t )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle, height, float32_t )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle, corner, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle, color, uint32_t )
+	DECLARE_COMPONENT_MEMBER( RoundedRectangle, color, color_argb )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle, borderColor, uint32_t )
+	DECLARE_COMPONENT_MEMBER( RoundedRectangle, borderColor, color_argb )
 
 	void renderCall( Context2D* );
 

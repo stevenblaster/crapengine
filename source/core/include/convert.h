@@ -1334,6 +1334,7 @@ STRING_CONVERTER( string256 )
 STRING_CONVERTER( string512 )
 STRING_CONVERTER( string1024 )
 
+/* STRiNG HASH */
 template<>
 CRAP_INLINE string_hash convert<string8, string_hash>( const string8& variable )
 {
@@ -1388,6 +1389,178 @@ CRAP_INLINE string_hash convert<string1024, string_hash>( const string1024& vari
 {
 	string_hash hash(variable.c_str());
     return hash;
+}
+
+/* COLOR */
+template<>
+CRAP_INLINE color_argb convert<string16, color_argb>( const string16& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_argb convert<string32, color_argb>( const string32& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_argb convert<string64, color_argb>( const string64& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_argb convert<string128, color_argb>( const string128& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_argb convert<string256, color_argb>( const string256& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_argb convert<string512, color_argb>( const string512& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_argb convert<string1024, color_argb>( const string1024& variable )
+{
+	color_argb color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+//rgba
+
+template<>
+CRAP_INLINE color_rgba convert<string16, color_rgba>( const string16& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_rgba convert<string32, color_rgba>( const string32& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_rgba convert<string64, color_rgba>( const string64& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_rgba convert<string128, color_rgba>( const string128& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_rgba convert<string256, color_rgba>( const string256& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_rgba convert<string512, color_rgba>( const string512& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+template<>
+CRAP_INLINE color_rgba convert<string1024, color_rgba>( const string1024& variable )
+{
+	color_rgba color;
+	color.value = strtol( variable.c_str(), 0, 16 );
+	return color;
+}
+
+//color to string
+template<>
+CRAP_INLINE string16 convert<color_argb, string16>( const color_argb& variable )
+{
+	string16 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
+}
+
+template<>
+CRAP_INLINE string32 convert<color_argb, string32>( const color_argb& variable )
+{
+	string32 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
+}
+
+template<>
+CRAP_INLINE string64 convert<color_argb, string64>( const color_argb& variable )
+{
+	string64 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
+}
+
+template<>
+CRAP_INLINE string128 convert<color_argb, string128>( const color_argb& variable )
+{
+	string128 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
+}
+
+template<>
+CRAP_INLINE string256 convert<color_argb, string256>( const color_argb& variable )
+{
+	string256 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
+}
+
+template<>
+CRAP_INLINE string512 convert<color_argb, string512>( const color_argb& variable )
+{
+	string512 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
+}
+
+template<>
+CRAP_INLINE string1024 convert<color_argb, string1024>( const color_argb& variable )
+{
+	string1024 str;
+	sprintf( str.pointer().as_char, "%x%x%x%x", variable.a, variable.r, variable.g, variable.b );
+	return str;
 }
 
 }	// namespace crap

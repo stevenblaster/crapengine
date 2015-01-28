@@ -204,7 +204,7 @@ TEST(FunitIsLotto)
 
     for(uint32_t i=0; i< draw_numbers_max; ++i )
     {
-        if( draw_points[i] >= 599 )
+        if( draw_points[i] >= 590 )
         printf( "[%u] = %s\n", draw_points[i], &(drawings[i][0]));
     }
 
