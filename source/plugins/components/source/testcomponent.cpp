@@ -34,7 +34,7 @@ TestComponent::~TestComponent( void )
 
 void TestComponent::init( System* system )
 {
-	std::cout << "INIT ME" << *getneZahl() << std::endl;
+	std::cout << "INIT ME" << getneZahl() << std::endl;
 }
 
 void TestComponent::deinit( System* system )

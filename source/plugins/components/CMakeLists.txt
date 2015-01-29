@@ -82,3 +82,16 @@ ELSE()
 	TARGET_LINK_LIBRARIES(crap_components_plugin crap_engine crap_audio crap_video crap_physic ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 
+IF(WIN32)
+
+#add_custom_command(TARGET crap_components_plugin
+#    POST_BUILD
+#    COMMAND copy )
+
+ELSE()
+
+#add_custom_command(TARGET crap_components_plugin
+#    POST_BUILD
+#    COMMAND cp )
+
+ENDIF(WIN32)

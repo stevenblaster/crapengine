@@ -48,9 +48,9 @@ void Physic2DCircle::init( System* system )
 	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
 
 	const float32_t pixToMeter = system2d->pixelToMeters();
-	const float32_t pos_x = *_transformation->getposX();
-	const float32_t pos_y = *_transformation->getposY();
-	const float32_t scale = *_transformation->getscale();
+	const float32_t pos_x = _transformation->getposX();
+	const float32_t pos_y = _transformation->getposY();
+	const float32_t scale = _transformation->getscale();
 	const float32_t radius = _radius * scale;
 	const bool dynamic = _dynamic != 0;
 

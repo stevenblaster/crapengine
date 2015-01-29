@@ -530,6 +530,17 @@ namespace rgba
 	static const color_rgba orange = 	color_rgba(4286578943);
 }
 
+struct transformation_2d
+{
+	float32_t		position[2];
+	float32_t		rotation;
+	float32_t		scale;
+	float32_t		velocity[2];
+	float32_t		torque;
+	float32_t		damping;
+	float32_t		friction;
+};
+
 } //namespace crap
 
 #endif //CRAP_TOOLS_H

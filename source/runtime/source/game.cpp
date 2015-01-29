@@ -32,6 +32,22 @@
 #include "world.h"
 #include "game.h"
 
+#ifndef CRAP_NO_DEBUG
+struct switcher
+{
+	switcher( crap::EventSystem* event ) : _event(event) {}
+
+	void callback( uint32_t state )
+	{
+		crap::string_hash hash("TestLevel2");
+		_event->fireEvent("SwitchWorld", &hash );
+	}
+
+	crap::EventSystem*	_event;
+};
+
+#endif /* CRAP_NO_DEBUG */
+
 namespace crap
 {
 
@@ -180,6 +196,13 @@ void Game::start( void )
 	eventSystem.registerEvent<Game, &Game::switchWorldCallback>( "SwitchWorld", this );
 	string_hash firstLevelName( firstLevel.c_str() );
 	eventSystem.fireEvent("SwitchWorld", &firstLevelName );
+
+#ifndef CRAP_NO_DEBUG
+
+	switcher switcheroni( &eventSystem );
+	keyboardInput.addListener<switcher, &switcher::callback>( &switcheroni, 256, 0 );
+
+#endif /* CRAP_NO_DEBUG */
 
 	while( _running )
 	{

@@ -62,12 +62,12 @@ void Rectangle::renderCall( Context2D* context )
 	const color_argb fill(_color);
 	const color_argb bfill( _borderColor );
 
-	const float32_t pos_x = *_transformation->getposX();
-	const float32_t pos_y = *_transformation->getposY();
-	const float32_t scale = *_transformation->getscale();
+	const float32_t pos_x = _transformation->getposX();
+	const float32_t pos_y = _transformation->getposY();
+	const float32_t scale = _transformation->getscale();
 	const float32_t width = _width * scale;
 	const float32_t height = _height * scale;
-	const float32_t rotation = *_transformation->getrotation();
+	const float32_t rotation = _transformation->getrotation();
 	const float32_t border = _border;
 
 	drawColoredRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill.r, fill.g, fill.b, fill.a,

@@ -86,6 +86,7 @@ Body2D* createCircle2D(World2D* world, float32_t pos_x, float32_t pos_y, float32
 	bodyFixture.shape = &bodyShape;
 	bodyFixture.density = density;
 	bodyFixture.friction = friction;
+	bodyFixture.restitution = 0.8; // EINBINDEN!
 
 	Body2D* body = world->CreateBody(&bodyDef);
 	body->CreateFixture( &bodyFixture );

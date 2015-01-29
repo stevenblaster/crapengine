@@ -47,12 +47,12 @@ void Physic2DRectangle::init( System* system )
 	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
 
 	const float32_t pixToMeter = system2d->pixelToMeters();
-	const float32_t pos_x = *_transformation->getposX();
-	const float32_t pos_y = *_transformation->getposY();
-	const float32_t scale = *_transformation->getscale();
+	const float32_t pos_x = _transformation->getposX();
+	const float32_t pos_y = _transformation->getposY();
+	const float32_t scale = _transformation->getscale();
 	const float32_t width = _width * scale;
 	const float32_t height = _height * scale;
-	const float32_t rotation = *_transformation->getrotation();
+	const float32_t rotation = _transformation->getrotation();
 	const bool dynamic = _dynamic != 0;
 
 	const float32_t p_width = (width/2.f) * pixToMeter;

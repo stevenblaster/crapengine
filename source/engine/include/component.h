@@ -73,7 +73,7 @@ protected:
 
 #define DECLARE_COMPONENT_MEMBER( classname, varname, vartype )					\
 	private: vartype _##varname;										\
-	public:	CRAP_INLINE vartype* get##varname( void ) { return &_##varname; }	\
+	public:	CRAP_INLINE const vartype& get##varname( void ) const { return _##varname; }	\
 	public: static void set##varname( classname* instance, const string64& data )	\
 	{ instance->_##varname = crap::convert<string64, vartype>(data); }
 
