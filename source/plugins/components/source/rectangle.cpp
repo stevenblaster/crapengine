@@ -22,14 +22,14 @@
 #include "componenttype.h"
 #include "elements2d.h"
 #include "renderer2d.h"
-#include "transformation2d.h"
+#include "attributes2d.h"
 #include "system.h"
 
 namespace crap
 {
 
 Rectangle::Rectangle( void ) :
-		_width(0), _height(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _transformation(0)
+		_width(0), _height(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0)
 {
 	REGISTER_COMPONENT_MEMBER( Rectangle, width, float32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle, height, float32_t )
@@ -48,7 +48,7 @@ void Rectangle::init( System* system )
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	_renderID = renderer->addRencerCall<Rectangle, &Rectangle::renderCall>(this);
 
-	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
+	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
 void Rectangle::deinit( System* system )
@@ -62,12 +62,13 @@ void Rectangle::renderCall( Context2D* context )
 	const color_argb fill(_color);
 	const color_argb bfill( _borderColor );
 
-	const float32_t pos_x = _transformation->getposX();
-	const float32_t pos_y = _transformation->getposY();
-	const float32_t scale = _transformation->getscale();
+	const float32_t scale = _attributes->getscale();
+	const float32_t pos_x = _attributes->getposX();
+	const float32_t pos_y = _attributes->getposY();
+
 	const float32_t width = _width * scale;
 	const float32_t height = _height * scale;
-	const float32_t rotation = _transformation->getrotation();
+	const float32_t rotation = _attributes->getrotation();
 	const float32_t border = _border;
 
 	drawColoredRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill.r, fill.g, fill.b, fill.a,

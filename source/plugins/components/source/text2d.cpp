@@ -22,7 +22,7 @@
 #include "componenttype.h"
 #include "elements2d.h"
 #include "renderer2d.h"
-#include "transformation2d.h"
+#include "attributes2d.h"
 #include "system.h"
 
 namespace crap
@@ -30,7 +30,7 @@ namespace crap
 
 Text2D::Text2D( void ) :
 		_color(0), _fontSize(0.f), _blur(0.f),_spacing(0.f), _lineHeight(0.f), _renderID( UINT32_MAX ),
-		_transformation(0), _font2d(0)
+		_attributes(0), _font2d(0)
 {
 	REGISTER_COMPONENT_MEMBER( Text2D, fontName, string_hash )
 	REGISTER_COMPONENT_MEMBER( Text2D, text, string64 )
@@ -53,7 +53,7 @@ void Text2D::init( System* system )
 	_renderID = renderer->addRencerCall<Text2D, &Text2D::renderCall>(this);
 	_font2d = 	renderer->getFont2D( _fontName );
 
-	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
+	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
 void Text2D::deinit( System* system )
@@ -69,10 +69,10 @@ void Text2D::renderCall( Context2D* context )
 	const char* text = _text.c_str();
 	const color_argb fill(_color);
 
-	const float32_t pos_x = _transformation->getposX();
-	const float32_t pos_y = _transformation->getposY();
-	const float32_t rotation = _transformation->getrotation();
-	const float32_t scale	= _transformation->getscale();
+	const float32_t pos_x = _attributes->getposX();
+	const float32_t pos_y = _attributes->getposY();
+	const float32_t rotation = _attributes->getrotation();
+	const float32_t scale	= _attributes->getscale();
 	const float32_t fontSize = _fontSize * scale;
 	const float32_t blur = _blur;
 	const float32_t spacing = _spacing;

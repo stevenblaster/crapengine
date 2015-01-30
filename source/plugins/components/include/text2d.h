@@ -27,7 +27,7 @@ namespace crap
 {
 typedef uint32_t Font2D;
 typedef NVGcontext 	Context2D;
-class Transformation2D;
+class Attributes2D;
 
 class Text2D : public Component
 {
@@ -53,7 +53,7 @@ private:
 
 	Font2D 					_font2d;
 	uint32_t 				_renderID;
-	Transformation2D*		_transformation;
+	Attributes2D*			_attributes;
 };
 
 } /* namespace crap */

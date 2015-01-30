@@ -19,7 +19,7 @@
 #include "node.h"
 #include "componenttype.h"
 #include "physicsystem2dbase.h"
-#include "transformation2d.h"
+#include "attributes2d.h"
 #include "physic2drectangle.h"
 #include "system.h"
 
@@ -27,7 +27,7 @@ namespace crap
 {
 
 Physic2DRectangle::Physic2DRectangle( void ) :
-		_width(0.f), _height(0.f), _density(0), _friction(0), _dynamic(0), _bodyID(0), _transformation(0)
+		_width(0.f), _height(0.f), _density(0), _friction(0), _dynamic(0), _bodyID(0), _attributes(0)
 {
 	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, width, float32_t )
 	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, height, float32_t )
@@ -44,15 +44,15 @@ Physic2DRectangle::~Physic2DRectangle( void )
 void Physic2DRectangle::init( System* system )
 {
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
-	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
+	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 
 	const float32_t pixToMeter = system2d->pixelToMeters();
-	const float32_t pos_x = _transformation->getposX();
-	const float32_t pos_y = _transformation->getposY();
-	const float32_t scale = _transformation->getscale();
+	const float32_t pos_x = _attributes->getposX();
+	const float32_t pos_y = _attributes->getposY();
+	const float32_t scale = _attributes->getscale();
 	const float32_t width = _width * scale;
 	const float32_t height = _height * scale;
-	const float32_t rotation = _transformation->getrotation();
+	const float32_t rotation = _attributes->getrotation();
 	const bool dynamic = _dynamic != 0;
 
 	const float32_t p_width = (width/2.f) * pixToMeter;
@@ -61,7 +61,7 @@ void Physic2DRectangle::init( System* system )
 	const float32_t p_pos_y = (pos_y * pixToMeter) + p_height;
 
 	_bodyID = system2d->createRectangle( p_pos_x, p_pos_y, rotation, p_width, p_height, _density, _friction, dynamic );
-	system2d->setBodyUserdata( _bodyID, _transformation->getData() );
+	system2d->setBodyUserdata( _bodyID, _attributes->getData() );
 }
 
 void Physic2DRectangle::deinit( System* system )

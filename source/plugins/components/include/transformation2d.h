@@ -49,10 +49,35 @@ public:
 	static void setscale( Transformation2D* instance, const string64& data )
 	{ instance->_data.scale = crap::convert<string64, float32_t>(data); }
 
-	CRAP_INLINE transformation_2d* getData( void ) { return &_data; }
+	CRAP_INLINE const float32_t& getdamping( void ) const { return _data.damping; }
+	static void setdamping( Transformation2D* instance, const string64& data )
+	{ instance->_data.damping = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE const float32_t& getfriction( void ) const { return _data.friction; }
+	static void setfriction( Transformation2D* instance, const string64& data )
+	{ instance->_data.friction = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE const float32_t& getrestitution( void ) const { return _data.restitution; }
+	static void setrestitution( Transformation2D* instance, const string64& data )
+	{ instance->_data.restitution = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE const float32_t& gettorque( void ) const { return _data.torque; }
+	static void settorque( Transformation2D* instance, const string64& data )
+	{ instance->_data.torque = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE const float32_t& getvelocityX( void ) const { return _data.velocity[0]; }
+	static void setvelocityX( Transformation2D* instance, const string64& data )
+	{ instance->_data.velocity[0] = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE const float32_t& getvelocityY( void ) const { return _data.velocity[1]; }
+	static void setvelocityY( Transformation2D* instance, const string64& data )
+	{ instance->_data.velocity[1] = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE attributes_2d* getData( void ) { return &_data; }
 
 private:
-	transformation_2d	_data;
+
+	attributes_2d	_data;
 };
 
 } /* namespace crap */

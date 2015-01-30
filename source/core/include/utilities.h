@@ -530,7 +530,7 @@ namespace rgba
 	static const color_rgba orange = 	color_rgba(4286578943);
 }
 
-struct transformation_2d
+struct attributes_2d
 {
 	float32_t		position[2];
 	float32_t		rotation;
@@ -539,6 +539,7 @@ struct transformation_2d
 	float32_t		torque;
 	float32_t		damping;
 	float32_t		friction;
+	float32_t		restitution;
 };
 
 } //namespace crap

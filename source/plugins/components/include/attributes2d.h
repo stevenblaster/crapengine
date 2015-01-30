@@ -15,7 +15,7 @@
 #ifndef PLUGINS_COMPONENTS_INCLUDE_ATTRIBUTES2D_H_
 #define PLUGINS_COMPONENTS_INCLUDE_ATTRIBUTES2D_H_
 
-#include "general.h"
+#include "utilities.h"
 #include "component.h"
 
 /**
@@ -33,66 +33,50 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	float32_t* getposX( void ) { return &_data.pos_x; }
+	CRAP_INLINE const float32_t& getposX( void ) const { return _data.position[0]; }
 	static void setposX( Attributes2D* instance, const string64& data )
-	{ instance->_data.pos_x = crap::convert<string64, float32_t>(data); }
+	{ instance->_data.position[0] = crap::convert<string64, float32_t>(data); }
 
-	float32_t* getposY( void ) { return &_data.pos_y; }
+	CRAP_INLINE const float32_t& getposY( void ) const { return _data.position[1]; }
 	static void setposY( Attributes2D* instance, const string64& data )
-	{ instance->_data.pos_y = crap::convert<string64, float32_t>(data); }
+	{ instance->_data.position[1] = crap::convert<string64, float32_t>(data); }
 
-	float32_t* getwidth( void ) { return &_data.width; }
-	static void setwidth( Attributes2D* instance, const string64& data )
-	{ instance->_data.width = crap::convert<string64, float32_t>(data); }
-
-	float32_t* getheight( void ) { return &_data.height; }
-	static void setheight( Attributes2D* instance, const string64& data )
-	{ instance->_data.height = crap::convert<string64, float32_t>(data); }
-
-	float32_t* getradius( void ) { return &_data.radius; }
-	static void setradius( Attributes2D* instance, const string64& data )
-	{ instance->_data.radius = crap::convert<string64, float32_t>(data); }
-
-	float32_t* getrotation( void ) { return &_data.rotation; }
+	CRAP_INLINE const float32_t& getrotation( void ) const { return _data.rotation; }
 	static void setrotation( Attributes2D* instance, const string64& data )
 	{ instance->_data.rotation = crap::convert<string64, float32_t>(data); }
 
-	float32_t* getscale( void ) { return &_data.scale; }
+	CRAP_INLINE const float32_t& getscale( void ) const { return _data.scale; }
 	static void setscale( Attributes2D* instance, const string64& data )
 	{ instance->_data.scale = crap::convert<string64, float32_t>(data); }
 
-	float32_t* getvelX( void ) { return &_data.linear_velocity[0]; }
-	static void setvelX( Attributes2D* instance, const string64& data )
-	{ instance->_data.linear_velocity[0] = crap::convert<string64, float32_t>(data); }
-
-	float32_t* getvelY( void ) { return &_data.linear_velocity[1]; }
-	static void setvelY( Attributes2D* instance, const string64& data )
-	{ instance->_data.linear_velocity[1] = crap::convert<string64, float32_t>(data); }
-
-	float32_t* getangVel( void ) { return &_data.angular_velocity; }
-	static void setangVel( Attributes2D* instance, const string64& data )
-	{ instance->_data.angular_velocity = crap::convert<string64, float32_t>(data); }
-
-	float32_t* getdamping( void ) { return &_data.linear_damping; }
+	CRAP_INLINE const float32_t& getdamping( void ) const { return _data.damping; }
 	static void setdamping( Attributes2D* instance, const string64& data )
-	{ instance->_data.linear_damping = crap::convert<string64, float32_t>(data); }
+	{ instance->_data.damping = crap::convert<string64, float32_t>(data); }
 
-	float32_t* getangDamping( void ) { return &_data.angular_damping; }
-	static void setangDamping( Attributes2D* instance, const string64& data )
-	{ instance->_data.angular_damping = crap::convert<string64, float32_t>(data); }
+	CRAP_INLINE const float32_t& getfriction( void ) const { return _data.friction; }
+	static void setfriction( Attributes2D* instance, const string64& data )
+	{ instance->_data.friction = crap::convert<string64, float32_t>(data); }
 
-	float32_t* getPath( void ) { return _data.path; }
-	void setPath( const float32_t* ptr )
-	{ _data.path = ptr; }
+	CRAP_INLINE const float32_t& getrestitution( void ) const { return _data.restitution; }
+	static void setrestitution( Attributes2D* instance, const string64& data )
+	{ instance->_data.restitution = crap::convert<string64, float32_t>(data); }
 
-	uint32_t getPathSize( void ) { return _data.pathsize; }
-	void setPathSize( const uint32_t pathSize )
-	{ _data.pathsize = pathSize; }
+	CRAP_INLINE const float32_t& gettorque( void ) const { return _data.torque; }
+	static void settorque( Attributes2D* instance, const string64& data )
+	{ instance->_data.torque = crap::convert<string64, float32_t>(data); }
 
-	Attributes2Ddata* getData( void );
+	CRAP_INLINE const float32_t& getvelocityX( void ) const { return _data.velocity[0]; }
+	static void setvelocityX( Attributes2D* instance, const string64& data )
+	{ instance->_data.velocity[0] = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE const float32_t& getvelocityY( void ) const { return _data.velocity[1]; }
+	static void setvelocityY( Attributes2D* instance, const string64& data )
+	{ instance->_data.velocity[1] = crap::convert<string64, float32_t>(data); }
+
+	CRAP_INLINE attributes_2d* getData( void ) { return &_data; }
 
 private:
-	Attributes2Ddata	_data;
+	attributes_2d	_data;
 };
 
 } /* namespace crap */

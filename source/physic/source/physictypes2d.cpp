@@ -42,10 +42,18 @@ void updateBodies( World2D* world, float32_t pixToMeter )
 	{
 		if( b->GetType() == b2_dynamicBody )
 		{
-			float32_t* data = (float32_t*)b->GetUserData();
-			data[0] = b->GetPosition().x / pixToMeter;
-			data[1] = b->GetPosition().y / pixToMeter;
-			data[2] = b->GetAngle();
+			attributes_2d* data = (attributes_2d*)b->GetUserData();
+			data->position[0] = b->GetPosition().x / pixToMeter;
+			data->position[1] = b->GetPosition().y / pixToMeter;
+			data->rotation = b->GetAngle();
+
+			b2Fixture* fix = b->GetFixtureList();
+			data->restitution = fix->GetRestitution();
+			data->friction = fix->GetFriction();
+			data->torque = b->GetAngularVelocity();
+			data->velocity[0] = b->GetLinearVelocity().x;
+			data->velocity[1] = b->GetLinearVelocity().y;
+			data->damping = b->GetLinearDamping();
 		}
 	}
 }

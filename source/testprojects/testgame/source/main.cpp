@@ -252,7 +252,7 @@ int main( void )
 	crap::Font2D font2d = renderer2D.getFont2D("CalcFont");
 
 	crap::Node* cnode = componentSystem.createNode();
-	crap::Component* trans2d = componentSystem.createComponent("Transformation2D", cnode );
+	crap::Component* trans2d = componentSystem.createComponent("Attributes2D", cnode );
 	componentSystem.setComponentMember( trans2d, "posX", "600" );
 	componentSystem.setComponentMember( trans2d, "posY", "600" );
 	componentSystem.setComponentMember( trans2d, "rotation", "20" );
@@ -299,7 +299,7 @@ int main( void )
 	crap::Node* tnode = componentSystem.createNode();
 
 
-	crap::Component* trans2dt = componentSystem.createComponent("Transformation2D", tnode );
+	crap::Component* trans2dt = componentSystem.createComponent("Attributes2D", tnode );
 	componentSystem.setComponentMember( trans2dt, "posX", "200" );
 	componentSystem.setComponentMember( trans2dt, "posY", "600" );
 	componentSystem.setComponentMember( trans2dt, "rotation", "0" );
@@ -317,7 +317,7 @@ int main( void )
 
 	//physic test
 	crap::Node* pnode = componentSystem.createNode();
-	crap::Component* ptrans2d = componentSystem.createComponent("Transformation2D", pnode );
+	crap::Component* ptrans2d = componentSystem.createComponent("Attributes2D", pnode );
 	componentSystem.setComponentMember( ptrans2d, "posX", "770" );
 	componentSystem.setComponentMember( ptrans2d, "posY", "550" );
 	componentSystem.setComponentMember( ptrans2d, "rotation", "-0.3f" );
@@ -343,7 +343,7 @@ int main( void )
 
 	//solid
 	crap::Node* pnode2 = componentSystem.createNode();
-	crap::Component* ptrans2d2 = componentSystem.createComponent("Transformation2D", pnode2 );
+	crap::Component* ptrans2d2 = componentSystem.createComponent("Attributes2D", pnode2 );
 	componentSystem.setComponentMember( ptrans2d2, "posX", "550" );
 	componentSystem.setComponentMember( ptrans2d2, "posY", "400" );
 	componentSystem.setComponentMember( ptrans2d2, "rotation", "0.2" );
@@ -369,7 +369,7 @@ int main( void )
 
 	//circle
 	crap::Node* pnode3 = componentSystem.createNode();
-	crap::Component* ptrans2d3 = componentSystem.createComponent("Transformation2D", pnode3 );
+	crap::Component* ptrans2d3 = componentSystem.createComponent("Attributes2D", pnode3 );
 	componentSystem.setComponentMember( ptrans2d3, "posX", "600" );
 	componentSystem.setComponentMember( ptrans2d3, "posY", "50" );
 	componentSystem.setComponentMember( ptrans2d3, "rotation", "0" );
@@ -377,9 +377,9 @@ int main( void )
 
 	crap::Component* rect2d3 = componentSystem.createComponent("Circle", pnode3 );
 	componentSystem.setComponentMember( rect2d3, "radius", "20" );
-	componentSystem.setComponentMember( rect2d3, "color", buff );
+	componentSystem.setComponentMember( rect2d3, "color", "FF0080FF" );
 	componentSystem.setComponentMember( rect2d3, "border", "0" );
-	componentSystem.setComponentMember( rect2d3, "borderColor", bufb );
+	componentSystem.setComponentMember( rect2d3, "borderColor", "FF0000F" );
 
 	crap::Component* phys2d3 = componentSystem.createComponent("Physic2DCircle", pnode3 );
 	componentSystem.setComponentMember( phys2d3, "radius", "20" );

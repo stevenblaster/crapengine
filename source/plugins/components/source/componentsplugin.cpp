@@ -17,7 +17,7 @@
 
 #include "componenttype.h"
 #include "testcomponent.h"
-#include "transformation2d.h"
+#include "attributes2d.h"
 #include "circle.h"
 #include "rectangle.h"
 #include "roundedrectangle.h"
@@ -34,7 +34,7 @@ CRAP_DECLARE_PLUGIN( ComponentsPlugin )
 {
 public:
 	ComponentsPlugin( System* system ) :
-		_trans2d("Transformation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_trans2d("Attributes2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_circle2d("Circle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_rectangle2d("Rectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_roundedRectangle2d("RoundedRectangle", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
@@ -63,7 +63,7 @@ public:
 
 private:
 
-    crap::ComponentType<Transformation2D>	_trans2d;
+    crap::ComponentType<Attributes2D>	_trans2d;
     crap::ComponentType<Circle>	_circle2d;
     crap::ComponentType<Rectangle>	_rectangle2d;
     crap::ComponentType<RoundedRectangle> _roundedRectangle2d;
