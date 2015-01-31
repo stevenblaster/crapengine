@@ -43,4 +43,48 @@
 			<MEMBER name="density">1.f</MEMBER>
 		</COMPONENT>
 	</NODE>
+  <NODE>
+    <COMPONENT type="Attributes2D">
+      <MEMBER name="posX">10</MEMBER>
+      <MEMBER name="posY">450</MEMBER>
+      <MEMBER name="rotation">0.5f</MEMBER>
+      <MEMBER name="scale">1.f</MEMBER>
+      <MEMBER name="friction">1.f</MEMBER>
+    </COMPONENT>
+    <COMPONENT type="Rectangle2D">
+      <MEMBER name="width">300.f</MEMBER>
+      <MEMBER name="height">50.f</MEMBER>
+      <MEMBER name="color">FF0000FF</MEMBER>
+      <MEMBER name="border">0.f</MEMBER>
+      <MEMBER name="borderColor">FFFF00FF</MEMBER>
+    </COMPONENT>
+    <COMPONENT type="Rectangle2DPhysic">
+      <MEMBER name="width">300.f</MEMBER>
+      <MEMBER name="height">50.f</MEMBER>
+      <MEMBER name="dynamic">0</MEMBER>
+      <MEMBER name="density">1.f</MEMBER>
+    </COMPONENT>
+  </NODE>
+  <NODE>
+    <COMPONENT type="Attributes2D">
+      <MEMBER name="posX">800</MEMBER>
+      <MEMBER name="posY">500</MEMBER>
+      <MEMBER name="rotation">-0.5f</MEMBER>
+      <MEMBER name="scale">1.f</MEMBER>
+      <MEMBER name="friction">1.f</MEMBER>
+    </COMPONENT>
+    <COMPONENT type="Rectangle2D">
+      <MEMBER name="width">300.f</MEMBER>
+      <MEMBER name="height">50.f</MEMBER>
+      <MEMBER name="color">FF0000FF</MEMBER>
+      <MEMBER name="border">0.f</MEMBER>
+      <MEMBER name="borderColor">FFFF00FF</MEMBER>
+    </COMPONENT>
+    <COMPONENT type="Rectangle2DPhysic">
+      <MEMBER name="width">300.f</MEMBER>
+      <MEMBER name="height">50.f</MEMBER>
+      <MEMBER name="dynamic">0</MEMBER>
+      <MEMBER name="density">1.f</MEMBER>
+    </COMPONENT>
+  </NODE>
 </LEVEL>

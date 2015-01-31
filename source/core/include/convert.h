@@ -1396,7 +1396,7 @@ template<>
 CRAP_INLINE color_argb convert<string16, color_argb>( const string16& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1404,7 +1404,7 @@ template<>
 CRAP_INLINE color_argb convert<string32, color_argb>( const string32& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1412,7 +1412,7 @@ template<>
 CRAP_INLINE color_argb convert<string64, color_argb>( const string64& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1420,7 +1420,7 @@ template<>
 CRAP_INLINE color_argb convert<string128, color_argb>( const string128& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1428,7 +1428,7 @@ template<>
 CRAP_INLINE color_argb convert<string256, color_argb>( const string256& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1436,7 +1436,7 @@ template<>
 CRAP_INLINE color_argb convert<string512, color_argb>( const string512& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1444,7 +1444,7 @@ template<>
 CRAP_INLINE color_argb convert<string1024, color_argb>( const string1024& variable )
 {
 	color_argb color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1454,7 +1454,7 @@ template<>
 CRAP_INLINE color_rgba convert<string16, color_rgba>( const string16& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1462,7 +1462,7 @@ template<>
 CRAP_INLINE color_rgba convert<string32, color_rgba>( const string32& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1470,7 +1470,7 @@ template<>
 CRAP_INLINE color_rgba convert<string64, color_rgba>( const string64& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1478,7 +1478,7 @@ template<>
 CRAP_INLINE color_rgba convert<string128, color_rgba>( const string128& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1486,7 +1486,7 @@ template<>
 CRAP_INLINE color_rgba convert<string256, color_rgba>( const string256& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1494,7 +1494,7 @@ template<>
 CRAP_INLINE color_rgba convert<string512, color_rgba>( const string512& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
@@ -1502,7 +1502,7 @@ template<>
 CRAP_INLINE color_rgba convert<string1024, color_rgba>( const string1024& variable )
 {
 	color_rgba color;
-	color.value = strtol( variable.c_str(), 0, 16 );
+	color.value = strtoul( variable.c_str(), 0, 16 );
 	return color;
 }
 
