@@ -2,45 +2,45 @@
 	<SETTING name="COMPONENT_MEMORY">50000000</SETTING>
 	<SETTING name="COMPONENT_MAX_NODES">100</SETTING>
 	<NODE>
-		<COMPONENT type="Transformation2D">
+		<COMPONENT type="Attributes2D">
 			<MEMBER name="posX">600</MEMBER>
 			<MEMBER name="posY">-50</MEMBER>
 			<MEMBER name="rotation">0.f</MEMBER>
 			<MEMBER name="scale">1.f</MEMBER>
+			<MEMBER name="friction">1.f</MEMBER>
 		</COMPONENT>
-		<COMPONENT type="Circle">
+		<COMPONENT type="Circle2D">
 			<MEMBER name="radius">20</MEMBER>
 			<MEMBER name="color">FFFF0000</MEMBER>
 			<MEMBER name="border">0.f</MEMBER>
 			<MEMBER name="borderColor">FF00FF00</MEMBER>
 		</COMPONENT>
-		<COMPONENT type="Physic2DCircle">
+		<COMPONENT type="Circle2DPhysic">
 			<MEMBER name="radius">20</MEMBER>
 			<MEMBER name="density">1.f</MEMBER>
-			<MEMBER name="friction">1.f</MEMBER>
 			<MEMBER name="dynamic">1</MEMBER>
 		</COMPONENT>
 	</NODE>
 	<NODE>
-		<COMPONENT type="Transformation2D">
+		<COMPONENT type="Attributes2D">
 			<MEMBER name="posX">500</MEMBER>
 			<MEMBER name="posY">700</MEMBER>
 			<MEMBER name="rotation">-0.2f</MEMBER>
 			<MEMBER name="scale">1.f</MEMBER>
+			<MEMBER name="friction">1.f</MEMBER>
 		</COMPONENT>
-		<COMPONENT type="Rectangle">
+		<COMPONENT type="Rectangle2D">
 			<MEMBER name="width">300.f</MEMBER>
 			<MEMBER name="height">50.f</MEMBER>
 			<MEMBER name="color">FF0000FF</MEMBER>
 			<MEMBER name="border">0.f</MEMBER>
 			<MEMBER name="borderColor">FFFF00FF</MEMBER>
 		</COMPONENT>
-		<COMPONENT type="Physic2DRectangle">
+		<COMPONENT type="Rectangle2DPhysic">
 			<MEMBER name="width">300.f</MEMBER>
 			<MEMBER name="height">50.f</MEMBER>
-			<MEMBER name="density">1.f</MEMBER>
-			<MEMBER name="friction">1.f</MEMBER>
 			<MEMBER name="dynamic">0</MEMBER>
+			<MEMBER name="density">1.f</MEMBER>
 		</COMPONENT>
 	</NODE>
 </LEVEL>

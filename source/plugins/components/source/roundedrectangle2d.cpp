@@ -15,7 +15,7 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "roundedrectangle.h"
+#include <roundedrectangle2d.h>
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
@@ -27,38 +27,38 @@
 namespace crap
 {
 
-RoundedRectangle::RoundedRectangle( void ) :
+RoundedRectangle2D::RoundedRectangle2D( void ) :
 		_width(0), _height(0), _corner(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ),
 		_attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, corner, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle, borderColor, color_argb )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, width, float32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, height, float32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, corner, float32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, color, color_argb )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, border, float32_t )
+	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, borderColor, color_argb )
 }
 
-RoundedRectangle::~RoundedRectangle( void )
+RoundedRectangle2D::~RoundedRectangle2D( void )
 {
 
 }
 
-void RoundedRectangle::init( System* system )
+void RoundedRectangle2D::init( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	_renderID = renderer->addRencerCall<RoundedRectangle, &RoundedRectangle::renderCall>(this);
+	_renderID = renderer->addRencerCall<RoundedRectangle2D, &RoundedRectangle2D::renderCall>(this);
 
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
-void RoundedRectangle::deinit( System* system )
+void RoundedRectangle2D::deinit( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	renderer->removeRenderCall(_renderID);
 }
 
-void RoundedRectangle::renderCall( Context2D* context )
+void RoundedRectangle2D::renderCall( Context2D* context )
 {
 	const color_argb fill(_color);
 	const color_argb bfill( _borderColor );

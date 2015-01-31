@@ -1,5 +1,5 @@
 /*!
- * @file circle.h
+ * @file circle2d.h
  *
  * @brief Short description...
  *
@@ -12,8 +12,8 @@
  */
 #pragma once
 
-#ifndef PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
-#define PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_
+#ifndef PLUGINS_COMPONENTS_INCLUDE_CIRCLE2D_H_
+#define PLUGINS_COMPONENTS_INCLUDE_CIRCLE2D_H_
 
 #include "component.h"
 
@@ -28,19 +28,19 @@ namespace crap
 typedef NVGcontext 	Context2D;
 class Attributes2D;
 
-class Circle : public Component
+class Circle2D : public Component
 {
 public:
-	Circle( void );
-	virtual ~Circle( void );
+	Circle2D( void );
+	virtual ~Circle2D( void );
 
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Circle, radius, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle, color, color_argb )
-	DECLARE_COMPONENT_MEMBER( Circle, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle, borderColor, color_argb )
+	DECLARE_COMPONENT_MEMBER( Circle2D, radius, float32_t )
+	DECLARE_COMPONENT_MEMBER( Circle2D, color, color_argb )
+	DECLARE_COMPONENT_MEMBER( Circle2D, border, float32_t )
+	DECLARE_COMPONENT_MEMBER( Circle2D, borderColor, color_argb )
 
 	void renderCall( Context2D* );
 
@@ -52,4 +52,4 @@ private:
 
 } /* namespace crap */
 
-#endif /* PLUGINS_COMPONENTS_INCLUDE_CIRCLE_H_ */
+#endif /* PLUGINS_COMPONENTS_INCLUDE_CIRCLE2D_H_ */

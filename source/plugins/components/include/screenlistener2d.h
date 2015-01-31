@@ -23,7 +23,7 @@
 
 namespace crap
 {
-class Transformation2D;
+class Attributes2D;
 class RenderWindow;
 
 class ScreenListener2D : public Component
@@ -43,7 +43,7 @@ public:
 private:
 
 	RenderWindow* 			_renderWindow;
-	Transformation2D*		_transformation;
+	Attributes2D*			_attributes;
 	string64				_taskID;
 };
 

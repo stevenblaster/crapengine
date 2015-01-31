@@ -20,28 +20,28 @@
 #include "componenttype.h"
 #include "physicsystem2dbase.h"
 #include "attributes2d.h"
-#include "physic2drectangle.h"
+#include "rectangle2dphysic.h"
 #include "system.h"
 
 namespace crap
 {
 
-Physic2DRectangle::Physic2DRectangle( void ) :
+Rectangle2DPhysic::Rectangle2DPhysic( void ) :
 		_width(0.f), _height(0.f), _density(0), _friction(0), _dynamic(0), _bodyID(0), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, density, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, friction, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DRectangle, dynamic, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, width, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, height, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, density, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, friction, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, dynamic, uint32_t )
 }
 
-Physic2DRectangle::~Physic2DRectangle( void )
+Rectangle2DPhysic::~Rectangle2DPhysic( void )
 {
 
 }
 
-void Physic2DRectangle::init( System* system )
+void Rectangle2DPhysic::init( System* system )
 {
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
@@ -64,7 +64,7 @@ void Physic2DRectangle::init( System* system )
 	system2d->setBodyUserdata( _bodyID, _attributes->getData() );
 }
 
-void Physic2DRectangle::deinit( System* system )
+void Rectangle2DPhysic::deinit( System* system )
 {
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
 	system2d->destroyBody( _bodyID );

@@ -15,7 +15,7 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "circle.h"
+#include "circle2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
@@ -27,35 +27,35 @@
 namespace crap
 {
 
-Circle::Circle( void ) :
+Circle2D::Circle2D( void ) :
 		_radius(0.f), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Circle, radius, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( Circle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle, borderColor, color_argb )
+	REGISTER_COMPONENT_MEMBER( Circle2D, radius, float32_t )
+	REGISTER_COMPONENT_MEMBER( Circle2D, color, color_argb )
+	REGISTER_COMPONENT_MEMBER( Circle2D, border, float32_t )
+	REGISTER_COMPONENT_MEMBER( Circle2D, borderColor, color_argb )
 }
 
-Circle::~Circle( void )
+Circle2D::~Circle2D( void )
 {
 
 }
 
-void Circle::init( System* system )
+void Circle2D::init( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	_renderID = renderer->addRencerCall<Circle, &Circle::renderCall>(this);
+	_renderID = renderer->addRencerCall<Circle2D, &Circle2D::renderCall>(this);
 
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
-void Circle::deinit( System* system )
+void Circle2D::deinit( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	renderer->removeRenderCall(_renderID);
 }
 
-void Circle::renderCall( Context2D* context )
+void Circle2D::renderCall( Context2D* context )
 {
 	const color_argb fill(_color);
 	const color_argb bfill( _borderColor );

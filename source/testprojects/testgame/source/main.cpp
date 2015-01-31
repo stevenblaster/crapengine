@@ -285,7 +285,7 @@ int main( void )
 	crap::string64 buff = crap::convert<crap::color_argb, crap::string64>(colorf);
 	crap::string64 bufb = crap::convert<crap::color_argb, crap::string64>(colorb);
 
-	crap::Component* circle2d = componentSystem.createComponent("RoundedRectangle", cnode );
+	crap::Component* circle2d = componentSystem.createComponent("RoundedRectangle2D", cnode );
 
 	componentSystem.setComponentMember( circle2d, "width", "150" );
 	componentSystem.setComponentMember( circle2d, "height", "200" );
@@ -323,14 +323,14 @@ int main( void )
 	componentSystem.setComponentMember( ptrans2d, "rotation", "-0.3f" );
 	componentSystem.setComponentMember( ptrans2d, "scale", "1.f" );
 
-	crap::Component* rect2d = componentSystem.createComponent("Rectangle", pnode );
+	crap::Component* rect2d = componentSystem.createComponent("Rectangle2D", pnode );
 	componentSystem.setComponentMember( rect2d, "width", "300" );
 	componentSystem.setComponentMember( rect2d, "height", "50" );
 	componentSystem.setComponentMember( rect2d, "color", buff );
 	componentSystem.setComponentMember( rect2d, "border", "0" );
 	componentSystem.setComponentMember( rect2d, "borderColor", bufb );
 
-	crap::Component* phys2d = componentSystem.createComponent("Physic2DRectangle", pnode );
+	crap::Component* phys2d = componentSystem.createComponent("Rectangle2DPhysic", pnode );
 	componentSystem.setComponentMember( phys2d, "width", "300" );
 	componentSystem.setComponentMember( phys2d, "height", "50" );
 	componentSystem.setComponentMember( phys2d, "density", "1.f" );
@@ -349,14 +349,14 @@ int main( void )
 	componentSystem.setComponentMember( ptrans2d2, "rotation", "0.2" );
 	componentSystem.setComponentMember( ptrans2d2, "scale", "1.f" );
 
-	crap::Component* rect2d2 = componentSystem.createComponent("Rectangle", pnode2 );
+	crap::Component* rect2d2 = componentSystem.createComponent("Rectangle2D", pnode2 );
 	componentSystem.setComponentMember( rect2d2, "width", "300" );
 	componentSystem.setComponentMember( rect2d2, "height", "50" );
 	componentSystem.setComponentMember( rect2d2, "color", bufb );
 	componentSystem.setComponentMember( rect2d2, "border", "0" );
 	componentSystem.setComponentMember( rect2d2, "borderColor", bufb );
 
-	crap::Component* phys2d2 = componentSystem.createComponent("Physic2DRectangle", pnode2 );
+	crap::Component* phys2d2 = componentSystem.createComponent("Rectangle2DPhysic", pnode2 );
 	componentSystem.setComponentMember( phys2d2, "width", "300" );
 	componentSystem.setComponentMember( phys2d2, "height", "50" );
 	componentSystem.setComponentMember( phys2d2, "density", "1.f" );
@@ -375,13 +375,13 @@ int main( void )
 	componentSystem.setComponentMember( ptrans2d3, "rotation", "0" );
 	componentSystem.setComponentMember( ptrans2d3, "scale", "1.f" );
 
-	crap::Component* rect2d3 = componentSystem.createComponent("Circle", pnode3 );
+	crap::Component* rect2d3 = componentSystem.createComponent("Circle2D", pnode3 );
 	componentSystem.setComponentMember( rect2d3, "radius", "20" );
 	componentSystem.setComponentMember( rect2d3, "color", "FF0080FF" );
 	componentSystem.setComponentMember( rect2d3, "border", "0" );
 	componentSystem.setComponentMember( rect2d3, "borderColor", "FF0000F" );
 
-	crap::Component* phys2d3 = componentSystem.createComponent("Physic2DCircle", pnode3 );
+	crap::Component* phys2d3 = componentSystem.createComponent("Cirlce2DPhysic", pnode3 );
 	componentSystem.setComponentMember( phys2d3, "radius", "20" );
 	componentSystem.setComponentMember( phys2d3, "density", "1.f" );
 	componentSystem.setComponentMember( phys2d3, "friction", "1.f" );

@@ -14,13 +14,13 @@
 #define CRAP_DL 1
 
 #include <cstdio>
-#include <screenlistener2d.h>
+#include "screenlistener2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
 #include "renderer.h"
 #include "renderwindow.h"
-#include "transformation2d.h"
+#include "attributes2d.h"
 #include "taskmanager.h"
 #include "system.h"
 
@@ -28,7 +28,7 @@ namespace crap
 {
 
 ScreenListener2D::ScreenListener2D( void ) :
-		_inside(0), _renderWindow(0), _transformation(0), _updateFrequency(100)
+		_inside(0), _renderWindow(0), _attributes(0), _updateFrequency(100)
 {
 	REGISTER_COMPONENT_MEMBER( ScreenListener2D, inside, uint32_t )
 	REGISTER_COMPONENT_MEMBER( ScreenListener2D, updateFrequency, uint32_t )
@@ -53,7 +53,7 @@ void ScreenListener2D::init( System* system )
 	TaskManager* manager = system->getSubSystem<TaskManager>("TaskManager");
 	manager->addTask<ScreenListener2D, &ScreenListener2D::update>( buffer, this, _updateFrequency, true );
 
-	_transformation = (Transformation2D*)getNeighbour("Transformation2D");
+	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
 void ScreenListener2D::deinit( System* system )

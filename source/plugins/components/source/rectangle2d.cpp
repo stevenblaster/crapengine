@@ -16,7 +16,7 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "rectangle.h"
+#include "rectangle2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
@@ -28,36 +28,36 @@
 namespace crap
 {
 
-Rectangle::Rectangle( void ) :
+Rectangle2D::Rectangle2D( void ) :
 		_width(0), _height(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Rectangle, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( Rectangle, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle, borderColor, color_argb )
+	REGISTER_COMPONENT_MEMBER( Rectangle2D, width, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2D, height, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2D, color, color_argb )
+	REGISTER_COMPONENT_MEMBER( Rectangle2D, border, float32_t )
+	REGISTER_COMPONENT_MEMBER( Rectangle2D, borderColor, color_argb )
 }
 
-Rectangle::~Rectangle( void )
+Rectangle2D::~Rectangle2D( void )
 {
 
 }
 
-void Rectangle::init( System* system )
+void Rectangle2D::init( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	_renderID = renderer->addRencerCall<Rectangle, &Rectangle::renderCall>(this);
+	_renderID = renderer->addRencerCall<Rectangle2D, &Rectangle2D::renderCall>(this);
 
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
-void Rectangle::deinit( System* system )
+void Rectangle2D::deinit( System* system )
 {
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	renderer->removeRenderCall(_renderID);
 }
 
-void Rectangle::renderCall( Context2D* context )
+void Rectangle2D::renderCall( Context2D* context )
 {
 	const color_argb fill(_color);
 	const color_argb bfill( _borderColor );

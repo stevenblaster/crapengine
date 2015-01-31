@@ -22,27 +22,27 @@
 #include "componenttype.h"
 #include "physicsystem2dbase.h"
 #include "attributes2d.h"
-#include "physic2dcircle.h"
+#include <circle2dphysic.h>
 #include "system.h"
 
 namespace crap
 {
 
-Physic2DCircle::Physic2DCircle( void ) :
+Circle2DPhysic::Circle2DPhysic( void ) :
 		_radius(0.f), _density(0), _friction(0), _dynamic(0), _bodyId(0), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Physic2DCircle, radius, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DCircle, density, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DCircle, friction, float32_t )
-	REGISTER_COMPONENT_MEMBER( Physic2DCircle, dynamic, uint32_t )
+	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, radius, float32_t )
+	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, density, float32_t )
+	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, friction, float32_t )
+	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, dynamic, uint32_t )
 }
 
-Physic2DCircle::~Physic2DCircle( void )
+Circle2DPhysic::~Circle2DPhysic( void )
 {
 
 }
 
-void Physic2DCircle::init( System* system )
+void Circle2DPhysic::init( System* system )
 {
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
@@ -62,7 +62,7 @@ void Physic2DCircle::init( System* system )
 	system2d->setBodyUserdata( _bodyId, _attributes->getData() );
 }
 
-void Physic2DCircle::deinit( System* system )
+void Circle2DPhysic::deinit( System* system )
 {
 	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
 	system2d->destroyBody( _bodyId );

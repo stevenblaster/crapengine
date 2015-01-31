@@ -15,4 +15,4 @@ git add data/levels/*
 git add data/configuration.ini
 git add data/resources.xml
 git add data/zahlen-text.csv
-
+git add data/TestGame/*
