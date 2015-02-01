@@ -542,6 +542,28 @@ struct attributes_2d
 	float32_t		restitution;
 };
 
+template<typename T, uint32_t S>
+struct Vec
+{
+public:
+	T data[S];
+};
+
+template<typename T>
+struct Vec2 : public Vec<T,2>
+{
+};
+
+template<typename T>
+struct Vec3 : public Vec<T,3>
+{
+};
+
+template<typename T>
+struct Vec4 : public Vec<T,4>
+{
+};
+
 } //namespace crap
 
 #endif //CRAP_TOOLS_H

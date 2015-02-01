@@ -20,6 +20,15 @@
 			<MEMBER name="density">1.f</MEMBER>
 			<MEMBER name="dynamic">1</MEMBER>
 		</COMPONENT>
+		<COMPONENT type="ScreenListener2D">
+			<MEMBER name="thresholdX">20</MEMBER>
+			<MEMBER name="thresholdY">20</MEMBER>
+			<MEMBER name="updateFrequency">50</MEMBER>
+		</COMPONENT>
+		<COMPONENT type="MouseListener2D">
+			<MEMBER name="width">20</MEMBER>
+			<MEMBER name="height">20</MEMBER>
+		</COMPONENT>
 	</NODE>
 	<NODE>
 		<COMPONENT type="Attributes2D">

@@ -94,6 +94,7 @@ void World::startXML( void )
     {
     	Node* newNode = componentSystem->createNode();
 
+
     	tinyxml2::XMLElement* compElement = element->FirstChildElement();
         while( compElement != 0 && string64(compElement->Value()) == string64("COMPONENT") )
         {

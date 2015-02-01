@@ -20,6 +20,11 @@
 			<MEMBER name="friction">1.f</MEMBER>
 			<MEMBER name="dynamic">1</MEMBER>
 		</COMPONENT>
+		<COMPONENT type="ScreenListener2D">
+			<MEMBER name="thresholdX">20</MEMBER>
+			<MEMBER name="thresholdY">20</MEMBER>
+			<MEMBER name="updateFrequency">50</MEMBER>
+		</COMPONENT>
 	</NODE>
 	<NODE>
 		<COMPONENT type="Transformation2D">

@@ -10,6 +10,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/keyboardinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/mouseinput.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controllerinput.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/inputmanagerbase.h
    ${CMAKE_CURRENT_SOURCE_DIR}/inputmanager.h
    ${CMAKE_CURRENT_SOURCE_DIR}/renderwindow.h
    ${CMAKE_CURRENT_SOURCE_DIR}/renderer.h

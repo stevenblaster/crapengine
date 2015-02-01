@@ -18,6 +18,7 @@
 #include "container/intrusivelist.h"
 #include "strings.h"
 #include "memory.h"
+#include "inputmanagerbase.h"
 
 #ifdef CRAP_NO_DEBUG
 #define INPUT_MEMORY SimpleGeneralMemory
@@ -33,7 +34,7 @@ namespace crap
 class BaseInput;
 typedef GLFWwindow window_t;
 
-class InputManager
+class InputManager : public InputManagerBase
 {
 public:
 
@@ -45,7 +46,7 @@ public:
 
 	bool update( uint32_t deltatime );
 
-	BaseInput* getInputHandle( string_hash name );
+	virtual BaseInput* getInputHandle( string_hash name );
 
 	CRAP_INLINE
 	intrusive_list<BaseInput>* getHandlerList( void ) { return &_list; }

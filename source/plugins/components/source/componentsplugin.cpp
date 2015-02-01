@@ -26,6 +26,8 @@
 #include "plugin.h"
 #include "rectangle2dphysic.h"
 #include "circle2dphysic.h"
+#include "screenlistener2d.h"
+#include "mouselistener2d.h"
 
 namespace crap
 {
@@ -40,7 +42,9 @@ public:
 		_roundedRectangle2d("RoundedRectangle2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_text2d("Text2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_physic2drectangle("Rectangle2DPhysic", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_physic2dcircle("Circle2DPhysic", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_physic2dcircle("Circle2DPhysic", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_screenListener2d("ScreenListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_mouseListener2d("MouseListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -71,6 +75,8 @@ private:
     crap::ComponentType<Text2D> _text2d;
     crap::ComponentType<Rectangle2DPhysic> _physic2drectangle;
     crap::ComponentType<Circle2DPhysic>  _physic2dcircle;
+    crap::ComponentType<ScreenListener2D>  _screenListener2d;
+    crap::ComponentType<MouseListener2D>  _mouseListener2d;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )

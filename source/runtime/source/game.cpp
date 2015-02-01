@@ -145,6 +145,9 @@ void Game::start( void )
 	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
 	crap::InputManager inputManager( inputMemory, renderWindow.getHandle() );
 
+	//set inputmanager as subsystem
+	crap::SubSystem input_sys("InputManager", &inputManager, &_system );
+
 	//add keyboard
 	crap::KeyboardInput keyboardInput("Keyboard", 20, &inputManager );
 

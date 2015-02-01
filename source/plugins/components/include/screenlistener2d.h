@@ -36,13 +36,17 @@ public:
 	virtual void deinit( System* system );
 
 	DECLARE_COMPONENT_MEMBER( ScreenListener2D, inside, uint32_t )
+	DECLARE_COMPONENT_MEMBER( ScreenListener2D, thresholdX, float32_t )
+	DECLARE_COMPONENT_MEMBER( ScreenListener2D, thresholdY, float32_t )
 	DECLARE_COMPONENT_MEMBER( ScreenListener2D, updateFrequency, uint32_t )
 
 	bool update( uint32_t deltatime );
+	void resizeCallback( int, int );
 
 private:
 
-	RenderWindow* 			_renderWindow;
+	uint32_t				_sizeX;
+	uint32_t				_sizeY;
 	Attributes2D*			_attributes;
 	string64				_taskID;
 };

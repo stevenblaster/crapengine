@@ -36,7 +36,6 @@ int main( void )
 	crap::string256 data_path("./");
 #endif //CRAP_NO_DEBUG
 
-
 	crap::Game game(10, data_path + "TestGame/");
 	game.start();
 
