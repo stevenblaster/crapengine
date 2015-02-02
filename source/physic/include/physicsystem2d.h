@@ -36,40 +36,6 @@ typedef b2Body Body2D;
 
 class PhysicSystem2D;
 
-class ContactListener : public b2ContactListener
-{
-public:
-
-	ContactListener( PhysicSystem2D* sys ) : _system(sys)
-	{
-
-	}
-
-	void BeginContact(b2Contact* contact)
-	{
-		const Body2D* bodyA = contact->GetFixtureA()->GetBody();
-		const Body2D* bodyB = contact->GetFixtureB()->GetBody();
-	}
-	
-	void EndContact(b2Contact* contact)
-	{
-
-	}
-	
-	void PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
-	{
-
-	}
-	
-	void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)
-	{
-
-	}
-
-private:
-	PhysicSystem2D*	_system;
-};
-
 
 class PhysicSystem2D : public PhysicSystem2DBase
 {

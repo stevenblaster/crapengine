@@ -11,5 +11,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/screenlistener2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/mouselistener2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/attributes2d.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/collision2d.cpp
    PARENT_SCOPE
 )

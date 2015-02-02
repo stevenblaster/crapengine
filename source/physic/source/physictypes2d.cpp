@@ -40,9 +40,9 @@ void updateBodies( World2D* world, float32_t pixToMeter )
 {
 	for (Body2D* b = world->GetBodyList(); b!= 0; b = b->GetNext())
 	{
+		attributes_2d* data = (attributes_2d*)b->GetUserData();
 		if( b->GetType() == b2_dynamicBody )
 		{
-			attributes_2d* data = (attributes_2d*)b->GetUserData();
 			data->position[0] = b->GetPosition().x / pixToMeter;
 			data->position[1] = b->GetPosition().y / pixToMeter;
 			data->rotation = b->GetAngle();
@@ -55,6 +55,9 @@ void updateBodies( World2D* world, float32_t pixToMeter )
 			data->velocity[1] = b->GetLinearVelocity().y;
 			data->damping = b->GetLinearDamping();
 		}
+
+		if(b->GetContactList() != 0 )
+			data->collision += (b->GetContactList()->contact->IsTouching() ) ? 1 : 0;
 	}
 }
 

@@ -540,6 +540,7 @@ struct attributes_2d
 	float32_t		damping;
 	float32_t		friction;
 	float32_t		restitution;
+	uint32_t		collision;
 };
 
 template<typename T, uint32_t S>

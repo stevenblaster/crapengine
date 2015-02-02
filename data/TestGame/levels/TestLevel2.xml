@@ -29,6 +29,8 @@
 			<MEMBER name="width">20</MEMBER>
 			<MEMBER name="height">20</MEMBER>
 		</COMPONENT>
+		<COMPONENT type="Collision2D">
+		</COMPONENT>
 	</NODE>
 	<NODE>
 		<COMPONENT type="Attributes2D">
