@@ -2,6 +2,7 @@
 set(SOURCES
    ${SOURCES}
    ${CMAKE_CURRENT_SOURCE_DIR}/componentsplugin.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/audio2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/circle2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/rectangle2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/roundedrectangle2d.cpp

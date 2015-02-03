@@ -1,6 +1,7 @@
 
 set(HEADERS
    ${HEADERS}
+   ${CMAKE_CURRENT_SOURCE_DIR}/audio2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/rectangle2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/roundedrectangle2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/circle2d.h

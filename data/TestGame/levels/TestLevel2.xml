@@ -29,7 +29,11 @@
 			<MEMBER name="width">20</MEMBER>
 			<MEMBER name="height">20</MEMBER>
 		</COMPONENT>
-		<COMPONENT type="Collision2D">
+		<COMPONENT type="Collision2D">	 
+		</COMPONENT>
+		<COMPONENT type="Audio2D">
+			<MEMBER name="name">Nagut</MEMBER>
+			<MEMBER name="startMessage">Collision2D</MEMBER>
 		</COMPONENT>
 	</NODE>
 	<NODE>

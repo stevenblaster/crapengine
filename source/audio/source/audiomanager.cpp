@@ -49,10 +49,14 @@ AudioManager::~AudioManager( void )
 
 uint32_t AudioManager::addBuffer( const string_hash& name, const AudioFile& data )
 {
-    AudioBuffer buffer;
-    createAudioBuffers( &buffer, 1);
-    setAudioBufferSource( &buffer, &data );
-    return _buffers.push_back( name, buffer );
+	uint32_t index = _buffers.find( name );
+	if( index ==  array_map<string_hash, AudioBuffer>::INVALID )
+	{
+		AudioBuffer buffer;
+		createAudioBuffers( &buffer, 1);
+		setAudioBufferSource( &buffer, &data );
+		return _buffers.push_back( name, buffer );
+	}
 }
 
 void AudioManager::removeBuffer( const string_hash& name )
@@ -89,6 +93,20 @@ void AudioManager::playSource( uint32_t leased_source )
     AudioSource* source = _sources.get_key(leased_source);
     if( source != 0 )
     	playAudioSource(source);
+}
+
+void AudioManager::pauseSource( uint32_t leased_source )
+{
+    AudioSource* source = _sources.get_key(leased_source);
+    if( source != 0 )
+    	pauseAudioSource(source);
+}
+
+void AudioManager::stopSource( uint32_t leased_source )
+{
+    AudioSource* source = _sources.get_key(leased_source);
+    if( source != 0 )
+    	stopAudioSource(source);
 }
 
 void AudioManager::releaseSource( uint32_t leased_source )

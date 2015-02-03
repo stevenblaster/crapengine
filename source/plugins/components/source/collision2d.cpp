@@ -28,7 +28,7 @@ namespace crap
 
 Collision2D::Collision2D( void ) : _attributes(0)
 {
-
+	REGISTER_COMPONENT_MEMBER( Collision2D, message, string_hash );
 }
 
 Collision2D::~Collision2D( void )
@@ -56,10 +56,10 @@ void Collision2D::deinit( System* system )
 
 bool Collision2D::update( uint32_t delta )
 {
-	if( _attributes->getData()->collision != 0 )
+	if( _attributes->getData()->collision > 0 )
 	{
 		_node->sendChidren("Collision2D", 0 );
-		_attributes->getData()->collision = 0;
+		_attributes->getData()->collision--;
 		printf("PLUMPS\n");
 	}
 

@@ -33,6 +33,8 @@ public:
     uint32_t leaseSource( const string_hash& name );
     void setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop);
     void playSource( uint32_t leased_source );
+    void pauseSource( uint32_t leased_source );
+    void stopSource( uint32_t leased_source );
     void setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease );
     void releaseSource(uint32_t leased_source );
 

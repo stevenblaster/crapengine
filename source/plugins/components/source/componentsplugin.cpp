@@ -29,6 +29,7 @@
 #include "screenlistener2d.h"
 #include "mouselistener2d.h"
 #include "collision2d.h"
+#include "audio2d.h"
 
 namespace crap
 {
@@ -46,7 +47,8 @@ public:
 		_physic2dcircle("Circle2DPhysic", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_screenListener2d("ScreenListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_mouseListener2d("MouseListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_collision2d("Collision2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_collision2d("Collision2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_audio2d("Audio2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -80,6 +82,7 @@ private:
     crap::ComponentType<ScreenListener2D>  _screenListener2d;
     crap::ComponentType<MouseListener2D>  _mouseListener2d;
     crap::ComponentType<Collision2D>  _collision2d;
+    crap::ComponentType<Audio2D>  _audio2d;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )
