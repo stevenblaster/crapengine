@@ -39,8 +39,11 @@ struct switcher
 
 	void callback( uint32_t state )
 	{
-		crap::string_hash hash("TestLevel2");
-		_event->fireEvent("SwitchWorld", &hash );
+		if( state != 0 )
+		{
+			crap::string_hash hash("TestLevel2");
+			_event->fireEvent("SwitchWorld", &hash );
+		}
 	}
 
 	crap::EventSystem*	_event;

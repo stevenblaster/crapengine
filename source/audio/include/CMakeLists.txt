@@ -11,7 +11,7 @@
 
 set(HEADERS
    ${HEADERS}
-#   ${CMAKE_CURRENT_SOURCE_DIR}/test.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiomanagerbase.h
    ${CMAKE_CURRENT_SOURCE_DIR}/audiosource.h
    ${CMAKE_CURRENT_SOURCE_DIR}/audiobuffer.h
    ${CMAKE_CURRENT_SOURCE_DIR}/audiodevice.h

@@ -28,7 +28,7 @@ namespace crap
 {
 
 class Attributes2D;
-class AudioManager;
+class AudioManagerBase;
 
 class Audio2D : public Component
 {
@@ -43,16 +43,19 @@ public:
 	DECLARE_COMPONENT_MEMBER( Audio2D, startMessage, string_hash );
 	DECLARE_COMPONENT_MEMBER( Audio2D, pauseMessage, string_hash );
 	DECLARE_COMPONENT_MEMBER( Audio2D, stopMessage, string_hash );
+	DECLARE_COMPONENT_MEMBER( Audio2D, rewindAble, uint32_t );
 
 	void receiveMessage( string_hash name, pointer_t<void> );
 	bool update( uint32_t delta );
 
 private:
 
-	uint32_t		_buffer;
+	//uint32_t		_buffer;
+	uint32_t		_source;
 	Attributes2D* 	_attributes;
-	AudioManager*	_am;
+	AudioManagerBase*	_am;
 	bool		 	_active;
+	string64		_taskID;
 };
 
 } /* namespace crap */

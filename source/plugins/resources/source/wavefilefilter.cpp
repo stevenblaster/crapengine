@@ -41,7 +41,7 @@ void WaveFileFilter::import( string_hash name, pointer_t<void> memory, uint32_t 
 
     AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
     if( am != 0 )
-    	am->addBuffer( name, file );
+    	am->setBuffer( name, file );
 }
 
 void WaveFileFilter::unload( string_hash name, System* system )
@@ -49,7 +49,7 @@ void WaveFileFilter::unload( string_hash name, System* system )
 	AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
 	if( am != 0 )
 	{
-		am->removeBuffer( name );
+		am->unsetBuffer( name );
 	}
 }
 

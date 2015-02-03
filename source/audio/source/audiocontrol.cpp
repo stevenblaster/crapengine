@@ -42,6 +42,12 @@ void playAudioSource( AudioSource* CRAP_RESTRICT source )
     CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not play Audio Source %i", *source );
 }
 
+void rewindAudioSource( AudioSource* CRAP_RESTRICT source )
+{
+    alSourceRewind( *source );
+    CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not play Audio Source %i", *source );
+}
+
 void pauseAudioSource( AudioSource* CRAP_RESTRICT source )
 {
     alSourcePause( *source );

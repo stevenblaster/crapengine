@@ -12,7 +12,7 @@ namespace crap
 void createAudioBuffers( AudioBuffer* CRAP_RESTRICT buffers, uint32_t number )
 {
     alGenBuffers( number, buffers );
-    //CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not create %i Audio Buffers", number );
+    CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not create %i Audio Buffers", number );
 }
 
 void destroyAudioBuffers( AudioBuffer* CRAP_RESTRICT buffers, uint32_t number )
@@ -28,6 +28,12 @@ void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, int32_t format, in
 
 void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, const AudioFile* file )
 {
+	if( file == 0 )
+	{
+		alBufferData( *buffer, 0, 0, 0, 0 );
+		return;
+	}
+
     const uint32_t format_value = file->bits_per_sample + file->channels;
     uint32_t format = 0;
 
@@ -54,7 +60,8 @@ void setAudioBufferSource( AudioBuffer* CRAP_RESTRICT buffer, const AudioFile* f
     }
 
     alBufferData( *buffer, format, file->data.as_void, file->size, file->frequency );
-    CRAP_ASSERT( ASSERT_BREAK, alGetError() == AL_NO_ERROR,  "Could not set Audio Buffer Source with File" );
+    uint32_t error = alGetError();
+    //CRAP_ASSERT( ASSERT_BREAK, error == AL_NO_ERROR,  "Could not set Audio Buffer Source with File (error %i)",  error);
 }
 
 } //namespace crap

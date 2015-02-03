@@ -24,6 +24,8 @@ void setAudioSourceInfo( AudioSource* CRAP_RESTRICT source, float32_t pitch, flo
 
 void playAudioSource( AudioSource* CRAP_RESTRICT source );
 
+void rewindAudioSource( AudioSource* CRAP_RESTRICT source );
+
 void pauseAudioSource( AudioSource* CRAP_RESTRICT source );
 
 void stopAudioSource( AudioSource* CRAP_RESTRICT source );

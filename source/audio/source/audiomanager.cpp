@@ -23,6 +23,13 @@ AudioManager::AudioManager( uint32_t buffer_num, uint32_t source_num ) :
         _sources.push_back( source, InvalidAudioBuffer );
     }
 
+    for( uint32_t i=0; i<buffer_num; ++i )
+    {
+    	AudioBuffer buffer;
+    	createAudioBuffers( &buffer, 1);
+    	_buffers.push_back(buffer, "" );
+    }
+
     const uint32_t memory = (( sizeof(AudioSource)+sizeof(AudioBuffer))*source_num*2 ) + ((sizeof(string_hash)+sizeof(AudioBuffer))*buffer_num * 2);
     crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Audiomanager with %i bytes memory, max. %i buffers and max. %i sources created", memory, buffer_num, source_num );
     setAudioDopplerEffects(1.f, 1.f);
@@ -47,39 +54,66 @@ AudioManager::~AudioManager( void )
     crap::closeAudioDevice( _device );
 }
 
-uint32_t AudioManager::addBuffer( const string_hash& name, const AudioFile& data )
+uint32_t AudioManager::setBuffer( const string_hash& name, const AudioFile& data )
 {
-	uint32_t index = _buffers.find( name );
-	if( index ==  array_map<string_hash, AudioBuffer>::INVALID )
+	uint32_t index = BufferMap::INVALID;
+
+	for( uint32_t i=0; i<_buffers.size(); ++i )
 	{
-		AudioBuffer buffer;
-		createAudioBuffers( &buffer, 1);
-		setAudioBufferSource( &buffer, &data );
-		return _buffers.push_back( name, buffer );
+		if( *_buffers.get_value(i) == 0 )
+		{
+			index = i;
+		}
 	}
+	if( index !=  BufferMap::INVALID )
+	{
+		AudioBuffer* buffer = _buffers.get_key(index);
+		setAudioBufferSource( buffer, &data );
+		*_buffers.get_value(index) = name;
+		return index;
+	}
+
+	return _buffers.INVALID;
 }
 
-void AudioManager::removeBuffer( const string_hash& name )
+void AudioManager::unsetBuffer( const string_hash& name )
 {
-    uint32_t index = _buffers.find( name );
-    if( index !=  array_map<string_hash, AudioBuffer>::INVALID )
+	uint32_t index = BufferMap::INVALID;
+
+	for( uint32_t i=0; i<_buffers.size(); ++i )
+	{
+		if( *_buffers.get_value(i) == name )
+		{
+			index = i;
+		}
+	}
+
+    if( index !=  BufferMap::INVALID )
     {
-		destroyAudioBuffers( _buffers.get_value(index), 1 );
-		_buffers.erase_at( index );
+    	//setAudioBufferSource( _buffers.get_key(index), 0 );
+    	*_buffers.get_value(index) = "";
     }
 }
 
 uint32_t AudioManager::leaseSource( const string_hash& name )
 {
-    uint32_t index = _buffers.find( name );
-    if( index != array_map<string_hash, AudioBuffer>::INVALID )
+	uint32_t index = BufferMap::INVALID;
+
+	for( uint32_t i=0; i<_buffers.size(); ++i )
+	{
+		if( *_buffers.get_value(i) == name )
+		{
+			index = i;
+		}
+	}
+    if( index != BufferMap::INVALID )
     {
-		AudioBuffer buffer = *(_buffers.get_value(index));
+		AudioBuffer* buffer = _buffers.get_key(index);
 		for( uint32_t i=0; i< _sources.size(); ++i )
 		{
 			if( *(_sources.get_value(i)) == InvalidAudioBuffer )
 			{
-				*(_sources.get_value(i)) = buffer;
+				*(_sources.get_value(i)) = *buffer;
 				setAudioSourceBuffer( _sources.get_value(i), _sources.get_key(i) );
 				return i;
 			}
@@ -93,6 +127,13 @@ void AudioManager::playSource( uint32_t leased_source )
     AudioSource* source = _sources.get_key(leased_source);
     if( source != 0 )
     	playAudioSource(source);
+}
+
+void AudioManager::rewindSource( uint32_t leased_source )
+{
+    AudioSource* source = _sources.get_key(leased_source);
+    if( source != 0 )
+    	rewindAudioSource(source);
 }
 
 void AudioManager::pauseSource( uint32_t leased_source )
@@ -113,7 +154,9 @@ void AudioManager::releaseSource( uint32_t leased_source )
 {
 	AudioSource* source = _sources.get_key(leased_source);
 	if( source != 0 )
+	{
 		*(_sources.get_value(leased_source)) = InvalidAudioBuffer;
+	}
 }
 
 void AudioManager::setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop)

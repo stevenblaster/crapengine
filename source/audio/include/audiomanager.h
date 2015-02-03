@@ -8,6 +8,7 @@
 #include "audiofile.h"
 #include "audiocontrol.h"
 #include "audiodevice.h"
+#include "audiomanagerbase.h"
 
 #include "strings.h"
 #include "memory.h"
@@ -21,9 +22,11 @@
 namespace crap
 {
 
-class AudioManager
+class AudioManager : public AudioManagerBase
 {
 public:
+
+	typedef array_map<AudioBuffer, string_hash> BufferMap;
 
     AudioManager( uint32_t buffer_num, uint32_t source_num );
     ~AudioManager( void );
@@ -32,14 +35,17 @@ public:
 
     uint32_t leaseSource( const string_hash& name );
     void setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop);
+
     void playSource( uint32_t leased_source );
+    void rewindSource( uint32_t leased_source );
     void pauseSource( uint32_t leased_source );
     void stopSource( uint32_t leased_source );
+
     void setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease );
     void releaseSource(uint32_t leased_source );
 
-    uint32_t addBuffer( const string_hash& name, const AudioFile& data );
-    void removeBuffer( const string_hash& name );
+    uint32_t setBuffer( const string_hash& name, const AudioFile& data );
+    void unsetBuffer( const string_hash& name );
 
     bool getIsPlaying( uint32_t leased_source );
     bool getIsPaused( uint32_t leased_source );
@@ -53,7 +59,7 @@ private:
     AUDIO_MEMORY                            _allocator;
 
     array_map<AudioSource, AudioBuffer>    	_sources;
-    array_map<string_hash, AudioBuffer>    	_buffers;
+    array_map<AudioBuffer, string_hash>    	_buffers;
 };
 
 

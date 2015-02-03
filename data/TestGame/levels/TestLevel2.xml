@@ -32,7 +32,7 @@
 		<COMPONENT type="Collision2D">	 
 		</COMPONENT>
 		<COMPONENT type="Audio2D">
-			<MEMBER name="name">Nagut</MEMBER>
+			<MEMBER name="name">boing</MEMBER>
 			<MEMBER name="startMessage">Collision2D</MEMBER>
 		</COMPONENT>
 	</NODE>
