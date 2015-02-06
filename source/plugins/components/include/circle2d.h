@@ -27,6 +27,7 @@ namespace crap
 
 typedef NVGcontext 	Context2D;
 class Attributes2D;
+class Texture2D;
 
 class Circle2D : public Component
 {
@@ -43,11 +44,13 @@ public:
 	DECLARE_COMPONENT_MEMBER( Circle2D, borderColor, color_argb )
 
 	void renderCall( Context2D* );
+	void renderCallTexture( Context2D* );
 
 private:
 
 	uint32_t 				_renderID;
 	Attributes2D*			_attributes;
+	Texture2D*				_texture;
 };
 
 } /* namespace crap */

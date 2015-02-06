@@ -97,12 +97,13 @@ void drawColoredRoundedRectangle( Context2D* context, float32_t pos_x, float32_t
 	drawColoredRoundedRectangleBorder( context, pos_x, pos_y, width, height, rotation, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0, corner );
 }
 
-void drawColoredCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawColoredCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
 	nvgSave( context );
 	nvgBeginPath( context );
+	nvgRotate( context, rotation );
 	nvgCircle( context, pos_x, pos_y, radius );
 	nvgFillColor( context, nvgRGBA( fill_r, fill_g, fill_b, fill_a) );
 	nvgFill(context);
@@ -112,10 +113,10 @@ void drawColoredCircleBorder( Context2D* context, float32_t pos_x, float32_t pos
 	nvgRestore( context );
 }
 
-void drawColoredCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawColoredCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a )
 {
-	drawColoredCircleBorder( context, pos_x, pos_y, radius, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0 );
+	drawColoredCircleBorder( context, pos_x, pos_y, radius, rotation, fill_r, fill_g, fill_b, fill_a, 0.f, 0,0,0,0 );
 }
 
 void drawColorPathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
@@ -271,13 +272,14 @@ void drawImageRoundedRectangle( Context2D* context, float32_t pos_x, float32_t p
 			img_rotation, ipos_x, ipos_y, iscale, 0.f,0,0,0,0, corner );
 }
 
-void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
 	nvgSave( context );
 	nvgBeginPath( context );
+	nvgRotate( context, rotation );
 	nvgCircle( context, pos_x, pos_y, radius );
 	int32_t iw=0.f, ih=0.f;
 	nvgImageSize( context, image, &iw, &ih );
@@ -292,11 +294,11 @@ void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y
 	nvgRestore( context );
 }
 
-void drawImageCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawImageCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale )
 {
-	drawImageCircleBorder( context, pos_x, pos_y, radius, image, img_alpha, img_rotation, ipos_x, ipos_y, iscale, 0.f,0,0,0,0);
+	drawImageCircleBorder( context, pos_x, pos_y, radius, rotation, image, img_alpha, img_rotation, ipos_x, ipos_y, iscale, 0.f,0,0,0,0);
 }
 
 void drawImagePathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,

@@ -35,6 +35,11 @@
 			<MEMBER name="name">boing</MEMBER>
 			<MEMBER name="startMessage">Collision2D</MEMBER>
 		</COMPONENT>
+		<COMPONENT type="Texture2D">
+			<MEMBER name="name">Mieze</MEMBER>
+			<MEMBER name="alpha">1.0</MEMBER>
+			<MEMBER name="scale">0.3</MEMBER>
+		</COMPONENT>
 	</NODE>
 	<NODE>
 		<COMPONENT type="Attributes2D">

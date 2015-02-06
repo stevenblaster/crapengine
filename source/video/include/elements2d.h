@@ -49,11 +49,11 @@ void drawColoredRoundedRectangleBorder( Context2D* context, float32_t pos_x, flo
 void drawColoredRoundedRectangle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t corner );
 
-void drawColoredCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawColoredCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
-void drawColoredCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawColoredCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		uint8_t fill_r, uint8_t fill_g, uint8_t fill_b, uint8_t fill_a );
 
 void drawColorPathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
@@ -99,12 +99,12 @@ void drawImageRoundedRectangle( Context2D* context, float32_t pos_x, float32_t p
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t corner );
 
-void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
-void drawImageCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius,
+void drawImageCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
 		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
 
