@@ -57,12 +57,18 @@ void updateBodies( World2D* world, float32_t pixToMeter )
 		}
 
 		if(b->GetContactList() != 0 )
-			data->collision += (b->GetContactList()->contact->IsTouching() ) ? 1 : 0;
+		{
+			if(b->GetContactList()->contact->IsTouching() )
+			{
+				data->collision = 1;
+				printf("TOUCHDOWN! %f\n", b->GetContactList()->contact->GetFriction());
+			}
+		}
 	}
 }
 
 Body2D* createRectangle2D( World2D* world, float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
-		float32_t density, float32_t friction, bool dynamic)
+		float32_t density, float32_t friction, float32_t restitution, bool dynamic)
 {
 	b2BodyDef bodyDef;
 	bodyDef.position.Set(pos_x, pos_y);
@@ -76,6 +82,7 @@ Body2D* createRectangle2D( World2D* world, float32_t pos_x, float32_t pos_y, flo
 	bodyFixture.shape = &bodyShape;
 	bodyFixture.density = density;
 	bodyFixture.friction = friction;
+	bodyFixture.restitution = restitution;
 
 	Body2D* body = world->CreateBody(&bodyDef);
 	body->CreateFixture( &bodyFixture );
@@ -84,7 +91,7 @@ Body2D* createRectangle2D( World2D* world, float32_t pos_x, float32_t pos_y, flo
 }
 
 Body2D* createCircle2D(World2D* world, float32_t pos_x, float32_t pos_y, float32_t radius,
-		float32_t density, float32_t friction, bool dynamic )
+		float32_t density, float32_t friction, float32_t restitution, bool dynamic )
 {
 	b2BodyDef bodyDef;
 	bodyDef.position.Set(pos_x, pos_y);
@@ -97,7 +104,7 @@ Body2D* createCircle2D(World2D* world, float32_t pos_x, float32_t pos_y, float32
 	bodyFixture.shape = &bodyShape;
 	bodyFixture.density = density;
 	bodyFixture.friction = friction;
-	bodyFixture.restitution = 0.8; // EINBINDEN!
+	bodyFixture.restitution = restitution; // EINBINDEN!
 
 	Body2D* body = world->CreateBody(&bodyDef);
 	body->CreateFixture( &bodyFixture );
@@ -106,7 +113,7 @@ Body2D* createCircle2D(World2D* world, float32_t pos_x, float32_t pos_y, float32
 }
 
 Body2D* createPolygon2D( World2D* world, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
-		float32_t density, float32_t friction, bool dynamic )
+		float32_t density, float32_t friction, float32_t restitution, bool dynamic )
 {
 	b2BodyDef bodyDef;
 	bodyDef.position.Set(pos_x, pos_y);
@@ -119,6 +126,7 @@ Body2D* createPolygon2D( World2D* world, float32_t pos_x, float32_t pos_y, float
 	bodyFixture.shape = &bodyShape;
 	bodyFixture.density = density;
 	bodyFixture.friction = friction;
+	bodyFixture.restitution = restitution;
 
 	Body2D* body = world->CreateBody(&bodyDef);
 	body->CreateFixture( &bodyFixture );

@@ -30,6 +30,7 @@ public:
 	Attributes2D( void );
 	virtual ~Attributes2D( void );
 
+
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 

@@ -38,23 +38,23 @@ PhysicSystem2D::~PhysicSystem2D( void )
 }
 
 uint32_t PhysicSystem2D::createRectangle( float32_t pos_x, float32_t pos_y, float32_t rotation, float32_t width, float32_t height,
-		float32_t density, float32_t friction, bool dynamic )
+		float32_t density, float32_t friction, float32_t restitution, bool dynamic )
 {
-	Body2D* body = createRectangle2D( _world, pos_x, pos_y, rotation, width, height, density, friction, dynamic );
+	Body2D* body = createRectangle2D( _world, pos_x, pos_y, rotation, width, height, density, friction, restitution, dynamic );
 	return _bodies.push_back(body);
 }
 
 uint32_t PhysicSystem2D::createCircle( float32_t pos_x, float32_t pos_y, float32_t radius,
-		float32_t density, float32_t friction, bool dynamic )
+		float32_t density, float32_t friction, float32_t restitution,  bool dynamic )
 {
-	Body2D* body = createCircle2D( _world, pos_x, pos_y, radius, density, friction, dynamic );
+	Body2D* body = createCircle2D( _world, pos_x, pos_y, radius, density, friction, restitution, dynamic );
 	return _bodies.push_back(body);
 }
 
 uint32_t PhysicSystem2D::createPolygon( float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t pathSize,
-		float32_t density, float32_t friction, bool dynamic )
+		float32_t density, float32_t friction, float32_t restitution, bool dynamic )
 {
-	Body2D* body = createPolygon2D( _world, pos_x, pos_y, path, pathSize, density, friction, dynamic );
+	Body2D* body = createPolygon2D( _world, pos_x, pos_y, path, pathSize, density, friction, restitution, dynamic );
 	return _bodies.push_back(body);
 }
 

@@ -7,7 +7,8 @@
 			<MEMBER name="posY">-50</MEMBER>
 			<MEMBER name="rotation">0.f</MEMBER>
 			<MEMBER name="scale">1.f</MEMBER>
-			<MEMBER name="friction">1.f</MEMBER>
+			<MEMBER name="friction">0.f</MEMBER>
+			<MEMBER name="restitution">0.8f</MEMBER>
 		</COMPONENT>
 		<COMPONENT type="Circle2D" >
 			<MEMBER name="radius">20</MEMBER>
@@ -27,7 +28,7 @@
 			<MEMBER name="posY">600</MEMBER>
 			<MEMBER name="rotation">0.2f</MEMBER>
 			<MEMBER name="scale">1.f</MEMBER>
-			<MEMBER name="friction">1.f</MEMBER>
+			<MEMBER name="friction">0.f</MEMBER>
 		</COMPONENT>
 		<COMPONENT type="Rectangle2D">
 			<MEMBER name="width">300.f</MEMBER>

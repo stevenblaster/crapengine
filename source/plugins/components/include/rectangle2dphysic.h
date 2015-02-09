@@ -38,7 +38,6 @@ public:
 	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, width, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, height, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, density, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, friction, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, dynamic, uint32_t )
 
 private:

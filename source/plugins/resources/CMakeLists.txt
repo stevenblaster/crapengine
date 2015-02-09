@@ -80,3 +80,20 @@ ELSE()
 	TARGET_LINK_LIBRARIES(crap_resources_plugin crap_audio crap_engine crap_video ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 
+IF(WIN32)
+
+add_custom_command(TARGET crap_components_plugin
+    POST_BUILD
+    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/resources/crap_resources_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_resources_plugin.dll)
+
+ELSE()
+
+add_custom_command(TARGET crap_components_plugin
+    POST_BUILD
+    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/resources/libcrap_resources_plugin.so ${CRAP_DATA_PATH}/plugins/libcrap_resources_plugin.so )
+
+add_custom_command(TARGET crap_components_plugin
+    POST_BUILD
+    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/resources/libcrap_resources_plugin.so ${CRAP_DATA_PATH}/TestGame/plugins/libcrap_resources_plugin.so )
+
+ENDIF(WIN32)

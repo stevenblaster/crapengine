@@ -84,14 +84,18 @@ ENDIF(WIN32)
 
 IF(WIN32)
 
-#add_custom_command(TARGET crap_components_plugin
-#    POST_BUILD
-#    COMMAND copy )
+add_custom_command(TARGET crap_components_plugin
+    POST_BUILD
+    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/components/crap_components_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_components_plugin.dll)
 
 ELSE()
 
-#add_custom_command(TARGET crap_components_plugin
-#    POST_BUILD
-#    COMMAND cp )
+add_custom_command(TARGET crap_components_plugin
+    POST_BUILD
+    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/components/libcrap_components_plugin.so ${CRAP_DATA_PATH}/plugins/libcrap_components_plugin.so )
+
+add_custom_command(TARGET crap_components_plugin
+    POST_BUILD
+    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/components/libcrap_components_plugin.so ${CRAP_DATA_PATH}/TestGame/plugins/libcrap_components_plugin.so )
 
 ENDIF(WIN32)

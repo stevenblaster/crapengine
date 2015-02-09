@@ -51,6 +51,8 @@ void Circle2DPhysic::init( System* system )
 	const float32_t pos_x = _attributes->getposX();
 	const float32_t pos_y = _attributes->getposY();
 	const float32_t scale = _attributes->getscale();
+	const float32_t friction = _attributes->getfriction();
+	const float32_t restitution = _attributes->getrestitution();
 	const float32_t radius = _radius * scale;
 	const bool dynamic = _dynamic != 0;
 
@@ -58,7 +60,7 @@ void Circle2DPhysic::init( System* system )
 	const float32_t p_pos_x = (pos_x * pixToMeter) + p_radius;
 	const float32_t p_pos_y = (pos_y * pixToMeter) + p_radius;
 
-	_bodyId = system2d->createCircle( p_pos_x, p_pos_y, p_radius, _density, _friction, dynamic );
+	_bodyId = system2d->createCircle( p_pos_x, p_pos_y, p_radius, _density, friction, restitution, dynamic );
 	system2d->setBodyUserdata( _bodyId, _attributes->getData() );
 }
 
