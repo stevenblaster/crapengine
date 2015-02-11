@@ -42,7 +42,7 @@ public:
 
 private:
 
-	uint32_t		_touching;
+	uint64_t		_touching;
 	Attributes2D* _attributes;
 	string64 _taskID;
 };

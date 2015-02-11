@@ -54,14 +54,15 @@ void updateBodies( World2D* world, float32_t pixToMeter )
 			data->velocity[0] = b->GetLinearVelocity().x;
 			data->velocity[1] = b->GetLinearVelocity().y;
 			data->damping = b->GetLinearDamping();
+			data->collision = 0;
 		}
 
 		if(b->GetContactList() != 0 )
 		{
 			if(b->GetContactList()->contact->IsTouching() )
 			{
-				data->collision = 1;
-				printf("TOUCHDOWN! %f\n", b->GetContactList()->contact->GetFriction());
+				pointer_t<void> ptr = b->GetContactList()->contact->GetFixtureB();
+				data->collision = ptr.as_number;
 			}
 		}
 	}

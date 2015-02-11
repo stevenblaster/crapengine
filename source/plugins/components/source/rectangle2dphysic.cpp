@@ -58,8 +58,8 @@ void Rectangle2DPhysic::init( System* system )
 
 	const float32_t p_width = (width/2.f) * pixToMeter;
 	const float32_t p_height = (height/2.f) * pixToMeter;
-	const float32_t p_pos_x = (pos_x * pixToMeter) + p_width;
-	const float32_t p_pos_y = (pos_y * pixToMeter) + p_height;
+	const float32_t p_pos_x = (pos_x * pixToMeter);// + p_width;
+	const float32_t p_pos_y = (pos_y * pixToMeter);// + p_height;
 
 	_bodyID = system2d->createRectangle( p_pos_x, p_pos_y, rotation, p_width, p_height, _density, friction, restitution, dynamic );
 	system2d->setBodyUserdata( _bodyID, _attributes->getData() );

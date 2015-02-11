@@ -45,7 +45,7 @@ void Collision2D::init( System* system )
 	_taskID = buffer;
 
 	TaskManager* tm = system->getSubSystem<TaskManager>("TaskManager");
-	tm->addTask<Collision2D, &Collision2D::update>( buffer, this, 50, true );
+	tm->addTask<Collision2D, &Collision2D::update>( buffer, this, 70, true );
 }
 
 void Collision2D::deinit( System* system )
@@ -58,18 +58,8 @@ bool Collision2D::update( uint32_t delta )
 {
 	if( _attributes->getData()->collision != _touching )
 	{
-		if( _touching == 0 )
-		{
-			_node->sendChidren("Collision2D", 0 );
-			_touching = 1;
-			_attributes->getData()->collision = 0;
-			printf("BOING!\n");
-		}
-		else
-		{
-			_touching = 0;
-			printf("NO BOING!\n");
-		}
+		_node->sendChidren("Collision2D", this );
+		_touching = _attributes->getData()->collision;
 	}
 
 	return true;

@@ -48,7 +48,7 @@ void drawColoredRectangleBorder( Context2D* context, float32_t pos_x, float32_t 
 {
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgTranslate( context, width/2 + pos_x, height/2 + pos_y);
+	nvgTranslate( context, pos_x, pos_y);
 
 	nvgSave( context );
 	nvgRotate( context, rotation );
@@ -76,7 +76,7 @@ void drawColoredRoundedRectangleBorder( Context2D* context, float32_t pos_x, flo
 
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgTranslate( context, width/2 + pos_x, height/2 + pos_y);
+	nvgTranslate( context, pos_x, pos_y);
 
 	nvgSave( context );
 	nvgRotate( context, rotation );
@@ -126,25 +126,11 @@ void drawColorPathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, 
 	if( path_size < 2 || path_size % 2 != 0 )
 		return;
 
-	float32_t min_x=FLOAT32_MAX, min_y=FLOAT32_MAX, max_x=FLOAT32_MIN, max_y=FLOAT32_MIN;
-
-	for( uint32_t i=0; i<path_size; i+=2 )
-	{
-		min_x = ( min_x > path[i] ) ? path[i] : min_x;
-		min_y = ( min_y > path[i+1] ) ? path[i+1] : min_y;
-		max_x = ( max_x > path[i] ) ? path[i] : max_x;
-		max_y = ( max_y > path[i+1] ) ? path[i+1] : max_y;
-	}
-
-	float32_t width=max_x-min_x, height=max_y-min_y;
-	float32_t cen_x = min_x+width/2, cen_y = min_y+height/2;
-
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgTranslate( context, cen_x + pos_x+(min_x - cen_x), cen_y + pos_y+(min_y - cen_y) );
+	nvgTranslate( context, pos_x, pos_y );
 
 	nvgSave( context );
-	nvgTranslate( context, min_x - cen_x, min_y - cen_y );
 	nvgRotate( context, rotation );
 	nvgMoveTo( context, path[0], path[1]);
 	for( uint32_t i=2; i<path_size; i+=2 )
@@ -210,7 +196,7 @@ void drawImageRectangleBorder( Context2D* context, float32_t pos_x, float32_t po
 {
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgTranslate( context, width/2 + pos_x, height/2 + pos_y);
+	nvgTranslate( context, pos_x, pos_y);
 
 	nvgSave( context );
 	nvgRotate( context, rotation );
@@ -244,7 +230,7 @@ void drawImageRoundedRectangleBorder( Context2D* context, float32_t pos_x, float
 {
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgTranslate( context, width/2 + pos_x, height/2 + pos_y);
+	nvgTranslate( context, pos_x, pos_y);
 
 	nvgSave( context );
 	nvgRotate( context, rotation );
@@ -279,8 +265,11 @@ void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y
 {
 	nvgSave( context );
 	nvgBeginPath( context );
+	nvgTranslate( context, pos_x, pos_y);
+
+	nvgSave( context );
 	nvgRotate( context, rotation );
-	nvgCircle( context, pos_x, pos_y, radius );
+	nvgCircle( context, 0, 0, radius );
 	int32_t iw=0.f, ih=0.f;
 	nvgImageSize( context, image, &iw, &ih );
 	float32_t iwidth = (float32_t)iw*iscale;
@@ -291,6 +280,8 @@ void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );
 	nvgStrokeWidth( context, stroke );
 	nvgStroke( context );
+	nvgRestore( context );
+
 	nvgRestore( context );
 }
 
@@ -309,25 +300,11 @@ void drawImagePathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, 
 	if( path_size < 2 || path_size % 2 != 0 )
 		return;
 
-	float32_t min_x=FLOAT32_MAX, min_y=FLOAT32_MAX, max_x=FLOAT32_MIN, max_y=FLOAT32_MIN;
-
-	for( uint32_t i=0; i<path_size; i+=2 )
-	{
-		min_x = ( min_x > path[i] ) ? path[i] : min_x;
-		min_y = ( min_y > path[i+1] ) ? path[i+1] : min_y;
-		max_x = ( max_x > path[i] ) ? path[i] : max_x;
-		max_y = ( max_y > path[i+1] ) ? path[i+1] : max_y;
-	}
-
-	float32_t width=max_x-min_x, height=max_y-min_y;
-	float32_t cen_x = min_x+width/2, cen_y = min_y+height/2;
-
 	nvgSave( context );
 	nvgBeginPath( context );
-	nvgTranslate( context, cen_x + pos_x+(min_x - cen_x), cen_y + pos_y+(min_y - cen_y) );
+	nvgTranslate( context, pos_x, pos_y );
 
 	nvgSave( context );
-	nvgTranslate( context, min_x - cen_x, min_y - cen_y );
 	nvgRotate( context, rotation );
 	nvgMoveTo( context, path[0], path[1]);
 	for( uint32_t i=2; i<path_size; i+=2 )
