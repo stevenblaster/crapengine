@@ -45,7 +45,7 @@ void ResourceManager::loadXML( const string64& filename )
     const string256 file_path = _path + filename;
     const uint32_t buffer_size = crap::fileSize( file_path.c_str() );
 
-    file_t* handle = openFile( file_path.c_str() , CRAP_FILE_READ );
+	file_t* handle = openFile( file_path.c_str() , CRAP_FILE_READBINARY );
 
     CRAP_ASSERT( ASSERT_BREAK, handle != 0, "Could not open file %s", file_path.c_str() );
 
@@ -146,7 +146,7 @@ void ResourceManager::loadResource( string_hash resourceId )
         	const uint32_t resourceSize  = crap::fileSize( filePath.c_str() );
 
 
-        	file_t* resourceFile = openFile( filePath.c_str(), CRAP_FILE_READ );
+			file_t* resourceFile = openFile( filePath.c_str(), CRAP_FILE_READBINARY );
 
         	CRAP_ASSERT( ASSERT_BREAK, resourceFile != 0, "Resourcefile not found" );
 

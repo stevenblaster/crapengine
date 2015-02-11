@@ -84,9 +84,14 @@ ENDIF(WIN32)
 
 IF(WIN32)
 
-add_custom_command(TARGET crap_components_plugin
-    POST_BUILD
-    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/components/crap_components_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_components_plugin.dll)
+#add_custom_command(TARGET crap_components_plugin
+#    POST_BUILD
+#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/components/crap_components_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_components_plugin.dll)
+
+#add_custom_command(TARGET crap_components_plugin
+#    POST_BUILD
+#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/components/crap_components_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_components_plugin.dll)
+
 
 ELSE()
 

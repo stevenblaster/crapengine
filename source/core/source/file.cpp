@@ -69,7 +69,7 @@ void readFromFile( file_t* CRAP_RESTRICT handle, pointer_void buffer, uint32_t b
 #ifndef CRAP_PLATFORM_WINDOWS
     CRAP_ASSERT( ASSERT_BREAK, result == 1,  "Reading bytes was not successful (result: %i)", result );
 #else
-	CRAP_ASSERT( ASSERT_BREAK, result == 0,  "Reading bytes was not successful (result: %i)", result );
+	CRAP_ASSERT( ASSERT_BREAK, result == 1,  "Reading bytes was not successful (result: %i)", result );
 #endif
 }
 
@@ -84,7 +84,7 @@ void writeToFile( file_t* CRAP_RESTRICT handle , pointer_void buffer, uint32_t b
 #ifndef CRAP_PLATFORM_WINDOWS
     CRAP_ASSERT( ASSERT_BREAK, result == 1,  "Writing bytes was not successful (result: %i)", result );
 #else
-    CRAP_ASSERT( ASSERT_BREAK, result == 0,  "Writing bytes was not successful (result: %i)", result );
+    CRAP_ASSERT( ASSERT_BREAK, result == 1,  "Writing bytes was not successful (result: %i)", result );
 #endif
 }
 
