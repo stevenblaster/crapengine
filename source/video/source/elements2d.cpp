@@ -205,7 +205,7 @@ void drawImageRectangleBorder( Context2D* context, float32_t pos_x, float32_t po
 	nvgImageSize( context, image, &iw, &ih );
 	float32_t iwidth = (float32_t)iw*iscale;
 	float32_t iheight = (float32_t)ih*iscale;
-	NVGpaint paint = nvgImagePattern( context, ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
+	NVGpaint paint = nvgImagePattern( context, (-width/2)+ipos_x, (-height/2)+ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
 	nvgFill(context);
 	nvgStrokeColor( context, nvgRGBA( stroke_r, stroke_g, stroke_b, stroke_a) );

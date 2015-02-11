@@ -38,6 +38,7 @@ public:
 	DECLARE_COMPONENT_MEMBER( Texture2D, posY, float32_t );
 	DECLARE_COMPONENT_MEMBER( Texture2D, scale, float32_t );
 
+	CRAP_INLINE void setPos( float32_t x, float32_t y ) { _posX=x; _posY=y;}
 
 	Image2D	getImage( void ) const { return _image2D; }
 

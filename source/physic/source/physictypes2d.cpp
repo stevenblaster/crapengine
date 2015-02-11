@@ -36,6 +36,7 @@ void worldStep( World2D* world, float32_t delta, uint32_t velIt, uint32_t posIt 
 {
 	world->Step( delta, velIt, posIt );
 }
+
 void updateBodies( World2D* world, float32_t pixToMeter )
 {
 	for (Body2D* b = world->GetBodyList(); b!= 0; b = b->GetNext())

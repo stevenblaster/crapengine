@@ -48,6 +48,7 @@ public:
 	void setNextWorld( string_hash name );
 
 	void switchWorldCallback( pointer_t<void> data );
+	void endGameCallback( pointer_t<void> data );
 
 private:
 	GAME_MEMORY				_allocator;

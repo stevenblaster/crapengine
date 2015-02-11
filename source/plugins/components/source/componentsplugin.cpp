@@ -31,6 +31,7 @@
 #include "collision2d.h"
 #include "audio2d.h"
 #include "texture2d.h"
+#include "button2d.h"
 
 namespace crap
 {
@@ -50,7 +51,8 @@ public:
 		_mouseListener2d("MouseListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_collision2d("Collision2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_audio2d("Audio2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_texture2d("Texture2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_texture2d("Texture2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_button2d("Button2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -86,6 +88,7 @@ private:
     crap::ComponentType<Collision2D>  _collision2d;
     crap::ComponentType<Audio2D>  _audio2d;
     crap::ComponentType<Texture2D>  _texture2d;
+    crap::ComponentType<Button2D>  _button2d;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )

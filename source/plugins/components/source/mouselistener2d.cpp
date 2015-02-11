@@ -50,6 +50,9 @@ void MouseListener2D::init( System* system )
 	_mouseInput->addEnterListener<MouseListener2D, &MouseListener2D::enterCallback>(this);
 
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
+
+	_listening = true;
+	_mouseInput->addPositionListener<MouseListener2D, &MouseListener2D::positionCallback>(this);
 }
 
 void MouseListener2D::deinit( System* system )
@@ -91,10 +94,10 @@ void MouseListener2D::rightButtonCallback( uint32_t state )
 
 void MouseListener2D::positionCallback( float64_t x, float64_t y )
 {
-	const float32_t minX = _attributes->getposX();
-	const float32_t maxX = minX * _width;
+	const float32_t minX = _attributes->getposX() - _width/2;
+	const float32_t maxX = minX + _width;
 
-	const float32_t minY = _attributes->getposY();
+	const float32_t minY = _attributes->getposY() - _height/2;
 	const float32_t maxY = minY + _height;
 
 	const float32_t posX = (float32_t)x;

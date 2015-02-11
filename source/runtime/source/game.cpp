@@ -200,6 +200,8 @@ void Game::start( void )
 	renderWindow.addCloseListener<Game, &Game::stop>(this);
 
 	eventSystem.registerEvent<Game, &Game::switchWorldCallback>( "SwitchWorld", this );
+	eventSystem.registerEvent<Game, &Game::endGameCallback>( "EndGame", this );
+
 	string_hash firstLevelName( firstLevel.c_str() );
 	eventSystem.fireEvent("SwitchWorld", &firstLevelName );
 
@@ -216,6 +218,7 @@ void Game::start( void )
 		World::start( _nextLevel );
 	}
 
+	eventSystem.unregisterEvent<Game, &Game::endGameCallback>( "EndGame", this );
 	eventSystem.unregisterEvent<Game, &Game::switchWorldCallback>( "SwitchWorld", this );
 }
 
@@ -233,6 +236,11 @@ void Game::switchWorldCallback( pointer_t<void> data )
 	setNextWorld( *name.as_type );
 	if( _currentLevel != 0 )
 		_currentLevel->stop(0);
+}
+
+void Game::endGameCallback( pointer_t<void> data )
+{
+	stop();
 }
 
 void Game::addLevel( const char* path )

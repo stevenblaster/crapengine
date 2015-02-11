@@ -14,5 +14,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/attributes2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/collision2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/texture2d.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/button2d.cpp
    PARENT_SCOPE
 )

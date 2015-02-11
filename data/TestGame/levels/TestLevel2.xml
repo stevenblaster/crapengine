@@ -154,4 +154,33 @@
       <MEMBER name="density">1.f</MEMBER>
     </COMPONENT>
   </NODE>
+  <NODE>
+    <COMPONENT type="Attributes2D">
+      <MEMBER name="posX">900</MEMBER>
+      <MEMBER name="posY">500</MEMBER>
+      <MEMBER name="rotation">0f</MEMBER>
+      <MEMBER name="scale">1.f</MEMBER>
+    </COMPONENT>
+    <COMPONENT type="Rectangle2D">
+      <MEMBER name="width">100.f</MEMBER>
+      <MEMBER name="height">100.f</MEMBER>
+    </COMPONENT>
+	<COMPONENT type="Texture2D">
+		<MEMBER name="name">Button</MEMBER>
+		<MEMBER name="alpha">1.0</MEMBER>
+		<MEMBER name="scale">1.0</MEMBER>
+		<MEMBER name="posX">0</MEMBER>
+		<MEMBER name="posY">0</MEMBER>
+	</COMPONENT>
+	<COMPONENT type="MouseListener2D">
+		<MEMBER name="width">100</MEMBER>
+		<MEMBER name="height">100</MEMBER>
+	</COMPONENT>
+	<COMPONENT type="Button2D">
+		<MEMBER name="leftclick">Buttoni</MEMBER>
+		<MEMBER name="rightclick">EndGame</MEMBER>
+		<MEMBER name="width">100</MEMBER>
+		<MEMBER name="height">400</MEMBER>
+	</COMPONENT>
+  </NODE>
 </LEVEL>
