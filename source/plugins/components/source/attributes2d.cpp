@@ -34,6 +34,7 @@ Attributes2D::Attributes2D( void)
 	_data.torque = 0.f;
 	_data.velocity[0] = 0.f;
 	_data.velocity[1] = 0.f;
+	_data.collision = 0;
 
 	REGISTER_COMPONENT_MEMBER( Attributes2D, posX, float32_t )
 	REGISTER_COMPONENT_MEMBER( Attributes2D, posY, float32_t )

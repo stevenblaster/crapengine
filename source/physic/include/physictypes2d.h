@@ -19,6 +19,8 @@
 
 class b2World;
 class b2Body;
+class b2ContactListener;
+class b2ContactImpulse;
 
 namespace crap
 {
@@ -48,6 +50,11 @@ Body2D* createPolygon2D( World2D* world, float32_t pos_x, float32_t pos_y, float
 void setBody2DUserdata( Body2D* body, void* data );
 
 void destroyBody2D( World2D* world, Body2D* body );
+
+class ContactListener : public b2ContactListener
+{
+	void BeginContact(b2Contact* contact);
+};
 
 } /* namespace crap */
 

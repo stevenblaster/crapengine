@@ -28,6 +28,9 @@ PhysicSystem2D::PhysicSystem2D( uint32_t max_bodies, float32_t gravity_x, float3
 {
 	_memory = _allocator.allocate( sizeWorld2D(), 4 );
 	_world = createWorld2D( _memory, gravity_x, gravity_y );
+
+	static ContactListener contacts;
+	_world->SetContactListener(&contacts);
 }
 
 PhysicSystem2D::~PhysicSystem2D( void )

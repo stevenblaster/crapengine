@@ -55,17 +55,20 @@ void updateBodies( World2D* world, float32_t pixToMeter )
 			data->velocity[0] = b->GetLinearVelocity().x;
 			data->velocity[1] = b->GetLinearVelocity().y;
 			data->damping = b->GetLinearDamping();
-			data->collision = 0;
 		}
-
-		if(b->GetContactList() != 0 )
-		{
-			if(b->GetContactList()->contact->IsTouching() )
-			{
-				pointer_t<void> ptr = b->GetContactList()->contact->GetFixtureB();
-				data->collision = ptr.as_number;
-			}
-		}
+//
+//		if(b->GetContactList() != 0 )
+//		{
+//			if(b->GetContactList()->contact->IsTouching() )
+//			{
+//				pointer_t<void> ptr = b->GetContactList()->other;
+//				data->collision = ptr.as_number;
+//			}
+//			else
+//			{
+//				data->collision = 0;
+//			}
+//		}
 	}
 }
 
@@ -144,6 +147,19 @@ void setBody2DUserdata( Body2D* body, void* data )
 void destroyBody2D( World2D* world, Body2D* body )
 {
 	world->DestroyBody(body);
+}
+
+
+void ContactListener::BeginContact(b2Contact* contact)
+{
+	pointer_t<Body2D> bodyA = contact->GetFixtureA()->GetBody();
+	attributes_2d* dataA = (attributes_2d*)bodyA.as_type->GetUserData();
+
+	pointer_t<Body2D> bodyB = contact->GetFixtureB()->GetBody();
+	attributes_2d* dataB = (attributes_2d*)bodyB.as_type->GetUserData();
+
+	dataA->collision = bodyB.as_number;
+	dataB->collision = bodyA.as_number;
 }
 
 }

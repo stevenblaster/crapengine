@@ -56,11 +56,27 @@ void Collision2D::deinit( System* system )
 
 bool Collision2D::update( uint32_t delta )
 {
-	if( _attributes->getData()->collision != _touching )
+	const uint64_t collision = _attributes->getData()->collision;
+
+	//new collision
+	if( collision != 0 && _touching == 0 )
 	{
 		_node->sendChidren("Collision2D", this );
-		_touching = _attributes->getData()->collision;
+		_touching = collision;
 	}
+	else if( collision != 0 && _touching != 0 )
+	{
+		//new collision
+		if( collision != _touching )
+		{
+			_node->sendChidren("Collision2D", this );
+			_touching = collision;
+		}
+	}
+	else if(collision == 0 && _touching != 0)
+		_touching = 0;
+
+	_attributes->getData()->collision = 0;
 
 	return true;
 }

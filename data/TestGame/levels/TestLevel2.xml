@@ -1,7 +1,8 @@
 <LEVEL name="TestLevel2">
 	<SETTING name="COMPONENT_MEMORY">50000000</SETTING>
 	<SETTING name="COMPONENT_MAX_NODES">100</SETTING>
-	<NODE>
+<!--	<NODE>
+
 		<COMPONENT type="Attributes2D">
 			<MEMBER name="posX">800</MEMBER>
 			<MEMBER name="posY">-50</MEMBER>
@@ -18,7 +19,7 @@
 		</COMPONENT>
 		<COMPONENT type="Circle2DPhysic">
 			<MEMBER name="radius">20</MEMBER>
-			<MEMBER name="density">1.f</MEMBER>
+			<MEMBER name="density">.1f</MEMBER>
 			<MEMBER name="dynamic">1</MEMBER>
 		</COMPONENT>
 		<COMPONENT type="ScreenListener2D">
@@ -41,7 +42,7 @@
 			<MEMBER name="alpha">1.0</MEMBER>
 			<MEMBER name="scale">0.3</MEMBER>
 		</COMPONENT>
-	</NODE>
+	</NODE> -->
 	<NODE>
 		<COMPONENT type="Attributes2D">
 			<MEMBER name="posX">550</MEMBER>
