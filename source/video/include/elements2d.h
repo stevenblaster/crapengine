@@ -83,48 +83,48 @@ void destroyImage2D( Context2D* context, Image2D );
 
 void drawImageRectangleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImageRectangle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation,  Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
 
 void drawImageRoundedRectangleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, float32_t corner );
 
 void drawImageRoundedRectangle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t corner );
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t corner );
 
 void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImageCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight  );
 
 void drawImagePathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImagePath( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
 
 void drawImageTriangleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a );
 
 void drawImageTriangle(Context2D* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale );
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight );
 
 //FONT
 Font2D createFont2D(Context2D* context, string_hash name, pointer_t<void> memory, uint32_t size);

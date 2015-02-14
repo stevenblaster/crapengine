@@ -49,7 +49,7 @@ void Audio2D::init( System* system )
 	TaskManager* tm = system->getSubSystem<TaskManager>("TaskManager");
 
 	char buffer[64];
-	sprintf( buffer, "%u", getGlobalID() );
+	sprintf( buffer, "%u", getTypeID() | rand() );
 	_taskID = buffer;
 
 	tm->addTask<Audio2D, &Audio2D::update>( buffer, this, 50, true );
@@ -88,6 +88,7 @@ void Audio2D::receiveMessage( string_hash name, pointer_t<void> ptr )
 		{
 			_source = _am->leaseSource( _name );
 			_am->playSource( _source );
+
 		}
 	}
 

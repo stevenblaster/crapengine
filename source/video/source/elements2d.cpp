@@ -191,7 +191,7 @@ void destroyImage2D( Context2D* context, Image2D image )
 
 void drawImageRectangleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a  )
 {
 	nvgSave( context );
@@ -201,10 +201,6 @@ void drawImageRectangleBorder( Context2D* context, float32_t pos_x, float32_t po
 	nvgSave( context );
 	nvgRotate( context, rotation );
 	nvgRect( context, -width/2, -height/2, width, height );
-	int32_t iw=0.f, ih=0.f;
-	nvgImageSize( context, image, &iw, &ih );
-	float32_t iwidth = (float32_t)iw*iscale;
-	float32_t iheight = (float32_t)ih*iscale;
 	NVGpaint paint = nvgImagePattern( context, (-width/2)+ipos_x, (-height/2)+ipos_y, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
 	nvgFill(context);
@@ -218,14 +214,14 @@ void drawImageRectangleBorder( Context2D* context, float32_t pos_x, float32_t po
 
 void drawImageRectangle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation,  Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale )
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
-	drawImageRectangleBorder(context, pos_x, pos_y,width,height,rotation,image,img_alpha,img_rotation,ipos_x,ipos_y,iscale, 0.f, 0,0,0,0 );
+	drawImageRectangleBorder(context, pos_x, pos_y,width,height,rotation,image,img_alpha,img_rotation,ipos_x,ipos_y, iwidth, iheight, 0.f, 0,0,0,0 );
 }
 
 void drawImageRoundedRectangleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a, float32_t corner )
 {
 	nvgSave( context );
@@ -235,10 +231,6 @@ void drawImageRoundedRectangleBorder( Context2D* context, float32_t pos_x, float
 	nvgSave( context );
 	nvgRotate( context, rotation );
 	nvgRoundedRect( context, -width/2, -height/2, width, height, corner );
-	int32_t iw=0.f, ih=0.f;
-	nvgImageSize( context, image, &iw, &ih );
-	float32_t iwidth = (float32_t)iw*iscale;
-	float32_t iheight = (float32_t)ih*iscale;
 	NVGpaint paint = nvgImagePattern( context,ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
 	nvgFill(context);
@@ -252,15 +244,15 @@ void drawImageRoundedRectangleBorder( Context2D* context, float32_t pos_x, float
 
 void drawImageRoundedRectangle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale,  float32_t corner )
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t corner )
 {
 	drawImageRoundedRectangleBorder( context, pos_x, pos_y, width, height, rotation, image, img_alpha,
-			img_rotation, ipos_x, ipos_y, iscale, 0.f,0,0,0,0, corner );
+			img_rotation, ipos_x, ipos_y, iwidth, iheight,  0.f,0,0,0,0, corner );
 }
 
 void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
 	nvgSave( context );
@@ -270,10 +262,6 @@ void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y
 	nvgSave( context );
 	nvgRotate( context, rotation );
 	nvgCircle( context, 0, 0, radius );
-	int32_t iw=0.f, ih=0.f;
-	nvgImageSize( context, image, &iw, &ih );
-	float32_t iwidth = (float32_t)iw*iscale;
-	float32_t iheight = (float32_t)ih*iscale;
 	NVGpaint paint = nvgImagePattern( context, ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
 	nvgFill(context);
@@ -287,14 +275,14 @@ void drawImageCircleBorder( Context2D* context, float32_t pos_x, float32_t pos_y
 
 void drawImageCircle( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t radius, float32_t rotation,
 		Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale )
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
-	drawImageCircleBorder( context, pos_x, pos_y, radius, rotation, image, img_alpha, img_rotation, ipos_x, ipos_y, iscale, 0.f,0,0,0,0);
+	drawImageCircleBorder( context, pos_x, pos_y, radius, rotation, image, img_alpha, img_rotation, ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0);
 }
 
 void drawImagePathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
 	if( path_size < 2 || path_size % 2 != 0 )
@@ -312,10 +300,6 @@ void drawImagePathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, 
 		nvgLineTo( context, path[i], path[i+1]);
 	}
 	nvgClosePath( context );
-	int32_t iw=0.f, ih=0.f;
-	nvgImageSize( context, image, &iw, &ih );
-	float32_t iwidth = (float32_t)iw*iscale;
-	float32_t iheight = (float32_t)ih*iscale;
 	NVGpaint paint = nvgImagePattern( context, ipos_x-iwidth/2, ipos_y-iheight/2, iwidth, iheight, img_rotation, image, img_alpha );
 	nvgFillPaint( context, paint);
 	nvgFill(context);
@@ -329,14 +313,14 @@ void drawImagePathBorder( Context2D* context, float32_t pos_x, float32_t pos_y, 
 
 void drawImagePath( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t* path, uint32_t path_size,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale )
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
-	drawImagePathBorder(context,pos_x,pos_y,path,path_size,rotation,image,img_alpha,img_rotation,ipos_x, ipos_y, iscale, 0.f,0,0,0,0 );
+	drawImagePathBorder(context,pos_x,pos_y,path,path_size,rotation,image,img_alpha,img_rotation,ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0 );
 }
 
 void drawImageTriangleBorder( Context2D* context, float32_t pos_x, float32_t pos_y, float32_t width, float32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale, float32_t stroke,
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight, float32_t stroke,
 		uint8_t stroke_r, uint8_t stroke_g, uint8_t stroke_b, uint8_t stroke_a )
 {
 	float32_t path[6];
@@ -348,15 +332,15 @@ void drawImageTriangleBorder( Context2D* context, float32_t pos_x, float32_t pos
 	path[4] = width/2;
 	path[5] = height/2;
 
-	drawImagePathBorder( context, pos_x, pos_y, path, 6, rotation, image,img_alpha,img_rotation,ipos_x, ipos_y, iscale, stroke, stroke_r,
+	drawImagePathBorder( context, pos_x, pos_y, path, 6, rotation, image,img_alpha,img_rotation,ipos_x, ipos_y, iwidth, iheight, stroke, stroke_r,
 			stroke_g, stroke_b, stroke_a );
 }
 
 void drawImageTriangle(Context2D* context, float32_t pos_x, float32_t pos_y, uint32_t width, uint32_t height,
 		float32_t rotation, Image2D image, float32_t img_alpha, float32_t img_rotation,
-		float32_t ipos_x, float32_t ipos_y, float32_t iscale )
+		float32_t ipos_x, float32_t ipos_y, float32_t iwidth, float32_t iheight )
 {
-	drawImageTriangleBorder( context, pos_x, pos_y, width, height, rotation,  image,img_alpha,img_rotation,ipos_x, ipos_y, iscale, 0.f,0,0,0,0 );
+	drawImageTriangleBorder( context, pos_x, pos_y, width, height, rotation,  image,img_alpha,img_rotation,ipos_x, ipos_y, iwidth, iheight, 0.f,0,0,0,0 );
 }
 
 Font2D createFont2D( Context2D* context, string_hash name, pointer_t<void> memory, uint32_t size )

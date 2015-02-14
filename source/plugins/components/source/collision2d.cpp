@@ -41,8 +41,10 @@ void Collision2D::init( System* system )
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 
 	char buffer[64];
-	sprintf( buffer, "%u", getGlobalID() );
+	sprintf( buffer, "%u", getTypeID() | rand() );
 	_taskID = buffer;
+
+	printf("Type: %u, Component: %u \n", getTypeID(), getComponentID() );
 
 	TaskManager* tm = system->getSubSystem<TaskManager>("TaskManager");
 	tm->addTask<Collision2D, &Collision2D::update>( buffer, this, 70, true );

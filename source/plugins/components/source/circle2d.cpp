@@ -92,12 +92,13 @@ void Circle2D::renderCallTexture( Context2D* context )
 	const float32_t ialpha = _texture->getalpha();
 	const float32_t ipos_x = _texture->getposX();// + pos_x;
 	const float32_t ipos_y = _texture->getposY();// + pos_y;
-	const float32_t iscale = _texture->getscale();
+	const float32_t iwidth = _texture->getwidth();
+	const float32_t iheight = _texture->getheight();
 	const float32_t irotation = _texture->getrotation(); // + rotation;
 
 	const Image2D image = _texture->getImage();
 
-	drawImageCircleBorder( context, pos_x, pos_y, radius, rotation, image, ialpha, irotation, ipos_x, ipos_y, iscale, border, bfill.r,
+	drawImageCircleBorder( context, pos_x, pos_y, radius, rotation, image, ialpha, irotation, ipos_x, ipos_y, iwidth, iheight, border, bfill.r,
 					bfill.g, bfill.b, bfill.a );
 }
 

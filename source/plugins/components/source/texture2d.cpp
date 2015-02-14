@@ -27,14 +27,15 @@
 namespace crap
 {
 
-Texture2D::Texture2D( void ) : _image2D(0), _alpha(1), _rotation(0), _posX(0), _posY(0), _scale(0)
+Texture2D::Texture2D( void ) : _image2D(0), _alpha(1), _rotation(0), _posX(0), _posY(0), _width(0), _height(0)
 {
 	REGISTER_COMPONENT_MEMBER( Texture2D, name, string_hash );
 	REGISTER_COMPONENT_MEMBER( Texture2D, alpha, float32_t );
 	REGISTER_COMPONENT_MEMBER( Texture2D, rotation, float32_t );
 	REGISTER_COMPONENT_MEMBER( Texture2D, posX, float32_t );
 	REGISTER_COMPONENT_MEMBER( Texture2D, posY, float32_t );
-	REGISTER_COMPONENT_MEMBER( Texture2D, scale, float32_t );
+	REGISTER_COMPONENT_MEMBER( Texture2D, width, float32_t );
+	REGISTER_COMPONENT_MEMBER( Texture2D, height, float32_t );
 }
 
 Texture2D::~Texture2D( void )

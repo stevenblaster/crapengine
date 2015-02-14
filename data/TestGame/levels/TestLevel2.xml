@@ -1,8 +1,7 @@
 <LEVEL name="TestLevel2">
 	<SETTING name="COMPONENT_MEMORY">50000000</SETTING>
 	<SETTING name="COMPONENT_MAX_NODES">100</SETTING>
-<!--	<NODE>
-
+	<NODE>
 		<COMPONENT type="Attributes2D">
 			<MEMBER name="posX">800</MEMBER>
 			<MEMBER name="posY">-50</MEMBER>
@@ -41,8 +40,10 @@
 			<MEMBER name="name">Mieze</MEMBER>
 			<MEMBER name="alpha">1.0</MEMBER>
 			<MEMBER name="scale">0.3</MEMBER>
+			<MEMBER name="width">100.0</MEMBER>
+			<MEMBER name="height">100.0</MEMBER>
 		</COMPONENT>
-	</NODE> -->
+	</NODE>
 	<NODE>
 		<COMPONENT type="Attributes2D">
 			<MEMBER name="posX">550</MEMBER>
@@ -77,7 +78,7 @@
 		<COMPONENT type="Collision2D">	 
 		</COMPONENT>
 		<COMPONENT type="Audio2D">
-			<MEMBER name="name">boing</MEMBER>
+			<MEMBER name="name">Nagut</MEMBER>
 			<MEMBER name="startMessage">Collision2D</MEMBER>
 		</COMPONENT>
 		<COMPONENT type="Texture2D">
@@ -86,6 +87,8 @@
 			<MEMBER name="scale">0.3</MEMBER>
 			<MEMBER name="posX">-25</MEMBER>
 			<MEMBER name="posY">-25</MEMBER>
+			<MEMBER name="width">100.0</MEMBER>
+			<MEMBER name="height">100.0</MEMBER>
 		</COMPONENT>
 	</NODE>
 	<NODE>
@@ -172,6 +175,8 @@
 		<MEMBER name="scale">1.0</MEMBER>
 		<MEMBER name="posX">0</MEMBER>
 		<MEMBER name="posY">0</MEMBER>
+		<MEMBER name="width">100</MEMBER>
+		<MEMBER name="height">400</MEMBER>
 	</COMPONENT>
 	<COMPONENT type="MouseListener2D">
 		<MEMBER name="width">100</MEMBER>

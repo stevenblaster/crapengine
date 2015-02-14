@@ -405,9 +405,9 @@ int main( void )
 
 		crap::drawColorTriangle( gc, 400, 400, 140, 100, 0.f, 0, 255, 0, 255 );
 
-		crap::drawImageRectangle( gc, (int32_t)(rot*10) % renderWindow.getWidth(), 400, 100, 100, rot*0.1, guiImage, 1.f, 0.f, 0.f, 0.f, 1.f );
+		crap::drawImageRectangle( gc, (int32_t)(rot*10) % renderWindow.getWidth(), 400, 100, 100, rot*0.1, guiImage, 100.f, 100.f, 0.f, 0.f, 0.f, 1.f );
 
-		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255,1.f, 0.f, -10,10-rot*2, 0.3f);
+		crap::drawImageCircle( gc, 600, 200, 50, guiImage2, 255, 100.f, 100.f, 0.f, -10,10-rot*2, 0.3f);
 
 		crap::drawText(gc, 400, 400, font2d, "Hallo, du Welt.", 30.f ,0.f , 0, 255, 0, 255, 0, 1, 10.f, crap::align::left);
 

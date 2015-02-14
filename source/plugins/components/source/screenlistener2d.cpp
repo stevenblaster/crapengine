@@ -51,7 +51,7 @@ void ScreenListener2D::init( System* system )
 	_sizeY = renderer->getWindow()->getHeight();
 
 	char buffer[64];
-	sprintf( buffer, "%u", getGlobalID() );
+	sprintf( buffer, "%u", getTypeID() | rand() );
 	_taskID = buffer;
 
 	TaskManager* manager = system->getSubSystem<TaskManager>("TaskManager");
