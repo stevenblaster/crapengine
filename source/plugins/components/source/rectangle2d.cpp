@@ -32,6 +32,7 @@ namespace crap
 Rectangle2D::Rectangle2D( void ) :
 		_width(0), _height(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0), _texture(0)
 {
+	REGISTER_COMPONENT_MEMBER( Rectangle2D, imagename, string_hash )
 	REGISTER_COMPONENT_MEMBER( Rectangle2D, width, float32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle2D, height, float32_t )
 	REGISTER_COMPONENT_MEMBER( Rectangle2D, color, color_argb )
@@ -47,7 +48,17 @@ Rectangle2D::~Rectangle2D( void )
 void Rectangle2D::init( System* system )
 {
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
-	_texture = (Texture2D*)getNeighbour("Texture2D");
+
+	Component::TypeList list = getNeighboursOfType("Texture2D");
+	for( uint32_t i=0; list.components[i] != 0; ++i )
+	{
+		Texture2D* tex = (Texture2D*)list.components[i];
+		if( tex->getname() == _imagename )
+		{
+			_texture = tex;
+			break;
+		}
+	}
 
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	if( _texture == 0 )

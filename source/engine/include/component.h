@@ -29,6 +29,12 @@ class Component
 {
 public:
 
+	struct TypeList
+	{
+		Component* components[10];
+		TypeList( void ) { memset(components, 0, sizeof(components)); }
+	};
+
 	friend class ComponentFactory;
 	template<typename t> friend class ComponentType;
 
@@ -41,6 +47,8 @@ public:
 
 	Node*	getNode( void );
 	Component* getNeighbour( string_hash type );
+
+	TypeList getNeighboursOfType( string_hash type );
 
 	virtual void init( System* system ) {}
 	virtual void deinit( System* system ) {}

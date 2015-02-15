@@ -36,6 +36,25 @@ Component* Component::getNeighbour( string_hash type )
 	return 0;
 }
 
+Component::TypeList Component::getNeighboursOfType( string_hash type )
+{
+	TypeList list;
+	uint32_t index = 0;
+	intrusive_node<Component>* children = _node->getComponents()->begin();
+	while( children != _node->getComponents()->end() )
+	{
+		if( children->parent()->getTypeID() == type.hash() )
+			list.components[index++] = children->parent();
+
+		if( index == 10 )
+			return list;
+
+		children = _node->getComponents()->next(children);
+	}
+
+	return list;
+}
+
 Node* Component::getNode( void ) { return _node; }
 
 void Component::setNode( Node* node )

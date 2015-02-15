@@ -29,6 +29,7 @@ namespace crap
 Button2D::Button2D( void ) :
 		_state( active ), _width(0), _height(0), _texture(0), _eventSystem(0), _tiling(vertical)
 {
+	REGISTER_COMPONENT_MEMBER( Button2D, imagename, string_hash );
 	REGISTER_COMPONENT_MEMBER( Button2D, leftclick, string_hash );
 	REGISTER_COMPONENT_MEMBER( Button2D, rightclick, string_hash );
 	REGISTER_COMPONENT_MEMBER( Button2D, state, uint32_t );
@@ -44,7 +45,18 @@ Button2D::~Button2D( void )
 void Button2D::init( System* system )
 {
 	_eventSystem = system->getSubSystem<EventSystem>("EventSystem");
-	_texture = (Texture2D*)getNeighbour("Texture2D");
+
+	Component::TypeList list = getNeighboursOfType("Texture2D");
+	for( uint32_t i=0; list.components[i] != 0; ++i )
+	{
+		Texture2D* tex = (Texture2D*)list.components[i];
+		if( tex->getname() == _imagename )
+		{
+			_texture = tex;
+			break;
+		}
+	}
+
 	if( _width /4 == _height )
 		_tiling = horizontal;
 	else if( _width == _height / 4 )

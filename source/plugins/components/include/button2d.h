@@ -50,6 +50,7 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
+	DECLARE_COMPONENT_MEMBER( Button2D, imagename, string_hash );
 	DECLARE_COMPONENT_MEMBER( Button2D, leftclick, string_hash );
 	DECLARE_COMPONENT_MEMBER( Button2D, rightclick, string_hash );
 	DECLARE_COMPONENT_MEMBER( Button2D, state, uint32_t );

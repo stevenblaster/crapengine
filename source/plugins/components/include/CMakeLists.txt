@@ -14,5 +14,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/collision2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/texture2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/button2d.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/filmstrip2d.h
    PARENT_SCOPE
 )

@@ -38,6 +38,7 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
+	DECLARE_COMPONENT_MEMBER( Rectangle2D, imagename, string_hash )
 	DECLARE_COMPONENT_MEMBER( Rectangle2D, width, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle2D, height, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle2D, color, color_argb )

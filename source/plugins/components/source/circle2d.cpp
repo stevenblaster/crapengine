@@ -31,6 +31,7 @@ namespace crap
 Circle2D::Circle2D( void ) : _texture(0),
 		_radius(0.f), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0)
 {
+	REGISTER_COMPONENT_MEMBER( Circle2D, imagename, string_hash )
 	REGISTER_COMPONENT_MEMBER( Circle2D, radius, float32_t )
 	REGISTER_COMPONENT_MEMBER( Circle2D, color, color_argb )
 	REGISTER_COMPONENT_MEMBER( Circle2D, border, float32_t )
@@ -45,7 +46,17 @@ Circle2D::~Circle2D( void )
 void Circle2D::init( System* system )
 {
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
-	_texture = (Texture2D*)getNeighbour("Texture2D");
+
+	Component::TypeList list = getNeighboursOfType("Texture2D");
+	for( uint32_t i=0; list.components[i] != 0; ++i )
+	{
+		Texture2D* tex = (Texture2D*)list.components[i];
+		if( tex->getname() == _imagename )
+		{
+			_texture = tex;
+			break;
+		}
+	}
 
 	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 
