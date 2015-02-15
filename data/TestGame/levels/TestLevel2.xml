@@ -193,4 +193,38 @@
 		<MEMBER name="height">400</MEMBER>
 	</COMPONENT>
   </NODE>
+  <NODE>
+    <COMPONENT type="Attributes2D">
+      <MEMBER name="posX">600</MEMBER>
+      <MEMBER name="posY">650</MEMBER>
+      <MEMBER name="rotation">0f</MEMBER>
+      <MEMBER name="scale">1.f</MEMBER>
+    </COMPONENT>
+    <COMPONENT type="Rectangle2D">
+		<MEMBER name="imagename">Running2</MEMBER>
+     	<MEMBER name="width">64.f</MEMBER>
+      	<MEMBER name="height">64.f</MEMBER>
+    </COMPONENT>
+	<COMPONENT type="Texture2D">
+		<MEMBER name="name">Running2</MEMBER>
+		<MEMBER name="alpha">1.0</MEMBER>
+		<MEMBER name="scale">1.0</MEMBER>
+		<MEMBER name="posX">0</MEMBER>
+		<MEMBER name="posY">0</MEMBER>
+		<MEMBER name="width">640</MEMBER>
+		<MEMBER name="height">64</MEMBER>
+	</COMPONENT>
+	<COMPONENT type="FilmStrip2D">
+		<MEMBER name="name">Runner2</MEMBER>
+		<MEMBER name="imagename">Running2</MEMBER>
+		<MEMBER name="frames">10</MEMBER>
+		<MEMBER name="fps">10</MEMBER>
+		<MEMBER name="tilesx">10</MEMBER>
+		<MEMBER name="tilesy">1</MEMBER>
+		<MEMBER name="posx">0</MEMBER>
+		<MEMBER name="posy">0</MEMBER>
+		<MEMBER name="width">64.f</MEMBER>
+		<MEMBER name="height">64.f</MEMBER>
+	</COMPONENT>
+  </NODE>
 </LEVEL>

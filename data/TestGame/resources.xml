@@ -4,7 +4,8 @@
 	<WaveFile name="boing">audio/boing.wav</WaveFile>
 	<Image2D name="Mieze">textures/mieze.tga</Image2D>
   	<Image2D name="Hasi">textures/image4.tga</Image2D>
-	<Image2D name="Running">textures/running.tga</Image2D>
+	<Image2D name="Running">textures/running.png</Image2D>
+	<Image2D name="Running2">textures/running2.png</Image2D>
   	<Image2D name="Button">textures/button.tga</Image2D>
   	<Font2D name="CalcFont">fonts/calculatorfont.ttf</Font2D>
 </RESOURCES>
