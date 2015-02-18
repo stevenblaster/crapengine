@@ -73,7 +73,8 @@ void FilmStrip2D::init( System* system )
 
 void FilmStrip2D::deinit( System* system )
 {
-
+	//debug
+	_taskManager->removeTask( _taskID );
 }
 
 bool FilmStrip2D::update( uint32_t deltatime )
