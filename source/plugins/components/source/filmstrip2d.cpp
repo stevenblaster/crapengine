@@ -91,7 +91,6 @@ bool FilmStrip2D::update( uint32_t deltatime )
 
 	const uint32_t tile_x = frame % _tilesx;
 	const uint32_t tile_y = frame / _tilesy;
-	printf("FRAME %u x:%u y;%u\n", frame, tile_x, tile_y );
 	_texture->setPos( _posx - (_width*tile_x), _posy - (_height*tile_y));
 
 	return true;
