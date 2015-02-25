@@ -226,5 +226,8 @@
 		<MEMBER name="width">64.f</MEMBER>
 		<MEMBER name="height">64.f</MEMBER>
 	</COMPONENT>
+	<COMPONENT type="Animation2D">
+		<MEMBER name="name">Runner2Animator</MEMBER>
+	</COMPONENT>
   </NODE>
 </LEVEL>

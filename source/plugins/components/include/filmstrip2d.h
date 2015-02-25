@@ -47,6 +47,7 @@ public:
 	DECLARE_COMPONENT_MEMBER( FilmStrip2D, posy, float32_t );
 	DECLARE_COMPONENT_MEMBER( FilmStrip2D, width, float32_t );
 	DECLARE_COMPONENT_MEMBER( FilmStrip2D, height, float32_t );
+	DECLARE_COMPONENT_MEMBER( FilmStrip2D, alwaysfinish, uint32_t );
 
 	bool update( uint32_t deltatime );
 
@@ -58,7 +59,6 @@ private:
 	Texture2D* 		_texture;
 	uint32_t		_current_frame;
 	uint32_t		_start_time;
-	string64		_taskID;
 };
 
 } /* namespace crap */

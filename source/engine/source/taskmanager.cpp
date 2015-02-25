@@ -96,6 +96,28 @@ bool TaskManager::removeTask( string_hash name )
 	return false;
 }
 
+void TaskManager::endrepeatedTask( string_hash name )
+{
+	for(uint32_t i=0; i<_tasks.size(); ++i )
+	{
+		TaskInfo* info = _tasks.get( i );
+		if( *info == name )
+		{
+			info->repeat = false;
+			return;
+		}
+	}
+	for(uint32_t i=0; i<_deattached.size(); ++i )
+	{
+		DeattachedTaskInfo* info = _deattached.get( i );
+		if( info->info == name )
+		{
+			info->info.repeat = false;
+			return;
+		}
+	}
+}
+
 void* runTask( void* data )
 {
 	TaskManager::DeattachedTaskInfo* task = (TaskManager::DeattachedTaskInfo*)data;

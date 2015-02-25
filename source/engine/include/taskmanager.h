@@ -71,6 +71,7 @@ public:
 	bool addTask( string_hash name, uint32_t delay, bool repeat, bool deattach = false  );
 
 	bool removeTask( string_hash name );
+	void endrepeatedTask( string_hash name );
 
 private:
 

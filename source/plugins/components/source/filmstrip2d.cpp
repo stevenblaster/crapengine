@@ -29,7 +29,8 @@ namespace crap
 
 FilmStrip2D::FilmStrip2D( void ) :
 		_width(0), _height(0), _texture(0), _taskManager(0), _current_frame(0),
-		_tilesx(0), _tilesy(0), _fps(0), _posx(0), _posy(0), _start_time(0), _frames(0)
+		_tilesx(0), _tilesy(0), _fps(0), _posx(0), _posy(0), _start_time(0), _frames(0),
+		_alwaysfinish(1)
 {
 	REGISTER_COMPONENT_MEMBER( FilmStrip2D, name, string_hash );
 	REGISTER_COMPONENT_MEMBER( FilmStrip2D, imagename, string_hash );
@@ -41,6 +42,7 @@ FilmStrip2D::FilmStrip2D( void ) :
 	REGISTER_COMPONENT_MEMBER( FilmStrip2D, posy, float32_t );
 	REGISTER_COMPONENT_MEMBER( FilmStrip2D, width, float32_t );
 	REGISTER_COMPONENT_MEMBER( FilmStrip2D, height, float32_t );
+	REGISTER_COMPONENT_MEMBER( FilmStrip2D, alwaysfinish, uint32_t );
 }
 
 FilmStrip2D::~FilmStrip2D( void )
@@ -51,10 +53,6 @@ FilmStrip2D::~FilmStrip2D( void )
 void FilmStrip2D::init( System* system )
 {
 	_taskManager = system->getSubSystem<TaskManager>("TaskManager");
-
-	char buffer[64];
-	sprintf( buffer, "%u", getTypeID() | rand() );
-	_taskID = buffer;
 
 	Component::TypeList list = getNeighboursOfType("Texture2D");
 	for( uint32_t i=0; list.components[i] != 0; ++i )
@@ -67,14 +65,11 @@ void FilmStrip2D::init( System* system )
 		}
 	}
 
-	//debug
-	_taskManager->addTask<FilmStrip2D, &FilmStrip2D::update>(_taskID, this, 1000/_fps, true );
 }
 
 void FilmStrip2D::deinit( System* system )
 {
-	//debug
-	_taskManager->removeTask( _taskID );
+
 }
 
 bool FilmStrip2D::update( uint32_t deltatime )
@@ -92,20 +87,18 @@ bool FilmStrip2D::update( uint32_t deltatime )
 
 	const uint32_t tile_x = frame % _tilesx;
 	const uint32_t tile_y = frame / _tilesy;
-	_texture->setPos( _posx - (_width*tile_x), _posy - (_height*tile_y));
+
+	printf("IMAGE: %u, FRAME %u, tileX %u, tileY %u, posX %u, posY %u \n", frame, tile_x, tile_y,
+			_posx + (_width*tile_x), _posy + (_height*tile_y));
+
+	_texture->setPos( _posx + (_width*tile_x), _posy + (_height*tile_y));
 
 	return true;
 }
 
 void FilmStrip2D::receiveMessage( string_hash name, pointer_t<void> ptr )
 {
-	if( ptr.as_void == this )
-	{
-		if( name == "FilmStrip2D::start" && _start_time == 0 )
-		{
-			_taskManager->addTask<FilmStrip2D, &FilmStrip2D::update>(_taskID, this, 1000/_fps, true );
-		}
-	}
+
 }
 
 } /* namespace crap */
