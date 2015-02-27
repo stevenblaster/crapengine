@@ -7,5 +7,7 @@
 	<Image2D name="Running">textures/running.png</Image2D>
 	<Image2D name="Running2">textures/running2.png</Image2D>
   	<Image2D name="Button">textures/button.tga</Image2D>
+	<Image2D name="TimAnimation">textures/tim.png</Image2D>
+	<Image2D name="TimAnimationSteh">textures/tim_steh.tga</Image2D>
   	<Font2D name="CalcFont">fonts/calculatorfont.ttf</Font2D>
 </RESOURCES>

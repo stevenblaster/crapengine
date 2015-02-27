@@ -34,6 +34,8 @@
 #include "button2d.h"
 #include "filmstrip2d.h"
 #include "animation2d.h"
+#include "messagereceiver.h"
+#include "messagesender.h"
 
 namespace crap
 {
@@ -56,7 +58,9 @@ public:
 		_texture2d("Texture2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_button2d("Button2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_filmstrip2d("FilmStrip2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_animation2d("Animation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_animation2d("Animation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_messageReceiver("MessageReceiver", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_messageSender("MessageSender", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -95,6 +99,8 @@ private:
     crap::ComponentType<Button2D>  _button2d;
     crap::ComponentType<FilmStrip2D>  _filmstrip2d;
     crap::ComponentType<Animation2D>  _animation2d;
+    crap::ComponentType<MessageReceiver>  _messageReceiver;
+    crap::ComponentType<MessageSender>  _messageSender;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )

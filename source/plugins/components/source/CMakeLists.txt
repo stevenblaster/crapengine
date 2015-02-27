@@ -17,5 +17,7 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/button2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/filmstrip2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/animation2d.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/messagereceiver.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/messagesender.cpp
    PARENT_SCOPE
 )

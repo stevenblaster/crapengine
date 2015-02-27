@@ -16,5 +16,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/button2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/filmstrip2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/animation2d.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/messagereceiver.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/messagesender.h
    PARENT_SCOPE
 )

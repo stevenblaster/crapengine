@@ -45,21 +45,6 @@ void Animation2D::init( System* system )
 	sprintf( buffer, "%u", getTypeID() | rand() );
 	_taskID = buffer;
 
-//	Component::TypeList list = getNeighboursOfType("Texture2D");
-//	for( uint32_t i=0; list.components[i] != 0; ++i )
-//	{
-//		Texture2D* tex = (Texture2D*)list.components[i];
-//		if( tex->getname() == _imagename )
-//		{
-//			_texture = tex;
-//			break;
-//		}
-//	}
-//
-//	CRAP_ASSERT( ASSERT_BREAK, _texture != 0, "NOOOOOOOO");
-//
-//	//debug
-//	_taskManager->addTask<FilmStrip2D, &FilmStrip2D::update>(_taskID, this, 1000/_fps, true );
 	//debug
 	string_hash name("Runner2");
 	receiveMessage("Animation2D::play", &name );
