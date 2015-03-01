@@ -78,20 +78,25 @@ bool FilmStrip2D::update( uint32_t deltatime )
 	_start_time = deltatime;
 
 	//do the frames
-	const uint32_t frame = (++_current_frame) % _frames;
+	const uint32_t frame = (_current_frame++) % _frames;
 
 	if( frame < _current_frame ) //repeating
 	{
 		_node->sendChidren("FilmStrip2D::repeat", this );
 	}
 
-	const uint32_t tile_x = frame % _tilesx;
-	const uint32_t tile_y = frame / _tilesy;
+	const uint32_t tile_x = (frame % _tilesx);
+	const uint32_t tile_y = frame / _tilesx;
 
-	printf("IMAGE: %u, FRAME %u, tileX %u, tileY %u, posX %u, posY %u \n", frame, tile_x, tile_y,
-			_posx + (_width*tile_x), _posy + (_height*tile_y));
+	const float32_t pos_x = _posx - (_width* tile_x);
+	const float32_t pos_y = _posy - (_height*tile_y);
 
-	_texture->setPos( _posx + (_width*tile_x), _posy + (_height*tile_y));
+	/*
+	printf("IMAGE: %u, FRAME %u, tileX %u, tileY %u, posX %f, posY %f \n",
+			_texture->getImage(), frame, tile_x, tile_y, pos_x, pos_y );
+			*/
+
+	_texture->setPos( pos_x, pos_y );
 
 	return true;
 }

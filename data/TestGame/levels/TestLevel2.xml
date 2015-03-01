@@ -196,34 +196,34 @@
   <NODE>
     <COMPONENT type="Attributes2D">
       <MEMBER name="posX">600</MEMBER>
-      <MEMBER name="posY">640</MEMBER>
+      <MEMBER name="posY">580</MEMBER>
       <MEMBER name="rotation">0f</MEMBER>
       <MEMBER name="scale">1.f</MEMBER>
     </COMPONENT>
     <COMPONENT type="Rectangle2D">
-		<MEMBER name="imagename">TimAnimation</MEMBER>
-     	<MEMBER name="width">95.f</MEMBER>
+		<MEMBER name="imagename">TimAnimationNew</MEMBER>
+     	<MEMBER name="width">143.f</MEMBER>
       	<MEMBER name="height">150.f</MEMBER>
     </COMPONENT>
 	<COMPONENT type="Texture2D">
-		<MEMBER name="name">TimAnimation</MEMBER>
+		<MEMBER name="name">TimAnimationNew</MEMBER>
 		<MEMBER name="alpha">1.0</MEMBER>
 		<MEMBER name="scale">1.0</MEMBER>
-		<MEMBER name="posX">0</MEMBER>
+		<MEMBER name="posX">-200.f</MEMBER>
 		<MEMBER name="posY">0</MEMBER>
-		<MEMBER name="width">2516</MEMBER>
-		<MEMBER name="height">1384</MEMBER>
+		<MEMBER name="width">-2000</MEMBER>
+		<MEMBER name="height">1200</MEMBER>
 	</COMPONENT>
 	<COMPONENT type="FilmStrip2D">
 		<MEMBER name="name">Runner2</MEMBER>
-		<MEMBER name="imagename">TimAnimation</MEMBER>
-		<MEMBER name="frames">22</MEMBER>
-		<MEMBER name="fps">1</MEMBER>
-		<MEMBER name="tilesx">22</MEMBER>
+		<MEMBER name="imagename">TimAnimationNew</MEMBER>
+		<MEMBER name="frames">14</MEMBER>
+		<MEMBER name="fps">20</MEMBER>
+		<MEMBER name="tilesx">20</MEMBER>
 		<MEMBER name="tilesy">1</MEMBER>
-		<MEMBER name="posx">10</MEMBER>
-		<MEMBER name="posy">0</MEMBER>
-		<MEMBER name="width">95.f</MEMBER>
+		<MEMBER name="posx">0</MEMBER>
+		<MEMBER name="posy">-300</MEMBER>
+		<MEMBER name="width">-143.f</MEMBER>
 		<MEMBER name="height">150.f</MEMBER>
 	</COMPONENT>
 	<COMPONENT type="Animation2D">
