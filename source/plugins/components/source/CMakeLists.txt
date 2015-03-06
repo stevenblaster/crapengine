@@ -19,5 +19,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/animation2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/messagereceiver.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/messagesender.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/keyboardlistener.cpp
    PARENT_SCOPE
 )

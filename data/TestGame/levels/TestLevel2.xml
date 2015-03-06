@@ -229,5 +229,10 @@
 	<COMPONENT type="Animation2D">
 		<MEMBER name="name">Runner2Animator</MEMBER>
 	</COMPONENT>
+	<COMPONENT type="KeyboardListener">
+		<MEMBER name="key">K</MEMBER>
+		<MEMBER name="modifier">shift</MEMBER>
+		<MEMBER name="message">testkeymessage</MEMBER>
+	</COMPONENT>
   </NODE>
 </LEVEL>

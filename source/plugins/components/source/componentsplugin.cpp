@@ -36,6 +36,7 @@
 #include "animation2d.h"
 #include "messagereceiver.h"
 #include "messagesender.h"
+#include "keyboardlistener.h"
 
 namespace crap
 {
@@ -60,7 +61,8 @@ public:
 		_filmstrip2d("FilmStrip2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_animation2d("Animation2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_messageReceiver("MessageReceiver", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
-		_messageSender("MessageSender", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_messageSender("MessageSender", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_keyboardListener("KeyboardListener", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
 	}
 
@@ -101,6 +103,7 @@ private:
     crap::ComponentType<Animation2D>  _animation2d;
     crap::ComponentType<MessageReceiver>  _messageReceiver;
     crap::ComponentType<MessageSender>  _messageSender;
+    crap::ComponentType<KeyboardListener>  _keyboardListener;
 };
 
 CRAP_PLUGIN_FACTORY( ComponentsPlugin )

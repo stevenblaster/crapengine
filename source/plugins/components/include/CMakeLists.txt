@@ -18,5 +18,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/animation2d.h
    ${CMAKE_CURRENT_SOURCE_DIR}/messagereceiver.h
    ${CMAKE_CURRENT_SOURCE_DIR}/messagesender.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/keyboardlistener.h
    PARENT_SCOPE
 )

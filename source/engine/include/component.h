@@ -75,8 +75,8 @@ protected:
 		};
 	};
 
-	Node*					_node;
-	intrusive_node<Component> _listnode;
+	Node*						_node;
+	intrusive_node<Component> 	_listnode;
 };
 
 #define DECLARE_COMPONENT_MEMBER( classname, varname, vartype )					\

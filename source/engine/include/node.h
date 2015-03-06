@@ -38,6 +38,8 @@ public:
 
 	void sendChidren( string_hash name, pointer_t<void> );
 
+	CRAP_INLINE string_hash getName( void ) const { return _name; }
+
 	CRAP_INLINE uint32_t getID( void ) const { return _id; }
 
 	CRAP_INLINE bool operator==( const uint32_t id )
@@ -53,10 +55,12 @@ public:
 private:
 
 	CRAP_INLINE void setId( uint32_t id ) { _id = id; }
+	CRAP_INLINE void setName( string_hash name ) { _name = name; }
 
 	ComponentSystem*			_system;
 	intrusive_list<Component>	_components;
 	uint32_t					_id;
+	string_hash					_name;
 };
 
 } /* namespace crap */
