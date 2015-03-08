@@ -17,6 +17,7 @@ FIND_PACKAGE(CrapAudio REQUIRED)
 FIND_PACKAGE(CrapVideo REQUIRED)
 FIND_PACKAGE(CrapPhysic REQUIRED)
 FIND_PACKAGE(CrapEngine REQUIRED)
+FIND_PACKAGE(CrapInterfaces REQUIRED)
 
 ###################################
 #   SET PREPROCESSOR DEFINES      #

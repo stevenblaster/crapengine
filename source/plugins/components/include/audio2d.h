@@ -28,7 +28,7 @@ namespace crap
 {
 
 class Attributes2D;
-class AudioManagerBase;
+class IAudioSystem;
 
 class Audio2D : public Component
 {
@@ -53,7 +53,7 @@ private:
 	//uint32_t		_buffer;
 	uint32_t		_source;
 	Attributes2D* 	_attributes;
-	AudioManagerBase*	_am;
+	IAudioSystem*	_am;
 	bool		 	_active;
 	string64		_taskID;
 };

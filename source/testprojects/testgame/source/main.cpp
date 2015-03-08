@@ -6,7 +6,7 @@
 #include "convert.h"
 #include "configuration.h"
 #include "resourcemanager.h"
-#include "audiomanager.h"
+#include "audiosystem.h"
 #include "pluginmanager.h"
 #include "directorylistener.h"
 #include "resourcefilter.h"
@@ -133,13 +133,13 @@ int main( void )
 	// set resourcemanager as subsystem
 	crap::SubSystem resource_sys( "ResourceManager", &resourceManager, &system );
 
-	//audiomanager
+	//AudioSystem
 	const uint32_t audioBufferNumber = config.getValue<uint32_t>("AUDIO_BUFFER_NUM");
 	const uint32_t audioSourceNumber = config.getValue<uint32_t>("AUDIO_SOURCE_NUM");
-	crap::AudioManager audioManager(audioBufferNumber, audioSourceNumber);
+	crap::AudioSystem AudioSystem(audioBufferNumber, audioSourceNumber);
 
-	//set audiomanager as subsystem
-	crap::SubSystem audio_sys( "AudioManager", &audioManager, &system );
+	//set AudioSystem as subsystem
+	crap::SubSystem audio_sys( "AudioSystem", &AudioSystem, &system );
 
 	//componentsystem
 	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");
@@ -226,7 +226,7 @@ int main( void )
 	float32_t one[3] = {1.f, 1.f, 1.f};
 	float32_t dir[6] = {0.f, 0.f, 1.f, 0.f, 1.f, 0.f };
 
-	crap::AudioManager* am = system.getSubSystem<crap::AudioManager>( "AudioManager" );
+	crap::AudioSystem* am = system.getSubSystem<crap::AudioSystem>( "AudioSystem" );
 
 	resourceManager.loadResource( "Nagut" );
 	uint32_t sid = am->leaseSource( "Nagut" );

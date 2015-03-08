@@ -1,12 +1,12 @@
 
+#include <audiosystem.h>
 #include "logger.h"
-#include "audiomanager.h"
 
 
 namespace crap
 {
 
-AudioManager::AudioManager( uint32_t buffer_num, uint32_t source_num ) :
+AudioSystem::AudioSystem( uint32_t buffer_num, uint32_t source_num ) :
     _allocator( (( sizeof(AudioSource)+sizeof(AudioBuffer))*source_num*2 ) + ((sizeof(string_hash)+sizeof(AudioBuffer))*buffer_num * 2) ),
     _sources( _allocator.allocate( (sizeof(AudioSource)+sizeof(AudioBuffer))*source_num+10, align_of<AudioSource>::value ), (sizeof(AudioSource)+sizeof(AudioBuffer))*source_num+10 ),
     _buffers( _allocator.allocate( (sizeof(string_hash)+sizeof(AudioBuffer))*buffer_num+10, align_of<string_hash>::value ), (sizeof(string_hash)+sizeof(AudioBuffer))*buffer_num+10 )
@@ -31,11 +31,11 @@ AudioManager::AudioManager( uint32_t buffer_num, uint32_t source_num ) :
     }
 
     const uint32_t memory = (( sizeof(AudioSource)+sizeof(AudioBuffer))*source_num*2 ) + ((sizeof(string_hash)+sizeof(AudioBuffer))*buffer_num * 2);
-    crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "Audiomanager with %i bytes memory, max. %i buffers and max. %i sources created", memory, buffer_num, source_num );
+    crap::log( LOG_CHANNEL_CORE | LOG_TYPE_INFO | LOG_TARGET_COUT, "AudioSystem with %i bytes memory, max. %i buffers and max. %i sources created", memory, buffer_num, source_num );
     setAudioDopplerEffects(1.f, 1.f);
 }
 
-AudioManager::~AudioManager( void )
+AudioSystem::~AudioSystem( void )
 {
     for( uint32_t i=0; i<_sources.size(); --i )
     {
@@ -54,7 +54,7 @@ AudioManager::~AudioManager( void )
     crap::closeAudioDevice( _device );
 }
 
-uint32_t AudioManager::setBuffer( const string_hash& name, const AudioFile& data )
+uint32_t AudioSystem::setBuffer( const string_hash& name, const AudioFile& data )
 {
 	uint32_t index = BufferMap::INVALID;
 
@@ -76,7 +76,7 @@ uint32_t AudioManager::setBuffer( const string_hash& name, const AudioFile& data
 	return _buffers.INVALID;
 }
 
-void AudioManager::unsetBuffer( const string_hash& name )
+void AudioSystem::unsetBuffer( const string_hash& name )
 {
 	uint32_t index = BufferMap::INVALID;
 
@@ -95,7 +95,7 @@ void AudioManager::unsetBuffer( const string_hash& name )
     }
 }
 
-uint32_t AudioManager::leaseSource( const string_hash& name )
+uint32_t AudioSystem::leaseSource( const string_hash& name )
 {
 	uint32_t index = BufferMap::INVALID;
 
@@ -122,35 +122,35 @@ uint32_t AudioManager::leaseSource( const string_hash& name )
     return UINT32_MAX;
 }
 
-void AudioManager::playSource( uint32_t leased_source )
+void AudioSystem::playSource( uint32_t leased_source )
 {
     AudioSource* source = _sources.get_key(leased_source);
     if( source != 0 )
     	playAudioSource(source);
 }
 
-void AudioManager::rewindSource( uint32_t leased_source )
+void AudioSystem::rewindSource( uint32_t leased_source )
 {
     AudioSource* source = _sources.get_key(leased_source);
     if( source != 0 )
     	rewindAudioSource(source);
 }
 
-void AudioManager::pauseSource( uint32_t leased_source )
+void AudioSystem::pauseSource( uint32_t leased_source )
 {
     AudioSource* source = _sources.get_key(leased_source);
     if( source != 0 )
     	pauseAudioSource(source);
 }
 
-void AudioManager::stopSource( uint32_t leased_source )
+void AudioSystem::stopSource( uint32_t leased_source )
 {
     AudioSource* source = _sources.get_key(leased_source);
     if( source != 0 )
     	stopAudioSource(source);
 }
 
-void AudioManager::releaseSource( uint32_t leased_source )
+void AudioSystem::releaseSource( uint32_t leased_source )
 {
 	AudioSource* source = _sources.get_key(leased_source);
 	if( source != 0 )
@@ -159,22 +159,22 @@ void AudioManager::releaseSource( uint32_t leased_source )
 	}
 }
 
-void AudioManager::setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop)
+void AudioSystem::setSourceVolumes( uint32_t leased_source, float32_t pitch, float32_t gain, bool loop)
 {
     setAudioSourceInfo( _sources.get_key(leased_source), pitch, gain, loop );
 }
 
-void AudioManager::setListenerData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT direction)
+void AudioSystem::setListenerData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, float32_t* CRAP_RESTRICT direction)
 {
     setAudioListener3DInfo( position, velocity, direction, 0 );
 }
 
-void AudioManager::setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease )
+void AudioSystem::setSourceData( float32_t* CRAP_RESTRICT position, float32_t* CRAP_RESTRICT velocity, uint32_t source_lease )
 {
     setAudioSource3DInfo( position, velocity,_sources.get_key(source_lease));
 }
 
-bool AudioManager::getIsPlaying( uint32_t leased_source )
+bool AudioSystem::getIsPlaying( uint32_t leased_source )
 {
 	AudioSource* source = _sources.get_key(leased_source);
 	if( source != 0 )
@@ -183,7 +183,7 @@ bool AudioManager::getIsPlaying( uint32_t leased_source )
 	return false;
 }
 
-bool AudioManager::getIsPaused( uint32_t leased_source )
+bool AudioSystem::getIsPaused( uint32_t leased_source )
 {
 	AudioSource* source = _sources.get_key(leased_source);
 	if( source != 0 )
@@ -192,7 +192,7 @@ bool AudioManager::getIsPaused( uint32_t leased_source )
 	return false;
 }
 
-bool AudioManager::getIsStopped( uint32_t leased_source )
+bool AudioSystem::getIsStopped( uint32_t leased_source )
 {
 	AudioSource* source = _sources.get_key(leased_source);
 	if( source != 0 )

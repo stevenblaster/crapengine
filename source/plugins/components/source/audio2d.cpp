@@ -21,7 +21,7 @@
 #include "node.h"
 #include "componenttype.h"
 #include "attributes2d.h"
-#include "audiomanagerbase.h"
+#include "iaudiosystem.h"
 #include "taskmanager.h"
 #include "system.h"
 
@@ -45,7 +45,7 @@ Audio2D::~Audio2D( void )
 
 void Audio2D::init( System* system )
 {
-	AudioManagerBase* am = system->getSubSystem<AudioManagerBase>("AudioManager");
+	IAudioSystem* am = system->getSubSystem<IAudioSystem>("AudioSystem");
 	TaskManager* tm = system->getSubSystem<TaskManager>("TaskManager");
 
 	char buffer[64];

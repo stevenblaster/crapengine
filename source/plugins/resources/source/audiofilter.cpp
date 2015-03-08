@@ -15,7 +15,7 @@
 #include "config/crap_platform.h"
 #include "config/crap_compiler.h"
 #include "system.h"
-#include "audiomanager.h"
+#include "audiosystem.h"
 #include "audiofile.h"
 #include "audiofilter.h"
 #include "resourcemanager.h"
@@ -47,14 +47,14 @@ void AudioFilter::import( string_hash name, pointer_t<void> memory, uint32_t mem
     ptr.as_type += 1;
     file.data = ptr.as_void;
 
-    AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
+    IAudioSystem* am = system->getSubSystem<crap::IAudioSystem>( "AudioSystem" );
     if( am != 0 )
     	am->setBuffer( name, file );
 }
 
 void AudioFilter::unload( string_hash name, System* system )
 {
-	AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
+	IAudioSystem* am = system->getSubSystem<crap::IAudioSystem>( "AudioSystem" );
 	if( am != 0 )
 	{
 		am->unsetBuffer(name);

@@ -16,7 +16,7 @@
 #include "config/crap_compiler.h"
 
 #include "system.h"
-#include "audiomanager.h"
+#include "iaudiosystem.h"
 #include "audiofile.h"
 #include "wavefilefilter.h"
 #include "resourcemanager.h"
@@ -39,14 +39,14 @@ void WaveFileFilter::import( string_hash name, pointer_t<void> memory, uint32_t 
 {
     WaveFile file( memory );
 
-    AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
+    IAudioSystem* am = system->getSubSystem<crap::IAudioSystem>( "AudioSystem" );
     if( am != 0 )
     	am->setBuffer( name, file );
 }
 
 void WaveFileFilter::unload( string_hash name, System* system )
 {
-	AudioManager* am = system->getSubSystem<crap::AudioManager>( "AudioManager" );
+	IAudioSystem* am = system->getSubSystem<crap::IAudioSystem>( "AudioSystem" );
 	if( am != 0 )
 	{
 		am->unsetBuffer( name );

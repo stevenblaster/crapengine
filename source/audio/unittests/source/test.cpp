@@ -6,7 +6,7 @@
 #include "audiocontrol.h"
 #include "audiofile.h"
 #include "file.h"
-#include "audiomanager.h"
+#include "AudioSystem.h"
 //#include <AL/alut.h>
 
 //#if defined (CRAP_COMPILER_VC)
@@ -15,7 +15,7 @@
 
 int main( void )
 {
-    crap::AudioManager manager(20, 20);
+    crap::AudioSystem manager(20, 20);
 
     uint32_t filesize = crap::fileSize("../../../data/yes.wav");
     crap::file_t* my_file = crap::openFile("../../../data/yes.wav", "r");

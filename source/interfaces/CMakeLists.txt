@@ -7,11 +7,6 @@ SET(CRAP_CORE_VERSION
     ${CRAP_CORE_MAJOR_VERSION}.${CRAP_CORE_MINOR_VERSION}.${CRAP_CORE_PATCH_VERSION}
 )
 
-OPTION(CRAP_BUILD_NETWORK_UNITTEST "Build crap network unittests" OFF)
-IF(CRAP_BUILD_NETWORK_UNITTEST)
-    ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/unittests)
-ENDIF(CRAP_BUILD_NETWORK_UNITTEST)
-
 ###################################
 #   SET PREPROCESSOR DEFINES      #
 #   USAGE: #define EXMAPLE=0      #
@@ -34,34 +29,16 @@ IF(LINUX)
         ADD_DEFINITIONS(-D_CRT_SECURE_NO_WARNINGS)
 ENDIF(LINUX)
 
-
-IF(NOT WIN32)
-IF(NOT APPLE)
- #   FIND_PACKAGE(X11)
-    FIND_PACKAGE(Threads)
-ENDIF(NOT APPLE)
-ENDIF(NOT WIN32)
-
-
-#####################################
-#       Building source tree        #
-#   Setting up source&header vars   #
-#####################################
-
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/source)
 
 ### CRAPLIB
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/network/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/interfaces/include)
 
-IF(MSVC)
-### SET VISUAL STUDIO FILTERS
-SOURCE_GROUP("source" REGULAR_EXPRESSION ".*/source/[^/]*([.]c|[.]cpp|[.]txt)$")
-
-###  FILES ${HEADERS}
+IF(MSVC)###  FILES ${HEADERS}
 SOURCE_GROUP("include" REGULAR_EXPRESSION ".*/include/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("source" REGULAR_EXPRESSION ".*/include/[^/]*([.]c|[.]cpp|[.]txt)$")
 ENDIF(MSVC)
 
 SET(SOURCES
@@ -72,13 +49,11 @@ SET(HEADERS
     ${HEADERS}
 )
 
-#####################################
-#           Creating Lib            #
-#####################################
-ADD_LIBRARY(crap_network ${SOURCES} ${HEADERS})
+ADD_LIBRARY(crap_interfaces ${SOURCES} ${HEADERS})
+
 IF(WIN32)
-     TARGET_LINK_LIBRARIES(crap_network crap_core)
+	TARGET_LINK_LIBRARIES(crap_interface crap_core)
 ELSE()
-     TARGET_LINK_LIBRARIES(crap_network crap_core ${CMAKE_THREAD_LIBS_INIT})
+	TARGET_LINK_LIBRARIES(crap_interfaces crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 
