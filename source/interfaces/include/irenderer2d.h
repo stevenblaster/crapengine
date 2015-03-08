@@ -38,11 +38,17 @@ public:
 	IRenderer2D(void) {}
 	virtual ~IRenderer2D( void ) { }
 
-	virtual void createImage2D( string_hash ) {}
+	virtual void drawCircle( const attributes_2d& attributes, const float32_t& radius,
+			const float32_t& border, const color_argb& color, const color_argb& borderColor,
+			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
+			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
+			const float32_t& image_rotation ) {}
+
+	virtual void createImage2D( string_hash, pointer_t<void> memory, uint32_t size ) {}
 	virtual Image2D getImage2D( string_hash ) { return 0; }
 	virtual void removeImage2D( string_hash ) {}
 
-	virtual void createFont2D( string_hash ) {}
+	virtual void createFont2D( string_hash, pointer_t<void> memory, uint32_t size ) {}
 	virtual Font2D getFont2D( string_hash ) { return 0; }
 	virtual void removeFont2D( string_hash ) {}
 

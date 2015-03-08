@@ -20,15 +20,14 @@
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "elements2d.h"
-#include "renderer2d.h"
+#include "irenderer2d.h"
 #include "attributes2d.h"
 #include "system.h"
 
 namespace crap
 {
 
-Circle2D::Circle2D( void ) : _texture(0),
+Circle2D::Circle2D( void ) : _texture(0), _renderer(0),
 		_radius(0.f), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0)
 {
 	REGISTER_COMPONENT_MEMBER( Circle2D, imagename, string_hash )
@@ -58,59 +57,34 @@ void Circle2D::init( System* system )
 		}
 	}
 
-	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
+	_renderer = system->getSubSystem<crap::IRenderer2D>("Renderer2D");
 
-	if( _texture == 0 )
-		_renderID = renderer->addRencerCall<Circle2D, &Circle2D::renderCall>(this);
-	else
-		_renderID = renderer->addRencerCall<Circle2D, &Circle2D::renderCallTexture>(this);
+	_renderID = _renderer->addRencerCall<Circle2D, &Circle2D::renderCall>(this);
 }
 
 void Circle2D::deinit( System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	renderer->removeRenderCall(_renderID);
+	_renderer->removeRenderCall(_renderID);
 }
 
 void Circle2D::renderCall( Context2D* context )
 {
-	const color_argb fill(_color);
-	const color_argb bfill( _borderColor );
+	if( _texture != 0 )
+	{
+		const Image2D image = _texture->getImage();
+		const float32_t ialpha = _texture->getalpha();
+		const float32_t ipos_x = _texture->getposX();// + pos_x;
+		const float32_t ipos_y = _texture->getposY();// + pos_y;
+		const float32_t iwidth = _texture->getwidth();
+		const float32_t iheight = _texture->getheight();
+		const float32_t irotation = _texture->getrotation(); // + rotation;
 
-	const float32_t	scale = _attributes->getscale();
-	const float32_t pos_x = _attributes->getposX();
-	const float32_t pos_y = _attributes->getposY();
-	const float32_t rotation = _attributes->getrotation();
-	const float32_t radius = _radius;
-	const float32_t border = _border;
-
-	drawColoredCircleBorder( context, pos_x, pos_y, radius, rotation, fill.r, fill.g, fill.b, fill.a,
-			border, bfill.r, bfill.g, bfill.b, bfill.a );
-}
-
-void Circle2D::renderCallTexture( Context2D* context )
-{
-	const color_argb fill(_color);
-	const color_argb bfill( _borderColor );
-
-	const float32_t	scale = _attributes->getscale();
-	const float32_t pos_x = _attributes->getposX();
-	const float32_t pos_y = _attributes->getposY();
-	const float32_t rotation = _attributes->getrotation();
-	const float32_t radius = _radius * scale;
-	const float32_t border = _border;
-
-	const float32_t ialpha = _texture->getalpha();
-	const float32_t ipos_x = _texture->getposX();// + pos_x;
-	const float32_t ipos_y = _texture->getposY();// + pos_y;
-	const float32_t iwidth = _texture->getwidth();
-	const float32_t iheight = _texture->getheight();
-	const float32_t irotation = _texture->getrotation(); // + rotation;
-
-	const Image2D image = _texture->getImage();
-
-	drawImageCircleBorder( context, pos_x, pos_y, radius, rotation, image, ialpha, irotation, ipos_x, ipos_y, iwidth, iheight, border, bfill.r,
-					bfill.g, bfill.b, bfill.a );
+		_renderer->drawCircle( *_attributes->getData(), _radius, _border, _color, _borderColor, image, ialpha, ipos_x, ipos_y, iwidth, iheight, irotation );
+	}
+	else
+	{
+		_renderer->drawCircle( *_attributes->getData(), _radius, _border, _color, _borderColor, 0, 0, 0, 0, 0, 0, 0 );
+	}
 }
 
 } /* namespace crap */

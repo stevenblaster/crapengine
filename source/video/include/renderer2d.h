@@ -15,13 +15,10 @@
 #ifndef VIDEO_INCLUDE_2D_RENDERER2D_H_
 #define VIDEO_INCLUDE_2D_RENDERER2D_H_
 
-#include "utilities.h"
 #include "container/arraymap.h"
 #include "container/indexedarray.h"
 #include "memory.h"
-#include "strings.h"
-#include "gui/guiobject.h"
-#include "delegates.h"
+#include "irenderer2d.h"""
 
 #ifdef CRAP_NO_DEBUG
 #define RENDERER2D_MEMORY SimpleGeneralMemory
@@ -29,18 +26,13 @@
 #define RENDERER2D_MEMORY BoundGeneralMemory
 #endif
 
-struct NVGcontext;
 
 namespace crap
 {
 
-typedef NVGcontext 	Context2D;
-typedef uint32_t	Image2D;
-typedef uint32_t	Font2D;
-
 class RenderWindow;
 
-class Renderer2D
+class Renderer2D : public IRenderer2D
 {
 public:
 
@@ -50,28 +42,26 @@ public:
 	typedef indexed_array<RenderCall>		RenderArray;
 
 	Renderer2D( RenderWindow* window, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements );
-	~Renderer2D( void );
+	virtual ~Renderer2D( void );
 
 	void drawBegin( void );
 	void drawEnd( void );
 
-	void addImage2D( string_hash, Image2D );
-	Image2D getImage2D( string_hash );
-	void removeImage2D( string_hash );
+	virtual void drawCircle( const attributes_2d& attributes, const float32_t& radius,
+			const float32_t& border, const color_argb& color, const color_argb& borderColor,
+			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
+			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
+			const float32_t& image_rotation );
 
-	void addFont2D( string_hash, Font2D );
-	Image2D getFont2D( string_hash );
-	void removeFont2D( string_hash );
+	virtual void createImage2D( string_hash, pointer_t<void> memory, uint32_t size );
+	virtual Image2D getImage2D( string_hash );
+	virtual void removeImage2D( string_hash );
 
-	template< class C, void (C::*F)( Context2D* ) >
-	uint32_t addRencerCall( C* instance  );
+	virtual void createFont2D( string_hash, pointer_t<void> memory, uint32_t size );
+	virtual Font2D getFont2D( string_hash );
+	virtual void removeFont2D( string_hash );
 
-	template< void (*F)( Context2D* ) >
-	void addRenderCall( void );
-
-	CRAP_INLINE void removeRenderCall( uint32_t id ){ _renderCalls.erase_at(id); }
-
-	CRAP_INLINE Context2D* getContext( void ) { return _context2D; }
+	virtual Context2D* getContext( void ) { return _context2D; }
 
 	CRAP_INLINE void render( void )
 	{
@@ -81,6 +71,11 @@ public:
 		}
 	}
 
+protected:
+
+	virtual uint32_t addRenderCallInternal( const RenderCall& call );
+	virtual void removeRenderCallInternal( uint32_t id );
+
 private:
 	RENDERER2D_MEMORY				_allocator;
 	Image2DMap			 			_images;
@@ -89,23 +84,6 @@ private:
 	Context2D*						_context2D;
 	RenderWindow*					_window;
 };
-
-template< class C, void (C::*F)( Context2D* ) >
-uint32_t Renderer2D::addRencerCall( C* instance  )
-{
-	RenderCall call;
-	call.bind<C,F>(instance);
-	return _renderCalls.push_back( call );
-}
-
-template< void (*F)( Context2D* ) >
-void Renderer2D::addRenderCall( void )
-{
-	RenderCall call;
-	call.bind<F>();
-	return _renderCalls.push_back( call );
-}
-
 
 } /* namespace crap */
 

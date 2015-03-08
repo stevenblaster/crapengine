@@ -10,6 +10,7 @@ git add source/video/*
 git add source/physic/*
 git add source/testprojects/*
 git add source/runtime/*
+git add source/interfaces/*
 git add data/plugins/*
 git add data/levels/*
 git add data/configuration.ini

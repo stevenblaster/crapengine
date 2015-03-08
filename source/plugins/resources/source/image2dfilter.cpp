@@ -17,8 +17,7 @@
 #include "config/crap_compiler.h"
 #include "system.h"
 #include "resourcemanager.h"
-#include "renderer2d.h"
-#include "elements2d.h"
+#include "irenderer2d.h"
 #include "image2dfilter.h"
 
 namespace crap
@@ -36,22 +35,19 @@ Image2DFilter::~Image2DFilter( void )
 
 void Image2DFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
+	IRenderer2D* renderer = system->getSubSystem<crap::IRenderer2D>("Renderer2D");
 	if( renderer != 0 )
 	{
-		Image2D image = crap::createImage2D( renderer->getContext(), memory, memSize , 0 );
-		renderer->addImage2D( name, image );
+		renderer->createImage2D( name, memory, memSize );
 	}
 }
 
 void Image2DFilter::unload( string_hash name, System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
+	IRenderer2D* renderer = system->getSubSystem<crap::IRenderer2D>("Renderer2D");
 	if( renderer != 0 )
 	{
-		Image2D image = renderer->getImage2D(name);
 		renderer->removeImage2D( name );
-		crap::destroyImage2D( renderer->getContext(), image );
 	}
 }
 
