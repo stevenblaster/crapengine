@@ -231,7 +231,7 @@
 	</COMPONENT>
 	<COMPONENT type="KeyboardListener">
 		<MEMBER name="key">K</MEMBER>
-		<MEMBER name="modifier">shift</MEMBER>
+		<MEMBER name="modifier">0</MEMBER>
 		<MEMBER name="message">testkeymessage</MEMBER>
 	</COMPONENT>
   </NODE>

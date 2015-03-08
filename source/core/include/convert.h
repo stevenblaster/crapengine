@@ -1175,7 +1175,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
 
 #define STRING_CONVERTER( string_type )                                                     \
 	template<>                                                                              \
-	CRAP_INLINE string_type convert<char, string_type >( const char& variable )         \
+	CRAP_INLINE string_type convert<char, string_type >( const char& variable )       	  	\
 	{                                                                                       \
 		string_type string;                                                                 \
 		sprintf( string.c_str(), "%" PRIi8, variable );                                     \
@@ -1183,7 +1183,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
 		return string;                                                                      \
 	}                                                                                       \
 	template<>                                                                              \
-	CRAP_INLINE char convert< string_type, char >( const string_type& variable )        \
+	CRAP_INLINE char convert< string_type, char >( const string_type& variable )        	\
 	{                                                                                       \
 		return variable.c_str()[0];                                                         \
 	} 																						\
