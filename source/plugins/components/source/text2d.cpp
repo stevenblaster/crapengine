@@ -20,8 +20,7 @@
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "elements2d.h"
-#include "renderer2d.h"
+#include "irenderer2d.h"
 #include "attributes2d.h"
 #include "system.h"
 
@@ -30,7 +29,7 @@ namespace crap
 
 Text2D::Text2D( void ) :
 		_color(0), _fontSize(0.f), _blur(0.f),_spacing(0.f), _lineHeight(0.f), _renderID( UINT32_MAX ),
-		_attributes(0), _font2d(0)
+		_attributes(0), _font2d(0), _renderer(0)
 {
 	REGISTER_COMPONENT_MEMBER( Text2D, fontName, string_hash )
 	REGISTER_COMPONENT_MEMBER( Text2D, text, string64 )
@@ -49,17 +48,16 @@ Text2D::~Text2D( void )
 
 void Text2D::init( System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	_renderID = renderer->addRencerCall<Text2D, &Text2D::renderCall>(this);
-	_font2d = 	renderer->getFont2D( _fontName );
+	_renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
+	_renderID = _renderer->addRencerCall<Text2D, &Text2D::renderCall>(this);
+	_font2d = 	_renderer->getFont2D( _fontName );
 
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 }
 
 void Text2D::deinit( System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
-	renderer->removeRenderCall(_renderID);
+	_renderer->removeRenderCall(_renderID);
 }
 
 void Text2D::renderCall( Context2D* context )
@@ -69,17 +67,13 @@ void Text2D::renderCall( Context2D* context )
 	const char* text = _text.c_str();
 	const color_argb fill(_color);
 
-	const float32_t pos_x = _attributes->getposX();
-	const float32_t pos_y = _attributes->getposY();
-	const float32_t rotation = _attributes->getrotation();
-	const float32_t scale	= _attributes->getscale();
-	const float32_t fontSize = _fontSize * scale;
+	const float32_t fontSize = _fontSize;
 	const float32_t blur = _blur;
 	const float32_t spacing = _spacing;
 	const float32_t lineHeight = _lineHeight;
 
-	drawText( context, pos_x, pos_y, font, text, fontSize, rotation, fill.r, fill.g, fill.b, fill.a,
-			blur, spacing, lineHeight, _alignment );
+	_renderer->drawText( *_attributes->getData(), _font2d, _text.c_str(), _fontSize,
+			_color, _blur, _spacing, _lineHeight, _alignment );
 
 }
 

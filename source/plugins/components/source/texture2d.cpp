@@ -19,9 +19,7 @@
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "elements2d.h"
-#include "renderer2d.h"
-#include "attributes2d.h"
+#include "irenderer2d.h"
 #include "system.h"
 
 namespace crap
@@ -45,13 +43,13 @@ Texture2D::~Texture2D( void )
 
 void Texture2D::init( System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
+	IRenderer2D* renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
 	_image2D = renderer->getImage2D(_name );
 }
 
 void Texture2D::deinit( System* system )
 {
-	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
+	IRenderer2D* renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
 	renderer->removeImage2D( _name );
 }
 

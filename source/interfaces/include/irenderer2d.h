@@ -18,7 +18,7 @@
 #include "utilities.h"
 #include "strings.h"
 #include "delegates.h"
-
+#include "attributes.h"
 
 struct NVGcontext;
 
@@ -43,6 +43,28 @@ public:
 			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
 			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
 			const float32_t& image_rotation ) {}
+
+	virtual void drawRectangle( const attributes_2d& attributes, const float32_t& width, const float32_t& height,
+			const float32_t& border, const color_argb& color, const color_argb& borderColor,
+			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
+			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
+			const float32_t& image_rotation ) {}
+
+	virtual void drawRoundedRectangle( const attributes_2d& attributes, const float32_t& width, const float32_t& height,
+				const float32_t& corner, const float32_t& border, const color_argb& color, const color_argb& borderColor,
+				const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
+				const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
+				const float32_t& image_rotation ) {}
+
+	virtual void drawPath( const attributes_2d& attributes, const float32_t* path, const uint32_t& pathSize,
+			const float32_t& border, const color_argb& color, const color_argb& borderColor,
+			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
+			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
+			const float32_t& image_rotation ) {}
+
+	virtual void drawText( const attributes_2d& attributes, Font2D font, const char* text, const float32_t& fontSize,
+			const color_argb& color, const float32_t& blur, const float32_t& spacing,
+			const float32_t& lineHeight, const TextAlignment& alignment ) {}
 
 	virtual void createImage2D( string_hash, pointer_t<void> memory, uint32_t size ) {}
 	virtual Image2D getImage2D( string_hash ) { return 0; }

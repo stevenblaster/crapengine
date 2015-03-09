@@ -24,9 +24,10 @@ struct NVGcontext;
 
 namespace crap
 {
-
 typedef NVGcontext 	Context2D;
 class Attributes2D;
+class IRenderer2D;
+class Texture2D;
 
 class RoundedRectangle2D : public Component
 {
@@ -37,6 +38,7 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
+	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, imagename, string_hash )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, width, float32_t )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, height, float32_t )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, corner, float32_t )
@@ -48,8 +50,10 @@ public:
 
 private:
 
+	Texture2D*				_texture;
 	uint32_t 				_renderID;
 	Attributes2D*			_attributes;
+	IRenderer2D*			_renderer;
 };
 
 } /* namespace crap */

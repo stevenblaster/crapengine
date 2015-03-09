@@ -354,6 +354,7 @@ Font2D createFont2D( Context2D* context, string_hash name, pointer_t<void> memor
 void destroyFont2D( Context2D* context, Font2D )
 {
 	// not destroyable? wtf??
+
 }
 
 void drawText(Context2D* context, float32_t pos_x, float32_t pos_y, Font2D font, const char* text, float32_t fontSize,

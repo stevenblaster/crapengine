@@ -12,7 +12,7 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/rendercontext.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/renderwindow.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/renderer.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/elements2d.cpp
+#   ${CMAKE_CURRENT_SOURCE_DIR}/elements2d.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/renderer2d.cpp
    PARENT_SCOPE
 )
