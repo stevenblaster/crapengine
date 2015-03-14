@@ -163,11 +163,11 @@ void Game::start( void )
 	/* Add directory update to taskmanager */
 	taskManager.addTask<crap::InputManager, &crap::InputManager::update>("InputPolling", &inputManager, 50, true, false );
 
-	/* Physic system 2D */
-	crap::PhysicSystem2D physicSystem2D( 1000, 0.f, 10.f, 8, 2, 1.f/200.f );
-	crap::SubSystem physic_sys2d( "PhysicSystem2D", &physicSystem2D, &_system );
-
-	taskManager.addTask< crap::PhysicSystem2D, &crap::PhysicSystem2D::update>( "Physic2DUpdate", &physicSystem2D, 20, true, false );
+//	/* Physic system 2D */
+//	crap::PhysicSystem2D physicSystem2D( 1000, 0.f, 10.f, 8, 2, 1.f/200.f );
+//	crap::SubSystem physic_sys2d( "PhysicSystem2D", &physicSystem2D, &_system );
+//
+//	taskManager.addTask< crap::PhysicSystem2D, &crap::PhysicSystem2D::update>( "Physic2DUpdate", &physicSystem2D, 20, true, false );
 
 	//pluginmanager
 	const uint32_t pluginNumber = config.getValue<uint32_t>("PLUGIN_NUMBER");

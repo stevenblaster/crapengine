@@ -24,8 +24,8 @@ public:
 	Plugin( void ){}
     virtual ~Plugin( void ){}
 
-    virtual void init( void ) = 0;
-    virtual void deinit( void ) = 0;
+    virtual void init( System* system ) = 0;
+    virtual void deinit( System* system ) = 0;
 
     virtual uint32_t id( void ) = 0;
 };

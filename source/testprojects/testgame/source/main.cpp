@@ -19,7 +19,6 @@
 #include "controllerinput.h"
 #include "renderwindow.h"
 #include "eventsystem.h"
-#include "elements2d.h"
 #include "renderer2d.h"
 #include "renderer.h"
 #include "node.h"

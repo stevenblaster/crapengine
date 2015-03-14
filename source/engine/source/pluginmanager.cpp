@@ -84,7 +84,7 @@ void PluginManager::init( uint32_t pluginID )
 	if( index != PluginMap::INVALID )
 	{
 		Plugin* plugin = _handles.get_value( index )->plugin;
-		plugin->init();
+		plugin->init( _system );
 	}
 }
 
@@ -94,7 +94,7 @@ void PluginManager::deinit( uint32_t pluginID )
 	if( index != PluginMap::INVALID )
 	{
 		Plugin* plugin = _handles.get_value( index )->plugin;
-		plugin->deinit();
+		plugin->deinit( _system );
 	}
 }
 

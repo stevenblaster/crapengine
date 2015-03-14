@@ -43,11 +43,11 @@ public:
 	{
 	}
 
-    void init( void )
+    virtual void init( System* system )
     {
     }
 
-    void deinit( void )
+    virtual void deinit( System* system )
     {
     }
 
