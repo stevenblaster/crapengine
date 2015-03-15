@@ -19,9 +19,10 @@
 #include "node.h"
 #include "componenttype.h"
 #include "physicsystem2dbase.h"
-#include "attributes2d.h"
-#include "rectangle2dphysic.h"
+#include "../../../default/include/attributes2d.h"
+#include "components/rectangle2dphysic.h"
 #include "system.h"
+
 
 namespace crap
 {

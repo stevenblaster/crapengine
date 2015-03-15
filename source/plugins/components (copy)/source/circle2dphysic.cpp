@@ -21,7 +21,7 @@
 #include "node.h"
 #include "componenttype.h"
 #include "physicsystem2dbase.h"
-#include "attributes2d.h"
+#include "../../default/include/attributes2d.h"
 #include <circle2dphysic.h>
 #include "system.h"
 

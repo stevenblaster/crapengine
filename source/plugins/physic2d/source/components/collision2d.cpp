@@ -15,11 +15,11 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "collision2d.h"
+#include "components/collision2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "attributes2d.h"
+#include "../../../default/include/attributes2d.h"
 #include "taskmanager.h"
 #include "system.h"
 

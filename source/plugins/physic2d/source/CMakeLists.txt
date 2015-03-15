@@ -2,6 +2,6 @@ ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/components)
 
 set(SOURCES
    ${SOURCES}
-   ${CMAKE_CURRENT_SOURCE_DIR}/componentsplugin.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/physic2dplugin.cpp
    PARENT_SCOPE
 )
