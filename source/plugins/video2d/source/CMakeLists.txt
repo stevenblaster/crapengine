@@ -1,0 +1,8 @@
+ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/components)
+
+set(SOURCES
+   ${SOURCES}
+   ${CMAKE_CURRENT_SOURCE_DIR}/video2dplugin.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/renderer2d.cpp
+   PARENT_SCOPE
+)

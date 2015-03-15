@@ -15,7 +15,7 @@
 #include "system.h"
 #include "configuration.h"
 #include "resourcemanager.h"
-#include "audiosystem.h"
+//#include "audiosystem.h"
 #include "pluginmanager.h"
 #include "componentsystem.h"
 #include "taskmanager.h"
@@ -28,7 +28,7 @@
 #include "eventsystem.h"
 #include "renderer2d.h"
 #include "renderer.h"
-#include "physicsystem2d.h"
+//#include "physicsystem2d.h"
 #include "world.h"
 #include "game.h"
 
@@ -112,13 +112,13 @@ void Game::start( void )
 	// set resourcemanager as subsystem
 	crap::SubSystem resource_sys( "ResourceManager", &resourceManager, &_system );
 
-	//AudioSystem
-	const uint32_t audioBufferNumber = config.getValue<uint32_t>("AUDIO_BUFFER_NUM");
-	const uint32_t audioSourceNumber = config.getValue<uint32_t>("AUDIO_SOURCE_NUM");
-	crap::AudioSystem AudioSystem(audioBufferNumber, audioSourceNumber);
-
-	//set AudioSystem as subsystem
-	crap::SubSystem audio_sys( "AudioSystem", &AudioSystem, &_system );
+//	//AudioSystem
+//	const uint32_t audioBufferNumber = config.getValue<uint32_t>("AUDIO_BUFFER_NUM");
+//	const uint32_t audioSourceNumber = config.getValue<uint32_t>("AUDIO_SOURCE_NUM");
+//	crap::AudioSystem AudioSystem(audioBufferNumber, audioSourceNumber);
+//
+//	//set AudioSystem as subsystem
+//	crap::SubSystem audio_sys( "AudioSystem", &AudioSystem, &_system );
 
 	//componentsystem
 	const uint32_t componentMemory = config.getValue<uint32_t>("COMPONENT_MEMORY");

@@ -74,11 +74,8 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_network_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
-#    TARGET_LINK_LIBRARIES(crap_core ${OPENGL_LIBRARIES} ${OPENAL_LIBRARY} ${GLFW_LIBRARY})
      TARGET_LINK_LIBRARIES(crap_network_plugin crap_network crap_engine crap_core)
 ELSE()
-#    TARGET_LINK_LIBRARIES(crap_core ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${OPENAL_LIBRARY})
-     TARGET_LINK_LIBRARIES(crap_network_plugin crap_network crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
-#     TARGET_LINK_LIBRARIES(crap_core)
+	TARGET_LINK_LIBRARIES(crap_network_plugin crap_network crap_engine crap_core ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 

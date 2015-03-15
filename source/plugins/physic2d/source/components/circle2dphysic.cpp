@@ -20,7 +20,7 @@
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "physicsystem2dbase.h"
+#include "physicsystem2d.h"
 #include "../../../default/include/attributes2d.h"
 #include "components/circle2dphysic.h"
 #include "system.h"
@@ -44,7 +44,7 @@ Circle2DPhysic::~Circle2DPhysic( void )
 
 void Circle2DPhysic::init( System* system )
 {
-	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
+	PhysicSystem2D* system2d = system->getSubSystem<PhysicSystem2D>("PhysicSystem2D");
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
 
 	const float32_t pixToMeter = system2d->pixelToMeters();
@@ -66,7 +66,7 @@ void Circle2DPhysic::init( System* system )
 
 void Circle2DPhysic::deinit( System* system )
 {
-	PhysicSystem2DBase* system2d = system->getSubSystem<PhysicSystem2DBase>("PhysicSystem2D");
+	PhysicSystem2D* system2d = system->getSubSystem<PhysicSystem2D>("PhysicSystem2D");
 	system2d->destroyBody( _bodyId );
 }
 

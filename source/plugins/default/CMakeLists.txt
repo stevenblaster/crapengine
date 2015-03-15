@@ -51,7 +51,6 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/network/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/video/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/audio/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/interfaces/include)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -76,9 +75,9 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_default_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
-     TARGET_LINK_LIBRARIES(crap_default_plugin crap_engine crap_audio crap_video)
+     TARGET_LINK_LIBRARIES(crap_default_plugin crap_engine crap_video)
 ELSE()
-	TARGET_LINK_LIBRARIES(crap_default_plugin crap_engine crap_audio crap_video ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+	TARGET_LINK_LIBRARIES(crap_default_plugin crap_engine crap_video ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 
 IF(WIN32)

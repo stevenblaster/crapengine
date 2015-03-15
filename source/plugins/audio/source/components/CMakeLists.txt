@@ -1,0 +1,6 @@
+
+set(SOURCES
+   ${SOURCES}
+   ${CMAKE_CURRENT_SOURCE_DIR}/audio2d.cpp
+   PARENT_SCOPE
+)

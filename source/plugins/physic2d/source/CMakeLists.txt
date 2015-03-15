@@ -3,5 +3,7 @@ ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/components)
 set(SOURCES
    ${SOURCES}
    ${CMAKE_CURRENT_SOURCE_DIR}/physic2dplugin.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/physictypes2d.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/physicsystem2d.cpp
    PARENT_SCOPE
 )

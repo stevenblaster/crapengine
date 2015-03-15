@@ -45,14 +45,13 @@ ENDIF(NOT WIN32)
 
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/source)
+ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/external/Box2D)
 
 ### CRAPLIB
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/physic/include)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/physic/external)
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/plugins/components/include)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/external)
 
 IF(MSVC)
 ### SET VISUAL STUDIO FILTERS
@@ -75,20 +74,20 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_physic2d_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
-     TARGET_LINK_LIBRARIES(crap_physic2d_plugin crap_core crap_engine crap_physic)
+     TARGET_LINK_LIBRARIES(crap_physic2d_plugin crap_core crap_engine Box2D )
 ELSE()
-	TARGET_LINK_LIBRARIES(crap_physic2d_plugin crap_core crap_engine crap_physic ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+	TARGET_LINK_LIBRARIES(crap_physic2d_plugin crap_core crap_engine Box2D ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 
 IF(WIN32)
 
 #add_custom_command(TARGET crap_physic2d_plugin
 #    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/components/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_physic2d_plugin.dll)
+#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/physic2d/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_physic2d_plugin.dll)
 
 #add_custom_command(TARGET crap_physic2d_plugin
 #    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/components/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_physic2d_plugin.dll)
+#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/physic2d/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_physic2d_plugin.dll)
 
 
 ELSE()

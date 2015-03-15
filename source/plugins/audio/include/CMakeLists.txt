@@ -1,0 +1,13 @@
+ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/components)
+
+set(HEADERS
+   ${HEADERS}
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiosource.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiobuffer.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiodevice.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiocontrol.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiolistener.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiofile.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/audiosystem.h
+   PARENT_SCOPE
+)

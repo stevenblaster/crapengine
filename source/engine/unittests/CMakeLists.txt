@@ -27,4 +27,4 @@ SET(SOURCES
 )
 
 ADD_EXECUTABLE(crap_engine_unittest ${SOURCES})
-TARGET_LINK_LIBRARIES(crap_engine_unittest crap_core crap_audio crap_video crap_physic crap_engine)
+TARGET_LINK_LIBRARIES(crap_engine_unittest crap_core crap_audio crap_video crap_engine)
