@@ -17,16 +17,17 @@
 #include "config/crap_compiler.h"
 
 #include "componenttype.h"
-#include "circle2d.h"
-#include "rectangle2d.h"
-#include "roundedrectangle2d.h"
-#include "text2d.h"
+#include "components/circle2d.h"
+#include "components/rectangle2d.h"
+#include "components/roundedrectangle2d.h"
+#include "components/text2d.h"
 #include "system.h"
 #include "plugin.h"
-#include "texture2d.h"
-#include "button2d.h"
-#include "filmstrip2d.h"
-#include "animation2d.h"
+#include "components/texture2d.h"
+#include "components/button2d.h"
+#include "components/filmstrip2d.h"
+#include "components/animation2d.h"
+#include "renderer2d.h"
 
 namespace crap
 {
@@ -53,10 +54,15 @@ public:
 
     virtual void init( System* system )
     {
+    	_renderer = new Renderer2D( 10, system->getSubSystem<RenderSystem>("RenderSystem"), 10, 10, 100 );
+    	_sub = new crap::SubSystem( "Renderer2D", _renderer, system );
+
     }
 
     virtual void deinit( System* system )
     {
+    	delete _sub;
+    	delete _renderer;
     }
 
     uint32_t id( void )
@@ -74,6 +80,9 @@ private:
     crap::ComponentType<Button2D>  _button2d;
     crap::ComponentType<FilmStrip2D>  _filmstrip2d;
     crap::ComponentType<Animation2D>  _animation2d;
+
+    crap::Renderer2D* _renderer;
+    crap::SubSystem* _sub;
 };
 
 CRAP_PLUGIN_FACTORY( Video2DPlugin )

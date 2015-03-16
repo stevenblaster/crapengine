@@ -16,14 +16,17 @@
 #define VIDEO_INCLUDE_RENDERPASS_H_
 
 #include "utilities.h"
+#include "container/intrusivelist.h"
 
 namespace crap
 {
 
+class RenderSystem;
+
 class RenderPass
 {
 public:
-	RenderPass( uint32_t key ) : _key(key) {}
+	RenderPass( uint32_t key, RenderSystem* rendererSystem );
 	virtual ~RenderPass( void ) {}
 
 	uint32_t getKey( void ) const { return _key; }
@@ -38,6 +41,7 @@ public:
 private:
 
 	uint32_t _key;
+	intrusive_node<RenderPass> _node;
 };
 
 } /* namespace crap */

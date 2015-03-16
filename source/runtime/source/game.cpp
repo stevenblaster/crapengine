@@ -16,7 +16,6 @@
 #include "system.h"
 #include "configuration.h"
 #include "resourcemanager.h"
-//#include "audiosystem.h"
 #include "pluginmanager.h"
 #include "componentsystem.h"
 #include "taskmanager.h"
@@ -27,7 +26,6 @@
 #include "renderwindow.h"
 #include "directorylistener.h"
 #include "eventsystem.h"
-#include "renderer2d.h"
 #include "world.h"
 #include "game.h"
 
@@ -141,7 +139,7 @@ void Game::start( void )
 	renderer.init();
 
 	//set renderer as subsystem
-	crap::SubSystem renderer_sys("Renderer", &renderer, &_system );
+	crap::SubSystem renderer_sys("RenderSystem", &renderer, &_system );
 
 	//inputmanager
 	const uint32_t inputMemory = config.getValue<uint32_t>("INPUT_MEMORY");
@@ -187,8 +185,8 @@ void Game::start( void )
 	taskManager.addTask<crap::DirectoryListener, &crap::DirectoryListener::update>("PluginPath", &pluginDirectoryListener, 1000, true, false );
 
 	//renderer 2d
-	crap::Renderer2D renderer2D( &renderWindow, 10, 10, 100 );
-	crap::SubSystem renderer2d_sys( "Renderer2D", &renderer2D, &_system );
+//	crap::Renderer2D renderer2D( &renderWindow, 10, 10, 100 );
+//	crap::SubSystem renderer2d_sys( "Renderer2D", &renderer2D, &_system );
 
 	//init this.. (do that at last)
 	pluginDirectoryListener.init();

@@ -15,11 +15,11 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "../../default/include/texture2d.h"
+#include "components/texture2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "irenderer2d.h"
+#include "renderer2d.h"
 #include "system.h"
 
 namespace crap
@@ -43,13 +43,13 @@ Texture2D::~Texture2D( void )
 
 void Texture2D::init( System* system )
 {
-	IRenderer2D* renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
+	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	_image2D = renderer->getImage2D(_name );
 }
 
 void Texture2D::deinit( System* system )
 {
-	IRenderer2D* renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
+	Renderer2D* renderer = system->getSubSystem<Renderer2D>("Renderer2D");
 	renderer->removeImage2D( _name );
 }
 

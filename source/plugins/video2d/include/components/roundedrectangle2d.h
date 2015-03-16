@@ -26,7 +26,7 @@ namespace crap
 {
 typedef NVGcontext 	Context2D;
 class Attributes2D;
-class IRenderer2D;
+class Renderer2D;
 class Texture2D;
 
 class RoundedRectangle2D : public Component
@@ -46,14 +46,14 @@ public:
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, border, float32_t )
 	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, borderColor, color_argb )
 
-	void renderCall( Context2D* );
+	void renderCall( void );
 
 private:
 
 	Texture2D*				_texture;
 	uint32_t 				_renderID;
 	Attributes2D*			_attributes;
-	IRenderer2D*			_renderer;
+	Renderer2D*				_renderer;
 };
 
 } /* namespace crap */

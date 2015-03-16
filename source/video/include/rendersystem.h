@@ -40,17 +40,18 @@ public:
 
 	void init( uint32_t debugmode = 0 );
 
-	void drawBegin( void );
-	void drawEnd( void );
+	void draw( void );
 
 	void resizeCallback( int32_t x, int32_t y );
 
 	CRAP_INLINE RenderWindow* getWindow( void ) { return _window; }
 
+	CRAP_INLINE intrusive_list<RenderPass>* getRenderList( void )  { return &_renderList; }
+
 private:
 
 	RenderWindow*			_window;
-	intrusive_list<RenderPass>	_render;
+	intrusive_list<RenderPass>	_renderList;
 };
 
 

@@ -15,11 +15,11 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "../../default/include/button2d.h"
+#include "components/button2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "../../default/include/texture2d.h"
+#include "components/texture2d.h"
 #include "eventsystem.h"
 #include "system.h"
 

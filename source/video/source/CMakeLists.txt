@@ -12,6 +12,6 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/rendercontext.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/renderwindow.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/rendersystem.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/renderer2d.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/renderpass.cpp
    PARENT_SCOPE
 )

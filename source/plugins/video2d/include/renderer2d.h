@@ -18,6 +18,7 @@
 #include "container/arraymap.h"
 #include "container/indexedarray.h"
 #include "memory.h"
+#include "delegates.h"
 
 #ifdef CRAP_NO_DEBUG
 #define RENDERER2D_MEMORY SimpleGeneralMemory
@@ -25,79 +26,99 @@
 #define RENDERER2D_MEMORY BoundGeneralMemory
 #endif
 
+#include "renderpass.h"
+
+struct NVGcontext;
 
 namespace crap
 {
 
+typedef uint32_t Font2D;
+typedef uint32_t Image2D;
+typedef NVGcontext Context2D;
+
+class RenderSystem;
+class TextAlignment;
 class RenderWindow;
 
-class Renderer2D
+class Renderer2D : public RenderPass
 {
 public:
 
 	typedef array_map<string_hash,Image2D > Image2DMap;
 	typedef array_map<string_hash,Font2D >	Font2DMap;
-	typedef delegate< void(Context2D*)>		RenderCall;
+	typedef delegate< void(void)>			RenderCall;
 	typedef indexed_array<RenderCall>		RenderArray;
 
-	Renderer2D( RenderWindow* window, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements );
+	Renderer2D( uint32_t renderID, RenderSystem* renderSystem, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements );
 	virtual ~Renderer2D( void );
 
-	void drawBegin( void );
-	void drawEnd( void );
+	virtual void prepareRender( void );
+	virtual void render( void );
+	virtual void finishRender( void );
 
-	virtual void drawCircle( const attributes_2d& attributes, const float32_t& radius,
+	void drawCircle( const attributes_2d& attributes, const float32_t& radius,
 			const float32_t& border, const color_argb& color, const color_argb& borderColor,
 			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
 			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
 			const float32_t& image_rotation );
 
-	virtual void drawRectangle( const attributes_2d& attributes, const float32_t& width, const float32_t& height,
+	void drawRectangle( const attributes_2d& attributes, const float32_t& width, const float32_t& height,
 			const float32_t& border, const color_argb& color, const color_argb& borderColor,
 			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
 			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
 			const float32_t& image_rotation );
 
-	virtual void drawRoundedRectangle( const attributes_2d& attributes, const float32_t& width, const float32_t& height,
+	void drawRoundedRectangle( const attributes_2d& attributes, const float32_t& width, const float32_t& height,
 					const float32_t& corner, const float32_t& border, const color_argb& color, const color_argb& borderColor,
 					const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
 					const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
 					const float32_t& image_rotation );
 
-	virtual void drawPath( const attributes_2d& attributes, const float32_t* path, const uint32_t& pathSize,
+	void drawPath( const attributes_2d& attributes, const float32_t* path, const uint32_t& pathSize,
 			const float32_t& border, const color_argb& color, const color_argb& borderColor,
 			const Image2D& image, const float32_t& image_alpha, const float32_t& image_pos_x,
 			const float32_t& image_pos_y, const float32_t& image_width, const float32_t& image_height,
 			const float32_t& image_rotation );
 
-	virtual void drawText( const attributes_2d& attributes,Font2D font, const char* text, const float32_t& fontSize,
+	void drawText( const attributes_2d& attributes,Font2D font, const char* text, const float32_t& fontSize,
 			const color_argb& color, const float32_t& blur, const float32_t& spacing,
 			const float32_t& lineHeight, const TextAlignment& alignment );
 
-	virtual void createImage2D( string_hash, pointer_t<void> memory, uint32_t size );
-	virtual Image2D getImage2D( string_hash );
-	virtual void removeImage2D( string_hash );
+	void createImage2D( string_hash, pointer_t<void> memory, uint32_t size );
+	Image2D getImage2D( string_hash );
+	void removeImage2D( string_hash );
 
-	virtual void createFont2D( string_hash, pointer_t<void> memory, uint32_t size );
-	virtual Font2D getFont2D( string_hash );
-	virtual void removeFont2D( string_hash );
+	void createFont2D( string_hash, pointer_t<void> memory, uint32_t size );
+	Font2D getFont2D( string_hash );
+	void removeFont2D( string_hash );
 
-	virtual Context2D* getContext( void ) { return _context2D; }
+	//Context2D* getContext( void ) { return _context2D; }
 
-	CRAP_INLINE void render( void )
+	template< class C, void (C::*F)( void ) >
+	uint32_t addRenderCall( C* instance  )
 	{
-		for( uint32_t i=0; i <_renderCalls.size(); ++i )
-		{
-			_renderCalls.data()[i].invoke( _context2D );
-		}
+		RenderCall call;
+		call.bind<C,F>(instance);
+		return _renderCalls.push_back( call );
 	}
 
-protected:
+	template< void (*F)( void ) >
+	uint32_t addRenderCall( void )
+	{
+		RenderCall call;
+		call.bind<F>();
+		return _renderCalls.push_back( call );
+	}
 
-	virtual uint32_t addRenderCallInternal( const RenderCall& call );
-	virtual void removeRenderCallInternal( uint32_t id );
+	CRAP_INLINE
+	void removeRenderCall( uint32_t id )
+	{
+		_renderCalls.erase_at( id );
+	}
 
 private:
+
 	RENDERER2D_MEMORY				_allocator;
 	Image2DMap			 			_images;
 	Font2DMap						_fonts;

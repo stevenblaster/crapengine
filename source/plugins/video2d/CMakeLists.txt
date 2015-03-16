@@ -96,6 +96,7 @@ ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/source)
 ### CRAPLIB
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/video/include)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 IF(MSVC)
@@ -119,9 +120,9 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_video2d_plugin MODULE ${SOURCES} ${HEADERS})
 IF(WIN32)
-     TARGET_LINK_LIBRARIES(crap_video2d_plugin crap_core crap_engine ${BGFX_LIBRARY} ${BGFX_COMMON_LIBRARY} ${GLFW_LIBRARY} ${OPENGL_LIBRARIES} )
+     TARGET_LINK_LIBRARIES(crap_video2d_plugin crap_core crap_engine crap_video ${BGFX_LIBRARY} ${BGFX_COMMON_LIBRARY} ${GLFW_LIBRARY} ${OPENGL_LIBRARIES} )
 ELSE()
-	TARGET_LINK_LIBRARIES(crap_video2d_plugin crap_core crap_engine ${CMAKE_THREAD_LIBS_INIT} ${BGFX_LIBRARY} ${BGFX_COMMON_LIBRARY} ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_DL_LIBS})
+	TARGET_LINK_LIBRARIES(crap_video2d_plugin crap_core crap_engine crap_video ${CMAKE_THREAD_LIBS_INIT} ${BGFX_LIBRARY} ${BGFX_COMMON_LIBRARY} ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 
 IF(WIN32)
@@ -137,12 +138,12 @@ IF(WIN32)
 
 ELSE()
 
-#add_custom_command(TARGET crap_video2d_plugin
-#    POST_BUILD
-#    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/video2d/libcrap_video2d_plugin.so ${CRAP_DATA_PATH}/plugins/libcrap_video2d_plugin.so )
+add_custom_command(TARGET crap_video2d_plugin
+    POST_BUILD
+    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/video2d/libcrap_video2d_plugin.so ${CRAP_DATA_PATH}/plugins/libcrap_video2d_plugin.so )
 
-#add_custom_command(TARGET crap_physic2d_plugin
-#    POST_BUILD
-#    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/video2d/libcrap_video2d_plugin.so ${CRAP_DATA_PATH}/TestGame/plugins/libcrap_video2d_plugin.so )
+add_custom_command(TARGET crap_video2d_plugin
+    POST_BUILD
+    COMMAND cp ${CMAKE_BINARY_DIR}/plugins/video2d/libcrap_video2d_plugin.so ${CRAP_DATA_PATH}/TestGame/plugins/libcrap_video2d_plugin.so )
 
 ENDIF(WIN32)

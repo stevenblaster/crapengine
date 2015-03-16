@@ -23,7 +23,7 @@
 namespace crap
 {
 
-RenderSystem::RenderSystem( RenderWindow* window ) : _window(window)
+RenderSystem::RenderSystem( RenderWindow* window ) : _window(window), _renderList( true )
 {
 	bgfx::glfwSetWindow( window->getHandle() );
 }
@@ -58,17 +58,19 @@ void RenderSystem::resizeCallback( int32_t x, int32_t y )
 	bgfx::reset( x, y, BGFX_RESET_VSYNC );
 }
 
-
-void RenderSystem::drawBegin( void )
+void RenderSystem::draw( void )
 {
 	bgfx::setViewRect(0, 0, 0, _window->getWidth(), _window->getHeight());
 	bgfx::submit(0);
-}
 
-void RenderSystem::drawEnd( void )
-{
-	// Advance to next frame. Rendering thread will be kicked to
-	// process submitted rendering primitives.
+	intrusive_node<RenderPass>* node = _renderList.begin();
+	for( ; node != _renderList.end(); node = node->next() )
+	{
+		node->parent()->prepareRender();
+		node->parent()->render();
+		node->parent()->finishRender();
+	}
+
 	bgfx::frame();
 }
 

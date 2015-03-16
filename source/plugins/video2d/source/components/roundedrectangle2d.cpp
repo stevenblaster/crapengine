@@ -15,12 +15,12 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "../../default/include/roundedrectangle2d.h"
+#include "components/roundedrectangle2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "../../default/include/texture2d.h"
-#include "irenderer2d.h"
+#include "components/texture2d.h"
+#include "renderer2d.h"
 #include "../../default/include/attributes2d.h"
 #include "system.h"
 
@@ -47,8 +47,8 @@ RoundedRectangle2D::~RoundedRectangle2D( void )
 
 void RoundedRectangle2D::init( System* system )
 {
-	_renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
-	_renderID = _renderer->addRencerCall<RoundedRectangle2D, &RoundedRectangle2D::renderCall>(this);
+	_renderer = system->getSubSystem<Renderer2D>("Renderer2D");
+	_renderID = _renderer->addRenderCall<RoundedRectangle2D, &RoundedRectangle2D::renderCall>(this);
 
 	Component::TypeList list = getNeighboursOfType("Texture2D");
 	for( uint32_t i=0; list.components[i] != 0; ++i )
@@ -69,7 +69,7 @@ void RoundedRectangle2D::deinit( System* system )
 	_renderer->removeRenderCall(_renderID);
 }
 
-void RoundedRectangle2D::renderCall( Context2D* context )
+void RoundedRectangle2D::renderCall( void )
 {
 	if( _texture != 0 )
 	{

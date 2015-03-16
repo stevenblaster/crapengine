@@ -12,8 +12,9 @@
  */
 
 #include "nanovg/nanovg.h"
+#include "rendersystem.h"
+#include "attributes.h"
 #include "renderwindow.h"
-//#include "elements2d.h"
 #include "renderer2d.h"
 
 #pragma comment( lib, "Psapi.lib" )
@@ -21,15 +22,16 @@
 namespace crap
 {
 
-Renderer2D::Renderer2D( RenderWindow* window, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements ) :
-	_allocator( Image2DMap::size_of_elements(max_images ) + Font2DMap::size_of_elements(max_fonts) + RenderArray::size_of_elements(max_elements) *2 ),
+Renderer2D::Renderer2D( uint32_t renderID, RenderSystem* renderSystem, uint32_t max_images, uint32_t max_fonts, uint32_t max_elements ) :
+		RenderPass( renderID, renderSystem ),
+		_allocator( Image2DMap::size_of_elements(max_images ) + Font2DMap::size_of_elements(max_fonts) + RenderArray::size_of_elements(max_elements) *2 ),
 		_images( _allocator.allocate(Image2DMap::size_of_elements(max_images),4),
 				Image2DMap::size_of_elements(max_images) ),
 		_fonts( _allocator.allocate(Font2DMap::size_of_elements(max_fonts),4),
 				Image2DMap::size_of_elements(max_fonts) ),
 		_renderCalls( _allocator.allocate( RenderArray::size_of_elements(max_elements), 4 ),
 				RenderArray::size_of_elements(max_elements) ),
-		_window(window)
+		_window(renderSystem->getWindow())
 {
 	_context2D = nvgCreate(1, 0);
 }
@@ -42,12 +44,20 @@ Renderer2D::~Renderer2D( void )
 	_allocator.deallocate(_images.memory().as_void );
 }
 
-void Renderer2D::drawBegin( void )
+void Renderer2D::prepareRender( void )
 {
 	nvgBeginFrame( _context2D, _window->getWidth(), _window->getHeight(), 1.f );
 }
 
-void Renderer2D::drawEnd( void )
+void Renderer2D::render( void )
+{
+	for( uint32_t i=0; i <_renderCalls.size(); ++i )
+	{
+		_renderCalls.data()[i].invoke();
+	}
+}
+
+void Renderer2D::finishRender( void )
 {
 	nvgEndFrame( _context2D );
 }
@@ -288,16 +298,6 @@ void Renderer2D::removeFont2D( string_hash name )
 	{
 		//_fonts.erase_at(index);
 	}
-}
-
-uint32_t Renderer2D::addRenderCallInternal( const RenderCall& call )
-{
-	return _renderCalls.push_back( call );
-}
-
-void Renderer2D::removeRenderCallInternal( uint32_t id )
-{
-	_renderCalls.erase_at( id );
 }
 
 } /* namespace crap */

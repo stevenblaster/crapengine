@@ -16,12 +16,12 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "../../default/include/rectangle2d.h"
-#include "../../default/include/texture2d.h"
+#include "components/rectangle2d.h"
+#include "components/texture2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "irenderer2d.h"
+#include "renderer2d.h"
 #include "../../default/include/attributes2d.h"
 #include "system.h"
 
@@ -60,9 +60,9 @@ void Rectangle2D::init( System* system )
 		}
 	}
 
-	_renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
+	_renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
 
-	_renderID = _renderer->addRencerCall<Rectangle2D, &Rectangle2D::renderCall>(this);
+	_renderID = _renderer->addRenderCall<Rectangle2D, &Rectangle2D::renderCall>(this);
 }
 
 void Rectangle2D::deinit( System* system )
@@ -70,7 +70,7 @@ void Rectangle2D::deinit( System* system )
 	_renderer->removeRenderCall(_renderID);
 }
 
-void Rectangle2D::renderCall( Context2D* context )
+void Rectangle2D::renderCall( void )
 {
 	if( _texture != 0 )
 	{

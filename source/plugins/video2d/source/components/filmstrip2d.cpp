@@ -16,11 +16,11 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "../../default/include/filmstrip2d.h"
+#include "components/filmstrip2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "../../default/include/texture2d.h"
+#include "components/texture2d.h"
 #include "taskmanager.h"
 #include "system.h"
 

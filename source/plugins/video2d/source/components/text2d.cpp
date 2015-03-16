@@ -16,11 +16,11 @@
 
 #include <cstdio>
 #include "convert.h"
-#include "../../default/include/text2d.h"
+#include "components/text2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
-#include "irenderer2d.h"
+#include "renderer2d.h"
 #include "../../default/include/attributes2d.h"
 #include "system.h"
 
@@ -48,8 +48,8 @@ Text2D::~Text2D( void )
 
 void Text2D::init( System* system )
 {
-	_renderer = system->getSubSystem<IRenderer2D>("Renderer2D");
-	_renderID = _renderer->addRencerCall<Text2D, &Text2D::renderCall>(this);
+	_renderer = system->getSubSystem<Renderer2D>("Renderer2D");
+	_renderID = _renderer->addRenderCall<Text2D, &Text2D::renderCall>(this);
 	_font2d = 	_renderer->getFont2D( _fontName );
 
 	_attributes = (Attributes2D*)getNeighbour("Attributes2D");
@@ -60,7 +60,7 @@ void Text2D::deinit( System* system )
 	_renderer->removeRenderCall(_renderID);
 }
 
-void Text2D::renderCall( Context2D* context )
+void Text2D::renderCall( void )
 {
 
 	const crap::Font2D font = _font2d;
