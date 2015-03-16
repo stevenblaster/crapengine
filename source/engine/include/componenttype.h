@@ -42,6 +42,9 @@ struct ComponentMember
 	intrusive_node<ComponentMember> 				node;
 
 	static intrusive_list< ComponentMember<T> >	list;
+
+	CRAP_INLINE
+	bool operator<( const ComponentMember& other ) const { return name < other.name; }
 };
 
 template<typename T>

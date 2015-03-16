@@ -17,21 +17,21 @@
 
 namespace crap
 {
-class Renderer;
+class RenderSystem;
 class InputManager;
 
 class GuiSystem
 {
 public:
 
-	GuiSystem( Renderer* renderer, uint32_t max_guielements );
+	GuiSystem( RenderSystem* renderer, uint32_t max_guielements );
 	~GuiSystem( void );
 
 	void sizeListener( int32_t, int32_t);
 
 private:
 
-	Renderer*		_renderer;
+	RenderSystem*		_renderer;
 };
 
 } /* namespace crap */

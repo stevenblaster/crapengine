@@ -40,6 +40,9 @@ public:
 	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, density, float32_t )
 	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, dynamic, uint32_t )
 
+	CRAP_INLINE
+	bool operator<( const Rectangle2DPhysic& other ) const { return _globalID < other._globalID; }
+
 private:
 
 	uint32_t				_bodyID;

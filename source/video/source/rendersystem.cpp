@@ -15,26 +15,26 @@
 #include <GLFW/glfw3.h>
 #include <bgfxplatform.h>
 #include <bgfx_utils.h>
+#include <rendersystem.h>
 #include "renderwindow.h"
-#include "renderer.h"
 
 #pragma comment( lib, "Psapi.lib" )
 
 namespace crap
 {
 
-Renderer::Renderer( RenderWindow* window ) : _window(window)
+RenderSystem::RenderSystem( RenderWindow* window ) : _window(window)
 {
 	bgfx::glfwSetWindow( window->getHandle() );
 }
 
-Renderer::~Renderer( void )
+RenderSystem::~RenderSystem( void )
 {
-	_window->removeSizeListener<Renderer, &Renderer::resizeCallback>(this);
+	_window->removeSizeListener<RenderSystem, &RenderSystem::resizeCallback>(this);
 	bgfx::shutdown();
 }
 
-void Renderer::init( uint32_t debugmode /* = 0 */ )
+void RenderSystem::init( uint32_t debugmode /* = 0 */ )
 {
 	bgfx::init();
 	bgfx::reset( _window->getWidth(), _window->getHeight(), BGFX_RESET_VSYNC );
@@ -50,22 +50,22 @@ void Renderer::init( uint32_t debugmode /* = 0 */ )
 	        , 0
 	        );
 
-	_window->addSizeListener<Renderer, &Renderer::resizeCallback>(this);
+	_window->addSizeListener<RenderSystem, &RenderSystem::resizeCallback>(this);
 }
 
-void Renderer::resizeCallback( int32_t x, int32_t y )
+void RenderSystem::resizeCallback( int32_t x, int32_t y )
 {
 	bgfx::reset( x, y, BGFX_RESET_VSYNC );
 }
 
 
-void Renderer::drawBegin( void )
+void RenderSystem::drawBegin( void )
 {
 	bgfx::setViewRect(0, 0, 0, _window->getWidth(), _window->getHeight());
 	bgfx::submit(0);
 }
 
-void Renderer::drawEnd( void )
+void RenderSystem::drawEnd( void )
 {
 	// Advance to next frame. Rendering thread will be kicked to
 	// process submitted rendering primitives.

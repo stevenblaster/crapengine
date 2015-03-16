@@ -48,6 +48,9 @@ public:
 	}
 
 	CRAP_INLINE
+	bool operator<( const ComponentFactory& other ) const { return _name < other._name; }
+
+	CRAP_INLINE
 	uint32_t id( void ) const { return _name.hash(); }
 
 private:

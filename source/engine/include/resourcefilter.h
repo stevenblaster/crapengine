@@ -46,6 +46,9 @@ public:
         return _id == name.hash();
     }
 
+    CRAP_INLINE
+	bool operator<( const ResourceFilter& other ) const { return _id < other._id; }
+
 protected:
 
     intrusive_node<ResourceFilter>  _node;

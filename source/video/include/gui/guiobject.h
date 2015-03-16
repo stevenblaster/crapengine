@@ -84,6 +84,7 @@ public:
 	CRAP_INLINE bool isInside( uint32_t x, uint32_t y ) const
 	{ return x > _abs_pos_x && x < (_abs_pos_x + _abs_width) && y > _abs_pos_y && y < (_abs_pos_y + _abs_height); }
 
+	CRAP_INLINE bool operator<( const GuiObject& other ) const { return true; }
 
 protected:
 

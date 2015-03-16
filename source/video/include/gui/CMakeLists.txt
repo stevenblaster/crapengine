@@ -11,11 +11,11 @@
 
 set(HEADERS
    ${HEADERS}
-   ${CMAKE_CURRENT_SOURCE_DIR}/guiobject.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/interactiveguiobject.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/guiobject.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/interactiveguiobject.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/guielements.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/guimanager.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/guisystem.h
+#   ${CMAKE_CURRENT_SOURCE_DIR}/guisystem.h
 #   ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h
    PARENT_SCOPE
 )

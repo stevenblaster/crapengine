@@ -11,6 +11,7 @@
  * @date 	Jan 23, 2015
  */
 
+#include <rendersystem.h>
 #include "logger.h"
 #include "system.h"
 #include "configuration.h"
@@ -27,8 +28,6 @@
 #include "directorylistener.h"
 #include "eventsystem.h"
 #include "renderer2d.h"
-#include "renderer.h"
-//#include "physicsystem2d.h"
 #include "world.h"
 #include "game.h"
 
@@ -138,7 +137,7 @@ void Game::start( void )
 	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
 
 	//renderer
-	crap::Renderer renderer( &renderWindow );
+	crap::RenderSystem renderer( &renderWindow );
 	renderer.init();
 
 	//set renderer as subsystem

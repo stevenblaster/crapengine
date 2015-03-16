@@ -181,9 +181,10 @@ public:
 
     /**
      * @brief Default constructor
+     * @param flag is sorted or not
      */
     CRAP_INLINE
-    intrusive_list( void );
+    intrusive_list( bool sorted = false );
 
     /**
      * @brief Default destructor
@@ -260,10 +261,13 @@ private:
 
     /// Current size
     uint32_t _size;
+
+    /// Sorted flag
+    bool _sorted;
 };
 
 template<typename T>
-intrusive_list<T>::intrusive_list( void ) : _begin(0), _last(0), _size(0)
+intrusive_list<T>::intrusive_list( bool sorted ) : _begin(0), _last(0), _size(0), _sorted(sorted)
 {
 
 }
@@ -284,10 +288,41 @@ uint32_t intrusive_list<T>::push_back( intrusive_node<T>* node )
         return ++_size;
     }
 
-	node->_next = 0;
-    node->_previous = _last;
+    intrusive_node<T>* prev_node = _last;
+    intrusive_node<T>* next_node = 0;
 
-    _last->_next = node;
+    if( _sorted )
+    {
+    	if( node->parent() < _begin->parent() )
+    	{
+    		prev_node = 0;
+    		next_node = _begin;
+    		_begin = node;
+    	}
+    	else
+    	{
+			intrusive_node<T>* tmp_node = _begin;
+			while( tmp_node->next() != 0 && *tmp_node->parent() < *node->parent() )
+				tmp_node = tmp_node->next();
+
+			prev_node = tmp_node;
+			next_node = prev_node->next();
+    	}
+    }
+    else
+    {
+    	_last = node;
+    }
+
+	node->_next = next_node;
+    node->_previous = prev_node;
+
+    if( prev_node != 0 )
+    	prev_node->_next = node;
+
+    if( next_node != 0 )
+    	next_node->_previous = node;
+
     _last = node;
 
 	return ++_size;

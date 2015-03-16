@@ -1,4 +1,5 @@
 
+#include <rendersystem.h>
 #include "file.h"
 #include "configuration.h"
 #include "system.h"
@@ -9,7 +10,6 @@
 //#include "component.h"
 #include "xml/tinyxml2.h"
 //#include "strings.h"
-#include "renderer.h"
 #include "renderer2d.h"
 #include "taskmanager.h"
 #include "game.h"
@@ -130,7 +130,7 @@ void World::startXML( void )
     componentSystem->initAll();
 
     // get stuff
-    Renderer* renderer = _system->getSubSystem<Renderer>("Renderer");
+    RenderSystem* renderer = _system->getSubSystem<RenderSystem>("Renderer");
     Renderer2D* renderer2D = _system->getSubSystem<Renderer2D>("Renderer2D");
     TaskManager* taskManager = _system->getSubSystem<TaskManager>("TaskManager");
 

@@ -281,6 +281,11 @@ public:
         return (_id & flags) == flags;
     }
 
+    CRAP_INLINE bool operator<( const base_logger& other ) const
+    {
+    	return _id < other._id;
+    }
+
 protected:
     intrusive_node<base_logger> _node;
     uint32_t                    _id;

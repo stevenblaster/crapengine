@@ -48,6 +48,9 @@ public:
 
 	void renderCall( Context2D* );
 
+	CRAP_INLINE
+	bool operator<( const Rectangle2D& other ) const { return _globalID < other._globalID; }
+
 private:
 
 	uint32_t 				_renderID;

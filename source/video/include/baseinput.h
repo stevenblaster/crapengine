@@ -34,6 +34,11 @@ public:
 	{
 		return _name == other;
 	}
+	CRAP_INLINE
+	bool operator<( const BaseInput& other ) const
+	{
+		return true;
+	}
 
 	virtual void receiveInput( void ){};
 

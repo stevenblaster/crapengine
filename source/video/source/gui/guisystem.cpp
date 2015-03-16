@@ -11,15 +11,15 @@
  * @date 	Jan 15, 2015
  */
 
+#include <rendersystem.h>
 #include <new>
-#include "renderer.h"
 #include "gui/guisystem.h"
 
 namespace crap
 {
 
 
-GuiSystem::GuiSystem( Renderer* renderer, uint32_t max_guielements ) : _renderer(renderer)
+GuiSystem::GuiSystem( RenderSystem* renderer, uint32_t max_guielements ) : _renderer(renderer)
 {
 	//renderer->addSizeListener<GuiSystem, &GuiSystem::sizeListener>(this);
 }

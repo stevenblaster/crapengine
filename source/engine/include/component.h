@@ -57,6 +57,9 @@ public:
 
 	void setNode( Node* node );
 
+	CRAP_INLINE
+	bool operator<( const Component& other ) const { return _globalID < other._globalID; }
+
 protected:
 
 	Component( void );

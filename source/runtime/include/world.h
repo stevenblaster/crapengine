@@ -46,6 +46,8 @@ public:
 		return _name == hash;
 	}
 
+	CRAP_INLINE bool operator<( const World& other ) const { return _name < other._name; }
+
 private:
 
 	void startXML( void );

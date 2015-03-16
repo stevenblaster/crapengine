@@ -23,6 +23,8 @@ public:
     uint32_t number( void ) const { return _number; }
     crap::intrusive_node<TestIntrusive> _node;
 
+    bool operator<(const TestIntrusive& other ) const { return _number<other._number; }
+
 private:
 
     uint32_t _number;

@@ -1,5 +1,6 @@
 
 #include <attributes.h>
+#include <rendersystem.h>
 #include <iostream>
 #include "system.h"
 #include "logger.h"
@@ -20,7 +21,6 @@
 #include "renderwindow.h"
 #include "eventsystem.h"
 #include "renderer2d.h"
-#include "renderer.h"
 #include "node.h"
 #include "attributes.h"
 #include "physicsystem2d.h"
@@ -158,7 +158,7 @@ int main( void )
 	renderWindow.create( windowName.c_str(), windowWidth, windowHeight, windowFullscreen );
 
 	//renderer
-	crap::Renderer renderer( &renderWindow );
+	crap::RenderSystem renderer( &renderWindow );
 	renderer.init();
 
 	//set renderer as subsystem

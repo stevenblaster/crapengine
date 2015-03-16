@@ -42,6 +42,8 @@ public:
 	template<typename T>
 	T* instance( void );
 
+	CRAP_INLINE bool operator<( const SubSystem& other ) const { return _id < other._id; }
+
 private:
 
 	string_hash _id;
