@@ -102,9 +102,13 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/include)
 IF(MSVC)
 ### SET VISUAL STUDIO FILTERS
 SOURCE_GROUP("source" REGULAR_EXPRESSION ".*/source/[^/]*([.]c|[.]cpp|[.]txt)$")
+SOURCE_GROUP("source\\components" REGULAR_EXPRESSION ".*/source/components/[^/]*([.]c|[.]cpp|[.]txt)$")
+SOURCE_GROUP("source\\resources" REGULAR_EXPRESSION ".*/source/resources/[^/]*([.]c|[.]cpp|[.]txt)$")
 
 ###  FILES ${HEADERS}
 SOURCE_GROUP("include" REGULAR_EXPRESSION ".*/include/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("include\\components" REGULAR_EXPRESSION ".*/include/components/[^/]*([.]h|[.]hpp|[.]txt)$")
+SOURCE_GROUP("include\\resources" REGULAR_EXPRESSION ".*/include/resources/[^/]*([.]h|[.]hpp|[.]txt)$")
 ENDIF(MSVC)
 
 SET(SOURCES

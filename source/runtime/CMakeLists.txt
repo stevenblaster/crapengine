@@ -54,22 +54,12 @@ ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/source)
 
 ### CRAPLIB
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/include)
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/audio/include)
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/video/include)
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/physic/include)
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/network/include)
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
-#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/runtime/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/runtime/include)
 
 
 FIND_PACKAGE(CrapCore REQUIRED)
-FIND_PACKAGE(CrapAudio REQUIRED)
 FIND_PACKAGE(CrapVideo REQUIRED)
-#FIND_PACKAGE(CrapPhysic REQUIRED)
 FIND_PACKAGE(CrapEngine REQUIRED)
-FIND_PACKAGE(CrapRuntime REQUIRED)
-FIND_PACKAGE(CrapInterfaces REQUIRED)
 
 IF(MSVC)
 ### SET VISUAL STUDIO FILTERS
@@ -92,8 +82,8 @@ SET(HEADERS
 #####################################
 ADD_LIBRARY(crap_runtime ${SOURCES} ${HEADERS})
 IF(WIN32)
-     TARGET_LINK_LIBRARIES(crap_runtime crap_core crap_video crap_engine crap_network)
+     TARGET_LINK_LIBRARIES(crap_runtime crap_core crap_video crap_engine)
 ELSE()
-     TARGET_LINK_LIBRARIES(crap_runtime crap_core crap_video crap_engine crap_network ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+     TARGET_LINK_LIBRARIES(crap_runtime crap_core crap_video crap_engine ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 ENDIF(WIN32)
 

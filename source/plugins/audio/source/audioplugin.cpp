@@ -20,6 +20,8 @@
 #include "system.h"
 #include "plugin.h"
 #include "components/audio2d.h"
+#include "resources/audiofilter.h"
+#include "resources/wavefilefilter.h"
 #include "audiosystem.h"
 
 namespace crap
@@ -29,7 +31,9 @@ CRAP_DECLARE_PLUGIN( AudioPlugin )
 {
 public:
 	AudioPlugin( System* system ) :
-		_audio2d("Audio2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
+		_audio2d("Audio2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
+		_waveFilter(system->getSubSystem<ResourceManager>("ResourceManager")),
+		_audioFilter(system->getSubSystem<ResourceManager>("ResourceManager"))
 	{
 	}
 
@@ -43,15 +47,16 @@ public:
     	//AudioSystem
 //    	const uint32_t audioBufferNumber = config.getValue<uint32_t>("AUDIO_BUFFER_NUM");
 //    	const uint32_t audioSourceNumber = config.getValue<uint32_t>("AUDIO_SOURCE_NUM");
-    	crap::AudioSystem* audioSystem = new AudioSystem(10, 10);
+    	_audio = new AudioSystem(10, 10);
 
     	//set AudioSystem as subsystem
-    	_sub = new SubSystem( "AudioSystem", &audioSystem, system );
+    	_sub = new SubSystem( "AudioSystem", _audio, system );
     }
 
     virtual void deinit( System* system )
     {
-    	_sub->~SubSystem();
+    	delete _sub;
+    	delete _audio;
     }
 
     uint32_t id( void )
@@ -62,7 +67,11 @@ public:
 private:
 
     crap::ComponentType<Audio2D>  _audio2d;
+    crap::AudioSystem* _audio;
     crap::SubSystem* _sub;
+
+    crap::WaveFileFilter _waveFilter;
+    crap::AudioFilter	_audioFilter;
 };
 
 CRAP_PLUGIN_FACTORY( AudioPlugin )

@@ -14,13 +14,13 @@
 #define CRAP_DL 1
 
 #include <cstdio>
-#include "../../default/include/screenlistener2d.h"
+#include "screenlistener2d.h"
 #include "plugin.h"
 #include "node.h"
 #include "componenttype.h"
 #include <rendersystem.h>
 #include "renderwindow.h"
-#include "../../default/include/attributes2d.h"
+#include "attributes2d.h"
 #include "taskmanager.h"
 #include "system.h"
 
@@ -45,7 +45,7 @@ ScreenListener2D::~ScreenListener2D( void )
 
 void ScreenListener2D::init( System* system )
 {
-	RenderSystem* renderer = system->getSubSystem<RenderSystem>("Renderer");
+	RenderSystem* renderer = system->getSubSystem<RenderSystem>("RenderSystem");
 	renderer->getWindow()->addSizeListener<ScreenListener2D, &ScreenListener2D::resizeCallback>(this);
 	_sizeX = renderer->getWindow()->getWidth();
 	_sizeY = renderer->getWindow()->getHeight();
@@ -65,7 +65,7 @@ void ScreenListener2D::deinit( System* system )
 	TaskManager* manager = system->getSubSystem<TaskManager>("TaskManager");
 	manager->removeTask( _taskID );
 
-	RenderSystem* renderer = system->getSubSystem<RenderSystem>("Renderer");
+	RenderSystem* renderer = system->getSubSystem<RenderSystem>("RenderSystem");
 	renderer->getWindow()->removeSizeListener<ScreenListener2D, &ScreenListener2D::resizeCallback>(this);
 }
 

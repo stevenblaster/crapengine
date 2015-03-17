@@ -109,14 +109,12 @@ ENDIF(MSVC)
 
 SET(SOURCES
     ${SOURCES}
-#    ${GLEW_SOURCES}
 )
 
 SET(HEADERS
     ${HEADERS}
 )
 
-#MESSAGE ("123 ${BGFX_LIBRARY} 456")
 
 #####################################
 #           Creating Lib            #
@@ -128,11 +126,6 @@ ELSE()
 	TARGET_LINK_LIBRARIES(crap_video crap_core ${CMAKE_THREAD_LIBS_INIT} ${BGFX_LIBRARY} ${BGFX_COMMON_LIBRARY} ${GLFW_LIBRARY} ${X11_X11_LIB} Xi Xrandr Xxf86vm ${OPENGL_LIBRARIES} )
 ENDIF(WIN32)
 
-#add_dependencies(craplib glfw_lib)
-#add_dependencies(crap_core)
-if(NOT ${BGFX_FOUND})
-#    ADD_DEPENDENCIES(craplib openal)
-ENDIF()
 
 OPTION(CRAP_BUILD_VIDEO_UNITTEST "Build crap video unittests" OFF)
 IF(CRAP_BUILD_VIDEO_UNITTEST)

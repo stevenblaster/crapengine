@@ -17,8 +17,9 @@
 #include "config/crap_compiler.h"
 #include "system.h"
 #include "resourcemanager.h"
-#include "irenderer2d.h"
-#include "font2dfilter.h"
+#include "renderer2d.h"
+
+#include "resources/font2dfilter.h"
 
 namespace crap
 {
@@ -35,7 +36,7 @@ Font2DFilter::~Font2DFilter( void )
 
 void Font2DFilter::import( string_hash name, pointer_t<void> memory, uint32_t memSize, System* system )
 {
-	IRenderer2D* renderer = system->getSubSystem<crap::IRenderer2D>("Renderer2D");
+	Renderer2D* renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
 	if( renderer != 0 )
 	{
 		renderer->createFont2D( name, memory, memSize );
@@ -44,7 +45,7 @@ void Font2DFilter::import( string_hash name, pointer_t<void> memory, uint32_t me
 
 void Font2DFilter::unload( string_hash name, System* system )
 {
-	IRenderer2D* renderer = system->getSubSystem<crap::IRenderer2D>("Renderer2D");
+	Renderer2D* renderer = system->getSubSystem<crap::Renderer2D>("Renderer2D");
 	if( renderer != 0 )
 	{
 		renderer->removeFont2D( name );

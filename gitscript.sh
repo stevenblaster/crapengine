@@ -1,16 +1,13 @@
 #!/bin/bash
 
 git add gitscript.sh
-git add source/audio/*
 git add source/core/*
 git add source/engine/*
 git add source/network/
 git add source/plugins/*
 git add source/video/*
-git add source/physic/*
 git add source/testprojects/*
 git add source/runtime/*
-git add source/interfaces/*
 git add data/plugins/*
 git add data/levels/*
 git add data/configuration.ini

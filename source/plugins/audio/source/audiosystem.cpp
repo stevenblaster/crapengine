@@ -123,7 +123,7 @@ uint32_t AudioSystem::leaseSource( const string_hash& name )
 				setAudioSourceBuffer( _sources.get_value(i), _sources.get_key(i) );
 				return i;
 			}
-    }
+		}
     }
     return UINT32_MAX;
 }
