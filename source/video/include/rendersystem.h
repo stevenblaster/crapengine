@@ -20,6 +20,7 @@
 #include "renderpass.h"
 
 struct GLFWwindow;
+struct NVGcontext;
 
 namespace bgfx
 {
@@ -30,6 +31,7 @@ namespace crap
 {
 class RenderWindow;
 typedef GLFWwindow window_t;
+typedef NVGcontext Context2D;
 
 class RenderSystem
 {
@@ -48,10 +50,13 @@ public:
 
 	CRAP_INLINE intrusive_list<RenderPass>* getRenderList( void )  { return &_renderList; }
 
+	CRAP_INLINE Context2D* getContext2D( void ) { return _context2D; }
+
 private:
 
 	RenderWindow*			_window;
 	intrusive_list<RenderPass>	_renderList;
+	Context2D*						_context2D;
 };
 
 

@@ -33,12 +33,12 @@ Renderer2D::Renderer2D( uint32_t renderID, RenderSystem* renderSystem, uint32_t 
 				RenderArray::size_of_elements(max_elements) ),
 		_window(renderSystem->getWindow())
 {
-	_context2D = nvgCreate(1, 0);
+	_context2D = renderSystem->getContext2D();
 }
 
 Renderer2D::~Renderer2D( void )
 {
-	nvgDelete( _context2D );
+	//nvgDelete( _context2D );
 	_allocator.deallocate(_renderCalls.memory().as_void);
 	_allocator.deallocate(_fonts.memory().as_void);
 	_allocator.deallocate(_images.memory().as_void );

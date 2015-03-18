@@ -17,19 +17,21 @@
 #include <bgfx_utils.h>
 #include <rendersystem.h>
 #include "renderwindow.h"
+#include "nanovg/nanovg.h"
 
 #pragma comment( lib, "Psapi.lib" )
 
 namespace crap
 {
 
-RenderSystem::RenderSystem( RenderWindow* window ) : _window(window), _renderList( true )
+RenderSystem::RenderSystem( RenderWindow* window ) : _window(window), _renderList( true ), _context2D(0)
 {
 	bgfx::glfwSetWindow( window->getHandle() );
 }
 
 RenderSystem::~RenderSystem( void )
 {
+	nvgDelete( _context2D );
 	_window->removeSizeListener<RenderSystem, &RenderSystem::resizeCallback>(this);
 	bgfx::shutdown();
 }
@@ -51,6 +53,7 @@ void RenderSystem::init( uint32_t debugmode /* = 0 */ )
 	        );
 
 	_window->addSizeListener<RenderSystem, &RenderSystem::resizeCallback>(this);
+	_context2D = nvgCreate(1, 0);
 }
 
 void RenderSystem::resizeCallback( int32_t x, int32_t y )
