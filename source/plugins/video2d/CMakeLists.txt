@@ -131,13 +131,14 @@ ENDIF(WIN32)
 
 IF(WIN32)
 
-#add_custom_command(TARGET crap_video2d_plugin
-#    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/video2d/crap_video2d_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_video2d_plugin.dll)
+add_custom_command(
+	TARGET crap_video2d_plugin
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/plugins/video2d/Debug/crap_video2d_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_video2d_plugin.dll)
 
-#add_custom_command(TARGET crap_video2d_plugin
-#    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/video2d/crap_video2d_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_video2d_plugin.dll)
+add_custom_command(TARGET crap_video2d_plugin
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/plugins/video2d/Debug/crap_video2d_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_video2d_plugin.dll)
 
 
 ELSE()

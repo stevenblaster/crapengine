@@ -81,13 +81,13 @@ ENDIF(WIN32)
 
 IF(WIN32)
 
-#add_custom_command(TARGET crap_physic2d_plugin
-#    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/physic2d/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_physic2d_plugin.dll)
+add_custom_command(TARGET crap_physic2d_plugin
+    POST_BUILD
+    COMMAND  ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/plugins/physic2d/Debug/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_physic2d_plugin.dll)
 
-#add_custom_command(TARGET crap_physic2d_plugin
-#    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/physic2d/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_physic2d_plugin.dll)
+add_custom_command(TARGET crap_physic2d_plugin
+    POST_BUILD
+    COMMAND  ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/plugins/physic2d/Debug/crap_physic2d_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_physic2d_plugin.dll)
 
 
 ELSE()
