@@ -1326,7 +1326,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     CRAP_INLINE string_type convert<float64_t, string_type >( const float64_t& variable )   \
     {                                                                                       \
         string_type string;                                                                 \
-        sprintf( string.c_str(), "%fl", variable );                                         \
+        sprintf( string.c_str(), "%lf", variable );                                         \
         string.trim();																		\
         return string;                                                                      \
     }                                                                                       \
@@ -1334,7 +1334,7 @@ CRAP_INLINE float64_t convert<float32_t, float64_t>( const float32_t& variable )
     CRAP_INLINE float64_t convert< string_type, float64_t >( const string_type& variable )  \
     {                                                                                       \
         float64_t buffer;                                                                   \
-        sscanf(variable.c_str(), "%fl", &buffer);                                           \
+        sscanf(variable.c_str(), "%lf", &buffer);                                           \
         return buffer;                                                                      \
     }
 

@@ -216,7 +216,7 @@ struct log_target_cout
     template<uint32_t S>
     CRAP_INLINE void print( crap::fixed_string<S>* string )
     {
-        fprintf(stdout, string->c_str());
+        fprintf(stdout, string->c_str(),1);
         fflush(stdout);
     }
 
@@ -230,7 +230,7 @@ struct log_target_cerr
     template<uint32_t S>
     CRAP_INLINE void print( crap::fixed_string<S>* string )
     {
-        fprintf(stderr, string->c_str());
+        fprintf(stderr, string->c_str(),1);
         fflush(stderr);
     }
 
@@ -239,6 +239,7 @@ struct log_target_cerr
     static const uint32_t ID = LOG_TARGET_CERR;
 };
 
+//test
 struct log_target_file
 {
     template<uint32_t S>

@@ -22,7 +22,7 @@ OPTION(CRAP_BUILD_ENGINE "Build crap engine" ON)
 OPTION(CRAP_BUILD_NETWORK "Build crap network" ON)
 OPTION(CRAP_BUILD_PLUGINS "Build crap plugins" ON)
 OPTION(CRAP_BUILD_RUNTIME "Build crap runtime" ON)
-OPTION(CRAP_BUILD_TESTPROJECTS "Build crap testprojects" ON)
+OPTION(CRAP_BUILD_TESTPROJECTS "Build crap testprojects" OFF)
 OPTION(CRAP_USE_CLANG "Use CLANG compiler" OFF)
 
 

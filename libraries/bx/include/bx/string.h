@@ -7,7 +7,7 @@
 #define BX_STRING_H_HEADER_GUARD
 
 #include "bx.h"
-#include <alloca.h>
+#include <malloc.h>
 #include <ctype.h>  // tolower
 #include <stdarg.h> // va_list
 #include <stdio.h>  // vsnprintf, vsnwprintf
