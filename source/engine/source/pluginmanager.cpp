@@ -78,6 +78,17 @@ uint32_t PluginManager::load( const char* filename )
     return PluginMap::INVALID;
 }
 
+Plugin* PluginManager::getPlugin( string_hash name )
+{
+	uint32_t index =  _handles.find(name.hash());
+	if( index != PluginMap::INVALID )
+	{
+		return _handles.get_value(index)->plugin;
+	}
+
+	return 0;
+}
+
 void PluginManager::init( uint32_t pluginID )
 {
 	const uint32_t index = _handles.find( pluginID );
@@ -130,6 +141,16 @@ void PluginManager::unloadAll( void )
         unload(id);
         _handles.erase(id);
     }
+}
+
+void PluginManager::setPluginAttribute( string_hash plugin_name, string_hash attribute_name, const string64& value )
+{
+	uint32_t index = _handles.find( plugin_name.hash() );
+	if( index != PluginMap::INVALID )
+	{
+		Plugin* plugin = _handles.get_value(index)->plugin;
+		plugin->setAttribute( plugin, attribute_name, value );
+	}
 }
 
 }

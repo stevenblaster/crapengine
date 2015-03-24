@@ -39,12 +39,12 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Rectangle2D, imagename, string_hash )
-	DECLARE_COMPONENT_MEMBER( Rectangle2D, width, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2D, height, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2D, color, color_argb )
-	DECLARE_COMPONENT_MEMBER( Rectangle2D, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2D, borderColor, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2D, imagename, string_hash )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2D, width, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2D, height, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2D, color, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2D, border, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2D, borderColor, color_argb )
 
 	void renderCall( void );
 

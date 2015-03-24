@@ -22,7 +22,7 @@
 #include "components/roundedrectangle2d.h"
 #include "components/text2d.h"
 #include "system.h"
-#include "plugin.h"
+#include "plugintype.h"
 #include "components/texture2d.h"
 #include "components/button2d.h"
 #include "components/filmstrip2d.h"

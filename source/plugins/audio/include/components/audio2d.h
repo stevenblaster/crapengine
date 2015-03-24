@@ -38,11 +38,11 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Audio2D, name, string_hash );
-	DECLARE_COMPONENT_MEMBER( Audio2D, startMessage, string_hash );
-	DECLARE_COMPONENT_MEMBER( Audio2D, pauseMessage, string_hash );
-	DECLARE_COMPONENT_MEMBER( Audio2D, stopMessage, string_hash );
-	DECLARE_COMPONENT_MEMBER( Audio2D, rewindAble, uint32_t );
+	DECLARE_CLASS_ATTRIBUTE( Audio2D, name, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Audio2D, startMessage, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Audio2D, pauseMessage, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Audio2D, stopMessage, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Audio2D, rewindAble, uint32_t );
 
 	void receiveMessage( string_hash name, pointer_t<void> );
 	bool update( uint32_t delta );

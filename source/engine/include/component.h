@@ -15,10 +15,8 @@
 #ifndef ENGINE_INCLUDE_COMPONENT_H_
 #define ENGINE_INCLUDE_COMPONENT_H_
 
-#include "container/intrusivelist.h"
-#include "utilities.h"
-#include "strings.h"
-#include "convert.h"
+#include "attributes.h"
+
 
 namespace crap
 {

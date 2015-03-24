@@ -1,5 +1,5 @@
 /*!
- * @file color.h
+ * @file attributes.h
  *
  * @brief Short description...
  *
@@ -8,18 +8,52 @@
  * @copyright CrapGames 2015
  *
  * @author  steffen
- * @date 	Jan 17, 2015
+ * @date 	Mar 22, 2015
  */
+#pragma once
 
-
-#ifndef VIDEO_INCLUDE_ATTRIBUTES_H_
-#define VIDEO_INCLUDE_ATTRIBUTES_H_
+#ifndef CORE_INCLUDE_ATTRIBUTES_H_
+#define CORE_INCLUDE_ATTRIBUTES_H_
 
 #include "convert.h"
-#include "strings.h"
+#include "container/intrusivelist.h"
 
 namespace crap
 {
+
+#define DECLARE_CLASS_ATTRIBUTE( classname, varname, vartype )					\
+	private: vartype _##varname;										\
+	public:	CRAP_INLINE const vartype& get##varname( void ) const { return _##varname; }	\
+	public: static void set##varname( classname* instance, const string64& data )	\
+	{ instance->_##varname = crap::convert<string64, vartype>(data); }
+
+
+#include "container/intrusivelist.h"
+
+template<typename T>
+struct ClassAttribute
+{
+	ClassAttribute( string_hash n, void(*function)(T*, const string64&) ) :
+		name(n),
+		setFunction(function),
+		node( this, &list )
+	{
+	}
+	string_hash									name;
+	void(*setFunction)(T*, const string64&);
+	intrusive_node<ClassAttribute> 				node;
+
+	static intrusive_list< ClassAttribute<T> >	list;
+
+	CRAP_INLINE
+	bool operator<( const ClassAttribute& other ) const { return name < other.name; }
+};
+
+template<typename T>
+intrusive_list< ClassAttribute<T> > ClassAttribute<T>::list;
+
+#define REGISTER_CLASS_ATTRIBUTE( classname, varname, type )	\
+	static ClassAttribute<classname> varname( #varname, &classname::set##varname );
 
 namespace align
 {
@@ -100,7 +134,7 @@ CRAP_INLINE TextAlignment convert<string64, TextAlignment>( const string64& vari
     return TextAlignment();
 }
 
-} /* namespace crap */
 
+}
 
-#endif /* VIDEO_INCLUDE_ATTRIBUTES_H_ */
+#endif /* CORE_INCLUDE_ATTRIBUTES_H_ */

@@ -18,7 +18,7 @@
 
 #include "componenttype.h"
 #include "system.h"
-#include "plugin.h"
+#include "plugintype.h"
 #include "components/audio2d.h"
 #include "resources/audiofilter.h"
 #include "resources/wavefilefilter.h"

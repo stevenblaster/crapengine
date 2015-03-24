@@ -35,8 +35,8 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( MessageReceiver, external, string_hash );
-	DECLARE_COMPONENT_MEMBER( MessageReceiver, internal, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( MessageReceiver, external, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( MessageReceiver, internal, string_hash );
 
 	void message( pointer_t<void> ptr );
 };

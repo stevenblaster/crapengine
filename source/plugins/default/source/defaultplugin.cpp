@@ -19,7 +19,7 @@
 #include "componenttype.h"
 #include "attributes2d.h"
 #include "system.h"
-#include "plugin.h"
+#include "plugintype.h"
 #include "screenlistener2d.h"
 #include "mouselistener2d.h"
 #include "messagereceiver.h"
@@ -29,10 +29,10 @@
 namespace crap
 {
 
-CRAP_DECLARE_PLUGIN( ComponentsPlugin )
+CRAP_DECLARE_PLUGIN( DefaultPlugin )
 {
 public:
-	ComponentsPlugin( System* system ) :
+	DefaultPlugin( System* system ) :
 		_trans2d("Attributes2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_screenListener2d("ScreenListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_mouseListener2d("MouseListener2D", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
@@ -40,9 +40,14 @@ public:
 		_messageSender("MessageSender", system->getSubSystem<ComponentSystem>("ComponentSystem"),10),
 		_keyboardListener("KeyboardListener", system->getSubSystem<ComponentSystem>("ComponentSystem"),10)
 	{
+		REGISTER_CLASS_ATTRIBUTE( DefaultPlugin, max_screenListener, uint32_t );
+		REGISTER_CLASS_ATTRIBUTE( DefaultPlugin, max_mouseListener, uint32_t );
+		REGISTER_CLASS_ATTRIBUTE( DefaultPlugin, max_messageReceiver, uint32_t );
+		REGISTER_CLASS_ATTRIBUTE( DefaultPlugin, max_messageSender, uint32_t );
+		REGISTER_CLASS_ATTRIBUTE( DefaultPlugin, max_keyboardListener, uint32_t );
 	}
 
-	~ComponentsPlugin( void )
+	~DefaultPlugin( void )
 	{
 
 	}
@@ -57,8 +62,14 @@ public:
 
     uint32_t id( void )
     {
-    	return string_hash("ComponentsPlugin").hash();
+    	return string_hash("DefaultPlugin").hash();
     }
+
+    DECLARE_CLASS_ATTRIBUTE( DefaultPlugin, max_screenListener, uint32_t );
+    DECLARE_CLASS_ATTRIBUTE( DefaultPlugin, max_mouseListener, uint32_t );
+    DECLARE_CLASS_ATTRIBUTE( DefaultPlugin, max_messageReceiver, uint32_t );
+    DECLARE_CLASS_ATTRIBUTE( DefaultPlugin, max_messageSender, uint32_t );
+    DECLARE_CLASS_ATTRIBUTE( DefaultPlugin, max_keyboardListener, uint32_t );
 
 private:
 
@@ -70,6 +81,6 @@ private:
     crap::ComponentType<KeyboardListener>  _keyboardListener;
 };
 
-CRAP_PLUGIN_FACTORY( ComponentsPlugin )
+CRAP_PLUGIN_FACTORY( DefaultPlugin )
 
 } /* namespace crap */

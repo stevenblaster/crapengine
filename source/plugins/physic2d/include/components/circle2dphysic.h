@@ -35,10 +35,10 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Circle2DPhysic, radius, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle2DPhysic, density, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle2DPhysic, friction, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle2DPhysic, dynamic, uint32_t )
+	DECLARE_CLASS_ATTRIBUTE( Circle2DPhysic, radius, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Circle2DPhysic, density, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Circle2DPhysic, friction, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Circle2DPhysic, dynamic, uint32_t )
 
 private:
 

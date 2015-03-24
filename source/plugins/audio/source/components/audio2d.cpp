@@ -30,11 +30,11 @@ namespace crap
 Audio2D::Audio2D( void ) :
 		_active(false), _am(0), _source(UINT32_MAX), _rewindAble(1)
 {
-	REGISTER_COMPONENT_MEMBER( Audio2D, name, string_hash )
-	REGISTER_COMPONENT_MEMBER( Audio2D, startMessage, string_hash )
-	REGISTER_COMPONENT_MEMBER( Audio2D, pauseMessage, string_hash )
-	REGISTER_COMPONENT_MEMBER( Audio2D, stopMessage, string_hash )
-	REGISTER_COMPONENT_MEMBER( Audio2D, rewindAble, uint32_t )
+	REGISTER_CLASS_ATTRIBUTE( Audio2D, name, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Audio2D, startMessage, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Audio2D, pauseMessage, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Audio2D, stopMessage, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Audio2D, rewindAble, uint32_t )
 }
 
 Audio2D::~Audio2D( void )

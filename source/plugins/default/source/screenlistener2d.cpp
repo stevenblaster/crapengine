@@ -31,10 +31,10 @@ ScreenListener2D::ScreenListener2D( void ) :
 		_inside(0), _attributes(0), _thresholdX(0.f), _thresholdY(0.f), _updateFrequency(100),
 		_sizeX(0), _sizeY(0)
 {
-	REGISTER_COMPONENT_MEMBER( ScreenListener2D, inside, uint32_t )
-	REGISTER_COMPONENT_MEMBER( ScreenListener2D, thresholdX, float32_t )
-	REGISTER_COMPONENT_MEMBER( ScreenListener2D, thresholdY, float32_t )
-	REGISTER_COMPONENT_MEMBER( ScreenListener2D, updateFrequency, uint32_t )
+	REGISTER_CLASS_ATTRIBUTE( ScreenListener2D, inside, uint32_t )
+	REGISTER_CLASS_ATTRIBUTE( ScreenListener2D, thresholdX, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( ScreenListener2D, thresholdY, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( ScreenListener2D, updateFrequency, uint32_t )
 
 }
 

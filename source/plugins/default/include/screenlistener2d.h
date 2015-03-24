@@ -35,10 +35,10 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( ScreenListener2D, inside, uint32_t )
-	DECLARE_COMPONENT_MEMBER( ScreenListener2D, thresholdX, float32_t )
-	DECLARE_COMPONENT_MEMBER( ScreenListener2D, thresholdY, float32_t )
-	DECLARE_COMPONENT_MEMBER( ScreenListener2D, updateFrequency, uint32_t )
+	DECLARE_CLASS_ATTRIBUTE( ScreenListener2D, inside, uint32_t )
+	DECLARE_CLASS_ATTRIBUTE( ScreenListener2D, thresholdX, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( ScreenListener2D, thresholdY, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( ScreenListener2D, updateFrequency, uint32_t )
 
 	bool update( uint32_t deltatime );
 	void resizeCallback( int, int );

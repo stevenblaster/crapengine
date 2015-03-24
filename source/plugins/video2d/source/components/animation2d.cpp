@@ -29,7 +29,7 @@ namespace crap
 
 Animation2D::Animation2D( void ) : _taskManager(0), _current_strip(0), _next_strip(0)
 {
-	REGISTER_COMPONENT_MEMBER( Animation2D, name, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( Animation2D, name, string_hash );
 }
 
 Animation2D::~Animation2D( void )

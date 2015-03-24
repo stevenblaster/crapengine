@@ -62,7 +62,9 @@ struct container_memory_fixed
 
     CRAP_INLINE pointer_t<void> request( uint32_t size )
     {
-        CRAP_ASSERT(ASSERT_BREAK, size<=S, "No space left");
+        if( _used )
+        	return 0;
+
         _used = true;
         return &(_memory[0]);
     }

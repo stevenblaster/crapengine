@@ -32,9 +32,9 @@ MouseListener2D::MouseListener2D( void ) :
 		_width(0.f), _height(0.f),_radius(0.f), _attributes(0), _mouseInput(0), _inside(false),
 		_listening(false), _buttons(false)
 {
-	REGISTER_COMPONENT_MEMBER( MouseListener2D, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( MouseListener2D, height, color_argb )
-	REGISTER_COMPONENT_MEMBER( MouseListener2D, radius, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( MouseListener2D, width, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( MouseListener2D, height, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( MouseListener2D, radius, float32_t )
 }
 
 MouseListener2D::~MouseListener2D( void )

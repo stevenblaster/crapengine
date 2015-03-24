@@ -29,9 +29,9 @@ namespace crap
 KeyboardListener::KeyboardListener( void ) :
 		_modifier(0), _key(0)
 {
-	REGISTER_COMPONENT_MEMBER( KeyboardListener, key, char )
-	REGISTER_COMPONENT_MEMBER( KeyboardListener, modifier, uint32_t )
-	REGISTER_COMPONENT_MEMBER( KeyboardListener, message, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( KeyboardListener, key, char )
+	REGISTER_CLASS_ATTRIBUTE( KeyboardListener, modifier, uint32_t )
+	REGISTER_CLASS_ATTRIBUTE( KeyboardListener, message, string_hash )
 }
 
 KeyboardListener::~KeyboardListener( void )

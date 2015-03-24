@@ -32,12 +32,12 @@ Rectangle2D::Rectangle2D( void ) :
 		_width(0), _height(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ),
 		_attributes(0), _texture(0), _renderer(0)
 {
-	REGISTER_COMPONENT_MEMBER( Rectangle2D, imagename, string_hash )
-	REGISTER_COMPONENT_MEMBER( Rectangle2D, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle2D, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle2D, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( Rectangle2D, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle2D, borderColor, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2D, imagename, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2D, width, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2D, height, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2D, color, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2D, border, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2D, borderColor, color_argb )
 }
 
 Rectangle2D::~Rectangle2D( void )

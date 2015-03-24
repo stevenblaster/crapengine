@@ -27,6 +27,8 @@ public:
     virtual void init( System* system ) = 0;
     virtual void deinit( System* system ) = 0;
 
+    virtual void setAttribute( Plugin* plugin, string_hash attribute_name, const string64& value ) = 0;
+
     virtual uint32_t id( void ) = 0;
 };
 
@@ -35,8 +37,6 @@ public:
 #define CRAP_PLUGIN_SIZE( type )  CRAP_DLL_TO_EXE uint32_t pluginSize( void ) { return sizeof(type); }
 #define CRAP_PLUGIN_ID( type ) CRAP_DLL_TO_EXE uint32_t pluginID( void ) { return string_hash( #type ).hash(); }
 #define CRAP_PLUGIN_FACTORY( type ) extern "C" { CRAP_PLUGIN_CONSTRUCT(type) CRAP_PLUGIN_DESTRUCT( type ) CRAP_PLUGIN_ID( type ) CRAP_PLUGIN_SIZE( type ) }
-
-#define CRAP_DECLARE_PLUGIN( type ) class type : public crap::Plugin
 
 } //namespace crap
 

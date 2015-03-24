@@ -36,16 +36,16 @@ Attributes2D::Attributes2D( void)
 	_data.velocity[1] = 0.f;
 	_data.collision = 0;
 
-	REGISTER_COMPONENT_MEMBER( Attributes2D, posX, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, posY, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, rotation, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, scale, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, damping, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, friction, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, restitution, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, torque, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, velocityX, float32_t )
-	REGISTER_COMPONENT_MEMBER( Attributes2D, velocityY, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, posX, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, posY, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, rotation, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, scale, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, damping, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, friction, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, restitution, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, torque, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, velocityX, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Attributes2D, velocityY, float32_t )
 }
 
 Attributes2D::~Attributes2D( void )

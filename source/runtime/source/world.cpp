@@ -9,6 +9,7 @@
 #include "node.h"
 #include "xml/tinyxml2.h"
 #include "taskmanager.h"
+#include "pluginmanager.h"
 #include "game.h"
 #include "world.h"
 
@@ -86,6 +87,30 @@ void World::startXML( void )
 
     //load components
     ComponentSystem* componentSystem = _system->getSubSystem<ComponentSystem>("ComponentSystem");
+
+    //get modules
+    PluginManager* pluginSystem = _system->getSubSystem<PluginManager>("PluginManager");
+
+    //modules
+    while( element != 0 && string64(element->Value()) == string64("MODULE") )
+    {
+    	const string_hash       moduleName( element->Attribute("name") );
+    	Plugin* module = pluginSystem->getPlugin(moduleName);
+    	if( module != 0 )
+    	{
+			tinyxml2::XMLElement* attributeElement = element->FirstChildElement();
+			while( attributeElement != 0 && string64(attributeElement->Value()) == string64("ATTRIBUTE") )
+			{
+        		const string_hash       attributeName( attributeElement->Attribute("name") );
+        		const string64			attributeValue( attributeElement->GetText() );
+
+        		pluginSystem->setPluginAttribute( moduleName, attributeName, attributeValue );
+
+        		attributeElement = attributeElement->NextSiblingElement();
+			}
+    	}
+    	element = element->NextSiblingElement();
+    }
 
     while( element != 0 && string64(element->Value()) == string64("NODE") )
     {

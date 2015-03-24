@@ -31,13 +31,13 @@ RoundedRectangle2D::RoundedRectangle2D( void ) :
 		_width(0), _height(0), _corner(0), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ),
 		_attributes(0), _texture(0), _renderer(0)
 {
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, imagename, string_hash )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, corner, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( RoundedRectangle2D, borderColor, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, imagename, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, width, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, height, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, corner, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, color, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, border, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( RoundedRectangle2D, borderColor, color_argb )
 }
 
 RoundedRectangle2D::~RoundedRectangle2D( void )

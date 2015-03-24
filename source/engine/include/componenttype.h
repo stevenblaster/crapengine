@@ -85,8 +85,8 @@ public:
 
 	virtual void setComponentMember( Component* component, string_hash name, const string64& data )
 	{
-		intrusive_node< ComponentMember<T> >* node = ComponentMember<T>::list.begin();
-		for( ; node != ComponentMember<T>::list.end(); node = ComponentMember<T>::list.next( node ) )
+		intrusive_node< ClassAttribute<T> >* node = ClassAttribute<T>::list.begin();
+		for( ; node != ClassAttribute<T>::list.end(); node = ClassAttribute<T>::list.next( node ) )
 		{
 			if( node->parent()->name == name )
 			{

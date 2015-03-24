@@ -32,9 +32,9 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( KeyboardListener, key, char )
-	DECLARE_COMPONENT_MEMBER( KeyboardListener, modifier, uint32_t )
-	DECLARE_COMPONENT_MEMBER( KeyboardListener, message, string_hash )
+	DECLARE_CLASS_ATTRIBUTE( KeyboardListener, key, char )
+	DECLARE_CLASS_ATTRIBUTE( KeyboardListener, modifier, uint32_t )
+	DECLARE_CLASS_ATTRIBUTE( KeyboardListener, message, string_hash )
 
 	void keyboardCallback( uint32_t );
 };

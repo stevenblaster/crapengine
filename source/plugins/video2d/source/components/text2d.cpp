@@ -31,14 +31,14 @@ Text2D::Text2D( void ) :
 		_color(0), _fontSize(0.f), _blur(0.f),_spacing(0.f), _lineHeight(0.f), _renderID( UINT32_MAX ),
 		_attributes(0), _font2d(0), _renderer(0)
 {
-	REGISTER_COMPONENT_MEMBER( Text2D, fontName, string_hash )
-	REGISTER_COMPONENT_MEMBER( Text2D, text, string64 )
-	REGISTER_COMPONENT_MEMBER( Text2D, fontSize, float32_t )
-	REGISTER_COMPONENT_MEMBER( Text2D, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( Text2D, blur, float32_t )
-	REGISTER_COMPONENT_MEMBER( Text2D, spacing, float32_t )
-	REGISTER_COMPONENT_MEMBER( Text2D, lineHeight, float32_t )
-	REGISTER_COMPONENT_MEMBER( Text2D, alignment, TextAlignment );
+	REGISTER_CLASS_ATTRIBUTE( Text2D, fontName, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, text, string64 )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, fontSize, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, color, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, blur, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, spacing, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, lineHeight, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Text2D, alignment, TextAlignment );
 }
 
 Text2D::~Text2D( void )

@@ -37,17 +37,17 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, name, string_hash );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, imagename, string_hash );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, frames, uint32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, fps, uint32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, tilesx, uint32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, tilesy, uint32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, posx, float32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, posy, float32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, width, float32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, height, float32_t );
-	DECLARE_COMPONENT_MEMBER( FilmStrip2D, alwaysfinish, uint32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, name, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, imagename, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, frames, uint32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, fps, uint32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, tilesx, uint32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, tilesy, uint32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, posx, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, posy, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, width, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, height, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( FilmStrip2D, alwaysfinish, uint32_t );
 
 	bool update( uint32_t deltatime );
 

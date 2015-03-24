@@ -31,10 +31,10 @@ namespace crap
 Circle2DPhysic::Circle2DPhysic( void ) :
 		_radius(0.f), _density(0), _friction(0), _dynamic(0), _bodyId(0), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, radius, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, density, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, friction, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle2DPhysic, dynamic, uint32_t )
+	REGISTER_CLASS_ATTRIBUTE( Circle2DPhysic, radius, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Circle2DPhysic, density, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Circle2DPhysic, friction, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Circle2DPhysic, dynamic, uint32_t )
 }
 
 Circle2DPhysic::~Circle2DPhysic( void )

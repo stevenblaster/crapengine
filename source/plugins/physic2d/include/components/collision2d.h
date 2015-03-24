@@ -36,7 +36,7 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Collision2D, message, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Collision2D, message, string_hash );
 
 	bool update( uint32_t deltatime );
 

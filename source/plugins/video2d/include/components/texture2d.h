@@ -31,13 +31,13 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Texture2D, name, string_hash );
-	DECLARE_COMPONENT_MEMBER( Texture2D, alpha, float32_t );
-	DECLARE_COMPONENT_MEMBER( Texture2D, rotation, float32_t );
-	DECLARE_COMPONENT_MEMBER( Texture2D, posX, float32_t );
-	DECLARE_COMPONENT_MEMBER( Texture2D, posY, float32_t );
-	DECLARE_COMPONENT_MEMBER( Texture2D, width, float32_t );
-	DECLARE_COMPONENT_MEMBER( Texture2D, height, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, name, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, alpha, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, rotation, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, posX, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, posY, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, width, float32_t );
+	DECLARE_CLASS_ATTRIBUTE( Texture2D, height, float32_t );
 
 	CRAP_INLINE void setPos( float32_t x, float32_t y ) { _posX=x; _posY=y;}
 

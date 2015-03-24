@@ -38,13 +38,13 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, imagename, string_hash )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, width, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, height, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, corner, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, color, color_argb )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( RoundedRectangle2D, borderColor, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, imagename, string_hash )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, width, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, height, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, corner, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, color, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, border, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( RoundedRectangle2D, borderColor, color_argb )
 
 	void renderCall( void );
 

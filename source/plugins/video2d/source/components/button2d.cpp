@@ -29,12 +29,12 @@ namespace crap
 Button2D::Button2D( void ) :
 		_state( active ), _width(0), _height(0), _texture(0), _eventSystem(0), _tiling(vertical)
 {
-	REGISTER_COMPONENT_MEMBER( Button2D, imagename, string_hash );
-	REGISTER_COMPONENT_MEMBER( Button2D, leftclick, string_hash );
-	REGISTER_COMPONENT_MEMBER( Button2D, rightclick, string_hash );
-	REGISTER_COMPONENT_MEMBER( Button2D, state, uint32_t );
-	REGISTER_COMPONENT_MEMBER( Button2D, width, float32_t );
-	REGISTER_COMPONENT_MEMBER( Button2D, height, float32_t );
+	REGISTER_CLASS_ATTRIBUTE( Button2D, imagename, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( Button2D, leftclick, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( Button2D, rightclick, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( Button2D, state, uint32_t );
+	REGISTER_CLASS_ATTRIBUTE( Button2D, width, float32_t );
+	REGISTER_CLASS_ATTRIBUTE( Button2D, height, float32_t );
 }
 
 Button2D::~Button2D( void )

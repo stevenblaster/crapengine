@@ -45,9 +45,12 @@ public:
     ~PluginManager( void );
 
     void callbackFunction( const char* filename );
+
+    Plugin* getPlugin( string_hash name );
+    void setPluginAttribute( string_hash plugin_name, string_hash attribute_name, const string64& value );
+
     uint32_t load( const char* filename );
     void init( uint32_t id );
-
     void deinit( uint32_t id );
     void unload( uint32_t id );
 

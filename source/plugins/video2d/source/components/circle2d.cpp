@@ -31,11 +31,11 @@ namespace crap
 Circle2D::Circle2D( void ) : _texture(0), _renderer(0),
 		_radius(0.f), _color(0), _border(0), _borderColor(0), _renderID( UINT32_MAX ), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Circle2D, imagename, string_hash )
-	REGISTER_COMPONENT_MEMBER( Circle2D, radius, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle2D, color, color_argb )
-	REGISTER_COMPONENT_MEMBER( Circle2D, border, float32_t )
-	REGISTER_COMPONENT_MEMBER( Circle2D, borderColor, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( Circle2D, imagename, string_hash )
+	REGISTER_CLASS_ATTRIBUTE( Circle2D, radius, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Circle2D, color, color_argb )
+	REGISTER_CLASS_ATTRIBUTE( Circle2D, border, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Circle2D, borderColor, color_argb )
 }
 
 Circle2D::~Circle2D( void )

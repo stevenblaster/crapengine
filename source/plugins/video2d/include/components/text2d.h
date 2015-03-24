@@ -39,14 +39,14 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Text2D, fontName, string_hash )
-	DECLARE_COMPONENT_MEMBER( Text2D, text, string1024 )
-	DECLARE_COMPONENT_MEMBER( Text2D, fontSize, float32_t )
-	DECLARE_COMPONENT_MEMBER( Text2D, color, color_argb )
-	DECLARE_COMPONENT_MEMBER( Text2D, blur, float32_t )
-	DECLARE_COMPONENT_MEMBER( Text2D, spacing, float32_t )
-	DECLARE_COMPONENT_MEMBER( Text2D, lineHeight, float32_t )
-	DECLARE_COMPONENT_MEMBER( Text2D, alignment, TextAlignment )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, fontName, string_hash )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, text, string1024 )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, fontSize, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, color, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, blur, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, spacing, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, lineHeight, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Text2D, alignment, TextAlignment )
 
 	void renderCall( void );
 

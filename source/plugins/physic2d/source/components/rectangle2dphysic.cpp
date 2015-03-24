@@ -30,10 +30,10 @@ namespace crap
 Rectangle2DPhysic::Rectangle2DPhysic( void ) :
 		_width(0.f), _height(0.f), _density(0), _dynamic(0), _bodyID(0), _attributes(0)
 {
-	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, width, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, height, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, density, float32_t )
-	REGISTER_COMPONENT_MEMBER( Rectangle2DPhysic, dynamic, uint32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2DPhysic, width, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2DPhysic, height, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2DPhysic, density, float32_t )
+	REGISTER_CLASS_ATTRIBUTE( Rectangle2DPhysic, dynamic, uint32_t )
 }
 
 Rectangle2DPhysic::~Rectangle2DPhysic( void )

@@ -27,8 +27,8 @@ namespace crap
 
 MessageSender::MessageSender( void ) : _eventSystem(0)
 {
-	REGISTER_COMPONENT_MEMBER( MessageSender, external, string_hash );
-	REGISTER_COMPONENT_MEMBER( MessageSender, internal, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( MessageSender, external, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( MessageSender, internal, string_hash );
 }
 
 MessageSender::~MessageSender( void )

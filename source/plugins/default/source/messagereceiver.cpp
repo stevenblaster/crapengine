@@ -27,8 +27,8 @@ namespace crap
 
 MessageReceiver::MessageReceiver( void )
 {
-	REGISTER_COMPONENT_MEMBER( MessageReceiver, external, string_hash );
-	REGISTER_COMPONENT_MEMBER( MessageReceiver, internal, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( MessageReceiver, external, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( MessageReceiver, internal, string_hash );
 }
 
 MessageReceiver::~MessageReceiver( void )

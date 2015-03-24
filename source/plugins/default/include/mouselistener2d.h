@@ -35,9 +35,9 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( MouseListener2D, width, float32_t )
-	DECLARE_COMPONENT_MEMBER( MouseListener2D, height, float32_t )
-	DECLARE_COMPONENT_MEMBER( MouseListener2D, radius, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( MouseListener2D, width, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( MouseListener2D, height, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( MouseListener2D, radius, float32_t )
 
 	void receiveMessage( string_hash name, pointer_t<void> );
 

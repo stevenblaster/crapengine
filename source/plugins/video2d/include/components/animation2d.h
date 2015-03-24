@@ -37,7 +37,7 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Animation2D, name, string_hash );
+	DECLARE_CLASS_ATTRIBUTE( Animation2D, name, string_hash );
 
 	bool update( uint32_t deltatime );
 

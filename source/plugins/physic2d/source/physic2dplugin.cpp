@@ -19,7 +19,7 @@
 #include "componenttype.h"
 #include "../../default/include/attributes2d.h"
 #include "system.h"
-#include "plugin.h"
+#include "plugintype.h"
 #include "components/rectangle2dphysic.h"
 #include "components/circle2dphysic.h"
 #include "components/collision2d.h"

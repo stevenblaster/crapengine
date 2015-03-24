@@ -39,11 +39,11 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Circle2D, imagename, string_hash )
-	DECLARE_COMPONENT_MEMBER( Circle2D, radius, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle2D, color, color_argb )
-	DECLARE_COMPONENT_MEMBER( Circle2D, border, float32_t )
-	DECLARE_COMPONENT_MEMBER( Circle2D, borderColor, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( Circle2D, imagename, string_hash )
+	DECLARE_CLASS_ATTRIBUTE( Circle2D, radius, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Circle2D, color, color_argb )
+	DECLARE_CLASS_ATTRIBUTE( Circle2D, border, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Circle2D, borderColor, color_argb )
 
 	void renderCall( void );
 

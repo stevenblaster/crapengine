@@ -35,10 +35,10 @@ public:
 	virtual void init( System* system );
 	virtual void deinit( System* system );
 
-	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, width, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, height, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, density, float32_t )
-	DECLARE_COMPONENT_MEMBER( Rectangle2DPhysic, dynamic, uint32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2DPhysic, width, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2DPhysic, height, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2DPhysic, density, float32_t )
+	DECLARE_CLASS_ATTRIBUTE( Rectangle2DPhysic, dynamic, uint32_t )
 
 	CRAP_INLINE
 	bool operator<( const Rectangle2DPhysic& other ) const { return _globalID < other._globalID; }

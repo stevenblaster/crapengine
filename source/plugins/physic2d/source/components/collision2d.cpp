@@ -28,7 +28,7 @@ namespace crap
 
 Collision2D::Collision2D( void ) : _attributes(0), _touching(0)
 {
-	REGISTER_COMPONENT_MEMBER( Collision2D, message, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( Collision2D, message, string_hash );
 }
 
 Collision2D::~Collision2D( void )

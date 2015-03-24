@@ -32,17 +32,17 @@ FilmStrip2D::FilmStrip2D( void ) :
 		_tilesx(0), _tilesy(0), _fps(0), _posx(0), _posy(0), _start_time(0), _frames(0),
 		_alwaysfinish(1)
 {
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, name, string_hash );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, imagename, string_hash );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, frames, uint32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, fps, uint32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, tilesx, uint32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, tilesy, uint32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, posx, float32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, posy, float32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, width, float32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, height, float32_t );
-	REGISTER_COMPONENT_MEMBER( FilmStrip2D, alwaysfinish, uint32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, name, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, imagename, string_hash );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, frames, uint32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, fps, uint32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, tilesx, uint32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, tilesy, uint32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, posx, float32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, posy, float32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, width, float32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, height, float32_t );
+	REGISTER_CLASS_ATTRIBUTE( FilmStrip2D, alwaysfinish, uint32_t );
 }
 
 FilmStrip2D::~FilmStrip2D( void )

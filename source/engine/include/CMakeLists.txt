@@ -28,6 +28,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/taskmanager.h
    ${CMAKE_CURRENT_SOURCE_DIR}/eventsystem.h
    ${CMAKE_CURRENT_SOURCE_DIR}/node.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/world.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/plugintype.h
    PARENT_SCOPE
 )
