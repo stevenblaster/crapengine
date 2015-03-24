@@ -100,13 +100,13 @@ ENDIF(WIN32)
 
 IF(WIN32)
 
-#add_custom_command(TARGET crap_audio_plugin
-#    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/audio/crap_audio_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_audio_plugin.dll)
+add_custom_command(TARGET crap_audio_plugin
+    POST_BUILD
+    COMMAND  ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/plugins/audio/Debug/crap_audio_plugin.dll ${CRAP_DATA_PATH}/plugins/crap_audio_plugin.dll)
 
-#add_custom_command(TARGET crap_audio_plugin
-#    POST_BUILD
-#    COMMAND copy ${CMAKE_BINARY_DIR}/plugins/audio/crap_audio_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_audio_plugin.dll)
+add_custom_command(TARGET crap_audio_plugin
+    POST_BUILD
+    COMMAND  ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/plugins/audio/Debug/crap_audio_plugin.dll ${CRAP_DATA_PATH}/TestGame/plugins/crap_audio_plugin.dll)
 
 
 ELSE()
