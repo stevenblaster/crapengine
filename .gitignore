@@ -1,5 +1,7 @@
 build/
-libraries/bgfx/.build/
+libraries/bgfx/.build/projects/
+libraries/bgfx/.build/linux64_gcc/obj/
+libraries/bgfx/.build/win32_vs2012/obj/
 libraries/Box2D/Build/Box2D/
 libraries/Box2D/Build/tmp/
 libraries/Box2D/CMakeFiles/
